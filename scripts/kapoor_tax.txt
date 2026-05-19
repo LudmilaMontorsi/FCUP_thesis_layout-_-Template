@@ -1,0 +1,285 @@
+﻿=== PAGE 3 ===
+Leakage and the Reproducibility Crisis in ML-based Science
+Kapoor and Narayanan
+Paper 
+Muchlinski et al. 
+Colaresi and Mahmood 
+Wang 
+Kaufman et al. 
+Claim 
+Random Forests model 
+drastically outperforms Logistic 
+regression models  
+Random Forests models drastically 
+outperform Logistic regression 
+model  
+Adaboost and Gradient Boosted 
+Trees (GBT) drastically outperform 
+other models  
+Adaboost outperforms other models  
+Error 
+[L1.2] Pre-proc. on train-test  
+(Incorrect imputation) 
+ [L1.2] Pre-proc. on train-test 
+(Incorrect reuse of an imputed 
+dataset) 
+[L1.2] Pre-proc. on train-test. 
+(Incorrect reuse of an imputed dataset) 
+[L3.1] Temporal leakage (k-fold cross 
+validation with temporal data) 
+[L2] Illegitimate features (Data 
+leakage due to proxy variables) 
+[L3.1] Temporal leakage (k-fold 
+cross validation with temporal data) 
+ 
+Impact 
+Random Forests perform no 
+better than Logistic Regression 
+Random Forests perform no better 
+than Logistic Regression 
+Difference in AUC between Adaboost 
+and Logistic Regression drops from 
+0.14 to 0.01 
+Adaboost no longer outperforms 
+Logistic Regression.  
+None of the models outperform a 
+baseline model that predicts the 
+outcome of the previous year 
+ 
+Discussion 
+Impact of the incorrect 
+imputation is severe since 95% 
+of the out-of-sample dataset is 
+missing and is filled in using the 
+incorrect imputation method 
+Re-use the dataset provided by 
+Muchlinski et al., which uses an 
+incorrect imputation method  
+Re-use the dataset provided by 
+Muchlinski et al., which uses an 
+incorrect imputation method  
+ 
+Use several proxy variables for 
+the outcome as predictors (e.g., 
+colwars, cowwars, sdwars, all 
+proxies for civil war), leading to 
+near perfect accuracy 
+ 
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+Reported results
+(AUC)
+Corrected results
+(AUC)
+Reported results
+(AUC)
+Corrected results
+(AUC)
+Reported results
+(AUC)
+Corrected results
+(AUC)
+Reported results
+(Accuracy)
+Corrected results
+(Accuracy)
+Logistic Regression 1
+Logistic Regression 2
+Logistic Regression 3
+Random Forests
+Logistic Regression
+Random Forests 1
+Random Forests 2
+AdaBoost
+GBT
+Logistic Regression 1
+Logistic Regression 2
+Logistic Regression 3
+Random Forests
+AdaBoost
+Extratrees
+Lasso
+Logistic Regression
+Random Forest
+SVM
+Figure 1. A comparison of reported and corrected results in civil war prediction papers published in top political science journals. The
+main ndings of each of these papers are invalid due to various forms of data leakage: Muchlinski et al. (2016) impute the training and
+test data together, Colaresi & Mahmood (2017) and Wang (2019) incorrectly reuse an imputed dataset, and Kaufman et al. (2019) use
+proxies for the target variable which causes data leakage. The use of model info sheets (Section 3) would detect leakage in every paper.
+When we correct these errors, complex ML models (such as Adaboost and Random Forests) do not perform substantively better than
+decades-old Logistic Regression models for civil war prediction in each case. Eac
+
+=== PAGE 5 ===
+Leakage and the Reproducibility Crisis in ML-based Science
+Kapoor and Narayanan
+the urgency of addressing reproducibility failures, there are
+no systemic solutions that have been deployed for these
+failures. Scientic communities are discovering the same
+failure modes across disciplines, but have yet to converge
+on best practices for avoiding reproducibility failures.
+Calling attention to and addressing these widespread fail-
+ures is vital to maintaining public condence in ML-based
+science. At the same time, the use of ML methods is still
+in its infancy in many scientic elds. Addressing repro-
+ducibility failures pre-emptively in such elds can correct a
+lot of scientic research that would otherwise be awed.
+2.4. Towards a solution: A taxonomy of data leakage
+We now provide our taxonomy of data leakage errors in
+ML-based science. Such a taxonomy can enable a better un-
+derstanding of why leakage occurs and inform potential so-
+lutions. Our taxonomy is comprehensive and addresses data
+leakage arising during the data collection, pre-processing,
+modeling and evaluation steps. In particular, our taxonomy
+addresses all cases of data leakage that we found in our
+survey (Table 1).
+[L1] Lack of clean separation of training and test
+dataset. If the training dataset is not separated from the
+test dataset during all pre-processing, modeling and evalu-
+ation steps, the model has access to information in the test
+set before its performance is evaluated. Since the model
+has access to information from the test set at training time,
+the model learns relationships between the predictors and
+the outcome that would not be available in additional data
+drawn from the distribution of interest. The performance of
+the model on this data therefore does not reect how well
+the model would perform on a new test set drawn from the
+same distribution of data.
+[L1.1] No test set. Using the same dataset for training as
+well as testing the model is a text-book example of overt-
+ting, which leads to overoptimisic performance estimates
+(Kuhn & Johnson, 2013).
+[L1.2] Pre-processing on training and test set. Using the en-
+tire dataset for any pre-processing steps such as imputation
+or over/under sampling. For instance, using oversampling
+before splitting the data into training and test sets leads to
+an imperfect separation between the training and test sets
+since data generated using oversampling from the training
+set will also be present in the test set.
+[L1.3] Feature selection on training and test set. Feature
+selection on the entire dataset results in using information
+about which feature performs well on the test set to make
+a decision about which features should be included in the
+model.
+[L1.4] Duplicates in datasets. If a dataset with duplicates
+is used for the purposes of training and evaluating an ML
+model, the same data could exist in the training as well as
+test set.
+[L2] Model uses features that are not legitimate. If the
+model has access to features that should not be legi
+
+=== PAGE 6 ===
+Leakage and the Reproducibility Crisis in ML-based Science
+Kapoor and Narayanan
+to ensure correct performance evaluation. Methods such as
+block cross validation can partition the dataset strategically
+so that the performance evaluation does not suffer from data
+leakage and overoptimism (Roberts et al., 2017; Valavi et al.,
+2021). Handling nonindependence between the training and
+test sets in generali.e., without any assumptions about in-
+dependence in the datais a hard problem, since we might
+not know the underlying dependency structure of the task in
+many cases (Malik, 2020).
+[L3.3] Sampling bias in test distribution. Sampling bias
+in the choice of test dataset can lead to data leakage. One
+example of sampling bias is spatial bias, which refers to
+choosing the test data from a geographic location but mak-
+ing claims about model performance in other geographic
+locations as well. Another example is selection bias, which
+entails choosing a non-representative subset of the dataset
+for evaluation. For example, Bone et al. (2015) highlight
+that in a study on predicting autism using ML models, ex-
+cluding the data corresponding to borderline cases of autism
+leads to leakage since the test set is no longer representative
+of the general population about which claims are made. In
+addition, borderline cases of autism are often the most tricky
+to diagnose, so excluding them the evaluation set is likely
+to lead to overoptimistic results. Cases of leakage due to
+sampling bias can often be subtle. For example, Zech et al.
+(2018) nd that models for pneumonia prediction trained on
+images from one hospital do not generalize to images from
+another hospital due to subtle differences in how images are
+generated in each hospital.
+A model may have leakage when the distribution about
+which the scientic claim is made does not match the distri-
+bution from which the evaluation set is drawn. ML models
+may also suffer from a related, but distinct limitation: the
+lack of generalization when we try to apply a result about
+one population to another similar but distinct population.
+Several issues with the generalization of ML models op-
+erating under a distribution shift have been highlighted in
+ML methods research, such as fragility towards adversarial
+examples (Szegedy et al., 2014), image distortion and tex-
+ture (Geirhos et al., 2018), and overinterpretation (Carter
+et al., 2021). Robustness to distribution shift is an ongoing
+area of work in ML methods research. Even slight shifts
+in the target distribution can cause performance estimates
+to change drastically (Recht et al., 2019). Despite ongoing
+work to create ML methods that are robust to distribution
+shift, best practices to deal with distribution shift currently
+include testing the ML models on the data from the distribu-
+tion we want to make claims about (Geirhos et al., 2020). In
+ML-based science, where the aim is to create generalizable
+knowledge, we should take results that claim to generalize to
+a different popu
+
+=== PAGE 7 ===
+Leakage and the Reproducibility Crisis in ML-based Science
+Kapoor and Narayanan
+the intended use cases of ML models. They also addressed
+fairness and transparency concerns: they require that the
+performance of ML models on different groups of users
+(e.g., on the basis of race, gender, age) is reported and
+documented transparently. These model cards complement
+the datasheets introduced by Gebru et al. (2021) to document
+details about datasets in a standard format.
+The use of checklists has also been impactful in improving
+reporting practices in the few elds that have adopted them
+(Han et al., 2017). While checklists and model cards pro-
+vide concrete best practices for reporting standards (Mongan
+et al., 2020; Collins et al., 2015; Mitchell et al., 2019; Garbin
+& Marques, 2022), current efforts do not address pitfalls
+arising due to leakage. Further, even though several sci-
+entic eldsespecially those related to medicinehave
+adopted checklists to improve reporting standards, most
+checklists are developed for specic scientic or research
+communities instead of ML-based science in general.
+3.2. Scientic arguments to surface and prevent
+leakage
+When ML models are used to make scientic claims, it is
+not enough to simply separate the training and test sets and
+report performance metrics on the test set. Unlike research
+in ML methods, where a models performance on a hypo-
+thetical task (i.e., one that is not linked to a specic scientic
+claim) is still of interest to the researcher in some cases (Raji
+et al., 2021), in ML-based science, claims about a models
+performance need to be connected to scientic claims using
+explicit arguments. The burden of proof for ensuring the
+correctness of these arguments is on the researcher making
+the scientic claims (Lundberg et al., 2021).
+In our models, we ask researchers to present three arguments
+that are essential for determining that scientic results which
+use ML methods do not suffer from data leakage. Note that
+most ML-based science papers do not present any of the
+three arguments, although they sometimes partially address
+the rst argument (clean train-test separation) by report-
+ing out-of-sample prediction performance. The arguments
+below are based on our taxonomy of data leakage issues
+presented in Section 2.4, and inform the main sections of
+the model info sheet.
+[L1] Clean train-test separation. The researcher needs to
+argue why the test set does not interact with training data
+during any of the preprocessing, modeling or evaluation
+steps to ensure a clean train-test separation.
+[L2] Each feature in the model is legitimate. The re-
+searcher needs to argue why each feature used in their model
+is legitimate, i.e., a claim made using each feature is of scien-
+tic interest. Note that some models might use hundreds of
+features. In such cases, it is even more important to reason
+about the correctness of the features used, since the incorrect
+use of a single feature in the model can cause leakage. That
+said, the same
+

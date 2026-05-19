@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 13 items.
+Database file #1: Bibliography.bib
+Warning--I didn't find a database entry for "szegedy2015going"
+Warning--I didn't find a database entry for "royRecalibratingFullyConvolutional2018"
+You've used 47 entries,
+            1791 wiz_defined-function locations,
+            775 strings with 16366 characters,
+and the built_in function-call counts, 12668 in all, are:
+= -- 1029
+> -- 762
+< -- 8
++ -- 271
+- -- 224
+* -- 1060
+:= -- 2023
+add.period$ -- 140
+call.type$ -- 47
+change.case$ -- 46
+chr.to.int$ -- 0
+cite$ -- 47
+duplicate$ -- 478
+empty$ -- 1145
+format.name$ -- 224
+if$ -- 2756
+int.to.chr$ -- 0
+int.to.str$ -- 47
+missing$ -- 40
+newline$ -- 231
+num.names$ -- 50
+pop$ -- 136
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 240
+stack$ -- 0
+substring$ -- 874
+swap$ -- 116
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 109
+width$ -- 49
+write$ -- 507
+(There were 2 warnings)

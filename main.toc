@@ -1,0 +1,99 @@
+\babel@toc {english}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\contentsline {chapter}{Acknowledgements}{ii}{dummy.1}%
+\vspace {0.3cm}
+\contentsline {chapter}{Abstract}{iii}{dummy.2}%
+\contentsline {chapter}{Resumo}{iv}{dummy.3}%
+\babel@toc {portuguese}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\vspace {0.3cm}
+\contentsline {chapter}{Índice}{v}{dummy.4}%
+\contentsline {chapter}{Lista de Figuras}{viii}{dummy.5}%
+\contentsline {chapter}{Lista de Gráficos}{ix}{dummy.6}%
+\contentsline {chapter}{Lista de Tabelas}{x}{dummy.7}%
+\contentsline {chapter}{Lista de Abreviaturas}{xi}{section*.5}%
+\vspace {0.3cm}
+\contentsline {chapter}{\numberline {1}Introdução}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Objetivo Geral}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objetivos Específicos}{3}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Trabalhos Relacionados}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Métodos Tradicionais de Redução de Artefatos em\acrshort {ct}}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Deep Learning para Redução de Artefatos em\acrshort {ct}}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Abordagens no Domínio da Imagem}{6}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Abordagens no Domínio do Sinograma e Dual-Domain}{6}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Aprendizagem Auto-Supervisionada e\acrshortpl {gan}}{7}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Arquiteturas Avançadas e Mecanismos de Atenção}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Avaliação, Generalização e Aplicabilidade Clínica}{8}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Síntese Crítica e Motivação do Trabalho}{9}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Materiais e Métodos}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Visão Geral da Metodologia}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2}\textit {Datasets} Utilizados}{11}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}\textit {Datasets} Principal}{11}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}\textit {Dataset} para Validação Externa}{12}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Estratégia de Particionamento dos Dados}{12}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Divisão Treino -- Validação -- Teste}{12}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Estratificação Anatómica}{12}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Estratificação por Pacientes}{12}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Pré-processamento dos Dados}{13}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Correspondência entre imagens\acrshort {ctmar} e DeepLesion/UCLH Stroke EIT Data}{13}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Remoção do Fundo dos Exames}{16}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Normalização das Intensidades}{17}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Máscaras de Artefato}{17}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Arquitetura dos Modelos}{18}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Modelo Baseline}{18}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}Estudos de ablação}{20}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Modelo \textit {Baseline +\acrfull {se}}}{20}{subsection.3.6.1}%
+\contentsline {section}{\numberline {3.7}Estudos de ablação}{22}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Modelo \textit {Baseline +\acrfull {aspp}}}{22}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.8}Estudos de ablação}{22}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Modelo \textit {Baseline +\acrfull {cbam}}}{22}{subsection.3.8.1}%
+\contentsline {section}{\numberline {3.9}Estudos de ablação}{24}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Módulos Arquiteturais Avançados}{24}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Squeeze-and-Excitation (SE)}{24}{subsection.3.10.1}%
+\contentsline {paragraph}{Parâmetros do Bloco\acrshort {se}:}{26}{paragraph*.9}%
+\contentsline {paragraph}{Operações de Ponto Flutuante (\acrshort {flops} ):}{26}{paragraph*.10}%
+\contentsline {paragraph}{\textit {Overhead} Relativo:}{26}{paragraph*.11}%
+\contentsline {subsection}{\numberline {3.10.2}Atrous Spatial Pyramid Pooling (ASPP)}{27}{subsection.3.10.2}%
+\contentsline {subsection}{\numberline {3.10.3}Convolutional Block Attention Module (CBAM)}{30}{subsection.3.10.3}%
+\contentsline {paragraph}{Agregação Dual (Average + Max):}{31}{paragraph*.14}%
+\contentsline {paragraph}{Rede\acrshort {mlp} Compartilhada:}{32}{paragraph*.15}%
+\contentsline {paragraph}{\textit {Pooling} ao Longo de Canais:}{32}{paragraph*.16}%
+\contentsline {paragraph}{Convolução Espacial:}{32}{paragraph*.17}%
+\contentsline {paragraph}{Canal \textit {Attention} - Parâmetros:}{33}{paragraph*.18}%
+\contentsline {paragraph}{Spatial \textit {Attention} - Parâmetros:}{33}{paragraph*.19}%
+\contentsline {paragraph}{Total CBAM:}{33}{paragraph*.20}%
+\contentsline {paragraph}{\acrshort {flops} (operações):}{33}{paragraph*.21}%
+\contentsline {section}{\numberline {3.11}Estudos de ablação}{35}{section.3.11}%
+\contentsline {subsection}{\numberline {3.11.1}Ablação -- Fase 1}{35}{subsection.3.11.1}%
+\contentsline {subsection}{\numberline {3.11.2}Ablação -- Fase 2}{35}{subsection.3.11.2}%
+\contentsline {section}{\numberline {3.12}Estratégia de Treino}{36}{section.3.12}%
+\contentsline {subsection}{\numberline {3.12.1}Treinos com Duração Curta}{36}{subsection.3.12.1}%
+\contentsline {subsection}{\numberline {3.12.2}Treino com Duração Intermediária}{37}{subsection.3.12.2}%
+\contentsline {subsection}{\numberline {3.12.3}Treino com Duração Prolongada}{37}{subsection.3.12.3}%
+\contentsline {section}{\numberline {3.13}Funções de Perda}{37}{section.3.13}%
+\contentsline {subsection}{\numberline {3.13.1}Perda de Reconstrução}{37}{subsection.3.13.1}%
+\contentsline {subsection}{\numberline {3.13.2}Perda de Segmentação -- Versão \textit {Dual-Head}}{38}{subsection.3.13.2}%
+\contentsline {subsection}{\numberline {3.13.3}Perda Total -- Versão \textit {Dual-Head}}{38}{subsection.3.13.3}%
+\contentsline {section}{\numberline {3.14}Métricas}{39}{section.3.14}%
+\contentsline {section}{\numberline {3.15}Protocolos de Validação}{40}{section.3.15}%
+\contentsline {subsection}{\numberline {3.15.1}Validação Interna}{40}{subsection.3.15.1}%
+\contentsline {subsection}{\numberline {3.15.2}Validação Externa}{40}{subsection.3.15.2}%
+\contentsline {section}{\numberline {3.16}Visão Geral do Pipeline}{40}{section.3.16}%
+\contentsline {section}{\numberline {3.17}Infraestrutura Computacional}{41}{section.3.17}%
+\contentsline {chapter}{\numberline {4}Resultados}{42}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Correspondências\acrshort {ctmar} x DeepLesion/Stroke EIT Data}{42}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Ablação -- Fase 1}{48}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}\textit {Single-Head} vs \textit {Dual-Head}}{48}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Ablação -- Fase 2}{49}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Impacto dos Módulos de Atenção - }{49}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Seleção do Modelo para Treino Intermédio}{50}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Treino com Duração Intermediária}{50}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Treino com Duração Prolongada}{50}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Análise de Distribuições e Overfitting -- Modelo Final}{50}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Análise Estatística Pareada -- Modelo Final}{51}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Resumo dos Resultados}{51}{section.4.9}%
+\contentsline {chapter}{\numberline {5}Discussion}{52}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{53}{chapter.6}%
+\vspace {0.5cm}
+\contentsline {chapter}{Bibliography}{53}{dummy.8}%
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{60}{appendix.A}%

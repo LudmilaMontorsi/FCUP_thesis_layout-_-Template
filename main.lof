@@ -1,0 +1,19 @@
+\babel@toc {english}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Arquitetura baseada em\acrshort {unet} utilizada como modelo \textit {baseline}.}}{18}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arquitetura baseada em\acrshort {unet} utilizada como modelo \textit {dual-head}.}}{19}{figure.caption.8}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Distribuição de MS-SSIM entre pares correspondentes (\acrshort {ctmar} vs DL/Stroke, aprovados automaticamente). Acima: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. Abaixo: zoom do histograma para a região de maior interesse, com destaque para os pares com MS-SSIM inferior a 0.9, que foram sujeitos a revisão manual.}}{43}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Distribuição de MS-SSIM entre pares correspondentes (\acrshort {ctmar} vs DL/Stroke, aprovados automaticamente). À esquerda: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. À direita: ECDF correspondente. Os pares com MS-SSIM inferior a 0.9 foram sujeitos a revisão manual.}}{44}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Exemplos de pares correspondentes com valores de\acrshort {ms-ssim} (0.7597, 0.7694 e 0.7717, respetivamente) aprovados após revisão visual humana mesmo com pontuações baixas.}}{45}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 3 pares reprovados após inspeção visual humana com valores de \acrshort {ms-ssim} (head\_1159: 0.4573, head\_369: 0.5652 e head\_763: 0.6009, respetivamente). As pontuações desses pares na similaridade de cosseno foram head\_1159: 0.9960, head\_369: 0.9952 e head\_763: 0.9951.}}{46}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Distribuição dos valores de similaridade de cosseno para os pares inspecionados visualmente.}}{47}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Distribuição dos valores de\acrshort {ms-ssim} para os pares inspecionados visualmente.}}{48}{figure.caption.29}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

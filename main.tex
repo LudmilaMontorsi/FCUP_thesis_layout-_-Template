@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis
+%
+% %%%%% IMPORTANT %%%%%
+% 1) Edit Front/vars.tex
+% 2) Compile Front/main.tex
+% 3) Edit vars.tex
+% 4) Edit precontent.tex
+%
+% BEFORE ANYTHING ELSE
+% You can also set some interesting stuff in the preamble.tex file
+% If you know what you're doing.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The default font size and two-sided printing
+% For a one-sided printing change the flag "twoside" to "oneside"
+\documentclass[11pt, oneside, table,xcdraw]{Thesis}
+
+
+%-------------------------------------------------------------------------
+%   PREAMBLE AND SETTINGS
+%-------------------------------------------------------------------------
+% Add the preamble. You can change various settings in here
+\input{preamble}
+
+% Thesis settings. THIS IS VERY IMPORTANT YOU CHANGE
+\input{vars}
+% ------------------
+
+
+%-------------------------------------------------------------------------
+%	DOCUMENT
+%-------------------------------------------------------------------------
+
+\begin{document}
+
+% Set Portuguese as main language
+\selectlanguage{portuguese}
+
+% Start counting pages in an unused scheme to fix backref
+\pagenumbering{Alph}
+
+% Includes the front pages (cover and etc.)
+%\pagestyle{empty}
+\includepdf[pages={1},pagecommand={%
+    % Add clickable links overlay on the front page (coordinates from Front/main.pax)
+    \begin{tikzpicture}[remember picture,overlay]
+        % Link for author email (adjusted for new title layout)
+        \node[inner sep=0pt,minimum height=20.03pt,minimum width=204.31pt] at ([shift={(176.055pt,181.775pt)}]current page.south west) 
+            {\href{mailto:mp.ludmila.montorsi@gmail.com}{\phantom{\rule{204.31pt}{20.03pt}}}};
+        % Link for degree name (adjusted for new title layout)
+        \node[inner sep=0pt,minimum height=13.36pt,minimum width=146.83pt] at ([shift={(147.315pt,162.97pt)}]current page.south west) 
+            {\href{https://sigarra.up.pt/fcup/pt/cur_geral.cur_view?pv_curso_id=894&pv_origem=CAND&pv_ano_lectivo=2025}{\phantom{\rule{146.83pt}{13.36pt}}}};
+        % Link for department (adjusted for new title layout)
+        \node[inner sep=0pt,minimum height=11.13pt,minimum width=167.78pt] at ([shift={(157.79pt,147.935pt)}]current page.south west) 
+            {\href{http://dfa.fc.up.pt/}{\phantom{\rule{167.78pt}{11.13pt}}}};
+        % Link for faculty (adjusted for new title layout)
+        \node[inner sep=0pt,minimum height=11.13pt,minimum width=216.54pt] at ([shift={(182.17pt,133.585pt)}]current page.south west) 
+            {\href{https://www.up.pt/fcup/pt/}{\phantom{\rule{216.54pt}{11.13pt}}}};
+    \end{tikzpicture}
+}]{Front/main}
+%\cleardoublepage
+% (Front/main tem 1 página)\includepdf[pages={2},pagecommand={},scale=1,link=true]{Front/main}
+%\cleardoublepage
+%\pagestyle{fancy}
+
+% Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+\frontmatter
+
+% Title page
+\maketitle
+
+% Edit this file!
+\input{precontent}
+
+
+%-------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%-------------------------------------------------------------------------
+
+\addvspacetoc{0.3cm}
+
+% Begin numeric (1,2,3...) page numbering
+\mainmatter
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter. \textsc{#1}}{}}
+\fancyhead[LO]{\leftmark}
+\setlength{\headheight}{25.39429pt} % Fix fancyhdr warning
+
+%%% -----------  ADD CHAPTERS HERE ------------------ %%%
+
+\input{Chapters/1.Introduction.tex}
+\input{Chapters/2.general_objectives.tex}
+\input{Chapters/3.Specifics_Objectives.tex}
+\input{Chapters/4.Relationed_works}
+\input{Chapters/5.Material_Methods}
+\input{Chapters/6.Experimental_results.tex}
+\input{Chapters/7.Discussion.tex}
+\input{Chapters/8.Conclusion.tex}
+% Add others as needed
+
+% Example citation to avoid bibliography errors
+%As shown in \cite{example_reference}, citations are required for bibliography generation.
+
+%-------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%-------------------------------------------------------------------------
+
+\addvspacetoc{0.5cm}
+\addtotoc{Bibliography}
+
+\fancyhead[LO]{\textsc{Bibliography}}
+
+
+% The references are stored in the file "Bibliography.bib"
+\bibliographystyle{unsrt}
+\bibliography{Bibliography}
+
+%-------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%-------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+%%% -----------  ADD APPENDIX HERE ------------------ %%%
+
+\input{Appendices/AppendixTemplate}
+%\input{Appendices/AppendixB}
+%\input{Appendices/AppendixC}
+\backmatter
+
+
+\end{document}

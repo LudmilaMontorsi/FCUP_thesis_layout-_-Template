@@ -1,0 +1,17 @@
+\babel@toc {english}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Configuração dos blocos\acrshort {se} implementados}}{27}{table.caption.12}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Configuração do módulo\acrshort {aspp} implementado}}{30}{table.caption.13}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Configuração dos blocos\acrshort {cbam} implementados}}{34}{table.caption.22}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Comparação entre\acrshort {cbam} e\acrshort {senet}}}{34}{table.caption.23}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Métricas quantitativas do modelo baseline em validação e teste.}}{48}{table.caption.30}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Resultados do estudo de \textit {trade-off} entre reconstrução e segmentação para diferentes pesos da máscara.}}{49}{table.caption.31}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,0 +1,49 @@
+﻿Pages: 11
+
+=== PAGE 1 ===
+Training machine learning models on patient
+level data segregation is crucial in practical
+clinical applications
+*Mustafa Umit Oner1,2, Yi-Chih Cheng2, Hwee Kuan Lee2,1,3,4,
+and Wing-Kin Sung1,5
+1School of Computing, National University of Singapore,
+Singapore 117417
+2A*STAR Bioinformatics Institute, Singapore 138671
+3Image and Pervasive Access Lab (IPAL), CNRS UMI 2955,
+Singapore 138632
+4Singapore Eye Research Institute, Singapore 169856
+5A*STAR Genome Institute of Singapore, Singapore 138672
+{umitoner, ksung}@comp.nus.edu.sg
+{chengyc, leehk}@bii.a-star.edu.sg
+1
+ . 
+CC-BY-NC-ND 4.0 International license
+It is made available under a 
+ is the author/funder, who has granted medRxiv a license to display the preprint in perpetuity. 
+(which was not certified by peer review)
+The copyright holder for this preprint 
+this version posted April 25, 2020. 
+; 
+https://doi.org/10.1101/2020.04.23.20076406
+doi: 
+medRxiv preprint 
+NOTE: This preprint reports new research that has not been certified by peer review and should not be used to guide clinical practice.
+
+
+=== PAGE 2 ===
+python : Traceback (most recent call last):
+At line:1 char:61
++ ... is_layout _ Template" ; python scripts/read_oner_full.py 2>&1 | Out-F ...
++                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last) 
+   ::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\ludmy\Desktop\FCUP_thesis_layout _ 
+Template\scripts\read_oner_full.py", line 18, in <module>
+    print(text)
+  File "C:\Users\ludmy\AppData\Local\Programs\Python\Python310\lib\encodings\cp
+1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\ufb00' in 
+position 28: character maps to <undefined>
