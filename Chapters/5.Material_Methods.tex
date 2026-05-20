@@ -3,18 +3,19 @@
 
 \chapter{Materiais e Métodos}
 \label{chap:metodos}
-Nesse capítulo será descrito os materiais, dados, arquiteturas e procedimentos experimentais adotados neste trabalho para a deteção e redução de artefatos em imagens de\Acrfull{ct}. A metodologia foi concebida para garantir reprodutibilidade, rigor experimental e avaliação justa do impacto de cada componente introduzido, seguindo uma estratégia progressiva de desenvolvimento e validação dos modelos.
+Nesse capítulo será descrito os materiais, dados, arquiteturas e procedimentos experimentais adotados neste trabalho para a deteção e redução de artefatos em imagens de\Acrfull{ct}. A metodologia foi concebida para garantir reprodutibilidade, rigor experimental e avaliação justa buscando utilizar as melhores práticas recomendadas na literatura de aprendizado profundo para imagem médica. 
 
 \section{Visão Geral da Metodologia}
-A metodologia proposta baseia-se numa abordagem supervisionada no domínio da imagem e organiza-se em três etapas principais:
+A metodologia proposta baseia-se numa abordagem supervisionada no domínio da imagem e organiza-se nas seguintes etapas:
 
 \begin{enumerate}
-    \item definição de um modelo baseline e realização de treinos curtos para comparação arquitetural e estudos de ablação;
-    \item avaliação objetiva do impacto de módulos arquiteturais avançados;
-    \item preparação para fases de treino intermédio e prolongado apenas após seleção fundamentada do modelo mais robusto.
+    \item desenvolvimento de um modelo\acrshort{unet} para redução de artefatos metálicos, servindo como referência comparativa;
+    \item avaliação objetiva do impacto de uma supervisão adicional com máscara de artefatos através de uma configuração \textit{dual-head};
+    \item análise do desempenho das duas arquitetuturas utilizando métricas objetivas de qualidade de imagem, como\acrshort{ssim},\acrshort{psnr} e\acrshort{mae} a nível global e também especificamente nas regiões afetadas por artefatos e distante deles separadamente.
+    \item análise estatística dos resultados para determinar a significância das diferenças observadas entre as arquiteturas, utilizando testes estatísticos apropriados, como o teste t pareado ou o teste de Wilcoxon, dependendo da distribuição dos dados.
+    \item avaliar a generalização dos modelos em um conjunto de dados externo, representando um cenário realista de \textit{domain shift}, para verificar a robustez das arquiteturas em condições de aquisição e anatomia diferentes.
 \end{enumerate}
 
-Esta separação explícita entre exploração arquitetural e otimização de treino permite reduzir vieses experimentais e evita decisões baseadas em flutuações aleatórias de desempenho.
 
 \section{\textit{Datasets} Utilizados}
 %____________________________________________________________________________________________________________________________________________________________________________________________________
@@ -29,8 +30,8 @@ O \textit{dataset} principal utilizado neste trabalho provém do \textit{\acrful
 Onde as pastas da categoria \textit{body} apresentavam\acrshort{ct}s de tronco, abragendo fatias axiais, torácica e abdominal. Os dados estão organizados em subpastas, cada uma contendo até 1.000 amostras. Foram utilizados apenas os seguintes ficheiros para treino e validação:
 
 \begin{enumerate}
-    \item \textbf{Imagens sem metal (referência):} Ficheiros \textit{Target} de dimensão 512×512×1 pixels;
-    \item \textbf{Imagens com artefatos metálicos (corrompidas):} Ficheiros \textit{Baseline} de dimensão 512×512×1 pixels;
+    \item \textbf{Imagens sem metal (referência):} Ficheiros contidos na pasta \textit{Target} de dimensão 512×512×1 pixels;
+    \item \textbf{Imagens com artefatos metálicos (corrompidas):} Ficheiros contidos na pasta \textit{Baseline} de dimensão 512×512×1 pixels;
 \end{enumerate}
 
 Todos os ficheiros de imagem (.raw) do \textit{dataset} são apresentados em formato binário sem cabeçalho, com precisão \textit{float32} em ordem \textit{little endian}. As imagens já vieram convertidas de coeficientes de atenuação linear (em unidades mm$^{-1}$) para\Acrfull{hu}, utilizando o valor de normalização de 0.02 mm$^{-1}$ para água.
@@ -40,24 +41,16 @@ Não havia no conjunto de dados informações adicionais sobre a que exame cada 
 \subsection{\textit{Dataset} para Validação Externa}
 Para avaliação da capacidade de generalização em dados reais independentes, foi reservado um conjunto de dados externo proveniente do\textit{\Acrfull{tcia}}. Este conjunto apresenta variações em anatomia, protocolos de aquisição e características de ruído, representando um cenário realista de \textit{domain shift}, conforme discutido na literatura.
 %____________________________________________________________________________________________________________________________________________________________________________________________________
-\section{Estratégia de Particionamento dos Dados}
-%____________________________________________________________________________________________________________________________________________________________________________________________________
-\subsection{Divisão Treino -- Validação -- Teste}
-A divisão de dados adotada foi de 70\% dos pares para treino, 15\% para validação e 15\% para teste. Esta estratégia assegura quantidade suficiente de dados para treino, mantendo subconjuntos independentes para validação e testes, garantindo uma comparação justa entre modelos.
-%____________________________________________________________________________________________________________________________________________________________________________________________________
-\subsection{Estratificação Anatómica}
-O particionamento dos dados também foi estratificado de acordo com a região anatómica em duas categorias principais:
-\begin{itemize}
-    \item \textbf{Body}: aproximadamente 88.4\% dos volumes;
-    \item \textbf{Head}: aproximadamente 11.6\% dos volumes.
-\end{itemize}
-A proporção relativa entre estas categorias é preservada em todos os subconjuntos, garantindo balanceamento anatómico.
-%____________________________________________________________________________________________________________________________________________________________________________________________________
-\subsection{Estratificação por Pacientes}
-O particionamento dos dados também foi estratificado por pacientes, garantindo que os \textit{slices} de um mesmo paciente não fossem distribuídos entre os conjuntos de treino, validação e teste. Esta abordagem evita vazamento de informações e assegura uma avaliação mais realista da capacidade de generalização dos modelos.
-%____________________________________________________________________________________________________________________________________________________________________________________________________
+
 \section{Pré-processamento dos Dados}
+\subsection{Verificação de integridade dos dados}
+Todos os pares foram validados através de um relatório de integridade, que verifica a existência de ambos os lados do par (imagem com artefacto e imagem limpa). Não houve nenhum par com dados faltantes, garantindo que o conjunto de dados estava completo e pronto para as etapas subsequentes de pré-processamento e treino dos modelos.
 %____________________________________________________________________________________________________________________________________________________________________________________________________
+\section{Estratégia de Particionamento dos Dados}
+
+\subsection{Estratificação por Pacientes}
+
+O particionamento dos dados foi estratificado por pacientes, garantindo que os \textit{slices} de um mesmo paciente não fossem distribuídos entre os conjuntos de treino, validação e teste. Esta abordagem evita vazamento de informações e assegura uma avaliação mais realista da capacidade de generalização dos modelos.%____________________________________________________________________________________________________________________________________________________________________________________________________
 \subsection{Correspondência entre imagens\acrshort{ctmar} e DeepLesion/UCLH Stroke EIT Data}
 
 Dado que os dados do\acrshort{ctmar} \textit{dataset} não continham metadados clínicos detalhados, foi necessário realizar um rastreio algorítmico dos \textit{slices} até aos conjuntos de dados originais (UCLH Stroke EIT e NIH DeepLesion Data) para tornar possível a associação dos metadados fornecidos aos \textit{slices} do \acrshort{ctmar}. Este processo permitiu identificar a qual exame e paciente do DeepLesion/UCLH Stroke EIT cada imagem\acrshort{ctmar} pertencia. Essas informações foram posteriormente utilizadas para realizar o particionamento dos dados em treino, validação e teste ao nível do paciente, reduzindo o risco de \textit{data leakage} entre conjuntos experimentais.
@@ -86,7 +79,7 @@ Pontuações inferiores a esse limiar indicavam correspondências potencialmente
 Embora a representação compacta baseada exclusivamente na média de intensidades dos blocos (HU) seja eficiente, ela pode, em teoria, gerar falsos positivos quando exames de pacientes diferentes são adquiridos com protocolos de aquisição idênticos ou apresentam estruturas anatómicas muito semelhantes, uma vez que essas condições tendem a produzir distribuições de intensidade similares e, consequentemente, \textit{fingerprints} com pontuação elevada. Para mitigar esse risco, adotou‑se um limiar de aceitação automática conservador (0,994) e a validação visual sistemática de todos os pares com scores entre 0,98 e 0,994. Adicionalmente, como salvaguarda complementar, todos os \textit{matches} automáticos foram analisados em termos de\acrshort{ms-ssim}, onde os pares com pontuações mais críticas foram submetidos a uma revisão visual adicional para garantir a confiabilidade das correspondências.
 
 Além disso, o método foi concebido para ignorar automaticamente imagens previamente verificadas como correspondências corretas, reduzindo redundâncias e acelerando reprocessamentos futuros.
-Devido ao elevado número de imagens presentes nos datasets, o processamento foi paralelizado e otimizado através da utilização de operações matriciais vetorizadas. Quando disponível, o algoritmo utilizou aceleração por GPU para reduzir o tempo de execução. Os \textit{fingerprints} calculados também foram armazenados em cache para evitar recomputação desnecessária em execuções subsequentes.
+Devido ao elevado número de imagens presentes nos datasets, o processamento foi paralelizado e otimizado através da utilização de operações matriciais vetorizadas. Quando disponível, o algoritmo utiliza aceleração por GPU para reduzir o tempo de execução. Os \textit{fingerprints} calculados também foram armazenados em cache para evitar recomputação desnecessária em execuções subsequentes.
 
 A implementação dessa etapa de correspondência automática permitiu aumentar a confiabilidade do pipeline experimental, reduzindo o risco de associações incorretas entre imagens e garantindo maior consistência na construção do \textit{dataset} utilizado para treino e avaliação dos modelos de redução de artefatos metálicos.
 
@@ -98,14 +91,120 @@ A literatura demonstra que a qualidade dos pares utilizados em estudos supervisi
 
 Este rastreio constituiu um importante procedimento de controlo de qualidade do dataset experimental e foi fundamental para garantir um particionamento adequado dos dados utilizados no treino, validação e teste dos modelos, assegurando que os subconjuntos fossem estratificados por paciente e evitando vazamento de informação entre conjuntos experimentais.
 
-Nem todos os \textit{slices} puderam ser rastreados, mas a maioria dos dados foi associada com sucesso aos exames originais. Dos 14.000 pares disponibilizados pelo\acrshort{ctmar} Dataset, 11.942 foram rastreados inicialmente até ao DeepLesion e 1.623 até ao UCLH Stroke EIT, totalizando 13.565 pares com metadados associados. Na etapa de avaliação via\acrshort{ms-ssim}, dentre todos os pares com pontuação abaixo de 0.90, apenas 3, anteriormente associados ao Deep Lesion, foram reprovados na inspeção visual.
+Nem todos os \textit{slices} puderam ser rastreados, mas a maioria dos dados foi associada com sucesso aos exames originais. Dos 14.000 pares disponibilizados pelo\acrshort{ctmar} Dataset, 11.942 foram rastreados inicialmente até ao DeepLesion e 1.623 até ao UCLH Stroke EIT, totalizando 13.565 pares com metadados associados \Ref{tab:rastreio_msssim}. 
 
-Os pares restantes foram posteriormente analisados entre si, de forma a identificar aqueles que claramente pertenciam ao mesmo conjunto de exames, permitindo agrupamento adicional de 207 pares. Esses dados, apesar de não terem sido diretamente rastreados até aos datasets originais, foram mantidos no estudo, garantindo que todos os \textit{slices} pertencentes ao mesmo exame permanecessem no mesmo subconjunto experimental.
+\begin{table}[H]
+    \centering
+    \caption{Resultados do rastreio antes da análise complementar com\acrshort{ms-ssim}.}
+    \label{tab:rastreio_msssim}
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Dataset} & \textbf{Rastreados} & \textbf{Correspondidos} & \textbf{Não correspondidos} \\
+        \hline
+        DL (DeepLesion) & 12.374 & 11.942 & 432 \\
+        Stroke (UCLH)   & 1.626  & 1.623  & 3   \\
+        \hline
+        \textbf{Total}  & \textbf{14.000} & \textbf{13.565} & \textbf{435} \\
+        \hline
+    \end{tabular}
+\end{table}
 
-Dado que uma quantidade significativa dos dados pôde ser rastreada com elevada confiabilidade, os casos restantes que não puderam ser agrupados de forma segura foram excluídos do processo de treino e validação. No total, 231 pares foram removidos por não apresentarem informação suficiente para garantir agrupamento seguro ao nível do paciente. Entre eles, os 3 pares reprovados por ser falso positivo na etapa de avaliação via\acrshort{ms-ssim}.
+Na etapa de avaliação via\acrshort{ms-ssim}, dentre todos os pares com pontuação abaixo de 0.90, apenas 3, anteriormente associados ao Deep Lesion, foram reprovados na inspeção visual \Ref{tab:rastreio_pos_msssim}.
 
-Assim, dos 14.000 pares originalmente disponibilizados pelo\acrshort{ctmar} Dataset, 13.769 foram incluídos neste trabalho, enquanto 231 foram excluídos para preservar a integridade do particionamento experimental e minimizar o risco de \textit{data leakage}.
+\begin{table}[H]
+    \centering
+    \caption{Resultados do rastreio depois da análise complementar com\acrshort{ms-ssim}.}
+    \label{tab:rastreio_pos_msssim}
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Dataset} & \textbf{Rastreados} & \textbf{Correspondidos} & \textbf{Não correspondidos} \\
+        \hline
+        DL (DeepLesion) & 12.374 & 11.939 & 435 \\
+        Stroke (UCLH)   & 1.626  & 1.623  & 3   \\
+        \hline
+        \textbf{Total}  & \textbf{14.000} & \textbf{13.562} & \textbf{438} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Dado que uma quantidade significativa dos dados pôde ser rastreada com elevada confiabilidade, os casos restantes que não puderam ser agrupados de forma segura foram excluídos do processo de treino e validação. No total, 438 pares foram removidos por não apresentarem informação suficiente para garantir agrupamento seguro ao nível do paciente. Entre eles, os 3 pares reprovados por ser falso positivo na etapa de avaliação via\acrshort{ms-ssim}.
+
+\begin{table}[H]
+    \centering
+    \caption{Dados dos pares sem correspondência que foram excluídos antes e após a análise complementar com\acrshort{ms-ssim}.}
+    \label{tab:cluster_excluidos}
+    \begin{tabular}{lcc}
+        \hline
+        & \multicolumn{2}{c}{\textbf{Excluídos}} \\
+        \cline{2-3}
+        & \textbf{Antes} & \textbf{Depois} \\
+        \hline
+        Total    & 435 & 438 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Assim, dos 14.000 pares originalmente disponibilizados pelo\acrshort{ctmar} Dataset, 13.562 foram incluídos neste trabalho, enquanto 438 foram excluídos para preservar a integridade do particionamento experimental e minimizar o risco de \textit{data leakage}.
 %_____________________________________________________________________________________________________________________________________________________________________________________________________
+
+\subsection{Estratificação Anatómica} 
+A proporção anatómica dos 14.000 pares do\acrshort{ctmar} Dataset, mudou pouco após o processo de rastreio e exclusão dos pares com baixa confiabilidade. Dos 438 casos removidos 435 eram do tipo \textit{body}, 3 do tipo \textit{head}. A distribuição anatómica dos pares incluídos no estudo é a seguinte:
+\begin{itemize}
+    \item \textbf{Body}: aproximadamente 88.03\% ;
+    \item \textbf{Head}: aproximadamente 11.97\% .
+\end{itemize}
+
+
+A estratificação foi implementada dentro de cada subconjunto (train/val/test) de modo a manter a proporção anatómica ao nível de pacientes, garantindo que a proporção relativa entre categorias seja preservada em todos os subconjuntos.
+Dessa forma, o balanceamento anatómico é preservado, garantindo que os modelos sejam treinados e avaliados em uma representação adequada da diversidade anatómica presente no conjunto de dados original. 
+
+A nível de pacientes, a distribuição anatómica é a seguinte:
+\begin{itemize}
+    \item \textbf{Body}: aproximadamente 95.9\% (258/269 pacientes);
+    \item \textbf{Head}: aproximadamente 4.1\% (11/269 pacientes).
+\end{itemize}
+
+Após o particionamento, os subconjuntos de treino, validação e teste apresentaram a seguinte distribuição:
+
+\begin{table}[H]
+    \centering
+    \caption{Distribuição anatómica por subconjunto ao nível de pacientes.}
+    \label{tab:split_anatomico}
+    \begin{tabular}{lcccc}
+        \hline
+        \textbf{Split} & \textbf{Body} & \textbf{Head}  &\textbf{Body\%} & \textbf{Head\%} \\
+        \hline
+        Train & 180 & 7 & 96.3\% & 3.7\% \\
+        Val   & 39  & 2  & 95.1\% & 4.9\% \\
+        Test  & 39  & 2  & 95.1\% & 4.9\% \\
+        \hline
+        \textbf{Total} & \textbf{258} & \textbf{11} & \textbf{95.9\%} & \textbf{4.1\%} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+A proporção de aproximadamente 70\% dos pacientes para treino, 15\% para validação e 15\% para teste com semente aleatória fixa (\texttt{seed = 1337}) foi escolhida para garantir uma quantidade suficiente de dados para treino, mantendo subconjuntos independentes para validação e teste, garantindo uma avaliação confiável do desempenho dos modelos.
+
+\begin{table}[H]
+    \centering
+    \caption{Distribuição dos pares por subconjunto, categoria anatómica e pacientes.}
+    \label{tab:split_pares}
+    \begin{tabular}{lcccccc}
+        \hline
+        \textbf{Split} & \textbf{Pares} & \textbf{Body} & \textbf{Head}  & \textbf{Body\%} & \textbf{Head\%}\\
+        \hline
+        Train & 9\,516 & 8\,563 & 953 & 89.98\% & 10.02\% \\
+        Val   & 2\,532 & 2\,147 & 385 & 84.79\% & 15.21\% \\
+        Test  & 1\,514 & 1\,229 & 285 & 81.17\% & 18.83\% \\
+        \hline
+        \textbf{Total} & \textbf{13\,562} & \textbf{11\,939} & \textbf{1\,623} & \textbf{88.03\%} & \textbf{11.97\%} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Pode-se notar, que devido a grande variação na quantidade de \textit{slices} por paciente, a distribuição anatómica ao nível de pacientes é bastante diferente da distribuição ao nível de pares. Devido a isso, a proporção $\sim$ 70/15/15 foi mantida ao nível de pacientes, mas a distribuição anatómica dos pares não segue exatamente a mesma proporção.
+%____________________________________________________________________________________________________________________________________________________________________________________________________
+
 \subsection{Remoção do Fundo dos Exames}
 Um subprojeto inicial foi dedicado à remoção do fundo dos exames para evitar a influencia de pixels irrelevantes na aprendizagem do modelo, pois as imagens de\Acrshort{ct} frequentemente contêm grandes áreas de fundo que não contribuem para a tarefa de remoção de artefatos metálicos. A presença desses pixels pode introduzir ruído e dificultar a aprendizagem, especialmente em casos onde os artefatos estão localizados em regiões específicas do corpo. Para abordar esse desafio, foi implementada uma etapa de pré-processamento
 também baseada em\Acrfull{dl}. Uma\acrshort{unet}-2D foi treinada para segmentar o tecido corporal do fundo, gerando máscaras binárias que foram aplicadas às imagens originais para isolar as regiões de interesse. Esse modelo foi treinado utilizando ~ 1.500 amostras do próprio\acrshort{ctmar} \textit{dataset}, onde as máscaras de segmentação foram geradas automaticamente através de um processo de limiarização. Além disso, um refinamento manual foi feito nas máscaras obtidas para garantir a qualidade dos dados de treino e consequentemente a eficácia do modelo de segmentação.
@@ -131,7 +230,7 @@ M_{diff}(i,j) = \begin{cases}
 \section{Arquitetura dos Modelos}
 
 \subsection{Modelo Baseline}
-O modelo escolhido para ser o \textit{baseline} inicial consiste em uma arquitetura baseada em\acrshort{unet} \cite{ronnebergerUNetConvolutionalNetworks2015}, composta por \textit{encoder-decoder} com conexões de atalho (\textit{skip connections}). 
+O modelo escolhido para ser o \textit{baseline} consiste em uma arquitetura baseada em\acrshort{unet} \cite{ronnebergerUNetConvolutionalNetworks2015}, composta por \textit{encoder-decoder} com conexões de atalho (\textit{skip connections}). 
 Li et al \cite{liUNetBasedDynamic2024}, aplicam blocos de normalização em lote ({\Acrshort{bn}} ) e funções de ativação\textit{\acrshort{relu}} após cada convolução dinâmica. Esse trabalho faz algo semelhante, mas opta por utilizar convoluções padrão com \textit{kernel} $3 \times 3$, seguida dos blocos de\acrshort{bn} e funções de ativação\textit{\acrshort{relu}}. A escolha por convoluções padrão é justificada pela simplicidade e eficiência computacional, além de manter a abordagem utilizada por Ronneberger et al \cite{ronnebergerUNetConvolutionalNetworks2015}. Assim como Li et al \cite{liUNetBasedDynamic2024}, o \textit{decoder} também utiliza \textit{bilinear upsampling}. Essa arquitetura possui apenas um \textit{output}, configurando um modelo \textit{Single-Head}. A figura 3.1 ilustra a estrutura da arquitetura baseada em\acrshort{unet} utilizada como modelo \textit{baseline}. 
 
 \begin{figure}[htbp]
@@ -164,600 +263,50 @@ A figura 3.2 ilustra a estrutura da arquitetura \textit{dual-head}. Esta configu
 %______________________________________________________________________________________________________________________
 
 \section{Estudos de ablação}
-%Aqui começa a parte escrita pelo gpt que preciso conferir e revisao referencias
-\subsection{Modelo \textit{Baseline +\acrfull{se}}}
-O módulo\acrshort{se} foi integrado à\acrshort{unet} nos níveis profundos do \textit{encoder} (enc3 e enc4), seguindo uma estratégia de recalibração de canais semânticos. Esta abordagem é motivada pela necessidade de selecionar features discriminativas em representações de alto nível, onde padrões globais como presença de artefatos metálicos e estruturas anatômicas complexas são capturados \cite{huSqueezeandExcitationNetworks2018}.
-A arquitetura do \textit{encoder} segue o fluxo:
-\begin{equation}
-    \mathbf{e}_i' = \text{\acrshort{se}}(\mathbf{e}_i, r), \quad i \in \{3, 4\}
-\end{equation}
-onde $\mathbf{e}_i$ representa a \textit{feature map} após as convoluções no nível $i$ do \textit{encoder}, $\mathbf{e}_i'$ é a \textit{feature map} recalibrada, e $r$ é o \textit{reduction ratio}.
-O processamento no \textit{encoder} ocorre sequencialmente:
-\begin{align}
-    \mathbf{e}_1, \mathbf{p}_1 &= \text{EncoderBlock}_{\textit{baseline}}(\mathbf{x}_{\textit{input}}) \\
-    \mathbf{e}_2, \mathbf{p}_2 &= \text{EncoderBlock}_{\textit{baseline}}(\mathbf{p}_1) \\
-    \mathbf{e}_3, \mathbf{p}_3 &= \text{EncoderBlock}_{\text{\acrshort{se}}}(\mathbf{p}_2, r=16) \\
-    \mathbf{e}_4, \mathbf{p}_4 &= \text{EncoderBlock}_{\text{\acrshort{se}}}(\mathbf{p}_3, r=16)
-\end{align}
-onde o bloco de \textit{encoder} com\acrshort{se} é definido como:
-\begin{equation}
-    \text{EncoderBlock}_{\text{\acrshort{se}}}(\mathbf{x}, r) = \begin{cases}
-        \mathbf{e} = \text{\acrshort{se}}(\text{Conv-\acrshort{bn}-\acrshort{relu}}^{(2)}(\mathbf{x}), r) \\
-        \mathbf{p} = \text{MaxPool}(\mathbf{e})
-    \end{cases}
-\end{equation}
-O\acrshort{se} é aplicado \textbf{após} as convoluções mas \textbf{antes} do \textit{pooling}, garantindo que tanto as \textit{skip connections} quanto os níveis subsequentes do \textit{encoder} recebam \textit{features} recalibradas.
-A integração do\acrshort{se} à rede\acrshort{unet} tem as seguintes características:
-\begin{itemize}
-    \item \textbf{Níveis Rasos do \textit{Encoder} (enc1, enc2):} Mantêm arquitetura\acrshort{unet} padrão sem mecanismos de atenção, preservando \textit{features} geométricas de baixo nível (bordas, texturas).
-    \item \textbf{Níveis Profundos do \textit{Encoder} (enc3, enc4):}\acrshort{se} é aplicado \textbf{após} as convoluções de cada bloco, permitindo:
+
+As duas arquiteturas foram avaliadas entre si para determinar o impacto da supervisão adicional com máscara de artefatos na qualidade da reconstrução e na capacidade de redução de artefatos. Toda a base de ambos os modelos são iguais, sendo a única diferença a presença da cabeça de predição da máscara de artefatos na versão \textit{dual-head}. Dessa forma, a comparação entre as duas arquiteturas é justa e isolada, permitindo avaliar exclusivamente o impacto da supervisão adicional da máscara de artefatos.
+
+
+\section{Fluxo de Treino}
+
+\subsection{Componentes de Configuração de Treino}
+
+\begin{enumerate}
+    \item \textbf{Otimizador}: \\ 
+    Foram utilizados otimizador \textit{AdamW} devido a sua melhor capacidade de generalização \cite{loshchilovDecoupledWeightDecay2019} em ambas as arquiteturas. O \textit{weight decay} foi otimizado e fixado para ambos os modelos.
+    \item \textbf{Scheduler}: \\
+    O scheduler \textit{Reduce on Plateau} foi utilizado na etapa inicial devido ao fato da quantidade de épocas ideal ser desconhecida. A taxa de aprendizagem foi ajustada proporcionalmente ao progresso inicial observado nas primeiras épocas na fase de treino piloto, garantindo uma convergência estável e eficiente para ambos os modelos.
+    No treino final, usou-se um scheduler do tipo \textit{Cosine Decay} com um teto alfa de 0.05 para evitar decaimento até zero. Dessa forma, garante-se que a taxa de aprendizagem permaneça em um nível mínimo razoável, permitindo que os modelos continuem a aprender e se ajustarem mesmo nas últimas épocas, o que pode ser particularmente importante para evitar estagnação do aprendizado e melhorar a capacidade de generalização. Além disso, o scheduler de \textit{Cosine Decay} é ideal para estudos de ablação, pois garante a mesma estratégia de ajuste de taxa de aprendizagem para ambos os modelos. 
+    \item \textbf{Funções de Perda}:
     \begin{itemize}
-        \item Recalibração de canais em níveis semânticos (64×64 e 32×32);
-        \item Supressão de canais menos informativos;
-        \item Amplificação de \textit{features} discriminativas para detecção de artefatos.
+        \item \textbf{Perda de Reconstrução}: Apesar de L2 ser amplamente utilizada para restauração de imagem, Zhao et al. \cite{zhaoLossFunctionsImage2017} destacam os melhores resultados de L1 ao estudar diferentes funções de perda para essa tarefa. Os autores também estudaram funções de perda baseadas em\acrshort{ssim} e\acrshort{ms-ssim}, sendo que a primeira alcança resultados igual ou levemente inferior a L1, enquanto a segunda apresenta desempenho melhor que\acrshort{ssim} mas ainda não supera L1 de forma clara. O trabalho também testa um mix de L1 e\acrshort{ms-ssim}, e obteve-se resultados superiores em todas as métricas avaliadas pelos autores. Essa combinação é justificada pela complementaridade entre as duas funções, onde L1 favorece fidelidade local e\acrshort{ms-ssim} promove preservação estrutural, resultando em uma correção mais equilibrada dos artefatos. Devido a esses resultados, a função de perda de reconstrução adotada neste trabalho é a soma ponderada de L1 e\acrshort{ms-ssim}. Os pesos utilizados foram 0.7 para L1 e 0.3 para\acrshort{ms-ssim}, baseando-se na recomendação de Zhao et al. \cite{zhaoLossFunctionsImage2017}. A relação adotada para a combinação das funções de perda é a seguinte:
+        \[
+        \mathcal{L}_{Recon} = 0.7 \cdot \mathcal{L}_{L1} + 0.3 \cdot \mathcal{L}_{MS-SSIM}
+        \]
+
+        \cite{zhaoLossFunctionsImage2017} utiliza filtragem Gaussiana em L1 para reduzir o impacto de ruído e favorecer a correção de artefatos, mas essa abordagem pode não ser ideal para tomografias computadorizadas, onde a precisão radiométrica é crucial. Portanto, neste trabalho, optou-se por utilizar a perda L1 direta sem filtragem gaussiana, garantindo máxima fidelidade na reconstrução dos valores de\acrfull{hu}, enquanto o\acrshort{ms-ssim} continua a garantir a preservação estrutural em múltiplas escalas.
+        Essa combinação de função de perda é adotada para a arquitetura \textit{single-head} e também para a cabeça de reconstrução da arquitetura \textit{dual-head}. Dessa forma, garante-se que a ablação entre as duas versões seja justa, isolando o impacto da supervisão adicional da máscara.
+        \item \textbf{Perda de Segmentação}: Baseado nos estudos de Isensee et al. \cite{isenseeNnUNetSelfadaptingFramework2018}, a cabeça de predição da máscara de artefatos, presente na versão \textit{dual-head}, é treinada utilizando uma combinação de\acrshort{dice} Loss e\acrfull{bce}, que se mostrou adequada para problemas de segmentação com desequilíbrio de classes \cite{taghanakiComboLossHandling2021}. A relação adotada para a combinação das funções de perda é a seguinte:
+        \[
+        \mathcal{L}_{Seg} = \mathcal{L}_{Dice} + \mathcal{L}_{BCE}
+        \]
+        \item \textbf{Perda Total}: A função de perda total para a versão \textit{dual-head} é composta pela ponderação das perdas de reconstrução e segmentação, e é definida como:
+        \[
+        \mathcal{L} = 1.0 \cdot \mathcal{L}_{Recon} + 0.01 \cdot \mathcal{L}_{Seg}
+        \]
+
     \end{itemize}
-    \item \textbf{\textit{Bottleneck} e \textit{Decoder}:} Mantêm arquitetura padrão sem atenção, focando na eficiência computacional.
-    \item \textbf{\textit{Skip Connections} Enriquecidas:} $\mathbf{e}_3$ e $\mathbf{e}_4$ contêm atenção de canais, fornecendo \textit{features} recalibradas ao \textit{decoder}.
-    \item \textbf{Parâmetro do\acrshort{se}:} \textit{Reduction ratio} $r=16$: Valor padrão do artigo original \cite{huSqueezeandExcitationNetworks2018}, oferecendo gargalo suficiente para generalização com \textit{overhead} de apenas ~1.4\% em parâmetros.
-\end{itemize}
-
-Esta estratégia de posicionamento do\acrshort{se} oferece vantagens específicas para remoção de artefatos metálicos:
-\begin{enumerate}
-    \item \textbf{Foco Semântico Adaptativo:} Recalibração em níveis profundos permite que o modelo aprenda dinamicamente quais canais detectam artefatos vs. anatomia normal.
-    \item \textbf{Contexto Global:} \textit{Global Average Pooling} no\acrshort{se} captura informações da imagem completa ao calcular pesos de atenção por canal.
-    \item \textbf{Preservação de Detalhes:} Níveis rasos (enc1, enc2) sem atenção mantêm \textit{features} geométricas finas intactas para reconstrução precisa.
-    \item \textbf{Eficiência Computacional:} Atenção apenas em níveis profundos onde a resolução espacial é menor (32×32, 64×64) minimiza custo computacional.
-    \item \textbf{Melhoria nas \textit{Skip Connections}:} \textit{Features} recalibradas do \textit{encoder} fornecem informação mais discriminativa ao \textit{decoder}.
 \end{enumerate}
 
-O módulo\acrshort{se} opera através de três operações sequenciais: \textit{Squeeze} (agregação espacial via\acrshort{gap}), \textit{Excitation} (rede totalmente conectada com gargalo para modelar interdependências entre canais), e \textit{Scale} (multiplicação \textit{element-wise} dos pesos de atenção). Esta arquitetura permite que a rede recalibre dinamicamente a importância relativa de cada canal baseando-se no conteúdo global da \textit{feature map}.
+\subsection{Estratégia de Treino}
 
-%______________________________________________________________________________________________________________________
-%______________________________________________________________________________________________________________________
+Enquanto os modelos não estavam em uma configuração estável e ainda havia necessidade de ajustes de hiperparâmetros, a fase de treino foi realizada por um número reduzido de épocas (10) para permitir uma avaliação rápida do impacto das mudanças realizadas. Isso permitiu  observar tendências de desempenho iniciais sem o custo computacional associado a treinos prolongados.
+Uma vez que esse projeto tem como objetivo comparar duas versões de arquitetura, é necessário garantir a reprodutibilidade e consistência dos experimentos conduzidos. Tendo isso em conta, o treino final de ambos os modelos foi realizado utilizando uma quantidade de épocas fixa, definida com base nos resultados observados durante a fase de treino piloto. Além disso, foi utilizado um scheduler de taxa de aprendizagem fixo para ambos os modelos, garantindo que as condições de treino fossem idênticas. Essa abordagem assegura que as diferenças de desempenho observadas entre os modelos possam ser atribuídas exclusivamente às diferenças arquiteturais, sem a influência de variações nos hiperparâmetros ou na duração do treino.
+O treino piloto foi conduzido para o modelo mais complexo, a versão \textit{dual-head}, para identificar quantas épocas eram necessárias para alcançar um desempenho estável e evitar sobreajuste.
+Após a definição da configuração final dos modelos e dos hiperparâmetros, a fase de treino foi estendida para um número maior de épocas para permitir uma convergência adequada dos modelos e uma avaliação mais robusta do desempenho final. Durante essa fase, as métricas de desempenho foram monitoradas para garantir que os modelos estavam aprendendo de forma eficaz e para identificar o ponto ideal de convergência.
 
-\section{Estudos de ablação}
-\subsection{Modelo \textit{Baseline +\acrfull{aspp}}}
-O módulo\acrshort{aspp} foi integrado a\acrshort{unet} através do \textit{bottleneck} seguindo uma abordagem de ramos paralelos, inspirada na arquitetura \textit{Inception} de Christian et al \cite{szegedy2015going}:
-\begin{equation}
-    \mathbf{z}_{\textit{bottleneck}} = \mathbf{z}_{\textit{baseline}} + \mathbf{z}_{\text{\acrshort{aspp}}}
-\end{equation}
-onde:
-\begin{itemize}
-    \item $\mathbf{z}_{\textit{baseline}}$ representa o \textit{bottleneck} padrão (2 blocos Conv-\acrshort{bn}-\acrshort{relu})
-    \item $\mathbf{z}_{\text{\acrshort{aspp}}}$ representa o módulo\acrshort{aspp} processando o mesmo tensor de entrada
-    \item A soma \textit{element-wise} combina ambas as representações
-\end{itemize}
-Esta arquitetura paralela permite que a rede aprenda tanto representações locais (via \textit{bottleneck baseline}) quanto multi-escala (via\acrshort{aspp}), oferecendo flexibilidade durante o treinamento. Ambos os ramos processam diretamente a saída do último \textit{encoder} ($\mathbf{e}_4$), seguindo o \textit{design} do DeepLabv3 onde o\acrshort{aspp} opera sobre \textit{features} originais sem transformações intermediárias.
+Foi implementado uma estratégia de \textit{early stopping} para interromper o treino caso a métrica monitorada (\acrshort{ssim}) não apresentasse melhoria significativa por um número pré-definido de épocas em um arquivo de configuração .yaml, evitando sobreajuste e economizando recursos computacionais.
 
-%______________________________________________________________________________________________________________________
-%______________________________________________________________________________________________________________________
-
-\section{Estudos de ablação}
-\subsection{Modelo \textit{Baseline +\acrfull{cbam}}}
-O módulo\acrshort{cbam} foi integrado à\acrshort{unet} nos níveis rasos do \textit{decoder} (dec1 e dec2), seguindo uma estratégia de refinamento espacial progressivo próximo à saída. Esta abordagem é motivada pela necessidade de atenção espacial precisa em alta resolução, onde detalhes finos e bordas de artefatos devem ser restaurados \cite{wooCBAMConvolutionalBlock2018}.
-A arquitetura completa segue o fluxo:
-\begin{equation}
-    \mathbf{d}_i' = \text{\acrshort{cbam}}(\mathbf{d}_i), \quad i \in \{1, 2\}
-\end{equation}
-onde $\mathbf{d}_i$ representa a saída do bloco de \textit{decoder} no nível $i$, e $\mathbf{d}_i'$ é a \textit{feature map} recalibrada após a aplicação do\acrshort{cbam}.
-O processamento no \textit{decoder} ocorre sequencialmente:
-\begin{align}
-    \mathbf{d}_4 &= \text{DecoderBlock}(\mathbf{z}_{\textit{bottleneck}}, \mathbf{e}_4) \\
-    \mathbf{d}_3 &= \text{DecoderBlock}(\mathbf{d}_4, \mathbf{e}_3) \\
-    \mathbf{d}_2 &= \text{DecoderBlock}(\mathbf{d}_3, \mathbf{e}_2) \\
-    \mathbf{d}_2' &= \text{\acrshort{cbam}}(\mathbf{d}_2, r=8, k=7) \\
-    \mathbf{d}_1 &= \text{DecoderBlock}(\mathbf{d}_2', \mathbf{e}_1) \\
-    \mathbf{d}_1' &= \text{\acrshort{cbam}}(\mathbf{d}_1, r=8, k=7)
-\end{align}
-onde $r$ é o \textit{reduction ratio} da atenção de canais e $k$ é o tamanho do \textit{kernel} da atenção espacial.
-A integração do\acrshort{cbam} à rede \acrshort{unet} tem as seguintes características:
-\begin{itemize}
-    \item \textbf{\textit{Encoder} e \textit{Bottleneck}:} Mantêm arquitetura\acrshort{unet} padrão sem mecanismos de atenção, preservando eficiência computacional nos níveis profundos.
-    \item \textbf{Níveis Profundos do \textit{Decoder} (dec4, dec3):} Operam sem atenção, focando na reconstrução inicial das \textit{features} multi-escala.
-    \item \textbf{Níveis Rasos do \textit{Decoder} (dec2, dec1):}\acrshort{cbam} é aplicado \textbf{após} cada bloco de \textit{decoder}, permitindo:
-    \begin{itemize}
-        \item Refinamento espacial em alta resolução (128×128 e 256×256).
-        \item Recalibração de canais e localização espacial simultâneas.
-        \item Fusão com \textit{skip connections} antes da aplicação de atenção.
-    \end{itemize}
-    \item \textbf{Parâmetros do\acrshort{cbam}:}
-    \begin{itemize}
-        \item \textit{Reduction ratio} $r=8$: Balanceia capacidade e eficiência na atenção de canais.
-        \item \textit{Kernel size} $k=7$: Captura contexto espacial local suficiente para transições de bordas.
-    \end{itemize}
-\end{itemize}
-
-Esta estratégia de posicionamento do\acrshort{cbam} oferece vantagens específicas para remoção de artefatos metálicos:
-\begin{enumerate}
-    \item \textbf{Localização Precisa:} Atenção espacial em alta resolução identifica exatamente onde aplicar correções.
-    \item \textbf{Refinamento Progressivo:} Aplicação em dois níveis (dec2 → dec1) permite ajustes graduais.
-    \item \textbf{Preservação de \textit{Features}:}\acrshort{cbam} atua após a fusão com \textit{skip connections}, enriquecendo \textit{features} já combinadas do \textit{encoder} e \textit{decoder}.
-    \item \textbf{Baixo Overhead:} Atenção apenas em níveis rasos mantém eficiência computacional ($\sim1.100$ parâmetros por bloco).
-\end{enumerate}
-
-O módulo\acrshort{cbam} opera através de atenção sequencial: primeiro aplica atenção de canais (usando \textit{average} e \textit{max pooling} paralelos), seguida de atenção espacial (convolução 7×7 sobre descritores agregados por canal). Esta composição dual permite que a rede aprenda simultaneamente \textbf{quais} \textit{features} são importantes (atenção de canais) e \textbf{onde} aplicá-las (atenção espacial).
-
-%______________________________________________________________________________________________________________________
-%______________________________________________________________________________________________________________________
-
-\section{Estudos de ablação}
-\section{Módulos Arquiteturais Avançados}
-
-\subsection{Squeeze-and-Excitation (SE)}
-O módulo Squeeze-and-Excitation (SE) foi proposto por Hu et al \cite{huSqueezeandExcitationNetworks2018} como um mecanismo de atenção de canais que melhora a capacidade de representação das redes convolucionais através da modelagem explícita das interdependências entre canais. Este módulo alcançou resultados \textit{state-of-the-art} na competição ILSVRC 2017, demonstrando sua eficácia em diversas tarefas de visão computacional.
-\begin{enumerate}
-\item{\textbf{Motivação e Fundamentos}} \\
-Em redes convolucionais tradicionais, cada filtro opera localmente em um campo receptivo espacial, mas as relações entre diferentes canais de \textit{features} são tratadas implicitamente através do empilhamento de camadas. O módulo\acrshort{se} introduz um mecanismo explícito de recalibração de canais, permitindo que a rede:
-
-\begin{itemize}
-    \item \textbf{Aprenda importância relativa dos canais:} Alguns canais podem conter informações mais relevantes para a tarefa em questão.
-    \item \textbf{Suprima canais menos informativos:} Reduz ruído e \textit{features} irrelevantes.
-    \item \textbf{Amplifique canais discriminativos:} Reforça \textit{features} importantes para reconstrução de artefatos metálicos.
-    \item \textbf{Adapte-se dinamicamente:} Pesos de atenção são calculados por instância de entrada.
-\end{itemize}
-O conceito fundamental é que \textit{features} convolucionais em diferentes canais possuem importância variável para a tarefa, e essa importância pode ser modelada através de um mecanismo de atenção global.
-
-\item{\textbf{Arquitetura do Bloco\acrshort{se}}} \\
-O bloco\acrshort{se} opera através de três operações sequenciais: \textit{Squeeze}, \textit{Excitation} e \textit{Scale}. Para um tensor de entrada $\mathbf{x} \in \mathbb{R}^{H \times W \times C}$, o bloco\acrshort{se} é definido como:
-
-\begin{equation}
-    \text{\acrshort{se}}(\mathbf{x}) = \mathbf{x} \odot \sigma(f_{\text{ex}}(f_{\text{sq}}(\mathbf{x})))
-\end{equation}
-onde $\odot$ denota multiplicação \textit{element-wise} e $\sigma$ é a função sigmoid.
-
-A operação de \textit{squeeze} agrega informações espaciais através de\Acrfull{gap}, produzindo um descritor de canal $\mathbf{z} \in \mathbb{R}^{C}$:
-
-\begin{equation}
-    z_c = f_{\text{sq}}(\mathbf{x}_c) = \frac{1}{H \times W} \sum_{i=1}^{H} \sum_{j=1}^{W} x_c(i, j)
-\end{equation}
-
-Esta operação resume a informação espacial de cada canal em um único valor escalar, capturando a distribuição global de respostas do canal.
-
-A operação de \textit{excitation} modela as interdependências entre canais através de uma rede neural totalmente conectada (\acrshort{fc} ) com gargalo:
-\begin{equation}
-    \mathbf{s} = f_{\text{ex}}(\mathbf{z}, \mathbf{W}) = \sigma(\mathbf{W}_2 \cdot \text{ReLU}(\mathbf{W}_1 \cdot \mathbf{z}))
-\end{equation}
-onde:
-\begin{itemize}
-    \item $\mathbf{W}_1 \in \mathbb{R}^{\frac{C}{r} \times C}$ é a matriz de redução (primeiro\acrshort{fc} layer)
-    \item $\mathbf{W}_2 \in \mathbb{R}^{C \times \frac{C}{r}}$ é a matriz de expansão (segundo\acrshort{fc} layer)
-    \item $r$ é o \textit{reduction ratio}, hiperparâmetro que controla a capacidade do gargalo
-    \item $\sigma$ é a função sigmoid, garantindo que $\mathbf{s} \in [0, 1]^C$
-\end{itemize}
-O gargalo (\textit{bottleneck}) com razão de redução $r$ reduz a complexidade computacional e o número de parâmetros, enquanto impõe generalização através da limitação de capacidade. O artigo original \citep{huSqueezeandExcitationNetworks2018} utiliza $r=16$ como valor padrão.
-
-A operação final (\textit{Scale}) aplica os pesos de atenção $\mathbf{s}$ aos canais originais:
-
-\begin{equation}
-    \tilde{\mathbf{x}}_c = s_c \cdot \mathbf{x}_c
-\end{equation}
-
-onde $\tilde{\mathbf{x}}_c$ é o canal recalibrado e $s_c \in [0, 1]$ é o peso de atenção para o canal $c$.
-
-\item{\textbf{Análise de Complexidade}} \\
-A complexidade computacional e de parâmetros do bloco\acrshort{se} é significativamente menor que alternativas de atenção espacial:
-
-\paragraph{Parâmetros do Bloco\acrshort{se}:}
-\begin{equation}
-    \#\text{params}_{\text{SE}} = \frac{2C^2}{r}
-\end{equation}
-
-Para $C=256$ canais e $r=16$:
-\begin{equation}
-    \#\text{params}_{\text{SE}} = \frac{2 \times 256^2}{16} = 8{,}192 \text{ parâmetros}
-\end{equation}
-
-\paragraph{Operações de Ponto Flutuante (\acrshort{flops} ):}Para uma \textit{feature map} de tamanho $H \times W \times C$:
-\begin{equation}
-    \text{flops}_{\text{SE}} = H \times W \times C + \frac{2C^2}{r} + H \times W \times C
-\end{equation}
-
-O primeiro termo corresponde ao\acrshort{gap}, o segundo às operações\acrshort{fc}, e o terceiro à multiplicação \textit{element-wise}. Note que o custo é dominado pelas operações espaciais ($H \times W \times C$), não pelas\acrshort{fc} layers.
-
-\paragraph{\textit{Overhead} Relativo:} Para um bloco convolucional típico com $C$ filtros de tamanho $3 \times 3$, que possui $9C^2$ parâmetros, o \textit{overhead} do bloco\acrshort{se} é:
-\begin{equation}
-    \text{Overhead} = \frac{2C^2/r}{9C^2} = \frac{2}{9r} \approx 1.4\% \text{ (para } r=16\text{)}
-\end{equation}
-
-\item{\textbf{Implementação e Configuração}}
-\begin{table}[htbp]
-\centering
-\caption{Configuração dos blocos\acrshort{se} implementados}
-\label{tab:se_config}
-\begin{tabular}{lc}
-\toprule
-\textbf{Parâmetro} & \textbf{Valor} \\
-\midrule
-Reduction ratio ($r$) & 16 \\
-Agregação espacial & Global Average Pooling \\
-Primeira FC layer & $C \rightarrow C/16$ \\
-Ativação intermediária & ReLU \\
-Segunda FC layer & $C/16 \rightarrow C$ \\
-Ativação final & Sigmoid \\
-Aplicação & enc3, enc4 (níveis profundos) \\
-Posicionamento & Após Conv-BN-ReLU, antes de MaxPool \\
-Skip connections & Usam features recalibradas \\
-\bottomrule
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\item{\textbf{Vantagens para Remoção de Artefatos Metálicos}} \\
-A aplicação de\acrshort{se} nos níveis profundos do \textit{encoder} oferece benefícios específicos para a tarefa de remoção de artefatos metálicos em\acrshort{ct}:
-
-\begin{enumerate}
-    \item \textbf{Foco Adaptativo:} O modelo aprende a priorizar canais que detectam artefatos metálicos vs. anatomia normal.
-    \item \textbf{Supressão de Ruído:} Canais que respondem a ruído são atenuados dinamicamente.
-    \item \textbf{Context-Aware:} A agregação global (\acrshort{gap}) permite que a rede considere o contexto completo da imagem ao recalibrar canais.
-    \item \textbf{Baixo Custo:} \textit{Overhead} de $\sim$1.4\% em parâmetros garante eficiência computacional.
-    \item \textbf{Skip Connections Melhores:} \textit{Features} recalibradas no \textit{encoder} fornecem informação mais discriminativa ao \textit{decoder}.
-\end{enumerate}
-
-Esta implementação segue rigorosamente o design original de Hu et al \cite{huSqueezeandExcitationNetworks2018}, adaptado para arquiteturas\acrshort{unet} seguindo as recomendações de Roy et al \cite{royRecalibratingFullyConvolutional2018} para segmentação médica.
-\end{enumerate}
-
-%______________________________________________________________________________________________________________________
-%______________________________________________________________________________________________________________________
-
-\subsection{Atrous Spatial Pyramid Pooling (ASPP)}
-O módulo\acrshort{aspp} foi introduzido por Chen et al \cite{chenRethinkingAtrousConvolution2017} no contexto da segmentação semântica com DeepLabv3, e posteriormente refinado pelos mesmo autores em \cite{chenEncoderDecoderAtrousSeparable2018} no DeepLabv3+. Este módulo é projetado para capturar informações contextuais em múltiplas escalas através de convoluções atrous (dilatadas) com diferentes taxas de dilatação, permitindo que a rede amplie seu campo receptivo sem perda de resolução espacial ou aumento de parâmetros. Seguindo a definição de Chen et al \cite{chenRethinkingAtrousConvolution2017}, a operação de convolução \textit{atrous} em 2D é dada por:
-\begin{equation}
-    y[\mathbf{i}] = \sum_{\mathbf{k}} x[\mathbf{i} + r \cdot \mathbf{k}] \, w[\mathbf{k}]
-\end{equation}
-onde $\mathbf{i}$ indexa a posição na \textit{feature map} de saída, $\mathbf{k}$ percorre os elementos do \textit{kernel} $w$, e $r$ é a taxa de dilatação (\textit{dilation rate}). Para $r=1$, a operação reduz-se à convolução padrão. Valores maiores de $r$ inserem espaços entre os elementos do \textit{kernel}, expandindo o campo receptivo sem adicionar parâmetros.
-
-\begin{enumerate}
-\item \textbf{Motivação e Fundamentos} \\
-
-Em tarefas de reconstrução de imagens médicas, a capacidade de capturar características em múltiplas escalas é crucial para:
-\begin{itemize}
-    \item Detectar artefatos metálicos de tamanhos variados;
-    \item Preservar estruturas anatômicas finas enquanto processa contexto global;
-    \item Integrar informações locais e globais sem \textit{downsampling} adicional.
-\end{itemize}
-
-\item \textbf{Arquitetura Implementada} \\
-
-Nossa implementação do\acrshort{aspp} segue a arquitetura DeepLabv3+ \cite{chenEncoderDecoderAtrousSeparable2018}, consistindo em 5 ramos paralelos que processam o mesmo tensor de entrada:
-
-\begin{enumerate}
-    \item \textbf{Convolução 1×1:} Captura informações locais sem dilatação ($r=1$)
-    \item \textbf{Convolução Separável 3×3 ($r=3$):} Campo receptivo médio
-    \item \textbf{Convolução Separável 3×3 ($r=6$):} Campo receptivo intermediário
-    \item \textbf{Convolução Separável 3×3 ($r=9$):} Campo receptivo amplo
-    \item \textbf{\acrfull{gap}:} Contexto global da imagem completa
-\end{enumerate}
-
-Cada ramo processa a entrada de forma independente, seguindo o padrão Conv $\rightarrow$ \acrshort{bn} $\rightarrow$ \acrshort{relu}. Para garantir capacidade suficiente, cada ramo produz $F_b = \lceil F / 5 \rceil$ filtros, onde $F$ é o número de filtros desejado na saída final. Após concatenação, o tensor intermediário possui $5 \times F_b \geq F$ filtros.
-
-\item \textbf{Detalhes de Implementação} \\
-O bloco\acrshort{aspp} é definido matematicamente como:
-\begin{equation}
-    \text{\acrshort{aspp}}(\mathbf{x}) = \textit{Dropout}_{0.5}\left(\text{Conv}_{1\times1}^{F}\left(\text{Concat}\left[\mathbf{b}_1, \mathbf{b}_2, \mathbf{b}_3, \mathbf{b}_4, \mathbf{b}_5\right]\right)\right)
-\end{equation}
-onde cada ramo produz $F_b = \lceil F / 5 \rceil$ filtros:
-\begin{align}
-    \mathbf{b}_1 &= \text{Conv-\acrshort{bn}-\acrshort{relu}}(\mathbf{x}, F_b, 1\times1) \\
-    \mathbf{b}_2 &= \text{SepConv-\acrshort{bn}-\acrshort{relu}}(\mathbf{x}, F_b, 3\times3, r=3) \\
-    \mathbf{b}_3 &= \text{SepConv-\acrshort{bn}-\acrshort{relu}}(\mathbf{x}, F_b, 3\times3, r=6) \\
-    \mathbf{b}_4 &= \text{SepConv-\acrshort{bn}-\acrshort{relu}}(\mathbf{x}, F_b, 3\times3, r=9) \\
-    \mathbf{b}_5 &= \textit{Resize}(\text{Conv-\acrshort{bn}-\acrshort{relu}}(\text{\acrshort{gap}}(\mathbf{x}), F_b, 1\times1), H \times W)
-\end{align}
-O ramo $\mathbf{b}_5$ captura contexto global:\acrshort{gap} agrega espacialmente $\mathbf{x}$ para $\mathbb{R}^{C}$, uma convolução $1\times1$ projeta para $F_b$ canais, e interpolação bilinear restaura as dimensões espaciais originais $H \times W$.
-A concatenação dos 5 ramos resulta em $5 \times F_b$ canais. A convolução de projeção final reduz para exatamente $F$ filtros, seguida de \textit{dropout} com taxa de 0.5 para regularização, conforme especificado em Chen et al \cite{chenEncoderDecoderAtrousSeparable2018}.
-
-\item \textbf{Vantagens da Implementação} \\
-As principais vantagens desta implementação incluem:
-\begin{enumerate}
-    \item \textbf{Eficiência Computacional:} Uso de convoluções separáveis (\texttt{SeparableConv2D}) reduz o custo computacional em comparação com convoluções padrão;
-    \item \textbf{Multi-escala:} 5 ramos com taxas de dilatação $\{1, 3, 6, 9, \infty\}$ capturam \textit{features} de diferentes escalas espaciais;
-    \item \textbf{Contexto Global:}\acrshort{gap} fornece informação da imagem completa, essencial para entender o contexto anatômico global;
-    \item \textbf{Arquitetura Paralela:} Processamento paralelo permite aprendizado conjunto de \textit{features} locais e multi-escala;
-    \item \textbf{Regularização:} \textit{Dropout} de 0.5 previne \textit{overfitting} no módulo de maior capacidade;
-\end{enumerate}
-
-\item \textbf{Parâmetros e Configuração} \\
-\begin{table}[htbp]
-\centering
-\caption{Configuração do módulo\acrshort{aspp} implementado}
-\label{tab:aspp_config}
-\begin{tabular}{lc}
-\toprule
-\textbf{Parâmetro} & \textbf{Valor} \\
-\midrule
-Número de ramos & 5 \\
-Taxas de dilatação & $\{1, 3, 6, 9\}$ +\acrshort{gap} \\
-\textit{Kernel sizes} & $\{1\times1, 3\times3, 3\times3, 3\times3\}$ +\acrshort{gap} \\
-Tipo de convolução (3×3) & Separável \\
-Tipo de convolução (1×1) & Padrão \\
-Normalização & \acrshort{bn} \\
-Ativação & \acrshort{relu} \\
-\textit{Dropout} & 0.5 \\
-\acrshort{gap} \textit{resize method} & \textit{Bilinear interpolation} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Esta implementação segue rigorosamente as especificações do DeepLabv3+ \citep{chenEncoderDecoderAtrousSeparable2018}, adaptada para o contexto de reconstrução de imagens\acrshort{ct} com artefatos metálicos.
-\end{enumerate}
-%______________________________________________________________________________________________________________________
-%______________________________________________________________________________________________________________________
-\subsection{Convolutional Block Attention Module (CBAM)}
-
-O módulo\acrshort{cbam} foi proposto por Woo et al \cite{wooCBAMConvolutionalBlock2018} como um mecanismo de atenção leve e efetivo que combina atenção de canais e atenção espacial de forma sequencial. Este módulo representa uma evolução natural dos blocos\acrshort{se} \cite{huSqueezeandExcitationNetworks2018}, adicionando refinamento espacial explícito para melhorar a capacidade de representação das redes convolucionais.
-
-\begin{enumerate}
-    
-\item{\textbf{Motivação e Fundamentos}}
-
-Enquanto o bloco\acrshort{se} foca exclusivamente na recalibração de canais através de agregação espacial global, o\acrshort{cbam} reconhece que diferentes regiões espaciais de um \textit{feature map} possuem importância variável. Em tarefas de reconstrução de imagens médicas, especialmente na remoção de artefatos metálicos em\acrshort{ct}, esta capacidade é crucial para:
-
-\begin{itemize}
-    \item \textbf{Localização Espacial de Artefatos:} Identificar precisamente onde os artefatos metálicos estão localizados na imagem.
-    \item \textbf{Refinamento de Bordas:} Preservar transições precisas entre regiões com e sem artefatos.
-    \item \textbf{Atenção Dual:} Combinar importância de canais ("o quê") com importância espacial ("onde").
-    \item \textbf{Supressão Seletiva:} Atenuar artefatos em locais específicos sem afetar regiões anatômicas saudáveis.
-\end{itemize}
-
-O\acrshort{cbam} é particularmente efetivo em níveis rasos do \textit{decoder} (próximos à saída), onde a resolução espacial é alta e o refinamento de detalhes finos é essencial.
-
-\item{\textbf{Arquitetura do\acrshort{cbam}- Atenção Sequencial}}
-
-O\acrshort{cbam} opera através de dois módulos sequenciais: \textit{Channel Attention} seguido de \textit{Spatial Attention}. Para um tensor de entrada $\mathbf{F} \in \mathbb{R}^{H \times W \times C}$, o\acrshort{cbam} é definido como:
-
-\begin{equation}
-    \text{CBAM}(\mathbf{F}) = \mathbf{F}'' = M_s(\mathbf{F}') \otimes \mathbf{F}'
-\end{equation}
-
-onde:
-\begin{align}
-    \mathbf{F}' &= M_c(\mathbf{F}) \otimes \mathbf{F} \\
-    \mathbf{F}'' &= M_s(\mathbf{F}') \otimes \mathbf{F}'
-\end{align}
-
-e $\otimes$ denota multiplicação \textit{element-wise} (\textit{broadcasting} quando necessário), $M_c \in \mathbb{R}^{1 \times 1 \times C}$ é o mapa de atenção de canais, e $M_s \in \mathbb{R}^{H \times W \times 1}$ é o mapa de atenção espacial.
-
-\item{\textbf{Módulo de Atenção de Canais}}
-
-O módulo de atenção de canais do\acrshort{cbam} estende o conceito do\acrshort{senet} utilizando tanto \textit{average pooling} quanto \textit{max pooling} para agregar informações espaciais, capturando características complementares:
-
-\begin{equation}
-    M_c(\mathbf{F}) = \sigma(\text{MLP}(\text{AvgPool}(\mathbf{F})) + \text{MLP}(\text{MaxPool}(\mathbf{F})))
-\end{equation}
-
-onde $\sigma$ é a função sigmoid e \acrfull{mlp} denota uma rede totalmente conectada compartilhada com gargalo.
-
-\paragraph{Agregação Dual (Average + Max):}
-
-\begin{align}
-    \mathbf{f}_{\text{avg}}^c &= \frac{1}{H \times W} \sum_{i=1}^{H} \sum_{j=1}^{W} F^c(i, j) \\
-    \mathbf{f}_{\text{max}}^c &= \max_{i \in [1,H], j \in [1,W]} F^c(i, j)
-\end{align}
-
-O \textit{average pooling} captura a magnitude média de ativação, enquanto o \textit{max pooling} captura a resposta mais forte, oferecendo representações complementares da distribuição de \textit{features} em cada canal.
-
-\paragraph{Rede\acrshort{mlp} Compartilhada:}
-
-O artigo original \citep{wooCBAMConvolutionalBlock2018} utiliza uma\acrshort{mlp} de duas camadas com \textit{reduction ratio} $r=16$ (posteriormente refinado para $r=8$ em implementações práticas):
-
-\begin{equation}
-    \text{MLP}(\mathbf{f}) = \mathbf{W}_1(\text{ReLU}(\mathbf{W}_0(\mathbf{f})))
-\end{equation}
-
-onde $\mathbf{W}_0 \in \mathbb{R}^{C/r \times C}$ e $\mathbf{W}_1 \in \mathbb{R}^{C \times C/r}$.
-
-O mapa final de atenção de canais é dado por:
-
-\begin{equation}
-    M_c = \sigma(\mathbf{W}_1(\text{ReLU}(\mathbf{W}_0(\mathbf{f}_{\text{avg}}))) + \mathbf{W}_1(\text{ReLU}(\mathbf{W}_0(\mathbf{f}_{\text{max}}))))
-\end{equation}
-
-Note que os mesmos pesos $\mathbf{W}_0$ e $\mathbf{W}_1$ são compartilhados entre os dois ramos (\textit{average e max}), reduzindo o número de parâmetros.
-
-\item{\textbf{Módulo de Atenção Espacial}}
-
-Após a recalibração de canais, o módulo de atenção espacial refina a localização das \textit{features} importantes:
-
-\begin{equation}
-    M_s(\mathbf{F}') = \sigma(f^{7\times7}([\text{AvgPool}(\mathbf{F}')+ \text{MaxPool}(\mathbf{F}')]))
-\end{equation}
-
-onde $[ + ]$ denota concatenação ao longo do eixo de canais e $f^{7\times7}$ representa uma convolução com \textit{kernel} $7 \times 7$.
-
-\paragraph{\textit{Pooling} ao Longo de Canais:}
-
-Para capturar informações espaciais, o\acrshort{cbam} agrega \textit{features} ao longo da dimensão de canais:
-\begin{align}
-    \mathbf{F}_{\text{avg}}^s(i,j) &= \frac{1}{C} \sum_{c=1}^{C} F'^c(i, j) \\
-    \mathbf{F}_{\text{max}}^s(i,j) &= \max_{c \in [1,C]} F'^c(i, j)
-\end{align}
-
-resultando em dois descritores espaciais $\mathbf{F}_{\text{avg}}^s, \mathbf{F}_{\text{max}}^s \in \mathbb{R}^{H \times W \times 1}$.
-
-\paragraph{Convolução Espacial:}
-
-Os dois descritores são concatenados e processados por uma convolução padrão:
-\begin{equation}
-    M_s = \sigma(\mathbf{W}^{7\times7} * [\mathbf{F}_{\text{avg}}^s + \mathbf{F}_{\text{max}}^s])
-\end{equation}
-
-onde $\mathbf{W}^{7\times7} \in \mathbb{R}^{7 \times 7 \times 2 \times 1}$ é o \textit{kernel} convolucional. O \textit{kernel} $7 \times 7$ foi determinado empiricamente por Woo et al \cite{wooCBAMConvolutionalBlock2018} como oferecendo o melhor compromisso entre campo receptivo e eficiência computacional.
-
-\item{\textbf{Análise de Complexidade}}
-\paragraph{Canal \textit{Attention} - Parâmetros:}
-\begin{equation}
-    \#\text{params}_{\text{CA}} = \frac{2C^2}{r}
-\end{equation}
-
-Para $C=64$ canais (dec1) e $r=8$:
-\begin{equation}
-    \#\text{params}_{\text{CA}} = \frac{2 \times 64^2}{8} = 1{,}024 \text{ parâmetros}
-\end{equation}
-
-\paragraph{Spatial \textit{Attention} - Parâmetros:}
-Para \textit{kernel} $7 \times 7$ processando 2 canais (\textit{avg} + \textit{max}):
-\begin{equation}
-    \#\text{params}_{\text{SA}} = 7 \times 7 \times 2 \times 1 = 98 \text{ parâmetros}
-\end{equation}
-
-\paragraph{Total CBAM:}
-\begin{equation}
-    \#\text{params}_{\text{CBAM}} = \frac{2C^2}{r} + 2k^2
-\end{equation}
-
-Para $C=64$, $r=8$, $k=7$: $1{,}024 + 98 = 1{,}122$ parâmetros (negligível comparado a uma camada convolucional $3\times3$ que teria $64 \times 64 \times 9 = 36{,}864$ parâmetros).
-\paragraph{\acrshort{flops} (operações):}
-\begin{align}
-    \text{FLOPs}_{\text{CA}} &\approx 2HWC + \frac{2C^2}{r} \\
-    \text{FLOPs}_{\text{SA}} &\approx 2HWC + HW \times 2k^2 \\
-    \text{FLOPs}_{\text{CBAM}} &\approx 4HWC + \frac{2C^2}{r} + 2HWk^2
-\end{align}
-Para $H=W=256$, $C=64$, $r=8$, $k=7$:
-\begin{equation}
-    \text{FLOPs}_{\text{CBAM}} \approx 16.8\text{M} + 1\text{K} + 6.4\text{M} \approx 23.2\text{M FLOPs}
-\end{equation}
-
-\item{\textbf{Implementação e Configuração}}
-\begin{table}[htbp]
-\centering
-\caption{Configuração dos blocos\acrshort{cbam} implementados}
-\label{tab:cbam_config}
-\begin{tabular}{lcc}
-\toprule
-\textbf{Parâmetro} & \textbf{Channel Attention} & \textbf{Spatial Attention} \\
-\midrule
-Reduction ratio ($r$) & 8 & --- \\
-Kernel size ($k$) & --- & $7 \times 7$ \\
-\midrule
-Pooling type & Avg + Max (parallel) & Avg + Max (concat) \\
-Pooling dimension & Espacial ($H \times W$) & Canal ($C$) \\
-MLP layers & $C \rightarrow C/8 \rightarrow C$ & --- \\
-Conv layers & --- & $2 \rightarrow 1$ (7×7) \\
-\midrule
-Ativação intermediária & ReLU & --- \\
-Ativação final & Sigmoid & Sigmoid \\
-Aplicação & dec1, dec2 (rasos) & dec1, dec2 (rasos) \\
-Posicionamento & Pós-decoder, sequencial & Pós-channel attention \\
-\midrule
-Parâmetros (C=64) & 1,024 & 98 \\
-Total CBAM & \multicolumn{2}{c}{1,122} \\
-\bottomrule
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\item{\textbf{Comparação:\acrshort{cbam} vs.\acrshort{senet}}}
-\begin{table}[htbp]
-\centering
-\caption{Comparação entre\acrshort{cbam} e\acrshort{senet}}
-\label{tab:cbam_vs_se}
-\begin{tabular}{lcc}
-\toprule
-\textbf{Característica} & \textbf{\acrshort{senet}} & \textbf{\acrshort{cbam}} \\
-\midrule
-Atenção de canais & \checkmark & \checkmark \\
-Atenção espacial & $\times$ & \checkmark \\
-Pooling types & Avg only & Avg + Max \\
-Parâmetros (C=64, r=8) & 1,024 & 1,122 \\
-Foco & Semântico ("o quê") & Semântico + Espacial ("onde") \\
-Melhor aplicação & \textit{Encoder} profundo & \textit{Decoder} raso \\
-Campo de atuação & Global & Global + Local \\
-\bottomrule
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\item{\textbf{Vantagens para Remoção de Artefatos Metálicos}}
-
-A aplicação de\acrshort{cbam} nos níveis rasos do \textit{decoder} oferece benefícios específicos:
-
-\begin{enumerate}
-    \item \textbf{Localização Precisa:} Atenção espacial identifica exatamente onde aplicar correções.
-    \item \textbf{Refinamento de Bordas:} \textit{Kernel} $7 \times 7$ captura contexto local suficiente para transições suaves.
-    \item \textbf{Atenção Dual:} A atenção de canal seleciona \textit{features} relevantes; a atenção espacial localiza onde aplicá-las.
-    \item \textbf{Supressão Adaptativa:} Artefatos são atenuados espacialmente sem afetar anatomia distante.
-    \item \textbf{Preservação de Detalhes:} Alta resolução em dec1/dec2 permite refinamento fino de texturas e estruturas.
-    \item \textbf{Baixo Overhead:} $\sim$1,100 parâmetros por bloco ($<3\%$ dos parâmetros de uma camada convolucional típica).
-\end{enumerate}
-
-Esta implementação segue fielmente o design original de Woo et al. \cite{wooCBAMConvolutionalBlock2018}, adaptado para a arquitetura\acrshort{unet} com posicionamento estratégico nos níveis rasos do \textit{decoder} para maximizar o refinamento espacial na reconstrução de imagens\acrshort{ct}.
-\end{enumerate}
-
-%______________________________________________________________________________________________________________________
-%______________________________________________________________________________________________________________________
-
-\section{Estudos de ablação}
-Foram avaliadas diferentes arquiteturas, seguindo uma estratégia de desenvolvimento incremental, onde cada módulo é adicionado de forma isolada para permitir avaliação objetiva do impacto de cada componente e também foi implementada uma ablação dividida por etapas.
-
-\subsection{Ablação -- Fase 1}
-A primeira etapa consistiu em determinar a melhor configuração entre as versões \textit{single-head} e \textit{dual-head} e avaliar o impacto da supervisão adicional com máscara na qualidade da reconstrução e na capacidade de redução de artefatos. A configuração com melhores resultados será selecionada como modelo \textit{baseline} para as etapas subsequentes de avaliação dos módulos arquiteturais avançados. As configurações avaliadas nessa primeira etapa foram:
-
-\begin{itemize}
-    \item modelo\acrshort{unet} com saída \textit{single-head};
-    \item modelo\acrshort{unet} com saída \textit{dual-head}.
-\end{itemize}
-
-\subsection{Ablação -- Fase 2}
-A segunda etapa consistiu em avaliar o impacto de cada módulo arquitetural avançado de forma isolada, comparando cada configuração com o modelo \textit{baseline} vencedor da etapa anterior. As configurações avaliadas foram:
-\begin{itemize}
-    \item modelo \textit{baseline} + \textit{\acrshort{aspp}};
-    \item modelo \textit{baseline} + \textit{\acrshort{se}};
-    \item modelo \textit{baseline} + \textit{\acrshort{cbam}};
-    \item modelo \textit{baseline} + \textit{\acrshort{aspp}} + \textit{\acrshort{se}} + \textit{\acrshort{cbam}} (denominado \textit{Enhanced}).
-\end{itemize}
-
-As fases 1 e 2 da ablação são realizadas usando uma estratégia de treino curto. A configuração que apresentou melhor desempenho na segunda etapa foi selecionada como modelo final para as fases subsequentes de treino intermediário e prolongado, onde serão realizados ajustes finos de hiperparâmetros e validação externa em dados independentes. Durante toda a ablação, os modelos receberam os mesmos protocolos de treino, incluindo conjunto de dados (\textit{train, val e test}), otimizador, scheduler, taxa de aprendizagem, número de épocas e critérios de convergência, \textit{Batch size}, funções de perda e métricas de avaliação, garantindo comparabilidade objetiva entre as arquiteturas.
-
-\section{Estratégia de Treino}
-
-\subsection{Treinos com Duração Curta}
-Nessa fase os modelos foram treinados por um número reduzido de épocas para realização da comparação arquitetural citada seção anterior. Isso permitiu  observar tendências de desempenho iniciais sem o custo computacional associado a treinos prolongados.
-
-\begin{itemize}
-    \item \textbf{Otimização, \textit{Scheduler} e Taxa de Aprendizagem}: \\ 
-    Nessa etapa, foram utilizados otimizador \textit{ADAM} e scheduler \textit{Reduce on Plateau}. A taxa de aprendizagem foi ajustada proporcionalmente ao progresso inicial observado nas primeiras épocas.
-    \item \textbf{Protocolo de Convergência}: \\
-    Para garantir comparabilidade justa entre arquiteturas com diferentes capacidades e velocidades de convergência, foi definido um protocolo de convergência uniforme. O critério principal exige variação de\acrshort{ms-ssim} inferior a 0.001 entre as duas últimas épocas de validação por 3 épocas consecutivas, associada a um gap treino -- validação inferior a 0.003. Esse protocolo é projetado para identificar quando o modelo atinge um platô de desempenho, evitando comparações baseadas em épocas fixas que podem favorecer arquiteturas com convergência mais rápida ou mais lenta.
-\end{itemize}
-
-\subsection{Treino com Duração Intermediária}
-Após a fase de treino curto, uma arquitetura vencedora foi determinada para a etapa de treino intermediário. Onde será testado o impacto de um novo conjunto de otimizador e \textit{scheduler}. O otimizador \textit{AdamW} e o \textit{scheduler} \textit{Cosine Annealing} serão testados nesta fase, dada a sua capacidade de adaptação dinâmica da taxa de aprendizagem, o que pode potencialmente melhorar a convergência e o desempenho final do modelo.
-Nessa fase foram avaliados:
-\begin{itemize}
-    \item Modelo vencedor da fase de treino curto (Adam + \textit{ReduceOnPlateau});
-    \item Modelo vencedor da fase de treino curto  (AdamW + \textit{Cosine Annealing})
-\end{itemize}
-A configuração que apresentar melhor desempenho nessa fase de treino intermediário será selecionada para a fase de treino prolongado, onde serão realizados ajustes finos de hiperparâmetros e validação externa em dados independentes.
-
-\subsection{Treino com Duração Prolongada}
-Essa fase tem como objetivo otimizar ao máximo o desempenho do modelo selecionado na fase de treino intermediário, realizando ajustes finos de hiperparâmetros, como taxa de aprendizagem, peso das funções de perda e regularização. Nesse modelo final, será medido o desempenho geral na redução dos artefatos metálicos com as ferramentas propostas e apresentada as estatísticas correspondentes. Além disso, será realizada validação externa em dados independentes para avaliar a capacidade de generalização do modelo em cenários realistas de \textit{domain shift}. 
-
-\section{Funções de Perda}
-
-\subsection{Perda de Reconstrução}
-Apesar de L2 ser amplamente utilizada para restauração de imagem, Zhao et al. \cite{zhaoLossFunctionsImage2017} destacam os melhores resultados de L1 ao estudar diferentes funções de perda para essa tarefa. Os autores também estudaram funções de perda baseadas em\acrshort{ssim} e\acrshort{ms-ssim}, sendo que a primeira alcança resultados igual ou levemente inferior a L1, equanto a segunda apresenta desempenho melhor que\acrshort{ssim} mas ainda não supera L1 de forma clara. O trabalho também testa um mix de L1 e\acrshort{ms-ssim}, e obteve-se resultados superiores em todas as métricas avaliadas pelos autores. Essa combinação é justificada pela complementaridade entre as duas funções, onde L1 favorece fidelidade local e\acrshort{ms-ssim} promove preservação estrutural, resultando em uma correção mais equilibrada dos artefatos. Devido a esses resultados, a função de perda de reconstrução adotada neste trabalho é a soma ponderada de L1 e\acrshort{ms-ssim}. Os pesos utilizados foram 0.7 para L1 e 0.3 para\acrshort{ms-ssim}, baseando-se na recomendação de Zhao et al. \cite{zhaoLossFunctionsImage2017}. A relação adotada para a combinação das funções de perda é a seguinte:
-
-\[
-\mathcal{L}_{Recon} = 0.7 \cdot \mathcal{L}_{L1} + 0.3 \cdot \mathcal{L}_{MS-SSIM}
-\]
-
-\cite{zhaoLossFunctionsImage2017} utiliza filtragem Gaussiana em L1 para reduzir o impacto de ruído e favorecer a correção de artefatos, mas essa abordagem pode não ser ideal para tomografias computadorizadas, onde a precisão radiométrica é crucial. Portanto, neste trabalho, optou-se por utilizar a perda L1 direta sem filtragem gaussiana, garantindo máxima fidelidade na reconstrução dos valores de\acrfull{hu}, enquanto o\acrshort{ms-ssim} continua a garantir a preservação estrutural em múltiplas escalas.
-Essa combinação de função de perda é adotada para a arquitetura \textit{single-head} e também para a cabeça de reconstrução da arquitetura \textit{dual-head}. Dessa forma, garante-se que a ablação entre as duas versões seja justa, isolando o impacto da supervisão adicional da máscara.
-
-\subsection{Perda de Segmentação -- Versão \textit{Dual-Head}}
-Baseado nos estudos de Isensee et al. \cite{isenseeNnUNetSelfadaptingFramework2018}, a cabeça de predição da máscara de artefatos, presente na versão \textit{dual-head}, é treinada utilizando uma combinação de\acrshort{dice} Loss e\acrfull{bce}, que se mostrou adequada para problemas de segmentação com desequilíbrio de classes \cite{taghanakiComboLossHandling2021}. A relação adotada para a combinação das funções de perda é a seguinte:
-\[
-\mathcal{L}_{Seg} = \mathcal{L}_{Dice} + \mathcal{L}_{BCE}
-\]
-
-\subsection{Perda Total -- Versão \textit{Dual-Head}}
-
-A função de perda total para a versão \textit{dual-head} é composta pela ponderação das perdas de reconstrução e segmentação, e é definida como:
-\[
-\mathcal{L} = 1.0 \cdot \mathcal{L}_{Recon} + 0.01 \cdot \mathcal{L}_{Seg}
-\]
-
-\section{Métricas}
 \begin{enumerate}
     
 \item \textbf{Monitoramento do treinamento} \\
@@ -782,6 +331,11 @@ Para a análise baseada em ROI, empregamos:
 Wang et al. \cite{wangMultiscaleStructuralSimilarity2003a} descrevem\acrshort{ms-ssim} como um método de avaliação de qualidade de imagem através de cinco escalas com \textit{downsampling} iterativo por fator 2, resultando em uma redução de resolução de até 1/16 do tamanho original. O método foi validado em bases de dados de imagens completas, sem considerar aplicação em regiões fragmentadas ou espacialmente seletivas. Devido ao \textit{downsampling} progressivo, a aplicação\acrshort{ms-ssim} em\acrshort{roi}s  pequenas ou fragmentadas (como a zona distante em nossa análise) resultaria na mistura de pixels de\acrshort{roi} e não-ROI  nas escalas reduzidas, comprometendo a interpretabilidade dos resultados. Por isso, utilizou-se\acrshort{ssim} regular em vez de\acrshort{ms-ssim} nesse caso.
 De fato, as literaturas recentes tem demonstrado performance estatísticamente muito melhor em fidelidade para\acrshort{ms-ssim} e\acrshort{ssim} comparado a outras métricas de avaliação de qualidade de imagem\cite{linzhangFSIMFeatureSimilarity2011}. Especialmente para imagens médicas, onde a fidelidade das imagens preditas é crucial, a escolha de métricas que refletem a percepção humana de qualidade e preservação estrutural é fundamental. Portanto,\acrshort{ms-ssim} e\acrshort{ssim} foram selecionados como as principais métricas para avaliação quantitativa da qualidade das imagens reconstruídas, garantindo uma análise robusta e relevante para o contexto clínico. E o\acrshort{psnr} foi utilizado como métrica complementar para avaliar a fidelidade radiométrica das reconstruções, especialmente importante em tomografias computadorizadas onde a precisão dos valores de\acrshort{hu} é essencial para diagnóstico e planejamento clínico.
 \end{enumerate}
+
+% Falar sobre Learning Rate, Model Checkpointing, Early Stopping, etc.
+    
+\section{Métricas}
+
 \section{Protocolos de Validação}
 
 \subsection{Validação Interna}

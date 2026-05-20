@@ -299,6 +299,23 @@
   langid = {english}
 }
 
+@misc{isenseeNnUNetSelfadaptingFramework2018a,
+  title = {{{nnU-Net}}: {{Self-adapting Framework}} for {{U-Net-Based Medical Image Segmentation}}},
+  shorttitle = {{{nnU-Net}}},
+  author = {Isensee, Fabian and Petersen, Jens and Klein, Andre and Zimmerer, David and Jaeger, Paul F. and Kohl, Simon and Wasserthal, Jakob and Koehler, Gregor and Norajitra, Tobias and Wirkert, Sebastian and {Maier-Hein}, Klaus H.},
+  year = 2018,
+  month = sep,
+  number = {arXiv:1809.10486},
+  eprint = {1809.10486},
+  primaryclass = {cs.CV},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.1809.10486},
+  urldate = {2026-05-20},
+  abstract = {The U-Net was presented in 2015. With its straight-forward and successful architecture it quickly evolved to a commonly used benchmark in medical image segmentation. The adaptation of the U-Net to novel problems, however, comprises several degrees of freedom regarding the exact architecture, preprocessing, training and inference. These choices are not independent of each other and substantially impact the overall performance. The present paper introduces the nnU-Net ('no-new-Net'), which refers to a robust and self-adapting framework on the basis of 2D and 3D vanilla U-Nets. We argue the strong case for taking away superfluous bells and whistles of many proposed network designs and instead focus on the remaining aspects that make out the performance and generalizability of a method. We evaluate the nnU-Net in the context of the Medical Segmentation Decathlon challenge, which measures segmentation performance in ten disciplines comprising distinct entities, image modalities, image geometries and dataset sizes, with no manual adjustments between datasets allowed. At the time of manuscript submission, nnU-Net achieves the highest mean dice scores across all classes and seven phase 1 tasks (except class 1 in BrainTumour) in the online leaderboard of the challenge.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition}
+}
+
 @article{kellyKeyChallengesDelivering2019,
   title = {Key Challenges for Delivering Clinical Impact with Artificial Intelligence},
   author = {Kelly, Christopher J. and Karthikesalingam, Alan and Suleyman, Mustafa and Corrado, Greg and King, Dominic},
@@ -410,6 +427,22 @@
   copyright = {2024 The Author(s)},
   langid = {english},
   keywords = {Image processing,Network models}
+}
+
+@misc{loshchilovDecoupledWeightDecay2019,
+  title = {Decoupled {{Weight Decay Regularization}}},
+  author = {Loshchilov, Ilya and Hutter, Frank},
+  year = 2019,
+  month = jan,
+  number = {arXiv:1711.05101},
+  eprint = {1711.05101},
+  primaryclass = {cs.LG},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.1711.05101},
+  urldate = {2026-05-20},
+  abstract = {L\$\_2\$ regularization and weight decay regularization are equivalent for standard stochastic gradient descent (when rescaled by the learning rate), but as we demonstrate this is \textbackslash emph\textbraceleft not\textbraceright{} the case for adaptive gradient algorithms, such as Adam. While common implementations of these algorithms employ L\$\_2\$ regularization (often calling it "weight decay" in what may be misleading due to the inequivalence we expose), we propose a simple modification to recover the original formulation of weight decay regularization by \textbackslash emph\textbraceleft decoupling\textbraceright{} the weight decay from the optimization steps taken w.r.t. the loss function. We provide empirical evidence that our proposed modification (i) decouples the optimal choice of weight decay factor from the setting of the learning rate for both standard SGD and Adam and (ii) substantially improves Adam's generalization performance, allowing it to compete with SGD with momentum on image classification datasets (on which it was previously typically outperformed by the latter). Our proposed decoupled weight decay has already been adopted by many researchers, and the community has implemented it in TensorFlow and PyTorch; the complete source code for our experiments is available at https://github.com/loshchil/AdamW-and-SGDW},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Mathematics - Optimization and Control}
 }
 
 @misc{luLuuuyiCBAMPyTorch2026,

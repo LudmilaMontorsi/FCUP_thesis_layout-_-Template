@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{RoentgenOnNewKind1896}
-W.C. R{\"o}ntgen.
-\newblock On a new kind or rays.
-\newblock {\em Journal of the Franklin Institute}, 141(3):183--191, 1896.
-
 \bibitem{okunoFisicaRadiacoes2010}
 Emico Okuno and Elisabeth Yoshimura.
 \newblock {\em {F\'isica das Radia\c c\~oes}}.
@@ -224,7 +219,7 @@ Eri Haneda, Nils Peters, Jiayong Zhang, Grigorios Karageorgos, Wenjun Xia,
 
 \bibitem{petersHybridTrainingDatabase2025}
 Nils Peters, Eri Haneda, Jiayong Zhang, Grigorios Karageorgos, Wenjun Xia,
-  Joost Verburg, Ge~Wang, Harald Paganetti, and Bruno De~Man.
+  Joost Verburg, Ge~Wang, Harald Paganetti, and Bruno~De Man.
 \newblock A hybrid training database and evaluation benchmark for assessing
   metal artifact reduction methods for {{X-ray CT}} imaging.
 \newblock {\em Medical Physics}, 52(10):e70020, October 2025.
@@ -272,11 +267,9 @@ Yang Li, Bobo Yan, Jianxin Hou, Bingyang Bai, Xiaoyu Huang, Canfei Xu, and
   attention.
 \newblock {\em Scientific Reports}, 14(1):271, January 2024.
 
-\bibitem{chenEncoderDecoderAtrousSeparable2018}
-Liang-Chieh Chen, Yukun Zhu, George Papandreou, Florian Schroff, and Hartwig
-  Adam.
-\newblock Encoder-{{Decoder}} with {{Atrous Separable Convolution}} for
-  {{Semantic Image Segmentation}}, August 2018.
+\bibitem{loshchilovDecoupledWeightDecay2019}
+Ilya Loshchilov and Frank Hutter.
+\newblock Decoupled {{Weight Decay Regularization}}, January 2019.
 
 \bibitem{zhaoLossFunctionsImage2017}
 Hang Zhao, Orazio Gallo, Iuri Frosio, and Jan Kautz.

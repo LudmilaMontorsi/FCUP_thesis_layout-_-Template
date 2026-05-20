@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  10 MAY 2026 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  20 MAY 2026 20:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1232,12 +1232,12 @@ Package backref Info: ** backref set up for natbib ** on input line 35.
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 35.
 
-<Front/main.pdf, id=370, 597.51233pt x 845.0471pt>
+<Front/main.pdf, id=254, 597.51233pt x 845.0471pt>
 File: Front/main.pdf Graphic file (type pdf)
 <use Front/main.pdf>
 Package pdftex.def Info: Front/main.pdf  used on input line 61.
 (pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
-<Front/main.pdf, id=372, page=1, 597.51233pt x 845.0471pt>
+<Front/main.pdf, id=256, page=1, 597.51233pt x 845.0471pt>
 File: Front/main.pdf Graphic file (type pdf)
 <use Front/main.pdf, page 1>
 Package pdftex.def Info: Front/main.pdf , page1 used on input line 61.
@@ -1371,15 +1371,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
  [5
 
 
-]
-
-Package fancyhdr Warning: \headheight is too small (14.0pt): 
-(fancyhdr)                Make it at least 14.37291pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.37291pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-0.37291pt}.
-
-[6])
+])
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
@@ -1391,7 +1383,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.37291pt}.
 
-[7]
+[6]
 -----------------------------------------------------
  Lista de Figuras
 -----------------------------------------------------
@@ -1399,7 +1391,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 \tf@lof=\write10
 \openout10 = `main.lof'.
 
- [8
+ [7
 
 
 ]
@@ -1410,7 +1402,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 \tf@logr=\write11
 \openout11 = `main.logr'.
 
- [9
+ [8
 
 
 ]
@@ -1421,18 +1413,21 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 \tf@lot=\write12
 \openout12 = `main.lot'.
 
- (main.acr [10
+ (main.acr [9
 
 
-] [11
+] [10
 
 
 ])
 -----------------------------------------------------
  Dedicatory
 -----------------------------------------------------
-[12] [13]) (Chapters/1.Introduction.tex
+[11] [12]) (Chapters/1.Introduction.tex
 Cap\'{\i }tulo 1.
+
+Package natbib Warning: Citation `RoentgenOnNewKind1896' on page 1 undefined on input line 10.
+
 [1
 
 
@@ -1460,182 +1455,111 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [7] [8]) (Chapters/5.Material_Methods.tex [9]
 Cap\'{\i }tulo 3.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 19.
 [10
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 32.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 20.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 33.
  (C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 ) [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 61.
+(hyperref)                removing `\acrshort' on input line 54.
 
-[12] [13] [14] [15] [16] [17]
-<Figures/unet_single.png, id=989, 714.38895pt x 498.663pt>
+[12] [13] [14] [15] [16] [17] [18] [19]
+<Figures/unet_single.png, id=848, 714.38895pt x 498.663pt>
 File: Figures/unet_single.png Graphic file (type png)
 <use Figures/unet_single.png>
-Package pdftex.def Info: Figures/unet_single.png  used on input line 139.
+Package pdftex.def Info: Figures/unet_single.png  used on input line 238.
 (pdftex.def)             Requested size: 446.13727pt x 311.42012pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 140.
- [18 <./Figures/unet_single.png>]
-<Figures/unet_dual.png, id=999, 714.38895pt x 498.663pt>
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 239.
+<Figures/unet_dual.png, id=851, 714.38895pt x 498.663pt>
 File: Figures/unet_dual.png Graphic file (type png)
 <use Figures/unet_dual.png>
-Package pdftex.def Info: Figures/unet_dual.png  used on input line 155.
+Package pdftex.def Info: Figures/unet_dual.png  used on input line 254.
 (pdftex.def)             Requested size: 446.13727pt x 311.42012pt.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrfull' on input line 168.
-
-[19 <./Figures/unet_dual.png>]
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 192.
- [20]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrfull' on input line 219.
-
-
-Package natbib Warning: Citation `szegedy2015going' on page 21 undefined on input line 220.
-
-[21]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrfull' on input line 236.
-
-[22]
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family phv in TS1 encoding.
-            Default family used instead on input line 273.
- [23] [24]
-LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 301.
- (C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ufplmbb.fd
-File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [25]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 340.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 340.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 350.
-
-[26]
-
-Package natbib Warning: Citation `royRecalibratingFullyConvolutional2018' on page 27 undefined on input line 396.
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 410--411
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--420
-
- []
-
-[28] [29] [30]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 530.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 539.
-
-[31] [32]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 609.
-
-[33] [34] [35] [36] [37] [38] [39] [40]) (Chapters/6.Experimental_results.tex [41]
+ [20 <./Figures/unet_single.png>] [21 <./Figures/unet_dual.png>] [22] [23] [24] [25]) (Chapters/6.Experimental_results.tex [26] [27]
 Cap\'{\i }tulo 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 5.
 
-<Figures/ssim_distribution_full.png, id=1542, 722.7pt x 433.62pt>
+<Figures/ssim_distribution_full.png, id=951, 722.7pt x 433.62pt>
 File: Figures/ssim_distribution_full.png Graphic file (type png)
 <use Figures/ssim_distribution_full.png>
 Package pdftex.def Info: Figures/ssim_distribution_full.png  used on input line 11.
 (pdftex.def)             Requested size: 455.24411pt x 273.14896pt.
-<Figures/ssim_distribution_zoom.png, id=1543, 722.7pt x 433.62pt>
+<Figures/ssim_distribution_zoom.png, id=952, 722.7pt x 433.62pt>
 File: Figures/ssim_distribution_zoom.png Graphic file (type png)
 <use Figures/ssim_distribution_zoom.png>
 Package pdftex.def Info: Figures/ssim_distribution_zoom.png  used on input line 12.
 (pdftex.def)             Requested size: 455.24411pt x 273.14896pt.
-[42
+[28
 
-] [43 <./Figures/ssim_distribution_full.png> <./Figures/ssim_distribution_zoom.png>]
-<Figures/ssim_ecdf_final.png, id=1564, 722.7pt x 505.89pt>
+] [29 <./Figures/ssim_distribution_full.png> <./Figures/ssim_distribution_zoom.png>]
+<Figures/ssim_ecdf_final.png, id=974, 722.7pt x 505.89pt>
 File: Figures/ssim_ecdf_final.png Graphic file (type png)
 <use Figures/ssim_ecdf_final.png>
 Package pdftex.def Info: Figures/ssim_ecdf_final.png  used on input line 24.
 (pdftex.def)             Requested size: 455.24411pt x 318.67378pt.
-<Figures/image4.png, id=1566, 1169.87062pt x 654.94687pt>
+<Figures/image4.png, id=976, 1169.87062pt x 654.94687pt>
 File: Figures/image4.png Graphic file (type png)
 <use Figures/image4.png>
 Package pdftex.def Info: Figures/image4.png  used on input line 31.
 (pdftex.def)             Requested size: 318.66948pt x 178.40703pt.
-<Figures/image5.png, id=1567, 1158.57843pt x 642.14906pt>
+<Figures/image5.png, id=977, 1158.57843pt x 642.14906pt>
 File: Figures/image5.png Graphic file (type png)
 <use Figures/image5.png>
 Package pdftex.def Info: Figures/image5.png  used on input line 32.
 (pdftex.def)             Requested size: 318.66948pt x 176.62582pt.
-<Figures/image6.png, id=1568, 1156.32pt x 649.67719pt>
+<Figures/image6.png, id=978, 1156.32pt x 649.67719pt>
 File: Figures/image6.png Graphic file (type png)
 <use Figures/image6.png>
 Package pdftex.def Info: Figures/image6.png  used on input line 33.
 (pdftex.def)             Requested size: 318.66948pt x 179.04343pt.
- [44 <./Figures/ssim_ecdf_final.png>] [45 <./Figures/image4.png> <./Figures/image5.png> <./Figures/image6.png>]
-<Figures/image1.png, id=1586, 1044.90375pt x 572.89032pt>
+ [30 <./Figures/ssim_ecdf_final.png>] [31 <./Figures/image4.png> <./Figures/image5.png> <./Figures/image6.png>]
+<Figures/image1.png, id=996, 1044.90375pt x 572.89032pt>
 File: Figures/image1.png Graphic file (type png)
 <use Figures/image1.png>
 Package pdftex.def Info: Figures/image1.png  used on input line 43.
 (pdftex.def)             Requested size: 318.66948pt x 174.71817pt.
-<Figures/image2.png, id=1587, 1158.57843pt x 615.80063pt>
+<Figures/image2.png, id=997, 1158.57843pt x 615.80063pt>
 File: Figures/image2.png Graphic file (type png)
 <use Figures/image2.png>
 Package pdftex.def Info: Figures/image2.png  used on input line 44.
 (pdftex.def)             Requested size: 318.66948pt x 169.37857pt.
-<Figures/image3.png, id=1588, 1162.3425pt x 560.0925pt>
+<Figures/image3.png, id=998, 1162.3425pt x 560.0925pt>
 File: Figures/image3.png Graphic file (type png)
 <use Figures/image3.png>
 Package pdftex.def Info: Figures/image3.png  used on input line 45.
 (pdftex.def)             Requested size: 318.66948pt x 153.55159pt.
-<Figures/cosine_scatter_audited.png, id=1590, 867.24pt x 505.89pt>
+<Figures/cosine_scatter_audited.png, id=1000, 867.24pt x 505.89pt>
 File: Figures/cosine_scatter_audited.png Graphic file (type png)
 <use Figures/cosine_scatter_audited.png>
 Package pdftex.def Info: Figures/cosine_scatter_audited.png  used on input line 52.
 (pdftex.def)             Requested size: 455.24411pt x 265.55762pt.
- [46 <./Figures/image1.png> <./Figures/image2.png> <./Figures/image3.png>]
-<Figures/ssim_scatter_dist.png, id=1604, 867.24pt x 505.89pt>
+ [32 <./Figures/image1.png> <./Figures/image2.png> <./Figures/image3.png>]
+<Figures/ssim_scatter_dist.png, id=1013, 867.24pt x 505.89pt>
 File: Figures/ssim_scatter_dist.png Graphic file (type png)
 <use Figures/ssim_scatter_dist.png>
 Package pdftex.def Info: Figures/ssim_scatter_dist.png  used on input line 61.
 (pdftex.def)             Requested size: 455.24411pt x 265.55762pt.
- [47 <./Figures/cosine_scatter_audited.png>] [48 <./Figures/ssim_scatter_dist.png>]
+ [33 <./Figures/cosine_scatter_audited.png>] [34 <./Figures/ssim_scatter_dist.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
-[49]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
-[50]) (Chapters/7.Discussion.tex [51]
+[36]) (Chapters/7.Discussion.tex [37]
 Cap\'{\i }tulo 5.
-) (Chapters/8.Conclusion.tex [52
+) (Chapters/8.Conclusion.tex [38
 
 ]
 Cap\'{\i }tulo 6.
@@ -1643,23 +1567,23 @@ Cap\'{\i }tulo 6.
 \tf@brf=\write13
 \openout13 = `main.brf'.
 
- [53
+ [39
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
 []\T1/phv/m/n/10.95 November 8, 1895: Ro-ent-gen's Dis-co-very of X-Rays.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
 \T1/phv/m/n/10.95 https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays.  [Ci-ted on
  []
 
-[54
+[40
 
-] [55] [56] [57] [58]) (Appendices/AppendixTemplate.tex [59]
+] [41] [42] [43] [44]) (Appendices/AppendixTemplate.tex [45]
 Ap\^endice A.
-) [60
+) [46
 
 ]
 
@@ -1671,22 +1595,22 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 81DB2B0141FA51E655028FA40114AFE1;19676.
+(rerunfilecheck)             Checksum: F1274610834C8A8A20A36CC7E0EBAA10;13332.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 6719708BCD5FEACFA1822A21271A1A1C;6684.
+(rerunfilecheck)             Checksum: 3C60F52DEE4B3E728EA658EA95C48B3B;5368.
  ) 
 Here is how much of TeX's memory you used:
- 45086 strings out of 467870
- 920141 string characters out of 5418356
- 1351330 words of memory out of 5000000
- 72755 multiletter control sequences out of 15000+600000
- 727674 words of font info for 165 fonts, out of 8000000 for 9000
+ 44868 strings out of 467870
+ 917317 string characters out of 5418356
+ 1347330 words of memory out of 5000000
+ 72694 multiletter control sequences out of 15000+600000
+ 715528 words of font info for 142 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  99i,17n,114p,2572b,1428s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1095.pk> <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (75 pages, 5668586 bytes).
+ <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (60 pages, 5512531 bytes).
 PDF statistics:
- 1941 PDF objects out of 2073 (max. 8388607)
- 386 named destinations out of 1000 (max. 500000)
- 821 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1285 PDF objects out of 1440 (max. 8388607)
+ 250 named destinations out of 1000 (max. 500000)
+ 589 words of extra memory for PDF output out of 10000 (max. 10000000)
 
