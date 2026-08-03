@@ -3,6 +3,12 @@
 Neste capítulo são apresentados e analisados os resultados obtidos a partir dos experimentos descritos no Capítulo~\ref{chap:metodos}. A análise é organizada em quatro etapas progressivas: (i) validação da qualidade das correspondências automáticas entre os datasets\acrshort{ctmar} e DeepLesion/Stroke EIT, assegurando a confiabilidade da base de dados utilizada; (ii) estudos de ablation em treinos curtos para comparação arquitetural dos módulos de atenção e contexto multi-escala; (iii) seleção objetiva do modelo candidato com base em critérios de consistência e significância estatística; e (iv) avaliação do modelo selecionado em treinos de duração intermédia e prolongada.
 
 \section{Correspondências\acrshort{ctmar} x DeepLesion/Stroke EIT Data}
+
+\subsection{Resultados da Aprovação Automática x Inspeção Manual}
+É  importante deixar claro como ficou a distribuição dos dados que foram aprovados e reprovados automaticamente, e também quais foram avaliados manualmente. O gráfico abaixo, mapeia todos os pares do \acrshort{ctmar} Dataset, destacando os que foram aprovados automaticamente, os que foram reprovados e os que foram sujeitos a inspeção visual humana. A distribuição anatómica dos pares é representada por cores, permitindo uma análise visual da relação entre a aprovação automática e a localização anatómica dos artefatos metálicos.
+
+\subsection{Análise Complementar com\acrshort{ms-ssim}}
+
 Antes de avançar para a análise dos resultados dos modelos de redução de artefatos, foi realizada mais uma avaliação dos resultados\acrshort{ctmar} x DeepLesion/Stroke EIT para verificar a qualidade das correspondências automáticas. Esta etapa é crucial para garantir uma camada extra de confiança nos resultados obtidos pelo algoritmo de comparação de similaridade estrutural. 
 Todos os pares que tiveram a correspondencia aprovada automaticamente pelo fato de seu score ser acima de 0.994 foram revisados por um novo algoritmo que calcula o\acrshort{ms-ssim} entre as imagens correspondentes. Um histograma da distribuiuição dos\acrshort{ms-ssim} foi gerado, e os pares com pontuação menor que 0.9 foram revisados manualmente sendo aprovado ou recusado com base em avaliação humana.
 
@@ -64,8 +70,18 @@ Os pares com\acrshort{ms-ssim} mais críticos logo acima dos reprovados tinham v
 \end{figure}
 
 
-%________________________________________________________________________________________________________________________________
-\section{Ablação -- Fase 1}
+Com relação aos possíveis falsos negativos que poderiam ter resultado em exclusão de pares de forma injusta nesse estudo, a metodologia adotada foi ainda mais robusta. Já que eram poucos os pares que não tiveram aprovação em nenhum dos dois datasets de origem, ficou fácil verificar visualmente cada um desses casos para confirmar se realmente não havia correspondência ou se o método falhou em identificá-la. Dos 435 pares excluídos 245 foram excluídos devido ao críterio automatizado baseado no limiar de 0.98. Nenhum desses casos eram realmente falsos negativos, confirmando mais uma vez a eficácia do método de correspondência automática adotado.
+ Os outros 190 pares caíram na faixa de pontuação pouco confiável (0.98 -- 0.994) e foram marcados como falsa correspondência nessa etapa evidenciando a importancia de ter-se determinado uma zona cinzenta de pontuação para a qual o método de correspondência automática não é eficiente, e que a revisão visual humana torna-se indispensável \ref{fig:score_distribution_bad}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/score_distribution.png}
+    \caption{Distribuição dos \textit{scores} de similaridade de cosseno (DL vs Stroke EIT) para os pares sem correspondência aprovada em nenhum dos dois \textit{datasets} de origem (N=435). À esquerda: histograma das pontuações por \textit{dataset}; à direita: ECDF correspondente com o limiar de 0,98 assinalado.}
+    \label{fig:score_distribution_bad}
+\end{figure}
+
+ 
+ \section{Ablação -- Fase 1}
 
 \subsection{\textit{Single-Head} vs \textit{Dual-Head}}
 O modelo baseline, baseado numa arquitetura U-Net dual-head sem módulos adicionais de atenção ou contexto multi-escala, foi utilizado como referência para todas as comparações subsequentes. Os resultados obtidos em validação e teste indicam desempenho consistente, sem sinais evidentes de sobreajuste, estabelecendo uma base estável para os estudos de ablation. A arquitetura atingiu os limiares de convergencia na epoch 7 e nessa mesma epoch obteve-se o melhor desempenho de MS-SSIM em validação, o que é consistente com a estratégia de treino curto adotada para esta fase.
@@ -89,7 +105,7 @@ Test   & 5.748 & 0.1537  \\
 
 De modo geral, observa-se equilíbrio entre preservação estrutural e redução de ruído, com desempenho semelhante entre os conjuntos de validação e teste.
 
-Foi realizado um estudo para verificar qual o melhor peso de máscara para a função de perda. Foi testando os pesos 0.1, 0.05, e 0.01. A finalidade era observar qual os limites de atuação da segunda saída em regularização e preservação de detalhes. O modelo com peso 0.05 para a máscara apresentou melhor desempenho em validação, com ganhos marginais em\acrshort{psnr} e\acrshort{ssim}, sugerindo que a supervisão adicional contribui para uma correção mais equilibrada dos artefatos. O modelo com peso 0.1 apresentou resultados piores que o modelo \textit{Single-Head}, demonstrado que a supervisão excessiva da máscara pode levar a degradação de detalhes ao competir com a tarefa de reconstrução. Dessa forma, o peso da função de perda da saída de máscara foi diminuído para 0.05. Para esse peso, os resultados melhoram para\acrshort{ms-ssim},\acrshort{ssim},\acrshort{psnr} e\acrfull{mae} com relação ao peso 0.1, mas ainda apresentam uma leve degradação em relação ao modelo \textit{Single-Head}. O valor do DICE teve uma leve queda, mas manteve-se acima de 0.70, o que é considerado um desempenho aceitável para a tarefa de segmentação de artefatos com finalidade de regularização. Para o peso 0.01, o desempenho melhora em relação ao modelo com peso 0.05, mais uma vez melhorando\acrshort{ms-ssim},\acrshort{ssim},\acrshort{psnr} e\acrshort{mae}, mas o valor do\Acrfull{dice} tem uma queda mais acentuada, ficando abaixo de 0.70.
+Foi realizado um estudo para verificar qual o melhor peso de máscara para a função de perda. Foram testados os pesos 0.1, 0.05, e 0.01. A finalidade era observar quais os limites de atuação da segunda saída em regularização e preservação de detalhes. O modelo com peso 0.05 para a máscara apresentou melhor desempenho em validação, com ganhos marginais em\acrshort{psnr} e\acrshort{ssim}, sugerindo que a supervisão adicional contribui para uma correção mais equilibrada dos artefatos. O modelo com peso 0.1 apresentou resultados piores que o modelo \textit{Single-Head}, demonstrando que a supervisão excessiva da máscara pode levar à degradação de detalhes ao competir com a tarefa de reconstrução. Dessa forma, o peso da função de perda da saída de máscara foi diminuído para 0.05. Para esse peso, os resultados melhoram para\acrshort{ms-ssim},\acrshort{ssim},\acrshort{psnr} e\acrfull{mae} em relação ao peso 0.1, mas ainda apresentam uma leve degradação em relação ao modelo \textit{Single-Head}. O valor do DICE teve uma leve queda, mas manteve-se acima de 0.70, o que é considerado um desempenho aceitável para a tarefa de segmentação de artefatos com finalidade de regularização. Para o peso 0.01, o desempenho melhora em relação ao modelo com peso 0.05, mais uma vez melhorando\acrshort{ms-ssim},\acrshort{ssim},\acrshort{psnr} e\acrshort{mae}, mas o valor do\Acrfull{dice} tem uma queda mais acentuada, ficando abaixo de 0.70.
 
 \begin{table}[htbp]
 \centering

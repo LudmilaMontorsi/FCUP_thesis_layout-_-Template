@@ -8,10 +8,10 @@
 \babel@toc {portuguese}{}\relax 
 \vspace {0.3cm}
 \contentsline {chapter}{Índice}{v}{dummy.4}%
-\contentsline {chapter}{Lista de Figuras}{vii}{dummy.5}%
-\contentsline {chapter}{Lista de Gráficos}{viii}{dummy.6}%
-\contentsline {chapter}{Lista de Tabelas}{ix}{dummy.7}%
-\contentsline {chapter}{Lista de Abreviaturas}{x}{section*.5}%
+\contentsline {chapter}{Lista de Figuras}{viii}{dummy.5}%
+\contentsline {chapter}{Lista de Gráficos}{ix}{dummy.6}%
+\contentsline {chapter}{Lista de Tabelas}{x}{dummy.7}%
+\contentsline {chapter}{Lista de Abreviaturas}{xi}{section*.5}%
 \vspace {0.3cm}
 \contentsline {chapter}{\numberline {1}Introdução}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Objetivo Geral}{3}{section.1.1}%
@@ -32,39 +32,55 @@
 \contentsline {subsection}{\numberline {3.2.2}\textit {Dataset} para Validação Externa}{12}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Pré-processamento dos Dados}{12}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Verificação de integridade dos dados}{12}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Estratégia de Particionamento dos Dados}{12}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Estratificação por Pacientes}{12}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Correspondência entre imagens\acrshort {ctmar} e DeepLesion/UCLH Stroke EIT Data}{13}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Estratificação Anatómica}{17}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Remoção do Fundo dos Exames}{18}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Normalização das Intensidades}{19}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}Máscaras de Artefato}{19}{subsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.3.2}Remoção do Fundo dos Exames}{12}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Normalização das Intensidades}{13}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Máscaras de Artefato}{13}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Estratégia de Particionamento dos Dados}{13}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Estratificação por Pacientes}{13}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Correspondência entre imagens\acrshort {ctmar} e DeepLesion/UCLH Stroke EIT Data}{14}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Dados Utilizados e Exclusões}{17}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Estratificação Anatómica}{18}{subsection.3.4.4}%
 \contentsline {section}{\numberline {3.5}Arquitetura dos Modelos}{19}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Modelo Baseline}{19}{subsection.3.5.1}%
 \contentsline {section}{\numberline {3.6}Estudos de ablação}{21}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Fluxo de Treino}{22}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Componentes de Configuração de Treino}{22}{subsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.1.1}Otimizador e Taxa de Aprendizagem}{22}{subsubsection.3.7.1.1}%
+\contentsline {subsubsection}{\numberline {3.7.1.2}Scheduler}{22}{subsubsection.3.7.1.2}%
+\contentsline {subsubsection}{\numberline {3.7.1.3}Funções de Perda}{22}{subsubsection.3.7.1.3}%
 \contentsline {subsection}{\numberline {3.7.2}Estratégia de Treino}{23}{subsection.3.7.2}%
-\contentsline {section}{\numberline {3.8}Métricas}{26}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Protocolos de Validação}{26}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Validação Interna}{26}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Validação Externa}{26}{subsection.3.9.2}%
-\contentsline {section}{\numberline {3.10}Visão Geral do Pipeline}{26}{section.3.10}%
-\contentsline {section}{\numberline {3.11}Infraestrutura Computacional}{26}{section.3.11}%
-\contentsline {chapter}{\numberline {4}Resultados}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Correspondências\acrshort {ctmar} x DeepLesion/Stroke EIT Data}{28}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Ablação -- Fase 1}{34}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}\textit {Single-Head} vs \textit {Dual-Head}}{34}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}Ablação -- Fase 2}{35}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Impacto dos Módulos de Atenção - }{35}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}Seleção do Modelo para Treino Intermédio}{36}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Treino com Duração Intermediária}{36}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Treino com Duração Prolongada}{36}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Análise de Distribuições e Overfitting -- Modelo Final}{36}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Análise Estatística Pareada -- Modelo Final}{37}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Resumo dos Resultados}{37}{section.4.9}%
-\contentsline {chapter}{\numberline {5}Discussion}{38}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{39}{chapter.6}%
+\contentsline {subsubsection}{\numberline {3.7.2.1}Monitoramento do Treinamento}{24}{subsubsection.3.7.2.1}%
+\contentsline {section}{\numberline {3.8}Métricas}{25}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Métricas Globais de Qualidade de Imagem}{25}{subsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.1.1}PSNR em Escala HU}{25}{subsubsection.3.8.1.1}%
+\contentsline {subsubsection}{\numberline {3.8.1.2}SSIM em Escala HU}{25}{subsubsection.3.8.1.2}%
+\contentsline {subsubsection}{\numberline {3.8.1.3}MS-SSIM em Escala HU}{26}{subsubsection.3.8.1.3}%
+\contentsline {subsubsection}{\numberline {3.8.1.4}MAE em Escala HU}{26}{subsubsection.3.8.1.4}%
+\contentsline {subsection}{\numberline {3.8.2}Análise por Regiões de Interesse}{27}{subsection.3.8.2}%
+\contentsline {subsubsection}{\numberline {3.8.2.1}Definição das Zonas}{27}{subsubsection.3.8.2.1}%
+\contentsline {subsubsection}{\numberline {3.8.2.2}Métricas por Zona}{29}{subsubsection.3.8.2.2}%
+\contentsline {subsection}{\numberline {3.8.3}Critérios de Seleção das Métricas}{29}{subsection.3.8.3}%
+\contentsline {section}{\numberline {3.9}Protocolos de Validação}{30}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Validação Interna}{30}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Validação Externa}{30}{subsection.3.9.2}%
+\contentsline {section}{\numberline {3.10}Visão Geral do Pipeline}{31}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Infraestrutura Computacional}{31}{section.3.11}%
+\contentsline {chapter}{\numberline {4}Resultados}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Correspondências\acrshort {ctmar} x DeepLesion/Stroke EIT Data}{32}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Resultados da Aprovação Automática x Inspeção Manual}{32}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Análise Complementar com\acrshort {ms-ssim}}{33}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Ablação -- Fase 1}{40}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}\textit {Single-Head} vs \textit {Dual-Head}}{40}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Ablação -- Fase 2}{41}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Impacto dos Módulos de Atenção - }{41}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Seleção do Modelo para Treino Intermédio}{42}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Treino com Duração Intermediária}{42}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Treino com Duração Prolongada}{42}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Análise de Distribuições e Overfitting -- Modelo Final}{42}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Análise Estatística Pareada -- Modelo Final}{43}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Resumo dos Resultados}{43}{section.4.9}%
+\contentsline {chapter}{\numberline {5}Discussion}{44}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{45}{chapter.6}%
 \vspace {0.5cm}
-\contentsline {chapter}{Bibliography}{39}{dummy.8}%
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{46}{appendix.A}%
+\contentsline {chapter}{Bibliography}{45}{dummy.8}%
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{52}{appendix.A}%

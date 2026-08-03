@@ -248,6 +248,18 @@ Ke~Yan, Xiaosong Wang, Le~Lu, and Ronald~M. Summers.
   and universal lesion detection with deep learning.
 \newblock {\em Journal of Medical Imaging}, 5(3):036501, July 2018.
 
+\bibitem{taghanakiComboLossHandling2021}
+Saeid~Asgari Taghanaki, Yefeng Zheng, S.~Kevin Zhou, Bogdan Georgescu, Puneet
+  Sharma, Daguang Xu, Dorin Comaniciu, and Ghassan Hamarneh.
+\newblock Combo {{Loss}}: {{Handling Input}} and {{Output Imbalance}} in
+  {{Multi-Organ Segmentation}}, September 2021.
+
+\bibitem{kesimalUseDeepLearning2026}
+U{\u g}ur Kesimal, Habip~Eser Akkaya, {\"O}nder Polat, and Murat Sa{\u g}lam.
+\newblock Use of {{Deep Learning Models}} in the {{Diagnosis}} of {{Proptosis
+  Through Orbital Magnetic Resonance Imaging}}.
+\newblock {\em Medical Science Monitor}, 32, April 2026.
+
 \bibitem{onerTrainingMachineLearning2020}
 Mustafa~Umit Oner, Yi-Chih Cheng, Hwee~Kuan Lee, and Wing-Kin Sung.
 \newblock Training machine learning models on patient level data segregation is
@@ -284,12 +296,6 @@ Fabian Isensee, Jens Petersen, Andre Klein, David Zimmerer, Paul~F. Jaeger,
 \newblock {{nnU-Net}}: {{Self-adapting Framework}} for {{U-Net-Based Medical
   Image Segmentation}}.
 \newblock https://arxiv.org/abs/1809.10486v1, September 2018.
-
-\bibitem{taghanakiComboLossHandling2021}
-Saeid~Asgari Taghanaki, Yefeng Zheng, S.~Kevin Zhou, Bogdan Georgescu, Puneet
-  Sharma, Daguang Xu, Dorin Comaniciu, and Ghassan Hamarneh.
-\newblock Combo {{Loss}}: {{Handling Input}} and {{Output Imbalance}} in
-  {{Multi-Organ Segmentation}}, September 2021.
 
 \bibitem{linzhangFSIMFeatureSimilarity2011}
 {Lin Zhang}, {Lei Zhang}, {Xuanqin Mou}, and D.~Zhang.
