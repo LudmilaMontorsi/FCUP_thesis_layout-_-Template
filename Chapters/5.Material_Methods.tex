@@ -94,6 +94,8 @@ As correspondências foram consideradas válidas apenas quando o score de simila
 
 Pontuações inferiores a esse limiar indicavam correspondências potencialmente ambíguas e eram submetidas à inspeção visual manual. Já pontuações inferiores a aproximadamente 0.98 indicavam correspondências claramente incorretas e eram automaticamente descartadas sem necessidade de revisão manual. Dessa forma, todos os pares que apresentavam pontuações entre 0.98 e 0.994 foram analisados visualmente para confirmação da validade da correspondência. A fim de evitar a exclusão de pares de forma desnecessaria, todos os pares com pontuação inferior a 0.98 para ambos os datasets (DeepLesion e UCLH Stroke EIT) foram submetidos a inspeção visual para garantir que não fossem erroneamente descartados.
 
+Para os 530 pares que permaneceram sem correspondência aprovada após a busca direta nos dois datasets de origem, foi aplicada uma etapa complementar de correspondência indireta. Nessa etapa, cada imagem\acrshort{ctmar} não correspondida foi comparada com imagens\acrshort{ctmar} já rastreadas; os vizinhos mais semelhantes foram usados para selecionar exames candidatos do DeepLesion e, em seguida, todos os \textit{slices} desses exames foram pesquisados com \textit{fingerprints} de dimensão $64\times64$. As 530 propostas foram inspecionadas visualmente: 95 correspondências foram aprovadas e incorporadas ao manifesto consolidado, enquanto 435 permaneceram sem correspondência segura e foram excluídas. Uma estratégia exploratória de agrupamento dos pares remanescentes chegou a ser testada, mas nenhum desses agrupamentos foi utilizado para recuperar pares, atribuir pacientes ou definir as partições finais.
+
 Além disso, o método foi concebido para ignorar automaticamente imagens previamente verificadas como correspondências corretas, reduzindo redundâncias e acelerando reprocessamentos futuros.
 Devido ao elevado número de imagens presentes nos datasets, o processamento foi paralelizado e otimizado através da utilização de operações matriciais vetorizadas. Quando disponível, o algoritmo utiliza aceleração por GPU para reduzir o tempo de execução. Os \textit{fingerprints} calculados também foram armazenados em cache para evitar recomputação desnecessária em execuções subsequentes.
 
@@ -110,7 +112,7 @@ Tendo isso em conta, essa etapa constituiu um importante procedimento de control
 
 
 \subsection{Dados Utilizados e Exclusões}
-Nem todos os \textit{slices} puderam ser rastreados, mas a maioria dos dados foi associada com sucesso aos exames originais. Dos 14.000 pares disponibilizados pelo\acrshort{ctmar} Dataset, 11.942 foram rastreados inicialmente até ao DeepLesion e 1.623 até ao UCLH Stroke EIT, totalizando 13.565 pares com metadados associados \Ref{tab:rastreio_msssim}. 
+Nem todos os \textit{slices} puderam ser rastreados, mas a maioria dos dados foi associada com sucesso aos exames originais. Ao final das etapas de correspondência direta e indireta, e antes da análise complementar com\acrshort{ms-ssim}, dos 14.000 pares disponibilizados pelo\acrshort{ctmar} Dataset, 11.942 foram rastreados até ao DeepLesion (incluindo os 95 recuperados pela correspondência indireta) e 1.623 até ao UCLH Stroke EIT, totalizando 13.565 pares com metadados associados \Ref{tab:rastreio_msssim}. 
 
 \begin{table}[H]
     \centering

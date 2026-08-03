@@ -70,6 +70,8 @@ Os pares com\acrshort{ms-ssim} mais críticos logo acima dos reprovados tinham v
 \end{figure}
 
 
+Na busca direta, 530 pares não obtiveram correspondência aprovada em nenhum dos dois datasets de origem. A etapa complementar de correspondência indireta recuperou 95 desses casos após inspeção visual, restando 435 pares sem correspondência segura.
+
 Com relação aos possíveis falsos negativos que poderiam ter resultado em exclusão de pares de forma injusta nesse estudo, a metodologia adotada foi ainda mais robusta. Já que eram poucos os pares que não tiveram aprovação em nenhum dos dois datasets de origem, ficou fácil verificar visualmente cada um desses casos para confirmar se realmente não havia correspondência ou se o método falhou em identificá-la. Dos 435 pares excluídos 245 foram excluídos devido ao críterio automatizado baseado no limiar de 0.98. Nenhum desses casos eram realmente falsos negativos, confirmando mais uma vez a eficácia do método de correspondência automática adotado.
  Os outros 190 pares caíram na faixa de pontuação pouco confiável (0.98 -- 0.994) e foram marcados como falsa correspondência nessa etapa evidenciando a importancia de ter-se determinado uma zona cinzenta de pontuação para a qual o método de correspondência automática não é eficiente, e que a revisão visual humana torna-se indispensável \ref{fig:score_distribution_bad}.
 

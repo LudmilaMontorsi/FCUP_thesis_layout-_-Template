@@ -5,7 +5,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Arquitetura baseada em\acrshort {unet} utilizada como modelo \textit {baseline}.}}{20}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Arquitetura baseada em\acrshort {unet} utilizada como modelo \textit {baseline}.}}{21}{figure.caption.12}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Arquitetura baseada em\acrshort {unet} utilizada como modelo \textit {dual-head}.}}{21}{figure.caption.13}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Exemplos de zonas de \acrshort {roi} em fatias de \acrshort {ct} com artefatos metálicos. Em cada par, a imagem da esquerda mostra a Zona de Artefato ($\mathcal {R}_{art}$, sobreposição a vermelho) e a da direita a Zona Distante ($\mathcal {R}_{dist}$, sobreposição a verde). As fatias cobrem anatomias torácica (topo), abdominal (meio) e torácica com implante unilateral (base), ilustrando a variabilidade da extensão e forma da zona de artefato em função da localização e número de implantes metálicos.}}{28}{figure.caption.14}%
 \addvspace {10\p@ }

@@ -5,11 +5,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Resultados do rastreio antes da análise complementar com\acrshort {ms-ssim}.}}{17}{table.caption.7}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Resultados do rastreio depois da análise complementar com\acrshort {ms-ssim}.}}{17}{table.caption.8}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Resultados do rastreio antes da análise complementar com\acrshort {ms-ssim}.}}{18}{table.caption.7}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Resultados do rastreio depois da análise complementar com\acrshort {ms-ssim}.}}{18}{table.caption.8}%
 \contentsline {table}{\numberline {3.3}{\ignorespaces Dados dos pares sem correspondência que foram excluídos antes e após a análise complementar com\acrshort {ms-ssim}.}}{18}{table.caption.9}%
 \contentsline {table}{\numberline {3.4}{\ignorespaces Distribuição anatómica por subconjunto ao nível de pacientes.}}{19}{table.caption.10}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Distribuição dos pares por subconjunto, categoria anatómica e pacientes.}}{19}{table.caption.11}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Distribuição dos pares por subconjunto, categoria anatómica e pacientes.}}{20}{table.caption.11}%
 \contentsline {table}{\numberline {3.6}{\ignorespaces Métricas utilizadas por contexto de avaliação.}}{29}{table.caption.15}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Métricas quantitativas do modelo baseline em validação e teste.}}{40}{table.caption.23}%

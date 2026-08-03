@@ -1,6 +1,6 @@
-PWD c:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template
+PWD C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template
 INPUT C:\Users\ludmy\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\main.tex
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\main.tex
 OUTPUT main.log
 INPUT .\Thesis.cls
 INPUT Thesis.cls
