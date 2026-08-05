@@ -1,0 +1,24 @@
+\chapter{Objetivos e Questões de Investigação}
+\label{chap:final-objetivos}
+
+\section{Objetivo geral}
+\textit{[A preencher: desenvolver e avaliar uma abordagem reprodutível de redução de artefactos metálicos em CT.]}
+O objetivo geral desta dissertação é desenvolver, avaliar e comparar de forma rigorosa um modelo baseado em\textit{\glspl{cnn}} para deteção e redução de artefatos em imagens de Tomografia Computorizada, privilegiando a preservação anatómica, a robustez à variação de domínio e a interpretabilidade do processo de correção.
+
+\section{Objetivos específicos}
+Os objetivos específicos deste trabalho incluem:
+
+\begin{itemize}
+    \item Desenvolver um \textit{pipeline} reprodutível para treino e avaliação de modelos de redução de artefatos em\acrshort{ct} no domínio da imagem, com separação rigorosa entre dados de treino, validação e teste.
+
+    \item Avaliar o desempenho de uma arquitetura\acrshort{unet} \textit{single-head} para reconstrução de imagem na redução de artefatos metálicos e usá-lo como referência comparativa.
+
+    \item Propor e avaliar uma arquitetura\acrshort{unet} \textit{dual-head} baseada em aprendizado multi-tarefa para reconstrução de imagem e predição de artefatos, incluindo um estudo de ablação comparativo entre as duas abordagens.
+
+    \item Avaliar o desempenho dos modelos utilizando métricas quantitativas (\acrshort{psnr},\acrshort{ms-ssim},\acrshort{ssim},\acrshort{bce} e\acrshort{dice} ), análise qualitativa e mapas de erro.
+
+    \item Investigar a capacidade de generalização do modelo selecionado por meio de validação externa em dados independentes provenientes do\textit{\acrfull{tcia}}.
+\end{itemize}
+
+\section{Hipóteses e desfechos}
+\textit{[A preencher: hipótese primária baseada em MS-SSIM, desfechos secundários e critérios de preservação.]}

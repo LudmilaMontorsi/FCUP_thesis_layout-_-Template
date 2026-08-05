@@ -1,0 +1,32 @@
+{
+  "split": "test",
+  "model_stems": [
+    "singlehead",
+    "dualhead"
+  ],
+  "artifacts": [
+    {
+      "category": "materials",
+      "source": "outputs\\architecture_schema\\unet_dual_compact.png",
+      "destination": "Figures\\Generated\\materials\\unet-dual-compact-8441faa2.png",
+      "sha256": "3b4964f7737035a9cafd0a70a05c7d0bc4ca27779ad5a5144e832f7b77761be0"
+    },
+    {
+      "category": "materials",
+      "source": "outputs\\architecture_schema\\unet_single_compact.png",
+      "destination": "Figures\\Generated\\materials\\unet-single-compact-132d4a1a.png",
+      "sha256": "f495c15c0dfefb1d28e5ebd6221c4d93e0a50e3aa2e5b7ecfb6ab42dc78f7899"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\training_curves_singlehead.png",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-a292709c.png",
+      "sha256": "2b1e262bf99d9c2ddd6d3ebdcfef6831fab2b0111086e58a672aaca18c48fbc0"
+    }
+  ],
+  "tables": {
+    "internal_metrics": false,
+    "paired_comparison": false,
+    "ablation": false
+  }
+}

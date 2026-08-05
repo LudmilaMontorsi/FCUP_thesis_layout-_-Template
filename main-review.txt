@@ -1,0 +1,3128 @@
+                                                 A
+
+
+
+
+U-NET for Metal
+Artifact Reduction
+in Computed
+Tomography
+Ludmila Montorsi Queiroz
+Mestrado em Física Médica
+Departamento de Física e Astronomia
+Faculdade de Ciências da Universidade do Porto
+2026
+                U NIVERSIDADE DO P ORTO
+
+
+                        M ASTERS T HESIS
+
+
+
+U-NET for Metal Artifact Reduction in
+             Computed Tomography
+
+
+Author:                                                    Supervisor:
+Ludmila M ONTORSI Q UEIROZ           Hélder Filipe P INTO DE O LIVEIRA
+
+                                                        Co-supervisor:
+                                          Eduardo M ATOS R ODRIGUES
+
+
+
+
+          A thesis submitted in fulfilment of the requirements
+               for the degree of MSc. Medical Physics
+
+                                 at the
+
+          Faculdade de Ciências da Universidade do Porto
+             Departamento de Ciência de Computadores
+                Departamento de Física e Astronomia
+                             INESC TEC
+
+
+
+                         4 de agosto de 2026
+“The Universe is under no obligation to make sense to you.”
+
+                            Neil deGrasse Tyson, Astrophysics for People in a Hurry (2017)
+
+
+
+“Nothing in life is to be feared; it is only to be understood.”
+
+                                             Marie Curie, Madame Curie: A Biography (1937)
+                             Acknowledgements
+   I would like to express my deepest gratitude to my supervisor, Hélder Filipe Pinto de Oliveira,
+for his invaluable guidance, support, and encouragement throughout this research journey. His
+expertise and insights have been instrumental in shaping this thesis. I am also grateful to my
+co-supervisor, Eduardo Matos Rodrigues, for his constructive feedback and encouragement,
+which have greatly contributed to the development of this work.
+                               UNIVERSIDADE DO PORTO
+
+
+
+                                      Abstract
+                      Faculdade de Ciências da Universidade do Porto
+                        Departamento de Ciência de Computadores
+                           Departamento de Física e Astronomia
+                                        INESC TEC
+
+                                   MSc. Medical Physics
+
+              U-NET for Metal Artifact Reduction in Computed Tomography
+
+                              by Ludmila M ONTORSI Q UEIROZ
+
+
+
+   This thesis addresses deep learning approaches for metal artifact reduction in computed
+tomography images, presenting a comparative study of the different techniques proposed in
+the literature and measuring their performance in a rigorous and reproducible manner.
+
+
+Keywords: Computed Tomography, Metal Artifact Reduction, Medical Physics, Medical Ima-
+ging, Deep Learning, Artefact, Medical Diagnostics, Physics
+                              UNIVERSIDADE DO PORTO
+
+
+
+                                     Resumo
+                     Faculdade de Ciências da Universidade do Porto
+                       Departamento de Ciência de Computadores
+                          Departamento de Física e Astronomia
+                                       INESC TEC
+
+                                  MSc. Medical Physics
+
+      U-NET para Redução de Artefatos de Metal em Tomografia Computadorizada
+
+                             por Ludmila M ONTORSI Q UEIROZ
+
+
+
+Esta tese aborda abordagens de aprendizado profundo para a redução de artefatos de metal
+em imagens de tomografia computadorizada, apresentando um estudo comparativo das dife-
+rentes técnicas propostas na literatura e avaliando seu desempenho de maneira rigorosa e
+reprodutível.
+
+
+Palavras-chave: Tomografia Computadorizada, Redução de Artefatos de Metal, Física Mé-
+dica, Imagem Médica, Aprendizado Profundo, Artefato, Diagnóstico Médico, Física
+Índice
+
+
+Acknowledgements                                                                                     ii
+
+
+Abstract                                                                                            iii
+
+Resumo                                                                                              iv
+
+
+Índice                                                                                               v
+
+Lista de Figuras                                                                                    ix
+
+Lista de Gráficos                                                                                   xi
+
+Lista de Tabelas                                                                                   xii
+
+Lista de Abreviaturas                                                                              xiii
+
+
+1 Introdução                                                                                         1
+  1.1 Contexto clínico e técnico . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       3
+  1.2 Problema de investigação . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         3
+  1.3 Contribuições e organização da dissertação . . . . . . . . . . . . . . . . . . . . .           3
+
+2 Objetivos e Questões de Investigação                                                               4
+  2.1 Objetivo geral . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     4
+  2.2 Objetivos específicos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      4
+  2.3 Hipóteses e desfechos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        5
+
+3 Enquadramento e Trabalhos Relacionados                                                             6
+  3.1 Artefactos metálicos em tomografia computorizada . . . . . . . . . . . . . . . . .             6
+  3.2 Redução de artefactos baseada em aprendizagem profunda . . . . . . . . . . .                   7
+  3.3 Avaliação reprodutível e generalização . . . . . . . . . . . . . . . . . . . . . . . .         8
+
+4 Materiais e Métodos                                                                              10
+  4.1 Dados, curadoria e rastreabilidade . . . . . . . . . . . . . . . . . . . . . . . . . .       10
+      4.1.1 Conjunto CT-MAR e fontes de referência . . . . . . . . . . . . . . . . . .             10
+      4.1.2 Particionamento ao nível do paciente . . . . . . . . . . . . . . . . . . . .           11
+      4.1.3 Coorte final e Exclusões . . . . . . . . . . . . . . . . . . . . . . . . . . . .       15
+      4.1.4 Estratificação Anatómica . . . . . . . . . . . . . . . . . . . . . . . . . . .         16
+
+
+                                                  v
+Í NDICE                                                                                            vi
+
+
+   4.2 Pré-processamento . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       17
+       4.2.1 Verificação de integridade . . . . . . . . . . . . . . . . . . . . . . . . . . .      17
+       4.2.2 Máscara Corporal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        18
+       4.2.3 Janela de intensidade e normalização . . . . . . . . . . . . . . . . . . . .          18
+       4.2.4 Máscara de artefacto para supervisão auxiliar . . . . . . . . . . . . . . .           18
+   4.3 Arquiteturas em comparação . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        19
+       4.3.1 U-Net single-head . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       19
+       4.3.2 U-Net dual-head . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       19
+   4.4 Treino reprodutível . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   21
+       4.4.1 Configuração, determinismo e seleção de checkpoint . . . . . . . . . . .              21
+       4.4.2 Função de Perda . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       22
+   4.5 Plano de avaliação . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    23
+       4.5.1 Avaliação interna . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     23
+               4.5.1.1 Métricas globais . . . . . . . . . . . . . . . . . . . . . . . . . . .      24
+               4.5.1.2 Avaliação por regiões de interesse . . . . . . . . . . . . . . . . .        24
+       4.5.2 Análise estatística . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     27
+   4.6 Avaliação externa por médicos . . . . . . . . . . . . . . . . . . . . . . . . . . . .       27
+       4.6.1 Desenho e casos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       28
+       4.6.2 Participantes e proteção de dados . . . . . . . . . . . . . . . . . . . . . .         28
+       4.6.3 Apresentação e instrumento de avaliação . . . . . . . . . . . . . . . . . .           28
+       4.6.4 Desfechos e análise . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       28
+       4.6.5 Estado operacional . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      28
+
+5 Resultados                                                                                       29
+  5.1 Coorte final e integridade experimental . . . . . . . . . . . . . . . . . . . . . . . .      29
+      5.1.1 Resultados da Aprovação Automática x Inspeção Manual . . . . . . . . .                 29
+      5.1.2 Análise Complementar com MS-SSIM . . . . . . . . . . . . . . . . . . . .               29
+  5.2 Treino dos modelos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       37
+      5.2.1 Convergência e seleção dos checkpoints . . . . . . . . . . . . . . . . . .             37
+      5.2.2 Rastreabilidade das execuções . . . . . . . . . . . . . . . . . . . . . . . .          37
+  5.3 Avaliação interna no conjunto de teste . . . . . . . . . . . . . . . . . . . . . . . .       38
+      5.3.1 Desfechos globais . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        38
+      5.3.2 Análise por região de interesse e preservação anatómica . . . . . . . . .              38
+  5.4 Comparação pareada single-head versus dual-head . . . . . . . . . . . . . . . .              39
+  5.5 Desempenho computacional . . . . . . . . . . . . . . . . . . . . . . . . . . . . .           39
+  5.6 Avaliação externa por médicos . . . . . . . . . . . . . . . . . . . . . . . . . . . .        39
+      5.6.1 Estado da recolha e participantes . . . . . . . . . . . . . . . . . . . . . .          39
+      5.6.2 Desfecho primário: visualização anatómica . . . . . . . . . . . . . . . . .            39
+      5.6.3 Desfechos secundários e segurança percebida . . . . . . . . . . . . . . .              39
+      5.6.4 Interpretação limitada ao desenho observacional . . . . . . . . . . . . . .            39
+
+6 Discussão                                                                                        40
+  6.1 Síntese dos achados principais . . . . . . . . . . . . . . . . . . . . . . . . . . . .       40
+  6.2 Interpretação da comparação arquitetural . . . . . . . . . . . . . . . . . . . . . .         40
+  6.3 Preservação anatómica e segurança da reconstrução . . . . . . . . . . . . . . .              40
+  6.4 Generalização e avaliação externa . . . . . . . . . . . . . . . . . . . . . . . . . .        40
+  6.5 Avaliação por médicos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      40
+Í NDICE                                                                                           vii
+
+
+   6.6 Limitações . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   41
+   6.7 Implicações e trabalho futuro . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    41
+
+7 Conclusões                                                                                      42
+  7.1 Conclusões do estudo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      42
+  7.2 Contribuições da dissertação . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      42
+  7.3 Perspetivas futuras . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   42
+
+
+Bibliography                                                                                      42
+
+Registo Histórico do Desenvolvimento                                                              49
+
+A Introdução                                                                                      50
+  A.1 Objetivo Geral . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    52
+  A.2 Objetivos Específicos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     52
+
+B Trabalhos Relacionados                                                                          54
+  B.1 Métodos Tradicionais de Redução de Artefatos em CT . . . . . . . . . . . . . . .            54
+  B.2 Deep Learning para Redução de Artefatos em CT . . . . . . . . . . . . . . . . .             55
+  B.3 Arquiteturas Avançadas e Mecanismos de Atenção . . . . . . . . . . . . . . . . .            56
+  B.4 Avaliação, Generalização e Aplicabilidade Clínica . . . . . . . . . . . . . . . . . .       57
+  B.5 Síntese Crítica e Motivação do Trabalho . . . . . . . . . . . . . . . . . . . . . . .       57
+
+C Materiais e Métodos                                                                             59
+  C.1 Visão Geral da Metodologia . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      59
+  C.2 Datasets Utilizados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   60
+      C.2.1 Datasets Principal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      60
+      C.2.2 Dataset para Validação Externa . . . . . . . . . . . . . . . . . . . . . . .          61
+  C.3 Pré-processamento dos Dados . . . . . . . . . . . . . . . . . . . . . . . . . . . .         61
+      C.3.1 Verificação de integridade dos dados . . . . . . . . . . . . . . . . . . . .          61
+      C.3.2 Remoção do Fundo dos Exames . . . . . . . . . . . . . . . . . . . . . . .             61
+      C.3.3 Normalização das Intensidades . . . . . . . . . . . . . . . . . . . . . . . .         62
+      C.3.4 Máscaras de Artefato . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        62
+  C.4 Estratégia de Particionamento dos Dados . . . . . . . . . . . . . . . . . . . . . .         62
+      C.4.1 Estratificação por Pacientes . . . . . . . . . . . . . . . . . . . . . . . . . .      62
+      C.4.2 Correspondência entre imagens CT-MAR e DeepLesion/UCLH Stroke
+              EIT Data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    63
+      C.4.3 Dados Utilizados e Exclusões . . . . . . . . . . . . . . . . . . . . . . . . .        66
+      C.4.4 Estratificação Anatómica . . . . . . . . . . . . . . . . . . . . . . . . . . .        68
+  C.5 Arquitetura dos Modelos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     69
+      C.5.1 Modelo Baseline . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       69
+  C.6 Estudos de ablação . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      71
+  C.7 Fluxo de Treino . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   71
+      C.7.1 Componentes de Configuração de Treino . . . . . . . . . . . . . . . . . .             71
+              C.7.1.1 Otimizador e Taxa de Aprendizagem . . . . . . . . . . . . . . .             71
+              C.7.1.2 Scheduler . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       71
+              C.7.1.3 Funções de Perda . . . . . . . . . . . . . . . . . . . . . . . . . .        72
+Í NDICE                                                                                             viii
+
+
+        C.7.2 Estratégia de Treino . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      73
+                C.7.2.1 Monitoramento do Treinamento . . . . . . . . . . . . . . . . . .            74
+   C.8 Métricas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   74
+        C.8.1 Métricas Globais de Qualidade de Imagem . . . . . . . . . . . . . . . . .             74
+                C.8.1.1 PSNR em Escala HU . . . . . . . . . . . . . . . . . . . . . . . .           74
+                C.8.1.2 SSIM em Escala HU . . . . . . . . . . . . . . . . . . . . . . . . .         75
+                C.8.1.3 MS-SSIM em Escala HU . . . . . . . . . . . . . . . . . . . . . .            75
+                C.8.1.4 MAE em Escala HU . . . . . . . . . . . . . . . . . . . . . . . . .          76
+        C.8.2 Análise por Regiões de Interesse . . . . . . . . . . . . . . . . . . . . . . .        76
+                C.8.2.1 Definição das Zonas . . . . . . . . . . . . . . . . . . . . . . . . .       76
+                C.8.2.2 Métricas por Zona . . . . . . . . . . . . . . . . . . . . . . . . . .       78
+        C.8.3 Critérios de Seleção das Métricas . . . . . . . . . . . . . . . . . . . . . .         78
+   C.9 Protocolos de Validação . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      79
+        C.9.1 Validação Interna . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     79
+        C.9.2 Validação Externa . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       79
+   C.10 Visão Geral do Pipeline . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     80
+   C.11 Infraestrutura Computacional . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      80
+
+D Resultados                                                                                        81
+
+E Discussion                                                                                        83
+
+F Conclusion                                                                                        84
+
+G Appendix Title Here                                                                               85
+Lista de Figuras
+
+
+ 4.1 Diagrama da arquitetura final: unet_dual_compact.png. . . . . . . . . . . . . . .          20
+ 4.2 Diagrama da arquitetura final: unet_single_compact.png. . . . . . . . . . . . . .          21
+ 4.3 Exemplos de zonas de ROI em fatias de CT com artefatos metálicos. Em
+     cada par, a imagem da esquerda mostra a Zona de Artefato (R art , sobreposição
+     a vermelho) e a da direita a Zona Distante (Rdist , sobreposição a verde). As
+     fatias cobrem anatomias torácica (topo), abdominal (meio) e torácica com im-
+     plante unilateral (base), ilustrando a variabilidade da extensão e forma da zona
+     de artefato em função da localização e número de implantes metálicos. . . . . .            26
+
+ 5.1 Distribuição de MS-SSIM entre pares correspondentes ( CT-MAR vs DL/Stroke,
+     aprovados automaticamente). Acima: histograma com os percentis P1 e P5,
+     mediana, média e limiar de 0.9. Abaixo: zoom do histograma para a região de
+     maior interesse, com destaque para os pares com MS-SSIM inferior a 0.9, que
+     foram sujeitos a revisão manual. . . . . . . . . . . . . . . . . . . . . . . . . . . .     30
+ 5.2 Distribuição de MS-SSIM entre pares correspondentes ( CT-MAR vs DL/Stroke,
+     aprovados automaticamente). À esquerda: histograma com os percentis P1 e
+     P5, mediana, média e limiar de 0.9. À direita: ECDF correspondente. Os pares
+     com MS-SSIM inferior a 0.9 foram sujeitos a revisão manual. . . . . . . . . . . .          32
+ 5.3 Exemplos de pares correspondentes com valores de MS-SSIM (0.7597, 0.7694
+     e 0.7717, respetivamente) aprovados após revisão visual humana mesmo com
+     pontuações baixas. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   33
+ 5.4 3 pares reprovados após inspeção visual humana com valores de MS-SSIM
+     (head_1159: 0.4573, head_369: 0.5652 e head_763: 0.6009, respetivamente).
+     As pontuações desses pares na similaridade de cosseno foram head_1159:
+     0.9960, head_369: 0.9952 e head_763: 0.9951. . . . . . . . . . . . . . . . . . .           34
+ 5.5 Distribuição dos valores de similaridade de cosseno para os pares inspeciona-
+     dos visualmente. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   35
+ 5.6 Distribuição dos valores de MS-SSIM para os pares inspecionados visualmente.               36
+ 5.7 Distribuição dos scores de similaridade de cosseno (DL vs Stroke EIT) para os
+     pares sem correspondência aprovada em nenhum dos dois datasets de origem
+     (N=435). À esquerda: histograma das pontuações por dataset; à direita: ECDF
+     correspondente com o limiar de 0,98 assinalado. . . . . . . . . . . . . . . . . . .        37
+ 5.8 Curva de treino gerada pelo workflow: training_curves_singlehead.png. . . .                38
+
+ C.1 Arquitetura baseada em U-Net utilizada como modelo baseline. . . . . . . . . . .           70
+ C.2 Arquitetura baseada em U-Net utilizada como modelo dual-head. . . . . . . . . .            70
+
+
+
+
+                                              ix
+L ISTA DE F IGURAS                                                                         x
+
+
+   C.3 Exemplos de zonas de ROI em fatias de CT com artefatos metálicos. Em
+       cada par, a imagem da esquerda mostra a Zona de Artefato (R art , sobreposição
+       a vermelho) e a da direita a Zona Distante (Rdist , sobreposição a verde). As
+       fatias cobrem anatomias torácica (topo), abdominal (meio) e torácica com im-
+       plante unilateral (base), ilustrando a variabilidade da extensão e forma da zona
+       de artefato em função da localização e número de implantes metálicos. . . . . .    77
+Lista de Gráficos
+
+
+
+
+                    xi
+Lista de Tabelas
+
+
+ 4.1 Resultados do rastreio antes da análise complementar com MS-SSIM. . . . . . .            15
+ 4.2 Resultados do rastreio depois da análise complementar com MS-SSIM. . . . . .             15
+ 4.3 Dados dos pares sem correspondência que foram excluídos antes e após a
+     análise complementar com MS-SSIM. . . . . . . . . . . . . . . . . . . . . . . . .        16
+ 4.4 Distribuição anatómica por subconjunto ao nível de pacientes. . . . . . . . . . .        17
+ 4.5 Distribuição dos pares por subconjunto, categoria anatómica e pacientes. . . . .         17
+ 4.6 Métricas utilizadas por contexto de avaliação. . . . . . . . . . . . . . . . . . . . .   27
+
+ C.1 Resultados do rastreio antes da análise complementar com MS-SSIM. . . . . . .            67
+ C.2 Resultados do rastreio depois da análise complementar com MS-SSIM. . . . . .             67
+ C.3 Dados dos pares sem correspondência que foram excluídos antes e após a
+     análise complementar com MS-SSIM. . . . . . . . . . . . . . . . . . . . . . . . .        67
+ C.4 Distribuição anatómica por subconjunto ao nível de pacientes. . . . . . . . . . .        68
+ C.5 Distribuição dos pares por subconjunto, categoria anatómica e pacientes. . . . .         69
+ C.6 Métricas utilizadas por contexto de avaliação. . . . . . . . . . . . . . . . . . . . .   78
+
+
+
+
+                                             xii
+Lista de Abreviaturas
+
+
+AMP Automatic Mixed Precision.
+
+ASPP Atrous Spatial Pyramid Pooling.
+
+
+BCE Binary Cross-Entropy.
+
+BN Batch Normalization.
+
+
+CBAM Convolutional Block Attention Module.
+
+CNN Convolutional Neural Network.
+
+CT Computed Tomography.
+
+CT-MAR CT Metal Artifact Reduction Challenge.
+
+
+DICE Dice Similarity Coefficient.
+
+DL Deep Learning.
+
+
+FBP Filtered Back Projection.
+
+FC Fully Connected.
+
+FCUP Faculdade de Ciências da Universidade do Porto.
+
+FLOPs Floating Point Operations.
+
+
+GAN Generative Adversarial Network.
+
+GAP Global Average Pooling.
+
+GPU Graphics Processing Unit.
+
+
+                                          xiii
+HU Unidade Hounsfield.
+
+
+iMAR Iterative Metal Artifact Reduction.
+
+IR Iterative Reconstruction.
+
+
+MAE Mean Absolute Error.
+
+MAR Metal Artifact Reduction.
+
+MBIR Model-Based Iterative Reconstruction.
+
+MLP Multi-Layer Perceptron.
+
+MS-SSIM Multi-Scale Structural Similarity Index Measure.
+
+
+NMAR Normalized Metal Artifact Reduction.
+
+NPY NumPy Array.
+
+
+O-MAR Orthopedic Metal Artifact Reduction.
+
+
+PSNR Peak Signal-to-Noise Ratio.
+
+
+ReLU Rectified Linear Unit.
+
+RMSE Root Mean Square Error.
+
+ROI Region of Interest.
+
+
+SE Squeeze-and-Excitation.
+
+SE-Net Squeeze-and-Excitation Network.
+
+SEMAR Single Energy Metal Artifact Reduction.
+
+SSIM Structural Similarity Index Measure.
+
+
+TCIA The Cancer Imaging Archive.
+
+
+U-Net U-shaped Network.
+
+UP Universidade do Porto.
+L ISTA DE TABELAS                                                       xv
+
+
+
+
+    This thesis is dedicated to my husband, for his love and support.
+Capítulo 1
+
+
+Introdução
+
+
+Quando Wilhelm Conrad Röntgen, professor de Física da Universidade de Würzburg, na Ale-
+manha, decidiu repetir o experimento feito por Philipp Lenard com um tubo de Crookes modi-
+ficado para estudar raios catódicos, ninguém podia prever o impacto de suas descobertas na
+medicina. Não demorou muito para que seus experimentos apresentassem resultados surpre-
+endentes que demonstravam que o comportamento observado não era compatível com raios
+catódicos, mas sim com uma espécie de raio mais penetrante e que não sofria desvios na pre-
+sença de um campo magnético. Durante o manuseio das peças usadas nos seus experimen-
+tos, percebeu que o contorno dos seus ossos estava sendo estampado na tela fluorescente
+que utilizava.
+   Assim, em 22 de dezembro de 1895, convidou sua esposa, Anna Bertha, a fazer uma
+exposição de 15 minutos a esses raios, obtendo-se o que seria a primeira radiografia do corpo
+humano. Nesse mesmo ano, Röntgen publicou o artigo "On a new kind of rays"[? ], no qual
+batiza o agente responsável como "raios-X". Já em janeiro de 1896, os jornais anunciavam
+em primeira página a descoberta como uma forma revolucionária de observar o interior do
+corpo humano sem a necessidade de incisões cirúrgicas, apontando seu potencial uso no
+diagnóstico médico [1].
+   Em fevereiro de 1896, em Massachusetts (EUA), Edwin Brant Frost produziu uma radiogra-
+fia da fratura de Colles de um paciente para seu irmão, um médico local, marcando o início da
+incorporação dos raios-X à prática médica [2]. Assim, em menos de um ano após o anúncio
+da descoberta por Röntgen, os raios-X rapidamente saíram dos laboratórios e passaram a
+ser utilizados de forma extensiva no diagnóstico e na terapia [2]. Desde então, a técnica pas-
+sou por sucessivas modernizações e diversificou-se em múltiplas modalidades e dispositivos,
+
+
+
+                                              1
+1. I NTRODUÇÃO                                                                              2
+
+
+consolidando-se como ferramenta indispensável na saúde moderna [3, 4].
+   Dessas sucessivas modernizações surgiu, em 1971, o primeiro tomógrafo computadori-
+zado. Essa tecnologia baseia-se no princípio de atenuação dos raios-X, em que a quantidade
+de radiação absorvida ou dispersa pelo material relaciona-se à sua densidade [5, 6]. A to-
+mografia computadorizada ( CT ) foi a primeira modalidade de imagem médica a fornecer
+informações quantitativas sobre a atenuação dos tecidos, algo que não era possível com a ra-
+diografia convencional [7]. Além disso, ao permitir a visualização seccional do corpo humano,
+a tomografia computadorizada eliminou a sobreposição de estruturas anatômicas inerente às
+imagens bidimensionais, possibilitando a localização precisa e a avaliação da extensão de
+lesões[7].
+   Entretanto, esses avanços trouxeram um aumento significativo da complexidade tecnoló-
+gica. A aquisição de múltiplas projeções, aliada à reconstrução computacional e ao proces-
+samento digital da imagem, introduziu novas formas de degradação que eram inexistentes ou
+pouco relevantes na radiografia convencional. Dessa forma, a tomografia computadorizada
+tornou-se particularmente suscetível à presença de artefatos, os quais podem comprometer a
+qualidade diagnóstica e a confiabilidade clínica das imagens [7].
+   Diversos tipos de artefatos podem ser observados em tomografia computadorizada, inclu-
+indo ruído, endurecimento do feixe, movimento, artefatos de anel e artefatos metálicos, os
+quais podem obscurecer ou simular patologias [8]. As causas desses artefatos são variadas,
+podendo incluir desde falhas ou descalibração dos detectores, limitações estatísticas associ-
+adas a baixas contagens de fótons, até fenômenos físicos como endurecimento e dispersão
+do feixe, que produzem estrias escuras entre objetos de alta atenuação, como metal, osso ou
+meios de contraste iodados [7].
+   Especificamente, artefatos de estrias causados por implantes metálicos são observados
+em aproximadamente 21% das varreduras tomográficas, sendo considerados extremamente
+comuns na prática clínica [7]. A elevada atenuação ou mesmo o bloqueio total dos raios-X por
+esses implantes impede que a radiação alcance adequadamente os detectores, resultando em
+dados de projeção de baixa qualidade e comprometendo a reconstrução da imagem [9].
+   O aumento do uso de implantes metálicos, impulsionado pela evolução dos cuidados de
+saúde, intensificou as preocupações relacionadas ao impacto negativo desses artefatos na
+qualidade de imagem e na confiabilidade das análises diagnósticas [9]. Tradicionalmente,
+diversos algoritmos de redução de artefatos de metal ( MAR ) foram propostos, incluindo técni-
+cas de preenchimento de imagem, preenchimento de sinogramas e métodos de reconstrução
+1. I NTRODUÇÃO                                                                             3
+
+
+iterativa baseada em modelo ( MBIR ) ou combinações dessas abordagens [10].
+   Embora métodos analíticos como a Filtered Back Projection (FBP) tenham dominado a re-
+construção tomográfica por décadas devido à sua eficiência computacional e simplicidade con-
+ceitual, suas limitações tornam-se evidentes em condições clínicas não ideais, exigindo doses
+de radiação mais elevadas para garantir qualidade de imagem [11]. Métodos MBIR surgiram
+como alternativa para superar essas limitações, ao custo de maior demanda computacional e
+da introdução de texturas artificiais na imagem reconstruída [11].
+   Mais recentemente, abordagens baseadas em aprendizado profundo têm sido amplamente
+investigadas para a correção de artefatos em tomografia computadorizada, demonstrando de-
+sempenho superior e maior aplicabilidade clínica em comparação com métodos convencionais
+[12]. Em particular, redes neurais convolucionais ( CNNs ) têm sido propostas para a redução
+de artefatos metálicos, permitindo a supressão de ruído e a preservação de detalhes anatômi-
+cos e de tecidos moles [12].
+
+
+
+1.1    Contexto clínico e técnico
+
+[A preencher: artefactos metálicos, impacto diagnóstico e enquadramento da redução de ar-
+tefactos em CT.]
+
+
+
+1.2    Problema de investigação
+
+[A preencher: formulação do problema, pressupostos do estudo e âmbito da abordagem su-
+pervisionada.]
+
+
+
+1.3    Contribuições e organização da dissertação
+
+[A preencher: contribuições finais e síntese da organização do documento.]
+Capítulo 2
+
+
+Objetivos e Questões de Investigação
+
+
+2.1    Objetivo geral
+
+[A preencher: desenvolver e avaliar uma abordagem reprodutível de redução de artefactos
+metálicos em CT.] O objetivo geral desta dissertação é desenvolver, avaliar e comparar de
+forma rigorosa um modelo baseado em Convolutional Neural Networks (CNNs) para deteção e
+redução de artefatos em imagens de Tomografia Computorizada, privilegiando a preservação
+anatómica, a robustez à variação de domínio e a interpretabilidade do processo de correção.
+
+
+
+2.2    Objetivos específicos
+
+Os objetivos específicos deste trabalho incluem:
+
+   • Desenvolver um pipeline reprodutível para treino e avaliação de modelos de redução de
+      artefatos em CT no domínio da imagem, com separação rigorosa entre dados de treino,
+      validação e teste.
+
+   • Avaliar o desempenho de uma arquitetura U-Net single-head para reconstrução de ima-
+      gem na redução de artefatos metálicos e usá-lo como referência comparativa.
+
+   • Propor e avaliar uma arquitetura U-Net dual-head baseada em aprendizado multi-tarefa
+      para reconstrução de imagem e predição de artefatos, incluindo um estudo de ablação
+      comparativo entre as duas abordagens.
+
+   • Avaliar o desempenho dos modelos utilizando métricas quantitativas ( PSNR, MS-SSIM,
+      SSIM, BCE e DICE ), análise qualitativa e mapas de erro.
+
+                                              4
+2. O BJETIVOS E Q UESTÕES DE I NVESTIGAÇÃO                                             5
+
+
+   • Investigar a capacidade de generalização do modelo selecionado por meio de validação
+      externa em dados independentes provenientes do The Cancer Imaging Archive (TCIA).
+
+
+
+2.3    Hipóteses e desfechos
+
+[A preencher: hipótese primária baseada em MS-SSIM, desfechos secundários e critérios de
+preservação.]
+Capítulo 3
+
+
+Enquadramento e Trabalhos Relacionados
+
+
+3.1   Artefactos metálicos em tomografia computorizada
+
+[A preencher: mecanismos físicos, impacto clínico e limitações dos métodos convencionais.]
+   Os métodos tradicionais de redução de artefatos em CT baseiam-se predominantemente
+em princípios físicos e matemáticos associados à formação da imagem. Barrett e Keat[13]
+descrevem detalhadamente a origem dos principais artefatos em CT, incluindo endurecimento
+de feixe, photon starvation, dispersão e efeitos geométricos, bem como estratégias clássicas
+para sua mitigação.
+   Técnicas de reconstrução como a Retroprojeção Filtrada ( FBP ) foram amplamente uti-
+lizadas devido à sua eficiência computacional, porém apresentam elevada sensibilidade ao
+ruído e aos artefatos metálicos. Métodos mais avançados, como Iterative Reconstruction (IR)
+e Model-Based Iterative Reconstruction (MBIR), incorporam modelos estatísticos do sistema
+de aquisição e do ruído, permitindo redução parcial de artefatos. Contudo, essas abordagens
+frequentemente introduzem texturas artificiais e apresentam limitações em cenários clínicos
+complexos [11].
+   Revisões recentes indicam que algoritmos comerciais de Metal Artifact Reduction (MAR),
+como O-MAR, iMAR e SEMAR, embora eficazes em situações específicas, dependem de pa-
+râmetros proprietários e exibem desempenho inconsistente em casos de implantes densos ou
+múltiplos [9, 14]. Essas limitações impulsionaram a investigação de abordagens baseadas em
+aprendizagem profunda.
+
+
+
+
+                                             6
+3. E NQUADRAMENTO E T RABALHOS R ELACIONADOS                                             7
+
+
+
+3.2    Redução de artefactos baseada em aprendizagem profunda
+
+[A preencher: métodos no domínio da imagem, riscos de alteração anatómica e lacunas de
+validação.]
+   As primeiras aplicações de DL para MAR concentraram-se no domínio da imagem, explo-
+rando redes convolucionais para mapear imagens degradadas para versões corrigidas. Gjes-
+teby et al. [15] investigaram a redução de artefatos metálicos no domínio da imagem baseada
+em CNN e demonstraram melhorias quantitativas significativas em comparação com as técni-
+cas convencionais.
+   Zhang e Yu [16] também propuseram um modelo supervisionado baseado em Convolu-
+tional Neural Network (CNN) para redução de artefatos metálicos em CT, obtendo ganhos
+consistentes em Peak Signal-to-Noise Ratio (PSNR) e Root Mean Square Error (RMSE). Es-
+ses trabalhos ajudaram a consolidar o uso de redes convolucionais para MAR no domínio da
+imagem. Em particular, Zhang e Yu utilizaram uma CNN rasa totalmente convolucional para fu-
+são de informação de múltiplas imagens pré-corrigidas. Os trabalhos subsequentes adotaram
+cada vez mais arquiteturas de codificador-decodificador, especialmente as baseadas em U-
+Net, para tarefas de correção/restauração. Redes do tipo U-Net e suas variantes são capazes
+de capturar informações contextuais globais por meio do caminho de contração, e recuperar
+detalhes espaciais finos por meio do caminho de expansão e Skip Connections[17].
+   Revisões sistemáticas mais recentes consolidam esses avanços, destacando que a maio-
+ria dos métodos supervisionados no domínio da imagem apresenta desempenho competitivo,
+especialmente quando treinados com dados pareados de alta qualidade [9, 11].
+   Além do domínio da imagem, alguns estudos exploraram o domínio do sinograma, com mé-
+todos de interpolação linear e Normalized Metal Artifact Reduction (NMAR). Essas abordagens
+operam diretamente nos dados de projeção e atuam diretamente na origem física dos artefatos
+metálicos[18]. No entanto, o acesso aos dados de projeção brutos é frequentemente restrito
+em sistemas de CT comerciais, limitando a aplicabilidade de tais abordagens em ambientes
+clínicos [15].
+   Além disso, modelos híbridos têm sido propostos para aproveitar as vantagens de cada
+abordagem. O método proposto por Zhang e Yu [16] procura mesclar CNN no domínio de ima-
+gem e MAR clássico no domínio do sinograma. Na abordagem adotada, o refinamento inicial
+ocorre no domínio da imagem, mas o método completo utiliza a imagem gerada pela CNN
+3. E NQUADRAMENTO E T RABALHOS R ELACIONADOS                                                8
+
+
+como prior para substituição de regiões afetadas no sinograma. Isso caracteriza uma aborda-
+gem híbrida, mas ainda não emprega CNN nos dois domínios. Modelos mais recentes, como o
+DuDoNet[19], integram redes profundas em ambos os domínios, demonstrando desempenho
+elevado e caracterizando o que chamamos de Dual Domain. No entanto, esses métodos apre-
+sentam maior complexidade computacional e dependência do acesso ao sinograma bruto, o
+que motiva a exploração contínua de soluções robustas no domínio da imagem.
+   Para contornar a escassez de dados pareados anatomicamente idênticas com artefato
+de metal/Livre de artefato de metal, surgiram abordagens baseadas em aprendizagem auto-
+supervisionada. Yu et al. [20] propuseram um método capaz de reduzir artefatos metálicos
+sem a necessidade de imagens de referência totalmente limpas, ampliando a aplicabilidade
+clínica dessas técnicas.
+   Outros trabalhos exploraram o uso de Generative Adversarial Network (GAN) para MAR.
+Huang et al. [21] utilizaram fusão multimodal e GANs para melhorar a preservação de textura
+e reduzir suavização excessiva. Apesar dos bons resultados visuais, métodos baseados em
+GAN podem introduzir instabilidade no treino e maior risco de alucinação estrutural[22], o que
+levanta preocupações clínicas.
+
+
+
+3.3   Avaliação reprodutível e generalização
+
+[A preencher: partição ao nível do paciente, inferência pareada e avaliação externa.] A ava-
+liação de modelos de DL para CT é tipicamente realizada por meio de métricas quantitativas
+como PSNR, RMSE e índices baseados em similaridade estrutural. Métricas tradicionais base-
+adas em erro, como RMSE e PSNR, quantificam discrepâncias pixel a pixel, mas não capturam
+adequadamente informações estruturais relevantes para a percepção visual e interpretação
+clínica. Nesse contexto, Wang et al. [23] introduziram o Structural Similarity Index Measure
+(SSIM) como uma métrica perceptual que modela explicitamente luminância, contraste e es-
+trutura. Posteriormente, o Multi-Scale Structural Similarity Index Measure (MS-SSIM) foi pro-
+posto para incorporar variações estruturais dependentes de escala, estendendo o SSIM para
+múltiplos níveis de resolução [24]. Horé e Ziou [25] demonstraram que tanto PSNR quanto
+SSIM apresentam limitações dependendo do tipo de distorção considerada, sugerindo que a
+escolha da métrica pode depender do contexto de aplicação. Dado que os artefatos metálicos
+se manifestam principalmente como distorções estruturais que afetam limites anatômicos e
+padrões de estrias de longo alcance, métricas sensíveis à preservação estrutural, como SSIM
+3. E NQUADRAMENTO E T RABALHOS R ELACIONADOS                                                   9
+
+
+e MS-SSIM, mostram-se particularmente adequadas para avaliar o desempenho de métodos
+de MAR, pois consideram explicitamente componentes estruturais em diferentes escalas es-
+paciais [23, 24]. Além disso, um desafio crítico identificado na literatura é a generalização dos
+modelos. Zech et al. [26] demonstraram que modelos com elevado desempenho em bases
+internas podem falhar significativamente quando aplicados a dados externos, evidenciando o
+impacto do domain shift. Revisões recentes reforçam a necessidade de validação externa e
+avaliação clínica rigorosa para garantir segurança, robustez e aplicabilidade real [27, 28]. A
+literatura revisada demonstra avanços significativos na redução de artefatos em CT por meio
+de DL, mas também evidencia lacunas persistentes: falta de padronização experimental, va-
+lidação externa limitada, risco de alucinação anatómica e exploração restrita de supervisão
+dual e mecanismos de atenção em conjunto.
+Capítulo 4
+
+
+Materiais e Métodos
+
+
+4.1      Dados, curadoria e rastreabilidade
+
+4.1.1     Conjunto CT-MAR e fontes de referência
+
+[A preencher: dados de entrada, correspondência às fontes originais, inclusões e exclusões.]
+   O dataset principal utilizado neste trabalho provém do CT Metal Artifact Reduction Chal-
+lenge (CT-MAR) [29, 30] promovido pela American Association of Physicists in Medicine e
+consiste em 14.000 pares de treino contendo imagens de CT com artefatos metálicos simula-
+dos e suas versões originais sem artefatos. Os dados foram gerados através de um framework
+de simulação híbrida [31], que incorpora imagens clínicas publicamente disponíveis e objetos
+metálicos simulados com o simulador CatSim, integrado na toolkit de código aberto XCIST
+[32]. O conjunto é distribuído em duas categorias anatómicas:
+
+   • Head: 1.626 (11.61%) amostras derivadas da base UCLH Stroke EIT Data [33, 34];
+
+   • Body: 12.374 (88.38%) amostras derivadas da base NIH DeepLesion Data [35].
+
+   Onde as pastas da categoria body apresentavam CTs de tronco, abragendo fatias axiais,
+torácica e abdominal. Os dados estão organizados em subpastas, cada uma contendo até
+1.000 amostras. Foram utilizados apenas os seguintes ficheiros para treino e validação:
+
+  1. Imagens sem metal (referência): Ficheiros contidos na pasta Target de dimensão
+        512×512×1 pixels;
+
+  2. Imagens com artefatos metálicos (corrompidas): Ficheiros contidos na pasta Base-
+        line de dimensão 512×512×1 pixels;
+
+                                             10
+4. M ATERIAIS E M ÉTODOS                                                                    11
+
+
+   Todos os ficheiros de imagem (.raw) do dataset são apresentados em formato binário sem
+cabeçalho, com precisão float32 em ordem little endian. As imagens já vieram convertidas
+de coeficientes de atenuação linear (em unidades mm−1 ) para Unidade Hounsfield (HU), utili-
+zando o valor de normalização de 0.02 mm−1 para água. Não havia no conjunto de dados infor-
+mações adicionais sobre a que exame cada slice pertencia, se eram de um mesmo paciente,
+ou quais regiões anatómicas específicas estavam representadas. A única informação disponí-
+vel era a organização por pasta, que indicava a categoria anatómica (Head ou Body). A falta
+de metadados detalhados impôs a necessidade de uma abordagem de pré-processamento
+cuidadosa para garantir que os dados fossem adequadamente organizados e utilizados du-
+rante o treino e validação dos modelos. Dessa forma, um esforço significativo foi dedicado ao
+rastreio das imagens aos conjuntos de dados originais (UCLH Stroke EIT Data e NIH Dee-
+pLesion Data) para obter informações adicionais sobre os exames e pacientes, permitindo um
+particionamento adequado dos dados.
+
+
+4.1.2   Particionamento ao nível do paciente
+
+[A preencher: manifesto canónico, semente fixa, proporções treino/validação/teste e auditoria
+de leakage.]
+   O particionamento dos dados foi estratificado por pacientes, garantindo que os slices de
+um mesmo paciente não fossem distribuídos entre os conjuntos de treino, validação e teste.
+Esta abordagem evita vazamento de informações e assegura uma avaliação mais realista da
+capacidade de generalização dos modelos.
+   Dado que os dados do CT-MAR dataset não continham metadados clínicos detalhados,
+foi necessário realizar um rastreio algorítmico dos slices até aos conjuntos de dados originais
+(UCLH Stroke EIT e NIH DeepLesion Data) para tornar possível a associação dos metadados
+fornecidos aos slices do CT-MAR. Este processo permitiu identificar a qual exame e paciente
+do DeepLesion/UCLH Stroke EIT cada imagem CT-MAR pertencia. Essas informações foram
+posteriormente utilizadas para realizar o particionamento dos dados em treino, validação e
+teste ao nível do paciente, reduzindo o risco de data leakage entre conjuntos experimentais.
+   A correta separação dos dados é particularmente importante em estudos de imagem mé-
+dica baseados em deep learning, uma vez que slices pertencentes ao mesmo exame frequen-
+temente apresentam elevada similaridade anatómica. Dessa forma, a presença simultânea de
+imagens do mesmo paciente em treino e teste pode inflacionar artificialmente o desempenho
+do modelo e comprometer a avaliação da sua capacidade de generalização [36].
+4. M ATERIAIS E M ÉTODOS                                                                   12
+
+
+   As imagens do dataset DeepLesion [35] encontram-se armazenadas em formato PNG de
+16 bits, enquanto as imagens do CT-MAR são disponibilizadas em formato .raw diretamente
+em unidades de Hounsfield (HU). Já o UCLH Stroke EIT [33] disponibiliza os exames em
+formato DICOM. Assim, independentemente do formato original, todas as imagens foram con-
+vertidas para HU antes da comparação, garantindo uniformidade entre os diferentes conjuntos
+de dados.
+   Após a conversão, todas as imagens foram representadas numa mesma escala de intensi-
+dade para permitir comparação direta.
+   O algoritmo utilizado baseia-se no facto de que imagens CT preservam informação quanti-
+tativa em unidades de Hounsfield (HU), refletindo diretamente as propriedades de atenuação
+dos diferentes tecidos. Como as estruturas anatómicas apresentam elevada continuidade es-
+pacial entre slices consecutivos de uma mesma aquisição, imagens correspondentes à mesma
+fatia anatómica tendem a apresentar distribuições semelhantes de HU e padrões estruturais
+globais altamente consistentes [23, 37].
+   Dessa forma, o método não procura verificar igualdade absoluta pixel-a-pixel entre ima-
+gens, mas sim determinar se a organização estrutural global da anatomia permanece extre-
+mamente semelhante entre diferentes representações da mesma fatia. Esse comportamento
+é particularmente importante porque pequenas variações locais de intensidade, discretização
+numérica e transformações lineares associadas à conversão entre formatos de armazena-
+mento tendem a preservar a estrutura anatómica global da imagem mesmo quando ocorrem
+pequenas variações locais de intensidade [23, 37].
+   Assim, a metodologia adotada procura identificar correspondências entre imagens com
+base na similaridade estrutural global, permitindo uma margem de variação local que não
+comprometa a identificação correta do exame e paciente de origem. Inicialmente, cada ima-
+gem foi reduzida para uma representação compacta através de downsampling, preservando
+principalmente a informação anatómica global relevante. Essa etapa reduz significativamente
+o custo computacional sem comprometer a estrutura geral da imagem.
+   Em seguida, foi calculado um vetor representativo (fingerprint) para cada imagem. Os
+fingerprints das imagens CT-MAR foram então comparados com os fingerprints das imagens
+DeepLesion e UCLH Stroke EIT através de uma métrica de similaridade vetorial baseada em
+produto escalar normalizado (similaridade de cosseno), escolhida por ser invariante a diferen-
+ças de escala global entre os vetores — propriedade relevante dado que as imagens provêm
+4. M ATERIAIS E M ÉTODOS                                                                          13
+
+
+de formatos distintos com diferentes normalizações de intensidade. Para cada imagem CT-
+MAR, foi selecionada a imagem com maior score de similaridade.
+   Como a maior parte das imagens do CT-MAR teve origem no DeepLesion, o processo de
+rastreio foi inicialmente priorizado nesse dataset. Posteriormente, a mesma metodologia foi
+aplicada aos exames DICOM do UCLH Stroke EIT para identificação das imagens restantes.
+Dessa forma, foi possível implementar uma estratégia unificada de rastreabilidade indepen-
+dentemente do formato de armazenamento dos datasets de origem.
+   As correspondências foram consideradas válidas apenas quando o score de similaridade
+excedia um limiar previamente definido empiricamente. Casos com scores muito elevados fo-
+ram automaticamente marcados como correspondências seguras, pois observou-se que todos
+os pares analisados visualmente com pontuação superior a 0.993 correspondiam efetivamente
+à mesma imagem. Para manter uma margem adicional de segurança, a correspondência foi
+considerada automaticamente válida apenas quando a pontuação excedia 0.994.
+   Pontuações inferiores a esse limiar indicavam correspondências potencialmente ambíguas
+e eram submetidas à inspeção visual manual. Já pontuações inferiores a aproximadamente
+0.98 indicavam correspondências claramente incorretas e eram automaticamente descartadas
+sem necessidade de revisão manual. Dessa forma, todos os pares que apresentavam pon-
+tuações entre 0.98 e 0.994 foram analisados visualmente para confirmação da validade da
+correspondência. A fim de evitar a exclusão de pares de forma desnecessaria, todos os pares
+com pontuação inferior a 0.98 para ambos os datasets (DeepLesion e UCLH Stroke EIT) foram
+submetidos a inspeção visual para garantir que não fossem erroneamente descartados.
+   Para os 530 pares que permaneceram sem correspondência aprovada após a busca di-
+reta nos dois datasets de origem, foi aplicada uma etapa complementar de correspondência
+indireta. Nessa etapa, cada imagem CT-MAR não correspondida foi comparada com imagens
+CT-MAR já rastreadas; os vizinhos mais semelhantes foram usados para selecionar exames
+candidatos do DeepLesion e, em seguida, todos os slices desses exames foram pesquisados
+com fingerprints de dimensão 64 × 64. As 530 propostas foram inspecionadas visualmente: 95
+correspondências foram aprovadas e incorporadas ao manifesto consolidado, enquanto 435
+permaneceram sem correspondência segura e foram excluídas. Uma estratégia exploratória
+de agrupamento dos pares remanescentes chegou a ser testada, mas nenhum desses agru-
+pamentos foi utilizado para recuperar pares, atribuir pacientes ou definir as partições finais.
+   Além disso, o método foi concebido para ignorar automaticamente imagens previamente
+4. M ATERIAIS E M ÉTODOS                                                                    14
+
+
+verificadas como correspondências corretas, reduzindo redundâncias e acelerando reproces-
+samentos futuros. Devido ao elevado número de imagens presentes nos datasets, o processa-
+mento foi paralelizado e otimizado através da utilização de operações matriciais vetorizadas.
+Quando disponível, o algoritmo utiliza aceleração por GPU para reduzir o tempo de execução.
+Os fingerprints calculados também foram armazenados em cache para evitar recomputação
+desnecessária em execuções subsequentes.
+   Embora a representação compacta baseada exclusivamente na média de intensidades dos
+blocos (HU) seja eficiente, ela pode, em teoria, gerar falsos positivos quando exames de pa-
+cientes diferentes são adquiridos com protocolos de aquisição idênticos ou apresentam estru-
+turas anatómicas muito semelhantes, uma vez que essas condições tendem a produzir distri-
+buições de intensidade similares e, consequentemente, fingerprints com pontuação elevada.
+Para mitigar esse risco, adotou-se um limiar de aceitação automática conservador (0,994) e a
+validação visual sistemática de todos os pares com scores entre 0,98 e 0,994. Adicionalmente,
+como salvaguarda complementar, todos os matches automáticos foram analisados em termos
+de MS-SSIM, onde os pares com pontuações mais críticas foram submetidos a uma revisão
+visual adicional para garantir a confiabilidade das correspondências.
+   Além disso, essa limitação não compromete o objetivo principal da metodologia. Pois,
+apesar de Slices consecutivos de um mesmo exame frequentemente apresentarem elevada
+redundância espacial e poderem, portanto, obter scores de similaridade muito próximos entre
+si. O propósito do algoritmo não foi realizar alinhamento voxel-a-voxel rigoroso, mas sim iden-
+tificar corretamente o exame e o paciente de origem de cada imagem CT-MAR. Dessa forma,
+mesmo eventuais ambiguidades entre slices adjacentes permanecem restritas ao mesmo vo-
+lume anatómico e não introduzem risco relevante de data leakage entre treino, validação e
+teste.
+   A literatura demonstra que a qualidade dos pares utilizados em estudos supervisionados
+influencia diretamente o desempenho e a capacidade de generalização dos modelos de MAR
+[9, 19]. Além disso, métricas estruturais de qualidade de imagem, como o SSIM, têm sido
+amplamente utilizadas em imagem médica devido à sua maior sensibilidade à preservação
+estrutural [23]. Embora o método implementado não utilize diretamente SSIM, a estratégia
+adotada procura preservar precisamente a informação estrutural global da imagem durante o
+processo de correspondência.
+   Mais ainda, a utilização dos dados sem qualquer tratamento de rastreio desse tipo, con-
+dicionaria todo o projeto a um vazamento de dados inerente ao dataset, comprometendo a
+4. M ATERIAIS E M ÉTODOS                                                                               15
+
+
+avaliação do desempenho dos modelos e a validade dos resultados. Assim, mesmo que o
+método de rastreio não seja perfeito, ele representa uma melhoria significativa em relação à
+ausência total de rastreio, garantindo uma base mais confiável.
+   Tendo isso em conta, essa etapa constituiu um importante procedimento de controlo de
+qualidade do dataset experimental e foi fundamental para garantir um particionamento ade-
+quado dos dados utilizados no treino, validação e teste dos modelos, assegurando que os
+subconjuntos fossem estratificados por paciente e evitando vazamento de informação entre
+conjuntos experimentais.
+
+
+4.1.3      Coorte final e Exclusões
+
+Nem todos os slices puderam ser rastreados, mas a maioria dos dados foi associada com
+sucesso aos exames originais. Ao final das etapas de correspondência direta e indireta, e an-
+tes da análise complementar com MS-SSIM, dos 14.000 pares disponibilizados pelo CT-MAR
+Dataset, 11.942 foram rastreados até ao DeepLesion (incluindo os 95 recuperados pela corres-
+pondência indireta) e 1.623 até ao UCLH Stroke EIT, totalizando 13.565 pares com metadados
+associados 4.1.
+       Tabela 4.1 Resultados do rastreio antes da análise complementar com MS-SSIM.
+
+
+             Dataset                  Rastreados        Correspondidos            Não correspondidos
+             DL (DeepLesion)             12.374                11.942                    432
+             Stroke (UCLH)                1.626                 1.623                     3
+             Total                       14.000                13.565                    435
+
+
+   Na etapa de avaliação via MS-SSIM, dentre todos os pares com pontuação abaixo de 0.90,
+apenas 3, anteriormente associados ao Deep Lesion, foram reprovados na inspeção visual
+4.2.
+       Tabela 4.2 Resultados do rastreio depois da análise complementar com MS-SSIM.
+
+
+             Dataset                  Rastreados        Correspondidos            Não correspondidos
+             DL (DeepLesion)             12.374                11.939                    435
+             Stroke (UCLH)                1.626                 1.623                     3
+             Total                       14.000                13.562                    438
+
+
+   Dado que uma quantidade significativa dos dados pôde ser rastreada com elevada confia-
+bilidade, os casos restantes que não puderam ser agrupados de forma segura foram excluídos
+4. M ATERIAIS E M ÉTODOS                                                                                         16
+
+
+do processo de treino e validação. No total, 438 pares foram removidos por não apresentarem
+informação suficiente para garantir agrupamento seguro ao nível do paciente. Entre eles, os
+3 pares reprovados por ser falso positivo na etapa de avaliação via MS-SSIM. Todos os pa-
+res removidos desse estudo foram inspecionados visualmente para confirmar a ausência de
+correspondência, garantindo que a exclusão foi justificada.
+
+    Tabela 4.3 Dados dos pares sem correspondência que foram excluídos antes e após a análise complementar com
+    MS-SSIM.
+
+
+                                                      Excluídos
+                                                   Antes      Depois
+                                          Total     435         438
+
+
+   Assim, dos 14.000 pares originalmente disponibilizados pelo CT-MAR Dataset, 13.562 fo-
+ram incluídos neste trabalho, enquanto 438 foram excluídos para preservar a integridade do
+particionamento experimental e minimizar o risco de data leakage.
+
+
+4.1.4   Estratificação Anatómica
+
+A proporção anatómica dos 14.000 pares do CT-MAR Dataset, mudou pouco após o processo
+de rastreio e exclusão dos pares com baixa confiabilidade. Dos 438 casos removidos 435
+eram do tipo body, 3 do tipo head. A distribuição anatómica dos pares incluídos no estudo é a
+seguinte:
+
+   • Body: aproximadamente 88.03% ;
+
+   • Head: aproximadamente 11.97% .
+
+   A estratificação foi implementada dentro de cada subconjunto (train/val/test) de modo a
+manter a proporção anatómica ao nível de pacientes, garantindo que a proporção relativa
+entre categorias seja preservada em todos os subconjuntos. Dessa forma, o balanceamento
+anatómico é preservado, garantindo que os modelos sejam treinados e avaliados em uma
+representação adequada da diversidade anatómica presente no conjunto de dados original.
+   A nível de pacientes, a distribuição anatómica é a seguinte:
+
+   • Body: aproximadamente 95.9% (258/269 pacientes);
+
+   • Head: aproximadamente 4.1% (11/269 pacientes).
+4. M ATERIAIS E M ÉTODOS                                                                         17
+
+
+   Após o particionamento, os subconjuntos de treino, validação e teste apresentaram a se-
+guinte distribuição:
+
+      Tabela 4.4 Distribuição anatómica por subconjunto ao nível de pacientes.
+
+
+                                    Split     Body        Head       Body%       Head%
+                                    Train         180          7      96.3%        3.7%
+                                    Val           39           2      95.1%        4.9%
+                                    Test          39           2      95.1%        4.9%
+                                    Total         258      11         95.9%        4.1%
+
+
+   A proporção de aproximadamente 70% dos pacientes para treino, 15% para validação e
+15% para teste com semente aleatória fixa (seed = 1337) foi escolhida para garantir uma quan-
+tidade suficiente de dados para treino, mantendo subconjuntos independentes para validação
+e teste, garantindo uma avaliação confiável do desempenho dos modelos.
+
+      Tabela 4.5 Distribuição dos pares por subconjunto, categoria anatómica e pacientes.
+
+
+                            Split      Pares           Body        Head    Body%        Head%
+                            Train         9 516        8 563       953     89.98%       10.02%
+                            Val           2 532        2 147       385     84.79%       15.21%
+                            Test          1 514        1 229       285     81.17%       18.83%
+                            Total      13 562       11 939         1 623   88.03%       11.97%
+
+
+   Pode-se notar, que devido a grande variação na quantidade de slices por paciente, a distri-
+buição anatómica ao nível de pares é bastante diferente da distribuição ao nível de pacientes.
+Devido a isso, a proporção ∼ 70/15/15 foi mantida ao nível de pacientes, mas a distribuição
+anatómica dos pares não segue exatamente a mesma proporção.
+
+
+
+4.2      Pré-processamento
+
+[A preencher: janela HU, normalização, máscaras corporais e máscaras de artefacto.]
+
+
+4.2.1      Verificação de integridade
+
+Todos os pares foram validados através de um relatório de integridade, que verifica a existência
+de ambos os lados do par (imagem com artefacto e imagem limpa). Não houve nenhum par
+4. M ATERIAIS E M ÉTODOS                                                                  18
+
+
+com dados faltantes, garantindo que o conjunto de dados estava completo e pronto para as
+etapas subsequentes de pré-processamento e treino dos modelos.
+
+
+4.2.2     Máscara Corporal
+
+Um subprojeto inicial foi dedicado à remoção do fundo dos exames para evitar a influencia
+de pixels irrelevantes na aprendizagem do modelo, pois as imagens de CT frequentemente
+contêm grandes áreas de fundo que não contribuem para a tarefa de remoção de artefatos
+metálicos. A presença desses pixels origina um desequilíbrio de classes nos dados de treino
+— ao fazer predominar voxels de fundo irrelevantes sobre as regiões anatómicas de interesse
+—, dificultando a aprendizagem e desviando o foco do modelo das estruturas clinicamente rele-
+vantes [38, 39]. Para abordar esse desafio, foi implementada uma etapa de pré-processamento
+também baseada em Deep Learning (DL). Uma U-Net-2D foi treinada para segmentar o tecido
+corporal do fundo, gerando máscaras binárias que foram aplicadas às imagens originais para
+isolar as regiões de interesse. Esse modelo foi treinado utilizando 1.500 amostras do próprio
+CT-MAR dataset, onde as máscaras de segmentação foram geradas automaticamente através
+de um processo de limiarização. Além disso, um refinamento manual foi feito nas máscaras ob-
+tidas para garantir a qualidade dos dados de treino e consequentemente a eficácia do modelo
+de segmentação. Esta etapa foi crucial para focar o modelo nas regiões relevantes, reduzindo
+a influência de artefatos de fundo e melhorando a qualidade das features extraídas durante o
+treino.
+
+
+4.2.3     Janela de intensidade e normalização
+
+As intensidades das imagens vêm expressas em HU do dataset CT-MAR. Para reduzir varia-
+ções extremas e focar em regiões clinicamente relevantes, foi aplicada uma janela de intensi-
+dade adequada ao contexto anatómico. Após o janelamento, os valores foram normalizados
+para o intervalo [0, 1] e são gerados tensores NPY de dimensão 256 × 256 2D para cada slice.
+
+
+4.2.4     Máscara de artefacto para supervisão auxiliar
+
+Foram produzidas máscaras binárias de diferenças das regiões afetadas por artefatos que
+foram utilizadas como sinal de supervisão adicional na arquitetura versão Dual-Head. Essas
+máscaras são utilizadas exclusivamente durante o treino, não sendo necessárias durante a
+inferência. A máscara binária de diferenças é definida formalmente como:
+4. M ATERIAIS E M ÉTODOS                                                                           19
+
+
+                                         
+                                         
+                                             1;   se | Iarti f act (i, j) − Iclean (i, j)| > τ
+                                         
+                                         
+                      Mdi f f (i, j) =                                                           (4.1)
+                                         0;      caso contrário
+                                         
+                                         
+
+onde Iarti f act representa a imagem com artefatos, Iclean a imagem de referência limpa, e τ =
+0.05 é o limiar de diferença normalizada. Este threshold foi definido empiricamente para cap-
+turar regiões com diferenças perceptíveis mantendo robustez a ruído de baixa amplitude.
+
+
+
+4.3     Arquiteturas em comparação
+
+4.3.1   U-Net single-head
+
+[A preencher: saída de reconstrução e configuração final.]
+   O modelo escolhido para ser o baseline consiste em uma arquitetura baseada em U-Net
+[17], composta por encoder-decoder com conexões de atalho (skip connections). Li et al
+[40], aplicam blocos de normalização em lote ( BN ) e funções de ativação ReLU após cada
+convolução dinâmica. Esse trabalho faz algo semelhante, mas opta por utilizar convoluções
+padrão com kernel 3 × 3, seguida dos blocos de BN e funções de ativação ReLU. A escolha
+por convoluções padrão é justificada pela simplicidade e eficiência computacional, além de
+manter a abordagem utilizada por Ronneberger et al [17]. Assim como Li et al [40], o decoder
+também utiliza bilinear upsampling. Essa arquitetura possui apenas um output, configurando
+um modelo Single-Head. A figura 3.1 ilustra a estrutura da arquitetura baseada em U-Net
+utilizada como modelo baseline.
+
+
+4.3.2   U-Net dual-head
+
+[A preencher: saída de reconstrução, supervisão auxiliar por máscara e configuração final.]
+   Uma variação do modelo baseline acima descrito foi concebida, estendendo a arquitetura
+para uma configuração dual-head, onde mantêm-se o encoder e o decoder compartilhados,
+mas são adicionadas duas saídas independentes na última camada do decoder. Cada cabeça
+tem tarefas distintas, sendo:
+
+   • uma cabeça dedicada à reconstrução da imagem corrigida;
+
+   • uma cabeça dedicada à predição da máscara de artefatos.
+4. M ATERIAIS E M ÉTODOS                                                                  20
+
+
+   As duas arquiteturas foram avaliadas entre si para determinar o impacto da supervisão adi-
+cional com máscara de artefatos na qualidade da reconstrução e na capacidade de redução
+de artefatos. Toda a base de ambos os modelos são iguais, sendo a única diferença a pre-
+sença da cabeça de predição da máscara de artefatos na versão dual-head. Dessa forma, a
+comparação entre as duas arquiteturas é justa e isolada, permitindo avaliar exclusivamente o
+impacto da supervisão adicional da máscara de artefatos.
+
+
+
+
+    Fig.4.1 Diagrama da arquitetura final: unet_dual_compact.png.
+4. M ATERIAIS E M ÉTODOS                                                                    21
+
+
+
+
+      Fig.4.2 Diagrama da arquitetura final: unet_single_compact.png.
+
+
+
+
+4.4      Treino reprodutível
+
+[A preencher: ambiente, precisão numérica, semente, função de perda, monitorização, check-
+point e critério de paragem.]
+
+
+4.4.1      Configuração, determinismo e seleção de checkpoint
+
+Os dois modelos foram treinados sob a mesma configuração experimental, com semente ale-
+atória fixa de 1337, precisão float32 e operações determinísticas. A precisão mista foi desati-
+vada e os lotes foram mantidos completos, incluindo o último lote de cada época, de modo a
+evitar que amostras fossem excluídas do treino, validação ou avaliação.
+   Foi utilizado o otimizador AdamW, com taxa de aprendizagem inicial de 2,2645156 × 10−4 e
+weight decay de 10−4 , idênticos para as duas arquiteturas. A taxa de aprendizagem foi ajus-
+tada pelo scheduler Reduce on Plateau, monitorizando a métrica de validação especificada
+para cada arquitetura. O treino tinha um limite máximo de 300 épocas e foi interrompido an-
+tecipadamente quando a métrica monitorizada não melhorava pelo menos 10−4 durante 15
+4. M ATERIAIS E M ÉTODOS                                                                      22
+
+
+épocas consecutivas. Em cada execução, foi retido o checkpoint correspondente ao melhor
+valor da métrica de validação monitorizada.
+   Durante o treino, foram monitorizadas as seguintes quantidades:
+
+   • Perda de reconstrução, para acompanhar a otimização da imagem corrigida;
+
+   • Perda de segmentação, apenas no modelo dual-head, para acompanhar a supervisão
+        auxiliar da máscara;
+
+   • SSIM, PSNR e MAE na escala HU, calculados na região corporal para acompanhar a
+        fidelidade estrutural e radiométrica das reconstruções.
+
+
+4.4.2     Função de Perda
+
+   • Reconstrução: Apesar de L2 ser amplamente utilizada para restauração de imagem,
+        Zhao et al. [41] destacam os melhores resultados de L1 ao estudar diferentes funções de
+        perda para essa tarefa. Os autores também estudaram funções de perda baseadas em
+        SSIM e MS-SSIM, sendo que a primeira alcança resultados igual ou levemente inferior a
+        L1, equanto a segunda apresenta desempenho melhor que SSIM mas ainda não supera
+        L1 de forma clara. O trabalho também testa um mix de L1 e MS-SSIM, e obteve-se re-
+        sultados superiores em todas as métricas avaliadas pelos autores. Essa combinação é
+        justificada pela complementaridade entre as duas funções, onde L1 favorece fidelidade
+        local e SSIM promove preservação estrutural, resultando em uma correção mais equi-
+        librada dos artefatos. Devido a esses resultados, a função de perda de reconstrução
+        adotada neste trabalho é a soma ponderada de L1 e SSIM. Os pesos utilizados foram
+        0.7 para L1 e 0.3 para SSIM, baseando-se na recomendação de Zhao et al. [41]. A
+        relação adotada para a combinação das funções de perda é a seguinte:
+
+                                  L Recon = 0,7 · L L1 + 0,3 · (1 − SSIM)
+
+
+        [41] utiliza filtragem Gaussiana em L1 para reduzir o impacto de ruído e favorecer a
+        correção de artefatos, mas essa abordagem pode não ser ideal para tomografias com-
+        putadorizadas, onde a precisão radiométrica é crucial. Portanto, neste trabalho, optou-se
+        por utilizar a perda L1 direta sem filtragem gaussiana, garantindo máxima fidelidade na
+        reconstrução dos valores de Unidade Hounsfield (HU), enquanto o SSIM continua a ga-
+        rantir a preservação estrutural. Essa combinação de função de perda é adotada para a
+4. M ATERIAIS E M ÉTODOS                                                                     23
+
+
+        arquitetura single-head e também para a cabeça de reconstrução da arquitetura dual-
+        head. Dessa forma, garante-se que a ablação entre as duas versões seja justa, isolando
+        o impacto da supervisão adicional da máscara.
+
+   • Supervisão auxiliar da máscara: Baseado nos estudos de Isensee et al. [42], a cabeça
+        de predição da máscara de artefatos, presente na versão dual-head, é treinada utilizando
+        uma combinação de DICE Loss e Binary Cross-Entropy (BCE), que se mostrou adequada
+        para problemas de segmentação com desequilíbrio de classes [38]. A relação adotada
+        para a combinação das funções de perda é a seguinte:
+
+                                         LSeg = L Dice + L BCE
+
+        A função de perda total para a versão dual-head é composta pela ponderação das perdas
+        de reconstrução e segmentação, e é definida como:
+
+                                     L = 1,0 · L Recon + 0,045 · LSeg
+
+
+   Esse trabalho foi realizado utilizando uma GPU RTX 4000 ADA e o ambiente de desen-
+volvimento baseou-se em Python, TensorFlow/Keras e Visual Studio Code. Com precisão
+determinística FP32.
+
+
+
+4.5      Plano de avaliação
+
+4.5.1     Avaliação interna
+
+[A preencher: avaliação integral e terminal da partição de teste, métricas globais e por região
+de interesse.] Na fase de inferência, os modelos foram avaliados utilizando métricas quanti-
+tativas amplamente adotadas na literatura, em comparação com o Ground Truth. As métricas
+utilizadas para a avaliação global da qualidade da imagem reconstruída foram:
+
+   • PSNR ;
+
+   • MS-SSIM ;
+
+   • MAE.
+
+Para a análise baseada em ROI, empregamos:
+
+   • PSNR ;
+4. M ATERIAIS E M ÉTODOS                                                                  24
+
+
+   • SSIM.
+
+   Wang et al. [24] descrevem MS-SSIM como um método de avaliação de qualidade de ima-
+gem através de cinco escalas com downsampling iterativo por fator 2, resultando em uma redu-
+ção de resolução de até 1/16 do tamanho original. O método foi validado em bases de dados
+de imagens completas, sem considerar aplicação em regiões fragmentadas ou espacialmente
+seletivas. Devido ao downsampling progressivo, a aplicação MS-SSIM em ROIs pequenas ou
+fragmentadas (como a zona distante em nossa análise) resultaria na mistura de pixels de ROI e
+não-ROI nas escalas reduzidas, comprometendo a interpretabilidade dos resultados. Por isso,
+utilizou-se SSIM regular em vez de MS-SSIM nesse caso. De fato, as literaturas recentes tem
+demonstrado performance estatísticamente muito melhor em fidelidade para MS-SSIM e SSIM
+comparado a outras métricas de avaliação de qualidade de imagem[43]. Especialmente para
+imagens médicas, onde a fidelidade das imagens preditas é crucial, a escolha de métricas que
+refletem a percepção humana de qualidade e preservação estrutural é fundamental. Portanto,
+MS-SSIM e SSIM foram selecionados como as principais métricas para avaliação quantitativa
+da qualidade das imagens reconstruídas, garantindo uma análise robusta e relevante para o
+contexto clínico. E o PSNR foi utilizado como métrica complementar para avaliar a fidelidade
+radiométrica das reconstruções, especialmente importante em tomografias computadorizadas
+onde a precisão dos valores de HU é essencial para diagnóstico e planejamento clínico.
+   A validação interna foi conduzida nos conjuntos de validação e teste, avaliando consistên-
+cia, estabilidade e capacidade de generalização intra-dataset.
+
+
+4.5.1.1   Métricas globais
+
+Para a avaliação global, as imagens preditas e de referência são desnormalizadas para a
+janela [−1000, 400] HU, correspondendo a uma amplitude MAX = 1400 HU. Adicionalmente,
+a região de avaliação é recortada ao menor retângulo envolvente (bounding box) da máscara
+corporal antes da avaliação de SSIM e MS-SSIM, eliminando janelas de varredura compostas
+exclusivamente por fundo — que pontuariam SSIM = 1,0 artificialmente e inflariam a métrica
+global.
+
+
+4.5.1.2   Avaliação por regiões de interesse
+
+A avaliação global não distingue o comportamento do modelo nas regiões diretamente afeta-
+das pelos artefatos daquele nas regiões saudáveis distantes do implante. Para uma análise
+4. M ATERIAIS E M ÉTODOS                                                                    25
+
+
+mais granular, a região corporal é dividida em duas zonas complementares, definidas a partir
+da diferença entre a imagem de entrada e a referência limpa.
+
+   • Zona de Artefato (R art ): pixels cuja diferença absoluta entre entrada e referência, após
+     remoção do bias de endurecimento de feixe, excede o limiar τ ≈ 0,05 (correspondente
+     a ∼ 70 HU acima do bias mediano corporal), dilatados com um disco morfológico de raio
+     10 pixels para incluir os braços de streak que caem abaixo do limiar:
+                                             h                  i
+                                Mart (i, j) = |∆bias (i, j)| > τ ⊗ D10
+
+
+   • Zona Distante (Rdist ): complemento da zona de artefato dentro da região corporal, que
+     avalia a capacidade do modelo de preservar tecido saudável sem introduzir distorções
+     secundárias:
+                                        Mdist = Mbody \ Mart
+
+   A Figure C.3 ilustra a aplicação das duas zonas em fatias representativas do conjunto de
+dados, cobrindo diferentes regiões anatómicas e padrões de artefato.
+4. M ATERIAIS E M ÉTODOS                                                                                                        26
+
+
+
+
+   Fig.4.3 Exemplos de zonas de ROI em fatias de CT com artefatos metálicos. Em cada par, a imagem da esquerda
+   mostra a Zona de Artefato (R art , sobreposição a vermelho) e a da direita a Zona Distante (Rdist , sobreposição a verde).
+   As fatias cobrem anatomias torácica (topo), abdominal (meio) e torácica com implante unilateral (base), ilustrando a
+   variabilidade da extensão e forma da zona de artefato em função da localização e número de implantes metálicos.
+4. M ATERIAIS E M ÉTODOS                                                                         27
+
+
+   Para cada zona, calculam-se as métricas como deltas em relação ao desempenho da en-
+trada corrompida, permitindo isolar a contribuição do modelo na região de artefato da sua
+contribuição nas regiões saudáveis:
+
+
+                        ∆PSNRROI = PSNR( Î | ROI , I | ROI ) − PSNR( Iart | ROI , I | ROI )
+
+
+
+                          ∆SSIMROI = SSIM( Î | ROI , I | ROI ) − SSIM( Iart | ROI , I | ROI )
+
+   Valores positivos indicam melhoria face à entrada corrompida. O MS-SSIM não é utilizado
+na análise por ROI: o downsampling progressivo das cinco escalas misturaria pixels dentro
+e fora da ROI nas escalas reduzidas, comprometendo a interpretabilidade. Utiliza-se SSIM
+regular, que opera localmente com janela de 11 × 11 pixels.
+
+      Tabela 4.6 Métricas utilizadas por contexto de avaliação.
+
+
+                       Métrica          Treino       Global       ROI Artefato   ROI Distante
+                       PSNR                ✓            ✓              ✓               ✓
+                       SSIM                ✓            ✓              ✓               ✓
+                       MS-SSIM             —            ✓             —               —
+                       MAE                 ✓            ✓             —               —
+
+
+
+4.5.2      Análise estatística
+
+[A preencher: paciente como unidade independente, Wilcoxon bilateral, intervalos bootstrap e
+correção de Holm.]
+
+
+
+4.6      Avaliação externa por médicos
+
+A validação externa foi realizada em dados independentes provenientes do The Cancer Ima-
+ging Archive (TCIA), permitindo avaliar o impacto de domain shift e a robustez do modelo em
+cenários não vistos durante o treino.
+4. M ATERIAIS E M ÉTODOS                                                                 28
+
+
+4.6.1   Desenho e casos
+
+[A preencher: estudo observacional, transversal, multileitor e cego quanto à condição A/B;
+conjunto TCIA, 2 casos de treino excluídos da análise, 15 casos principais e 2 repetições
+ocultas.]
+
+
+4.6.2   Participantes e proteção de dados
+
+[A preencher: recrutamento direto, autodeclaração de uso mensal de CT, categorias profissio-
+nais retidas e ausência de identificadores diretos.]
+
+
+4.6.3   Apresentação e instrumento de avaliação
+
+[A preencher: apresentação simultânea e contrabalanceada de entrada/saída como Imagem
+A/B; escalas ordinais para interferência do artefacto e visualização anatómica, preferência
+pareada e sinalização de possível dano.]
+
+
+4.6.4   Desfechos e análise
+
+[A preencher: desfecho primário de diferença pareada na visualização de tecidos e limites
+anatómicos; desfechos secundários, consistência intraleitor e análise ordinal compatível com
+amostra pequena.]
+
+
+4.6.5   Estado operacional
+
+[A preencher: distinguir claramente pré-produção, piloto e recolha concluída; não apresentar
+resultados clínicos antes da recolha aprovada e concluída.]
+Capítulo 5
+
+
+Resultados
+
+
+5.1     Coorte final e integridade experimental
+
+[A preencher: pares incluídos, pacientes, distribuição anatómica, partições e resultados das
+verificações de integridade.]
+
+
+5.1.1   Resultados da Aprovação Automática x Inspeção Manual
+
+É importante deixar claro como ficou a distribuição dos dados que foram aprovados e repro-
+vados automaticamente, e também quais foram avaliados manualmente. O gráfico abaixo,
+mapeia todos os pares do CT-MAR Dataset, destacando os que foram aprovados automa-
+ticamente, os que foram reprovados e os que foram sujeitos a inspeção visual humana. A
+distribuição anatómica dos pares é representada por cores, permitindo uma análise visual da
+relação entre a aprovação automática e a localização anatómica dos artefatos metálicos.
+
+
+5.1.2   Análise Complementar com MS-SSIM
+
+Antes de avançar para a análise dos resultados dos modelos de redução de artefatos, foi re-
+alizada mais uma avaliação dos resultados CT-MAR x DeepLesion/Stroke EIT para verificar a
+qualidade das correspondências automáticas. Esta etapa é crucial para garantir uma camada
+extra de confiança nos resultados obtidos pelo algoritmo de comparação de similaridade estru-
+tural. Todos os pares que tiveram a correspondencia aprovada automaticamente pelo fato de
+seu score ser acima de 0.994 foram revisados por um novo algoritmo que calcula o MS-SSIM
+entre as imagens correspondentes. Um histograma da distribuiuição dos MS-SSIM foi gerado,
+
+
+
+                                             29
+5. R ESULTADOS                                                                                                        30
+
+
+e os pares com pontuação menor que 0.9 foram revisados manualmente sendo aprovado ou
+recusado com base em avaliação humana.
+
+
+
+
+   Fig.5.1 Distribuição de MS-SSIM entre pares correspondentes ( CT-MAR vs DL/Stroke, aprovados automaticamente).
+   Acima: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. Abaixo: zoom do histograma para
+   a região de maior interesse, com destaque para os pares com MS-SSIM inferior a 0.9, que foram sujeitos a revisão
+   manual.
+5. R ESULTADOS                                                                             31
+
+
+   A análise da distribuição entre os pares correspondentes revela que a maioria dos pa-
+res apresenta alta similaridade estrutural, com um valor médio de 0.9694 e uma mediana de
+0.9830, indicando que o processo de correspondência automática é, em geral, confiável e efi-
+caz na identificação de pares correspondentes entre os datasets CT-MAR e DeepLesion/Stroke
+EIT.
+   Os pares com pontuação de MS-SSIM abaixo de 0.9 eram 340 no total, apenas 3 foram re-
+provados após inspeção visual humana 5.2. Nessa inspeção, percebe-se que mesmo os casos
+com pontuações bastante baixas de MS-SSIM não eram falsos positivos e sim devido a dife-
+renças no pós-processamento ou tratamento geral das imagens que geram alterações locais
+no qual o MS-SSIM é mais sensível. Isso pode ser visualizado na figura 5.3. Esse fato evi-
+dencia a eficácia da estratégia de correspondência por similaridade estrutural global adotada,
+que conseguiu identificar os pares com precisão, com apenas 3 falsos positivos identificados,
+mesmo após análise rigorosa 5.4. Mostrando que a metodologia é robusta e teve desempenho
+superior em detectar slices nesse trabalho do que uso do próprio MS-SSIM. Pois, enquanto as
+diferenças locais afetaram o MS-SSIM de forma mais significativa, a metodologia baseada em
+similaridade de cosseno conseguiu identificar as correspondências corretas com pontuação
+global elevada, mesmo em casos de diferenças locais acentuadas.
+5. R ESULTADOS                                                                                                        32
+
+
+
+
+   Fig.5.2 Distribuição de MS-SSIM entre pares correspondentes ( CT-MAR vs DL/Stroke, aprovados automaticamente).
+   À esquerda: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. À direita: ECDF correspondente.
+   Os pares com MS-SSIM inferior a 0.9 foram sujeitos a revisão manual.
+5. R ESULTADOS                                                                                                  33
+
+
+
+
+   Fig.5.3 Exemplos de pares correspondentes com valores de MS-SSIM (0.7597, 0.7694 e 0.7717, respetivamente)
+   aprovados após revisão visual humana mesmo com pontuações baixas.
+
+
+
+   Os pares reprovados apresentavam MS-SSIM claramente fora do padrão (< 0.61), com
+valores extremamente baixos, como podem ver na figura 5.4. Além disso, representaram os
+pares com pontuação mais próximas do limiar de aceitação automática de 0.994 5.5. Demons-
+trando que os casos em que o método falha são outliers claros em MS-SSIM e permanecem
+5. R ESULTADOS                                                                                                    34
+
+
+justamente na zona cinzenta e propensa a erros da determinação empírica do limiar de acei-
+tação automática. Além disso, os pares reprovados possuem características visuais bastante
+particulares com fundo dominando a imagem e poucas estruturas anatômicas visíveis, o que
+torna a avaliação de similaridade estrutural mais desafiadora devido a grande homogeneidade
+das características visuais.
+
+
+
+
+    Fig.5.4 3 pares reprovados após inspeção visual humana com valores de MS-SSIM (head_1159: 0.4573, head_369:
+    0.5652 e head_763: 0.6009, respetivamente). As pontuações desses pares na similaridade de cosseno foram
+    head_1159: 0.9960, head_369: 0.9952 e head_763: 0.9951.
+5. R ESULTADOS                                                                                             35
+
+
+
+
+    Fig.5.5 Distribuição dos valores de similaridade de cosseno para os pares inspecionados visualmente.
+
+
+
+   Os pares com MS-SSIM mais críticos logo acima dos reprovados tinham valores maiores
+que 0.75 5.3, demonstrando uma distancia clara entre os falsos positivos e os aprovados visu-
+almente. Todos os pares inspecionados com pontuação acima desse valor de MS-SSIM pas-
+saram no teste de inspeção visual 5.6. Como os pares que não passaram por esse escrutínio
+tinham pontuação acima de 0.90 em MS-SSIM, é seguro assumir que os pares automatica-
+mente aprovados com pontuação acima desse limiar são confiáveis.
+5. R ESULTADOS                                                                             36
+
+
+
+
+    Fig.5.6 Distribuição dos valores de MS-SSIM para os pares inspecionados visualmente.
+
+
+
+   Na busca direta, 530 pares não obtiveram correspondência aprovada em nenhum dos dois
+datasets de origem. A etapa complementar de correspondência indireta recuperou 95 desses
+casos após inspeção visual, restando 435 pares sem correspondência segura.
+   Com relação aos possíveis falsos negativos que poderiam ter resultado em exclusão de
+pares de forma injusta nesse estudo, a metodologia adotada foi ainda mais robusta. Já que
+eram poucos os pares que não tiveram aprovação em nenhum dos dois datasets de origem,
+ficou fácil verificar visualmente cada um desses casos para confirmar se realmente não ha-
+via correspondência ou se o método falhou em identificá-la. Dos 435 pares excluídos 245
+foram excluídos devido ao críterio automatizado baseado no limiar de 0.98. Nenhum des-
+ses casos eram realmente falsos negativos, confirmando mais uma vez a eficácia do método
+de correspondência automática adotado. Os outros 190 pares caíram na faixa de pontuação
+pouco confiável (0.98 – 0.994) e foram marcados como falsa correspondência nessa etapa
+evidenciando a importancia de ter-se determinado uma zona cinzenta de pontuação para a
+qual o método de correspondência automática não é eficiente, e que a revisão visual humana
+torna-se indispensável 5.7.
+5. R ESULTADOS                                                                                                          37
+
+
+
+
+      Fig.5.7 Distribuição dos scores de similaridade de cosseno (DL vs Stroke EIT) para os pares sem correspondência
+      aprovada em nenhum dos dois datasets de origem (N=435). À esquerda: histograma das pontuações por dataset; à
+      direita: ECDF correspondente com o limiar de 0,98 assinalado.
+
+
+
+
+5.2      Treino dos modelos
+
+5.2.1     Convergência e seleção dos checkpoints
+
+[A preencher: curvas de treino/validação e checkpoints selecionados pelo monitor pré-especificado.]
+
+
+
+
+5.2.2     Rastreabilidade das execuções
+
+[A preencher: snapshots de reprodutibilidade, versões do ambiente e hashes dos checkpoints.]
+5. R ESULTADOS                                                                             38
+
+
+
+
+      Fig.5.8 Curva de treino gerada pelo workflow: training_curves_singlehead.png.
+
+
+
+
+5.3      Avaliação interna no conjunto de teste
+
+5.3.1     Desfechos globais
+
+[A preencher: PSNR, MS-SSIM, SSIM, MAE e intervalos de confiança por paciente.]
+
+
+5.3.2     Análise por região de interesse e preservação anatómica
+
+[A preencher: regiões de artefacto e distantes, mapas residuais e inspeção qualitativa.]
+5. R ESULTADOS                                                                              39
+
+
+
+5.4     Comparação pareada single-head versus dual-head
+
+[A preencher: diferença dual menos single, Wilcoxon bilateral, IC 95% bootstrap e p-valores
+ajustados por Holm.]
+
+
+
+5.5     Desempenho computacional
+
+[A preencher: benchmark de inferência, se reportado.]
+
+
+
+5.6     Avaliação externa por médicos
+
+5.6.1   Estado da recolha e participantes
+
+[A preencher: estado de pré-produção, piloto ou recolha concluída; número de leitores anali-
+sados e características categóricas, apenas quando existirem dados reais.]
+
+
+5.6.2   Desfecho primário: visualização anatómica
+
+[A preencher: comparação pareada entre entrada e saída para visualização de tecidos e limites
+anatómicos.]
+
+
+5.6.3   Desfechos secundários e segurança percebida
+
+[A preencher: interferência do artefacto, preferência A/B, possível dano, utilidade complemen-
+tar e consistência intraleitor.]
+
+
+5.6.4   Interpretação limitada ao desenho observacional
+
+[A preencher: reportar intervalos de confiança e limitações; não inferir benefício clínico para
+além das avaliações realizadas.]
+Capítulo 6
+
+
+Discussão
+
+
+6.1    Síntese dos achados principais
+
+[A preencher: resposta direta aos objetivos e hipótese primária.]
+
+
+
+6.2    Interpretação da comparação arquitetural
+
+[A preencher: significado prático e estatístico da comparação single-head versus dual-head.]
+
+
+
+6.3    Preservação anatómica e segurança da reconstrução
+
+[A preencher: leitura conjunta de métricas globais, regiões de interesse e inspeção qualitativa.]
+
+
+
+6.4    Generalização e avaliação externa
+
+[A preencher: interpretar apenas as evidências externas disponíveis e delimitar o que perma-
+nece por validar.]
+
+
+
+6.5    Avaliação por médicos
+
+[A preencher: interpretar a avaliação multileitor cega em conjunto com os resultados técnicos;
+distinguir melhoria percebida, segurança percebida e eficácia clínica.]
+
+
+
+
+                                               40
+6. D ISCUSSÃO                                                                            41
+
+
+
+6.6   Limitações
+
+[A preencher: dados simulados/pareados, desequilíbrio anatómico, dimensão ao nível do pa-
+ciente, desenho observacional e limites da avaliação externa.]
+
+
+
+6.7   Implicações e trabalho futuro
+
+[A preencher: validação prospetiva, dados clínicos adicionais e evolução do protocolo de ob-
+servadores.]
+Capítulo 7
+
+
+Conclusões
+
+
+7.1       Conclusões do estudo
+
+[A preencher: conclusão proporcional às evidências finais e aos resultados confirmatórios.]
+
+
+
+7.2       Contribuições da dissertação
+
+    • [A preencher: curadoria rastreável e partição por paciente.]
+
+    • [A preencher: comparação controlada entre duas arquiteturas U-Net.]
+
+    • [A preencher: avaliação por paciente e produção reprodutível de resultados.]
+
+    • [A preencher: protocolo de avaliação externa por médicos e respetivo estado de execu-
+         ção.]
+
+
+
+7.3       Perspetivas futuras
+
+[A preencher: validação externa concluída, extensão multicêntrica e avaliação clínica prospe-
+tiva.]
+
+
+
+
+                                              42
+Bibliografia
+
+
+[1] Emico Okuno and Elisabeth Yoshimura. Física das Radiações. Oficina de Textos, 2010.
+   [Cited on pages 1 and 50.]
+
+[2] November        8,       1895:           Roentgen’s        Discovery       of      X-Rays.
+   https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays.              [Cited   on
+   pages 1 and 50.]
+
+[3] JOEL D. HOWELL. EARLY CLINICAL USE OF THE X-RAY. Transactions of the American
+   Clinical and Climatological Association, 127:341–349, 2016. [Cited on pages 2 and 51.]
+
+[4] Allen Taylor. Illuminating Health: The Evolution and Significance of X-ray Imaging. Imaging
+   in Medicine, 15(6):133–134, December 2023. [Cited on pages 2 and 51.]
+
+[5] Reza Vali. Unveiling the Marvels of Computed Tomography (CT) Imaging. Imaging in
+   Medicine, 16(1):150–151, February 2024. [Cited on pages 2 and 51.]
+
+[6] Mohd Noor. An Overview of Computed Tomography: What it is and How it Works? Ap-
+   plications of Computed Tomography. Imaging in Medicine, 15(5):93–94, October 2023.
+   [Cited on pages 2 and 51.]
+
+[7] Raymond A. Schulz, Jay A. Stein, and Norbert J. Pelc. How CT happened: The early
+   development of medical computed tomography. Journal of Medical Imaging, 8(5):052110,
+   September 2021. [Cited on pages 2 and 51.]
+
+[8] F. Edward Boas and Dominik Fleischmann. CT artifacts: Causes and reduction techni-
+   ques. Imaging in Medicine, 4(2):229–240, April 2012. [Cited on pages 2 and 51.]
+
+[9] Cecile E.J. Kleber, Ramez Karius, Lucas E. Naessens, Coen O. Van Toledo, Jochen A. C.
+   Van Osch, Martijn F. Boomsma, Jan W.T. Heemskerk, and Aart J. Van Der Molen. Advan-
+   cements in supervised deep learning for metal artifact reduction in computed tomography:
+
+
+                                             43
+B IBLIOGRAPHY                                                                                 44
+
+
+    A systematic review. European Journal of Radiology, 181:111732, December 2024. [Cited
+    on pages 2, 6, 7, 14, 51, 54, 55, and 66.]
+
+[10] Sathyathas Puvanasunthararajah, Davide Fontanarosa, Marie-Luise Wille, and Saskia M.
+    Camps. The application of metal artifact reduction methods on computed tomography
+    scans for radiotherapy applications: A literature review. Journal of Applied Clinical Medical
+    Physics, 22(6):198–223, May 2021. [Cited on pages 3 and 52.]
+
+[11] Asutosh Sahu, Shobhit Mathur, Hiroyuki Takaoka, Joji Ota, Felix G. Meinel, Benjamin
+    Böttcher, Benoît Magnin, Ankush Jajodia, and Corey T. Jensen. Transforming CT imaging
+    with deep learning: Noise reduction, artifact management, and clinical applications – A
+    comprehensive review. European Journal of Radiology Artificial Intelligence, 4:100042,
+    December 2025. [Cited on pages 3, 6, 7, 52, 54, and 55.]
+
+[12] Mohanad Alkhodari, Eman Alefishat, Herbert F. Jelinek, Ahmed Kaabneh, and Panos Liat-
+    sis. Enhancing CCTA image quality: A review of deep learning approaches for advanced
+    artifact correction and denoising. Artificial Intelligence Review, 58(10):331, August 2025.
+    [Cited on pages 3 and 52.]
+
+[13] Julia F. Barrett and Nicholas Keat. Artifacts in CT: Recognition and Avoidance. Radio-
+    Graphics, 24(6):1679–1691, November 2004. [Cited on pages 6 and 54.]
+
+[14] Mark Selles, Jochen A.C. Van Osch, Mario Maas, Martijn F. Boomsma, and Ruud H.H.
+    Wellenberg. Advances in metal artifact reduction in CT images: A review of traditional and
+    novel metal artifact reduction techniques. European Journal of Radiology, 170:111276,
+    January 2024. [Cited on pages 6 and 55.]
+
+[15] Lars Gjesteby, Qingsong Yang, Yan Xi, Bernhard E. H. Claus, Yannan Jin, Bruno De Man,
+    Ge Wang, and Hongming Shan. Deep learning methods for CT image-domain metal arti-
+    fact reduction. In Bert Müller and Ge Wang, editors, Developments in X-Ray Tomography
+    XI, page 31, San Diego, United States, September 2017. SPIE. [Cited on pages 7 and 55.]
+
+[16] Yanbo Zhang and Hengyong Yu. Convolutional Neural Network Based Metal Artifact
+    Reduction in X-Ray Computed Tomography.           IEEE Transactions on Medical Imaging,
+    37(6):1370–1381, June 2018. [Cited on pages 7, 55, and 56.]
+
+[17] Olaf Ronneberger, Philipp Fischer, and Thomas Brox. U-Net: Convolutional Networks for
+    Biomedical Image Segmentation, May 2015. [Cited on pages 7, 19, 55, and 69.]
+B IBLIOGRAPHY                                                                                 45
+
+
+[18] Esther Meyer, Frank Bergner, Rainer Raupach, Thomas Flohr, and Marc Kachelriess. Nor-
+     malized metal artifact reduction (NMAR) in computed tomography. In 2009 IEEE Nuclear
+     Science Symposium Conference Record (NSS/MIC), pages 3251–3255, Orlando, FL, Oc-
+     tober 2009. IEEE. [Cited on pages 7 and 55.]
+
+[19] Wei-An Lin, Haofu Liao, Cheng Peng, Xiaohang Sun, Jingdan Zhang, Jiebo Luo, Rama
+     Chellappa, and Shaohua Kevin Zhou. DuDoNet: Dual Domain Network for CT Metal
+     Artifact Reduction. In 2019 IEEE/CVF Conference on Computer Vision and Pattern Re-
+     cognition (CVPR), pages 10504–10513, Long Beach, CA, USA, June 2019. IEEE. [Cited
+     on pages 8, 14, 56, and 66.]
+
+[20] Lequan Yu, Zhicheng Zhang, Xiaomeng Li, Hongyi Ren, Wei Zhao, and Lei Xing. Metal
+     Artifact Reduction in 2D CT Images with Self-supervised Cross-domain Learning. Physics
+     in Medicine & Biology, 66(17):175003, September 2021. [Cited on pages 8 and 56.]
+
+[21] Zhiwei Huang, Guo Zhang, Jinzhao Lin, Yu Pang, Huiqian Wang, Tong Bai, and Lisha
+     Zhong. Multi-modal feature-fusion for CT metal artifact reduction using edge-enhanced
+     generative adversarial networks.      Computer Methods and Programs in Biomedicine,
+     217:106700, April 2022. [Cited on pages 8 and 56.]
+
+[22] Xin Yi, Ekta Walia, and Paul Babyn. Generative Adversarial Network in Medical Imaging: A
+     Review. Medical Image Analysis, 58:101552, December 2019. [Cited on pages 8 and 56.]
+
+[23] Zhou Wang, A.C. Bovik, H.R. Sheikh, and E.P. Simoncelli. Image quality assessment:
+     From error visibility to structural similarity.   IEEE Transactions on Image Processing,
+     13(4):600–612, April 2004. [Cited on pages 8, 9, 12, 14, 57, 63, 64, 66, and 75.]
+
+[24] Z. Wang, E.P. Simoncelli, and A.C. Bovik. Multiscale structural similarity for image quality
+     assessment. In The Thrity-Seventh Asilomar Conference on Signals, Systems & Compu-
+     ters, 2003, pages 1398–1402, Pacific Grove, CA, USA, 2003. IEEE. [Cited on pages 8, 9,
+     24, 57, 75, and 79.]
+
+[25] Alain Hore and Djemel Ziou. Image Quality Metrics: PSNR vs. SSIM. In 2010 20th Inter-
+     national Conference on Pattern Recognition, pages 2366–2369, Istanbul, Turkey, August
+     2010. IEEE. [Cited on pages 8 and 57.]
+B IBLIOGRAPHY                                                                               46
+
+
+[26] John R. Zech, Marcus A. Badgeley, Manway Liu, Anthony B. Costa, Joseph J. Titano,
+    and Eric Karl Oermann. Variable generalization performance of a deep learning mo-
+    del to detect pneumonia in chest radiographs: A cross-sectional study. PLOS Medicine,
+    15(11):e1002683, November 2018. [Cited on pages 9 and 57.]
+
+[27] Martin J. Willemink, Wojciech A. Koszek, Cailin Hardell, Jie Wu, Dominik Fleischmann,
+    Hugh Harvey, Les R. Folio, Ronald M. Summers, Daniel L. Rubin, and Matthew P. Lungren.
+    Preparing Medical Imaging Data for Machine Learning. Radiology, 295(1):4–15, April
+    2020. [Cited on pages 9 and 57.]
+
+[28] Christopher J. Kelly, Alan Karthikesalingam, Mustafa Suleyman, Greg Corrado, and Do-
+    minic King. Key challenges for delivering clinical impact with artificial intelligence. BMC
+    Medicine, 17(1):195, December 2019. [Cited on pages 9 and 57.]
+
+[29] Eri Haneda, Nils Peters, Jiayong Zhang, Grigorios Karageorgos, Wenjun Xia, Harald Pa-
+    ganetti, Ge Wang, Yi Guo, Jianhua Ma, Hyoung Suk Park, Kiwan Jeon, Fuxin Fan, Mareike
+    Thies, and Bruno De Man. AAPM CT metal artifact reduction grand challenge. Medical
+    Physics, 52(10):e70050, October 2025. [Cited on pages 10 and 60.]
+
+[30] xcist. AAPM CT Metal Artifact Reduction (CT-MAR) Grand Challenge Benchmark Tool.
+    https://github.com/xcist/example/tree/main/AAPM_datachallenge/.      [Cited on pages 10
+    and 60.]
+
+[31] Nils Peters, Eri Haneda, Jiayong Zhang, Grigorios Karageorgos, Wenjun Xia, Joost Ver-
+    burg, Ge Wang, Harald Paganetti, and Bruno De Man. A hybrid training database and
+    evaluation benchmark for assessing metal artifact reduction methods for X-ray CT ima-
+    ging. Medical Physics, 52(10):e70020, October 2025. [Cited on pages 10 and 60.]
+
+[32] Mingye Wu, Paul FitzGerald, Jiayong Zhang, W. Paul Segars, Hengyong Yu, Yongshun
+    Xu, and Bruno De Man. XCIST – An Open Access X-ray/CT Simulation Toolkit. Physics
+    in medicine and biology, 67(19):10.1088/1361–6560/ac9174, September 2022. [Cited on
+    pages 10 and 60.]
+
+[33] Nir Goren, James Avery, Thomas Dowrick, Eleanor Mackle, Anna Witkowska-Wrobel, Da-
+    vid Werring, and David Holder. Multi-frequency electrical impedance tomography and
+    neuroimaging data in stroke patients. Scientific Data, 5:180112, July 2018. [Cited on
+    pages 10, 12, 60, and 63.]
+B IBLIOGRAPHY                                                                                   47
+
+
+[34] Nir Goren, Thomas Dowrick, James Avery, and David Holder. UCLH Stroke EIT Dataset -
+    Radiology Data, August 2017. [Cited on pages 10 and 60.]
+
+[35] Ke Yan, Xiaosong Wang, Le Lu, and Ronald M. Summers. DeepLesion: Automated mining
+    of large-scale lesion annotations and universal lesion detection with deep learning. Journal
+    of Medical Imaging, 5(3):036501, July 2018. [Cited on pages 10, 12, 60, and 63.]
+
+[36] Mustafa Umit Oner, Yi-Chih Cheng, Hwee Kuan Lee, and Wing-Kin Sung. Training ma-
+    chine learning models on patient level data segregation is crucial in practical clinical appli-
+    cations, April 2020. [Cited on pages 11 and 63.]
+
+[37] Jiang Hsieh. Computed Tomography: Principles, Design, Artifacts, and Recent Advances.
+    Wiley Interscience ; SPIE Press, Hoboken, N.J. : Bellingham, Wash, 2nd ed edition, 2009.
+    [Cited on pages 12, 63, and 64.]
+
+[38] Saeid Asgari Taghanaki, Yefeng Zheng, S. Kevin Zhou, Bogdan Georgescu, Puneet
+    Sharma, Daguang Xu, Dorin Comaniciu, and Ghassan Hamarneh. Combo Loss: Han-
+    dling Input and Output Imbalance in Multi-Organ Segmentation, September 2021. [Cited
+    on pages 18, 23, 61, and 72.]
+
+[39] Uğur Kesimal, Habip Eser Akkaya, Önder Polat, and Murat Sağlam. Use of Deep Lear-
+    ning Models in the Diagnosis of Proptosis Through Orbital Magnetic Resonance Imaging.
+    Medical Science Monitor, 32, April 2026. [Cited on pages 18 and 61.]
+
+[40] Yang Li, Bobo Yan, Jianxin Hou, Bingyang Bai, Xiaoyu Huang, Canfei Xu, and Limei Fang.
+    UNet based on dynamic convolution decomposition and triplet attention. Scientific Re-
+    ports, 14(1):271, January 2024. [Cited on pages 19 and 69.]
+
+[41] Hang Zhao, Orazio Gallo, Iuri Frosio, and Jan Kautz. Loss Functions for Image Restoration
+    With Neural Networks. IEEE Transactions on Computational Imaging, 3(1):47–57, March
+    2017. [Cited on pages 22 and 72.]
+
+[42] Fabian Isensee, Jens Petersen, Andre Klein, David Zimmerer, Paul F. Jaeger, Simon Kohl,
+    Jakob Wasserthal, Gregor Koehler, Tobias Norajitra, Sebastian Wirkert, and Klaus H.
+    Maier-Hein. nnU-Net: Self-adapting Framework for U-Net-Based Medical Image Segmen-
+    tation. https://arxiv.org/abs/1809.10486v1, September 2018. [Cited on pages 23 and 72.]
+B IBLIOGRAPHY                                                                                48
+
+
+[43] Lin Zhang, Lei Zhang, Xuanqin Mou, and D. Zhang. FSIM: A Feature Similarity Index for
+    Image Quality Assessment. IEEE Transactions on Image Processing, 20(8):2378–2386,
+    August 2011. [Cited on pages 24 and 79.]
+
+[44] Jie Hu, Li Shen, and Gang Sun. Squeeze-and-Excitation Networks. In 2018 IEEE/CVF
+    Conference on Computer Vision and Pattern Recognition, pages 7132–7141, June 2018.
+    [Cited on page 56.]
+
+[45] Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In So Kweon. CBAM: Convolutional
+    Block Attention Module. In Vittorio Ferrari, Martial Hebert, Cristian Sminchisescu, and Yair
+    Weiss, editors, Computer Vision – ECCV 2018, volume 11211, pages 3–19. Springer
+    International Publishing, Cham, 2018. [Cited on page 56.]
+
+[46] Liang-Chieh Chen, George Papandreou, Florian Schroff, and Hartwig Adam. Rethin-
+    king Atrous Convolution for Semantic Image Segmentation, December 2017. [Cited on
+    page 56.]
+
+[47] Ilya Loshchilov and Frank Hutter. Decoupled Weight Decay Regularization, January 2019.
+    [Cited on page 71.]
+Registo Histórico do Desenvolvimento
+
+
+
+
+                       49
+Apêndice A
+
+
+Introdução
+
+
+Quando Wilhelm Conrad Röntgen, professor de Física da Universidade de Würzburg, na Ale-
+manha, decidiu repetir o experimento feito por Philipp Lenard com um tubo de Crookes modi-
+ficado para estudar raios catódicos, ninguém podia prever o impacto de suas descobertas na
+medicina. Não demorou muito para que seus experimentos apresentassem resultados surpre-
+endentes que demonstravam que o comportamento observado não era compatível com raios
+catódicos, mas sim com uma espécie de raio mais penetrante e que não sofria desvios na pre-
+sença de um campo magnético. Durante o manuseio das peças usadas nos seus experimen-
+tos, percebeu que o contorno dos seus ossos estava sendo estampado na tela fluorescente
+que utilizava.
+   Assim, em 22 de dezembro de 1895, convidou sua esposa, Anna Bertha, a fazer uma
+exposição de 15 minutos a esses raios, obtendo-se o que seria a primeira radiografia do corpo
+humano. Nesse mesmo ano, Röntgen publicou o artigo "On a new kind of rays"[? ], no qual
+batiza o agente responsável como "raios-X". Já em janeiro de 1896, os jornais anunciavam
+em primeira página a descoberta como uma forma revolucionária de observar o interior do
+corpo humano sem a necessidade de incisões cirúrgicas, apontando seu potencial uso no
+diagnóstico médico [1].
+   Em fevereiro de 1896, em Massachusetts (EUA), Edwin Brant Frost produziu uma radiogra-
+fia da fratura de Colles de um paciente para seu irmão, um médico local, marcando o início da
+incorporação dos raios-X à prática médica [2]. Assim, em menos de um ano após o anúncio
+da descoberta por Röntgen, os raios-X rapidamente saíram dos laboratórios e passaram a
+ser utilizados de forma extensiva no diagnóstico e na terapia [2]. Desde então, a técnica pas-
+sou por sucessivas modernizações e diversificou-se em múltiplas modalidades e dispositivos,
+
+
+
+                                             50
+B IBLIOGRAPHY                                                                              51
+
+
+consolidando-se como ferramenta indispensável na saúde moderna [3, 4].
+   Dessas sucessivas modernizações surgiu, em 1971, o primeiro tomógrafo computadori-
+zado. Essa tecnologia baseia-se no princípio de atenuação dos raios-X, em que a quantidade
+de radiação absorvida ou dispersa pelo material relaciona-se à sua densidade [5, 6]. A to-
+mografia computadorizada ( CT ) foi a primeira modalidade de imagem médica a fornecer
+informações quantitativas sobre a atenuação dos tecidos, algo que não era possível com a ra-
+diografia convencional [7]. Além disso, ao permitir a visualização seccional do corpo humano,
+a tomografia computadorizada eliminou a sobreposição de estruturas anatômicas inerente às
+imagens bidimensionais, possibilitando a localização precisa e a avaliação da extensão de
+lesões[7].
+   Entretanto, esses avanços trouxeram um aumento significativo da complexidade tecnoló-
+gica. A aquisição de múltiplas projeções, aliada à reconstrução computacional e ao proces-
+samento digital da imagem, introduziu novas formas de degradação que eram inexistentes ou
+pouco relevantes na radiografia convencional. Dessa forma, a tomografia computadorizada
+tornou-se particularmente suscetível à presença de artefatos, os quais podem comprometer a
+qualidade diagnóstica e a confiabilidade clínica das imagens [7].
+   Diversos tipos de artefatos podem ser observados em tomografia computadorizada, inclu-
+indo ruído, endurecimento do feixe, movimento, artefatos de anel e artefatos metálicos, os
+quais podem obscurecer ou simular patologias [8]. As causas desses artefatos são variadas,
+podendo incluir desde falhas ou descalibração dos detectores, limitações estatísticas associ-
+adas a baixas contagens de fótons, até fenômenos físicos como endurecimento e dispersão
+do feixe, que produzem estrias escuras entre objetos de alta atenuação, como metal, osso ou
+meios de contraste iodados [7].
+   Especificamente, artefatos de estrias causados por implantes metálicos são observados
+em aproximadamente 21% das varreduras tomográficas, sendo considerados extremamente
+comuns na prática clínica [7]. A elevada atenuação ou mesmo o bloqueio total dos raios-X por
+esses implantes impede que a radiação alcance adequadamente os detectores, resultando em
+dados de projeção de baixa qualidade e comprometendo a reconstrução da imagem [9].
+   O aumento do uso de implantes metálicos, impulsionado pela evolução dos cuidados de
+saúde, intensificou as preocupações relacionadas ao impacto negativo desses artefatos na
+qualidade de imagem e na confiabilidade das análises diagnósticas [9]. Tradicionalmente,
+diversos algoritmos de redução de artefatos de metal ( MAR ) foram propostos, incluindo técni-
+cas de preenchimento de imagem, preenchimento de sinogramas e métodos de reconstrução
+B IBLIOGRAPHY                                                                             52
+
+
+iterativa baseada em modelo ( MBIR ) ou combinações dessas abordagens [10].
+   Embora métodos analíticos como a Filtered Back Projection (FBP) tenham dominado a re-
+construção tomográfica por décadas devido à sua eficiência computacional e simplicidade con-
+ceitual, suas limitações tornam-se evidentes em condições clínicas não ideais, exigindo doses
+de radiação mais elevadas para garantir qualidade de imagem [11]. Métodos MBIR surgiram
+como alternativa para superar essas limitações, ao custo de maior demanda computacional e
+da introdução de texturas artificiais na imagem reconstruída [11].
+   Mais recentemente, abordagens baseadas em aprendizado profundo têm sido amplamente
+investigadas para a correção de artefatos em tomografia computadorizada, demonstrando de-
+sempenho superior e maior aplicabilidade clínica em comparação com métodos convencionais
+[12]. Em particular, redes neurais convolucionais ( CNNs ) têm sido propostas para a redução
+de artefatos metálicos, permitindo a supressão de ruído e a preservação de detalhes anatômi-
+cos e de tecidos moles [12].
+
+
+
+A.1    Objetivo Geral
+
+O objetivo geral desta dissertação é desenvolver, avaliar e comparar de forma rigorosa um
+modelo baseado em CNNs para deteção e redução de artefatos em imagens de Tomografia
+Computorizada, privilegiando a preservação anatómica, a robustez à variação de domínio e a
+interpretabilidade do processo de correção.
+
+
+
+A.2    Objetivos Específicos
+
+Os objetivos específicos deste trabalho incluem:
+
+   • Desenvolver um pipeline reprodutível para treino e avaliação de modelos de redução de
+      artefatos em CT no domínio da imagem, com separação rigorosa entre dados de treino,
+      validação e teste.
+
+   • Desenvolver uma arquitetura baseline baseada em U-Net para correção de artefatos em
+      imagens de CT, garantindo reprodutibilidade experimental.
+
+   • Avaliar o desempenho de uma arquitetura U-Net single-head para reconstrução de ima-
+      gem na redução de artefatos metálicos e usá-lo como referência comparativa.
+B IBLIOGRAPHY                                                                        53
+
+
+  • Propor e avaliar uma arquitetura U-Net dual-head baseada em aprendizado multi-tarefa
+    para reconstrução de imagem e predição de artefatos, incluindo um estudo de ablação
+    comparativo entre as duas abordagens.
+
+  • Avaliar o desempenho dos modelos utilizando métricas quantitativas ( PSNR, MS-SSIM,
+    SSIM, BCE e DICE ), análise qualitativa e mapas de erro.
+
+  • Investigar a capacidade de generalização do modelo selecionado por meio de validação
+    externa em dados independentes provenientes do The Cancer Imaging Archive (TCIA).
+Apêndice B
+
+
+Trabalhos Relacionados
+
+
+A redução de artefatos em Computed Tomography (CT) constitui um problema amplamente
+estudado, dada a sua relevância clínica e o impacto direto na precisão diagnóstica [9]. Ao longo
+das últimas décadas, diversas abordagens foram propostas, evoluindo de métodos baseados
+em modelos físicos e reconstrução clássica para técnicas avançadas fundamentadas em Deep
+Learning (DL) [9]. Este capítulo apresenta uma revisão crítica dos trabalhos mais relevantes,
+contextualizando o estado da arte e identificando lacunas que motivam a abordagem proposta
+nesta dissertação.
+
+
+
+B.1    Métodos Tradicionais de Redução de Artefatos em CT
+
+Os métodos tradicionais de redução de artefatos em CT baseiam-se predominantemente em
+princípios físicos e matemáticos associados à formação da imagem. Barrett e Keat[13] des-
+crevem detalhadamente a origem dos principais artefatos em CT, incluindo endurecimento de
+feixe, photon starvation, dispersão e efeitos geométricos, bem como estratégias clássicas para
+sua mitigação.
+   Técnicas de reconstrução como a Retroprojeção Filtrada ( FBP ) foram amplamente uti-
+lizadas devido à sua eficiência computacional, porém apresentam elevada sensibilidade ao
+ruído e aos artefatos metálicos. Métodos mais avançados, como Iterative Reconstruction (IR)
+e Model-Based Iterative Reconstruction (MBIR), incorporam modelos estatísticos do sistema
+de aquisição e do ruído, permitindo redução parcial de artefatos. Contudo, essas abordagens
+frequentemente introduzem texturas artificiais e apresentam limitações em cenários clínicos
+complexos [11].
+
+
+
+                                              54
+B IBLIOGRAPHY                                                                           55
+
+
+   Revisões recentes indicam que algoritmos comerciais de Metal Artifact Reduction (MAR),
+como O-MAR, iMAR e SEMAR, embora eficazes em situações específicas, dependem de pa-
+râmetros proprietários e exibem desempenho inconsistente em casos de implantes densos ou
+múltiplos [9, 14]. Essas limitações impulsionaram a investigação de abordagens baseadas em
+aprendizagem profunda.
+
+
+
+B.2    Deep Learning para Redução de Artefatos em CT
+
+As primeiras aplicações de DL para MAR concentraram-se no domínio da imagem, explorando
+redes convolucionais para mapear imagens degradadas para versões corrigidas. Gjesteby et
+al. [15] investigaram a redução de artefatos metálicos no domínio da imagem baseada em
+CNN e demonstraram melhorias quantitativas significativas em comparação com as técnicas
+convencionais.
+   Zhang e Yu [16] também propuseram um modelo supervisionado baseado em Convolu-
+tional Neural Network (CNN) para redução de artefatos metálicos em CT, obtendo ganhos
+consistentes em Peak Signal-to-Noise Ratio (PSNR) e Root Mean Square Error (RMSE). Es-
+ses trabalhos ajudaram a consolidar o uso de redes convolucionais para MAR no domínio da
+imagem. Em particular, Zhang e Yu utilizaram uma CNN rasa totalmente convolucional para fu-
+são de informação de múltiplas imagens pré-corrigidas. Os trabalhos subsequentes adotaram
+cada vez mais arquiteturas de codificador-decodificador, especialmente as baseadas em U-
+Net, para tarefas de correção/restauração. Redes do tipo U-Net e suas variantes são capazes
+de capturar informações contextuais globais por meio do caminho de contração, e recuperar
+detalhes espaciais finos por meio do caminho de expansão e Skip Connections[17].
+   Revisões sistemáticas mais recentes consolidam esses avanços, destacando que a maio-
+ria dos métodos supervisionados no domínio da imagem apresenta desempenho competitivo,
+especialmente quando treinados com dados pareados de alta qualidade [9, 11].
+   Além do domínio da imagem, alguns estudos exploraram o domínio do sinograma, com mé-
+todos de interpolação linear e Normalized Metal Artifact Reduction (NMAR). Essas abordagens
+operam diretamente nos dados de projeção e atuam diretamente na origem física dos artefatos
+metálicos[18]. No entanto, o acesso aos dados de projeção brutos é frequentemente restrito
+em sistemas de CT comerciais, limitando a aplicabilidade de tais abordagens em ambientes
+clínicos [15].
+B IBLIOGRAPHY                                                                              56
+
+
+   Além disso, modelos híbridos têm sido propostos para aproveitar as vantagens de cada
+abordagem. O método proposto por Zhang e Yu [16] procura mesclar CNN no domínio de ima-
+gem e MAR clássico no domínio do sinograma. Na abordagem adotada, o refinamento inicial
+ocorre no domínio da imagem, mas o método completo utiliza a imagem gerada pela CNN
+como prior para substituição de regiões afetadas no sinograma. Isso caracteriza uma aborda-
+gem híbrida, mas ainda não emprega CNN nos dois domínios. Modelos mais recentes, como o
+DuDoNet[19], integram redes profundas em ambos os domínios, demonstrando desempenho
+elevado e caracterizando o que chamamos de Dual Domain. No entanto, esses métodos apre-
+sentam maior complexidade computacional e dependência do acesso ao sinograma bruto, o
+que motiva a exploração contínua de soluções robustas no domínio da imagem.
+   Para contornar a escassez de dados pareados anatomicamente idênticas com artefato
+de metal/Livre de artefato de metal, surgiram abordagens baseadas em aprendizagem auto-
+supervisionada. Yu et al. [20] propuseram um método capaz de reduzir artefatos metálicos
+sem a necessidade de imagens de referência totalmente limpas, ampliando a aplicabilidade
+clínica dessas técnicas.
+   Outros trabalhos exploraram o uso de Generative Adversarial Network (GAN) para MAR.
+Huang et al. [21] utilizaram fusão multimodal e GANs para melhorar a preservação de textura
+e reduzir suavização excessiva. Apesar dos bons resultados visuais, métodos baseados em
+GAN podem introduzir instabilidade no treino e maior risco de alucinação estrutural[22], o que
+levanta preocupações clínicas.
+
+
+
+B.3    Arquiteturas Avançadas e Mecanismos de Atenção
+
+O uso de mecanismos de atenção tem ganhado destaque em tarefas de processamento de
+imagem médica. Redes com módulos de atenção por canal, como o Squeeze-and-Excitation
+(SE) [44], e atenção espacial e por canal combinadas, como o Convolutional Block Attention
+Module (CBAM) [45], demonstraram melhoria na capacidade de focar regiões relevantes.
+   Adicionalmente, técnicas de captura de contexto multi-escala, como o Atrous Spatial Pyra-
+mid Pooling (ASPP) [46], permitem ampliar o campo recetivo efetivo sem aumento substancial
+de parâmetros. Embora esses módulos tenham sido amplamente explorados em tarefas de
+segmentação e visão computacional geral, sua aplicação e avaliação sistemática no contexto
+específico de MAR em CT ainda permanecem relativamente limitadas na literatura recente.
+B IBLIOGRAPHY                                                                                57
+
+
+
+B.4    Avaliação, Generalização e Aplicabilidade Clínica
+
+A avaliação de modelos de DL para CT é tipicamente realizada por meio de métricas quan-
+titativas como PSNR, RMSE e índices baseados em similaridade estrutural. Métricas tradici-
+onais baseadas em erro, como RMSE e PSNR, quantificam discrepâncias pixel a pixel, mas
+não capturam adequadamente informações estruturais relevantes para a percepção visual e
+interpretação clínica. Nesse contexto, Wang et al. [23] introduziram o Structural Similarity In-
+dex Measure (SSIM) como uma métrica perceptual que modela explicitamente luminância,
+contraste e estrutura. Posteriormente, o Multi-Scale Structural Similarity Index Measure (MS-
+SSIM) foi proposto para incorporar variações estruturais dependentes de escala, estendendo o
+SSIM para múltiplos níveis de resolução [24]. Horé e Ziou [25] demonstraram que tanto PSNR
+quanto SSIM apresentam limitações dependendo do tipo de distorção considerada, sugerindo
+que a escolha da métrica pode depender do contexto de aplicação. Dado que os artefatos
+metálicos se manifestam principalmente como distorções estruturais que afetam limites ana-
+tômicos e padrões de estrias de longo alcance, métricas sensíveis à preservação estrutural,
+como SSIM e MS-SSIM, mostram-se particularmente adequadas para avaliar o desempenho
+de métodos de MAR, pois consideram explicitamente componentes estruturais em diferentes
+escalas espaciais [23, 24].
+   Além disso, um desafio crítico identificado na literatura é a generalização dos modelos.
+Zech et al. [26] demonstraram que modelos com elevado desempenho em bases internas
+podem falhar significativamente quando aplicados a dados externos, evidenciando o impacto
+do domain shift. Revisões recentes reforçam a necessidade de validação externa e avaliação
+clínica rigorosa para garantir segurança, robustez e aplicabilidade real [27, 28].
+
+
+
+B.5    Síntese Crítica e Motivação do Trabalho
+
+A literatura revisada demonstra avanços significativos na redução de artefatos em CT por meio
+de DL, mas também evidencia lacunas persistentes: falta de padronização experimental, va-
+lidação externa limitada, risco de alucinação anatómica e exploração restrita de supervisão
+dual e mecanismos de atenção em conjunto.
+   Diante desse cenário, este trabalho propõe uma abordagem supervisionada no domínio
+da imagem, combinando arquitetura U-Net dual-head e módulos avançados de atenção e con-
+texto multi-escala. A estratégia experimental adotada prioriza comparação arquitetural rigorosa
+B IBLIOGRAPHY                                                                         58
+
+
+por meio de treinos curtos e estudos de ablação, estabelecendo bases sólidas para seleção
+objetiva do modelo antes de fases de treino mais prolongadas.
+Apêndice C
+
+
+Materiais e Métodos
+
+
+Nesse capítulo será descrito os materiais, dados, arquiteturas e procedimentos experimentais
+adotados neste trabalho para a deteção e redução de artefatos em imagens de Computed
+Tomography (CT). A metodologia foi concebida para garantir reprodutibilidade, rigor experi-
+mental e avaliação justa buscando utilizar as melhores práticas recomendadas na literatura de
+aprendizado profundo para imagem médica.
+
+
+
+C.1    Visão Geral da Metodologia
+
+A metodologia proposta baseia-se numa abordagem supervisionada no domínio da imagem e
+organiza-se nas seguintes etapas:
+
+  1. desenvolvimento de um modelo U-Net para redução de artefatos metálicos, servindo
+      como referência comparativa;
+
+  2. avaliação objetiva do impacto de uma supervisão adicional com máscara de artefatos
+      através de uma configuração dual-head;
+
+  3. análise do desempenho das duas arquitetuturas utilizando métricas objetivas de quali-
+      dade de imagem, como SSIM, PSNR e MAE a nível global e também especificamente
+      nas regiões afetadas por artefatos e distante deles separadamente.
+
+  4. análise estatística dos resultados para determinar a significância das diferenças obser-
+      vadas entre as arquiteturas, utilizando testes estatísticos apropriados, como o teste t
+      pareado ou o teste de Wilcoxon, dependendo da distribuição dos dados.
+
+
+
+                                             59
+B IBLIOGRAPHY                                                                               60
+
+
+  5. avaliar a generalização dos modelos em um conjunto de dados externo, representando
+      um cenário realista de domain shift, para verificar a robustez das arquiteturas em condi-
+      ções de aquisição e anatomia diferentes.
+
+
+
+C.2     Datasets Utilizados
+
+C.2.1   Datasets Principal
+
+O dataset principal utilizado neste trabalho provém do CT Metal Artifact Reduction Challenge
+(CT-MAR) [29, 30] promovido pela American Association of Physicists in Medicine e consiste
+em 14.000 pares de treino contendo imagens de CT com artefatos metálicos simulados e
+suas versões originais sem artefatos. Os dados foram gerados através de um framework de
+simulação híbrida [31], que incorpora imagens clínicas publicamente disponíveis e objetos
+metálicos simulados com o simulador CatSim, integrado na toolkit de código aberto XCIST
+[32]. O conjunto é distribuído em duas categorias anatómicas:
+
+   • Head: 1.626 (11.61%) amostras derivadas da base UCLH Stroke EIT Data [33, 34];
+
+   • Body: 12.374 (88.38%) amostras derivadas da base NIH DeepLesion Data [35].
+
+   Onde as pastas da categoria body apresentavam CTs de tronco, abragendo fatias axiais,
+torácica e abdominal. Os dados estão organizados em subpastas, cada uma contendo até
+1.000 amostras. Foram utilizados apenas os seguintes ficheiros para treino e validação:
+
+  1. Imagens sem metal (referência): Ficheiros contidos na pasta Target de dimensão
+      512×512×1 pixels;
+
+  2. Imagens com artefatos metálicos (corrompidas): Ficheiros contidos na pasta Base-
+      line de dimensão 512×512×1 pixels;
+
+   Todos os ficheiros de imagem (.raw) do dataset são apresentados em formato binário sem
+cabeçalho, com precisão float32 em ordem little endian. As imagens já vieram convertidas
+de coeficientes de atenuação linear (em unidades mm−1 ) para Unidade Hounsfield (HU), utili-
+zando o valor de normalização de 0.02 mm−1 para água. Não havia no conjunto de dados infor-
+mações adicionais sobre a que exame cada slice pertencia, se eram de um mesmo paciente,
+ou quais regiões anatómicas específicas estavam representadas. A única informação disponí-
+vel era a organização por pasta, que indicava a categoria anatómica (Head ou Body). A falta
+B IBLIOGRAPHY                                                                                61
+
+
+de metadados detalhados impôs a necessidade de uma abordagem de pré-processamento
+cuidadosa para garantir que os dados fossem adequadamente organizados e utilizados du-
+rante o treino e validação dos modelos. Dessa forma, um esforço significativo foi dedicado ao
+rastreio das imagens aos conjuntos de dados originais (UCLH Stroke EIT Data e NIH Dee-
+pLesion Data) para obter informações adicionais sobre os exames e pacientes, permitindo um
+particionamento adequado dos dados.
+
+
+C.2.2   Dataset para Validação Externa
+
+Para avaliação da capacidade de generalização em dados reais independentes, foi reservado
+um conjunto de dados externo proveniente do The Cancer Imaging Archive (TCIA). Este con-
+junto apresenta variações em anatomia, protocolos de aquisição e características de ruído,
+representando um cenário realista de domain shift, conforme discutido na literatura.
+
+
+
+C.3     Pré-processamento dos Dados
+
+C.3.1   Verificação de integridade dos dados
+
+Todos os pares foram validados através de um relatório de integridade, que verifica a existência
+de ambos os lados do par (imagem com artefacto e imagem limpa). Não houve nenhum par
+com dados faltantes, garantindo que o conjunto de dados estava completo e pronto para as
+etapas subsequentes de pré-processamento e treino dos modelos.
+
+
+C.3.2   Remoção do Fundo dos Exames
+
+Um subprojeto inicial foi dedicado à remoção do fundo dos exames para evitar a influencia
+de pixels irrelevantes na aprendizagem do modelo, pois as imagens de CT frequentemente
+contêm grandes áreas de fundo que não contribuem para a tarefa de remoção de artefatos
+metálicos. A presença desses pixels origina um desequilíbrio de classes nos dados de treino
+— ao fazer predominar voxels de fundo irrelevantes sobre as regiões anatómicas de interesse
+—, dificultando a aprendizagem e desviando o foco do modelo das estruturas clinicamente rele-
+vantes [38, 39]. Para abordar esse desafio, foi implementada uma etapa de pré-processamento
+também baseada em Deep Learning (DL). Uma U-Net-2D foi treinada para segmentar o tecido
+corporal do fundo, gerando máscaras binárias que foram aplicadas às imagens originais para
+isolar as regiões de interesse. Esse modelo foi treinado utilizando 1.500 amostras do próprio
+B IBLIOGRAPHY                                                                                      62
+
+
+CT-MAR dataset, onde as máscaras de segmentação foram geradas automaticamente através
+de um processo de limiarização. Além disso, um refinamento manual foi feito nas máscaras ob-
+tidas para garantir a qualidade dos dados de treino e consequentemente a eficácia do modelo
+de segmentação. Esta etapa foi crucial para focar o modelo nas regiões relevantes, reduzindo
+a influência de artefatos de fundo e melhorando a qualidade das features extraídas durante o
+treino.
+
+
+C.3.3     Normalização das Intensidades
+
+As intensidades das imagens vêm expressas em HU do dataset CT-MAR. Para reduzir varia-
+ções extremas e focar em regiões clinicamente relevantes, foi aplicada uma janela de intensi-
+dade adequada ao contexto anatómico. Após o janelamento, os valores foram normalizados
+para o intervalo [0, 1] e são gerados tensores NPY de dimensão 256 × 256 2D para cada slice.
+
+
+C.3.4     Máscaras de Artefato
+
+Foram produzidas máscaras binárias de diferenças das regiões afetadas por artefatos que
+foram utilizadas como sinal de supervisão adicional na arquitetura versão Dual-Head. Essas
+máscaras são utilizadas exclusivamente durante o treino, não sendo necessárias durante a
+inferência. A máscara binária de diferenças é definida formalmente como:
+                                         
+                                         
+                                             1;   se | Iarti f act (i, j) − Iclean (i, j)| > τ
+                                         
+                                         
+                      Mdi f f (i, j) =                                                           (C.1)
+                                         0;      caso contrário
+                                         
+                                         
+
+onde Iarti f act representa a imagem com artefatos, Iclean a imagem de referência limpa, e τ =
+0.05 é o limiar de diferença normalizada. Este threshold foi definido empiricamente para cap-
+turar regiões com diferenças perceptíveis mantendo robustez a ruído de baixa amplitude.
+
+
+
+C.4       Estratégia de Particionamento dos Dados
+
+C.4.1     Estratificação por Pacientes
+
+O particionamento dos dados foi estratificado por pacientes, garantindo que os slices de um
+mesmo paciente não fossem distribuídos entre os conjuntos de treino, validação e teste. Esta
+abordagem evita vazamento de informações e assegura uma avaliação mais realista da capa-
+cidade de generalização dos modelos.
+B IBLIOGRAPHY                                                                              63
+
+
+C.4.2   Correspondência entre imagens CT-MAR e DeepLesion/UCLH Stroke EIT Data
+
+Dado que os dados do CT-MAR dataset não continham metadados clínicos detalhados, foi
+necessário realizar um rastreio algorítmico dos slices até aos conjuntos de dados originais
+(UCLH Stroke EIT e NIH DeepLesion Data) para tornar possível a associação dos metadados
+fornecidos aos slices do CT-MAR. Este processo permitiu identificar a qual exame e paciente
+do DeepLesion/UCLH Stroke EIT cada imagem CT-MAR pertencia. Essas informações foram
+posteriormente utilizadas para realizar o particionamento dos dados em treino, validação e
+teste ao nível do paciente, reduzindo o risco de data leakage entre conjuntos experimentais.
+   A correta separação dos dados é particularmente importante em estudos de imagem mé-
+dica baseados em deep learning, uma vez que slices pertencentes ao mesmo exame frequen-
+temente apresentam elevada similaridade anatómica. Dessa forma, a presença simultânea de
+imagens do mesmo paciente em treino e teste pode inflacionar artificialmente o desempenho
+do modelo e comprometer a avaliação da sua capacidade de generalização [36].
+   As imagens do dataset DeepLesion [35] encontram-se armazenadas em formato PNG de
+16 bits, enquanto as imagens do CT-MAR são disponibilizadas em formato .raw diretamente
+em unidades de Hounsfield (HU). Já o UCLH Stroke EIT [33] disponibiliza os exames em
+formato DICOM. Assim, independentemente do formato original, todas as imagens foram con-
+vertidas para HU antes da comparação, garantindo uniformidade entre os diferentes conjuntos
+de dados.
+   Após a conversão, todas as imagens foram representadas numa mesma escala de intensi-
+dade para permitir comparação direta.
+   O algoritmo utilizado baseia-se no facto de que imagens CT preservam informação quanti-
+tativa em unidades de Hounsfield (HU), refletindo diretamente as propriedades de atenuação
+dos diferentes tecidos. Como as estruturas anatómicas apresentam elevada continuidade es-
+pacial entre slices consecutivos de uma mesma aquisição, imagens correspondentes à mesma
+fatia anatómica tendem a apresentar distribuições semelhantes de HU e padrões estruturais
+globais altamente consistentes [23, 37].
+   Dessa forma, o método não procura verificar igualdade absoluta pixel-a-pixel entre ima-
+gens, mas sim determinar se a organização estrutural global da anatomia permanece extre-
+mamente semelhante entre diferentes representações da mesma fatia. Esse comportamento
+é particularmente importante porque pequenas variações locais de intensidade, discretização
+B IBLIOGRAPHY                                                                              64
+
+
+numérica e transformações lineares associadas à conversão entre formatos de armazena-
+mento tendem a preservar a estrutura anatómica global da imagem mesmo quando ocorrem
+pequenas variações locais de intensidade [23, 37].
+   Assim, a metodologia adotada procura identificar correspondências entre imagens com
+base na similaridade estrutural global, permitindo uma margem de variação local que não
+comprometa a identificação correta do exame e paciente de origem. Inicialmente, cada ima-
+gem foi reduzida para uma representação compacta através de downsampling, preservando
+principalmente a informação anatómica global relevante. Essa etapa reduz significativamente
+o custo computacional sem comprometer a estrutura geral da imagem.
+   Em seguida, foi calculado um vetor representativo (fingerprint) para cada imagem. Os
+fingerprints das imagens CT-MAR foram então comparados com os fingerprints das imagens
+DeepLesion e UCLH Stroke EIT através de uma métrica de similaridade vetorial baseada em
+produto escalar normalizado (similaridade de cosseno), escolhida por ser invariante a diferen-
+ças de escala global entre os vetores — propriedade relevante dado que as imagens provêm
+de formatos distintos com diferentes normalizações de intensidade. Para cada imagem CT-
+MAR, foi selecionada a imagem com maior score de similaridade.
+   Como a maior parte das imagens do CT-MAR teve origem no DeepLesion, o processo de
+rastreio foi inicialmente priorizado nesse dataset. Posteriormente, a mesma metodologia foi
+aplicada aos exames DICOM do UCLH Stroke EIT para identificação das imagens restantes.
+Dessa forma, foi possível implementar uma estratégia unificada de rastreabilidade indepen-
+dentemente do formato de armazenamento dos datasets de origem.
+   As correspondências foram consideradas válidas apenas quando o score de similaridade
+excedia um limiar previamente definido empiricamente. Casos com scores muito elevados fo-
+ram automaticamente marcados como correspondências seguras, pois observou-se que todos
+os pares analisados visualmente com pontuação superior a 0.993 correspondiam efetivamente
+à mesma imagem. Para manter uma margem adicional de segurança, a correspondência foi
+considerada automaticamente válida apenas quando a pontuação excedia 0.994.
+   Pontuações inferiores a esse limiar indicavam correspondências potencialmente ambíguas
+e eram submetidas à inspeção visual manual. Já pontuações inferiores a aproximadamente
+0.98 indicavam correspondências claramente incorretas e eram automaticamente descartadas
+sem necessidade de revisão manual. Dessa forma, todos os pares que apresentavam pon-
+tuações entre 0.98 e 0.994 foram analisados visualmente para confirmação da validade da
+correspondência. A fim de evitar a exclusão de pares de forma desnecessaria, todos os pares
+B IBLIOGRAPHY                                                                                     65
+
+
+com pontuação inferior a 0.98 para ambos os datasets (DeepLesion e UCLH Stroke EIT) foram
+submetidos a inspeção visual para garantir que não fossem erroneamente descartados.
+   Para os 530 pares que permaneceram sem correspondência aprovada após a busca di-
+reta nos dois datasets de origem, foi aplicada uma etapa complementar de correspondência
+indireta. Nessa etapa, cada imagem CT-MAR não correspondida foi comparada com imagens
+CT-MAR já rastreadas; os vizinhos mais semelhantes foram usados para selecionar exames
+candidatos do DeepLesion e, em seguida, todos os slices desses exames foram pesquisados
+com fingerprints de dimensão 64 × 64. As 530 propostas foram inspecionadas visualmente: 95
+correspondências foram aprovadas e incorporadas ao manifesto consolidado, enquanto 435
+permaneceram sem correspondência segura e foram excluídas. Uma estratégia exploratória
+de agrupamento dos pares remanescentes chegou a ser testada, mas nenhum desses agru-
+pamentos foi utilizado para recuperar pares, atribuir pacientes ou definir as partições finais.
+   Além disso, o método foi concebido para ignorar automaticamente imagens previamente
+verificadas como correspondências corretas, reduzindo redundâncias e acelerando reproces-
+samentos futuros. Devido ao elevado número de imagens presentes nos datasets, o processa-
+mento foi paralelizado e otimizado através da utilização de operações matriciais vetorizadas.
+Quando disponível, o algoritmo utiliza aceleração por GPU para reduzir o tempo de execução.
+Os fingerprints calculados também foram armazenados em cache para evitar recomputação
+desnecessária em execuções subsequentes.
+   Embora a representação compacta baseada exclusivamente na média de intensidades dos
+blocos (HU) seja eficiente, ela pode, em teoria, gerar falsos positivos quando exames de pa-
+cientes diferentes são adquiridos com protocolos de aquisição idênticos ou apresentam estru-
+turas anatómicas muito semelhantes, uma vez que essas condições tendem a produzir distri-
+buições de intensidade similares e, consequentemente, fingerprints com pontuação elevada.
+Para mitigar esse risco, adotou-se um limiar de aceitação automática conservador (0,994) e a
+validação visual sistemática de todos os pares com scores entre 0,98 e 0,994. Adicionalmente,
+como salvaguarda complementar, todos os matches automáticos foram analisados em termos
+de MS-SSIM, onde os pares com pontuações mais críticas foram submetidos a uma revisão
+visual adicional para garantir a confiabilidade das correspondências.
+   Além disso, essa limitação não compromete o objetivo principal da metodologia. Pois,
+apesar de Slices consecutivos de um mesmo exame frequentemente apresentarem elevada
+redundância espacial e poderem, portanto, obter scores de similaridade muito próximos entre
+B IBLIOGRAPHY                                                                               66
+
+
+si. O propósito do algoritmo não foi realizar alinhamento voxel-a-voxel rigoroso, mas sim iden-
+tificar corretamente o exame e o paciente de origem de cada imagem CT-MAR. Dessa forma,
+mesmo eventuais ambiguidades entre slices adjacentes permanecem restritas ao mesmo vo-
+lume anatómico e não introduzem risco relevante de data leakage entre treino, validação e
+teste.
+   A literatura demonstra que a qualidade dos pares utilizados em estudos supervisionados
+influencia diretamente o desempenho e a capacidade de generalização dos modelos de MAR
+[9, 19]. Além disso, métricas estruturais de qualidade de imagem, como o SSIM, têm sido
+amplamente utilizadas em imagem médica devido à sua maior sensibilidade à preservação
+estrutural [23]. Embora o método implementado não utilize diretamente SSIM, a estratégia
+adotada procura preservar precisamente a informação estrutural global da imagem durante o
+processo de correspondência.
+   Mais ainda, a utilização dos dados sem qualquer tratamento de rastreio desse tipo, con-
+dicionaria todo o projeto a um vazamento de dados inerente ao dataset, comprometendo a
+avaliação do desempenho dos modelos e a validade dos resultados. Assim, mesmo que o
+método de rastreio não seja perfeito, ele representa uma melhoria significativa em relação à
+ausência total de rastreio, garantindo uma base mais confiável.
+   Tendo isso em conta, essa etapa constituiu um importante procedimento de controlo de
+qualidade do dataset experimental e foi fundamental para garantir um particionamento ade-
+quado dos dados utilizados no treino, validação e teste dos modelos, assegurando que os
+subconjuntos fossem estratificados por paciente e evitando vazamento de informação entre
+conjuntos experimentais.
+
+
+C.4.3    Dados Utilizados e Exclusões
+
+Nem todos os slices puderam ser rastreados, mas a maioria dos dados foi associada com
+sucesso aos exames originais. Ao final das etapas de correspondência direta e indireta, e an-
+tes da análise complementar com MS-SSIM, dos 14.000 pares disponibilizados pelo CT-MAR
+Dataset, 11.942 foram rastreados até ao DeepLesion (incluindo os 95 recuperados pela corres-
+pondência indireta) e 1.623 até ao UCLH Stroke EIT, totalizando 13.565 pares com metadados
+associados C.1.
+B IBLIOGRAPHY                                                                                                    67
+
+    Tabela C.1 Resultados do rastreio antes da análise complementar com MS-SSIM.
+
+
+          Dataset                 Rastreados         Correspondidos            Não correspondidos
+          DL (DeepLesion)             12.374                11.942                      432
+          Stroke (UCLH)                1.626                 1.623                       3
+          Total                       14.000                13.565                      435
+
+
+   Na etapa de avaliação via MS-SSIM, dentre todos os pares com pontuação abaixo de 0.90,
+apenas 3, anteriormente associados ao Deep Lesion, foram reprovados na inspeção visual
+C.2.
+    Tabela C.2 Resultados do rastreio depois da análise complementar com MS-SSIM.
+
+
+          Dataset                 Rastreados         Correspondidos            Não correspondidos
+          DL (DeepLesion)             12.374                11.939                      435
+          Stroke (UCLH)                1.626                 1.623                       3
+          Total                       14.000                13.562                      438
+
+
+   Dado que uma quantidade significativa dos dados pôde ser rastreada com elevada confia-
+bilidade, os casos restantes que não puderam ser agrupados de forma segura foram excluídos
+do processo de treino e validação. No total, 438 pares foram removidos por não apresentarem
+informação suficiente para garantir agrupamento seguro ao nível do paciente. Entre eles, os
+3 pares reprovados por ser falso positivo na etapa de avaliação via MS-SSIM. Todos os pa-
+res removidos desse estudo foram inspecionados visualmente para confirmar a ausência de
+correspondência, garantindo que a exclusão foi justificada.
+
+    Tabela C.3 Dados dos pares sem correspondência que foram excluídos antes e após a análise complementar com
+    MS-SSIM.
+
+
+                                                        Excluídos
+                                                    Antes      Depois
+                                           Total      435         438
+
+
+   Assim, dos 14.000 pares originalmente disponibilizados pelo CT-MAR Dataset, 13.562 fo-
+ram incluídos neste trabalho, enquanto 438 foram excluídos para preservar a integridade do
+particionamento experimental e minimizar o risco de data leakage.
+B IBLIOGRAPHY                                                                             68
+
+
+C.4.4    Estratificação Anatómica
+
+A proporção anatómica dos 14.000 pares do CT-MAR Dataset, mudou pouco após o processo
+de rastreio e exclusão dos pares com baixa confiabilidade. Dos 438 casos removidos 435
+eram do tipo body, 3 do tipo head. A distribuição anatómica dos pares incluídos no estudo é a
+seguinte:
+
+   • Body: aproximadamente 88.03% ;
+
+   • Head: aproximadamente 11.97% .
+
+   A estratificação foi implementada dentro de cada subconjunto (train/val/test) de modo a
+manter a proporção anatómica ao nível de pacientes, garantindo que a proporção relativa
+entre categorias seja preservada em todos os subconjuntos. Dessa forma, o balanceamento
+anatómico é preservado, garantindo que os modelos sejam treinados e avaliados em uma
+representação adequada da diversidade anatómica presente no conjunto de dados original.
+   A nível de pacientes, a distribuição anatómica é a seguinte:
+
+   • Body: aproximadamente 95.9% (258/269 pacientes);
+
+   • Head: aproximadamente 4.1% (11/269 pacientes).
+
+   Após o particionamento, os subconjuntos de treino, validação e teste apresentaram a se-
+guinte distribuição:
+
+    Tabela C.4 Distribuição anatómica por subconjunto ao nível de pacientes.
+
+
+                                 Split      Body      Head       Body%         Head%
+                                 Train       180         7        96.3%        3.7%
+                                 Val          39         2        95.1%        4.9%
+                                 Test         39         2        95.1%        4.9%
+                                 Total       258        11        95.9%        4.1%
+
+
+   A proporção de aproximadamente 70% dos pacientes para treino, 15% para validação e
+15% para teste com semente aleatória fixa (seed = 1337) foi escolhida para garantir uma quan-
+tidade suficiente de dados para treino, mantendo subconjuntos independentes para validação
+e teste, garantindo uma avaliação confiável do desempenho dos modelos.
+B IBLIOGRAPHY                                                                                 69
+
+    Tabela C.5 Distribuição dos pares por subconjunto, categoria anatómica e pacientes.
+
+
+                          Split      Pares        Body       Head       Body%        Head%
+                          Train      9 516        8 563       953       89.98%       10.02%
+                          Val        2 532        2 147       385       84.79%       15.21%
+                          Test       1 514        1 229       285       81.17%       18.83%
+                          Total      13 562      11 939      1 623      88.03%       11.97%
+
+
+   Pode-se notar, que devido a grande variação na quantidade de slices por paciente, a distri-
+buição anatómica ao nível de pares é bastante diferente da distribuição ao nível de pacientes.
+Devido a isso, a proporção ∼ 70/15/15 foi mantida ao nível de pacientes, mas a distribuição
+anatómica dos pares não segue exatamente a mesma proporção.
+
+
+
+C.5     Arquitetura dos Modelos
+
+C.5.1    Modelo Baseline
+
+O modelo escolhido para ser o baseline consiste em uma arquitetura baseada em U-Net [17],
+composta por encoder-decoder com conexões de atalho (skip connections). Li et al [40], apli-
+cam blocos de normalização em lote ( BN ) e funções de ativação ReLU após cada convolução
+dinâmica. Esse trabalho faz algo semelhante, mas opta por utilizar convoluções padrão com
+kernel 3 × 3, seguida dos blocos de BN e funções de ativação ReLU. A escolha por convo-
+luções padrão é justificada pela simplicidade e eficiência computacional, além de manter a
+abordagem utilizada por Ronneberger et al [17]. Assim como Li et al [40], o decoder também
+utiliza bilinear upsampling. Essa arquitetura possui apenas um output, configurando um mo-
+delo Single-Head. A figura 3.1 ilustra a estrutura da arquitetura baseada em U-Net utilizada
+como modelo baseline.
+   Uma variação do modelo baseline acima descrito foi concebida, estendendo a arquitetura
+para uma configuração dual-head, onde mantêm-se o encoder e o decoder compartilhados,
+mas são adicionadas duas saídas independentes na última camada do decoder. Cada cabeça
+tem tarefas distintas, sendo:
+
+   • uma cabeça dedicada à reconstrução da imagem corrigida;
+
+   • uma cabeça dedicada à predição da máscara de artefatos.
+B IBLIOGRAPHY                                                              70
+
+
+
+
+   Fig.C.1 Arquitetura baseada em U-Net utilizada como modelo baseline.
+
+
+
+
+   Fig.C.2 Arquitetura baseada em U-Net utilizada como modelo dual-head.
+B IBLIOGRAPHY                                                                               71
+
+
+   A figura 3.2 ilustra a estrutura da arquitetura dual-head. Esta configuração de supervi-
+são dual permite que o modelo aprenda a identificar explicitamente as regiões afetadas por
+artefatos, fornecendo um mecanismo de controle sobre as áreas modificadas durante a re-
+construção. Além disso, a cabeça de máscara pode ser utilizada para gerar mapas de atenção
+ou para auxiliar na interpretação dos resultados, aumentando a transparência do modelo.
+
+
+
+C.6       Estudos de ablação
+
+As duas arquiteturas foram avaliadas entre si para determinar o impacto da supervisão adici-
+onal com máscara de artefatos na qualidade da reconstrução e na capacidade de redução de
+artefatos. Toda a base de ambos os modelos são iguais, sendo a única diferença a presença
+da cabeça de predição da máscara de artefatos na versão dual-head. Dessa forma, a compa-
+ração entre as duas arquiteturas é justa e isolada, permitindo avaliar exclusivamente o impacto
+da supervisão adicional da máscara de artefatos.
+
+
+
+C.7       Fluxo de Treino
+
+C.7.1     Componentes de Configuração de Treino
+
+C.7.1.1    Otimizador e Taxa de Aprendizagem
+
+Foram utilizados otimizador AdamW devido a sua melhor capacidade de generalização [47]
+em ambas as arquiteturas. O weight decay foi otimizado e fixado para ambos os modelos.
+
+
+C.7.1.2    Scheduler
+
+O scheduler Reduce on Plateau foi utilizado na etapa inicial devido ao fato da quantidade de
+épocas ideal ser desconhecida. A taxa de aprendizagem foi ajustada proporcionalmente ao
+progresso inicial observado nas primeiras épocas na fase de treino piloto, garantindo uma con-
+vergência estável e eficiente para ambos os modelos. No treino final, usou-se um scheduler
+do tipo Cosine Decay com um teto alfa de 0.05 para evitar decaimento até zero. Dessa forma,
+garante-se que a taxa de aprendizagem permaneça em um nível mínimo razoável, permitindo
+que os modelos continuem a aprender e se ajustarem mesmo nas últimas épocas, o que pode
+ser particularmente importante para evitar estagnação do aprendizado e melhorar a capaci-
+dade de generalização. Além disso, o scheduler de Cosine Decay é ideal para estudos de
+B IBLIOGRAPHY                                                                              72
+
+
+ablação, pois garante a mesma estratégia de ajuste de taxa de aprendizagem para ambos os
+modelos.
+
+
+C.7.1.3    Funções de Perda
+
+   • Perda de Reconstrução: Apesar de L2 ser amplamente utilizada para restauração de
+     imagem, Zhao et al. [41] destacam os melhores resultados de L1 ao estudar diferentes
+     funções de perda para essa tarefa. Os autores também estudaram funções de perda
+     baseadas em SSIM e MS-SSIM, sendo que a primeira alcança resultados igual ou leve-
+     mente inferior a L1, equanto a segunda apresenta desempenho melhor que SSIM mas
+     ainda não supera L1 de forma clara. O trabalho também testa um mix de L1 e MS-
+     SSIM, e obteve-se resultados superiores em todas as métricas avaliadas pelos autores.
+     Essa combinação é justificada pela complementaridade entre as duas funções, onde L1
+     favorece fidelidade local e SSIM promove preservação estrutural, resultando em uma
+     correção mais equilibrada dos artefatos. Devido a esses resultados, a função de perda
+     de reconstrução adotada neste trabalho é a soma ponderada de L1 e SSIM. Os pesos
+     utilizados foram 0.7 para L1 e 0.3 para SSIM, baseando-se na recomendação de Zhao
+     et al. [41]. A relação adotada para a combinação das funções de perda é a seguinte:
+
+                               L Recon = 0,7 · L L1 + 0,3 · (1 − SSIM)
+
+
+     [41] utiliza filtragem Gaussiana em L1 para reduzir o impacto de ruído e favorecer a
+     correção de artefatos, mas essa abordagem pode não ser ideal para tomografias com-
+     putadorizadas, onde a precisão radiométrica é crucial. Portanto, neste trabalho, optou-se
+     por utilizar a perda L1 direta sem filtragem gaussiana, garantindo máxima fidelidade na
+     reconstrução dos valores de Unidade Hounsfield (HU), enquanto o SSIM continua a ga-
+     rantir a preservação estrutural. Essa combinação de função de perda é adotada para a
+     arquitetura single-head e também para a cabeça de reconstrução da arquitetura dual-
+     head. Dessa forma, garante-se que a ablação entre as duas versões seja justa, isolando
+     o impacto da supervisão adicional da máscara.
+
+   • Perda de Segmentação: Baseado nos estudos de Isensee et al. [42], a cabeça de
+     predição da máscara de artefatos, presente na versão dual-head, é treinada utilizando
+     uma combinação de DICE Loss e Binary Cross-Entropy (BCE), que se mostrou adequada
+     para problemas de segmentação com desequilíbrio de classes [38]. A relação adotada
+B IBLIOGRAPHY                                                                             73
+
+
+     para a combinação das funções de perda é a seguinte:
+
+                                       LSeg = L Dice + L BCE
+
+
+   • Perda Total: A função de perda total para a versão dual-head é composta pela ponde-
+     ração das perdas de reconstrução e segmentação, e é definida como:
+
+                                  L = 1,0 · L Recon + 0,045 · LSeg
+
+
+C.7.2   Estratégia de Treino
+
+Enquanto os modelos não estavam em uma configuração estável e ainda havia necessidade
+de ajustes de hiperparâmetros, a fase de treino foi realizada por um número reduzido de épo-
+cas (10) para permitir uma avaliação rápida do impacto das mudanças realizadas. Isso permitiu
+observar tendências de desempenho iniciais sem o custo computacional associado a treinos
+prolongados. Uma vez que esse projeto tem como objetivo comparar duas versões de arqui-
+tetura, é necessário garantir a reprodutibilidade e consistência dos experimentos conduzidos.
+Tendo isso em conta, o treino final de ambos os modelos foi realizado utilizando uma quanti-
+dade de épocas fixa, definida com base nos resultados observados durante a fase de treino
+piloto. Além disso, foi utilizado um scheduler de taxa de aprendizagem fixo para ambos os
+modelos, garantindo que as condições de treino fossem idênticas. Essa abordagem assegura
+que as diferenças de desempenho observadas entre os modelos possam ser atribuídas exclu-
+sivamente às diferenças arquiteturais, sem a influência de variações nos hiperparâmetros ou
+na duração do treino. O treino piloto foi conduzido para o modelo mais complexo, a versão
+dual-head, para identificar quantas épocas eram necessárias para alcançar um desempenho
+estável e evitar sobreajuste. Após a definição da configuração final dos modelos e dos hiper-
+parâmetros, a fase de treino foi estendida para um número maior de épocas para permitir uma
+convergência adequada dos modelos e uma avaliação mais robusta do desempenho final. Du-
+rante essa fase, as métricas de desempenho foram monitoradas para garantir que os modelos
+estavam aprendendo de forma eficaz e para identificar o ponto ideal de convergência.
+   Foi implementado uma estratégia de early stopping para interromper o treino caso a métrica
+monitorada ( SSIM) não apresentasse melhoria significativa por um número pré-definido de
+épocas em um arquivo de configuração .yaml, evitando sobreajuste e economizando recursos
+computacionais.
+B IBLIOGRAPHY                                                                            74
+
+
+C.7.2.1     Monitoramento do Treinamento
+
+Durante o treinamento, as seguintes métricas foram monitoradas para avaliar o desempenho
+do modelo e orientar o processo de otimização:
+
+   • Loss de Reconstrução: Monitorada para a verificar a capacidade de aprendizagem do
+      modelo em remover artefatos (reconstruir).
+
+   • Loss de Segmentação: Monitorada exclusivamente para a versão dual-head para ava-
+      liar a capacidade de aprendizagem do modelo em identificar as regiões afetadas por
+      artefatos (segmentar).
+
+   • PSNR e MS-SSIM: Monitorados para avaliar a qualidade da imagem reconstruída em
+      termos de fidelidade e preservação estrutural.
+
+
+
+C.8       Métricas
+
+As métricas de avaliação adotadas neste trabalho foram calculadas diretamente na escala
+de Unidade Hounsfield (HU), garantindo interpretabilidade clínica dos resultados. Todas as
+métricas são restritas à região corporal B , definida pela máscara binária gerada no pré-
+processamento, excluindo o fundo da imagem — cujos pixels apresentam valor fixo 0,0 após
+normalização. Esta abordagem evita a inflação artificial das métricas por regiões sem conte-
+údo clínico relevante.
+
+
+C.8.1     Métricas Globais de Qualidade de Imagem
+
+Para a avaliação global, as imagens preditas e de referência são desnormalizadas para a
+janela [−1000, 400] HU, correspondendo a uma amplitude MAX = 1400 HU. Adicionalmente,
+a região de avaliação é recortada ao menor retângulo envolvente (bounding box) da máscara
+corporal antes da avaliação de SSIM e MS-SSIM, eliminando janelas de varredura compostas
+exclusivamente por fundo — que pontuariam SSIM = 1,0 artificialmente e inflariam a métrica
+global.
+
+
+C.8.1.1     PSNR em Escala HU
+
+O Peak Signal-to-Noise Ratio (PSNR) quantifica a fidelidade radiométrica da reconstrução em
+decibéis:
+B IBLIOGRAPHY                                                                               75
+
+
+                                                                                       !
+                                                                       MAX2
+                             PSNR( Î, I ) = 10 · log10
+                                                                      MSEB ( Î, I )
+
+onde Î é a imagem predita, I a referência limpa, MAX = 1400 HU, e o MSE é calculado
+exclusivamente sobre os pixels da região corporal B :
+
+                                                                                 2
+                                               ∑           Î (i, j) − I (i, j)
+                                             (i,j)∈B
+                                 MSEB =
+                                                               |B|
+
+
+C.8.1.2   SSIM em Escala HU
+
+O Structural Similarity Index Measure (SSIM) avalia a similaridade estrutural entre imagens
+com base nos componentes de luminância, contraste e estrutura [23]:
+
+                                               (2µ x µy + C1 )(2σxy + C2 )
+                          SSIM( x, y) =
+                                            (µ x + µ2y + C1 )(σx2 + σy2 + C2 )
+                                              2
+
+
+com C1 = (0,01 · MAX)2 , C2 = (0,03 · MAX)2 e MAX = 1400 HU. A métrica é calculada com
+janela deslizante de 11 × 11 pixels sobre o bounding box corporal, após forçar a zero os pixels
+fora da máscara em ambas as imagens — alinhando a métrica com a perda de reconstrução
+que opera exclusivamente na região corporal.
+
+
+C.8.1.3   MS-SSIM em Escala HU
+
+O Multi-Scale Structural Similarity Index Measure (MS-SSIM) estende o SSIM a cinco escalas
+espaciais através de downsampling iterativo por fator 2 [24]:
+
+                                                      Mh                                i
+                    MS-SSIM( x, y) = l M ( x, y)α M · ∏ c j ( x, y) β j · s j ( x, y)γj
+                                                               j =1
+
+com M = 5 escalas e fatores de ponderação definidos por Wang et al.: (0,0448; 0,2856; 0,3001; 0,2363; 0,1333)
+A avaliação multi-escala torna o MS-SSIM mais sensível a artefatos em diferentes frequên-
+cias espaciais e mais correlacionado com a percepção clínica de qualidade. O downsampling
+progressivo impõe uma dimensão mínima de 176 pixels; em fatias com região corporal muito
+reduzida, o bounding box pode ser insuficiente e o cálculo reverte automaticamente para a
+imagem completa.
+B IBLIOGRAPHY                                                                               76
+
+
+C.8.1.4    MAE em Escala HU
+
+O Mean Absolute Error (MAE) fornece uma medida clinicamente interpretável do erro médio
+absoluto, mais robusta a outliers localizados do que o MSE:
+
+
+                                              ∑ | Î (i, j) − I (i, j)|
+                                            (i,j)∈B
+                         MAEB ( Î, I ) =                                 [HU]
+                                                       |B|
+   Por ser expresso diretamente em HU, o MAE permite uma interpretação clínica directa do
+erro introduzido pelo modelo. A título orientativo, diferenças inferiores a 5 HU são geralmente
+imperceptíveis na prática clínica, ao passo que valores superiores a 20 HU podem ser clinica-
+mente significativos.
+
+
+C.8.2     Análise por Regiões de Interesse
+
+A avaliação global não distingue o comportamento do modelo nas regiões diretamente afeta-
+das pelos artefatos daquele nas regiões saudáveis distantes do implante. Para uma análise
+mais granular, a região corporal é dividida em duas zonas complementares, definidas a partir
+da diferença entre a imagem de entrada e a referência limpa.
+
+
+C.8.2.1    Definição das Zonas
+
+   • Zona de Artefato (R art ): pixels cuja diferença absoluta entre entrada e referência, após
+     remoção do bias de endurecimento de feixe, excede o limiar τ ≈ 0,05 (correspondente
+     a ∼ 70 HU acima do bias mediano corporal), dilatados com um disco morfológico de raio
+     10 pixels para incluir os braços de streak que caem abaixo do limiar:
+                                              h                  i
+                                 Mart (i, j) = |∆bias (i, j)| > τ ⊗ D10
+
+
+   • Zona Distante (Rdist ): complemento da zona de artefato dentro da região corporal, que
+     avalia a capacidade do modelo de preservar tecido saudável sem introduzir distorções
+     secundárias:
+                                            Mdist = Mbody \ Mart
+
+   A Figure C.3 ilustra a aplicação das duas zonas em fatias representativas do conjunto de
+dados, cobrindo diferentes regiões anatómicas e padrões de artefato.
+B IBLIOGRAPHY                                                                                                                   77
+
+
+
+
+   Fig.C.3 Exemplos de zonas de ROI em fatias de CT com artefatos metálicos. Em cada par, a imagem da esquerda
+   mostra a Zona de Artefato (R art , sobreposição a vermelho) e a da direita a Zona Distante (Rdist , sobreposição a verde).
+   As fatias cobrem anatomias torácica (topo), abdominal (meio) e torácica com implante unilateral (base), ilustrando a
+   variabilidade da extensão e forma da zona de artefato em função da localização e número de implantes metálicos.
+B IBLIOGRAPHY                                                                                  78
+
+
+C.8.2.2    Métricas por Zona
+
+Para cada zona, calculam-se as métricas como deltas em relação ao desempenho da entrada
+corrompida, permitindo isolar a contribuição do modelo na região de artefato da sua contribui-
+ção nas regiões saudáveis:
+
+
+                      ∆PSNRROI = PSNR( Î | ROI , I | ROI ) − PSNR( Iart | ROI , I | ROI )
+
+
+
+                        ∆SSIMROI = SSIM( Î | ROI , I | ROI ) − SSIM( Iart | ROI , I | ROI )
+
+   Valores positivos indicam melhoria face à entrada corrompida. O MS-SSIM não é utilizado
+na análise por ROI: o downsampling progressivo das cinco escalas misturaria pixels dentro
+e fora da ROI nas escalas reduzidas, comprometendo a interpretabilidade. Utiliza-se SSIM
+regular, que opera localmente com janela de 11 × 11 pixels.
+
+    Tabela C.6 Métricas utilizadas por contexto de avaliação.
+
+
+                     Métrica          Treino      Global        ROI Artefato   ROI Distante
+                     PSNR                ✓            ✓              ✓               ✓
+                     SSIM                ✓            ✓              ✓               ✓
+                     MS-SSIM             —            ✓             —               —
+                     MAE                 ✓            ✓             —               —
+
+
+
+C.8.3     Critérios de Seleção das Métricas
+
+Na fase de inferência, os modelos foram avaliados utilizando métricas quantitativas ampla-
+mente adotadas na literatura, em comparação com o Ground Truth. As métricas utilizadas
+para a avaliação global da qualidade da imagem reconstruída foram:
+
+   • PSNR ;
+
+   • MS-SSIM ;
+
+   • MAE.
+
+Para a análise baseada em ROI, empregamos:
+
+   • PSNR ;
+
+   • SSIM.
+B IBLIOGRAPHY                                                                             79
+
+
+   Wang et al. [24] descrevem MS-SSIM como um método de avaliação de qualidade de ima-
+gem através de cinco escalas com downsampling iterativo por fator 2, resultando em uma redu-
+ção de resolução de até 1/16 do tamanho original. O método foi validado em bases de dados
+de imagens completas, sem considerar aplicação em regiões fragmentadas ou espacialmente
+seletivas. Devido ao downsampling progressivo, a aplicação MS-SSIM em ROIs pequenas ou
+fragmentadas (como a zona distante em nossa análise) resultaria na mistura de pixels de ROI e
+não-ROI nas escalas reduzidas, comprometendo a interpretabilidade dos resultados. Por isso,
+utilizou-se SSIM regular em vez de MS-SSIM nesse caso. De fato, as literaturas recentes tem
+demonstrado performance estatísticamente muito melhor em fidelidade para MS-SSIM e SSIM
+comparado a outras métricas de avaliação de qualidade de imagem[43]. Especialmente para
+imagens médicas, onde a fidelidade das imagens preditas é crucial, a escolha de métricas que
+refletem a percepção humana de qualidade e preservação estrutural é fundamental. Portanto,
+MS-SSIM e SSIM foram selecionados como as principais métricas para avaliação quantitativa
+da qualidade das imagens reconstruídas, garantindo uma análise robusta e relevante para o
+contexto clínico. E o PSNR foi utilizado como métrica complementar para avaliar a fidelidade
+radiométrica das reconstruções, especialmente importante em tomografias computadorizadas
+onde a precisão dos valores de HU é essencial para diagnóstico e planejamento clínico.
+
+
+
+C.9     Protocolos de Validação
+
+C.9.1   Validação Interna
+
+A validação interna foi conduzida nos conjuntos de validação e teste, avaliando consistência,
+estabilidade e capacidade de generalização intra-dataset.
+
+
+C.9.2   Validação Externa
+
+A validação externa foi realizada em dados independentes provenientes do The Cancer Ima-
+ging Archive (TCIA), permitindo avaliar o impacto de domain shift e a robustez do modelo em
+cenários não vistos durante o treino.
+B IBLIOGRAPHY                                                                                80
+
+
+
+C.10    Visão Geral do Pipeline
+
+O pipeline desenvolvido neste trabalho segue uma abordagem supervisionada no domínio da
+imagem e é composto pelas seguintes etapas principais:
+
+  1. aquisição e organização dos dados;
+
+  2. pré-processamento e normalização;
+
+  3. treino de modelos baseados em U-Net com diferentes configurações arquiteturais;
+
+  4. avaliação quantitativa e qualitativa;
+
+  5. validação externa em dados independentes.
+
+   O objetivo do pipeline é garantir reprodutibilidade, controlo experimental rigoroso e avalia-
+ção justa do impacto de cada componente arquitetural introduzida ao longo do estudo.
+
+
+
+C.11    Infraestrutura Computacional
+
+Esse trabalho foi realizado utilizando uma GPU RTX 4000 ADA e o ambiente de desenvol-
+vimento baseou-se em Python, TensorFlow/Keras e Visual Studio Code. O projeto oferece
+suporte a precisão mista ( AMP ) que pode ser desativado via argumento, permitindo otimizar
+o uso de memória e acelerar o treino, especialmente em modelos mais complexos.
+Apêndice D
+
+
+Resultados
+
+
+Neste capítulo são apresentados e analisados os resultados obtidos a partir dos experimen-
+tos descritos no Capítulo C. A análise é organizada em quatro etapas progressivas: (i) va-
+lidação da qualidade das correspondências automáticas entre os datasets CT-MAR e Dee-
+pLesion/Stroke EIT, assegurando a confiabilidade da base de dados utilizada; (ii) estudos de
+ablation em treinos curtos para comparação arquitetural dos módulos de atenção e contexto
+multi-escala; (iii) seleção objetiva do modelo candidato com base em critérios de consistên-
+cia e significância estatística; e (iv) avaliação do modelo selecionado em treinos de duração
+intermédia e prolongada.
+   Foi realizado um estudo para verificar qual o melhor peso de máscara para a função de
+perda. Foram testados os pesos 0.1, 0.05, e 0.01. A finalidade era observar quais os limites de
+atuação da segunda saída em regularização e preservação de detalhes. O modelo com peso
+0.05 para a máscara apresentou melhor desempenho em validação, com ganhos marginais
+em PSNR e SSIM, sugerindo que a supervisão adicional contribui para uma correção mais
+equilibrada dos artefatos. O modelo com peso 0.1 apresentou resultados piores que o modelo
+Single-Head, demonstrando que a supervisão excessiva da máscara pode levar à degradação
+de detalhes ao competir com a tarefa de reconstrução. Dessa forma, o peso da função de
+perda da saída de máscara foi diminuído para 0.05. Para esse peso, os resultados melhoram
+para MS-SSIM, SSIM, PSNR e Mean Absolute Error (MAE) em relação ao peso 0.1, mas
+ainda apresentam uma leve degradação em relação ao modelo Single-Head. O valor do DICE
+teve uma leve queda, mas manteve-se acima de 0.70, o que é considerado um desempenho
+aceitável para a tarefa de segmentação de artefatos com finalidade de regularização. Para
+o peso 0.01, o desempenho melhora em relação ao modelo com peso 0.05, mais uma vez
+
+
+
+                                              81
+B IBLIOGRAPHY                                                                       82
+
+
+melhorando MS-SSIM, SSIM, PSNR e MAE, mas o valor do Dice Similarity Coefficient (DICE)
+tem uma queda mais acentuada, ficando abaixo de 0.70.
+Apêndice E
+
+
+Discussion
+
+
+
+
+             83
+Apêndice F
+
+
+Conclusion
+
+
+
+
+             84
+Apêndice G
+
+
+Appendix Title Here
+
+
+Write your Appendix content here.
+
+
+
+
+                                    85
+

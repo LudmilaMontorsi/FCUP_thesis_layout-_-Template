@@ -1,0 +1,123 @@
+\chapter{Resultados}
+\label{chap:final-resultados}
+
+\section{Coorte final e integridade experimental}
+\textit{[A preencher: pares incluídos, pacientes, distribuição anatómica, partições e resultados das verificações de integridade.]}
+
+\subsection{Resultados da Aprovação Automática x Inspeção Manual}
+É  importante deixar claro como ficou a distribuição dos dados que foram aprovados e reprovados automaticamente, e também quais foram avaliados manualmente. O gráfico abaixo, mapeia todos os pares do \acrshort{ctmar} Dataset, destacando os que foram aprovados automaticamente, os que foram reprovados e os que foram sujeitos a inspeção visual humana. A distribuição anatómica dos pares é representada por cores, permitindo uma análise visual da relação entre a aprovação automática e a localização anatómica dos artefatos metálicos.
+
+\subsection{Análise Complementar com\acrshort{ms-ssim}}
+
+Antes de avançar para a análise dos resultados dos modelos de redução de artefatos, foi realizada mais uma avaliação dos resultados\acrshort{ctmar} x DeepLesion/Stroke EIT para verificar a qualidade das correspondências automáticas. Esta etapa é crucial para garantir uma camada extra de confiança nos resultados obtidos pelo algoritmo de comparação de similaridade estrutural. 
+Todos os pares que tiveram a correspondencia aprovada automaticamente pelo fato de seu score ser acima de 0.994 foram revisados por um novo algoritmo que calcula o\acrshort{ms-ssim} entre as imagens correspondentes. Um histograma da distribuiuição dos\acrshort{ms-ssim} foi gerado, e os pares com pontuação menor que 0.9 foram revisados manualmente sendo aprovado ou recusado com base em avaliação humana.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/ssim_distribution_full.png} \\[4pt]
+    \includegraphics[width=\textwidth]{Figures/ssim_distribution_zoom.png}
+    \caption{Distribuição de MS-SSIM entre pares correspondentes (\acrshort{ctmar} vs DL/Stroke, aprovados automaticamente). Acima: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. Abaixo: zoom do histograma para a região de maior interesse, com destaque para os pares com MS-SSIM inferior a 0.9, que foram sujeitos a revisão manual.}
+    \label{fig:ssim_distribution}
+\end{figure}
+
+
+A análise da distribuição entre os pares correspondentes revela que a maioria dos pares apresenta alta similaridade estrutural, com um valor médio de 0.9694 e uma mediana de 0.9830, indicando que o processo de correspondência automática é, em geral, confiável e eficaz na identificação de pares correspondentes entre os datasets\acrshort{ctmar} e DeepLesion/Stroke EIT.
+
+Os pares com pontuação de\acrshort{ms-ssim} abaixo de 0.9 eram 340 no total, apenas 3 foram reprovados após inspeção visual humana \ref{fig:ECDF}. Nessa inspeção, percebe-se que mesmo os casos com pontuações bastante baixas de\acrshort{ms-ssim} não eram falsos positivos e sim devido a diferenças no pós-processamento ou tratamento geral das imagens que geram alterações locais no qual o\acrshort{ms-ssim} é mais sensível. Isso pode ser visualizado na figura \ref{fig:manual_review_examples}. Esse fato evidencia a eficácia da estratégia de correspondência por similaridade estrutural global adotada, que conseguiu identificar os pares com precisão, com apenas 3 falsos positivos identificados, mesmo após análise rigorosa \ref{fig:reproved_examples}. Mostrando que a metodologia é robusta e teve desempenho superior em detectar slices nesse trabalho do que uso do próprio\acrshort{ms-ssim}. Pois, enquanto as diferenças locais afetaram o\acrshort{ms-ssim} de forma mais significativa, a metodologia baseada em similaridade de cosseno conseguiu identificar as correspondências corretas com pontuação global elevada, mesmo em casos de diferenças locais acentuadas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/ssim_ecdf_final.png}
+    \caption{Distribuição de MS-SSIM entre pares correspondentes (\acrshort{ctmar} vs DL/Stroke, aprovados automaticamente). À esquerda: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. À direita: ECDF correspondente. Os pares com MS-SSIM inferior a 0.9 foram sujeitos a revisão manual.}
+    \label{fig:ECDF}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.70\textwidth]{Figures/image4.png}\\[2pt]
+    \includegraphics[width=0.70\textwidth]{Figures/image5.png}\\[2pt]
+    \includegraphics[width=0.70\textwidth]{Figures/image6.png}
+    \caption{Exemplos de pares correspondentes com valores de\acrshort{ms-ssim} (0.7597, 0.7694 e 0.7717, respetivamente) aprovados após revisão visual humana mesmo com pontuações baixas.}
+    \label{fig:manual_review_examples}
+\end{figure}
+
+
+Os pares reprovados apresentavam\acrshort{ms-ssim} claramente fora do padrão (< 0.61), com valores extremamente baixos, como podem ver na figura \Ref{fig:reproved_examples}. Além disso, representaram os pares com pontuação mais próximas do limiar de aceitação automática de 0.994 \ref{fig:cosine_scatter_audited}. Demonstrando que os casos em que o método falha são outliers claros em\acrshort{ms-ssim} e permanecem justamente na zona cinzenta e propensa a erros da determinação empírica do limiar de aceitação automática. Além disso, os pares reprovados possuem características visuais bastante particulares com fundo dominando a imagem e poucas estruturas anatômicas visíveis, o que torna a avaliação de similaridade estrutural mais desafiadora devido a grande homogeneidade das características visuais.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.70\textwidth]{Figures/image1.png}\\[4pt]
+    \includegraphics[width=0.70\textwidth]{Figures/image2.png}\\[4pt]
+    \includegraphics[width=0.70\textwidth]{Figures/image3.png}
+    \caption{3 pares reprovados após inspeção visual humana com valores de \acrshort{ms-ssim} (head\_1159: 0.4573, head\_369: 0.5652 e head\_763: 0.6009, respetivamente). As pontuações desses pares na similaridade de cosseno foram head\_1159: 0.9960, head\_369: 0.9952 e head\_763: 0.9951.}
+    \label{fig:reproved_examples}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/cosine_scatter_audited.png}
+    \caption{Distribuição dos valores de similaridade de cosseno para os pares inspecionados visualmente.}
+    \label{fig:cosine_scatter_audited}
+\end{figure}
+
+Os pares com\acrshort{ms-ssim} mais críticos logo acima dos reprovados tinham valores maiores que 0.75 \ref{fig:manual_review_examples}, demonstrando uma distancia clara entre os falsos positivos e os aprovados visualmente. Todos os pares inspecionados com pontuação acima desse valor de\acrshort{ms-ssim} passaram no teste de inspeção visual \ref{fig:ssim_scatter_dist}. Como os pares que não passaram por esse escrutínio tinham pontuação acima de 0.90 em\acrshort{ms-ssim}, é seguro assumir que os pares automaticamente aprovados com pontuação acima desse limiar são confiáveis.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/ssim_scatter_dist.png}
+    \caption{Distribuição dos valores de\acrshort{ms-ssim} para os pares inspecionados visualmente.}
+    \label{fig:ssim_scatter_dist}
+\end{figure}
+
+
+Na busca direta, 530 pares não obtiveram correspondência aprovada em nenhum dos dois datasets de origem. A etapa complementar de correspondência indireta recuperou 95 desses casos após inspeção visual, restando 435 pares sem correspondência segura.
+
+Com relação aos possíveis falsos negativos que poderiam ter resultado em exclusão de pares de forma injusta nesse estudo, a metodologia adotada foi ainda mais robusta. Já que eram poucos os pares que não tiveram aprovação em nenhum dos dois datasets de origem, ficou fácil verificar visualmente cada um desses casos para confirmar se realmente não havia correspondência ou se o método falhou em identificá-la. Dos 435 pares excluídos 245 foram excluídos devido ao críterio automatizado baseado no limiar de 0.98. Nenhum desses casos eram realmente falsos negativos, confirmando mais uma vez a eficácia do método de correspondência automática adotado.
+ Os outros 190 pares caíram na faixa de pontuação pouco confiável (0.98 -- 0.994) e foram marcados como falsa correspondência nessa etapa evidenciando a importancia de ter-se determinado uma zona cinzenta de pontuação para a qual o método de correspondência automática não é eficiente, e que a revisão visual humana torna-se indispensável \ref{fig:score_distribution_bad}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/score_distribution.png}
+    \caption{Distribuição dos \textit{scores} de similaridade de cosseno (DL vs Stroke EIT) para os pares sem correspondência aprovada em nenhum dos dois \textit{datasets} de origem (N=435). À esquerda: histograma das pontuações por \textit{dataset}; à direita: ECDF correspondente com o limiar de 0,98 assinalado.}
+    \label{fig:score_distribution_bad}
+\end{figure}
+
+
+\section{Treino dos modelos}
+\subsection{Convergência e seleção dos checkpoints}
+\textit{[A preencher: curvas de treino/validação e checkpoints selecionados pelo monitor pré-especificado.]}
+\input{Chapters/Final/Generated/Training}
+
+\subsection{Rastreabilidade das execuções}
+\textit{[A preencher: snapshots de reprodutibilidade, versões do ambiente e hashes dos checkpoints.]}
+
+\section{Avaliação interna no conjunto de teste}
+\subsection{Desfechos globais}
+\textit{[A preencher: PSNR, MS-SSIM, SSIM, MAE e intervalos de confiança por paciente.]}
+\input{Chapters/Final/Generated/Evaluation}
+
+\subsection{Análise por região de interesse e preservação anatómica}
+\textit{[A preencher: regiões de artefacto e distantes, mapas residuais e inspeção qualitativa.]}
+
+\section{Comparação pareada single-head versus dual-head}
+\textit{[A preencher: diferença dual menos single, Wilcoxon bilateral, IC 95\% bootstrap e p-valores ajustados por Holm.]}
+\input{Chapters/Final/Generated/PairedComparison}
+
+\section{Desempenho computacional}
+\textit{[A preencher: benchmark de inferência, se reportado.]}
+\input{Chapters/Final/Generated/Benchmark}
+
+\section{Avaliação externa por médicos}
+\label{sec:resultados-avaliacao-medicos}
+
+\subsection{Estado da recolha e participantes}
+\textit{[A preencher: estado de pré-produção, piloto ou recolha concluída; número de leitores analisados e características categóricas, apenas quando existirem dados reais.]}
+
+\subsection{Desfecho primário: visualização anatómica}
+\textit{[A preencher: comparação pareada entre entrada e saída para visualização de tecidos e limites anatómicos.]}
+
+\subsection{Desfechos secundários e segurança percebida}
+\textit{[A preencher: interferência do artefacto, preferência A/B, possível dano, utilidade complementar e consistência intraleitor.]}
+
+\subsection{Interpretação limitada ao desenho observacional}
+\textit{[A preencher: reportar intervalos de confiança e limitações; não inferir benefício clínico para além das avaliações realizadas.]}

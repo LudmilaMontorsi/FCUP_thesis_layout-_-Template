@@ -1,8 +1,10 @@
 %-------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %-------------------------------------------------------------------------
-% Fix PDF version compatibility for including Front/main.pdf
-\pdfminorversion=7
+% Fix PDF version compatibility for including Front/main.pdf when pdfTeX is used.
+\ifdefined\pdfminorversion
+  \pdfminorversion=7
+\fi
 
 % Include pdf pages in the document
 % Necessary to include the front pages (cover and etc.)

@@ -1,13 +1,13 @@
 \begin{thebibliography}{10}
 
+\bibitem{November81895}
+November 8, 1895: {{Roentgen}}'s {{Discovery}} of {{X-Rays}}.
+\newblock https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays.
+
 \bibitem{okunoFisicaRadiacoes2010}
 Emico Okuno and Elisabeth Yoshimura.
 \newblock {\em {F\'isica das Radia\c c\~oes}}.
 \newblock Oficina de Textos, 2010.
-
-\bibitem{November81895}
-November 8, 1895: {{Roentgen}}'s {{Discovery}} of {{X-Rays}}.
-\newblock https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays.
 
 \bibitem{howellEARLYCLINICALUSE2016}
 JOEL~D. HOWELL.
@@ -145,24 +145,6 @@ Xin Yi, Ekta Walia, and Paul Babyn.
   Review}}.
 \newblock {\em Medical Image Analysis}, 58:101552, December 2019.
 
-\bibitem{huSqueezeandExcitationNetworks2018}
-Jie Hu, Li~Shen, and Gang Sun.
-\newblock Squeeze-and-{{Excitation Networks}}.
-\newblock In {\em 2018 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and
-  {{Pattern Recognition}}}, pages 7132--7141, June 2018.
-
-\bibitem{wooCBAMConvolutionalBlock2018}
-Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
-\newblock {{CBAM}}: {{Convolutional Block Attention Module}}.
-\newblock In Vittorio Ferrari, Martial Hebert, Cristian Sminchisescu, and Yair
-  Weiss, editors, {\em Computer {{Vision}} -- {{ECCV}} 2018}, volume 11211,
-  pages 3--19. Springer International Publishing, Cham, 2018.
-
-\bibitem{chenRethinkingAtrousConvolution2017}
-Liang-Chieh Chen, George Papandreou, Florian Schroff, and Hartwig Adam.
-\newblock Rethinking {{Atrous Convolution}} for {{Semantic Image
-  Segmentation}}, December 2017.
-
 \bibitem{zhouwangImageQualityAssessment2004}
 {Zhou Wang}, A.C. Bovik, H.R. Sheikh, and E.P. Simoncelli.
 \newblock Image quality assessment: From error visibility to structural
@@ -248,18 +230,6 @@ Ke~Yan, Xiaosong Wang, Le~Lu, and Ronald~M. Summers.
   and universal lesion detection with deep learning.
 \newblock {\em Journal of Medical Imaging}, 5(3):036501, July 2018.
 
-\bibitem{taghanakiComboLossHandling2021}
-Saeid~Asgari Taghanaki, Yefeng Zheng, S.~Kevin Zhou, Bogdan Georgescu, Puneet
-  Sharma, Daguang Xu, Dorin Comaniciu, and Ghassan Hamarneh.
-\newblock Combo {{Loss}}: {{Handling Input}} and {{Output Imbalance}} in
-  {{Multi-Organ Segmentation}}, September 2021.
-
-\bibitem{kesimalUseDeepLearning2026}
-U{\u g}ur Kesimal, Habip~Eser Akkaya, {\"O}nder Polat, and Murat Sa{\u g}lam.
-\newblock Use of {{Deep Learning Models}} in the {{Diagnosis}} of {{Proptosis
-  Through Orbital Magnetic Resonance Imaging}}.
-\newblock {\em Medical Science Monitor}, 32, April 2026.
-
 \bibitem{onerTrainingMachineLearning2020}
 Mustafa~Umit Oner, Yi-Chih Cheng, Hwee~Kuan Lee, and Wing-Kin Sung.
 \newblock Training machine learning models on patient level data segregation is
@@ -272,16 +242,24 @@ Jiang Hsieh.
 \newblock Wiley Interscience ; SPIE Press, Hoboken, N.J. : Bellingham, Wash,
   2nd ed edition, 2009.
 
+\bibitem{taghanakiComboLossHandling2021}
+Saeid~Asgari Taghanaki, Yefeng Zheng, S.~Kevin Zhou, Bogdan Georgescu, Puneet
+  Sharma, Daguang Xu, Dorin Comaniciu, and Ghassan Hamarneh.
+\newblock Combo {{Loss}}: {{Handling Input}} and {{Output Imbalance}} in
+  {{Multi-Organ Segmentation}}, September 2021.
+
+\bibitem{kesimalUseDeepLearning2026}
+U{\u g}ur Kesimal, Habip~Eser Akkaya, {\"O}nder Polat, and Murat Sa{\u g}lam.
+\newblock Use of {{Deep Learning Models}} in the {{Diagnosis}} of {{Proptosis
+  Through Orbital Magnetic Resonance Imaging}}.
+\newblock {\em Medical Science Monitor}, 32, April 2026.
+
 \bibitem{liUNetBasedDynamic2024}
 Yang Li, Bobo Yan, Jianxin Hou, Bingyang Bai, Xiaoyu Huang, Canfei Xu, and
   Limei Fang.
 \newblock {{UNet}} based on dynamic convolution decomposition and triplet
   attention.
 \newblock {\em Scientific Reports}, 14(1):271, January 2024.
-
-\bibitem{loshchilovDecoupledWeightDecay2019}
-Ilya Loshchilov and Frank Hutter.
-\newblock Decoupled {{Weight Decay Regularization}}, January 2019.
 
 \bibitem{zhaoLossFunctionsImage2017}
 Hang Zhao, Orazio Gallo, Iuri Frosio, and Jan Kautz.
@@ -303,5 +281,27 @@ Fabian Isensee, Jens Petersen, Andre Klein, David Zimmerer, Paul~F. Jaeger,
   Assessment}}.
 \newblock {\em IEEE Transactions on Image Processing}, 20(8):2378--2386, August
   2011.
+
+\bibitem{huSqueezeandExcitationNetworks2018}
+Jie Hu, Li~Shen, and Gang Sun.
+\newblock Squeeze-and-{{Excitation Networks}}.
+\newblock In {\em 2018 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and
+  {{Pattern Recognition}}}, pages 7132--7141, June 2018.
+
+\bibitem{wooCBAMConvolutionalBlock2018}
+Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So Kweon.
+\newblock {{CBAM}}: {{Convolutional Block Attention Module}}.
+\newblock In Vittorio Ferrari, Martial Hebert, Cristian Sminchisescu, and Yair
+  Weiss, editors, {\em Computer {{Vision}} -- {{ECCV}} 2018}, volume 11211,
+  pages 3--19. Springer International Publishing, Cham, 2018.
+
+\bibitem{chenRethinkingAtrousConvolution2017}
+Liang-Chieh Chen, George Papandreou, Florian Schroff, and Hartwig Adam.
+\newblock Rethinking {{Atrous Convolution}} for {{Semantic Image
+  Segmentation}}, December 2017.
+
+\bibitem{loshchilovDecoupledWeightDecay2019}
+Ilya Loshchilov and Frank Hutter.
+\newblock Decoupled {{Weight Decay Regularization}}, January 2019.
 
 \end{thebibliography}
