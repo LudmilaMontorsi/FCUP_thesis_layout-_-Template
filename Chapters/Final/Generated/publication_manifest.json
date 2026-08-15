@@ -19,14 +19,975 @@
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\training_curves_singlehead.png",
-      "destination": "Figures\\Generated\\training\\training-curves-singlehead-a292709c.png",
-      "sha256": "2b1e262bf99d9c2ddd6d3ebdcfef6831fab2b0111086e58a672aaca18c48fbc0"
+      "source": "outputs\\training_curves\\seed_1337\\training_001_dualhead\\training_curves_dualhead.png",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-6c252b4a.png",
+      "sha256": "f1a5af04ac32c6e066f5f683acfc41d170ccef1643b1549c5a61d2913f8b9eb1"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_1337\\training_008_singlehead\\lr_schedule.png",
+      "destination": "Figures\\Generated\\training\\lr-schedule-48c434d9.png",
+      "sha256": "3aaf1e538c68e4749dcdf5baf910a4ea0488fbb77d6f121b35ba67bb872d3c0d"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_1337\\training_008_singlehead\\training_curves_singlehead.png",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-6422b5e2.png",
+      "sha256": "a3be52e10f0f5430e5463f05d44e2f768bdbfbc14dc367fd250cf91d95fdef0e"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_dualhead\\training_curves_dualhead.png",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-cce23466.png",
+      "sha256": "3453c06a05cb6bf970a4790f9116d68312bcb7b76674d3b24703481f8e30f08f"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_singlehead\\lr_schedule.png",
+      "destination": "Figures\\Generated\\training\\lr-schedule-d244f000.png",
+      "sha256": "da4e3b3ee8e66513acb446eb5dc291bb476c298787c7ff6d1668bd9f7ed1f785"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_singlehead\\training_curves_singlehead.png",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-a27fad34.png",
+      "sha256": "74df08e752cb17872af230db2bae086ed4abba166b60c1e156669d1f264201d9"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_dualhead\\training_curves_dualhead.png",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-be08f04f.png",
+      "sha256": "ebf3cc83ea8285beee4a368c29b561ab47a22447172bb348a4198a52e68ef2f9"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_singlehead\\lr_schedule.png",
+      "destination": "Figures\\Generated\\training\\lr-schedule-54d5d38c.png",
+      "sha256": "8af524fcce52c924814c808f59965620492a036ac9b5f87f9f252fe5c865fe44"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_singlehead\\training_curves_singlehead.png",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-62c464ea.png",
+      "sha256": "e79673fc8871d7f731ba8e3d49122ac781fd02c22be0ff20908368e580522b35"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\boxplots_preservation_analysis.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-e25b797a.png",
+      "sha256": "a967c2676af7fdc4e151a4895735364be1b41b1440f2d02d2a4ac1b0ee7d29f9"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\correlation_preservation_vs_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-311c5e05.png",
+      "sha256": "98b4f1232819a0f7034b96f601d83d24b3576e76483a22c9680407a2a391707c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\hist_delta_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-5b39c382.png",
+      "sha256": "fcd221101efc6123edde415855331c7f7012668ec1b2b0d1ef5377c9d2db857f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\roi_comparison_boxplots.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-81fa24cb.png",
+      "sha256": "5a20213c780d5d4f44dd7879dd5cac3dd746ab49440e15b72c73ffbd73981860"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\roi_safety_scatter.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-d4970edb.png",
+      "sha256": "6f8f7c11ad240af6e861066fe4bd60709089c7a39e612303d19d7fa2a3f36342"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\scatter_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-2e2be373.png",
+      "sha256": "0a603c31c57da3c763f9caf155416f638fcd23d722349481237bee670f0fb9e4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\texture_by_source_folder.png",
+      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-11e6aea7.png",
+      "sha256": "72353ea68614d58f91d23e9bcf36f5ab6a0d4e0b89774384148de93d21df1a84"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\boxplots_preservation_analysis.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-685a109d.png",
+      "sha256": "9eb5b4ed994fcac8716e9891bc0350dabbbd5db00a9c49b6af7fa2287fb9f4c5"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\correlation_preservation_vs_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-071ea820.png",
+      "sha256": "8dd372f9cb729f6abd3843e0747fac5ef9078392e65ba5e77a3951becaf8d078"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\hist_delta_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-50ec6edf.png",
+      "sha256": "d779395a0d84ada234b5582bb121beeaa4a0ec4ec180d693c298d33f0779dbec"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\roi_comparison_boxplots.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-ee14d788.png",
+      "sha256": "073fb71b3caf8bb34b9702169434a0ff2133e917ae55c03c8441aae046a93873"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\roi_safety_scatter.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-379ebfec.png",
+      "sha256": "87495b28a42b11c0160e7a7a9e197e5c2203913a0da153a773267d99fd67474b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\scatter_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-a941689e.png",
+      "sha256": "597199751e05b92fcc293ed485c4ef3aec4cc9c40408b4b6af937e2aea64eb89"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\texture_by_source_folder.png",
+      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-90853950.png",
+      "sha256": "df3ffb6db352a100c8beea338b99d61ff149e31d06a47d6acece1668b41f9d62"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\boxplots_preservation_analysis.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-a949f61b.png",
+      "sha256": "d8d79ac99788af5379549e0f4d038c0893719598112db4ecdb3bc22a4badae10"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\correlation_preservation_vs_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-36ec8f0d.png",
+      "sha256": "39dc759f7354648b050eed25050d7d0cd3d58073b607ef609eeccfe505e31e31"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\hist_delta_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-81cfe167.png",
+      "sha256": "576e792af2f72467c14ddb2d5bd7103c23ae638052695ade125ab2e1129c00a1"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\roi_comparison_boxplots.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-1cf8604f.png",
+      "sha256": "545cf4f6e1d5c8dc8c31a13b25e32e69008ceea59da09b7a434041c3a887df3f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\roi_safety_scatter.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-230c21e6.png",
+      "sha256": "debe76dea9d3bc53b62ed115facfb5420d9141e9249e96372ea06f2c7628983b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\scatter_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-7a9cace0.png",
+      "sha256": "12a00a47a52bfe3b60320708214abad4d57ab6a93924400b363549a16845ef83"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\texture_by_source_folder.png",
+      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-98c71757.png",
+      "sha256": "313a7f54f85210b2dd167b4a81722ffac4722f6ce909569b7d7d04caf3ee5542"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\boxplots_preservation_analysis.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-2549a5f0.png",
+      "sha256": "a896a9500d11a1056914fbfcfac31543aa285470e3224205520a337e4e9e8967"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\correlation_preservation_vs_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-28a12b7e.png",
+      "sha256": "be1df68c2c4fa68cab0190c13bad50c06573fa0347cbfd84a63d70f956f7c771"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\hist_delta_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-63af1a28.png",
+      "sha256": "2bdde3706c63cd9043540ab4af17a127f46797e0be6d1a627da86b591f86d528"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\roi_comparison_boxplots.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-f8a27db5.png",
+      "sha256": "739a5b112c3d6ef305e57ede424ffeeba0357c83dfc63320c49d7663f21b2cdc"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\roi_safety_scatter.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-da6d5a6e.png",
+      "sha256": "0f551a10f629d41ebdc6a721ec513430fef31b6ee1ce24f1988d0229413b2d78"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\scatter_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-d0caff9c.png",
+      "sha256": "a920503576d3efde303e456eebc16cf2e348f64b949369c7c94c7c2a3cafc839"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\texture_by_source_folder.png",
+      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-73c4dbee.png",
+      "sha256": "11c2860041bc690c92f1b836caf96c7d6cbcf09937183a6505de5208ea66980e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\boxplots_preservation_analysis.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-5a478149.png",
+      "sha256": "b0d3bf5e75880fa9dc02253d31d916db9e547c2adf12a4833d02f451064ba5b7"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\correlation_preservation_vs_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-09344521.png",
+      "sha256": "b0f83c7b2fc4c637dd5fd5ca3d8d83d61fbaf2b92331dfbad7f7184c424b9626"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\hist_delta_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-4a443f58.png",
+      "sha256": "e6e8ea8e57b8ba05b43b272b85f3e0cc6849f79f391d5f1e5e40e0a068370c5d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\roi_comparison_boxplots.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-0dcdebde.png",
+      "sha256": "bb97b67d5072c8399881de214240cdc0a97558ad0c8c987fbb667b31817bee97"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\roi_safety_scatter.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-2d86f655.png",
+      "sha256": "44d17e6503cc60f9d506890a94a08139a65a446355de178ac0ce7104e2b2de72"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\scatter_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-7230c0ab.png",
+      "sha256": "b4543e73b89b26df8bc81bc3aa0c9a3660a315df2dd224cc0125126e9c16128b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\texture_by_source_folder.png",
+      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-0635bfd4.png",
+      "sha256": "21db96dc35f81b64b564439c041f41bacd693f74de1f1d71e3adb9e42326e205"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\boxplots_preservation_analysis.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-f365f83d.png",
+      "sha256": "b26c9c25c326e57c9a297c8b45dd28d509eb38ab41d7e46a2da222fe1418ccb3"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\correlation_preservation_vs_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-9ec937d4.png",
+      "sha256": "248e572501b24dfae2deb7c5c3cc5b3de09e0c64d5b4e7ab9ec0f8be3d53b789"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\hist_delta_improvement.png",
+      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-738174a7.png",
+      "sha256": "9d4ba0b7ffa57325013ba742b30f661fb38c34edcb21c6d9028c697f20b7ff76"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\roi_comparison_boxplots.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-562e2c28.png",
+      "sha256": "48281dc83f874f52af3434bb7cac1ce6a74300f4650cfd4586a18134ddd6a000"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\roi_safety_scatter.png",
+      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-0bc16afc.png",
+      "sha256": "bcb483b5140e555df333757ed05c55841059cd757b1d2455c2cfa663fb5ce0d8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\scatter_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-ed2ece6d.png",
+      "sha256": "352656718804a6dad70d14f22260f89fb64c33266db585fe1ac7598771dfcc94"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\texture_by_source_folder.png",
+      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-663d8172.png",
+      "sha256": "4d549a70e87d0e1c6f61e0afdd86eb87ab441a6eb95aba534b5a6c779849560a"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\bland_altman.png",
+      "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
+      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_mean_hu_per_slice.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
+      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_pixel_hu.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
+      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\bland_altman.png",
+      "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
+      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_mean_hu_per_slice.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
+      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_pixel_hu.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
+      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\bland_altman.png",
+      "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
+      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_mean_hu_per_slice.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
+      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_pixel_hu.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
+      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\bland_altman.png",
+      "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
+      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_mean_hu_per_slice.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
+      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_pixel_hu.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
+      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\bland_altman.png",
+      "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
+      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_mean_hu_per_slice.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
+      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_pixel_hu.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
+      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\bland_altman.png",
+      "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
+      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_mean_hu_per_slice.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
+      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_pixel_hu.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
+      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_712_body_11945.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
+      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_713_body_11946.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-713-body-11946-55a6345d.png",
+      "sha256": "61ca963867a2889afc396ecfab4ee38b3c88abdcf14a5e3c05dfd5abc614cdab"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_714_body_11947.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-714-body-11947-16e911ee.png",
+      "sha256": "24d5832766cd26e1f1e78202e56aee37a9d03e693cab954631978985f342a9e7"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_715_body_11948.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
+      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_716_body_11949.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
+      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_717_body_11950.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
+      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_718_body_11951.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-718-body-11951-3498d986.png",
+      "sha256": "1ecad89e2fabe7421ae9eafeee58f5f2462f76dac4340df9a6f2b28749878cf9"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_719_body_11952.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-719-body-11952-a364b6e7.png",
+      "sha256": "d3279219cc42e7763378d460b3733f993a0de04d622f90e86f9d3a1e5c13f57a"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_721_body_11954.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-721-body-11954-4ff679dd.png",
+      "sha256": "a514d36b4b422b0515a97f17f7c06ccd98283f519a8ab386caf3e9c2004da869"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_722_body_11955.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
+      "sha256": "a02f87319458b11955fcb602ca7cfbd5907078e53fc58318a88a8289baad7e64"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_723_body_11956.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
+      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_724_body_11957.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-724-body-11957-bcea2035.png",
+      "sha256": "966b5e9d930b9199b2ff55c8d07591fa6a22f26b3dfdee5d8298a943e8bac186"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_727_body_11960.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-727-body-11960-bae7897c.png",
+      "sha256": "1d9e39a0317e560a45ed3acea603f454ccf55a0837ed6fd3e2d6af7072c32e44"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_1063_body_2640.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
+      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_1259_head_1156.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-1259-head-1156-2f91f82c.png",
+      "sha256": "f6b1bb0c1cb525e3e7f8bf4da2f2ecdd58d9b4d634c4bac4eaae0cedfdab2923"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_199_body_2163.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
+      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_258_body_9241.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-258-body-9241-1de753be.png",
+      "sha256": "104308638c8077092c4fdce733eba573de5f72172c07e1dea01b9a698b0a98cc"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_712_body_11945.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
+      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_714_body_11947.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-714-body-11947-16e911ee.png",
+      "sha256": "24d5832766cd26e1f1e78202e56aee37a9d03e693cab954631978985f342a9e7"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_715_body_11948.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
+      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_716_body_11949.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
+      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_717_body_11950.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
+      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_718_body_11951.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-718-body-11951-3498d986.png",
+      "sha256": "1ecad89e2fabe7421ae9eafeee58f5f2462f76dac4340df9a6f2b28749878cf9"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_722_body_11955.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
+      "sha256": "a02f87319458b11955fcb602ca7cfbd5907078e53fc58318a88a8289baad7e64"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_723_body_11956.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
+      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_726_body_11959.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-726-body-11959-9cfaa280.png",
+      "sha256": "13c9ea0b1bfc3de57653ed7ea91df46de34cd0cedec154a48d214a11fd3a8ac9"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_727_body_11960.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-727-body-11960-bae7897c.png",
+      "sha256": "1d9e39a0317e560a45ed3acea603f454ccf55a0837ed6fd3e2d6af7072c32e44"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_731_body_11964.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-731-body-11964-89c6310e.png",
+      "sha256": "55a25c7bdec0c53dd3ad879b8fbbebecdf2590901ec4b9ac47bc2a1b99d05f43"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\worst_cases_grid.png",
+      "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
+      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_1063_body_2640.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
+      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_199_body_2163.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
+      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_712_body_11945.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
+      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_713_body_11946.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-713-body-11946-55a6345d.png",
+      "sha256": "61ca963867a2889afc396ecfab4ee38b3c88abdcf14a5e3c05dfd5abc614cdab"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_714_body_11947.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-714-body-11947-16e911ee.png",
+      "sha256": "24d5832766cd26e1f1e78202e56aee37a9d03e693cab954631978985f342a9e7"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_715_body_11948.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
+      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_716_body_11949.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
+      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_717_body_11950.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
+      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_722_body_11955.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
+      "sha256": "a02f87319458b11955fcb602ca7cfbd5907078e53fc58318a88a8289baad7e64"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_723_body_11956.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
+      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\worst_cases_grid.png",
+      "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
+      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_1063_body_2640.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
+      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_199_body_2163.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
+      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_712_body_11945.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
+      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_715_body_11948.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
+      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_716_body_11949.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
+      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_717_body_11950.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
+      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_718_body_11951.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-718-body-11951-3498d986.png",
+      "sha256": "1ecad89e2fabe7421ae9eafeee58f5f2462f76dac4340df9a6f2b28749878cf9"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_723_body_11956.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
+      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_727_body_11960.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-727-body-11960-bae7897c.png",
+      "sha256": "1d9e39a0317e560a45ed3acea603f454ccf55a0837ed6fd3e2d6af7072c32e44"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_729_body_11962.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-729-body-11962-6df7c66a.png",
+      "sha256": "88ccd5c34e3d7d6f2f225cbc449ea27b30ece6082112db6ea8338a15f9219315"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\worst_cases_grid.png",
+      "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
+      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_1063_body_2640.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
+      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_199_body_2163.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
+      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_712_body_11945.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
+      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_714_body_11947.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-714-body-11947-16e911ee.png",
+      "sha256": "24d5832766cd26e1f1e78202e56aee37a9d03e693cab954631978985f342a9e7"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_715_body_11948.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
+      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_716_body_11949.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
+      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_717_body_11950.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
+      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_719_body_11952.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-719-body-11952-a364b6e7.png",
+      "sha256": "d3279219cc42e7763378d460b3733f993a0de04d622f90e86f9d3a1e5c13f57a"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_722_body_11955.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
+      "sha256": "a02f87319458b11955fcb602ca7cfbd5907078e53fc58318a88a8289baad7e64"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_723_body_11956.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
+      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\worst_cases_grid.png",
+      "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
+      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_1063_body_2640.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
+      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_199_body_2163.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
+      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_362_body_2582.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-362-body-2582-061f91f6.png",
+      "sha256": "9f343f5d1089879ca214a1a6d0f59afeb960b5d2aaa6567c904504ac8e6b0cbb"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_712_body_11945.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
+      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_715_body_11948.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
+      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_716_body_11949.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
+      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_717_body_11950.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
+      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_719_body_11952.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-719-body-11952-a364b6e7.png",
+      "sha256": "d3279219cc42e7763378d460b3733f993a0de04d622f90e86f9d3a1e5c13f57a"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_723_body_11956.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
+      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_729_body_11962.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-729-body-11962-6df7c66a.png",
+      "sha256": "88ccd5c34e3d7d6f2f225cbc449ea27b30ece6082112db6ea8338a15f9219315"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\worst_cases_grid.png",
+      "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
+      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_1337\\comparison_test\\comparison_bar_charts.png",
+      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-c89cdffe.png",
+      "sha256": "b4adf27235a671c2ee711878916263059f1dba7e8216df903b603b44d248544d"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_1337\\comparison_test\\comparison_scatter_tradeoff.png",
+      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-63875aed.png",
+      "sha256": "8b4005ec3db27b925942d0d1b0a930b5bf4f4c1d28dade8d6c96b8f717bb968e"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_1337\\comparison_val\\comparison_bar_charts.png",
+      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-a6234831.png",
+      "sha256": "5115b8552b0a5981082cd245ac0903b031590adda3f7b5285680d970fe362566"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_1337\\comparison_val\\comparison_scatter_tradeoff.png",
+      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-75c6cf22.png",
+      "sha256": "a7573205d1489263b7b2f1d98cbe127804f3bc04b8f9da685dbf74520d789a17"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_bar_charts.png",
+      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-3254d43f.png",
+      "sha256": "a55db0058d51536ee26eb564a806250ecafeadd9c6c2bbcd137cd343f122f4a2"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_scatter_tradeoff.png",
+      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-ecd46a35.png",
+      "sha256": "c81c9aebed2a2bb1a815ef800d79abcee704760bce92569c6ea766443802109c"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_2024\\comparison_val\\comparison_bar_charts.png",
+      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-7e5e6605.png",
+      "sha256": "cd264f0c864d6654fa3ae9807e53cc33d91156a41eff4fd070f92b48daea5a92"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_2024\\comparison_val\\comparison_scatter_tradeoff.png",
+      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-7710b9c3.png",
+      "sha256": "d208774ef85baf68df04ab98714109d6f09c426e2bfbd755aa51ae6afee1cc9e"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_42\\comparison_test\\comparison_bar_charts.png",
+      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-04e44abd.png",
+      "sha256": "2e7e3d87c5c63797ce2d4da3594af44f8880e614bcbd4cb2bc2daed040373e61"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_42\\comparison_test\\comparison_scatter_tradeoff.png",
+      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-fbd2724f.png",
+      "sha256": "392ba078f1270ffc8a602271f8c2b8891583e91d4d9ed751b8905ac9b85e21aa"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_42\\comparison_val\\comparison_bar_charts.png",
+      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-f32b459d.png",
+      "sha256": "92bedb80498c0df7e7ac2bf9a5103533f6c2f78bfc18259d7f5e5a9f1b68c67d"
+    },
+    {
+      "category": "ablation",
+      "source": "outputs\\ablation\\seed_42\\comparison_val\\comparison_scatter_tradeoff.png",
+      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-b30276ce.png",
+      "sha256": "ed81d913016f6c877252e7a282d8bd8485fe65d799ef17ea45d4ae1178a03cfc"
+    },
+    {
+      "category": "benchmark",
+      "source": "outputs\\benchmark\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\benchmark_latency.png",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
+      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+    },
+    {
+      "category": "benchmark",
+      "source": "outputs\\benchmark\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\benchmark_latency.png",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
+      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+    },
+    {
+      "category": "benchmark",
+      "source": "outputs\\benchmark\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\benchmark_latency.png",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
+      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+    },
+    {
+      "category": "benchmark",
+      "source": "outputs\\benchmark\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\benchmark_latency.png",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
+      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+    },
+    {
+      "category": "benchmark",
+      "source": "outputs\\benchmark\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\benchmark_latency.png",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
+      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+    },
+    {
+      "category": "benchmark",
+      "source": "outputs\\benchmark\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\benchmark_latency.png",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
+      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+    },
+    {
+      "category": "seed_comparison",
+      "source": "outputs\\seed_comparison\\test\\stability_seed_comparison.png",
+      "destination": "Figures\\Generated\\evaluation\\stability-seed-comparison-39d600c0.png",
+      "sha256": "fc936f206cb1ae65f9e88e93950fbfd7942cfbfe3cc31c3efa0867a8f9d78c12"
     }
   ],
   "tables": {
-    "internal_metrics": false,
-    "paired_comparison": false,
-    "ablation": false
+    "internal_metrics": true,
+    "paired_comparison": true,
+    "ablation": true,
+    "seed_comparison": false
   }
 }
