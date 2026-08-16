@@ -28,10 +28,27 @@ Mais recentemente, abordagens baseadas em aprendizado profundo têm sido amplame
 Em particular, redes neurais convolucionais (\acrshortpl{cnn} ) têm sido propostas para a redução de artefatos metálicos, permitindo a supressão de ruído e a preservação de detalhes anatômicos e de tecidos moles \cite{alkhodariEnhancingCCTAImage2025}.
 
 \section{Contexto clínico e técnico}
-\textit{[A preencher: artefactos metálicos, impacto diagnóstico e enquadramento da redução de artefactos em CT.]}
+% A preencher: artefactos metálicos, impacto diagnóstico e enquadramento da redução de artefactos em CT.
+Devido ao fato de que artefatos em CT podem esconder ou simular patologias, a sua presença pode comprometer a qualidade diagnóstica e a confiabilidade clínica das imagens. 
+Um erro de diagnóstico pode trazer consequências graves para o paciente, incluindo atrasos no tratamento, tratamentos inadequados ou desnecessários, e até mesmo risco de vida.
+Além disso, devido a constante evolução tecnológica, torna-se cada vez mais comum o uso de implantes metálicos no contexto médico, o que aumenta consideravelmente a presença desse
+tipo de artefato especificamente e também os erros de diagnóstico associados. 
+Sendo assim, a redução de artefatos em CT é uma área de pesquisa com importância clínica significativa e o desenvolvimento de métodos eficazes para reduzir artefatos ganha elevado
+valor na prática médica.
 
 \section{Problema de investigação}
-\textit{[A preencher: formulação do problema, pressupostos do estudo e âmbito da abordagem supervisionada.]}
+%  A preencher: formulação do problema, pressupostos do estudo e âmbito da abordagem supervisionada.
+
+Embora estudos utilizando \textit{Deep Learning} para redução de artefatos
+metálicos não seja novidade, a maioria dos trabalhos publicados até o momento não apresenta uma avaliação rigorosa e detalhada do desempenho dos modelos propostos. Principalmente, 
+no que se trata a avaliação do desempenho dos modelos em conjunto de dados externos, que não foram utilizados durante o treino do modelo ou avaliação das imagens por médicos qualificados.
+Além de que, os treinos de modelos supervisionados dependem de imagens de referência, que são difíceis de obter em contexto clínico, o que cria dependencia de imagens sintéticas ou simuladas,
+ que pode limitar a generalização dos modelos treinados para o contexto de imagens reais.
+Nesse sentido, o presente estudo propõe uma avaliação mais rigorosa e detalhada do desempenho de modelos de \textit{Deep Learning} para essa finalidade.
 
 \section{Contribuições e organização da dissertação}
-\textit{[A preencher: contribuições finais e síntese da organização do documento.]}
+%  A preencher: contribuições finais e síntese da organização do documento.
+
+Esse trabalho visa avaliar o desempenho de duas versões de uma\acrfull{unet}, comparando seus resultados. Ao final, foi realizada uma avaliação externa com imagens reais, que foi então avaliadas
+por médicos qualificados, para validar a eficácia dos modelos propostos e sua eventual aplicabilidade clínica.
+

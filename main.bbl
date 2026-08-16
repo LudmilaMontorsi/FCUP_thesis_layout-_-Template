@@ -1,0 +1,286 @@
+\begin{thebibliography}{10}
+
+\bibitem{November81895}
+November 8, 1895: {{Roentgen}}'s {{Discovery}} of {{X-Rays}}.
+\newblock https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays.
+
+\bibitem{okunoFisicaRadiacoes2010}
+Emico Okuno and Elisabeth Yoshimura.
+\newblock {\em {F\'isica das Radia\c c\~oes}}.
+\newblock Oficina de Textos, 2010.
+
+\bibitem{howellEARLYCLINICALUSE2016}
+JOEL~D. HOWELL.
+\newblock {{EARLY CLINICAL USE OF THE X-RAY}}.
+\newblock {\em Transactions of the American Clinical and Climatological
+  Association}, 127:341--349, 2016.
+
+\bibitem{taylorIlluminatingHealthEvolution2023}
+Allen Taylor.
+\newblock Illuminating {{Health}}: {{The Evolution}} and {{Significance}} of
+  {{X-ray Imaging}}.
+\newblock {\em Imaging in Medicine}, 15(6):133--134, December 2023.
+
+\bibitem{valiUnveilingMarvelsComputed2024}
+Reza Vali.
+\newblock Unveiling the {{Marvels}} of {{Computed Tomography}} ({{CT}})
+  {{Imaging}}.
+\newblock {\em Imaging in Medicine}, 16(1):150--151, February 2024.
+
+\bibitem{noorOverviewComputedTomography2023}
+Mohd Noor.
+\newblock An {{Overview}} of {{Computed Tomography}}: {{What}} it is and
+  {{How}} it {{Works}}? {{Applications}} of {{Computed Tomography}}.
+\newblock {\em Imaging in Medicine}, 15(5):93--94, October 2023.
+
+\bibitem{schulzHowCTHappened2021}
+Raymond~A. Schulz, Jay~A. Stein, and Norbert~J. Pelc.
+\newblock How {{CT}} happened: The early development of medical computed
+  tomography.
+\newblock {\em Journal of Medical Imaging}, 8(5):052110, September 2021.
+
+\bibitem{boasCTArtifactsCauses2012}
+F.~Edward Boas and Dominik Fleischmann.
+\newblock {{CT}} artifacts: Causes and reduction techniques.
+\newblock {\em Imaging in Medicine}, 4(2):229--240, April 2012.
+
+\bibitem{kleberAdvancementsSupervisedDeep2024}
+Cecile~E.J. Kleber, Ramez Karius, Lucas~E. Naessens, Coen~O. Van~Toledo, Jochen
+  A.~C. Van~Osch, Martijn~F. Boomsma, Jan~W.T. Heemskerk, and Aart~J. Van
+  Der~Molen.
+\newblock Advancements in supervised deep learning for metal artifact reduction
+  in computed tomography: {{A}} systematic review.
+\newblock {\em European Journal of Radiology}, 181:111732, December 2024.
+
+\bibitem{puvanasunthararajahApplicationMetalArtifact2021}
+Sathyathas Puvanasunthararajah, Davide Fontanarosa, Marie-Luise Wille, and
+  Saskia~M. Camps.
+\newblock The application of metal artifact reduction methods on computed
+  tomography scans for radiotherapy applications: {{A}} literature review.
+\newblock {\em Journal of Applied Clinical Medical Physics}, 22(6):198--223,
+  May 2021.
+
+\bibitem{sahuTransformingCTImaging2025}
+Asutosh Sahu, Shobhit Mathur, Hiroyuki Takaoka, Joji Ota, Felix~G. Meinel,
+  Benjamin B{\"o}ttcher, Beno{\^i}t Magnin, Ankush Jajodia, and Corey~T.
+  Jensen.
+\newblock Transforming {{CT}} imaging with deep learning: {{Noise}} reduction,
+  artifact management, and clinical applications -- {{A}} comprehensive review.
+\newblock {\em European Journal of Radiology Artificial Intelligence},
+  4:100042, December 2025.
+
+\bibitem{alkhodariEnhancingCCTAImage2025}
+Mohanad Alkhodari, Eman Alefishat, Herbert~F. Jelinek, Ahmed Kaabneh, and Panos
+  Liatsis.
+\newblock Enhancing {{CCTA}} image quality: A review of deep learning
+  approaches for advanced artifact correction and denoising.
+\newblock {\em Artificial Intelligence Review}, 58(10):331, August 2025.
+
+\bibitem{barrettArtifactsCTRecognition2004}
+Julia~F. Barrett and Nicholas Keat.
+\newblock Artifacts in {{CT}}: {{Recognition}} and {{Avoidance}}.
+\newblock {\em RadioGraphics}, 24(6):1679--1691, November 2004.
+
+\bibitem{sellesAdvancesMetalArtifact2024}
+Mark Selles, Jochen~A.C. Van~Osch, Mario Maas, Martijn~F. Boomsma, and
+  Ruud~H.H. Wellenberg.
+\newblock Advances in metal artifact reduction in {{CT}} images: {{A}} review
+  of traditional and novel metal artifact reduction techniques.
+\newblock {\em European Journal of Radiology}, 170:111276, January 2024.
+
+\bibitem{gjestebyDeepLearningMethods2017}
+Lars Gjesteby, Qingsong Yang, Yan Xi, Bernhard E.~H. Claus, Yannan Jin, Bruno
+  De~Man, Ge~Wang, and Hongming Shan.
+\newblock Deep learning methods for {{CT}} image-domain metal artifact
+  reduction.
+\newblock In Bert M{\"u}ller and Ge~Wang, editors, {\em Developments in {{X-Ray
+  Tomography XI}}}, page~31, San Diego, United States, September 2017. SPIE.
+
+\bibitem{zhangConvolutionalNeuralNetwork2018}
+Yanbo Zhang and Hengyong Yu.
+\newblock Convolutional {{Neural Network Based Metal Artifact Reduction}} in
+  {{X-Ray Computed Tomography}}.
+\newblock {\em IEEE Transactions on Medical Imaging}, 37(6):1370--1381, June
+  2018.
+
+\bibitem{ronnebergerUNetConvolutionalNetworks2015}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-{{Net}}: {{Convolutional Networks}} for {{Biomedical Image
+  Segmentation}}, May 2015.
+
+\bibitem{meyerNormalizedMetalArtifact2009}
+Esther Meyer, Frank Bergner, Rainer Raupach, Thomas Flohr, and Marc
+  Kachelriess.
+\newblock Normalized metal artifact reduction ({{NMAR}}) in computed
+  tomography.
+\newblock In {\em 2009 {{IEEE Nuclear Science Symposium Conference Record}}
+  ({{NSS}}/{{MIC}})}, pages 3251--3255, Orlando, FL, October 2009. IEEE.
+
+\bibitem{linDuDoNetDualDomain2019}
+Wei-An Lin, Haofu Liao, Cheng Peng, Xiaohang Sun, Jingdan Zhang, Jiebo Luo,
+  Rama Chellappa, and Shaohua~Kevin Zhou.
+\newblock {{DuDoNet}}: {{Dual Domain Network}} for {{CT Metal Artifact
+  Reduction}}.
+\newblock In {\em 2019 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and
+  {{Pattern Recognition}} ({{CVPR}})}, pages 10504--10513, Long Beach, CA, USA,
+  June 2019. IEEE.
+
+\bibitem{yuMetalArtifactReduction2021}
+Lequan Yu, Zhicheng Zhang, Xiaomeng Li, Hongyi Ren, Wei Zhao, and Lei Xing.
+\newblock Metal {{Artifact Reduction}} in {{2D CT Images}} with
+  {{Self-supervised Cross-domain Learning}}.
+\newblock {\em Physics in Medicine \& Biology}, 66(17):175003, September 2021.
+
+\bibitem{huangMultimodalFeaturefusionCT2022}
+Zhiwei Huang, Guo Zhang, Jinzhao Lin, Yu~Pang, Huiqian Wang, Tong Bai, and
+  Lisha Zhong.
+\newblock Multi-modal feature-fusion for {{CT}} metal artifact reduction using
+  edge-enhanced generative adversarial networks.
+\newblock {\em Computer Methods and Programs in Biomedicine}, 217:106700, April
+  2022.
+
+\bibitem{yiGenerativeAdversarialNetwork2019}
+Xin Yi, Ekta Walia, and Paul Babyn.
+\newblock Generative {{Adversarial Network}} in {{Medical Imaging}}: {{A
+  Review}}.
+\newblock {\em Medical Image Analysis}, 58:101552, December 2019.
+
+\bibitem{zhouwangImageQualityAssessment2004}
+{Zhou Wang}, A.C. Bovik, H.R. Sheikh, and E.P. Simoncelli.
+\newblock Image quality assessment: From error visibility to structural
+  similarity.
+\newblock {\em IEEE Transactions on Image Processing}, 13(4):600--612, April
+  2004.
+
+\bibitem{wangMultiscaleStructuralSimilarity2003a}
+Z.~Wang, E.P. Simoncelli, and A.C. Bovik.
+\newblock Multiscale structural similarity for image quality assessment.
+\newblock In {\em The {{Thrity-Seventh Asilomar Conference}} on {{Signals}},
+  {{Systems}} \& {{Computers}}, 2003}, pages 1398--1402, Pacific Grove, CA,
+  USA, 2003. IEEE.
+
+\bibitem{horeImageQualityMetrics2010}
+Alain Hore and Djemel Ziou.
+\newblock Image {{Quality Metrics}}: {{PSNR}} vs. {{SSIM}}.
+\newblock In {\em 2010 20th {{International Conference}} on {{Pattern
+  Recognition}}}, pages 2366--2369, Istanbul, Turkey, August 2010. IEEE.
+
+\bibitem{zechVariableGeneralizationPerformance2018}
+John~R. Zech, Marcus~A. Badgeley, Manway Liu, Anthony~B. Costa, Joseph~J.
+  Titano, and Eric~Karl Oermann.
+\newblock Variable generalization performance of a deep learning model to
+  detect pneumonia in chest radiographs: {{A}} cross-sectional study.
+\newblock {\em PLOS Medicine}, 15(11):e1002683, November 2018.
+
+\bibitem{willeminkPreparingMedicalImaging2020}
+Martin~J. Willemink, Wojciech~A. Koszek, Cailin Hardell, Jie Wu, Dominik
+  Fleischmann, Hugh Harvey, Les~R. Folio, Ronald~M. Summers, Daniel~L. Rubin,
+  and Matthew~P. Lungren.
+\newblock Preparing {{Medical Imaging Data}} for {{Machine Learning}}.
+\newblock {\em Radiology}, 295(1):4--15, April 2020.
+
+\bibitem{kellyKeyChallengesDelivering2019}
+Christopher~J. Kelly, Alan Karthikesalingam, Mustafa Suleyman, Greg Corrado,
+  and Dominic King.
+\newblock Key challenges for delivering clinical impact with artificial
+  intelligence.
+\newblock {\em BMC Medicine}, 17(1):195, December 2019.
+
+\bibitem{hanedaAAPMCTMetal2025}
+Eri Haneda, Nils Peters, Jiayong Zhang, Grigorios Karageorgos, Wenjun Xia,
+  Harald Paganetti, Ge~Wang, Yi~Guo, Jianhua Ma, Hyoung~Suk Park, Kiwan Jeon,
+  Fuxin Fan, Mareike Thies, and Bruno De~Man.
+\newblock {{AAPM CT}} metal artifact reduction grand challenge.
+\newblock {\em Medical Physics}, 52(10):e70050, October 2025.
+
+\bibitem{AAPMCTMARBenchmarkTool}
+{xcist}.
+\newblock {{AAPM CT Metal Artifact Reduction}} ({{CT-MAR}}) {{Grand Challenge
+  Benchmark Tool}}.
+\newblock https://github.com/xcist/example/tree/main/AAPM\_datachallenge/.
+
+\bibitem{petersHybridTrainingDatabase2025}
+Nils Peters, Eri Haneda, Jiayong Zhang, Grigorios Karageorgos, Wenjun Xia,
+  Joost Verburg, Ge~Wang, Harald Paganetti, and Bruno~De Man.
+\newblock A hybrid training database and evaluation benchmark for assessing
+  metal artifact reduction methods for {{X-ray CT}} imaging.
+\newblock {\em Medical Physics}, 52(10):e70020, October 2025.
+
+\bibitem{wuXCISTOpenAccess2022}
+Mingye Wu, Paul FitzGerald, Jiayong Zhang, W.~Paul Segars, Hengyong Yu,
+  Yongshun Xu, and Bruno De~Man.
+\newblock {{XCIST}} -- {{An Open Access X-ray}}/{{CT Simulation Toolkit}}.
+\newblock {\em Physics in medicine and biology},
+  67(19):10.1088/1361--6560/ac9174, September 2022.
+
+\bibitem{gorenMultifrequencyElectricalImpedance2018}
+Nir Goren, James Avery, Thomas Dowrick, Eleanor Mackle, Anna
+  {Witkowska-Wrobel}, David Werring, and David Holder.
+\newblock Multi-frequency electrical impedance tomography and neuroimaging data
+  in stroke patients.
+\newblock {\em Scientific Data}, 5:180112, July 2018.
+
+\bibitem{gorenUCLHStrokeEIT2017}
+Nir Goren, Thomas Dowrick, James Avery, and David Holder.
+\newblock {{UCLH Stroke EIT Dataset}} - {{Radiology Data}}, August 2017.
+
+\bibitem{yanDeepLesionAutomatedMining2018}
+Ke~Yan, Xiaosong Wang, Le~Lu, and Ronald~M. Summers.
+\newblock {{DeepLesion}}: Automated mining of large-scale lesion annotations
+  and universal lesion detection with deep learning.
+\newblock {\em Journal of Medical Imaging}, 5(3):036501, July 2018.
+
+\bibitem{onerTrainingMachineLearning2020}
+Mustafa~Umit Oner, Yi-Chih Cheng, Hwee~Kuan Lee, and Wing-Kin Sung.
+\newblock Training machine learning models on patient level data segregation is
+  crucial in practical clinical applications, April 2020.
+
+\bibitem{hsiehComputedTomographyPrinciples2009}
+Jiang Hsieh.
+\newblock {\em Computed Tomography: Principles, Design, Artifacts, and Recent
+  Advances}.
+\newblock Wiley Interscience ; SPIE Press, Hoboken, N.J. : Bellingham, Wash,
+  2nd ed edition, 2009.
+
+\bibitem{taghanakiComboLossHandling2021}
+Saeid~Asgari Taghanaki, Yefeng Zheng, S.~Kevin Zhou, Bogdan Georgescu, Puneet
+  Sharma, Daguang Xu, Dorin Comaniciu, and Ghassan Hamarneh.
+\newblock Combo {{Loss}}: {{Handling Input}} and {{Output Imbalance}} in
+  {{Multi-Organ Segmentation}}, September 2021.
+
+\bibitem{kesimalUseDeepLearning2026}
+U{\u g}ur Kesimal, Habip~Eser Akkaya, {\"O}nder Polat, and Murat Sa{\u g}lam.
+\newblock Use of {{Deep Learning Models}} in the {{Diagnosis}} of {{Proptosis
+  Through Orbital Magnetic Resonance Imaging}}.
+\newblock {\em Medical Science Monitor}, 32, April 2026.
+
+\bibitem{liUNetBasedDynamic2024}
+Yang Li, Bobo Yan, Jianxin Hou, Bingyang Bai, Xiaoyu Huang, Canfei Xu, and
+  Limei Fang.
+\newblock {{UNet}} based on dynamic convolution decomposition and triplet
+  attention.
+\newblock {\em Scientific Reports}, 14(1):271, January 2024.
+
+\bibitem{caruanaMultitaskLearning}
+Rich Caruana.
+\newblock Multitask {{Learning}}.
+
+\bibitem{ruderOverviewMultiTaskLearning2017}
+Sebastian Ruder.
+\newblock An {{Overview}} of {{Multi-Task Learning}} in {{Deep Neural
+  Networks}}, June 2017.
+
+\bibitem{zhaoLossFunctionsImage2017}
+Hang Zhao, Orazio Gallo, Iuri Frosio, and Jan Kautz.
+\newblock Loss {{Functions}} for {{Image Restoration With Neural Networks}}.
+\newblock {\em IEEE Transactions on Computational Imaging}, 3(1):47--57, March
+  2017.
+
+\bibitem{linzhangFSIMFeatureSimilarity2011}
+{Lin Zhang}, {Lei Zhang}, {Xuanqin Mou}, and D.~Zhang.
+\newblock {{FSIM}}: {{A Feature Similarity Index}} for {{Image Quality
+  Assessment}}.
+\newblock {\em IEEE Transactions on Image Processing}, 20(8):2378--2386, August
+  2011.
+
+\end{thebibliography}

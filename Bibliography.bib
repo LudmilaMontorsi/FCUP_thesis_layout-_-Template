@@ -69,6 +69,13 @@
   langid = {english}
 }
 
+@article{caruanaMultitaskLearning,
+  title = {Multitask {{Learning}}},
+  author = {Caruana, Rich},
+  abstract = {Multitask Learning is an approach to inductive transfer that improves generalization by using the domain information contained in the training signals of related tasks as an inductive bias. It does this by learning tasks in parallel while using a shared representation; what is learned for each task can help other tasks be learned better. This paper reviews prior work on MTL, presents new evidence that MTL in backprop nets discovers task relatedness without the need of supervisory signals, and presents new results for MTL with k-nearest neighbor and kernel regression. In this paper we demonstrate multitask learning in three domains. We explain how multitask learning works, and show that there are many opportunities for multitask learning in real domains. We present an algorithm and results for multitask learning with case-based methods like k-nearest neighbor and kernel regression, and sketch an algorithm for multitask learning in decision trees. Because multitask learning works, can be applied to many different kinds of domains, and can be used with different learning algorithms, we conjecture there will be many opportunities for its use on real-world problems.},
+  langid = {english}
+}
+
 @misc{chenEncoderDecoderAtrousSeparable2018,
   title = {Encoder-{{Decoder}} with {{Atrous Separable Convolution}} for {{Semantic Image Segmentation}}},
   author = {Chen, Liang-Chieh and Zhu, Yukun and Papandreou, George and Schroff, Florian and Adam, Hartwig},
@@ -467,6 +474,21 @@
   abstract = {Non-official implement of Paper：CBAM: Convolutional Block Attention Module}
 }
 
+@article{mahbodDualDecoderUNetbased2022,
+  title = {A Dual Decoder {{U-Net-based}} Model for Nuclei Instance Segmentation in Hematoxylin and Eosin-Stained Histological Images},
+  author = {Mahbod, Amirreza and Schaefer, Gerald and Dorffner, Georg and Hatamikia, Sepideh and Ecker, Rupert and Ellinger, Isabella},
+  year = 2022,
+  month = nov,
+  journal = {Frontiers in Medicine},
+  volume = {9},
+  pages = {978146},
+  issn = {2296-858X},
+  doi = {10.3389/fmed.2022.978146},
+  urldate = {2026-08-16},
+  abstract = {Even in the era of precision medicine, with various molecular tests based on omics technologies available to improve the diagnosis process, microscopic analysis of images derived from stained tissue sections remains crucial for diagnostic and treatment decisions. Among other cellular features, both nuclei number and shape provide essential diagnostic information. With the advent of digital pathology and emerging computerized methods to analyze the digitized images, nuclei detection, their instance segmentation and classification can be performed automatically. These computerized methods support human experts and allow for faster and more objective image analysis. While methods ranging from conventional image processing techniques to machine learning-based algorithms have been proposed, supervised convolutional neural network (CNN)-based techniques have delivered the best results. In this paper, we propose a CNN-based dual decoder U-Net-based model to perform nuclei instance segmentation in hematoxylin and eosin (H\&amp;E)-stained histological images. While the encoder path of the model is developed to perform standard feature extraction, the two decoder heads are designed to predict the foreground and distance maps of all nuclei. The outputs of the two decoder branches are then merged through a watershed algorithm, followed by post-processing refinements to generate the final instance segmentation results. Moreover, to additionally perform nuclei classification, we develop an independent U-Net-based model to classify the nuclei predicted by the dual decoder model. When applied to three publicly available datasets, our method achieves excellent segmentation performance, leading to average panoptic quality values of 50.8\%, 51.3\%, and 62.1\% for the CryoNuSeg, NuInsSeg, and MoNuSAC datasets, respectively. Moreover, our model is the top-ranked method in the MoNuSAC post-challenge leaderboard.},
+  langid = {english}
+}
+
 @inproceedings{meyerNormalizedMetalArtifact2009,
   title = {Normalized Metal Artifact Reduction ({{NMAR}}) in Computed Tomography},
   booktitle = {2009 {{IEEE Nuclear Science Symposium Conference Record}} ({{NSS}}/{{MIC}})},
@@ -618,6 +640,23 @@
   pages = {183--191},
   issn = {0016-0032},
   doi = {10.1016/S0016-0032(96)90066-6}
+}
+
+@misc{ruderOverviewMultiTaskLearning2017,
+  title = {An {{Overview}} of {{Multi-Task Learning}} in {{Deep Neural Networks}}},
+  author = {Ruder, Sebastian},
+  year = 2017,
+  month = jun,
+  number = {arXiv:1706.05098},
+  eprint = {1706.05098},
+  primaryclass = {cs.LG},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.1706.05098},
+  urldate = {2026-08-16},
+  abstract = {Multi-task learning (MTL) has led to successes in many applications of machine learning, from natural language processing and speech recognition to computer vision and drug discovery. This article aims to give a general overview of MTL, particularly in deep neural networks. It introduces the two most common methods for MTL in Deep Learning, gives an overview of the literature, and discusses recent advances. In particular, it seeks to help ML practitioners apply MTL by shedding light on how MTL works and providing guidelines for choosing appropriate auxiliary tasks.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Statistics - Machine Learning}
 }
 
 @article{sahuTransformingCTImaging2025,
