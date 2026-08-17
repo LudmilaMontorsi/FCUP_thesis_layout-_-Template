@@ -14,8 +14,8 @@ Todos os pares que tiveram a correspondencia aprovada automaticamente pelo fato 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Figures/ssim_distribution_full.png} \\[4pt]
-    \includegraphics[width=\textwidth]{Figures/ssim_distribution_zoom.png}
+    \includegraphics[width=\textwidth]{Figures/ssim_distribution_full.pdf} \\[4pt]
+    \includegraphics[width=\textwidth]{Figures/ssim_distribution_zoom.pdf}
     \caption{Distribuição de MS-SSIM entre pares correspondentes (\acrshort{ctmar} vs DL/Stroke, aprovados automaticamente). Acima: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. Abaixo: zoom do histograma para a região de maior interesse, com destaque para os pares com MS-SSIM inferior a 0.9, que foram sujeitos a revisão manual.}
     \label{fig:ssim_distribution}
 \end{figure}
@@ -27,7 +27,7 @@ Os pares com pontuação de\acrshort{ms-ssim} abaixo de 0.9 eram 340 no total, a
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Figures/ssim_ecdf_final.png}
+    \includegraphics[width=\textwidth]{Figures/ssim_ecdf_final.pdf}
     \caption{Distribuição de MS-SSIM entre pares correspondentes (\acrshort{ctmar} vs DL/Stroke, aprovados automaticamente). À esquerda: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. À direita: ECDF correspondente. Os pares com MS-SSIM inferior a 0.9 foram sujeitos a revisão manual.}
     \label{fig:ECDF}
 \end{figure}
@@ -55,7 +55,7 @@ Os pares reprovados apresentavam\acrshort{ms-ssim} claramente fora do padrão (<
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Figures/cosine_scatter_audited.png}
+    \includegraphics[width=\textwidth]{Figures/cosine_scatter_audited.pdf}
     \caption{Distribuição dos valores de similaridade de cosseno para os pares inspecionados visualmente.}
     \label{fig:cosine_scatter_audited}
 \end{figure}
@@ -64,7 +64,7 @@ Os pares com\acrshort{ms-ssim} mais críticos logo acima dos reprovados tinham v
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Figures/ssim_scatter_dist.png}
+    \includegraphics[width=\textwidth]{Figures/ssim_scatter_dist.pdf}
     \caption{Distribuição dos valores de\acrshort{ms-ssim} para os pares inspecionados visualmente.}
     \label{fig:ssim_scatter_dist}
 \end{figure}
@@ -77,8 +77,8 @@ Com relação aos possíveis falsos negativos que poderiam ter resultado em excl
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Figures/score_distribution.png}
-    \caption{Distribuição dos \textit{scores} de similaridade de cosseno (DL vs Stroke EIT) para os pares sem correspondência aprovada em nenhum dos dois \textit{datasets} de origem (N=435). À esquerda: histograma das pontuações por \textit{dataset}; à direita: ECDF correspondente com o limiar de 0,98 assinalado.}
+    \includegraphics[width=\textwidth]{Figures/score_distribution.pdf}
+    \caption{Distribuição dos \textit{scores} de similaridade de cosseno (DL vs Stroke EIT) para os pares sem correspondência aprovada em nenhum dos dois \textit{datasets} de origem (N=435). Histograma laranja mostra a distribuição das pontuações dos 435 pares reprovados no Stroke EIT Dataset. O histograma em azul, mostra a distribuição dos mesmos 435 pares reprovados no Deep Lesion Dataset.}
     \label{fig:score_distribution_bad}
 \end{figure}
 

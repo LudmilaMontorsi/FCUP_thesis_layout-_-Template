@@ -304,7 +304,7 @@ Durante o treino, foram monitorizadas as seguintes quantidades:
         \mathcal{L}_{Recon} = 0{.}7 \cdot \mathcal{L}_{L1} + 0{.}3 \cdot (1 - \text{SSIM})
         \]
 
-    Na perda \textit{Mix}, Zhao et al. \cite{zhaoLossFunctionsImage2017} aplicam uma ponderação espacial Gaussiana à componente L1, de modo a compatibilizá-la com a distribuição espacial dos gradientes da componente\acrshort{ms-ssim}. Neste trabalho, a componente L1 foi calculada diretamente como o erro absoluto médio na região corporal, sem ponderação Gaussiana adicional. Como a normalização utilizada é linear em relação aos valores de\acrshort{hu}, esta componente mantém uma penalização diretamente proporcional ao erro radiométrico, enquanto o\acrshort{ssim} contribui para a preservação estrutural local.
+    Na perda híbrida, Zhao et al. \cite{zhaoLossFunctionsImage2017} aplicam uma ponderação espacial Gaussiana à componente L1, de modo a compatibilizá-la com a distribuição espacial dos gradientes da componente\acrshort{ms-ssim}. Neste trabalho, a componente L1 foi calculada diretamente como o erro absoluto médio na região corporal, sem ponderação Gaussiana adicional. Como a normalização utilizada é linear em relação aos valores de\acrshort{hu}, esta componente mantém uma penalização diretamente proporcional ao erro radiométrico, enquanto o\acrshort{ssim} contribui para a preservação estrutural local.
     Essa combinação de função de perda é adotada para a arquitetura \textit{single task} e também para a cabeça de reconstrução da arquitetura \textit{dual}. Dessa forma, garante-se que a ablação entre as duas versões seja justa, isolando o impacto da supervisão adicional da máscara.
 
     \item \textbf{Supervisão auxiliar da máscara}: A cabeça de predição da máscara de artefatos, presente na arquitetura \textit{dual}, foi treinada com a soma da perda Dice e da\acrfull{bce}. Essa combinação fornece simultaneamente supervisão para a sobreposição global entre as máscaras e para a classificação por píxel, sendo adequada a problemas de segmentação com desequilíbrio de classes \cite{taghanakiComboLossHandling2021}.
@@ -321,29 +321,25 @@ Durante o treino, foram monitorizadas as seguintes quantidades:
 Os experimentos foram executados numa GPU NVIDIA RTX A4500, utilizando Python e TensorFlow/Keras.
 
 
-\section{Plano de avaliação}
-\subsection{Avaliação interna}
+
+\section{Avaliação interna}
 %A preencher: avaliação integral e terminal da partição de teste, métricas globais e por região de interesse.
-Na fase de inferência, os modelos foram avaliados utilizando métricas quantitativas amplamente adotadas na literatura, em comparação com o \textit{Ground Truth}. As métricas utilizadas para a avaliação global da qualidade da imagem reconstruída foram:
+Na fase de inferência, os modelos foram avaliados utilizando métricas quantitativas amplamente adotadas na literatura, em comparação com o \textit{Ground Truth}. As métricas utilizadas para a avaliação da qualidade da imagem reconstruída global e por ROI foram:
 \begin{itemize}
     \item \textbf{\acrshort{psnr}} ;
-    \item \textbf{\acrshort{ms-ssim}} ;
+    \item \textbf{\acrshort{ssim}} ;
     \item \textbf{\acrshort{mae}}.
 \end{itemize}
-Para a análise baseada em ROI, empregamos:
-\begin{itemize}
-    \item \textbf{\acrshort{psnr}} ;
-    \item \textbf{\acrshort{ssim}}.
-\end{itemize}
 
-Wang et al. \cite{wangMultiscaleStructuralSimilarity2003a} descrevem\acrshort{ms-ssim} como um método de avaliação de qualidade de imagem através de cinco escalas com \textit{downsampling} iterativo por fator 2, resultando em uma redução de resolução de até 1/16 do tamanho original. O método foi validado em bases de dados de imagens completas, sem considerar aplicação em regiões fragmentadas ou espacialmente seletivas. Devido ao \textit{downsampling} progressivo, a aplicação\acrshort{ms-ssim} em\acrshort{roi}s  pequenas ou fragmentadas (como a zona distante em nossa análise) resultaria na mistura de pixels de\acrshort{roi} e não-ROI  nas escalas reduzidas, comprometendo a interpretabilidade dos resultados. Por isso, utilizou-se\acrshort{ssim} regular em vez de\acrshort{ms-ssim} nesse caso.
-De fato, as literaturas recentes tem demonstrado performance estatísticamente muito melhor em fidelidade para\acrshort{ms-ssim} e\acrshort{ssim} comparado a outras métricas de avaliação de qualidade de imagem\cite{linzhangFSIMFeatureSimilarity2011}. Especialmente para imagens médicas, onde a fidelidade das imagens preditas é crucial, a escolha de métricas que refletem a percepção humana de qualidade e preservação estrutural é fundamental. Portanto,\acrshort{ms-ssim} e\acrshort{ssim} foram selecionados como as principais métricas para avaliação quantitativa da qualidade das imagens reconstruídas, garantindo uma análise robusta e relevante para o contexto clínico. E o\acrshort{psnr} foi utilizado como métrica complementar para avaliar a fidelidade radiométrica das reconstruções, especialmente importante em tomografias computadorizadas onde a precisão dos valores de\acrshort{hu} é essencial para diagnóstico e planejamento clínico.
+Wang et al. \cite{wangMultiscaleStructuralSimilarity2003a} descrevem\acrshort{ms-ssim} como um método de avaliação de qualidade de imagem através de cinco escalas com \textit{downsampling} iterativo por fator 2, resultando em uma redução de resolução de até 1/16 do tamanho original. O método foi validado em bases de dados de imagens completas, sem considerar aplicação em regiões fragmentadas ou espacialmente seletivas. Devido ao \textit{downsampling} progressivo, a aplicação\acrshort{ms-ssim} em\acrshort{roi}s  pequenas ou fragmentadas (como a zona distante em nossa análise) resultaria na mistura de pixels de\acrshort{roi} e não-ROI  nas escalas reduzidas, comprometendo a interpretabilidade dos resultados. Por isso, utilizou-se\acrshort{ssim} regular em vez de\acrshort{ms-ssim} nesse trabalho.
+De fato, as literaturas recentes tem demonstrado performance estatísticamente muito melhor em fidelidade para\acrshort{ms-ssim} e\acrshort{ssim} comparado a outras métricas de avaliação de qualidade de imagem\cite{linzhangFSIMFeatureSimilarity2011}. Especialmente para imagens médicas, onde a fidelidade das imagens preditas é crucial, a escolha de métricas que refletem a percepção humana de qualidade e preservação estrutural é fundamental. Portanto,\acrshort{ssim} foi selecionado como a principal métrica para avaliação quantitativa da qualidade das imagens reconstruídas, garantindo uma análise robusta e relevante para o contexto clínico. E o\acrshort{psnr} foi utili
+zado como métrica complementar para avaliar a fidelidade radiométrica das reconstruções, especialmente importante em tomografias computadorizadas onde a precisão dos valores de\acrshort{hu} é essencial para diagnóstico e planejamento clínico.
 
 A validação interna foi conduzida nos conjuntos de validação e teste, avaliando consistência, estabilidade e capacidade de generalização intra-\textit{dataset}.
 
-\subsubsection{Métricas globais}
-Para a avaliação global, as imagens preditas e de referência são desnormalizadas para a janela $[-1000, 400]$ HU, correspondendo a uma amplitude $\mathrm{MAX} = 1400$ HU. Adicionalmente, a região de avaliação é recortada ao menor retângulo envolvente (\textit{bounding box}) da máscara corporal antes da avaliação de SSIM e MS-SSIM, eliminando janelas de varredura compostas exclusivamente por fundo — que pontuariam $\text{SSIM} = 1{,}0$ artificialmente e inflariam a métrica global.
-\subsubsection{Avaliação por regiões de interesse}
+\subsection{Métricas globais}
+Para a avaliação global, as imagens preditas e de referência são desnormalizadas para a janela $[-1000, 400]$ HU, correspondendo a uma amplitude $\mathrm{MAX} = 1400$ HU. Adicionalmente, a região de avaliação é recortada ao menor retângulo envolvente (\textit{bounding box}) da máscara corporal antes da avaliação de SSIM, eliminando janelas de varredura compostas exclusivamente por fundo — que pontuariam $\text{SSIM} = 1{,}0$ artificialmente e inflariam a métrica global.
+\subsection{Avaliação por regiões de interesse}
 
 A avaliação global não distingue o comportamento do modelo nas regiões diretamente afetadas pelos artefatos daquele nas regiões saudáveis distantes do implante. Para uma análise mais granular, a região corporal é dividida em duas zonas complementares, definidas a partir da diferença entre a imagem de entrada e a referência limpa.
 
@@ -379,7 +375,7 @@ Para cada zona, calculam-se as métricas como deltas em relação ao desempenho 
 \Delta\text{SSIM}_{ROI} = \text{SSIM}(\hat{I}|_{ROI},\, I|_{ROI}) - \text{SSIM}(I_{art}|_{ROI},\, I|_{ROI})
 \]
 
-Valores positivos indicam melhoria face à entrada corrompida. O \acrshort{ms-ssim} não é utilizado na análise por ROI: o \textit{downsampling} progressivo das cinco escalas misturaria pixels dentro e fora da \acrshort{roi} nas escalas reduzidas, comprometendo a interpretabilidade. Utiliza-se \acrshort{ssim} regular, que opera localmente com janela de $11 \times 11$ pixels.
+Valores positivos indicam melhoria face à entrada corrompida. Utiliza-se \acrshort{ssim} regular, que opera localmente com janela de $11 \times 11$ pixels.
 
 \begin{table}[H]
     \centering
@@ -391,8 +387,7 @@ Valores positivos indicam melhoria face à entrada corrompida. O \acrshort{ms-ss
         \hline
         PSNR    & \checkmark & \checkmark & \checkmark & \checkmark \\
         SSIM    & \checkmark & \checkmark & \checkmark & \checkmark \\
-        MS-SSIM & ---        & \checkmark & ---        & --- \\
-        MAE     & \checkmark & \checkmark & ---        & --- \\
+        MAE     & \checkmark & \checkmark & \checkmark & \checkmark\\
         \hline
     \end{tabular}
 \end{table}

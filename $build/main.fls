@@ -1,7 +1,7 @@
-PWD c:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template
+PWD C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template
 INPUT C:\Users\ludmy\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\main.tex
-OUTPUT main.log
+INPUT main.tex
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.log
 INPUT .\Thesis.cls
 INPUT Thesis.cls
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
@@ -434,8 +434,8 @@ INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\todonotes\todonotes
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\todonotes\todonotes.sty
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarypositioning.code.tex
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarypositioning.code.tex
-OUTPUT main.glo
-OUTPUT main.acn
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.glo
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.acn
 INPUT .\vars.tex
 INPUT .\vars.tex
 INPUT .\vars.tex
@@ -445,23 +445,23 @@ INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1phv.fd
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1phv.fd
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1phv.fd
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8t.tfm
-INPUT .\main.aux
-INPUT .\main.aux
-INPUT main.aux
-OUTPUT main.aux
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.aux
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.aux
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.aux
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.aux
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\caption\ltcaption.sty
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\caption\ltcaption.sty
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT .\main.out
-INPUT .\main.out
-INPUT main.out
-INPUT main.out
-OUTPUT main.pdf
-INPUT .\main.out
-INPUT .\main.out
-OUTPUT main.out
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.out
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.out
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.out
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.out
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.pdf
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.out
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.out
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.out
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
@@ -490,7 +490,7 @@ INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr8
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\ludmy\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\base\8r.enc
-OUTPUT main.ist
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.ist
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvrc8t.tfm
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvrc8t.tfm
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvrc8t.tfm
@@ -565,9 +565,9 @@ INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvrc8t.vf
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8t.tfm
-INPUT .\main.toc
-INPUT .\main.toc
-INPUT main.toc
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.toc
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.toc
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.toc
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr7t.tfm
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr7t.tfm
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr7t.tfm
@@ -591,10 +591,10 @@ INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\zpl
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\zplmr7t.tfm
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr8t.vf
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
-OUTPUT main.toc
-INPUT .\main.lof
-INPUT .\main.lof
-INPUT main.lof
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.toc
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.lof
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.lof
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.lof
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\vf\public\mathpazo\zplmr7y.vf
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
@@ -605,15 +605,15 @@ INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\fpl
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr8r.tfm
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplri8r.tfm
-OUTPUT main.lof
-INPUT .\main.logr
-INPUT .\main.logr
-INPUT main.logr
-OUTPUT main.logr
-INPUT .\main.lot
-INPUT .\main.lot
-INPUT main.lot
-OUTPUT main.lot
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.lof
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.logr
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.logr
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.logr
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.logr
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.lot
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.lot
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.lot
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.lot
 INPUT .\main.acr
 INPUT .\main.acr
 INPUT main.acr
@@ -711,24 +711,27 @@ INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr
 INPUT .\Chapters\Final\5.Results.tex
 INPUT .\Chapters\Final\5.Results.tex
 INPUT Chapters\Final\5.Results.tex
-INPUT .\Figures\ssim_distribution_full.pdf
-INPUT .\Figures\ssim_distribution_full.pdf
-INPUT .\Figures\ssim_distribution_full.pdf
-INPUT .\Figures\ssim_distribution_full.pdf
-INPUT .\Figures\ssim_distribution_full.pdf
-INPUT .\Figures\ssim_distribution_full.pdf
-INPUT .\Figures\ssim_distribution_zoom.pdf
-INPUT .\Figures\ssim_distribution_zoom.pdf
-INPUT .\Figures\ssim_distribution_zoom.pdf
-INPUT .\Figures\ssim_distribution_zoom.pdf
-INPUT .\Figures\ssim_distribution_zoom.pdf
-INPUT .\Figures\ssim_distribution_zoom.pdf
-INPUT .\Figures\ssim_ecdf_final.pdf
-INPUT .\Figures\ssim_ecdf_final.pdf
-INPUT .\Figures\ssim_ecdf_final.pdf
-INPUT .\Figures\ssim_ecdf_final.pdf
-INPUT .\Figures\ssim_ecdf_final.pdf
-INPUT .\Figures\ssim_ecdf_final.pdf
+INPUT .\Figures\ssim_distribution_full.png
+INPUT .\Figures\ssim_distribution_full.png
+INPUT .\Figures\ssim_distribution_full.png
+INPUT .\Figures\ssim_distribution_full.png
+INPUT .\Figures\ssim_distribution_full.png
+INPUT .\Figures\ssim_distribution_full.png
+INPUT .\Figures\ssim_distribution_full.png
+INPUT .\Figures\ssim_distribution_zoom.png
+INPUT .\Figures\ssim_distribution_zoom.png
+INPUT .\Figures\ssim_distribution_zoom.png
+INPUT .\Figures\ssim_distribution_zoom.png
+INPUT .\Figures\ssim_distribution_zoom.png
+INPUT .\Figures\ssim_distribution_zoom.png
+INPUT .\Figures\ssim_distribution_zoom.png
+INPUT .\Figures\ssim_ecdf_final.png
+INPUT .\Figures\ssim_ecdf_final.png
+INPUT .\Figures\ssim_ecdf_final.png
+INPUT .\Figures\ssim_ecdf_final.png
+INPUT .\Figures\ssim_ecdf_final.png
+INPUT .\Figures\ssim_ecdf_final.png
+INPUT .\Figures\ssim_ecdf_final.png
 INPUT .\Figures\image4.png
 INPUT .\Figures\image4.png
 INPUT .\Figures\image4.png
@@ -771,18 +774,20 @@ INPUT .\Figures\image3.png
 INPUT .\Figures\image3.png
 INPUT .\Figures\image3.png
 INPUT .\Figures\image3.png
-INPUT .\Figures\cosine_scatter_audited.pdf
-INPUT .\Figures\cosine_scatter_audited.pdf
-INPUT .\Figures\cosine_scatter_audited.pdf
-INPUT .\Figures\cosine_scatter_audited.pdf
-INPUT .\Figures\cosine_scatter_audited.pdf
-INPUT .\Figures\cosine_scatter_audited.pdf
-INPUT .\Figures\ssim_scatter_dist.pdf
-INPUT .\Figures\ssim_scatter_dist.pdf
-INPUT .\Figures\ssim_scatter_dist.pdf
-INPUT .\Figures\ssim_scatter_dist.pdf
-INPUT .\Figures\ssim_scatter_dist.pdf
-INPUT .\Figures\ssim_scatter_dist.pdf
+INPUT .\Figures\cosine_scatter_audited.png
+INPUT .\Figures\cosine_scatter_audited.png
+INPUT .\Figures\cosine_scatter_audited.png
+INPUT .\Figures\cosine_scatter_audited.png
+INPUT .\Figures\cosine_scatter_audited.png
+INPUT .\Figures\cosine_scatter_audited.png
+INPUT .\Figures\cosine_scatter_audited.png
+INPUT .\Figures\ssim_scatter_dist.png
+INPUT .\Figures\ssim_scatter_dist.png
+INPUT .\Figures\ssim_scatter_dist.png
+INPUT .\Figures\ssim_scatter_dist.png
+INPUT .\Figures\ssim_scatter_dist.png
+INPUT .\Figures\ssim_scatter_dist.png
+INPUT .\Figures\ssim_scatter_dist.png
 INPUT .\Figures\score_distribution.pdf
 INPUT .\Figures\score_distribution.pdf
 INPUT .\Figures\score_distribution.pdf
@@ -1064,25 +1069,25 @@ INPUT Chapters\Final\6.Discussion.tex
 INPUT .\Chapters\Final\7.Conclusion.tex
 INPUT .\Chapters\Final\7.Conclusion.tex
 INPUT Chapters\Final\7.Conclusion.tex
-INPUT .\main.bbl
-INPUT .\main.bbl
-INPUT main.bbl
-INPUT .\main.brf
-INPUT .\main.brf
-INPUT main.brf
-INPUT .\main.brf
-INPUT .\main.brf
-OUTPUT main.brf
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.bbl
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.bbl
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.bbl
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.brf
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.brf
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.brf
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.brf
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.brf
+OUTPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.brf
 INPUT .\Appendices\AppendixTemplate.tex
 INPUT .\Appendices\AppendixTemplate.tex
 INPUT .\Appendices\AppendixTemplate.tex
 INPUT .\Appendices\AppendixTemplate.tex
 INPUT Appendices\AppendixTemplate.tex
-INPUT main.aux
-INPUT .\main.out
-INPUT .\main.out
-INPUT .\main.brf
-INPUT .\main.brf
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.aux
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.out
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.out
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.brf
+INPUT C:\Users\ludmy\Desktop\FCUP_thesis_layout _ Template\$build\main.brf
 INPUT C:\Users\ludmy\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt0800.pk
 INPUT C:\Users\ludmy\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt0800.pk
 INPUT C:\Users\ludmy\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
