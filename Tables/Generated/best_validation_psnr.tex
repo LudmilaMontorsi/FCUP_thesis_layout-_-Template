@@ -1,0 +1,18 @@
+% Validation PSNR at the epoch selected by the best validation SSIM.
+% For Dual Model, both metrics refer to the image-reconstruction output.
+\begin{table}[!htbp]
+\centering
+\caption{PSNR de validação na época selecionada pelo melhor SSIM de validação, por modelo e seed. No Dual Model, ambas as métricas são calculadas na saída de reconstrução de imagem.}
+\label{tab:best-validation-psnr}
+\begin{tabular}{lccc}
+\hline
+ & \multicolumn{3}{c}{\textbf{PSNR (dB) - Same Best SSIM Epoch }} \\
+\hline
+\textbf{Seed} & \textbf{42} & \textbf{1337} & \textbf{2024} \\
+\hline
+\textbf{Single Model} & 35.16365 (31) & 35.20020 (44) & 35.30099 (33) \\
+\textbf{Dual Model} & 35.10422 (41) & 35.00705 (28) & 35.23622 (23) \\
+\hline
+\end{tabular}
+\par\smallskip
+\end{table}

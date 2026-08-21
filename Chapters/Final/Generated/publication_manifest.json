@@ -19,969 +19,2709 @@
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_1337\\training_001_dualhead\\training_curves_dualhead.png",
-      "destination": "Figures\\Generated\\training\\training-curves-dualhead-6c252b4a.png",
-      "sha256": "f1a5af04ac32c6e066f5f683acfc41d170ccef1643b1549c5a61d2913f8b9eb1"
+      "source": "outputs\\training_curves\\seed_1337\\training_001_dualhead\\training_curves_dualhead.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-6c252b4a.pdf",
+      "sha256": "321fa530467541d596d5a6afff4c7abf8c9ed773239c5981276fea2f51d150b3"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_1337\\training_008_singlehead\\lr_schedule.png",
-      "destination": "Figures\\Generated\\training\\lr-schedule-48c434d9.png",
-      "sha256": "3aaf1e538c68e4749dcdf5baf910a4ea0488fbb77d6f121b35ba67bb872d3c0d"
+      "source": "outputs\\training_curves\\seed_1337\\training_008_singlehead\\training_curves_singlehead.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-6422b5e2.pdf",
+      "sha256": "78455607417109f62f463258fdf082e5f59365142f6d32dfd375268e6faaa858"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_1337\\training_008_singlehead\\training_curves_singlehead.png",
-      "destination": "Figures\\Generated\\training\\training-curves-singlehead-6422b5e2.png",
-      "sha256": "a3be52e10f0f5430e5463f05d44e2f768bdbfbc14dc367fd250cf91d95fdef0e"
+      "source": "outputs\\training_curves\\seed_2024\\training_001_dualhead\\training_curves_dualhead.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-cce23466.pdf",
+      "sha256": "887dcea770b797003a917b164c1bea768bee137303425d6ef1fb9f63aa4bbc5f"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_2024\\training_001_dualhead\\training_curves_dualhead.png",
-      "destination": "Figures\\Generated\\training\\training-curves-dualhead-cce23466.png",
-      "sha256": "3453c06a05cb6bf970a4790f9116d68312bcb7b76674d3b24703481f8e30f08f"
+      "source": "outputs\\training_curves\\seed_2024\\training_001_singlehead\\training_curves_singlehead.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-a27fad34.pdf",
+      "sha256": "0b7bd05c232c75edfb60c78b063d96f03270e0cf97ace59f33250f909cc51cb8"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_2024\\training_001_singlehead\\lr_schedule.png",
-      "destination": "Figures\\Generated\\training\\lr-schedule-d244f000.png",
-      "sha256": "da4e3b3ee8e66513acb446eb5dc291bb476c298787c7ff6d1668bd9f7ed1f785"
+      "source": "outputs\\training_curves\\seed_42\\training_001_dualhead\\training_curves_dualhead.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-be08f04f.pdf",
+      "sha256": "307fca2fb3b2720041e671faf281c67c83980de89a6a68b679474bcfea6b6f90"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_2024\\training_001_singlehead\\training_curves_singlehead.png",
-      "destination": "Figures\\Generated\\training\\training-curves-singlehead-a27fad34.png",
-      "sha256": "74df08e752cb17872af230db2bae086ed4abba166b60c1e156669d1f264201d9"
-    },
-    {
-      "category": "training",
-      "source": "outputs\\training_curves\\seed_42\\training_001_dualhead\\training_curves_dualhead.png",
-      "destination": "Figures\\Generated\\training\\training-curves-dualhead-be08f04f.png",
-      "sha256": "ebf3cc83ea8285beee4a368c29b561ab47a22447172bb348a4198a52e68ef2f9"
-    },
-    {
-      "category": "training",
-      "source": "outputs\\training_curves\\seed_42\\training_001_singlehead\\lr_schedule.png",
-      "destination": "Figures\\Generated\\training\\lr-schedule-54d5d38c.png",
-      "sha256": "8af524fcce52c924814c808f59965620492a036ac9b5f87f9f252fe5c865fe44"
-    },
-    {
-      "category": "training",
-      "source": "outputs\\training_curves\\seed_42\\training_001_singlehead\\training_curves_singlehead.png",
-      "destination": "Figures\\Generated\\training\\training-curves-singlehead-62c464ea.png",
-      "sha256": "e79673fc8871d7f731ba8e3d49122ac781fd02c22be0ff20908368e580522b35"
+      "source": "outputs\\training_curves\\seed_42\\training_001_singlehead\\training_curves_singlehead.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-62c464ea.pdf",
+      "sha256": "0ca853d3a5a28b08c6d11447f96b35c3938ff1799338d3d74dc5f143eb9e8130"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\boxplots_preservation_analysis.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-e25b797a.png",
-      "sha256": "a967c2676af7fdc4e151a4895735364be1b41b1440f2d02d2a4ac1b0ee7d29f9"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-691d792e.pdf",
+      "sha256": "8e9964929da15948e2ba27978773abde8f32d02b5f64456042e1e949c803fdce"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\correlation_preservation_vs_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-311c5e05.png",
-      "sha256": "98b4f1232819a0f7034b96f601d83d24b3576e76483a22c9680407a2a391707c"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-4b458331.png",
+      "sha256": "8356f78c5bf747df19dd64f2f3902324bc7b48cb3acc66a4a7e7c02cdfe46576"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\hist_delta_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-5b39c382.png",
-      "sha256": "fcd221101efc6123edde415855331c7f7012668ec1b2b0d1ef5377c9d2db857f"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-507406a7.pdf",
+      "sha256": "ffe55e45b95ed1941498e2cebde84307d0a2f3415dfcfd0983ebc81bab211325"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\roi_comparison_boxplots.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-81fa24cb.png",
-      "sha256": "5a20213c780d5d4f44dd7879dd5cac3dd746ab49440e15b72c73ffbd73981860"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-53050e9b.png",
+      "sha256": "c9fc50d3d902f5d1ed54995f70967db2812e203e217742f57143c2e61ee11e63"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\roi_safety_scatter.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-d4970edb.png",
-      "sha256": "6f8f7c11ad240af6e861066fe4bd60709089c7a39e612303d19d7fa2a3f36342"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-d0cb6588.pdf",
+      "sha256": "bbd062395801df6440abff9c5d6fdb63c7ba4e752accf086f7bca90e71f6db75"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\scatter_baseline_vs_model.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-2e2be373.png",
-      "sha256": "0a603c31c57da3c763f9caf155416f638fcd23d722349481237bee670f0fb9e4"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-9f6bbd1c.png",
+      "sha256": "5ce65e2ed2cf5adaac022f2c00d624113364dae6949673c4bc389d1a3ddb4e3b"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu.keras\\texture_by_source_folder.png",
-      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-11e6aea7.png",
-      "sha256": "72353ea68614d58f91d23e9bcf36f5ab6a0d4e0b89774384148de93d21df1a84"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-884e0207.pdf",
+      "sha256": "34eedfa5276e830f1b187b7861207260ca530f3aba764767bae98af1b762bbff"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\boxplots_preservation_analysis.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-685a109d.png",
-      "sha256": "9eb5b4ed994fcac8716e9891bc0350dabbbd5db00a9c49b6af7fa2287fb9f4c5"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-3a3905d5.png",
+      "sha256": "591b5ac8c7ee6c35098ab1ffa9096cb5c8843b600ff270a7c85c837d3b86a585"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\correlation_preservation_vs_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-071ea820.png",
-      "sha256": "8dd372f9cb729f6abd3843e0747fac5ef9078392e65ba5e77a3951becaf8d078"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-2bd80913.pdf",
+      "sha256": "59fa5933472b53cfcb258a495c86c56d85a7a6fc8f7a7f701c909adcc0b6d06f"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\hist_delta_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-50ec6edf.png",
-      "sha256": "d779395a0d84ada234b5582bb121beeaa4a0ec4ec180d693c298d33f0779dbec"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-58f38bb6.png",
+      "sha256": "1715de804e09ba182eb1f4ef077216ccf6ac9967411fda3168c0c444918d38c4"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\roi_comparison_boxplots.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-ee14d788.png",
-      "sha256": "073fb71b3caf8bb34b9702169434a0ff2133e917ae55c03c8441aae046a93873"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-c4bad586.pdf",
+      "sha256": "4ef067d2f04a95cb5ff68e22e934aa97fb804a8b4e156a2fe3e846b3c578f40c"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\roi_safety_scatter.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-379ebfec.png",
-      "sha256": "87495b28a42b11c0160e7a7a9e197e5c2203913a0da153a773267d99fd67474b"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-97146bbb.png",
+      "sha256": "07e96422d6c556ba55a035cc218ab3abc805bbe6e1ac7798c245427ed3f54e79"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\scatter_baseline_vs_model.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-a941689e.png",
-      "sha256": "597199751e05b92fcc293ed485c4ef3aec4cc9c40408b4b6af937e2aea64eb89"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-5730937a.pdf",
+      "sha256": "75718128baabbf7357345e76f5209112a5a4fd8e4067807fd59d330bf60e434a"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu.keras\\texture_by_source_folder.png",
-      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-90853950.png",
-      "sha256": "df3ffb6db352a100c8beea338b99d61ff149e31d06a47d6acece1668b41f9d62"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-3336f719.png",
+      "sha256": "51ac0db1583d8df9e4079145dfaba906e44dae868ffb0ced85d617494d2c4c11"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\boxplots_preservation_analysis.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-a949f61b.png",
-      "sha256": "d8d79ac99788af5379549e0f4d038c0893719598112db4ecdb3bc22a4badae10"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-ee3325a2.pdf",
+      "sha256": "2b275d6f9c3258d31f448732455e37bb2b670d88b904b86b7dcc88289a7eae42"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\correlation_preservation_vs_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-36ec8f0d.png",
-      "sha256": "39dc759f7354648b050eed25050d7d0cd3d58073b607ef609eeccfe505e31e31"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-75ef973a.png",
+      "sha256": "be8d36fdb7c518310c4cb3166c3e1e1f4a0f85b1efd3e1108d2864438738d806"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\hist_delta_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-81cfe167.png",
-      "sha256": "576e792af2f72467c14ddb2d5bd7103c23ae638052695ade125ab2e1129c00a1"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-935e92d5.pdf",
+      "sha256": "51c192c434d406ee8bc282d81108e18890b4c5a37fbe988b707032932895345b"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\roi_comparison_boxplots.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-1cf8604f.png",
-      "sha256": "545cf4f6e1d5c8dc8c31a13b25e32e69008ceea59da09b7a434041c3a887df3f"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-9a6dc585.png",
+      "sha256": "1519709eecaf3e73faf087dffc90cf91acceedcf4c738688235ac7597d5b5a22"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\roi_safety_scatter.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-230c21e6.png",
-      "sha256": "debe76dea9d3bc53b62ed115facfb5420d9141e9249e96372ea06f2c7628983b"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-fe74efcb.pdf",
+      "sha256": "10e61654b35c16c397c2bd406b58c4ccbfac31bc7c23e12454b76c7546cebea1"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\scatter_baseline_vs_model.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-7a9cace0.png",
-      "sha256": "12a00a47a52bfe3b60320708214abad4d57ab6a93924400b363549a16845ef83"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-8efe3c09.png",
+      "sha256": "4d1b0dccfd28dc773588c8502f2c3d21abf5139bec522453c1a05283d953f166"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu.keras\\texture_by_source_folder.png",
-      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-98c71757.png",
-      "sha256": "313a7f54f85210b2dd167b4a81722ffac4722f6ce909569b7d7d04caf3ee5542"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-956c6de9.pdf",
+      "sha256": "af8662a0bca592de54c06da2eb257dc96ab0ab0d46f8419767a40a9924879ab4"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\boxplots_preservation_analysis.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-2549a5f0.png",
-      "sha256": "a896a9500d11a1056914fbfcfac31543aa285470e3224205520a337e4e9e8967"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-8429e364.png",
+      "sha256": "ff256bdd475e84b4e724349bfd3fb8501e2821b5609e267ba8a94d8ff916511b"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\correlation_preservation_vs_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-28a12b7e.png",
-      "sha256": "be1df68c2c4fa68cab0190c13bad50c06573fa0347cbfd84a63d70f956f7c771"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-d1404d18.pdf",
+      "sha256": "5894b4934bdd094725579c44259e1fe0e9ff243a922bbbb5723b00daafdad8a6"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\hist_delta_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-63af1a28.png",
-      "sha256": "2bdde3706c63cd9043540ab4af17a127f46797e0be6d1a627da86b591f86d528"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-bbc915e7.png",
+      "sha256": "d6a62c1adb0e93ce3e2a376884cfd2c01c6d1a5189cd31bf3e59fa03ce4ec46b"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\roi_comparison_boxplots.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-f8a27db5.png",
-      "sha256": "739a5b112c3d6ef305e57ede424ffeeba0357c83dfc63320c49d7663f21b2cdc"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-c06c6e5a.pdf",
+      "sha256": "7d5ea36ac6ccc39b6ebc1baa50caf644b55c8bd149cbbbfc211e97065f237ef8"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\roi_safety_scatter.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-da6d5a6e.png",
-      "sha256": "0f551a10f629d41ebdc6a721ec513430fef31b6ee1ce24f1988d0229413b2d78"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-56c4b5f4.png",
+      "sha256": "0ba9d2008426f68a349aff0c457cf731825d95c192309254cd70daa698369803"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\scatter_baseline_vs_model.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-d0caff9c.png",
-      "sha256": "a920503576d3efde303e456eebc16cf2e348f64b949369c7c94c7c2a3cafc839"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-95c3541a.pdf",
+      "sha256": "6f68697efbace17adb0910038abc79ec433e827c8d2dc25e16c951507ba22112"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu.keras\\texture_by_source_folder.png",
-      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-73c4dbee.png",
-      "sha256": "11c2860041bc690c92f1b836caf96c7d6cbcf09937183a6505de5208ea66980e"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-c0799428.png",
+      "sha256": "554ffd6d7a619c17185595b2310b4a52fff643132212502a9b6199058b6ef7fc"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\boxplots_preservation_analysis.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-5a478149.png",
-      "sha256": "b0d3bf5e75880fa9dc02253d31d916db9e547c2adf12a4833d02f451064ba5b7"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-1a92fe8b.pdf",
+      "sha256": "338cc39ada6013c025b770c5efd6743bc5552a10b474e925be2882aa511c3d4c"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\correlation_preservation_vs_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-09344521.png",
-      "sha256": "b0f83c7b2fc4c637dd5fd5ca3d8d83d61fbaf2b92331dfbad7f7184c424b9626"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-46517e93.png",
+      "sha256": "6d43e3b7339cf81fef3b132e2115f9e7e52432660b4f4d0270754d86bb2ffa23"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\hist_delta_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-4a443f58.png",
-      "sha256": "e6e8ea8e57b8ba05b43b272b85f3e0cc6849f79f391d5f1e5e40e0a068370c5d"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-43fde10d.pdf",
+      "sha256": "91f249f2aac4e855bedae0ac0dca1eba88a734bf066aec4665773015f424f2a0"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\roi_comparison_boxplots.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-0dcdebde.png",
-      "sha256": "bb97b67d5072c8399881de214240cdc0a97558ad0c8c987fbb667b31817bee97"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-54e593fe.png",
+      "sha256": "80c3bee4754d87f864541fc5873c9ccc0f2dc7b4c6323d70172e720aa620c165"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\roi_safety_scatter.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-2d86f655.png",
-      "sha256": "44d17e6503cc60f9d506890a94a08139a65a446355de178ac0ce7104e2b2de72"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-0445462a.pdf",
+      "sha256": "19b5aedf43d059354bae273f972f5c88a470afc4a6c98b8fe1e0e36ecb3201f9"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\scatter_baseline_vs_model.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-7230c0ab.png",
-      "sha256": "b4543e73b89b26df8bc81bc3aa0c9a3660a315df2dd224cc0125126e9c16128b"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-58a44c75.png",
+      "sha256": "0490f942829517b048807b9433a9e0508ebe31d5a20b26246c344dd22dd07ba5"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu.keras\\texture_by_source_folder.png",
-      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-0635bfd4.png",
-      "sha256": "21db96dc35f81b64b564439c041f41bacd693f74de1f1d71e3adb9e42326e205"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-34fc7cc4.pdf",
+      "sha256": "33eb5084ee8fda77c2a20d4bfeaa0be50154e69497f1f2ffdccc91a85e2167b1"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\boxplots_preservation_analysis.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplots-preservation-analysis-f365f83d.png",
-      "sha256": "b26c9c25c326e57c9a297c8b45dd28d509eb38ab41d7e46a2da222fe1418ccb3"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-b077ea27.png",
+      "sha256": "2038b3254461a93f27d6a2170d38bc46dbc40f848406935faf6dfd2806904865"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\correlation_preservation_vs_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\correlation-preservation-vs-improvement-9ec937d4.png",
-      "sha256": "248e572501b24dfae2deb7c5c3cc5b3de09e0c64d5b4e7ab9ec0f8be3d53b789"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-d5472fef.pdf",
+      "sha256": "c5d12b72c941593f0288dd2fdbb0c02c7f3413aed3e61d7dfbb307c077612544"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\hist_delta_improvement.png",
-      "destination": "Figures\\Generated\\evaluation\\hist-delta-improvement-738174a7.png",
-      "sha256": "9d4ba0b7ffa57325013ba742b30f661fb38c34edcb21c6d9028c697f20b7ff76"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-abb0e25e.png",
+      "sha256": "59d97f240c8ec862565bff121a301c0c0b24785d718aeed33aaefdb6b735edeb"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\roi_comparison_boxplots.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-comparison-boxplots-562e2c28.png",
-      "sha256": "48281dc83f874f52af3434bb7cac1ce6a74300f4650cfd4586a18134ddd6a000"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-7a670e65.pdf",
+      "sha256": "3b6f0f47172263fd7bffbe1306d149b0844015de7ba3e10d9864a4370619d269"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\roi_safety_scatter.png",
-      "destination": "Figures\\Generated\\evaluation\\roi-safety-scatter-0bc16afc.png",
-      "sha256": "bcb483b5140e555df333757ed05c55841059cd757b1d2455c2cfa663fb5ce0d8"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-d287df2d.png",
+      "sha256": "108c1f731eedec52f3aa794846969fc854338db31292ed13f9e040f4892b79d8"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\scatter_baseline_vs_model.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-baseline-vs-model-ed2ece6d.png",
-      "sha256": "352656718804a6dad70d14f22260f89fb64c33266db585fe1ac7598771dfcc94"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-2d6040f6.pdf",
+      "sha256": "13eb99e2780d7defbe582126dcbe1c05e72dc4b80651464226bccb468285d0aa"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu.keras\\texture_by_source_folder.png",
-      "destination": "Figures\\Generated\\evaluation\\texture-by-source-folder-663d8172.png",
-      "sha256": "4d549a70e87d0e1c6f61e0afdd86eb87ab441a6eb95aba534b5a6c779849560a"
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-bcb35b34.png",
+      "sha256": "ff093a5e52b719b530742c4f231c249ddce5959cc034960097fb395b68951c97"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-1ae87d7c.pdf",
+      "sha256": "7135faab5ef57350a98c6de8432f7aa9d0aaf79519efee32131f0c2b304f2b1f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-be1064af.png",
+      "sha256": "feba90a7a0f4e92db022a3afcc21ac2b5180e6132fe8a54c2607cf2310e80507"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-0fd2f250.pdf",
+      "sha256": "d67fc45d927426e77b8d837b382dece609b9d13ae17d5716e99367ad4dbba005"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-0952b957.png",
+      "sha256": "b0f560f653cf4aa7d6835ddf14a680731636b121c1be9bebbd71bb545cc50628"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-3a13ecb2.pdf",
+      "sha256": "c9833895e81c41fb91675a546afa28aee789874904a9fc34fa780e79e6b6c8f4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-47a2f93c.png",
+      "sha256": "2c60530eff4ec3cd6bd91bb4a90fade6f66bd90438ff90f2c53a8a279760d11c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-3d3f1f79.pdf",
+      "sha256": "e578037d9e7c609150aac97d4ad1190218183ac6ae2ef7e382404f3b9aa281bc"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-5612a704.png",
+      "sha256": "c1d24d39a8db7c57668ec22ec7542d0e43ddabc606fc92d916ec08e5c3571fe1"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-bf0b170d.pdf",
+      "sha256": "4a6decc3f275b09561ef6f5a839562af9e95641193978512bbe355cfed5612ae"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\val\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-fe3e46f5.png",
+      "sha256": "44ba00c27f195f4d3f1634f11c54d01a27c2208f8251e7c30869ce8cbee23e6c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-1368a4b6.pdf",
+      "sha256": "3410636373ced436e2bbf1bc048817ee9d638b3b79dfb34b45491506ea77e81d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-854ea3a8.png",
+      "sha256": "caff0616de51008d1e04d851720a0c4bfa08b07725f17e00ee50cc1f108a62c6"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-99a792c4.pdf",
+      "sha256": "a344768cfc2cdb282acc39923a4f6a904b5007726cb7ef58b43c78105c6b6f9e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-016547d0.png",
+      "sha256": "393c2fd4e091c889f9b560c29692cc89dfcc39a349afbe5d6b6f6ba53da1b72f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-e4946b28.pdf",
+      "sha256": "c3964e77e263cb1816f56f905c559dcfcac405414eec3ce19d9f00c39d6717c2"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-1816c80e.png",
+      "sha256": "59298f9e6d63cc6994f1df1bc9a4ef0f330dc96bbd1b66ba4a5c4b0b4a5573b6"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-8faa8e7f.pdf",
+      "sha256": "316c481fb92ebc6683bfa4d4cef8287217b4f72fee6c4a3747b0bfce2d27729d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-a50356aa.png",
+      "sha256": "b9cc3f6c2928c3c3e1d884f6d23f55bf8167fe75518f6811f838d502aad11732"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-56395260.pdf",
+      "sha256": "f17aaefcb3f6236bd2480d67378f38544de0404c515b3d45f2a43f51c459daac"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-636f6c68.png",
+      "sha256": "fa647118b1d7c2140f68d462781a227664ec373753a7a1a194a3a3882fa307fc"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-8973e7c8.pdf",
+      "sha256": "caed35d1e4bdd565ca30f3295ef478a03b80a8fa5fcb77b7e33bcb573c890a17"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-16027ce2.png",
+      "sha256": "9e3a6244956bc65662d75045f50296a97d96963cf2762828f85ad9731efd2c57"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-06ee5ce8.pdf",
+      "sha256": "187697c409aca3e399412fb2765c8c7ab60ea632bcbe0f4c018d201329c26e43"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-bfbdf84f.png",
+      "sha256": "422b72f40ac8614f2ba4e612439422f80d75d26f296b806cae9805f2995a60e5"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-dccb2840.pdf",
+      "sha256": "8fc7aee5acdfbf76abf7cf2b1595d4a96ad6d6097432b52fa2080d2e950fb56e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-0af0f6c8.png",
+      "sha256": "ca66404c0364acf0dd238c41f2ee37ee1d469abfac6006227a5c3d963d333908"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-691f7605.pdf",
+      "sha256": "64fa65f06fef13cfa2a2f1f6b90d5fc91ab8976d8c14d7bd795699f85ff64b0d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-4841607e.png",
+      "sha256": "bfb99d2624cf4ffb1f6fd0a42124e6ed38ca72f1bddc0185b708eb460f384946"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-335307d6.pdf",
+      "sha256": "2b4e59004397eb35338644bbed1b3484948806025e3540ed2def82a0ff91194b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-1505821e.png",
+      "sha256": "76969f6fb9b6175e7afb7cf35e2dec5b617aba68328c6dadb49a391387715eeb"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-f7e4db1f.pdf",
+      "sha256": "6f71043899081c87ec7c4243b9be5f07fbd7ecf637cae26af68d0946f757e6e6"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-27aa51e3.png",
+      "sha256": "5b169a56fd82b53a0f386709bbfd82ebf755b4427e7aac4e391a84bdb12338de"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-1d85d947.pdf",
+      "sha256": "9d6f865d629817fe4d426d6e9496e116c8a2a8418192aa2c42a662cecc1e8707"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-0caf2eb4.png",
+      "sha256": "05a319f1e11023c35932a54e7b4a1d271abf3170b408fdda0ffe93ad97183377"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-2aa44a54.pdf",
+      "sha256": "436ea2e569e5d7517d22319f0674be8dab4718ea3f8435ec24e0643504547431"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-34be662d.png",
+      "sha256": "e0924b190962f0285f8563dfdeb7ec4dcd00ff877096a8c47b527491b0a40e54"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-36add37f.pdf",
+      "sha256": "beef581a557fa2d896819b49d7a69eb6ed0e7dbf9d5da961b0dce4dad67058c6"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-73298363.png",
+      "sha256": "6d3c1e41c71c6432b8bb25cf724e9f3fba0a5915e3dac0a084e0b6f5a954c334"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-86d22946.pdf",
+      "sha256": "04a3be458d8675b3b0f1bde921d1b247f52dd62fb81c8bed8ed805dbfa4f0131"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-35cecfa4.png",
+      "sha256": "e5d0aa1b0f81c9fb1fd1602ca18711d58095b26c2523983ba83b426be09914ef"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-27443986.pdf",
+      "sha256": "6944adc4543165b2d6735f62228347ee16820caa51f9fb24d16d329581db103c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-0e117f72.png",
+      "sha256": "3184628041a68bf802f1f353b9fee66c4c7fdb0422e68b35862995454c6e2bb7"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-7a84e050.pdf",
+      "sha256": "2bc3a191331c6fdc4f03f80a452ad963c1019f00bee3f9b4a0ea378fcc0a40cf"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-eef642b0.png",
+      "sha256": "d93c8cb4045ff8b7e977ad78e278cb069914f8d3ed885bbb454be66d46352ff1"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-50551d90.pdf",
+      "sha256": "fcfe07787c450a0ac5ad9a7c6b5fca9bb62d27c2e108b71d414e4cb72e4a2ced"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-5cb2c746.png",
+      "sha256": "6c8abdc4b6d400ae4d4532ca0564add6d09e91fa080061f14500d1271dc18fac"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-6fb87aba.pdf",
+      "sha256": "16a9489ba399d1299e0023937339a8790d9e7d6b47feb5a7702261c9fe58bfde"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-363dd4d8.png",
+      "sha256": "50957340cc0372ca09a74042a7defd40030ce78080d72edb776ec62794318765"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-cd52de99.pdf",
+      "sha256": "e677d42d64f86a37faeb66f36d34f593f55c37a8b83bc88914b5edf7963e8302"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-73739fd7.png",
+      "sha256": "bbb7dd4b0206b7534c57f384c133ef30bdd13ddc1964a3b153ecbce1eca581ef"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-5e676378.pdf",
+      "sha256": "1bcf8f6370af137832d91def2018b3e5489c4dd4b39e2ff97b833367905bd892"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-ca8fe29d.png",
+      "sha256": "0a226424bf1f46402604aec0231bfbb7e42f897434badcb104ca7e4a26838cbf"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-f7618b58.pdf",
+      "sha256": "9364568dee94732f02778831b92b81c23bad2dba8b9241f5637729cbba06d102"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-230c1ab2.png",
+      "sha256": "c74755730a526bf733f88f9faae9d52c754fc0e955f0c18be26620841bd232fe"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-3d81fd05.pdf",
+      "sha256": "6e2a7a82c3037d5553e32d656f14f955b8d8a2edd54a6ebce0ff80783a51e18c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-7c43cbfe.png",
+      "sha256": "76fdcce9135e1524c1775d0c3b884bb2c767e3b141c9be7109a54e7e84e4da16"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-c567b28f.pdf",
+      "sha256": "3bf081fa447cc09b14242a0389570ee5b50a4389645cdab103fa6efd3bf083c3"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-fa978109.png",
+      "sha256": "b1ed6509421c64d8e7268389b2e5d411e1466d1f7844c4ae53e5d9d2019f1090"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-08f91c5d.pdf",
+      "sha256": "4e8041f5359bc9e15f04e81bb17e477b60fb6728efe9305c3672ae43c129847b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-b77bff4d.png",
+      "sha256": "d7801e13dd44e5e2fd748518e3615a1114f3315f6ae833878a705490fe31c7c4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-fa0cb0ed.pdf",
+      "sha256": "218a64f92b22cb6561e93f8607d73833ca4b7f6a4557d4b2c937be0d2eaad844"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_1337\\singlehead-044-0.9511-ssim_hu\\val\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-54ac3b7d.png",
+      "sha256": "ca31e930c331ae4f9250a99b52889e8da5a2c35b67e7b392b94d2806148839ab"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-227cb1d6.pdf",
+      "sha256": "9ed9a8459ccc2f521205d2cb7d5754a28992b3cdd1150d944e221676471f3d6a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-03f7b238.png",
+      "sha256": "f3048ae93ae3f1d6b7b8c63b7b653f175c75d7676c14373a08a6fdb1a4aea98e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-e661a032.pdf",
+      "sha256": "e79e4ca502d11a5021d60d9aaeacaea705d6ba116a5a6dedaf872262e1a8afd4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-bb6b7d2b.png",
+      "sha256": "ddc05f9b7e3238aede6094cee7c0b8ba37f24d3466b148f3c6ab6ebe1d3eee85"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-2809e634.pdf",
+      "sha256": "588f58ad8d20b21e4dca26ca1ef48ae815c2cb7b4901b5921118d11ea1973b69"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-a69c3ca2.png",
+      "sha256": "a80d5c37b51e97dc2aada3023349da5e000ffb4ab44ed9bf5c8e280a05499d35"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-014f3a02.pdf",
+      "sha256": "013c907ae353515808d62983f20b02344360206ffb84f3b56af92353802d7193"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-89620f8c.png",
+      "sha256": "b568a83ceaf4767505ba54dc5e095e007dbaa87f2681288351b8d8b49100763c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-6f66b22b.pdf",
+      "sha256": "78136b498873fe87fbacd936706af5c30ed16cbfa526994f99882a08d34ef3e4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-eeab6d7b.png",
+      "sha256": "d6f5c55e2fdf2908a351ac44caba9ee413b0f900aa759e0ee9d8a27d0c064811"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-58aa8df9.pdf",
+      "sha256": "f02d5a69c6f3330821d186088ea15f676c70c0509737d6ef24ded641cdb04865"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-9bf188c8.png",
+      "sha256": "63da3a573177bf5b9456d1bb5c7b75ac47fd6496afb9aafc21bb5fb01a08dce9"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-110b2fe8.pdf",
+      "sha256": "fe75aadb1865a538cdbda7c09b4af4a77a38ddffa6062e32ebf553bf9454bdaf"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-e2457729.png",
+      "sha256": "4d5e7481c5509d57dff71c15d5e2bcca485a9fbaf3ee5487b25ae4c906964833"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-42445696.pdf",
+      "sha256": "79120287ce914e98a5a3250600250134b65c42dd485032be3241de91cef8b38b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-ae880e7f.png",
+      "sha256": "6d46e5a82e45c665787392b924695b9f08e9311f8625c723534388f4894002ad"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-4e11253d.pdf",
+      "sha256": "0bcc7e0899112b3a64544017e02dafa8ee4f39afe49cab82f8ebbe2b8605978d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-63a5ec25.png",
+      "sha256": "ee4f2358b2010d9bb2f9d5a5474402c4e891d18079c70fe1f67cad69602dc61b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-313ee75b.pdf",
+      "sha256": "0c9b4cc9af520aff2c710f0a9b5ae1359595449d09537d1e1a881349942ce22d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-5523542a.png",
+      "sha256": "34ac66e65ecabc740c5e193d1c0466313a72345a62f76d945c1bf9db0966a377"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-4fc30cba.pdf",
+      "sha256": "602f3fb8559b1c4debd28414ec7575892ac43b64717ab265bbb4ed664392e49b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-6f5a20c6.png",
+      "sha256": "6f169ffdc68c098c09a98909b5061e5d2476864a79b58d339ff4b9691d574298"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-76854152.pdf",
+      "sha256": "f10d2f40156e791465733944f86eb3626db141bd9860cf448f09b41debe37af8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-2e564035.png",
+      "sha256": "cd67ec71948c48bfcb8237516bf169502ada5555d067a331ab09949c9798b81c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-9b0f2e40.pdf",
+      "sha256": "ac56e148805482695493a85d3379c8075c59bcd567778c257544b062ed8c624a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-5d7f4c4a.png",
+      "sha256": "d7921ea10f2a94c1a904f404c3b72d5c7f285792f88a5acdd73693595022fb76"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-38334392.pdf",
+      "sha256": "ace1c1fc9eedf2e28cdf7bfe9b48607b5bae3c6622231481bea59bfab45fa1de"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-d1c66302.png",
+      "sha256": "734e03d865a5c23d72413a2e4c64a5d4adbd90fdd9ce85becfee6f4733f7654a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-c959f3bb.pdf",
+      "sha256": "0169cd45974aaa3ec25eec98a5257989c3acce743017f29a1ae362161a05c65f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-8e7d5252.png",
+      "sha256": "8d33973d3fb7316ddfa251d6c04fde8b090709251689c14351debaf9ed467a50"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-fe3e4f68.pdf",
+      "sha256": "82747e1c8b0a4c5a3a9b4f5e1cca25fa6c672682615601518a93e19502b78f55"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-6f842f4b.png",
+      "sha256": "c2010b31cea7b4b5e41bf1c4e1e969af1b6dfaba7e73b4f8b63d0a300988bcd4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-3149a9d0.pdf",
+      "sha256": "962a21b01f6412ec510ce96070fce1b0caecc6e2b2459cc97005c66045402822"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-e65220eb.png",
+      "sha256": "26bcb20397ba56b2ebbb3ae720b3484d1c3c5984eb0a5345c7520d5c89194d11"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-2d961296.pdf",
+      "sha256": "6dc65537c49fbbb1f526928d0e339e9636beb1c73ebc3b32c70d7cdc7c0f1d85"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-21b4c687.png",
+      "sha256": "e6f5dba730ae4e754db0a403db726b8717e7c5c5980e510aa5197af1bfc61c2d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-32165898.pdf",
+      "sha256": "67fc73f27cd6d363464a048cd7c6569a145439e9982b856bd27d13228840b786"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-d9e14115.png",
+      "sha256": "538c27408911feea06f0ac4617651117a6d03fc154ffdb620d433b12de5b1b87"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-e2b87363.pdf",
+      "sha256": "df3ee3e9bdafe3735f09d151e18c6b5fe347cae641de42b8164d865ded03f7a8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-f7f98c41.png",
+      "sha256": "67a5faf35c34ecbdd9a0495d33343e236a8b5effd620d5edc1bedf47702232f2"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-f94bd656.pdf",
+      "sha256": "de0ddb5a5ab7a2c9d946b51be92d4241f4a474b5b31768ad55ccbcfc8614624d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-aa71ea4e.png",
+      "sha256": "ba1c549f1450fdcbb7972c2f5e7e78c365ceab4f0b979f634e9353dd4fb648a1"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-b77d03ba.pdf",
+      "sha256": "d42b074f8680369677689192e98e297a27bf13400c51f5c156562c619d2b1c9c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-445d1680.png",
+      "sha256": "7be3eafac0368bae37b094bcd08b67191a69d3db6354ec8c7c39c14092c0e61e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-1d1e6423.pdf",
+      "sha256": "3f43a63f6094bf16d92fc6ca904342a2a5d6c937818773a73254c74a1d13b8f2"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-4cb4705a.png",
+      "sha256": "d33e65a7ac65ed868b4d93ace318afde3c13358bf8ce6bb3e279877f96a0a95d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-f0f5fa20.pdf",
+      "sha256": "393c4f148ba55b9ee2280cc91816222bbb604b575fddb931c87d70d3384096b0"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-8bcebb51.png",
+      "sha256": "882035861a0000b449a4153e800b2b274346066e0a2fe03b3a017a0efabe3ec5"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-c9314a63.pdf",
+      "sha256": "d917b625ad7a84ef4b90a11dff65a6d35b90311575d1c5e49bfcddf3dc8f0547"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-eaee7d3d.png",
+      "sha256": "fc6b4406099c5f76cad143e8dc403243d53161e1dcd691c9b918902ef5b05e61"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-300a3a6b.pdf",
+      "sha256": "4188ae6fa34d2161444d1dd0caa1164063ee5a2a6cef03dcc821810b824ab28c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\val\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-d31daae3.png",
+      "sha256": "dfc5f42fe9c6e37821c7cef5e7896c8ebdc96a5671fde5591c5e0440beffe737"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-2be35fd4.pdf",
+      "sha256": "6b69fe9b7e4c5bc97f660aa85a1331bb6533ca4ca2b301e0483e71b21a8df466"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-7a8640dd.png",
+      "sha256": "68359cd6b70890f53bc417f5301ae7a1d70b5b81e6913da19f3d7d630b922aa5"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-fe2cec3a.pdf",
+      "sha256": "ada44efd61d2439341707c11865fe68fde6f6c676ee58b0c368c6ab0773b8d3d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-d8846b9b.png",
+      "sha256": "7d91d2b04ed34dfc8b6baa65438acf30241161d503434fe54e6ddfceff739ccd"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-97e4460d.pdf",
+      "sha256": "d14af2150f4caa43405a5400944b028fa41933e914fba2ea97d920111fdc4144"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-f6351a38.png",
+      "sha256": "8f476b25d6c59fe3085aed1a2aed91624d6b499266c325242b02266d3b9f01f6"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-89c2d63f.pdf",
+      "sha256": "f6011c5efcf42f266b170a5fe74792e4327b96d817fa2808c813aaf7058022d8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-6f56551d.png",
+      "sha256": "4a856338eac25cdc8cc19be6f5866c95c81e2305bd3134dbd6b9ae3b3e10557e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-527e760a.pdf",
+      "sha256": "539b61fad672024970aab6980dfa634c3e29d698b40ce601b7389e547d122eec"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-04ea358b.png",
+      "sha256": "21c23215ac61eac9081d679f8935dd576b45b2a7621f981f2f3d7c64816a93b5"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-3c07ff7e.pdf",
+      "sha256": "a346a239eb847aa9752061e88331c067df9897aef61e607fedb56400ffcd7176"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-b03f6488.png",
+      "sha256": "e96d1c9576de4e45cd421fe544d6c8fd70d5a928eadfaa9a0de8b10d8cccd473"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-fcc00d7a.pdf",
+      "sha256": "d035d2452d4352b2dc1ca061b48a5bba8b37fbc7d8ef1fc7400a8daebb977a81"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-72bf9380.png",
+      "sha256": "2c04a92cc6affd308a40a65986e86a1a29a2d62652b351328395a4b747bacb61"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-fba91b6b.pdf",
+      "sha256": "d64fbf7bcb8ca8c9f4553794c9c79b0d7a3987b54975440b731c0ed3364608b7"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-abb77a0b.png",
+      "sha256": "5d1a9cfed1cd31a846922e48c45d87644d7948bb59ce4c986afce768bccea933"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-fc534ee4.pdf",
+      "sha256": "e8327aa2efab227268897383395bbd96a240b746838710d8950acba7d878a6ef"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-bcd639bf.png",
+      "sha256": "6772fddcc54a8c21785091d754913b3c4d3ad3556000ebaa9dd5905344896c2d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-06e1319d.pdf",
+      "sha256": "34b743b4946d1c917d1ede305b3b33c41230591cbd28eab91514b63fb44eec51"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-8d28c516.png",
+      "sha256": "663c0d1a5d3655fa64a2a7042ff08450009ee4d9a3596adda7a7cb3f8206e730"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-5b23d2e9.pdf",
+      "sha256": "b5a311cfc9179f0a8ca9310c84302e4368c40276eb2f16fc3caf8dbf42297e69"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-bf7dd83e.png",
+      "sha256": "dbc8fcc15944296ca3580aa7ff7bda294aed20a21ea6fc7f0f36d53b064824b4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-4149b486.pdf",
+      "sha256": "e1895c2869a40016006fc24ae22f5a0dd97ad5ca4cdafe4b6a8d48314aab83fb"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-c9bf4c54.png",
+      "sha256": "7d5765cc2d93b5e2aaf559e9993be9c074725692feb6c5d1c7a7544a82dc98c2"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-3993aa31.pdf",
+      "sha256": "cc2026815cda4b8be19661af0c2f1c1401aabdef218abea617fedd6caf16cb08"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-8e831fe6.png",
+      "sha256": "81ae91beb77a37b801c7cf844883a08705db248e48bd847dddb504c6adfdc923"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-6624ef4f.pdf",
+      "sha256": "9133b5dc809c717a50f9c8d9c25e09ada2722e3b6d341bad5dade00f3122ae84"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-88fe812c.png",
+      "sha256": "5a1d698534356f6250631aa3d96937a811629b1c6d917259cc1c6bae07bc3060"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-21ed2282.pdf",
+      "sha256": "824bcbd1ce538ad3c8b69f76619a8744012364ce39b2a4c337e92a35fe075385"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-9354e0d3.png",
+      "sha256": "885956c81c5a9e17727220ec36f5dc181971cf6677c58ef45a141e2fbdee1787"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-28c75876.pdf",
+      "sha256": "5de5d5dc74f3d8a8ed23a7095cf4b55942e6ce16f19ad47c04dcd38c1258e2ec"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-75248989.png",
+      "sha256": "919bd4f6c531571f1d32cd4dac75447bbc7917eb4fbb8c15d5506207ffbefb85"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-07489cbe.pdf",
+      "sha256": "3dec32cc258d036392c2bedcc1bafe2d8d963a67055aa1bcf2a4c60fe53247a8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-1fe055ad.png",
+      "sha256": "7e1c9374e1744a6e7a48f8602c3b1e7f69ed77ebec753c61c0ba5a60ad0c3e01"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-165223cd.pdf",
+      "sha256": "56b7af0433abad6b21d99ff08cc8977c5bb21609f9ea3303391112cd1f7e56f8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-f2becbbe.png",
+      "sha256": "b006d02cb1f3a7aefbf9ec60f6e5478310f81d779f5c8a54fd4dede2d8901608"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-21041d3d.pdf",
+      "sha256": "9f64895179dac4df08dd9625df0d7fe05b08d1c993de2baa7d88d41cf55052db"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-0d352eaa.png",
+      "sha256": "8ffbd4f8f627c28056ba6ba3bc453344eaec302f7a255d074843f8cb1e3c53c8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-374a903c.pdf",
+      "sha256": "e82ef3d2c17094b0ebf8f058e735daacc4cde78e750c4b35e6a1f5b209a19413"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-7d0e6e26.png",
+      "sha256": "3c7b74b0f9bc112a90334cd1ca68ac9180a096d21e99e6e2a85df9cb76049650"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-4bebb5e1.pdf",
+      "sha256": "b202ff1abe835c6eb02b13fa51314d42f4c5dd15ff6e9a2ed9949dd017b7213c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-abb897f1.png",
+      "sha256": "077e8380dce1e87f46a6f0d22dfc7901e2283a8554beaa4f547b62035ec08e75"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-5058bace.pdf",
+      "sha256": "4aa80f61ea7a72257d5413a4f239190151b989410f0fe3ee89103bcc48391d6f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-9ee30d37.png",
+      "sha256": "4f5e71eb5833e4579eb313d0dbcc578272d1fb2414ba8b07da25a5f36d5c12ba"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-658c8065.pdf",
+      "sha256": "2e6a8002d090cf879eb7f860228d018457541baf294ce9479e2c9ec4a626a2c5"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-b7e098a9.png",
+      "sha256": "4f4a2dd8858ca15412da45a1f5009eae75b382ce0af310284484134bf460d130"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-872cbb6d.pdf",
+      "sha256": "fffd0bd56eadb721e5ea99c4365d590f1da259241b4282f4c0c58d3598458824"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-93c9e450.png",
+      "sha256": "b0bb1334f51ae1050034de246c3484df103fa39ee5aca799a996b284c7a30b13"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-43f0d51b.pdf",
+      "sha256": "035bb0df02cc86344178b98c954faa45e454ff1cdba0a7871d394014472d96e1"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-6c5b9840.png",
+      "sha256": "5777a95a0ae017d28944509c3aa48fc75e69d7d1e4c58b18fd970fbaeade4d54"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-e4aebba7.pdf",
+      "sha256": "1b77d7e6570b1707cdd72c5f7aafbca27ddd3cc1d512476d73f927cd185fcb4d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\val\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-7c83acd6.png",
+      "sha256": "229b69b44613117377df22b03060715c4f6639eb188e7b11733ced0014bfc734"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-caae6589.pdf",
+      "sha256": "ba30c101777336bf54e1a3d0d7bb3d193e3c9a09d31a214d17a28d09657268ab"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-3cead764.png",
+      "sha256": "b3c62e9e55a015b078224b4c02067175c3612f6e96c9517e075561e450fd0d50"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-728ad2d0.pdf",
+      "sha256": "e631cc39df5b8033fbc979a34194b045d784ed82785d8dac70429939479a66f7"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-5d2ee27f.png",
+      "sha256": "07aa831cc6153746cedafc78aa4bea56d91352a1ceb3188db868df6409eac505"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-f44b6ce2.pdf",
+      "sha256": "865bd0c4f54149c486e7b4ab976fdb12c3a55b822226bc0668eb0d2a9d4d7191"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-a2b958e0.png",
+      "sha256": "d69fd594f72ffa31db9a8dc8539cdf84856a354c72cff38f336bebc92d7799b4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-45515b58.pdf",
+      "sha256": "7de4db6ce934978dfd96bf97f6bbddd900a05803d1468271054288d4c0b2d656"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-92b32654.png",
+      "sha256": "50bc55da7d9c85e5b83e4298097deef5988f44e9a070d7324436cb4d08dcb55b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-3b10bd5f.pdf",
+      "sha256": "16f1434eec94473e52659faf9d0a65b10bd2cd8c07c870fb1eee2d5d5e07e7f8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-ae765aeb.png",
+      "sha256": "8a1c6ecf33c51e439475f5e6a8ac291eb2672c35bed83f8d89c87dc219763ed8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-fa42760c.pdf",
+      "sha256": "c0f02eb06b6c4546c35fe566869ae9230baef8a33f5f693870dfab89955fefe1"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-3564a974.png",
+      "sha256": "87c4259a2d969585304d8135539d0fad785a611da1a02220c3d833727565f6d7"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-e8bd16d1.pdf",
+      "sha256": "bc35d313f4b0eda8806e4b044e596abaee59424d6378f704b7785c0460ea2961"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-8bca311b.png",
+      "sha256": "8db47fc185b4dc6295a7d9288debd24ac08b6318d1aa0b871cc846c7df523ce2"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-da4d5981.pdf",
+      "sha256": "03c6b38edfb7e6a93384039a8a23f89da848de7f9a47d34bc9afdcf96a50cc4d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-caab01df.png",
+      "sha256": "a2691d8ac61b1c95ddd6c8ffcdc8bac7f765c91aba6c31af8c912956364583df"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-b05ecfd9.pdf",
+      "sha256": "84b2730e95200a6bd33de72dbbb0586500cd3cd4d97dcfe64bae5cdd3b0e5a80"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-0c7c115e.png",
+      "sha256": "d2efa0235b681eb212ae6756c089465009a3e41b0ef0b71b5613d5ef5f7b439e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-07a19f61.pdf",
+      "sha256": "675f0327db5212288974ab6d26801f903a8bac5b85d3b83226252c57b5da8013"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-1973924a.png",
+      "sha256": "e808eaf6d605d9e1ef26953db892d67178590e3ccf5475855e6dc0cc3116a69e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-ef91d8fe.pdf",
+      "sha256": "bd4e52958b6343b775176f074de4634caeb3e467675973ca0f9a03716e966291"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-17300ade.png",
+      "sha256": "8d7fc7886e4de28217071810a9a1d747f78fcd65f5f9883b1354cb831bf9f7cf"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-e9e889cc.pdf",
+      "sha256": "357bc7274ab2a09eca2930445e46de35e81a7db78b3711c6901dca96df48f32a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-5b971e55.png",
+      "sha256": "305f32b6b7111b0fdf3dc44026d4dff16733c1c6a0c3d2f4bb7b26838b8e2b07"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-28b07670.pdf",
+      "sha256": "42d1b57dcd693ce2ef4f0d835e7b2fb84f35cb9631a41ad1585a2a81e88d2e34"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-a1b00577.png",
+      "sha256": "3c377e0587cdc0a39e31f1d098273c90214cbd36aad604514217e8f6b9bd4313"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-3e22118d.pdf",
+      "sha256": "f8e0f2d0ff325fe829bbcaa76266df03c5c27aa50240573c18345d9f3dbf79b0"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-ac611241.png",
+      "sha256": "323aebf30fc79ea44ec263b6f7c68f8ffd5a03c48332951382ef16658d74c4aa"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-9e540576.pdf",
+      "sha256": "17af42cef181f428c19ceb4bca51f94a238942bd1ebfaa53051af31f75571ca9"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-91c47d06.png",
+      "sha256": "373696502ecff122264a05e110471428c23832fba84a59c7f6db031eac78d560"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-08cad54c.pdf",
+      "sha256": "6ecda934ba7322a94e35e32217281d4129f5dbafcc1480a9163cff142a09876d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-94bd1c91.png",
+      "sha256": "4d19f658bd555d0ddce5e81af13704c200aa1fb980171e809e27ef2d2444d0a0"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-a31e9223.pdf",
+      "sha256": "76773383f2f35b3dd700a6667d674759b8d20827136dd3d4537f54db66819432"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-8089ca2c.png",
+      "sha256": "8c1bbbe153d34c48d78ca6a1f362c82be2db1f432a0761842cd2c45c8b706da4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-f1fbece6.pdf",
+      "sha256": "a8b5e99d44bc2647473ae9831b06d7893a148a2d1d4b39cab5c136ddca9ce710"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-c34dd425.png",
+      "sha256": "7b678ccf9fc1360281876ae041b94cacc2310be5740e34c6e7e17c9e4d803288"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-96d06963.pdf",
+      "sha256": "35f37d6714ce0dbcc468c263f27d30d2b9fd0a8244a3594be22f481b266517ff"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-98498c19.png",
+      "sha256": "a10d4e282e31cdb5cc9fdc577ddb1eb5a3e40af3332ceb76826ff1490350ae4b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-db71ed3d.pdf",
+      "sha256": "050e2a6f1724445c8508934d7f248866262c26771d906bafcc325ba3e77b0b32"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-4ae11cda.png",
+      "sha256": "52183d82389cbe13577b769b2bb907f8daa6e3ca8c81a26fa1cff4ee5e3d8673"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-0e6e20af.pdf",
+      "sha256": "90177681aa371237bebe36ad64bbd9dced28f6acbd54ef546c4c5206fe2ec9f9"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-c45fcc68.png",
+      "sha256": "4b4d945f603b1aedb441a689cbe9bf23e07ccb48b77916f3bcc094a6907a9a49"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-0195df78.pdf",
+      "sha256": "4812f01b547067478839eed3c760ed736cbf7c4eab93c5997d8ba722d8dcaa34"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-7bb50f5e.png",
+      "sha256": "78dfa0d86ff79ca4c99f5a576ff6df28fb3aa27a6928ec4a5b1b40c4fa39ec0a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-b7e4ad4d.pdf",
+      "sha256": "2981e6f8d02ea3fd1fee4addd8e3b79a257a6d9925c44b422a390054a0577bda"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-b3ab0bc0.png",
+      "sha256": "11df835297623cf26dbd4f8238a0ed298542fe86e2bd6fb4db544ff05faccd2b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-a5468fbd.pdf",
+      "sha256": "0a7df0d595588f797c9da1b9f51ece15f6c8fbab60e45f00b6ed62529a12a9a3"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-054338af.png",
+      "sha256": "09ccfe62be4d6f5f6a0484c335b4024772163f9a803b11c46aed26f2424d51b6"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-074256f6.pdf",
+      "sha256": "0d5afcb79e020e278a577a48c2e7680e74f1bb840aee39dfcaa259168d40b8f2"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-7fdbd461.png",
+      "sha256": "af56d851cabdf03a56ab030cf9e686efbe6a8d2a87f3ffe8e13fa608b139571b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-ea4587f8.pdf",
+      "sha256": "1219a816be3ab9cf052ab35cc25062da7fc771308ca7004ca9eb89aa72bccf58"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\val\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-541acad8.png",
+      "sha256": "bd26b02d7f9af5830806aaa3957e3b195995d2ba28bf327c3602055b79a97be4"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-d873b586.pdf",
+      "sha256": "9d71145151ccc022dd84f7eed1bbf7d83f03d88223c6d7fc9ae084d718d5ce5d"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-a8cef81f.png",
+      "sha256": "1999e6210b1d97550c269bb0b27538c2c79c083b24794150610310acfc5fefe0"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-1ac819a3.pdf",
+      "sha256": "ec9064e964649b61a8fa9b8295c71e63eb6bc4d1513f7ed4f3552ce398dc7666"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-eca9c13c.png",
+      "sha256": "2340b7b318aee936d98f54f6b338be7f99893709dc95d659eb351d99f04a7c77"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-80bdb3b4.pdf",
+      "sha256": "6416b3be0b2bb0c062ff4591d32fc43d17c674e9060d971375d8ba24e8100c13"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-40d67cb1.png",
+      "sha256": "4545b917970de973fd1a90d76b17a7cd732484325e455e94666f49339976b381"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-c445bffc.pdf",
+      "sha256": "6be4b49d3e9396b4b7a5aa041e2f18b4a6924f53b7ca736797c84060d9c0c5b5"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-6d0d4030.png",
+      "sha256": "374f69c1d7b30697fd853a4be6b902e40cc4e33a03f68b20bcf50aaf08d09c79"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-a0106bfb.pdf",
+      "sha256": "1e59473f37c9e2eb8232be0d852eafb2b4829a358a74a7c0d3bbfbee3a320ad2"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-68e00a23.png",
+      "sha256": "f6166a71abe464b7a8c3ba16ef0046cd856bf24170c6cfb00258e2a330265492"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-51e1e634.pdf",
+      "sha256": "fb80e0aa4ff131ab8ff3d35c2bc0c3218c5cf2006766ad901e5c035328edf009"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-c0b9928a.png",
+      "sha256": "7c148dfb0f51bea71dfe5874626a864034cff31865d6a8d940e11747752653a3"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-81f4cc59.pdf",
+      "sha256": "00b5693a104cc43ee3faf0dce450f58070238ee2055419d8e3022f67656d8155"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-fabfa270.png",
+      "sha256": "b994704bca9bfcd38419be126caa3c9eb5824d2c0424630f0e1567e1f025f2a8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-a0c17521.pdf",
+      "sha256": "4c2396352cf3d511f85075c7eff2d80b92b7493482266051780602b5982d4914"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-e233c33b.png",
+      "sha256": "d284135a84ec2cee82e855e77ce9f22904a29dc4dd48e46fecb203b22b94a191"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-e4e736be.pdf",
+      "sha256": "42b4a17c471596f7ccbce492bec81ebd227924509b06ae3815bfba8d03cc395c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-5bde8d77.png",
+      "sha256": "7ae26675a0dacc261c4d7b8de7570099e8beeb42197d692fa3770705ee7a2c93"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-cf6e9638.pdf",
+      "sha256": "8fc547e76cd1893b976a4511d8813f0c4619354a1b61fb1e876f987ae210e02a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-5d894a66.png",
+      "sha256": "d95305759526e6386e5e4620d14f2f7ec6112cced20e616858d9f3631ef3263f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-2372ea74.pdf",
+      "sha256": "f553759e9acb33698abf5b5a72d2c719e9478910d332b7587799aad9b9cd1549"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-4a0b049f.png",
+      "sha256": "c11dffae83dbd0c65d9772649d6fd32138375d17405694d72b523bef0c925510"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-36375f37.pdf",
+      "sha256": "fc83cc1715b6e5e52c547f2e1690d77085aa1351c04054c9c5b3d5a7bc540eab"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-e07dbf28.png",
+      "sha256": "f2369163d16d8c0462e1abd9767512f32bacb4c4ce541473675984a5716ec919"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-84034eaa.pdf",
+      "sha256": "e41ec7f53d06084ecadb9b871e5669e1781097954b959562702a157df734f21c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-f0cede5e.png",
+      "sha256": "ebccc71c9e6c87dba64bd0ea8aee88caede55ceaf77118ac17abc1419865ec2a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\boxplot_global_psnr_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-93986c6f.pdf",
+      "sha256": "5d3ab91203c6593f6dd061aab4014c847f94a63315cbc39945994a1a5b2d13aa"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\boxplot_global_psnr_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-99070788.png",
+      "sha256": "c99a897d0e3fe6389621cf69455440110e8d2f196c8427b6661d4ed9ecb232a8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\boxplot_global_ssim_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-40b45d6a.pdf",
+      "sha256": "213d87548e49d04f722ec217adb1613617ba5313d8111fe6c6c1e54051b6c2fc"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\boxplot_global_ssim_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-ae025bb7.png",
+      "sha256": "5d4e4214903ebb0b9acc1bcf86ae88d620f1fe54eab4abd818c0340ceeb71d1c"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-dcb733c5.pdf",
+      "sha256": "a62ba38d96e2b9a561245184ae42190a8997f74463eeae0eafb1668ddaa477fd"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-794c46a8.png",
+      "sha256": "f3724730d024f0f7fe4f1ecec1bd70d377ba2e7db1d8d0a6cdf785aa5b7ae6ef"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-6907f920.pdf",
+      "sha256": "ce45dfe3f8e8093feb48be69458f18cdefe47b9ea41e5c076c3e9e3c57619f7a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-a22d775a.png",
+      "sha256": "4d0ce77b2ffb68fb0f0c2fd650f872069e3e64eced0bfd219d5facd27dbbbd08"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-58fa5cc1.pdf",
+      "sha256": "e928efd33590e4de9eea875b89bea11f5edce9976fc34cdbdce249e902cb782b"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-23127644.png",
+      "sha256": "b11350dcd6d34d5134aca1ecb5e98586df26660b4256e17c4fc6e2e7e7064456"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-0fc23480.pdf",
+      "sha256": "4aae0a8039823360b9e5506b309182e328fec83ad733543d1e64028d740628d6"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-4962c1ba.png",
+      "sha256": "6ffbcaa5c355173a2690e0bb9d568d17214e0b9c78ec4c1e5e85b72333d6585f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-876b8470.pdf",
+      "sha256": "5892a6aad2e143e4d566284bf61f03d5b4c469e8647070c5ae0e3c852e8dbedb"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-03216437.png",
+      "sha256": "d6d64e27880c491f2a542beb663d7c4c3d5a782f4e21f8e321effb984eac28c8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-0f251aa5.pdf",
+      "sha256": "d01325a3085b0c2a9ba6f8c45003fa589696fd52efd6bc685b90681afb193ae8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-ecb2e7e4.png",
+      "sha256": "c70cf03322417f1269b8a010921bbe99033348312c90024b50e3e178a3cc1303"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-acfe06b4.pdf",
+      "sha256": "cec1ce30489c3c9926983a8975ee969ea7ef46197d4dbbcf3c24982205a730d8"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-9f8fad53.png",
+      "sha256": "84208bc6d83b4201aaa8f562e11055b341e26b063f94f2a2b49bd13c54cfc15a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-0c066b5b.pdf",
+      "sha256": "d5345d68a1840bc3d2f726507adc27dab91a6fbf20bc3f7b8f89fcf879285cfe"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-d55ee5ab.png",
+      "sha256": "4f80761a006678ae546c60670d66147bb15bc1ec09de235a69bc3327a3d5f432"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-a3a55fa4.pdf",
+      "sha256": "5452dbfd6a4b0ada4226d332ecb65c20fedaf60fd8add9e10f24762a05e66387"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-fa70d26e.png",
+      "sha256": "0d493f751eb4fc309eb88415f55666c0cc83ab132d77d17c7d0710940437b987"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-4ae63347.pdf",
+      "sha256": "bb98c5ef6d3541414bbbe0aaa96f08528cb993b7e54d376aca5b8bfa391f4ee3"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-d1734bf6.png",
+      "sha256": "9cbdc26d306fdf8737667dacbe112995d1ca70852ebaccb27eab15521229dc0f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-2a00e641.pdf",
+      "sha256": "3dccd6fc7fc3971f046902c5b8dac8c0683289d2299a6c77a711aa8c20d04fbf"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-31481b72.png",
+      "sha256": "2115c15e7ce2a0cd8d5395d7a40bcbc5f6853ecf5238305b6b9a70b2c754d5d0"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\bland_altman.png",
       "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
-      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+      "sha256": "5f6aec34c86c0a7c0decd9e4146e17a2268686015e979bdc3ea6579ec7a4ff7e"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_mean_hu_per_slice.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
-      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+      "sha256": "3cea9271b0e6c9c86db86e1ac189c9da2609fa8a8af74a4849a886049b100539"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_pixel_hu.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
-      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+      "sha256": "d69cc5e3bcc979d6c1374831f735a1833a58817d940a290ad12d255e0ab34e81"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\bland_altman.png",
       "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
-      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+      "sha256": "5f6aec34c86c0a7c0decd9e4146e17a2268686015e979bdc3ea6579ec7a4ff7e"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_mean_hu_per_slice.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
-      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+      "sha256": "3cea9271b0e6c9c86db86e1ac189c9da2609fa8a8af74a4849a886049b100539"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\scatter_pixel_hu.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
-      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+      "sha256": "d69cc5e3bcc979d6c1374831f735a1833a58817d940a290ad12d255e0ab34e81"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\bland_altman.png",
       "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
-      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+      "sha256": "5f6aec34c86c0a7c0decd9e4146e17a2268686015e979bdc3ea6579ec7a4ff7e"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_mean_hu_per_slice.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
-      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+      "sha256": "3cea9271b0e6c9c86db86e1ac189c9da2609fa8a8af74a4849a886049b100539"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_pixel_hu.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
-      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+      "sha256": "d69cc5e3bcc979d6c1374831f735a1833a58817d940a290ad12d255e0ab34e81"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\bland_altman.png",
       "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
-      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+      "sha256": "5f6aec34c86c0a7c0decd9e4146e17a2268686015e979bdc3ea6579ec7a4ff7e"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_mean_hu_per_slice.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
-      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+      "sha256": "3cea9271b0e6c9c86db86e1ac189c9da2609fa8a8af74a4849a886049b100539"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_pixel_hu.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
-      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+      "sha256": "d69cc5e3bcc979d6c1374831f735a1833a58817d940a290ad12d255e0ab34e81"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\bland_altman.png",
       "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
-      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+      "sha256": "5f6aec34c86c0a7c0decd9e4146e17a2268686015e979bdc3ea6579ec7a4ff7e"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_mean_hu_per_slice.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
-      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+      "sha256": "3cea9271b0e6c9c86db86e1ac189c9da2609fa8a8af74a4849a886049b100539"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\scatter_pixel_hu.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
-      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+      "sha256": "d69cc5e3bcc979d6c1374831f735a1833a58817d940a290ad12d255e0ab34e81"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\bland_altman.png",
       "destination": "Figures\\Generated\\evaluation\\bland-altman-4425545f.png",
-      "sha256": "da3a08454c503ad8a348b27e4504141fbb9b9700b166eba0f315705884a4fc89"
+      "sha256": "5f6aec34c86c0a7c0decd9e4146e17a2268686015e979bdc3ea6579ec7a4ff7e"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_mean_hu_per_slice.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-mean-hu-per-slice-692540dc.png",
-      "sha256": "621447603c05646b0bc7947b04c4b98b6aae871eaad1614c1c35e261876deb75"
+      "sha256": "3cea9271b0e6c9c86db86e1ac189c9da2609fa8a8af74a4849a886049b100539"
     },
     {
       "category": "scatter",
       "source": "outputs\\scatter_bland_altman\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\scatter_pixel_hu.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-42c5f11b.png",
-      "sha256": "a5201d129da087128a9cca36e2d7f48f8b879f195872cd8f4bf7c5b3cc2feb14"
+      "sha256": "d69cc5e3bcc979d6c1374831f735a1833a58817d940a290ad12d255e0ab34e81"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_1063_body_2640.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
+      "sha256": "6d745ac624df576579328ace8c57e97fba18ad4cd6ad187c90c16b00129bcdb5"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_199_body_2163.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
+      "sha256": "663fbc247357a308a84417479ac5f0586b41658873f1910e0e1a7a1777548a51"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_712_body_11945.png",
       "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
-      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+      "sha256": "cbef41cb9d4907db850c9fabc2964d7ccd56839a367f104bffb3505af83df0e0"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_713_body_11946.png",
       "destination": "Figures\\Generated\\evaluation\\pair-713-body-11946-55a6345d.png",
-      "sha256": "61ca963867a2889afc396ecfab4ee38b3c88abdcf14a5e3c05dfd5abc614cdab"
+      "sha256": "8039a788e8b9035886d9c9551a75c54789803e44f54ef60f062a76f12c8e484b"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_714_body_11947.png",
       "destination": "Figures\\Generated\\evaluation\\pair-714-body-11947-16e911ee.png",
-      "sha256": "24d5832766cd26e1f1e78202e56aee37a9d03e693cab954631978985f342a9e7"
+      "sha256": "1e11fd61bdbf43ac7fbb7cd48baabd06838a18c5da840dfd561386d30f5154ed"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_715_body_11948.png",
       "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
-      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+      "sha256": "740ceeccc27abd1b97bc668cda4fb67839ac9622cf213072a4a1cfa82e9f7abd"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_716_body_11949.png",
       "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
-      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+      "sha256": "d9658c8e2db81b1279f1a104f0a50e27634abe3e411bdbcecf31f4ad5af06927"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_717_body_11950.png",
       "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
-      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+      "sha256": "8496954b22fbf24ae54fca58d4976dfb9a1616ffb4e7c2ec42ecc80cddd5eb6c"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_718_body_11951.png",
       "destination": "Figures\\Generated\\evaluation\\pair-718-body-11951-3498d986.png",
-      "sha256": "1ecad89e2fabe7421ae9eafeee58f5f2462f76dac4340df9a6f2b28749878cf9"
+      "sha256": "410a26dac00e48cf8648f873730e5841d0e6850eaf18774240e3d900a82d4246"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_719_body_11952.png",
       "destination": "Figures\\Generated\\evaluation\\pair-719-body-11952-a364b6e7.png",
-      "sha256": "d3279219cc42e7763378d460b3733f993a0de04d622f90e86f9d3a1e5c13f57a"
+      "sha256": "0d0709397d2f0a399709c04d974202ab788164bc2624c5b7d0bb790f5173fffc"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_721_body_11954.png",
       "destination": "Figures\\Generated\\evaluation\\pair-721-body-11954-4ff679dd.png",
-      "sha256": "a514d36b4b422b0515a97f17f7c06ccd98283f519a8ab386caf3e9c2004da869"
+      "sha256": "faffed68f5d8acba962efa92af2791210af172cde29b8609e486c681e84385bf"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_722_body_11955.png",
       "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
-      "sha256": "a02f87319458b11955fcb602ca7cfbd5907078e53fc58318a88a8289baad7e64"
+      "sha256": "fa1bbcca956debb9de5dd5b63edd9328934e85f33e77510bfe40389d438a262f"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_723_body_11956.png",
       "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
-      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+      "sha256": "cde55cedea888ceb859a6a8a126fa8a15af094b3e201331a5f49e433aca66bae"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_724_body_11957.png",
       "destination": "Figures\\Generated\\evaluation\\pair-724-body-11957-bcea2035.png",
-      "sha256": "966b5e9d930b9199b2ff55c8d07591fa6a22f26b3dfdee5d8298a943e8bac186"
+      "sha256": "35ea18f23a969937fc95f29d9ee2239afd54225a3a4d35a3258193c3f01d252a"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\pair_727_body_11960.png",
       "destination": "Figures\\Generated\\evaluation\\pair-727-body-11960-bae7897c.png",
-      "sha256": "1d9e39a0317e560a45ed3acea603f454ccf55a0837ed6fd3e2d6af7072c32e44"
+      "sha256": "3b421d4599d2e59e1d023b9668d0c3f6a64b28ee37fe8ffdcfd3877bc0ce36d8"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\worst_cases_grid.png",
+      "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
+      "sha256": "4b0758eda9a0fbae802e1c2c8db60c33db13f49d2f99b37b1cf357347dc874d3"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_1063_body_2640.png",
       "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
-      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+      "sha256": "6d745ac624df576579328ace8c57e97fba18ad4cd6ad187c90c16b00129bcdb5"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_1259_head_1156.png",
       "destination": "Figures\\Generated\\evaluation\\pair-1259-head-1156-2f91f82c.png",
-      "sha256": "f6b1bb0c1cb525e3e7f8bf4da2f2ecdd58d9b4d634c4bac4eaae0cedfdab2923"
+      "sha256": "ccfd2f56e20620e4fcf27ec1fc2990909aa18cdf3688476977b7720997ae02d1"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_199_body_2163.png",
       "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
-      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+      "sha256": "663fbc247357a308a84417479ac5f0586b41658873f1910e0e1a7a1777548a51"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_258_body_9241.png",
       "destination": "Figures\\Generated\\evaluation\\pair-258-body-9241-1de753be.png",
-      "sha256": "104308638c8077092c4fdce733eba573de5f72172c07e1dea01b9a698b0a98cc"
+      "sha256": "b56072a4bc53d5b82a31a98b4216069bb428f70a505cfe39e6b6e546a32cd6cb"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_712_body_11945.png",
       "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
-      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+      "sha256": "cbef41cb9d4907db850c9fabc2964d7ccd56839a367f104bffb3505af83df0e0"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_714_body_11947.png",
       "destination": "Figures\\Generated\\evaluation\\pair-714-body-11947-16e911ee.png",
-      "sha256": "24d5832766cd26e1f1e78202e56aee37a9d03e693cab954631978985f342a9e7"
+      "sha256": "1e11fd61bdbf43ac7fbb7cd48baabd06838a18c5da840dfd561386d30f5154ed"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_715_body_11948.png",
       "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
-      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+      "sha256": "740ceeccc27abd1b97bc668cda4fb67839ac9622cf213072a4a1cfa82e9f7abd"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_716_body_11949.png",
       "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
-      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+      "sha256": "d9658c8e2db81b1279f1a104f0a50e27634abe3e411bdbcecf31f4ad5af06927"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_717_body_11950.png",
       "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
-      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+      "sha256": "8496954b22fbf24ae54fca58d4976dfb9a1616ffb4e7c2ec42ecc80cddd5eb6c"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_718_body_11951.png",
       "destination": "Figures\\Generated\\evaluation\\pair-718-body-11951-3498d986.png",
-      "sha256": "1ecad89e2fabe7421ae9eafeee58f5f2462f76dac4340df9a6f2b28749878cf9"
+      "sha256": "410a26dac00e48cf8648f873730e5841d0e6850eaf18774240e3d900a82d4246"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_722_body_11955.png",
       "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
-      "sha256": "a02f87319458b11955fcb602ca7cfbd5907078e53fc58318a88a8289baad7e64"
+      "sha256": "fa1bbcca956debb9de5dd5b63edd9328934e85f33e77510bfe40389d438a262f"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_723_body_11956.png",
       "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
-      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+      "sha256": "cde55cedea888ceb859a6a8a126fa8a15af094b3e201331a5f49e433aca66bae"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_726_body_11959.png",
       "destination": "Figures\\Generated\\evaluation\\pair-726-body-11959-9cfaa280.png",
-      "sha256": "13c9ea0b1bfc3de57653ed7ea91df46de34cd0cedec154a48d214a11fd3a8ac9"
+      "sha256": "45cc65d15d2837d781739d61d633ad976fa12822dc40fa0229c2d4a0aa7c5b1a"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_727_body_11960.png",
       "destination": "Figures\\Generated\\evaluation\\pair-727-body-11960-bae7897c.png",
-      "sha256": "1d9e39a0317e560a45ed3acea603f454ccf55a0837ed6fd3e2d6af7072c32e44"
+      "sha256": "3b421d4599d2e59e1d023b9668d0c3f6a64b28ee37fe8ffdcfd3877bc0ce36d8"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\pair_731_body_11964.png",
       "destination": "Figures\\Generated\\evaluation\\pair-731-body-11964-89c6310e.png",
-      "sha256": "55a25c7bdec0c53dd3ad879b8fbbebecdf2590901ec4b9ac47bc2a1b99d05f43"
+      "sha256": "b300503d4bb94fa5a2e21af6a94412931d235ed2236b9b8ac87a53b323aaee59"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\worst_cases_grid.png",
       "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
-      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+      "sha256": "4b0758eda9a0fbae802e1c2c8db60c33db13f49d2f99b37b1cf357347dc874d3"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_1063_body_2640.png",
       "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
-      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+      "sha256": "6d745ac624df576579328ace8c57e97fba18ad4cd6ad187c90c16b00129bcdb5"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_199_body_2163.png",
       "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
-      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+      "sha256": "663fbc247357a308a84417479ac5f0586b41658873f1910e0e1a7a1777548a51"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_712_body_11945.png",
       "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
-      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+      "sha256": "cbef41cb9d4907db850c9fabc2964d7ccd56839a367f104bffb3505af83df0e0"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_713_body_11946.png",
       "destination": "Figures\\Generated\\evaluation\\pair-713-body-11946-55a6345d.png",
-      "sha256": "61ca963867a2889afc396ecfab4ee38b3c88abdcf14a5e3c05dfd5abc614cdab"
+      "sha256": "8039a788e8b9035886d9c9551a75c54789803e44f54ef60f062a76f12c8e484b"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_714_body_11947.png",
       "destination": "Figures\\Generated\\evaluation\\pair-714-body-11947-16e911ee.png",
-      "sha256": "24d5832766cd26e1f1e78202e56aee37a9d03e693cab954631978985f342a9e7"
+      "sha256": "1e11fd61bdbf43ac7fbb7cd48baabd06838a18c5da840dfd561386d30f5154ed"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_715_body_11948.png",
       "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
-      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+      "sha256": "740ceeccc27abd1b97bc668cda4fb67839ac9622cf213072a4a1cfa82e9f7abd"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_716_body_11949.png",
       "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
-      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+      "sha256": "d9658c8e2db81b1279f1a104f0a50e27634abe3e411bdbcecf31f4ad5af06927"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_717_body_11950.png",
       "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
-      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+      "sha256": "8496954b22fbf24ae54fca58d4976dfb9a1616ffb4e7c2ec42ecc80cddd5eb6c"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_718_body_11951.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-718-body-11951-3498d986.png",
+      "sha256": "410a26dac00e48cf8648f873730e5841d0e6850eaf18774240e3d900a82d4246"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_721_body_11954.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-721-body-11954-4ff679dd.png",
+      "sha256": "faffed68f5d8acba962efa92af2791210af172cde29b8609e486c681e84385bf"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_722_body_11955.png",
       "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
-      "sha256": "a02f87319458b11955fcb602ca7cfbd5907078e53fc58318a88a8289baad7e64"
+      "sha256": "fa1bbcca956debb9de5dd5b63edd9328934e85f33e77510bfe40389d438a262f"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_723_body_11956.png",
       "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
-      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+      "sha256": "cde55cedea888ceb859a6a8a126fa8a15af094b3e201331a5f49e433aca66bae"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_724_body_11957.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-724-body-11957-bcea2035.png",
+      "sha256": "35ea18f23a969937fc95f29d9ee2239afd54225a3a4d35a3258193c3f01d252a"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_727_body_11960.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-727-body-11960-bae7897c.png",
+      "sha256": "3b421d4599d2e59e1d023b9668d0c3f6a64b28ee37fe8ffdcfd3877bc0ce36d8"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\pair_731_body_11964.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-731-body-11964-89c6310e.png",
+      "sha256": "b300503d4bb94fa5a2e21af6a94412931d235ed2236b9b8ac87a53b323aaee59"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\worst_cases_grid.png",
       "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
-      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+      "sha256": "4b0758eda9a0fbae802e1c2c8db60c33db13f49d2f99b37b1cf357347dc874d3"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_1063_body_2640.png",
       "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
-      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+      "sha256": "6d745ac624df576579328ace8c57e97fba18ad4cd6ad187c90c16b00129bcdb5"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_199_body_2163.png",
       "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
-      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+      "sha256": "663fbc247357a308a84417479ac5f0586b41658873f1910e0e1a7a1777548a51"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_258_body_9241.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-258-body-9241-1de753be.png",
+      "sha256": "b56072a4bc53d5b82a31a98b4216069bb428f70a505cfe39e6b6e546a32cd6cb"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_712_body_11945.png",
       "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
-      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+      "sha256": "cbef41cb9d4907db850c9fabc2964d7ccd56839a367f104bffb3505af83df0e0"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_714_body_11947.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-714-body-11947-16e911ee.png",
+      "sha256": "1e11fd61bdbf43ac7fbb7cd48baabd06838a18c5da840dfd561386d30f5154ed"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_715_body_11948.png",
       "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
-      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+      "sha256": "740ceeccc27abd1b97bc668cda4fb67839ac9622cf213072a4a1cfa82e9f7abd"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_716_body_11949.png",
       "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
-      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+      "sha256": "d9658c8e2db81b1279f1a104f0a50e27634abe3e411bdbcecf31f4ad5af06927"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_717_body_11950.png",
       "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
-      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+      "sha256": "8496954b22fbf24ae54fca58d4976dfb9a1616ffb4e7c2ec42ecc80cddd5eb6c"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_718_body_11951.png",
       "destination": "Figures\\Generated\\evaluation\\pair-718-body-11951-3498d986.png",
-      "sha256": "1ecad89e2fabe7421ae9eafeee58f5f2462f76dac4340df9a6f2b28749878cf9"
+      "sha256": "410a26dac00e48cf8648f873730e5841d0e6850eaf18774240e3d900a82d4246"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_719_body_11952.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-719-body-11952-a364b6e7.png",
+      "sha256": "0d0709397d2f0a399709c04d974202ab788164bc2624c5b7d0bb790f5173fffc"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_722_body_11955.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
+      "sha256": "fa1bbcca956debb9de5dd5b63edd9328934e85f33e77510bfe40389d438a262f"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_723_body_11956.png",
       "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
-      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+      "sha256": "cde55cedea888ceb859a6a8a126fa8a15af094b3e201331a5f49e433aca66bae"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_727_body_11960.png",
       "destination": "Figures\\Generated\\evaluation\\pair-727-body-11960-bae7897c.png",
-      "sha256": "1d9e39a0317e560a45ed3acea603f454ccf55a0837ed6fd3e2d6af7072c32e44"
+      "sha256": "3b421d4599d2e59e1d023b9668d0c3f6a64b28ee37fe8ffdcfd3877bc0ce36d8"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_729_body_11962.png",
       "destination": "Figures\\Generated\\evaluation\\pair-729-body-11962-6df7c66a.png",
-      "sha256": "88ccd5c34e3d7d6f2f225cbc449ea27b30ece6082112db6ea8338a15f9219315"
+      "sha256": "7954aaebc8a0a699ef4e7adcd3bd9b61bc97af3e6488fcb0f621bee6045ee610"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\pair_731_body_11964.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-731-body-11964-89c6310e.png",
+      "sha256": "b300503d4bb94fa5a2e21af6a94412931d235ed2236b9b8ac87a53b323aaee59"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\worst_cases_grid.png",
       "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
-      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+      "sha256": "4b0758eda9a0fbae802e1c2c8db60c33db13f49d2f99b37b1cf357347dc874d3"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_1063_body_2640.png",
       "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
-      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+      "sha256": "6d745ac624df576579328ace8c57e97fba18ad4cd6ad187c90c16b00129bcdb5"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_197_body_2161.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-197-body-2161-5d41ad6c.png",
+      "sha256": "af5f5e954a58c6d2fbcaa88bf08ad04875376fa0451bbbe70166ae941f76ed9f"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_199_body_2163.png",
       "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
-      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+      "sha256": "663fbc247357a308a84417479ac5f0586b41658873f1910e0e1a7a1777548a51"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_258_body_9241.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-258-body-9241-1de753be.png",
+      "sha256": "b56072a4bc53d5b82a31a98b4216069bb428f70a505cfe39e6b6e546a32cd6cb"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_712_body_11945.png",
       "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
-      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+      "sha256": "cbef41cb9d4907db850c9fabc2964d7ccd56839a367f104bffb3505af83df0e0"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_714_body_11947.png",
       "destination": "Figures\\Generated\\evaluation\\pair-714-body-11947-16e911ee.png",
-      "sha256": "24d5832766cd26e1f1e78202e56aee37a9d03e693cab954631978985f342a9e7"
+      "sha256": "1e11fd61bdbf43ac7fbb7cd48baabd06838a18c5da840dfd561386d30f5154ed"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_715_body_11948.png",
       "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
-      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+      "sha256": "740ceeccc27abd1b97bc668cda4fb67839ac9622cf213072a4a1cfa82e9f7abd"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_716_body_11949.png",
       "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
-      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+      "sha256": "d9658c8e2db81b1279f1a104f0a50e27634abe3e411bdbcecf31f4ad5af06927"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_717_body_11950.png",
       "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
-      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+      "sha256": "8496954b22fbf24ae54fca58d4976dfb9a1616ffb4e7c2ec42ecc80cddd5eb6c"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_718_body_11951.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-718-body-11951-3498d986.png",
+      "sha256": "410a26dac00e48cf8648f873730e5841d0e6850eaf18774240e3d900a82d4246"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_719_body_11952.png",
       "destination": "Figures\\Generated\\evaluation\\pair-719-body-11952-a364b6e7.png",
-      "sha256": "d3279219cc42e7763378d460b3733f993a0de04d622f90e86f9d3a1e5c13f57a"
+      "sha256": "0d0709397d2f0a399709c04d974202ab788164bc2624c5b7d0bb790f5173fffc"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_722_body_11955.png",
       "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
-      "sha256": "a02f87319458b11955fcb602ca7cfbd5907078e53fc58318a88a8289baad7e64"
+      "sha256": "fa1bbcca956debb9de5dd5b63edd9328934e85f33e77510bfe40389d438a262f"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_723_body_11956.png",
       "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
-      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+      "sha256": "cde55cedea888ceb859a6a8a126fa8a15af094b3e201331a5f49e433aca66bae"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_726_body_11959.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-726-body-11959-9cfaa280.png",
+      "sha256": "45cc65d15d2837d781739d61d633ad976fa12822dc40fa0229c2d4a0aa7c5b1a"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\pair_727_body_11960.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-727-body-11960-bae7897c.png",
+      "sha256": "3b421d4599d2e59e1d023b9668d0c3f6a64b28ee37fe8ffdcfd3877bc0ce36d8"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\worst_cases_grid.png",
       "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
-      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+      "sha256": "4b0758eda9a0fbae802e1c2c8db60c33db13f49d2f99b37b1cf357347dc874d3"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_1063_body_2640.png",
       "destination": "Figures\\Generated\\evaluation\\pair-1063-body-2640-fea71b11.png",
-      "sha256": "be6ba08fc0241298fc39ee724990f74b1705faf9f20cf51b646c61ba536c10c5"
+      "sha256": "6d745ac624df576579328ace8c57e97fba18ad4cd6ad187c90c16b00129bcdb5"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_199_body_2163.png",
       "destination": "Figures\\Generated\\evaluation\\pair-199-body-2163-e9fbf07f.png",
-      "sha256": "2d5aa5007331e62aa8b1b5a6ec99c2366e31173f1e662d1b3d1811404bb80437"
+      "sha256": "663fbc247357a308a84417479ac5f0586b41658873f1910e0e1a7a1777548a51"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_258_body_9241.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-258-body-9241-1de753be.png",
+      "sha256": "b56072a4bc53d5b82a31a98b4216069bb428f70a505cfe39e6b6e546a32cd6cb"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_361_body_2578.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-361-body-2578-2c969558.png",
+      "sha256": "d648cc849e8a49d5cf99ec657230b89ddd0d4f2da196bdb87ad3976189343f41"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_362_body_2582.png",
       "destination": "Figures\\Generated\\evaluation\\pair-362-body-2582-061f91f6.png",
-      "sha256": "9f343f5d1089879ca214a1a6d0f59afeb960b5d2aaa6567c904504ac8e6b0cbb"
+      "sha256": "9e9693e0f35f1568f33ce8ba4e5d03066267882a4755d71a50436efd92462006"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_712_body_11945.png",
       "destination": "Figures\\Generated\\evaluation\\pair-712-body-11945-9fc99096.png",
-      "sha256": "ea5a886c8783b9ec14ac09f206f46fab20c759a264a84cb1969d7631927f35ed"
+      "sha256": "cbef41cb9d4907db850c9fabc2964d7ccd56839a367f104bffb3505af83df0e0"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_715_body_11948.png",
       "destination": "Figures\\Generated\\evaluation\\pair-715-body-11948-973c839d.png",
-      "sha256": "7c973bf83adda6ccad90c8f4948bf958b896dfd2c975814949df6a9e64b3f55e"
+      "sha256": "740ceeccc27abd1b97bc668cda4fb67839ac9622cf213072a4a1cfa82e9f7abd"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_716_body_11949.png",
       "destination": "Figures\\Generated\\evaluation\\pair-716-body-11949-998c17d3.png",
-      "sha256": "06703d60601e85fda04fbfead8a1937c54ef3e8a3af1abb5adf1888e30220c70"
+      "sha256": "d9658c8e2db81b1279f1a104f0a50e27634abe3e411bdbcecf31f4ad5af06927"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_717_body_11950.png",
       "destination": "Figures\\Generated\\evaluation\\pair-717-body-11950-b32d91f5.png",
-      "sha256": "ac1a43718771fb7893c4e61baf52fdc6eaa755ddf0d23a0fc0a4160c7212dc35"
+      "sha256": "8496954b22fbf24ae54fca58d4976dfb9a1616ffb4e7c2ec42ecc80cddd5eb6c"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_719_body_11952.png",
       "destination": "Figures\\Generated\\evaluation\\pair-719-body-11952-a364b6e7.png",
-      "sha256": "d3279219cc42e7763378d460b3733f993a0de04d622f90e86f9d3a1e5c13f57a"
+      "sha256": "0d0709397d2f0a399709c04d974202ab788164bc2624c5b7d0bb790f5173fffc"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_722_body_11955.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-722-body-11955-b355c00a.png",
+      "sha256": "fa1bbcca956debb9de5dd5b63edd9328934e85f33e77510bfe40389d438a262f"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_723_body_11956.png",
       "destination": "Figures\\Generated\\evaluation\\pair-723-body-11956-0f83a94b.png",
-      "sha256": "726bf675b6c902e1d91df08d71420405490fb30e6aa5cc898d3166d0492f7063"
+      "sha256": "cde55cedea888ceb859a6a8a126fa8a15af094b3e201331a5f49e433aca66bae"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_726_body_11959.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-726-body-11959-9cfaa280.png",
+      "sha256": "45cc65d15d2837d781739d61d633ad976fa12822dc40fa0229c2d4a0aa7c5b1a"
+    },
+    {
+      "category": "worst_cases",
+      "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_727_body_11960.png",
+      "destination": "Figures\\Generated\\evaluation\\pair-727-body-11960-bae7897c.png",
+      "sha256": "3b421d4599d2e59e1d023b9668d0c3f6a64b28ee37fe8ffdcfd3877bc0ce36d8"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\pair_729_body_11962.png",
       "destination": "Figures\\Generated\\evaluation\\pair-729-body-11962-6df7c66a.png",
-      "sha256": "88ccd5c34e3d7d6f2f225cbc449ea27b30ece6082112db6ea8338a15f9219315"
+      "sha256": "7954aaebc8a0a699ef4e7adcd3bd9b61bc97af3e6488fcb0f621bee6045ee610"
     },
     {
       "category": "worst_cases",
       "source": "outputs\\worst_cases_vis\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\worst_cases_grid.png",
       "destination": "Figures\\Generated\\evaluation\\worst-cases-grid-e2073a5c.png",
-      "sha256": "e61d229f5acd808f06548ec0022d58a589f567b5b8ca9d5810ff8f1a0a751193"
+      "sha256": "4b0758eda9a0fbae802e1c2c8db60c33db13f49d2f99b37b1cf357347dc874d3"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_1337\\comparison_test\\comparison_bar_charts.png",
       "destination": "Figures\\Generated\\paired\\comparison-bar-charts-c89cdffe.png",
-      "sha256": "b4adf27235a671c2ee711878916263059f1dba7e8216df903b603b44d248544d"
+      "sha256": "e11cb0de9e4d9d240617761f00bbb05e067b09d60e544a580c99b3f2cb989aaf"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_1337\\comparison_test\\comparison_scatter_tradeoff.png",
       "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-63875aed.png",
-      "sha256": "8b4005ec3db27b925942d0d1b0a930b5bf4f4c1d28dade8d6c96b8f717bb968e"
+      "sha256": "45ff97b8cc74598e135c38de253b7bbaf454cd9f9471316a416c6323d902ea7a"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_1337\\comparison_val\\comparison_bar_charts.png",
       "destination": "Figures\\Generated\\paired\\comparison-bar-charts-a6234831.png",
-      "sha256": "5115b8552b0a5981082cd245ac0903b031590adda3f7b5285680d970fe362566"
+      "sha256": "1da73480b23403a151038bb3b4e6c4b09e4b227ddb5382b586486abd1986df89"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_1337\\comparison_val\\comparison_scatter_tradeoff.png",
       "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-75c6cf22.png",
-      "sha256": "a7573205d1489263b7b2f1d98cbe127804f3bc04b8f9da685dbf74520d789a17"
+      "sha256": "30d78edf2a85fef0d77b219fcea3e2a1c413cd063a0a82943d1e43cc39cd5ec0"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_bar_charts.png",
       "destination": "Figures\\Generated\\paired\\comparison-bar-charts-3254d43f.png",
-      "sha256": "a55db0058d51536ee26eb564a806250ecafeadd9c6c2bbcd137cd343f122f4a2"
+      "sha256": "1b2b60e92b139fcfe39e8bedd8771d9eefb742e4dbc482c40640857dae7b029b"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_scatter_tradeoff.png",
       "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-ecd46a35.png",
-      "sha256": "c81c9aebed2a2bb1a815ef800d79abcee704760bce92569c6ea766443802109c"
+      "sha256": "73b8f74339fe7bde6620ec965958d878052809d82a42686f51394ba315bd949b"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_2024\\comparison_val\\comparison_bar_charts.png",
       "destination": "Figures\\Generated\\paired\\comparison-bar-charts-7e5e6605.png",
-      "sha256": "cd264f0c864d6654fa3ae9807e53cc33d91156a41eff4fd070f92b48daea5a92"
+      "sha256": "4c973caca57aaa5551f3b1e75fe181da3be6729fc3f4c88c39b835499203e3f3"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_2024\\comparison_val\\comparison_scatter_tradeoff.png",
       "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-7710b9c3.png",
-      "sha256": "d208774ef85baf68df04ab98714109d6f09c426e2bfbd755aa51ae6afee1cc9e"
+      "sha256": "d3d2432e7428ed72639e3af40079448636ed89bf6a78a6f9215f6f62d75b5fa1"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_42\\comparison_test\\comparison_bar_charts.png",
       "destination": "Figures\\Generated\\paired\\comparison-bar-charts-04e44abd.png",
-      "sha256": "2e7e3d87c5c63797ce2d4da3594af44f8880e614bcbd4cb2bc2daed040373e61"
+      "sha256": "6abadaca07f1c4e90f978b708910dacc709d7343b5137b0006625fc16a1577c7"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_42\\comparison_test\\comparison_scatter_tradeoff.png",
       "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-fbd2724f.png",
-      "sha256": "392ba078f1270ffc8a602271f8c2b8891583e91d4d9ed751b8905ac9b85e21aa"
+      "sha256": "f173eab00c48e5fd4759e8366e1bfaf0bd2b581df4922012cdd0a0175499e2e0"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_42\\comparison_val\\comparison_bar_charts.png",
       "destination": "Figures\\Generated\\paired\\comparison-bar-charts-f32b459d.png",
-      "sha256": "92bedb80498c0df7e7ac2bf9a5103533f6c2f78bfc18259d7f5e5a9f1b68c67d"
+      "sha256": "f7ad6567a585de13cdced353d8d10852bc89697c5065fbd3590e1ff816edefb7"
     },
     {
       "category": "ablation",
       "source": "outputs\\ablation\\seed_42\\comparison_val\\comparison_scatter_tradeoff.png",
       "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-b30276ce.png",
-      "sha256": "ed81d913016f6c877252e7a282d8bd8485fe65d799ef17ea45d4ae1178a03cfc"
+      "sha256": "c038f295de455ed8c75ce880db16d38462237a53184beac2c5f95b7511581392"
     },
     {
       "category": "benchmark",
       "source": "outputs\\benchmark\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\benchmark_latency.png",
       "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
-      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+      "sha256": "d91576e1900b369b4f71410eec3cd6fda449a21387b95efbc46dec7a96ac9e69"
     },
     {
       "category": "benchmark",
       "source": "outputs\\benchmark\\seed_1337\\singlehead-044-0.9511-ssim_hu\\test\\benchmark_latency.png",
       "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
-      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+      "sha256": "d91576e1900b369b4f71410eec3cd6fda449a21387b95efbc46dec7a96ac9e69"
     },
     {
       "category": "benchmark",
       "source": "outputs\\benchmark\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\benchmark_latency.png",
       "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
-      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+      "sha256": "d91576e1900b369b4f71410eec3cd6fda449a21387b95efbc46dec7a96ac9e69"
     },
     {
       "category": "benchmark",
       "source": "outputs\\benchmark\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\benchmark_latency.png",
       "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
-      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+      "sha256": "d91576e1900b369b4f71410eec3cd6fda449a21387b95efbc46dec7a96ac9e69"
     },
     {
       "category": "benchmark",
       "source": "outputs\\benchmark\\seed_42\\dualhead-041-0.9494-img_out_ssim_hu\\test\\benchmark_latency.png",
       "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
-      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+      "sha256": "d91576e1900b369b4f71410eec3cd6fda449a21387b95efbc46dec7a96ac9e69"
     },
     {
       "category": "benchmark",
       "source": "outputs\\benchmark\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\benchmark_latency.png",
       "destination": "Figures\\Generated\\benchmark\\benchmark-latency-e02962ff.png",
-      "sha256": "fa3fb2844d8e894ae1846b5b736ccd8db463cd195b6678e1db373ec481292e6a"
+      "sha256": "d91576e1900b369b4f71410eec3cd6fda449a21387b95efbc46dec7a96ac9e69"
     },
     {
       "category": "seed_comparison",
       "source": "outputs\\seed_comparison\\test\\stability_seed_comparison.png",
       "destination": "Figures\\Generated\\evaluation\\stability-seed-comparison-39d600c0.png",
-      "sha256": "fc936f206cb1ae65f9e88e93950fbfd7942cfbfe3cc31c3efa0867a8f9d78c12"
+      "sha256": "882086fd7547efed8602d33ac2f00d76671a6bd3be8e5b21a558ee047e94eb8b"
     }
   ],
   "tables": {

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  17 AUG 2026 21:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  21 AUG 2026 19:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -89,11 +89,11 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 )
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 110.
+(fancyhdr)                Please consider using the `twoside' option on input line 112.
 
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 111.
+(fancyhdr)                Please consider using the `twoside' option on input line 113.
 
 (C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
@@ -1157,14 +1157,14 @@ LaTeX Font Info:    ... okay on input line 35.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
-* v-part:(T,H,B)=(85.35826pt, 680.02078pt, 79.6678pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=455.24411pt
-* \textheight=680.02078pt
+* \textheight=702.78308pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
-* \topmargin=-18.78552pt
+* \topmargin=-33.0119pt
 * \headheight=14.0pt
 * \headsep=19.8738pt
 * \topskip=11.0pt plus 5.0pt
@@ -1399,18 +1399,23 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 
 ]
-Overfull \hbox (34.05771pt too wide) in paragraph at lines 39--39
- [][] [][][]\T1/phv/m/n/10.95 Distribuicao de me-tri-cas e ana-lise de cor-re-la-cao: \T1/cmtt/m/n/10.95 boxplots_preservation_analysis.png\T1/phv/m/n/10.95 .[][] [][]  
+Overfull \hbox (45.37445pt too wide) in paragraph at lines 39--39
+ [][] [][][]\T1/phv/m/n/10.95 Distribuicao de me-tri-cas e ana-lise de cor-re-la-cao: \T1/cmtt/m/n/10.95 boxplot_global_psnr_distribution.pdf\T1/phv/m/n/10.95 .[][] [][]  
  []
 
 
-Overfull \hbox (84.98305pt too wide) in paragraph at lines 40--40
- [][] [][][]\T1/phv/m/n/10.95 Distribuicao de me-tri-cas e ana-lise de cor-re-la-cao: \T1/cmtt/m/n/10.95 correlation_preservation_vs_improvement.png\T1/phv/m/n/10.95 .[][] [][]  
+Overfull \hbox (45.37445pt too wide) in paragraph at lines 40--40
+ [][] [][][]\T1/phv/m/n/10.95 Distribuicao de me-tri-cas e ana-lise de cor-re-la-cao: \T1/cmtt/m/n/10.95 boxplot_global_psnr_distribution.png\T1/phv/m/n/10.95 .[][] [][]  
  []
 
 
-Overfull \hbox (5.76585pt too wide) in paragraph at lines 44--44
- [][] [][][]\T1/phv/m/n/10.95 Distribuicao de me-tri-cas e ana-lise de cor-re-la-cao: \T1/cmtt/m/n/10.95 scatter_baseline_vs_model.png\T1/phv/m/n/10.95 .[][] [][]  
+Overfull \hbox (45.37445pt too wide) in paragraph at lines 41--41
+ [][] [][][]\T1/phv/m/n/10.95 Distribuicao de me-tri-cas e ana-lise de cor-re-la-cao: \T1/cmtt/m/n/10.95 boxplot_global_ssim_distribution.pdf\T1/phv/m/n/10.95 .[][] [][]  
+ []
+
+
+Overfull \hbox (45.37445pt too wide) in paragraph at lines 42--42
+ [][] [][][]\T1/phv/m/n/10.95 Distribuicao de me-tri-cas e ana-lise de cor-re-la-cao: \T1/cmtt/m/n/10.95 boxplot_global_ssim_distribution.png\T1/phv/m/n/10.95 .[][] [][]  
  []
 
 )
@@ -1446,7 +1451,7 @@ Overfull \hbox (5.76585pt too wide) in paragraph at lines 44--44
 -----------------------------------------------------
  Dedicatory
 -----------------------------------------------------
-[13] [14]) (Chapters/Final/1.Introduction.tex
+[13]) (Chapters/Final/1.Introduction.tex
 Cap\'{\i }tulo 1.
 [1
 
@@ -1454,7 +1459,7 @@ Cap\'{\i }tulo 1.
 
 ]
 Package babel Info: 'portuguese' activates 'portuges' shorthands.
-(babel)             Reported on input line 25.
+(babel)             Reported on input line 26.
  [2] [3]) (Chapters/Final/2.Objectives.tex [4]
 Cap\'{\i }tulo 2.
 ) (Chapters/Final/3.RelatedWork.tex [5
@@ -1463,189 +1468,186 @@ Cap\'{\i }tulo 2.
 Cap\'{\i }tulo 3.
 [7
 
-] [8]) (Chapters/Final/4.MaterialsMethods.tex [9] [10]
+] [8]) (Chapters/Final/4.MaterialsMethods.tex [9]
 Cap\'{\i }tulo 4.
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 18.
 (C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-) [11
+) [10
 
-] [12] [13] [14] [15] [16] [17] [18] [19]
+] [11] [12] [13] [14] [15] [16] [17] [18]
 Overfull \hbox (1.7174pt too wide) in paragraph at lines 255--257
 \T1/phv/m/n/10.95 O pri-meiro mo-delo con-siste em uma ar-qui-te-tura ba-se-ada em [][][]U-Net[][] [[]], com-posta por \T1/phv/m/sl/10.95 encoder-
  []
 
-<Figures/Generated/materials/unet-single-compact-132d4a1a.png, id=989, 714.38895pt x 498.663pt>
+<Figures/Generated/materials/unet-single-compact-132d4a1a.png, id=1006, 714.38895pt x 498.663pt>
 File: Figures/Generated/materials/unet-single-compact-132d4a1a.png Graphic file (type png)
 <use Figures/Generated/materials/unet-single-compact-132d4a1a.png>
 Package pdftex.def Info: Figures/Generated/materials/unet-single-compact-132d4a1a.png  used on input line 260.
 (pdftex.def)             Requested size: 432.48051pt x 301.88606pt.
-[20] [21 <./Figures/Generated/materials/unet-single-compact-132d4a1a.png>]
-<Figures/Generated/materials/unet-dual-compact-8441faa2.png, id=1012, 714.38895pt x 498.663pt>
+[19]
+<Figures/Generated/materials/unet-dual-compact-8441faa2.png, id=1021, 714.38895pt x 498.663pt>
 File: Figures/Generated/materials/unet-dual-compact-8441faa2.png Graphic file (type png)
 <use Figures/Generated/materials/unet-dual-compact-8441faa2.png>
 Package pdftex.def Info: Figures/Generated/materials/unet-dual-compact-8441faa2.png  used on input line 277.
 (pdftex.def)             Requested size: 432.48051pt x 301.88606pt.
- [22 <./Figures/Generated/materials/unet-dual-compact-8441faa2.png>] [23] [24] [25]
-<Figures/roi_example_sample_0000.png, id=1066, 705.71655pt x 364.9635pt>
+ [20 <./Figures/Generated/materials/unet-single-compact-132d4a1a.png>] [21 <./Figures/Generated/materials/unet-dual-compact-8441faa2.png>] [22] [23] [24]
+<Figures/roi_example_sample_0000.png, id=1083, 705.71655pt x 364.9635pt>
 File: Figures/roi_example_sample_0000.png Graphic file (type png)
 <use Figures/roi_example_sample_0000.png>
-Package pdftex.def Info: Figures/roi_example_sample_0000.png  used on input line 361.
+Package pdftex.def Info: Figures/roi_example_sample_0000.png  used on input line 360.
 (pdftex.def)             Requested size: 400.61703pt x 207.18488pt.
-<Figures/roi_example_sample_0003.png, id=1067, 705.71655pt x 364.9635pt>
+<Figures/roi_example_sample_0003.png, id=1084, 705.71655pt x 364.9635pt>
 File: Figures/roi_example_sample_0003.png Graphic file (type png)
 <use Figures/roi_example_sample_0003.png>
-Package pdftex.def Info: Figures/roi_example_sample_0003.png  used on input line 362.
+Package pdftex.def Info: Figures/roi_example_sample_0003.png  used on input line 361.
 (pdftex.def)             Requested size: 400.61703pt x 207.18488pt.
-<Figures/roi_example_sample_0006.png, id=1068, 705.71655pt x 364.9635pt>
+<Figures/roi_example_sample_0006.png, id=1085, 705.71655pt x 364.9635pt>
 File: Figures/roi_example_sample_0006.png Graphic file (type png)
 <use Figures/roi_example_sample_0006.png>
-Package pdftex.def Info: Figures/roi_example_sample_0006.png  used on input line 363.
+Package pdftex.def Info: Figures/roi_example_sample_0006.png  used on input line 362.
 (pdftex.def)             Requested size: 400.61703pt x 207.18488pt.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 364.
+(Font)              scaled to size 5.21004pt on input line 363.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 364.
- [26]
-Overfull \vbox (7.53384pt too high) has occurred while \output is active []
-
- [27 <./Figures/roi_example_sample_0000.png> <./Figures/roi_example_sample_0003.png> <./Figures/roi_example_sample_0006.png>] [28]) (Chapters/Final/5.Results.tex [29]
+(Font)              scaled to size 5.21004pt on input line 363.
+ [25] [26 <./Figures/roi_example_sample_0000.png> <./Figures/roi_example_sample_0003.png> <./Figures/roi_example_sample_0006.png>] [27]) (Chapters/Final/5.Results.tex [28]
 Cap\'{\i }tulo 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 10.
 
-[30
-
-]
-<Figures/ssim_distribution_full.pdf, id=1105, 505.89pt x 303.534pt>
+<Figures/ssim_distribution_full.pdf, id=1118, 505.89pt x 303.534pt>
 File: Figures/ssim_distribution_full.pdf Graphic file (type pdf)
 <use Figures/ssim_distribution_full.pdf>
 Package pdftex.def Info: Figures/ssim_distribution_full.pdf  used on input line 17.
 (pdftex.def)             Requested size: 455.24411pt x 273.15027pt.
-<Figures/ssim_distribution_zoom.pdf, id=1106, 505.89pt x 303.534pt>
+<Figures/ssim_distribution_zoom.pdf, id=1119, 505.89pt x 303.534pt>
 File: Figures/ssim_distribution_zoom.pdf Graphic file (type pdf)
 <use Figures/ssim_distribution_zoom.pdf>
 Package pdftex.def Info: Figures/ssim_distribution_zoom.pdf  used on input line 18.
 (pdftex.def)             Requested size: 455.24411pt x 273.15027pt.
- [31 <./Figures/ssim_distribution_full.pdf> <./Figures/ssim_distribution_zoom.pdf>]
-<Figures/ssim_ecdf_final.pdf, id=1234, 505.89pt x 325.215pt>
+[29
+
+] [30 <./Figures/ssim_distribution_full.pdf> <./Figures/ssim_distribution_zoom.pdf>]
+<Figures/ssim_ecdf_final.pdf, id=1251, 505.89pt x 325.215pt>
 File: Figures/ssim_ecdf_final.pdf Graphic file (type pdf)
 <use Figures/ssim_ecdf_final.pdf>
 Package pdftex.def Info: Figures/ssim_ecdf_final.pdf  used on input line 30.
 (pdftex.def)             Requested size: 455.24411pt x 292.66101pt.
- [32]
-<Figures/image4.png, id=1240, 1169.87062pt x 654.94687pt>
+<Figures/image4.png, id=1253, 1169.87062pt x 654.94687pt>
 File: Figures/image4.png Graphic file (type png)
 <use Figures/image4.png>
 Package pdftex.def Info: Figures/image4.png  used on input line 37.
 (pdftex.def)             Requested size: 318.66948pt x 178.40703pt.
-<Figures/image5.png, id=1241, 1158.57843pt x 642.14906pt>
+<Figures/image5.png, id=1254, 1158.57843pt x 642.14906pt>
 File: Figures/image5.png Graphic file (type png)
 <use Figures/image5.png>
 Package pdftex.def Info: Figures/image5.png  used on input line 38.
 (pdftex.def)             Requested size: 318.66948pt x 176.62582pt.
-<Figures/image6.png, id=1242, 1156.32pt x 649.67719pt>
+<Figures/image6.png, id=1255, 1156.32pt x 649.67719pt>
 File: Figures/image6.png Graphic file (type png)
 <use Figures/image6.png>
 Package pdftex.def Info: Figures/image6.png  used on input line 39.
 (pdftex.def)             Requested size: 318.66948pt x 179.04343pt.
- [33 <./Figures/ssim_ecdf_final.pdf>] [34 <./Figures/image4.png> <./Figures/image5.png> <./Figures/image6.png>]
-<Figures/image1.png, id=1314, 1044.90375pt x 572.89032pt>
+ [31 <./Figures/ssim_ecdf_final.pdf>] [32 <./Figures/image4.png> <./Figures/image5.png> <./Figures/image6.png>]
+<Figures/image1.png, id=1326, 1044.90375pt x 572.89032pt>
 File: Figures/image1.png Graphic file (type png)
 <use Figures/image1.png>
 Package pdftex.def Info: Figures/image1.png  used on input line 49.
 (pdftex.def)             Requested size: 318.66948pt x 174.71817pt.
-<Figures/image2.png, id=1315, 1158.57843pt x 615.80063pt>
+<Figures/image2.png, id=1327, 1158.57843pt x 615.80063pt>
 File: Figures/image2.png Graphic file (type png)
 <use Figures/image2.png>
 Package pdftex.def Info: Figures/image2.png  used on input line 50.
 (pdftex.def)             Requested size: 318.66948pt x 169.37857pt.
-<Figures/image3.png, id=1316, 1162.3425pt x 560.0925pt>
+<Figures/image3.png, id=1328, 1162.3425pt x 560.0925pt>
 File: Figures/image3.png Graphic file (type png)
 <use Figures/image3.png>
 Package pdftex.def Info: Figures/image3.png  used on input line 51.
 (pdftex.def)             Requested size: 318.66948pt x 153.55159pt.
-<Figures/cosine_scatter_audited.pdf, id=1318, 505.89pt x 303.534pt>
+<Figures/cosine_scatter_audited.pdf, id=1330, 505.89pt x 303.534pt>
 File: Figures/cosine_scatter_audited.pdf Graphic file (type pdf)
 <use Figures/cosine_scatter_audited.pdf>
 Package pdftex.def Info: Figures/cosine_scatter_audited.pdf  used on input line 58.
 (pdftex.def)             Requested size: 455.24411pt x 273.15027pt.
- [35 <./Figures/image1.png> <./Figures/image2.png> <./Figures/image3.png>]
-<Figures/ssim_scatter_dist.pdf, id=1331, 505.89pt x 303.534pt>
+ [33 <./Figures/image1.png> <./Figures/image2.png> <./Figures/image3.png>]
+<Figures/ssim_scatter_dist.pdf, id=1343, 505.89pt x 303.534pt>
 File: Figures/ssim_scatter_dist.pdf Graphic file (type pdf)
 <use Figures/ssim_scatter_dist.pdf>
 Package pdftex.def Info: Figures/ssim_scatter_dist.pdf  used on input line 67.
 (pdftex.def)             Requested size: 455.24411pt x 273.15027pt.
- [36 <./Figures/cosine_scatter_audited.pdf>]
-<Figures/score_distribution.pdf, id=1396, 505.89pt x 303.534pt>
+ [34 <./Figures/cosine_scatter_audited.pdf>]
+<Figures/score_distribution.pdf, id=1409, 505.89pt x 303.534pt>
 File: Figures/score_distribution.pdf Graphic file (type pdf)
 <use Figures/score_distribution.pdf>
 Package pdftex.def Info: Figures/score_distribution.pdf  used on input line 80.
 (pdftex.def)             Requested size: 455.24411pt x 273.15027pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 81.
- [37 <./Figures/ssim_scatter_dist.pdf>] (Chapters/Final/Generated/Training.tex
-<Figures/Generated/training/training-curves-dualhead-6c252b4a.png, id=1462, 931.8012pt x 852.786pt>
-File: Figures/Generated/training/training-curves-dualhead-6c252b4a.png Graphic file (type png)
-<use Figures/Generated/training/training-curves-dualhead-6c252b4a.png>
-Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-6c252b4a.png  used on input line 4.
-(pdftex.def)             Requested size: 432.48051pt x 395.8127pt.
+ [35 <./Figures/ssim_scatter_dist.pdf>] (Chapters/Final/Generated/Training.tex
+<Figures/Generated/training/training-curves-singlehead-6422b5e2.pdf, id=1477, 487.89381pt x 637.74258pt>
+File: Figures/Generated/training/training-curves-singlehead-6422b5e2.pdf Graphic file (type pdf)
+<use Figures/Generated/training/training-curves-singlehead-6422b5e2.pdf>
+Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-6422b5e2.pdf  used on input line 5.
+(pdftex.def)             Requested size: 446.13727pt x 583.17844pt.
+<Figures/Generated/training/training-curves-dualhead-6c252b4a.pdf, id=1478, 487.45317pt x 780.83719pt>
+File: Figures/Generated/training/training-curves-dualhead-6c252b4a.pdf Graphic file (type pdf)
+<use Figures/Generated/training/training-curves-dualhead-6c252b4a.pdf>
+Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-6c252b4a.pdf  used on input line 12.
+(pdftex.def)             Requested size: 446.13727pt x 714.6735pt.
 
-Overfull \hbox (23.72438pt too wide) in paragraph at lines 88--7
-\T1/phv/m/sl/10.95 [A pre-en-cher: cur-vas de treino/validação e check-po-ints se-le-ci-o-na-dos pelo mo-ni-tor pré-especificado.]
- []
 
-<Figures/Generated/training/lr-schedule-48c434d9.png, id=1463, 569.0058pt x 279.444pt>
-File: Figures/Generated/training/lr-schedule-48c434d9.png Graphic file (type png)
-<use Figures/Generated/training/lr-schedule-48c434d9.png>
-Package pdftex.def Info: Figures/Generated/training/lr-schedule-48c434d9.png  used on input line 10.
-(pdftex.def)             Requested size: 432.48051pt x 212.3967pt.
-<Figures/Generated/training/training-curves-singlehead-6422b5e2.png, id=1464, 931.8012pt x 852.786pt>
-File: Figures/Generated/training/training-curves-singlehead-6422b5e2.png Graphic file (type png)
-<use Figures/Generated/training/training-curves-singlehead-6422b5e2.png>
-Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-6422b5e2.png  used on input line 16.
-(pdftex.def)             Requested size: 432.48051pt x 395.8127pt.
-<Figures/Generated/training/training-curves-dualhead-cce23466.png, id=1465, 931.8012pt x 852.786pt>
-File: Figures/Generated/training/training-curves-dualhead-cce23466.png Graphic file (type png)
-<use Figures/Generated/training/training-curves-dualhead-cce23466.png>
-Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-cce23466.png  used on input line 22.
-(pdftex.def)             Requested size: 432.48051pt x 395.8127pt.
-<Figures/Generated/training/lr-schedule-d244f000.png, id=1466, 569.0058pt x 279.444pt>
-File: Figures/Generated/training/lr-schedule-d244f000.png Graphic file (type png)
-<use Figures/Generated/training/lr-schedule-d244f000.png>
-Package pdftex.def Info: Figures/Generated/training/lr-schedule-d244f000.png  used on input line 28.
-(pdftex.def)             Requested size: 432.48051pt x 212.3967pt.
-<Figures/Generated/training/training-curves-singlehead-a27fad34.png, id=1467, 931.8012pt x 852.786pt>
-File: Figures/Generated/training/training-curves-singlehead-a27fad34.png Graphic file (type png)
-<use Figures/Generated/training/training-curves-singlehead-a27fad34.png>
-Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-a27fad34.png  used on input line 34.
-(pdftex.def)             Requested size: 432.48051pt x 395.8127pt.
-) [38 <./Figures/score_distribution.pdf>] [39 <./Figures/Generated/training/training-curves-dualhead-6c252b4a.png> <./Figures/Generated/training/lr-schedule-48c434d9.png>] [40 <./Figures/Generated/training/training-curves-singlehead-6422b5e2.png>] [41 <./Figures/Generated/training/training-curves-dualhead-cce23466.png> <./Figures/Generated/training/lr-schedule-d244f000.png>] [42 <./Figures/Generated/training/training-curves-singlehead-a27fad34.png>] (Chapters/Final/Generated/Evaluation.tex (Tables/Generated/internal_metrics.tex
-Overfull \hbox (27.61876pt too wide) in paragraph at lines 5--17
- [][] 
- []
+LaTeX Warning: Float too large for page by 38.89041pt on input line 15.
 
-)
-<Figures/Generated/evaluation/bland-altman-4425545f.png, id=1547, 641.7576pt x 424.4658pt>
+<Figures/Generated/training/training-curves-singlehead-a27fad34.pdf, id=1479, 488.19287pt x 637.74258pt>
+File: Figures/Generated/training/training-curves-singlehead-a27fad34.pdf Graphic file (type pdf)
+<use Figures/Generated/training/training-curves-singlehead-a27fad34.pdf>
+Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-a27fad34.pdf  used on input line 19.
+(pdftex.def)             Requested size: 446.13727pt x 582.80864pt.
+<Figures/Generated/training/training-curves-dualhead-cce23466.pdf, id=1480, 487.45317pt x 780.83719pt>
+File: Figures/Generated/training/training-curves-dualhead-cce23466.pdf Graphic file (type pdf)
+<use Figures/Generated/training/training-curves-dualhead-cce23466.pdf>
+Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-cce23466.pdf  used on input line 26.
+(pdftex.def)             Requested size: 446.13727pt x 714.6735pt.
+
+LaTeX Warning: Float too large for page by 38.89041pt on input line 29.
+
+<Figures/Generated/training/training-curves-singlehead-62c464ea.pdf, id=1481, 484.26106pt x 637.74258pt>
+File: Figures/Generated/training/training-curves-singlehead-62c464ea.pdf Graphic file (type pdf)
+<use Figures/Generated/training/training-curves-singlehead-62c464ea.pdf>
+Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-62c464ea.pdf  used on input line 33.
+(pdftex.def)             Requested size: 446.13727pt x 587.54771pt.
+<Figures/Generated/training/training-curves-dualhead-be08f04f.pdf, id=1482, 487.45317pt x 780.83719pt>
+File: Figures/Generated/training/training-curves-dualhead-be08f04f.pdf Graphic file (type pdf)
+<use Figures/Generated/training/training-curves-dualhead-be08f04f.pdf>
+Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-be08f04f.pdf  used on input line 40.
+(pdftex.def)             Requested size: 446.13727pt x 714.6735pt.
+
+LaTeX Warning: Float too large for page by 38.89041pt on input line 43.
+
+) [36 <./Figures/score_distribution.pdf>] [37 <./Figures/Generated/training/training-curves-singlehead-6422b5e2.pdf>] [38 <./Figures/Generated/training/training-curves-dualhead-6c252b4a.pdf>] [39 <./Figures/Generated/training/training-curves-singlehead-a27fad34.pdf>] [40 <./Figures/Generated/training/training-curves-dualhead-cce23466.pdf>] [41 <./Figures/Generated/training/training-curves-singlehead-62c464ea.pdf>] [42 <./Figures/Generated/training/training-curves-dualhead-be08f04f.pdf>] (Tables/Generated/best_validation_ssim.tex) (Tables/Generated/best_validation_psnr.tex) (Tables/Generated/mae_at_best_validation_ssim.tex) (Chapters/Final/Generated/Evaluation.tex (Tables/Generated/internal_metrics.tex) [43
+
+]
+<Figures/Generated/evaluation/bland-altman-4425545f.png, id=2205, 641.7576pt x 423.984pt>
 File: Figures/Generated/evaluation/bland-altman-4425545f.png Graphic file (type png)
 <use Figures/Generated/evaluation/bland-altman-4425545f.png>
 Package pdftex.def Info: Figures/Generated/evaluation/bland-altman-4425545f.png  used on input line 6.
-(pdftex.def)             Requested size: 432.48051pt x 286.04866pt.
-<Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png, id=1548, 1003.1076pt x 426.393pt>
+(pdftex.def)             Requested size: 432.48051pt x 285.72397pt.
+<Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png, id=2206, 1003.1076pt x 426.393pt>
 File: Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png Graphic file (type png)
 <use Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png>
 Package pdftex.def Info: Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png  used on input line 12.
 (pdftex.def)             Requested size: 432.48051pt x 183.83337pt.
-<Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png, id=1549, 493.3632pt x 495.7722pt>
+<Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png, id=2207, 492.3996pt x 493.845pt>
 File: Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png Graphic file (type png)
 <use Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png>
 Package pdftex.def Info: Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png  used on input line 18.
-(pdftex.def)             Requested size: 432.48051pt x 434.60147pt.
+(pdftex.def)             Requested size: 432.48051pt x 433.76357pt.
 File: Figures/Generated/evaluation/bland-altman-4425545f.png Graphic file (type png)
 <use Figures/Generated/evaluation/bland-altman-4425545f.png>
 Package pdftex.def Info: Figures/Generated/evaluation/bland-altman-4425545f.png  used on input line 24.
-(pdftex.def)             Requested size: 432.48051pt x 286.04866pt.
+(pdftex.def)             Requested size: 432.48051pt x 285.72397pt.
 File: Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png Graphic file (type png)
 <use Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png>
 Package pdftex.def Info: Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png  used on input line 30.
@@ -1653,142 +1655,147 @@ Package pdftex.def Info: Figures/Generated/evaluation/scatter-mean-hu-per-slice-
 File: Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png Graphic file (type png)
 <use Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png>
 Package pdftex.def Info: Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png  used on input line 36.
-(pdftex.def)             Requested size: 432.48051pt x 434.60147pt.
-<Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png, id=1550, 1288.5741pt x 357.37515pt>
+(pdftex.def)             Requested size: 432.48051pt x 433.76357pt.
+<Figures/Generated/evaluation/pair-1063-body-2640-fea71b11.png, id=2208, 1288.5741pt x 357.37515pt>
+File: Figures/Generated/evaluation/pair-1063-body-2640-fea71b11.png Graphic file (type png)
+<use Figures/Generated/evaluation/pair-1063-body-2640-fea71b11.png>
+Package pdftex.def Info: Figures/Generated/evaluation/pair-1063-body-2640-fea71b11.png  used on input line 43.
+(pdftex.def)             Requested size: 432.48051pt x 119.9409pt.
+<Figures/Generated/evaluation/pair-199-body-2163-e9fbf07f.png, id=2209, 1288.5741pt x 357.37515pt>
+File: Figures/Generated/evaluation/pair-199-body-2163-e9fbf07f.png Graphic file (type png)
+<use Figures/Generated/evaluation/pair-199-body-2163-e9fbf07f.png>
+Package pdftex.def Info: Figures/Generated/evaluation/pair-199-body-2163-e9fbf07f.png  used on input line 49.
+(pdftex.def)             Requested size: 432.48051pt x 119.9409pt.
+<Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png, id=2210, 1289.2968pt x 357.37515pt>
 File: Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png Graphic file (type png)
 <use Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png>
-Package pdftex.def Info: Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png  used on input line 43.
-(pdftex.def)             Requested size: 432.48051pt x 119.9409pt.
-<Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png, id=1551, 1288.5741pt x 357.37515pt>
+Package pdftex.def Info: Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png  used on input line 55.
+(pdftex.def)             Requested size: 432.48051pt x 119.87546pt.
+<Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png, id=2211, 1289.2968pt x 357.37515pt>
 File: Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png Graphic file (type png)
 <use Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png>
-Package pdftex.def Info: Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png  used on input line 49.
-(pdftex.def)             Requested size: 432.48051pt x 119.9409pt.
-<Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png, id=1552, 1288.5741pt x 357.37515pt>
+Package pdftex.def Info: Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png  used on input line 61.
+(pdftex.def)             Requested size: 432.48051pt x 119.87546pt.
+<Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png, id=2212, 1289.65816pt x 357.37515pt>
 File: Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png Graphic file (type png)
 <use Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png>
-Package pdftex.def Info: Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png  used on input line 55.
-(pdftex.def)             Requested size: 432.48051pt x 119.9409pt.
-<Figures/Generated/evaluation/pair-715-body-11948-973c839d.png, id=1553, 1288.5741pt x 357.37515pt>
+Package pdftex.def Info: Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png  used on input line 67.
+(pdftex.def)             Requested size: 432.48051pt x 119.84274pt.
+<Figures/Generated/evaluation/pair-715-body-11948-973c839d.png, id=2213, 1289.65816pt x 357.37515pt>
 File: Figures/Generated/evaluation/pair-715-body-11948-973c839d.png Graphic file (type png)
 <use Figures/Generated/evaluation/pair-715-body-11948-973c839d.png>
-Package pdftex.def Info: Figures/Generated/evaluation/pair-715-body-11948-973c839d.png  used on input line 61.
-(pdftex.def)             Requested size: 432.48051pt x 119.9409pt.
-<Figures/Generated/evaluation/pair-716-body-11949-998c17d3.png, id=1554, 1288.5741pt x 357.37515pt>
-File: Figures/Generated/evaluation/pair-716-body-11949-998c17d3.png Graphic file (type png)
-<use Figures/Generated/evaluation/pair-716-body-11949-998c17d3.png>
-Package pdftex.def Info: Figures/Generated/evaluation/pair-716-body-11949-998c17d3.png  used on input line 67.
-(pdftex.def)             Requested size: 432.48051pt x 119.9409pt.
-<Figures/Generated/evaluation/pair-717-body-11950-b32d91f5.png, id=1555, 1288.5741pt x 357.37515pt>
-File: Figures/Generated/evaluation/pair-717-body-11950-b32d91f5.png Graphic file (type png)
-<use Figures/Generated/evaluation/pair-717-body-11950-b32d91f5.png>
-Package pdftex.def Info: Figures/Generated/evaluation/pair-717-body-11950-b32d91f5.png  used on input line 73.
-(pdftex.def)             Requested size: 432.48051pt x 119.9409pt.
-<Figures/Generated/evaluation/stability-seed-comparison-39d600c0.png, id=1556, 1004.553pt x 357.7365pt>
+Package pdftex.def Info: Figures/Generated/evaluation/pair-715-body-11948-973c839d.png  used on input line 73.
+(pdftex.def)             Requested size: 432.48051pt x 119.84274pt.
+<Figures/Generated/evaluation/stability-seed-comparison-39d600c0.png, id=2214, 1004.553pt x 357.7365pt>
 File: Figures/Generated/evaluation/stability-seed-comparison-39d600c0.png Graphic file (type png)
 <use Figures/Generated/evaluation/stability-seed-comparison-39d600c0.png>
 Package pdftex.def Info: Figures/Generated/evaluation/stability-seed-comparison-39d600c0.png  used on input line 80.
 (pdftex.def)             Requested size: 432.48051pt x 154.01474pt.
-<Figures/Generated/evaluation/boxplots-preservation-analysis-e25b797a.png, id=1557, 1003.8303pt x 715.83435pt>
-File: Figures/Generated/evaluation/boxplots-preservation-analysis-e25b797a.png Graphic file (type png)
-<use Figures/Generated/evaluation/boxplots-preservation-analysis-e25b797a.png>
-Package pdftex.def Info: Figures/Generated/evaluation/boxplots-preservation-analysis-e25b797a.png  used on input line 86.
-(pdftex.def)             Requested size: 432.48051pt x 308.40352pt.
-<Figures/Generated/evaluation/correlation-preservation-vs-improvement-311c5e05.png, id=1558, 990.8217pt x 427.1157pt>
-File: Figures/Generated/evaluation/correlation-preservation-vs-improvement-311c5e05.png Graphic file (type png)
-<use Figures/Generated/evaluation/correlation-preservation-vs-improvement-311c5e05.png>
-Package pdftex.def Info: Figures/Generated/evaluation/correlation-preservation-vs-improvement-311c5e05.png  used on input line 92.
-(pdftex.def)             Requested size: 432.48051pt x 186.426pt.
-<Figures/Generated/evaluation/hist-delta-improvement-5b39c382.png, id=1559, 1004.553pt x 426.75435pt>
-File: Figures/Generated/evaluation/hist-delta-improvement-5b39c382.png Graphic file (type png)
-<use Figures/Generated/evaluation/hist-delta-improvement-5b39c382.png>
-Package pdftex.def Info: Figures/Generated/evaluation/hist-delta-improvement-5b39c382.png  used on input line 98.
-(pdftex.def)             Requested size: 432.48051pt x 183.7287pt.
-<Figures/Generated/evaluation/roi-comparison-boxplots-81fa24cb.png, id=1560, 1004.553pt x 426.75435pt>
-File: Figures/Generated/evaluation/roi-comparison-boxplots-81fa24cb.png Graphic file (type png)
-<use Figures/Generated/evaluation/roi-comparison-boxplots-81fa24cb.png>
-Package pdftex.def Info: Figures/Generated/evaluation/roi-comparison-boxplots-81fa24cb.png  used on input line 104.
-(pdftex.def)             Requested size: 432.48051pt x 183.7287pt.
-<Figures/Generated/evaluation/roi-safety-scatter-d4970edb.png, id=1561, 679.69936pt x 571.6557pt>
-File: Figures/Generated/evaluation/roi-safety-scatter-d4970edb.png Graphic file (type png)
-<use Figures/Generated/evaluation/roi-safety-scatter-d4970edb.png>
-Package pdftex.def Info: Figures/Generated/evaluation/roi-safety-scatter-d4970edb.png  used on input line 110.
-(pdftex.def)             Requested size: 432.48051pt x 363.73877pt.
-<Figures/Generated/evaluation/scatter-baseline-vs-model-2e2be373.png, id=1562, 987.9309pt x 426.75435pt>
-File: Figures/Generated/evaluation/scatter-baseline-vs-model-2e2be373.png Graphic file (type png)
-<use Figures/Generated/evaluation/scatter-baseline-vs-model-2e2be373.png>
-Package pdftex.def Info: Figures/Generated/evaluation/scatter-baseline-vs-model-2e2be373.png  used on input line 116.
-(pdftex.def)             Requested size: 432.48051pt x 186.82178pt.
-) [43
+<Figures/Generated/evaluation/boxplot-global-psnr-distribution-691d792e.pdf, id=2215, 570.95872pt x 499.41142pt>
+File: Figures/Generated/evaluation/boxplot-global-psnr-distribution-691d792e.pdf Graphic file (type pdf)
+<use Figures/Generated/evaluation/boxplot-global-psnr-distribution-691d792e.pdf>
+Package pdftex.def Info: Figures/Generated/evaluation/boxplot-global-psnr-distribution-691d792e.pdf  used on input line 86.
+(pdftex.def)             Requested size: 432.48051pt x 378.29164pt.
+<Figures/Generated/evaluation/boxplot-global-psnr-distribution-4b458331.png, id=2216, 570.933pt x 499.3857pt>
+File: Figures/Generated/evaluation/boxplot-global-psnr-distribution-4b458331.png Graphic file (type png)
+<use Figures/Generated/evaluation/boxplot-global-psnr-distribution-4b458331.png>
+Package pdftex.def Info: Figures/Generated/evaluation/boxplot-global-psnr-distribution-4b458331.png  used on input line 92.
+(pdftex.def)             Requested size: 432.48051pt x 378.29501pt.
+<Figures/Generated/evaluation/boxplot-global-ssim-distribution-507406a7.pdf, id=2217, 570.96999pt x 499.41142pt>
+File: Figures/Generated/evaluation/boxplot-global-ssim-distribution-507406a7.pdf Graphic file (type pdf)
+<use Figures/Generated/evaluation/boxplot-global-ssim-distribution-507406a7.pdf>
+Package pdftex.def Info: Figures/Generated/evaluation/boxplot-global-ssim-distribution-507406a7.pdf  used on input line 98.
+(pdftex.def)             Requested size: 432.48051pt x 378.29164pt.
+<Figures/Generated/evaluation/boxplot-global-ssim-distribution-53050e9b.png, id=2218, 570.933pt x 499.3857pt>
+File: Figures/Generated/evaluation/boxplot-global-ssim-distribution-53050e9b.png Graphic file (type png)
+<use Figures/Generated/evaluation/boxplot-global-ssim-distribution-53050e9b.png>
+Package pdftex.def Info: Figures/Generated/evaluation/boxplot-global-ssim-distribution-53050e9b.png  used on input line 104.
+(pdftex.def)             Requested size: 432.48051pt x 378.29501pt.
+<Figures/Generated/evaluation/boxplot-roi-delta-mae-d0cb6588.pdf, id=2219, 570.97128pt x 499.4183pt>
+File: Figures/Generated/evaluation/boxplot-roi-delta-mae-d0cb6588.pdf Graphic file (type pdf)
+<use Figures/Generated/evaluation/boxplot-roi-delta-mae-d0cb6588.pdf>
+Package pdftex.def Info: Figures/Generated/evaluation/boxplot-roi-delta-mae-d0cb6588.pdf  used on input line 110.
+(pdftex.def)             Requested size: 432.48051pt x 378.28162pt.
+<Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png, id=2220, 570.933pt x 499.3857pt>
+File: Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png Graphic file (type png)
+<use Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png>
+Package pdftex.def Info: Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png  used on input line 116.
+(pdftex.def)             Requested size: 432.48051pt x 378.29501pt.
+) [44 <./Figures/Generated/evaluation/bland-altman-4425545f.png>] [45 <./Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png> <./Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png>] [46] [47 <./Figures/Generated/evaluation/pair-1063-body-2640-fea71b11.png>] [48 <./Figures/Generated/evaluation/pair-199-body-2163-e9fbf07f.png> <./Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png> <./Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png> <./Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png>] [49 <./Figures/Generated/evaluation/pair-715-body-11948-973c839d.png> <./Figures/Generated/evaluation/stability-seed-comparison-39d600c0.png>] [50 <./Figures/Generated/evaluation/boxplot-global-psnr-distribution-691d792e.pdf>] [51 <./Figures/Generated/evaluation/boxplot-global-psnr-distribution-4b458331.png>] [52 <./Figures/Generated/evaluation/boxplot-global-ssim-distribution-507406a7.pdf>] [53 <./Figures/Generated/evaluation/boxplot-global-ssim-distribution-53050e9b.png>] [54 <./Figures/Generated/evaluation/boxplot-roi-delta-mae-d0cb6588.pdf>] [55 <./Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png>] (Chapters/Final/Generated/PairedComparison.tex (Tables/Generated/comparison-test-0b006087.tex
+Overfull \hbox (78.00279pt too wide) in paragraph at lines 5--13
+ [][] 
+ []
 
- <./Figures/Generated/evaluation/bland-altman-4425545f.png>] [44 <./Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png> <./Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png>] [45] [46 <./Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png>] [47 <./Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png> <./Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png> <./Figures/Generated/evaluation/pair-715-body-11948-973c839d.png> <./Figures/Generated/evaluation/pair-716-body-11949-998c17d3.png>] [48 <./Figures/Generated/evaluation/pair-717-body-11950-b32d91f5.png> <./Figures/Generated/evaluation/stability-seed-comparison-39d600c0.png> <./Figures/Generated/evaluation/boxplots-preservation-analysis-e25b797a.png>] [49 <./Figures/Generated/evaluation/correlation-preservation-vs-improvement-311c5e05.png> <./Figures/Generated/evaluation/hist-delta-improvement-5b39c382.png> <./Figures/Generated/evaluation/roi-comparison-boxplots-81fa24cb.png>] [50 <./Figures/Generated/evaluation/roi-safety-scatter-d4970edb.png> <./Figures/Generated/evaluation/scatter-baseline-vs-model-2e2be373.png>] (Chapters/Final/Generated/PairedComparison.tex (Tables/Generated/paired_comparison.tex)
-<Figures/Generated/paired/comparison-bar-charts-c89cdffe.png, id=1612, 991.90575pt x 354.123pt>
+) (Tables/Generated/paired_comparison.tex)
+<Figures/Generated/paired/comparison-bar-charts-c89cdffe.png, id=2474, 1004.553pt x 354.123pt>
 File: Figures/Generated/paired/comparison-bar-charts-c89cdffe.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-bar-charts-c89cdffe.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-bar-charts-c89cdffe.png  used on input line 8.
-(pdftex.def)             Requested size: 432.48051pt x 154.40428pt.
-<Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png, id=1613, 715.83435pt x 571.6557pt>
+(pdftex.def)             Requested size: 432.48051pt x 152.45903pt.
+<Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png, id=2475, 715.11165pt x 571.6557pt>
 File: Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png  used on input line 14.
-(pdftex.def)             Requested size: 432.48051pt x 345.37737pt.
-<Figures/Generated/paired/comparison-bar-charts-a6234831.png, id=1614, 991.90575pt x 354.123pt>
+(pdftex.def)             Requested size: 432.48051pt x 345.72629pt.
+<Figures/Generated/paired/comparison-bar-charts-a6234831.png, id=2476, 1004.553pt x 354.123pt>
 File: Figures/Generated/paired/comparison-bar-charts-a6234831.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-bar-charts-a6234831.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-bar-charts-a6234831.png  used on input line 20.
-(pdftex.def)             Requested size: 432.48051pt x 154.40428pt.
-<Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png, id=1615, 719.0865pt x 571.6557pt>
+(pdftex.def)             Requested size: 432.48051pt x 152.45903pt.
+<Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png, id=2477, 715.11165pt x 571.6557pt>
 File: Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png  used on input line 26.
-(pdftex.def)             Requested size: 432.48051pt x 343.816pt.
-<Figures/Generated/paired/comparison-bar-charts-3254d43f.png, id=1616, 991.5444pt x 353.76164pt>
+(pdftex.def)             Requested size: 432.48051pt x 345.72629pt.
+<Figures/Generated/paired/comparison-bar-charts-3254d43f.png, id=2478, 1004.553pt x 354.123pt>
 File: Figures/Generated/paired/comparison-bar-charts-3254d43f.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-bar-charts-3254d43f.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-bar-charts-3254d43f.png  used on input line 32.
-(pdftex.def)             Requested size: 432.48051pt x 154.3007pt.
-<Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png, id=1617, 719.8092pt x 571.6557pt>
+(pdftex.def)             Requested size: 432.48051pt x 152.45903pt.
+<Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png, id=2479, 715.11165pt x 571.6557pt>
 File: Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png  used on input line 38.
-(pdftex.def)             Requested size: 432.48051pt x 343.47581pt.
-) [51 <./Figures/Generated/paired/comparison-bar-charts-c89cdffe.png>] [52 <./Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png> <./Figures/Generated/paired/comparison-bar-charts-a6234831.png>] [53 <./Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png> <./Figures/Generated/paired/comparison-bar-charts-3254d43f.png>] (Chapters/Final/Generated/Benchmark.tex
-<Figures/Generated/benchmark/benchmark-latency-e02962ff.png, id=1636, 932.283pt x 357.0138pt>
+(pdftex.def)             Requested size: 432.48051pt x 345.72629pt.
+) [56
+
+ <./Figures/Generated/paired/comparison-bar-charts-c89cdffe.png>] [57 <./Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png> <./Figures/Generated/paired/comparison-bar-charts-a6234831.png>] [58 <./Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png> <./Figures/Generated/paired/comparison-bar-charts-3254d43f.png>] (Chapters/Final/Generated/Benchmark.tex
+<Figures/Generated/benchmark/benchmark-latency-e02962ff.png, id=2498, 932.283pt x 357.4956pt>
 File: Figures/Generated/benchmark/benchmark-latency-e02962ff.png Graphic file (type png)
 <use Figures/Generated/benchmark/benchmark-latency-e02962ff.png>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-e02962ff.png  used on input line 4.
-(pdftex.def)             Requested size: 432.48051pt x 165.61746pt.
+(pdftex.def)             Requested size: 432.48051pt x 165.84097pt.
 File: Figures/Generated/benchmark/benchmark-latency-e02962ff.png Graphic file (type png)
 <use Figures/Generated/benchmark/benchmark-latency-e02962ff.png>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-e02962ff.png  used on input line 10.
-(pdftex.def)             Requested size: 432.48051pt x 165.61746pt.
+(pdftex.def)             Requested size: 432.48051pt x 165.84097pt.
 File: Figures/Generated/benchmark/benchmark-latency-e02962ff.png Graphic file (type png)
 <use Figures/Generated/benchmark/benchmark-latency-e02962ff.png>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-e02962ff.png  used on input line 16.
-(pdftex.def)             Requested size: 432.48051pt x 165.61746pt.
+(pdftex.def)             Requested size: 432.48051pt x 165.84097pt.
 File: Figures/Generated/benchmark/benchmark-latency-e02962ff.png Graphic file (type png)
 <use Figures/Generated/benchmark/benchmark-latency-e02962ff.png>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-e02962ff.png  used on input line 22.
-(pdftex.def)             Requested size: 432.48051pt x 165.61746pt.
+(pdftex.def)             Requested size: 432.48051pt x 165.84097pt.
 File: Figures/Generated/benchmark/benchmark-latency-e02962ff.png Graphic file (type png)
 <use Figures/Generated/benchmark/benchmark-latency-e02962ff.png>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-e02962ff.png  used on input line 28.
-(pdftex.def)             Requested size: 432.48051pt x 165.61746pt.
+(pdftex.def)             Requested size: 432.48051pt x 165.84097pt.
 File: Figures/Generated/benchmark/benchmark-latency-e02962ff.png Graphic file (type png)
 <use Figures/Generated/benchmark/benchmark-latency-e02962ff.png>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-e02962ff.png  used on input line 34.
-(pdftex.def)             Requested size: 432.48051pt x 165.61746pt.
-) [54 <./Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png> <./Figures/Generated/benchmark/benchmark-latency-e02962ff.png>] [55] [56]) (Chapters/Final/6.Discussion.tex [57]
+(pdftex.def)             Requested size: 432.48051pt x 165.84097pt.
+) [59 <./Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png> <./Figures/Generated/benchmark/benchmark-latency-e02962ff.png>] [60]) (Chapters/Final/6.Discussion.tex [61] [62]
 Cap\'{\i }tulo 6.
-[58
+[63
 
-]) (Chapters/Final/7.Conclusion.tex [59]
+]) (Chapters/Final/7.Conclusion.tex [64]
 Cap\'{\i }tulo 7.
 ) (main.bbl (main.brf)
 \tf@brf=\write13
 \openout13 = `main.brf'.
 
- [60
+ [65
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 6--6
@@ -1800,11 +1807,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--6
 \T1/phv/m/n/10.95 https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays.  [Ci-ted on
  []
 
-[61
+[66
 
-] [62] [63] [64]) (Appendices/AppendixTemplate.tex [65]
+] [67] [68] [69]) (Appendices/AppendixTemplate.tex [70]
 Ap\^endice A.
-) [66
+) [71
 
 ] (main.aux)
  ***********
@@ -1814,20 +1821,20 @@ L3 programming layer <2025-12-24>
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 8817CFDF9BD2A52C6D651184F728B880;17493.
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: D60B5CAED7D78AE9815DDC95B0352FBC;5140.
+(rerunfilecheck)             Checksum: 9316292BC4EBBE4E52816FAA821214E0;5138.
  ) 
 Here is how much of TeX's memory you used:
- 45217 strings out of 467870
- 936227 string characters out of 5418356
- 1350330 words of memory out of 5000000
- 72965 multiletter control sequences out of 15000+600000
+ 45255 strings out of 467870
+ 938309 string characters out of 5418356
+ 1352331 words of memory out of 5000000
+ 72983 multiletter control sequences out of 15000+600000
  717083 words of font info for 152 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  99i,17n,114p,2572b,1428s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0800.pk> <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (82 pages, 12583328 bytes).
+Output written on main.pdf (86 pages, 10270995 bytes).
 PDF statistics:
- 1947 PDF objects out of 2073 (max. 8388607)
- 309 named destinations out of 1000 (max. 500000)
+ 2809 PDF objects out of 2984 (max. 8388607)
+ 317 named destinations out of 1000 (max. 500000)
  882 words of extra memory for PDF output out of 10000 (max. 10000000)
 

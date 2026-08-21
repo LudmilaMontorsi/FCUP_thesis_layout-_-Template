@@ -1,19 +1,14 @@
-\begin{table}
-\caption{Ablation Study: Model Comparison for Artifact Removal}
+\begin{table}[htbp]
+\centering
+\caption{Ablation study: model comparison for artifact removal.}
 \label{tab:ablation_comparison}
-\begin{tabular}{lccccccc}
+\begin{tabular}{lcccccc}
 \toprule
-Model & ΔSSIM & p_ssim_holm & ΔPSNR (dB) & p_psnr_holm & EPI & Texture & Assessment \\
+Model & $\Delta$SSIM & $p_{\mathrm{SSIM}}$ (Holm) & $\Delta$PSNR (dB) & $p_{\mathrm{PSNR}}$ (Holm) & EPI & Texture \\
 \midrule
-singlehead-031-0.9510-ssim_hu_20260808_143625 & 0.1078±0.0897 & *** & 7.70±3.57 & *** & 0.954±0.020 & 0.939±0.027 & ✅ Excellent \\
-dualhead-041-0.9494-img_out_ssim_hu_20260807_150303 & 0.1063±0.0892 & *** & 7.68±3.52 & *** & 0.955±0.020 & 0.940±0.026 & ✅ Excellent \\
+Single Model & $0.1078 \pm 0.0897$ & *** & $7.70 \pm 3.57$ & *** & $0.954 \pm 0.020$ & $0.939 \pm 0.027$ \\
+Dual Model & $0.1063 \pm 0.0892$ & *** & $7.68 \pm 3.52$ & *** & $0.955 \pm 0.020$ & $0.940 \pm 0.026$ \\
 \bottomrule
-\hline
 \end{tabular}
-\begin{tablenotes}
-\small
-\item Holm-adjusted: *** p<0.001, ** p<0.01, * p<0.05, ns=not significant
-\item EPI: Edge Preservation Index (1.0=perfect, >0.9=good)
-\item Texture: Texture Preservation Score (1.0=perfect, 0.9-1.1=good)
-\end{tablenotes}
+\par\smallskip\footnotesize Holm-adjusted significance: *** $p<0.001$, ** $p<0.01$, * $p<0.05$, ns = not significant. EPI: Edge Preservation Index (1.0 = perfect; >0.9 = good). Texture: Texture Preservation Score (1.0 = perfect; 0.9--1.1 = good).
 \end{table}

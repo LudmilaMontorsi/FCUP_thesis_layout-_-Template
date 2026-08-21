@@ -74,7 +74,8 @@
 % Chapter formatting: Arial Plain, size 20, spacing 1.5
 \titleformat{\chapter}[display]
   {\normalfont\fontsize{20}{30}\selectfont}{\chaptertitlename\ \thechapter}{20pt}{\fontsize{20}{30}\selectfont}
-\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+% Keep chapter openings compact throughout the thesis.
+\titlespacing*{\chapter}{0pt}{25pt}{40pt}
 % Section formatting: Arial Plain, size 14, spacing 1.5
 \titleformat{\section}{\normalfont\fontsize{14}{21}\selectfont}{\thesection}{1em}{}
 % Subsection formatting
@@ -87,10 +88,11 @@
 %-------------------------------------------------------------------------
 \usepackage[a4paper,
   bindingoffset=0cm,
-	top=3.0cm,
+	% Global upper margin: applies to the running header and every chapter.
+	top=2.5cm,
 	outer=2.5cm,
 	inner=2.5cm,
-	bottom=2.8cm
+	bottom=2.5cm
 ]{geometry}
 
 \raggedbottom

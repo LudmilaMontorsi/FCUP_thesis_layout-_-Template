@@ -85,11 +85,31 @@ Com relação aos possíveis falsos negativos que poderiam ter resultado em excl
 
 \section{Treino dos modelos}
 \subsection{Convergência e seleção dos checkpoints}
-\textit{[A preencher: curvas de treino/validação e checkpoints selecionados pelo monitor pré-especificado.]}
+% A preencher: curvas de treino/validação e checkpoints selecionados pelo monitor pré-especificado.
+A seleção do checkpoint para avaliação final foi baseada na melhor versão do\acrshort{ssim} calculado na partição de validação. Obviamente, no modelo Dual, esse critério foi aplicado na saída de reconstrução. Apenas o melhor checkpoint por corrida foi preservado, em formato .keras, com nome que contém arquitetura, época e métrica monitorizada. O CSV de treino marca explicitamente a linha correspondente com $best_checkpoint=1$.
+
+A regra de paragem definia um máximo de épocas de 300 e um mínimo de 5, com\textit{Early Stopping} após 15 épocas sem melhoria mínima de 0.0001 no\acrshort{ssim} da partição de validação. Consequentemente, devido à restauração dos pesos da melhor época, a época final de treino não é necessariamente a selecionada.
+
+O otimizador monitoriza a mesma métrica, reduzindo o \textit{learning rate} em 0.5 após 2 épocas sem melhoria relevante (ReduceLROnPlateau), até 1x10\textsuperscript{-6} com uma época de \textit{cooldown}. O mesmo valor de variação mínima de 0.0001 foi usado no \textit{Scheduler} e no \textit{Early Stopping}.
+\FloatBarrier
 \input{Chapters/Final/Generated/Training}
+\FloatBarrier
+
+Nas 6 corridas, todas terminaram entre 38 e 47 épocas, após a taxa de aprendizagem atingir o limite mínimo. Os melhores\acrshortpl{ssim} de validação ocorreram nas épocas 23–44, antes da paragem, o que sustenta o uso de restauração dos melhores pesos.
+
+O maior valor de\acrshort{ssim} foi 0.95113 do Single Model, seed 2024, na época 33. O valor de\acrshort{psnr} variou entre $\sim$ 35.0 dB - 35.3 dB, com o maior valor de 35.3009 dB do Single Model, seed 2024, na mesma época 33. Os resultados detalhados podem ser visualizados nas Tabelas \ref{tab:best-validation-ssim}, \ref{tab:best-validation-psnr} e \ref{tab:mae-at-best-validation-ssim}.
+\input{Tables/Generated/best_validation_ssim.tex}
+\input{Tables/Generated/best_validation_psnr.tex}
+\input{Tables/Generated/mae_at_best_validation_ssim.tex}
+\FloatBarrier
+O melhor resultado de\acrshort{mae} foi 17.1918 HU também do Single Model, seed 2024, na época 33. Podemos notar que o Single Model teve desempenho superior nas 3 métricas.
+
+O\acrshort{psnr} e\acrshort{mae} são apenas métricas complementares, mas não são o foco principal de seleção do melhor checkpoint que considera apenas o\acrshort{ssim} isoladamente. Além disso, as métricas separadas por\acrshort{roi}, análises visuais, e métricas de teste interno são avaliações feitas após a seleção do melhor checkpoint e portanto não alteram o checkpoint escolhido.
+
 
 \subsection{Rastreabilidade das execuções}
-\textit{[A preencher: snapshots de reprodutibilidade, versões do ambiente e hashes dos checkpoints.]}
+% A preencher: snapshots de reprodutibilidade, versões do ambiente e hashes dos checkpoints.
+
 
 \section{Avaliação interna no conjunto de teste}
 \subsection{Desfechos globais}

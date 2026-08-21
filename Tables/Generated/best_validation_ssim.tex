@@ -1,0 +1,19 @@
+% Best validation SSIM extracted from data/checkpoints/*/*/training_*.csv.
+% For Dual Model, SSIM refers to the image-reconstruction output.
+\begin{table}[!htbp]
+\centering
+\caption{Maior SSIM de validação por modelo e seed, com a época correspondente. No Dual Model, o SSIM é calculado na saída de reconstrução de imagem.}
+\label{tab:best-validation-ssim}
+\begin{tabular}{lccc}
+\hline
+ & \multicolumn{3}{c}{\textbf{Best SSIM (HU)}} \\
+\hline
+\textbf{Seed} & \textbf{42} & \textbf{1337} & \textbf{2024} \\
+\hline
+\textbf{Single Model} & 0.95096 (31)* & 0.95106 (44) & 0.95113 (33) \\
+\textbf{Dual Model} & 0.94938 (41) & 0.94895 (28) & 0.95025 (23) \\
+\hline
+\end{tabular}
+\par\smallskip
+\footnotesize *Valores entre parênteses indicam a época correspondente.
+\end{table}
