@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  21 AUG 2026 19:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  21 AUG 2026 19:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1626,9 +1626,9 @@ Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-be0
 
 LaTeX Warning: Float too large for page by 38.89041pt on input line 43.
 
-) [36 <./Figures/score_distribution.pdf>] [37 <./Figures/Generated/training/training-curves-singlehead-6422b5e2.pdf>] [38 <./Figures/Generated/training/training-curves-dualhead-6c252b4a.pdf>] [39 <./Figures/Generated/training/training-curves-singlehead-a27fad34.pdf>] [40 <./Figures/Generated/training/training-curves-dualhead-cce23466.pdf>] [41 <./Figures/Generated/training/training-curves-singlehead-62c464ea.pdf>] [42 <./Figures/Generated/training/training-curves-dualhead-be08f04f.pdf>] (Tables/Generated/best_validation_ssim.tex) (Tables/Generated/best_validation_psnr.tex) (Tables/Generated/mae_at_best_validation_ssim.tex) (Chapters/Final/Generated/Evaluation.tex (Tables/Generated/internal_metrics.tex) [43
+) [36 <./Figures/score_distribution.pdf>] [37 <./Figures/Generated/training/training-curves-singlehead-6422b5e2.pdf>] [38 <./Figures/Generated/training/training-curves-dualhead-6c252b4a.pdf>] [39 <./Figures/Generated/training/training-curves-singlehead-a27fad34.pdf>] [40 <./Figures/Generated/training/training-curves-dualhead-cce23466.pdf>] [41 <./Figures/Generated/training/training-curves-singlehead-62c464ea.pdf>] [42 <./Figures/Generated/training/training-curves-dualhead-be08f04f.pdf>] (Tables/Generated/best_validation_ssim.tex) (Tables/Generated/best_validation_psnr.tex) (Tables/Generated/mae_at_best_validation_ssim.tex) [43
 
-]
+] (Chapters/Final/Generated/Evaluation.tex (Tables/Generated/internal_metrics.tex)
 <Figures/Generated/evaluation/bland-altman-4425545f.png, id=2205, 641.7576pt x 423.984pt>
 File: Figures/Generated/evaluation/bland-altman-4425545f.png Graphic file (type png)
 <use Figures/Generated/evaluation/bland-altman-4425545f.png>
@@ -1721,46 +1721,46 @@ File: Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png Graphic fi
 <use Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png>
 Package pdftex.def Info: Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png  used on input line 116.
 (pdftex.def)             Requested size: 432.48051pt x 378.29501pt.
-) [44 <./Figures/Generated/evaluation/bland-altman-4425545f.png>] [45 <./Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png> <./Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png>] [46] [47 <./Figures/Generated/evaluation/pair-1063-body-2640-fea71b11.png>] [48 <./Figures/Generated/evaluation/pair-199-body-2163-e9fbf07f.png> <./Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png> <./Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png> <./Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png>] [49 <./Figures/Generated/evaluation/pair-715-body-11948-973c839d.png> <./Figures/Generated/evaluation/stability-seed-comparison-39d600c0.png>] [50 <./Figures/Generated/evaluation/boxplot-global-psnr-distribution-691d792e.pdf>] [51 <./Figures/Generated/evaluation/boxplot-global-psnr-distribution-4b458331.png>] [52 <./Figures/Generated/evaluation/boxplot-global-ssim-distribution-507406a7.pdf>] [53 <./Figures/Generated/evaluation/boxplot-global-ssim-distribution-53050e9b.png>] [54 <./Figures/Generated/evaluation/boxplot-roi-delta-mae-d0cb6588.pdf>] [55 <./Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png>] (Chapters/Final/Generated/PairedComparison.tex (Tables/Generated/comparison-test-0b006087.tex
+) [44] [45 <./Figures/Generated/evaluation/bland-altman-4425545f.png> <./Figures/Generated/evaluation/scatter-mean-hu-per-slice-692540dc.png>] [46 <./Figures/Generated/evaluation/scatter-pixel-hu-42c5f11b.png>] [47] [48 <./Figures/Generated/evaluation/pair-1063-body-2640-fea71b11.png>] [49 <./Figures/Generated/evaluation/pair-199-body-2163-e9fbf07f.png> <./Figures/Generated/evaluation/pair-712-body-11945-9fc99096.png> <./Figures/Generated/evaluation/pair-713-body-11946-55a6345d.png> <./Figures/Generated/evaluation/pair-714-body-11947-16e911ee.png>] [50 <./Figures/Generated/evaluation/pair-715-body-11948-973c839d.png> <./Figures/Generated/evaluation/stability-seed-comparison-39d600c0.png>] [51 <./Figures/Generated/evaluation/boxplot-global-psnr-distribution-691d792e.pdf>] [52 <./Figures/Generated/evaluation/boxplot-global-psnr-distribution-4b458331.png>] [53 <./Figures/Generated/evaluation/boxplot-global-ssim-distribution-507406a7.pdf>] [54 <./Figures/Generated/evaluation/boxplot-global-ssim-distribution-53050e9b.png>] [55 <./Figures/Generated/evaluation/boxplot-roi-delta-mae-d0cb6588.pdf>] [56 <./Figures/Generated/evaluation/boxplot-roi-delta-mae-9f6bbd1c.png>] (Chapters/Final/Generated/PairedComparison.tex (Tables/Generated/comparison-test-0b006087.tex
 Overfull \hbox (78.00279pt too wide) in paragraph at lines 5--13
  [][] 
  []
 
 ) (Tables/Generated/paired_comparison.tex)
-<Figures/Generated/paired/comparison-bar-charts-c89cdffe.png, id=2474, 1004.553pt x 354.123pt>
+<Figures/Generated/paired/comparison-bar-charts-c89cdffe.png, id=2478, 1004.553pt x 354.123pt>
 File: Figures/Generated/paired/comparison-bar-charts-c89cdffe.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-bar-charts-c89cdffe.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-bar-charts-c89cdffe.png  used on input line 8.
 (pdftex.def)             Requested size: 432.48051pt x 152.45903pt.
-<Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png, id=2475, 715.11165pt x 571.6557pt>
+<Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png, id=2479, 715.11165pt x 571.6557pt>
 File: Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png  used on input line 14.
 (pdftex.def)             Requested size: 432.48051pt x 345.72629pt.
-<Figures/Generated/paired/comparison-bar-charts-a6234831.png, id=2476, 1004.553pt x 354.123pt>
+<Figures/Generated/paired/comparison-bar-charts-a6234831.png, id=2480, 1004.553pt x 354.123pt>
 File: Figures/Generated/paired/comparison-bar-charts-a6234831.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-bar-charts-a6234831.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-bar-charts-a6234831.png  used on input line 20.
 (pdftex.def)             Requested size: 432.48051pt x 152.45903pt.
-<Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png, id=2477, 715.11165pt x 571.6557pt>
+<Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png, id=2481, 715.11165pt x 571.6557pt>
 File: Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png  used on input line 26.
 (pdftex.def)             Requested size: 432.48051pt x 345.72629pt.
-<Figures/Generated/paired/comparison-bar-charts-3254d43f.png, id=2478, 1004.553pt x 354.123pt>
+<Figures/Generated/paired/comparison-bar-charts-3254d43f.png, id=2482, 1004.553pt x 354.123pt>
 File: Figures/Generated/paired/comparison-bar-charts-3254d43f.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-bar-charts-3254d43f.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-bar-charts-3254d43f.png  used on input line 32.
 (pdftex.def)             Requested size: 432.48051pt x 152.45903pt.
-<Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png, id=2479, 715.11165pt x 571.6557pt>
+<Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png, id=2483, 715.11165pt x 571.6557pt>
 File: Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png Graphic file (type png)
 <use Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png  used on input line 38.
 (pdftex.def)             Requested size: 432.48051pt x 345.72629pt.
-) [56
+) [57
 
- <./Figures/Generated/paired/comparison-bar-charts-c89cdffe.png>] [57 <./Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png> <./Figures/Generated/paired/comparison-bar-charts-a6234831.png>] [58 <./Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png> <./Figures/Generated/paired/comparison-bar-charts-3254d43f.png>] (Chapters/Final/Generated/Benchmark.tex
-<Figures/Generated/benchmark/benchmark-latency-e02962ff.png, id=2498, 932.283pt x 357.4956pt>
+ <./Figures/Generated/paired/comparison-bar-charts-c89cdffe.png>] [58 <./Figures/Generated/paired/comparison-scatter-tradeoff-63875aed.png> <./Figures/Generated/paired/comparison-bar-charts-a6234831.png>] [59 <./Figures/Generated/paired/comparison-scatter-tradeoff-75c6cf22.png> <./Figures/Generated/paired/comparison-bar-charts-3254d43f.png>] (Chapters/Final/Generated/Benchmark.tex
+<Figures/Generated/benchmark/benchmark-latency-e02962ff.png, id=2502, 932.283pt x 357.4956pt>
 File: Figures/Generated/benchmark/benchmark-latency-e02962ff.png Graphic file (type png)
 <use Figures/Generated/benchmark/benchmark-latency-e02962ff.png>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-e02962ff.png  used on input line 4.
@@ -1785,17 +1785,17 @@ File: Figures/Generated/benchmark/benchmark-latency-e02962ff.png Graphic file (t
 <use Figures/Generated/benchmark/benchmark-latency-e02962ff.png>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-e02962ff.png  used on input line 34.
 (pdftex.def)             Requested size: 432.48051pt x 165.84097pt.
-) [59 <./Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png> <./Figures/Generated/benchmark/benchmark-latency-e02962ff.png>] [60]) (Chapters/Final/6.Discussion.tex [61] [62]
+) [60 <./Figures/Generated/paired/comparison-scatter-tradeoff-ecd46a35.png> <./Figures/Generated/benchmark/benchmark-latency-e02962ff.png>] [61]) (Chapters/Final/6.Discussion.tex [62] [63]
 Cap\'{\i }tulo 6.
-[63
+[64
 
-]) (Chapters/Final/7.Conclusion.tex [64]
+]) (Chapters/Final/7.Conclusion.tex [65]
 Cap\'{\i }tulo 7.
 ) (main.bbl (main.brf)
 \tf@brf=\write13
 \openout13 = `main.brf'.
 
- [65
+ [66
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 6--6
@@ -1807,11 +1807,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--6
 \T1/phv/m/n/10.95 https://www.aps.org/apsnews/2001/11/1895-roentgens-discovery-xrays.  [Ci-ted on
  []
 
-[66
+[67
 
-] [67] [68] [69]) (Appendices/AppendixTemplate.tex [70]
+] [68] [69] [70]) (Appendices/AppendixTemplate.tex [71]
 Ap\^endice A.
-) [71
+) [72
 
 ] (main.aux)
  ***********
@@ -1824,17 +1824,17 @@ Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 9316292BC4EBBE4E52816FAA821214E0;5138.
  ) 
 Here is how much of TeX's memory you used:
- 45255 strings out of 467870
- 938309 string characters out of 5418356
- 1352331 words of memory out of 5000000
+ 45256 strings out of 467870
+ 938316 string characters out of 5418356
+ 1353331 words of memory out of 5000000
  72983 multiletter control sequences out of 15000+600000
  717083 words of font info for 152 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  99i,17n,114p,2572b,1428s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0800.pk> <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (86 pages, 10270995 bytes).
+Output written on main.pdf (87 pages, 10273993 bytes).
 PDF statistics:
- 2809 PDF objects out of 2984 (max. 8388607)
- 317 named destinations out of 1000 (max. 500000)
+ 2816 PDF objects out of 2984 (max. 8388607)
+ 318 named destinations out of 1000 (max. 500000)
  882 words of extra memory for PDF output out of 10000 (max. 10000000)
 

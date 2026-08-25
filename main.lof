@@ -23,37 +23,37 @@
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Curvas de convergência para \texttt {seed\_2024/training\_001\_dualhead}. O painel de \textit {generalization gap} representa validação menos treino para o SSIM e permite identificar divergência persistente compatível com sobreajuste.}}{40}{figure.caption.28}%
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Curvas de convergência para \texttt {seed\_42/training\_001\_singlehead}. O painel de \textit {generalization gap} representa validação menos treino para o SSIM e permite identificar divergência persistente compatível com sobreajuste.}}{41}{figure.caption.29}%
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Curvas de convergência para \texttt {seed\_42/training\_001\_dualhead}. O painel de \textit {generalization gap} representa validação menos treino para o SSIM e permite identificar divergência persistente compatível com sobreajuste.}}{42}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Resultado de avaliacao interna: \texttt {bland\_altman.png}.}}{44}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Resultado de avaliacao interna: \texttt {bland\_altman.png}.}}{45}{figure.caption.35}%
 \contentsline {figure}{\numberline {5.15}{\ignorespaces Resultado de avaliacao interna: \texttt {scatter\_mean\_hu\_per\_slice.png}.}}{45}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Resultado de avaliacao interna: \texttt {scatter\_pixel\_hu.png}.}}{45}{figure.caption.37}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Resultado de avaliacao interna: \texttt {bland\_altman.png}.}}{46}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Resultado de avaliacao interna: \texttt {scatter\_mean\_hu\_per\_slice.png}.}}{46}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Resultado de avaliacao interna: \texttt {scatter\_pixel\_hu.png}.}}{47}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_1063\_body\_2640.png}.}}{47}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_199\_body\_2163.png}.}}{48}{figure.caption.42}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_712\_body\_11945.png}.}}{48}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_713\_body\_11946.png}.}}{48}{figure.caption.44}%
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_714\_body\_11947.png}.}}{48}{figure.caption.45}%
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_715\_body\_11948.png}.}}{49}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Resultado de avaliacao interna: \texttt {stability\_seed\_comparison.png}.}}{49}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_global\_psnr\_distribution.pdf}.}}{50}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.28}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_global\_psnr\_distribution.png}.}}{51}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.29}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_global\_ssim\_distribution.pdf}.}}{52}{figure.caption.50}%
-\contentsline {figure}{\numberline {5.30}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_global\_ssim\_distribution.png}.}}{53}{figure.caption.51}%
-\contentsline {figure}{\numberline {5.31}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_roi\_delta\_mae.pdf}.}}{54}{figure.caption.52}%
-\contentsline {figure}{\numberline {5.32}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_roi\_delta\_mae.png}.}}{55}{figure.caption.53}%
-\contentsline {figure}{\numberline {5.33}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_bar\_charts.png}.}}{56}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.34}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_scatter\_tradeoff.png}.}}{57}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.35}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_bar\_charts.png}.}}{57}{figure.caption.58}%
-\contentsline {figure}{\numberline {5.36}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_scatter\_tradeoff.png}.}}{58}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.37}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_bar\_charts.png}.}}{58}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.38}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_scatter\_tradeoff.png}.}}{59}{figure.caption.61}%
-\contentsline {figure}{\numberline {5.39}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{59}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.40}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{60}{figure.caption.63}%
-\contentsline {figure}{\numberline {5.41}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{60}{figure.caption.64}%
-\contentsline {figure}{\numberline {5.42}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{60}{figure.caption.65}%
-\contentsline {figure}{\numberline {5.43}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{61}{figure.caption.66}%
-\contentsline {figure}{\numberline {5.44}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{61}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Resultado de avaliacao interna: \texttt {scatter\_pixel\_hu.png}.}}{46}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Resultado de avaliacao interna: \texttt {bland\_altman.png}.}}{47}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Resultado de avaliacao interna: \texttt {scatter\_mean\_hu\_per\_slice.png}.}}{47}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Resultado de avaliacao interna: \texttt {scatter\_pixel\_hu.png}.}}{48}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_1063\_body\_2640.png}.}}{48}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_199\_body\_2163.png}.}}{49}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_712\_body\_11945.png}.}}{49}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_713\_body\_11946.png}.}}{49}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_714\_body\_11947.png}.}}{49}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Resultado de avaliacao interna: \texttt {pair\_715\_body\_11948.png}.}}{50}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Resultado de avaliacao interna: \texttt {stability\_seed\_comparison.png}.}}{50}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_global\_psnr\_distribution.pdf}.}}{51}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_global\_psnr\_distribution.png}.}}{52}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_global\_ssim\_distribution.pdf}.}}{53}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_global\_ssim\_distribution.png}.}}{54}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_roi\_delta\_mae.pdf}.}}{55}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.32}{\ignorespaces Distribuicao de metricas e analise de correlacao: \texttt {boxplot\_roi\_delta\_mae.png}.}}{56}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.33}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_bar\_charts.png}.}}{57}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.34}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_scatter\_tradeoff.png}.}}{58}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.35}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_bar\_charts.png}.}}{58}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.36}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_scatter\_tradeoff.png}.}}{59}{figure.caption.59}%
+\contentsline {figure}{\numberline {5.37}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_bar\_charts.png}.}}{59}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.38}{\ignorespaces Comparacao entre modelos: \texttt {comparison\_scatter\_tradeoff.png}.}}{60}{figure.caption.61}%
+\contentsline {figure}{\numberline {5.39}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{60}{figure.caption.62}%
+\contentsline {figure}{\numberline {5.40}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{61}{figure.caption.63}%
+\contentsline {figure}{\numberline {5.41}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{61}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.42}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{61}{figure.caption.65}%
+\contentsline {figure}{\numberline {5.43}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{62}{figure.caption.66}%
+\contentsline {figure}{\numberline {5.44}{\ignorespaces Benchmark de inferencia: \texttt {benchmark\_latency.png}.}}{62}{figure.caption.67}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

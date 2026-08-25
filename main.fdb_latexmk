@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1787336222.50109 "main.aux" "main.bbl" "main" 1787336241.47853 0
+["bibtex main"] 1787336476.06632 "main.aux" "main.bbl" "main" 1787336494.04926 0
   "./Bibliography.bib" 1786910392 96504 ec6be07f8936d38c017f449beed2952a ""
   "C:/Users/ludmy/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1787336239 44630 8e310c8ae683e010797293d2c8bb1a97 "pdflatex"
+  "main.aux" 1787336492 44630 7389d7e4013b353fbd1397a758d53b79 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1787336222.87284 "c:/Users/ludmy/Desktop/FCUP_thesis_layout _ Template/main.tex" "main.pdf" "main" 1787336241.47948 0
+["pdflatex"] 1787336476.55833 "c:/Users/ludmy/Desktop/FCUP_thesis_layout _ Template/main.tex" "main.pdf" "main" 1787336494.05057 0
   "Appendices/AppendixTemplate.tex" 1769970954 223 79bd3079b61c92c604e246e9cf1b4162 ""
   "C:/Users/ludmy/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778092888 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/ludmy/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt0800.pk" 1778095681 15192 d785342a2b8214a7acf199c44400675b ""
@@ -289,7 +289,7 @@
   "Chapters/Final/2.Objectives.tex" 1786892921 1720 2e117efd5ba7efbf453426ee351bfb23 ""
   "Chapters/Final/3.RelatedWork.tex" 1786893559 8800 76429d108920a83f5ff77de2743d163b ""
   "Chapters/Final/4.MaterialsMethods.tex" 1787232045 42602 f65dde92b304b6ceebd213d77f791e6f ""
-  "Chapters/Final/5.Results.tex" 1787336201 13979 2c4358c211e5adcaee90408cceb43c05 ""
+  "Chapters/Final/5.Results.tex" 1787336451 15803 1cd2befcd2fa1509b8503d25ebaaf1e8 ""
   "Chapters/Final/6.Discussion.tex" 1786893720 1272 4c89a1908e09ae1e4dd846140a5aa7de ""
   "Chapters/Final/7.Conclusion.tex" 1785848541 814 1c73539f065cd371317ac25151084c2b ""
   "Chapters/Final/Generated/Benchmark.tex" 1787318724 1390 a075f8047f73c6b6ee7c4cfbf9c926eb ""
@@ -353,15 +353,15 @@
   "c:/Users/ludmy/Desktop/FCUP_thesis_layout _ Template/main.tex" 1786894305 4724 8324378919c5cf7b4359791c2b126a58 ""
   "epigraphoverload.tex" 1769970949 1188 6dd9414e5b47083e75549dcf4cf895e6 ""
   "main.acr" 1778354139 11086 2c2ac94f648616fb35fd0ebd411295ee ""
-  "main.aux" 1787336239 44630 8e310c8ae683e010797293d2c8bb1a97 "pdflatex"
-  "main.bbl" 1787336222 12814 745515b439753279d053b422ad0b10e8 "bibtex main"
-  "main.brf" 1787336239 5138 9316292bc4ebbe4e52816faa821214e0 "pdflatex"
-  "main.lof" 1787336239 10115 b8ba73860a928535f25d40ed10d84971 "pdflatex"
-  "main.logr" 1787336225 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.lot" 1787336239 2645 dc9dbc80e4f36318c98cb2e9f26da37f "pdflatex"
-  "main.out" 1787336239 17493 8817cfdf9bd2a52c6d651184f728b880 "pdflatex"
+  "main.aux" 1787336492 44630 7389d7e4013b353fbd1397a758d53b79 "pdflatex"
+  "main.bbl" 1787336476 12814 745515b439753279d053b422ad0b10e8 "bibtex main"
+  "main.brf" 1787336492 5138 9316292bc4ebbe4e52816faa821214e0 "pdflatex"
+  "main.lof" 1787336492 10115 6a75266f2e14217f2f8543e2aeeced2a "pdflatex"
+  "main.logr" 1787336479 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.lot" 1787336492 2645 d7c818c2c488c9e97a148fed7ca591ad "pdflatex"
+  "main.out" 1787336492 17493 8817cfdf9bd2a52c6d651184f728b880 "pdflatex"
   "main.tex" 1786894305 4724 8324378919c5cf7b4359791c2b126a58 ""
-  "main.toc" 1787336239 7254 4770e61ad84fabc5c7316506b82ffd89 "pdflatex"
+  "main.toc" 1787336492 7254 3f2490fa2c44ef48f85a8ab05934c36d "pdflatex"
   "preamble.tex" 1785848125 10330 29012b70983150830b0061f3ff04dc4d ""
   "precontent.tex" 1771455742 4596 e83faa78794d03ad07184d9735f072a5 ""
   "vars.tex" 1778359318 2401 30f254bd10a8a00becb627cb91b98f3b ""

@@ -110,6 +110,14 @@ O\acrshort{psnr} e\acrshort{mae} são apenas métricas complementares, mas não 
 \subsection{Rastreabilidade das execuções}
 % A preencher: snapshots de reprodutibilidade, versões do ambiente e hashes dos checkpoints.
 
+A rastreabilidade das execuções foi assegurada através de \textit{snapshots} de reprodutibilidade em formato JSON, preservados em \texttt{outputs/reproducibility/}. Foram congeladas seis avaliações internas finais, correspondentes às três inicializações aleatórias (seeds 42, 1337 e 2024) dos modelos Single Model e Dual Model. Todos os snapshots foram gerados a partir do commit \texttt{a950be7276a5585de45e8ae874c59c065a1985be}, no ramo \texttt{projeto\_final}, com árvore de trabalho limpa (\texttt{is\_dirty: false}).
+
+Cada snapshot regista o sistema operativo, a versão do Python e as versões das dependências relevantes. O ambiente de execução utilizou Python 3.11.9 em Windows 10, incluindo TensorFlow 2.15.0, NumPy 1.26.4, Pandas 2.2.2, scikit-image 0.21.0 e Matplotlib 3.7.5. Além disso, foram calculados hashes SHA-256 dos ficheiros de configuração, do manifesto canónico de pares, da definição da partição por paciente, dos metadados de geração dos tensores e do ficheiro de requisitos do ambiente.
+
+Para cada execução, o snapshot preserva o caminho, tamanho e hash SHA-256 do checkpoint, o comando completo usado na avaliação no conjunto de teste e os hashes dos ficheiros de saída, incluindo as métricas agregadas e as métricas por amostra. Assim, cada valor, tabela ou figura reportado pode ser associado de forma inequívoca ao código, ambiente, dados de entrada, checkpoint e resultados que o originaram.
+
+A seleção dos checkpoints foi efetuada exclusivamente com base na métrica de validação pré-especificada: \texttt{val\_ssim\_hu} no Single Model e \texttt{val\_img\_out\_ssim\_hu} na saída de reconstrução do Dual Model. Os resultados do conjunto de teste foram usados apenas para avaliação confirmatória, não tendo alterado a seleção do modelo.
+
 
 \section{Avaliação interna no conjunto de teste}
 \subsection{Desfechos globais}
