@@ -336,22 +336,25 @@ De fato, as literaturas recentes tem demonstrado performance estatísticamente m
 
 A validação interna foi conduzida nos conjuntos de validação e teste, avaliando consistência, estabilidade e capacidade de generalização intra-\textit{dataset}.
 
+Após a seleção do melhor checkpoint de cada uma das seis corridas na validação, os checkpoints foram comparados na partição de teste interna para selecionar a candidata à avaliação externa. A decisão privilegiou a maior melhoria de \acrshort{ssim} global e na Zona de Artefacto, seguido de melhor\acrshort{psnr} e\acrshort{mae} global e na Zona de Artefacto como forma de desempate. Após essa comparação, a corrida selecionada foi congelada, sem novo treino, ajuste de hiperparâmetros ou alteração dos pesos antes da avaliação externa.
+
 \subsection{Métricas globais}
 Para a avaliação global, as imagens preditas e de referência são desnormalizadas para a janela $[-1000, 400]$ HU, correspondendo a uma amplitude $\mathrm{MAX} = 1400$ HU. Adicionalmente, a região de avaliação é recortada ao menor retângulo envolvente (\textit{bounding box}) da máscara corporal antes da avaliação de SSIM, eliminando janelas de varredura compostas exclusivamente por fundo — que pontuariam $\text{SSIM} = 1{,}0$ artificialmente e inflariam a métrica global.
 \subsection{Avaliação por regiões de interesse}
+\label{subsec:metodos-roi}
 
-A avaliação global não distingue o comportamento do modelo nas regiões diretamente afetadas pelos artefatos daquele nas regiões saudáveis distantes do implante. Para uma análise mais granular, a região corporal é dividida em duas zonas complementares, definidas a partir da diferença entre a imagem de entrada e a referência limpa.
+A avaliação global não distingue o comportamento do modelo nas regiões diretamente afetadas pelos artefatos daquele nas regiões corporais distantes do implante. Por isso, cada fatia foi dividida em duas zonas complementares a partir da diferença entre a entrada com artefatos e a referência limpa. Sejam $I_{\mathrm{in}}$ a imagem de entrada, $I_{\mathrm{ref}}$ a referência limpa e $M_{\mathrm{body}}$ a máscara corporal. Calculou-se a diferença assinada $d=I_{\mathrm{ref}}-I_{\mathrm{in}}$ e removeu-se o seu valor mediano no corpo, $b=\mathrm{mediana}(d\mid M_{\mathrm{body}})$, evitando que um desvio global associado ao endurecimento de feixe fosse interpretado como artefato local.
 
-\begin{itemize}
-    \item \textbf{Zona de Artefato} ($\mathcal{R}_{art}$): pixels cuja diferença absoluta entre entrada e referência, após remoção do \textit{bias} de endurecimento de feixe, excede o limiar $\tau \approx 0{,}05$ (correspondente a $\sim\!70\,\text{HU}$ acima do \textit{bias} mediano corporal), dilatados com um disco morfológico de raio 10 pixels para incluir os braços de \textit{streak} que caem abaixo do limiar:
-    \[
-    M_{art}(i,j) = \bigl[\,|\Delta_{bias}(i,j)| > \tau\,\bigr] \otimes D_{10}
-    \]
-    \item \textbf{Zona Distante} ($\mathcal{R}_{dist}$): complemento da zona de artefato dentro da região corporal, que avalia a capacidade do modelo de preservar tecido saudável sem introduzir distorções secundárias:
-    \[
-    M_{dist} = M_{body} \setminus M_{art}
-    \]
-\end{itemize}
+A Zona de Artefato ($\mathcal{R}_{\mathrm{art}}$) foi definida por
+\[
+M_{\mathrm{art}}=\left[\lvert d-b\rvert>\tau\right]\cap M_{\mathrm{body}},
+\qquad \tau=0{,}03,
+\]
+valor equivalente a aproximadamente 42~HU na escala normalizada utilizada. Componentes conectados com menos de 20 pixels foram removidos. Não foi aplicada dilatação morfológica adicional ($r=0$), preservando a geometria observada dos \textit{streaks}. A Zona Distante ($\mathcal{R}_{\mathrm{dist}}$) foi definida como o complemento da zona de artefato na região corporal,
+\[
+M_{\mathrm{dist}}=M_{\mathrm{body}}\setminus M_{\mathrm{art}}.
+\]
+Esta zona quantifica alterações fora da região diretamente afetada; a interpretação clínica da preservação anatómica foi reservada à avaliação externa por leitores.
 
 A \autoref{fig:final-roi-examples} ilustra a aplicação das duas zonas em fatias representativas do conjunto de dados, cobrindo diferentes regiões anatómicas e padrões de artefato.
 
@@ -364,17 +367,21 @@ A \autoref{fig:final-roi-examples} ilustra a aplicação das duas zonas em fatia
     \label{fig:final-roi-examples}
 \end{figure}
 
-Para cada zona, calculam-se as métricas como deltas em relação ao desempenho da entrada corrompida, permitindo isolar a contribuição do modelo na região de artefato da sua contribuição nas regiões saudáveis:
+Em todos os contextos de avaliação, as métricas foram expressas como variações relativamente ao desempenho da entrada corrompida. Seja $\Omega$ o domínio de avaliação, que pode corresponder à região global definida acima ($\Omega_{\mathrm{global}}$), à Zona de Artefato ($\mathcal{R}_{\mathrm{art}}$) ou à Zona Distante ($\mathcal{R}_{\mathrm{dist}}$), e seja $\hat I$ a reconstrução produzida pelo modelo. As variações foram definidas por:
 
 \[
-\Delta\text{PSNR}_{ROI} = \text{PSNR}(\hat{I}|_{ROI},\, I|_{ROI}) - \text{PSNR}(I_{art}|_{ROI},\, I|_{ROI})
+\Delta\mathrm{PSNR}_{\Omega} = \mathrm{PSNR}(\hat I\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}) - \mathrm{PSNR}(I_{\mathrm{in}}\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega})
 \]
 
 \[
-\Delta\text{SSIM}_{ROI} = \text{SSIM}(\hat{I}|_{ROI},\, I|_{ROI}) - \text{SSIM}(I_{art}|_{ROI},\, I|_{ROI})
+\Delta\mathrm{SSIM}_{\Omega} = \mathrm{SSIM}(\hat I\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}) - \mathrm{SSIM}(I_{\mathrm{in}}\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega})
 \]
 
-Valores positivos indicam melhoria face à entrada corrompida. Utiliza-se \acrshort{ssim} regular, que opera localmente com janela de $11 \times 11$ pixels.
+\[
+\Delta\mathrm{MAE}_{\Omega} = \mathrm{MAE}(I_{\mathrm{in}}\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}) - \mathrm{MAE}(\hat I\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}).
+\]
+
+Assim, $\Delta\mathrm{PSNR}>0$ e $\Delta\mathrm{SSIM}>0$ indicam melhoria face à entrada corrompida. Como menor \acrshort{mae} representa melhor fidelidade, a ordem da subtração foi invertida para essa métrica: $\Delta\mathrm{MAE}>0$ indica redução do erro e, portanto, melhoria; $\Delta\mathrm{MAE}<0$ indica aumento do erro. Utilizou-se \acrshort{ssim} regular, calculado com janela local de $11\times11$ pixels e recorte com contexto em redor da região avaliada.
 
 \begin{table}[H]
     \centering

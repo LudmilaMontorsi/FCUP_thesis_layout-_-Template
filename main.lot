@@ -21,13 +21,14 @@
 \contentsline {table}{\numberline {5.4}{\ignorespaces \acrshort {ssim} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm $ desvio padrão.}}{45}{table.caption.34}%
 \contentsline {table}{\numberline {5.5}{\ignorespaces \acrshort {psnr} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm $ desvio padrão.}}{45}{table.caption.35}%
 \contentsline {table}{\numberline {5.6}{\ignorespaces \acrshort {mae} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm $ desvio padrão.}}{45}{table.caption.36}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces $\Delta $\acrshort {psnr} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}}{45}{table.caption.37}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces $\Delta $\acrshort {ssim} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}}{45}{table.caption.38}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Redução global de \acrshort {mae} agregada por paciente no conjunto de teste ($n=41$). Valores positivos representam redução do erro; IC: intervalo de confiança de 95\%.}}{46}{table.caption.39}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Definição das regiões de interesse utilizada nas avaliações finais.}}{47}{table.caption.41}%
-\contentsline {table}{\numberline {5.11}{\ignorespaces Resultados por \acrshort {roi} no conjunto de teste. Os valores são médias das métricas agregadas por paciente ($n=41$); $\Delta \mathrm {MAE}>0$ corresponde a redução do erro.}}{50}{table.caption.43}%
-\contentsline {table}{\numberline {5.12}{\ignorespaces Ablation study: model comparison for artifact removal.}}{50}{table.caption.46}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Comparacao pareada dual-head menos single-head, agregada por paciente.}}{50}{table.caption.47}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces $\Delta $\acrshort {ssim} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}}{45}{table.caption.37}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces $\Delta $\acrshort {psnr} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}}{45}{table.caption.38}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces $\Delta $\acrshort {mae} global agregado por paciente no conjunto de teste ($n=41$). Valores $>0$ representam melhoria; IC: intervalo de confiança de 95\%.}}{46}{table.caption.39}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces $\Delta $\acrshort {ssim} por \acrshort {roi} no conjunto de teste. Os valores são média $\pm $ desvio-padrão entre pacientes ($n=41$).}}{48}{table.caption.42}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces $\Delta $\acrshort {psnr} por \acrshort {roi} no conjunto de teste. Os valores são média $\pm $ desvio-padrão entre pacientes ($n=41$).}}{48}{table.caption.43}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Redução de \acrshort {mae} por \acrshort {roi} no conjunto de teste. Os valores são média $\pm $ desvio-padrão entre pacientes ($n=41$); valores positivos correspondem a redução do erro.}}{48}{table.caption.44}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Ablation study: model comparison for artifact removal.}}{51}{table.caption.50}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Comparacao pareada dual-head menos single-head, agregada por paciente.}}{51}{table.caption.51}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

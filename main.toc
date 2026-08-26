@@ -47,7 +47,7 @@
 \contentsline {subsection}{\numberline {4.5.2}Avaliação por regiões de interesse}{24}{subsection.4.5.2}%
 \contentsline {subsection}{\numberline {4.5.3}Análise estatística}{27}{subsection.4.5.3}%
 \contentsline {section}{\numberline {4.6}Avaliação externa por médicos}{27}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Desenho e casos}{27}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.1}Desenho e casos}{28}{subsection.4.6.1}%
 \contentsline {subsection}{\numberline {4.6.2}Participantes e proteção de dados}{28}{subsection.4.6.2}%
 \contentsline {subsection}{\numberline {4.6.3}Apresentação e instrumento de avaliação}{28}{subsection.4.6.3}%
 \contentsline {subsection}{\numberline {4.6.4}Desfechos e análise}{28}{subsection.4.6.4}%
@@ -61,26 +61,26 @@
 \contentsline {subsection}{\numberline {5.2.2}Rastreabilidade das execuções}{44}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Avaliação interna no conjunto de teste}{44}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Desfechos globais}{44}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Avaliação por regiões de interesse}{46}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Comparação pareada single-head versus dual-head}{50}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Desempenho computacional}{53}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Avaliação externa por médicos}{54}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Estado da recolha e participantes}{54}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Desfecho primário: visualização anatómica}{54}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Desfechos secundários e segurança percebida}{54}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Interpretação limitada ao desenho observacional}{54}{subsection.5.6.4}%
-\contentsline {chapter}{\numberline {6}Discussão}{55}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Síntese dos achados principais}{55}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Interpretação da comparação arquitetural}{55}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Preservação anatómica e segurança da reconstrução}{55}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Generalização e avaliação externa}{55}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Avaliação por médicos}{55}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Limitações}{56}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Implicações e trabalho futuro}{56}{section.6.7}%
-\contentsline {chapter}{\numberline {7}Conclusões}{57}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusões do estudo}{57}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Contribuições da dissertação}{57}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Perspetivas futuras}{57}{section.7.3}%
+\contentsline {subsection}{\numberline {5.3.2}Avaliação por regiões de interesse}{47}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Comparação pareada Single x Dual Model}{51}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Desempenho computacional}{55}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Avaliação externa por médicos}{55}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Estado da recolha e participantes}{55}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Desfecho primário: visualização anatómica}{55}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Desfechos secundários e segurança percebida}{55}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Interpretação limitada ao desenho observacional}{55}{subsection.5.6.4}%
+\contentsline {chapter}{\numberline {6}Discussão}{56}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Síntese dos achados principais}{56}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Interpretação da comparação arquitetural}{56}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Preservação anatómica e segurança da reconstrução}{56}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Generalização e avaliação externa}{56}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Avaliação por médicos}{56}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Limitações}{57}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Implicações e trabalho futuro}{57}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Conclusões}{58}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusões do estudo}{58}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Contribuições da dissertação}{58}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Perspetivas futuras}{58}{section.7.3}%
 \vspace {0.5cm}
-\contentsline {chapter}{Bibliography}{57}{dummy.8}%
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{63}{appendix.A}%
+\contentsline {chapter}{Bibliography}{58}{dummy.8}%
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{64}{appendix.A}%

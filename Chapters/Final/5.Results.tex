@@ -86,7 +86,7 @@ Com relação aos possíveis falsos negativos que poderiam ter resultado em excl
 \section{Treino dos modelos}
 \subsection{Convergência e seleção dos checkpoints}
 % A preencher: curvas de treino/validação e checkpoints selecionados pelo monitor pré-especificado.
-A seleção do checkpoint para avaliação final foi baseada na melhor versão do\acrshort{ssim} calculado na partição de validação. Obviamente, no modelo Dual, esse critério foi aplicado na saída de reconstrução. Apenas o melhor checkpoint por corrida foi preservado, em formato .keras, com nome que contém arquitetura, época e métrica monitorizada. O CSV de treino marca explicitamente a linha correspondente com $best_checkpoint=1$.
+A seleção do checkpoint para avaliação final foi baseada na melhor versão do \acrshort{ssim} calculado na partição de validação. Obviamente, no modelo Dual, esse critério foi aplicado na saída de reconstrução. Apenas o melhor checkpoint por corrida foi preservado, em formato .keras, com nome que contém arquitetura, época e métrica monitorizada. O CSV de treino marca explicitamente a linha correspondente com \texttt{best\_checkpoint=1}.
 
 A regra de paragem definia um máximo de épocas de 300 e um mínimo de 5, com\textit{Early Stopping} após 15 épocas sem melhoria mínima de 0.0001 no\acrshort{ssim} da partição de validação. Consequentemente, devido à restauração dos pesos da melhor época, a época final de treino não é necessariamente a selecionada.
 
@@ -106,6 +106,8 @@ O melhor resultado de\acrshort{mae} foi 17.1918 HU também do Single Model, seed
 
 O\acrshort{psnr} e\acrshort{mae} são apenas métricas complementares, mas não são o foco principal de seleção do melhor checkpoint que considera apenas o\acrshort{ssim} isoladamente. Além disso, as métricas separadas por\acrshort{roi}, análises visuais, e métricas de teste interno são avaliações feitas após a seleção do melhor checkpoint e portanto não alteram o checkpoint escolhido.
 
+A escolha da corrida que avançará para a avaliação externa é uma decisão distinta da seleção do checkpoint. Entre os checkpoints já selecionados, a comparação é efetuada na partição de teste, buscando equilíbrio entre a maior melhoria de\acrshort{ssim} na Zona de Artefacto e menor mudança de\acrshort{ssim} na Zona Distante. Após essa seleção não houve novo treino, ajuste de hiperparâmetros ou alterações nos pesos antes da avaliação externa.
+
 
 \subsection{Rastreabilidade das execuções}
 % A preencher: snapshots de reprodutibilidade, versões do ambiente e hashes dos checkpoints.
@@ -116,14 +118,14 @@ Cada snapshot regista o sistema operativo, a versão do Python e as versões das
 
 Para cada execução, o snapshot preserva o caminho, tamanho e hash SHA-256 do checkpoint, o comando completo usado na avaliação no conjunto de teste e os hashes dos ficheiros de saída, incluindo as métricas agregadas e as métricas por amostra. Assim, cada valor, tabela ou figura reportado pode ser associado de forma inequívoca ao código, ambiente, dados de entrada, checkpoint e resultados que o originaram.
 
-A seleção dos checkpoints foi efetuada exclusivamente com base na métrica de validação pré-especificada: \texttt{val\_ssim\_hu} no Single Model e \texttt{val\_img\_out\_ssim\_hu} na saída de reconstrução do Dual Model. Os resultados do conjunto de teste foram usados apenas para avaliação confirmatória, não tendo alterado a seleção do modelo.
+A seleção dos checkpoints foi efetuada exclusivamente com base na métrica de validação pré-especificada: \texttt{val\_ssim\_hu} no Single Model e \texttt{val\_img\_out\_ssim\_hu} na saída de reconstrução do Dual Model.
 
 
 \section{Avaliação interna no conjunto de teste}
 \subsection{Desfechos globais}
 \label{sec:desfechos-globais}
 
-A avaliação interna foi realizada na partição de teste fixa, composta por 1478 fatias de 41 pacientes independentes. Para cada checkpoint previamente selecionado na validação, foram calculados\acrshort{psnr},\acrshort{ssim} e\acrshort{mae} entre a reconstrução e a referência limpa. A unidade de agregação para a inferência estatística foi o paciente: as métricas foram primeiro resumidas dentro de cada paciente e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} percentil com 10000 reamostragens (seed 1337). O conjunto de teste não foi utilizado para escolher checkpoints.
+A avaliação interna foi realizada na partição de teste fixa, composta por 1478 fatias de 41 pacientes independentes. Para cada checkpoint previamente selecionado na validação, foram calculados\acrshort{psnr},\acrshort{ssim} e\acrshort{mae} entre a reconstrução e a referência limpa. A unidade de agregação para a inferência estatística foi o paciente: as métricas foram primeiro resumidas dentro de cada paciente e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} percentil com 10000 reamostragens. O conjunto de teste não foi utilizado para escolher checkpoints.
 
 A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global-mae} apresentam as médias por fatia. Como todas as corridas foram avaliadas na mesma partição de teste, o valor da entrada é comum aos dois modelos em cada seed. Em todas as corridas, a reconstrução aumentou o \acrshort{psnr} global de 27,39~dB para 34,95--35,20~dB, aumentou o \acrshort{ssim} de 0,8361 para 0,9421--0,9442 e reduziu o \acrshort{mae} de 36,6~HU para 17,3--17,8~HU.
 
@@ -131,9 +133,9 @@ A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global
 
 \begin{table}[htbp]
     \centering
-    \caption{\acrshort{ssim} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
-    \label{tab:global-ssim}
+    
     \begin{tabular}{cccc}
+        \multicolumn{4}{c}{\textbf{SSIM global}} \\[4pt]
         \hline
         \textbf{Seed} & \textbf{Input} & \textbf{Single Model} & \textbf{Dual Model} \\
         \hline
@@ -142,182 +144,235 @@ A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global
         2024 & $0.8361 \pm 0.0880$ & $0.9442 \pm 0.0288$ & $0.9432 \pm 0.0292$ \\
         \hline
     \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption{\acrshort{ssim} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
+    \label{tab:global-ssim}
 \end{table}
 
 \begin{table}[htbp]
     \centering
-    \caption{\acrshort{psnr} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
-    \label{tab:global-psnr}
     \begin{tabular}{cccc}
+        \multicolumn{4}{c}{\textbf{PSNR global (dB)}} \\[4pt]
         \hline
-        \textbf{Seed} & \textbf{Input (dB)} & \textbf{Single Model (dB)} & \textbf{Dual Model (dB)} \\
+        \textbf{Seed} & \textbf{Input} & \textbf{Single Model} & \textbf{Dual Model} \\
         \hline
         42   & $27.39 \pm 4.14$ & $35.09 \pm 2.82$ & $35.06 \pm 2.84$ \\
         1337 & $27.39 \pm 4.14$ & $35.13 \pm 2.81$ & $34.95 \pm 2.82$ \\
         2024 & $27.39 \pm 4.14$ & $35.20 \pm 2.84$ & $35.16 \pm 2.82$ \\
         \hline
     \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption{\acrshort{psnr} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
+    \label{tab:global-psnr}
 \end{table}
 
 \begin{table}[htbp]
     \centering
-    \caption{\acrshort{mae} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
-    \label{tab:global-mae}
     \begin{tabular}{cccc}
+        \multicolumn{4}{c}{\textbf{MAE global (HU)}} \\[4pt]
         \hline
-        \textbf{Seed} & \textbf{Input (HU)} & \textbf{Single Model (HU)} & \textbf{Dual Model (HU)} \\
+        \textbf{Seed} & \textbf{Input} & \textbf{Single Model} & \textbf{Dual Model} \\
         \hline
         42   & $36.569 \pm 21.906$ & $17.649 \pm 5.689$ & $17.654 \pm 5.905$ \\
         1337 & $36.569 \pm 21.906$ & $17.485 \pm 5.624$ & $17.842 \pm 5.789$ \\
         2024 & $36.569 \pm 21.906$ & $17.341 \pm 5.573$ & $17.475 \pm 5.563$ \\
         \hline
     \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption{\acrshort{mae} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
+    \label{tab:global-mae}
 \end{table}
 
 Os deltas e respetivos intervalos de confiança por paciente são apresentados na \autoref{tab:delta-psnr-paciente}, na \autoref{tab:delta-ssim-paciente} e na \autoref{tab:delta-mae-paciente}. Todas as corridas melhoraram as três métricas; os testes de Wilcoxon bilaterais foram significativos para os três desfechos em todas as corridas ($p<0{,}001$). Os intervalos de confiança não incluem o valor nulo, sustentando a melhoria global face à entrada com artefactos.
 
 \begin{table}[htbp]
     \centering
-    \caption{$\Delta$\acrshort{psnr} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}
-    \label{tab:delta-psnr-paciente}
     \begin{tabular}{ccc}
+        \multicolumn{3}{c}{\textbf{$\Delta$SSIM Global (IC 95\%)}} \\[4pt]
         \hline
-        \textbf{Seed} & \textbf{Single Model (dB), IC} & \textbf{Dual Model (dB), IC} \\
-        \hline
-        42   & 6.96 [6.22; 7.68] & 6.96 [6.24; 7.65] \\
-        1337 & 7.05 [6.33; 7.75] & 6.85 [6.12; 7.55] \\
-        2024 & 7.11 [6.36; 7.83] & 7.06 [6.31; 7.78] \\
-        \hline
-    \end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-    \centering
-    \caption{$\Delta$\acrshort{ssim} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}
-    \label{tab:delta-ssim-paciente}
-    \begin{tabular}{ccc}
-        \hline
-        \textbf{Seed} & \textbf{Single Model, IC} & \textbf{Dual Model, IC} \\
+        \textbf{Seed} & \textbf{Single Model} & \textbf{Dual Model} \\
         \hline
         42   & 0.0887 [0.0728; 0.1063] & 0.0870 [0.0713; 0.1043] \\
         1337 & 0.0891 [0.0734; 0.1065] & 0.0867 [0.0710; 0.1041] \\
         2024 & 0.0891 [0.0732; 0.1066] & 0.0879 [0.0719; 0.1053] \\
         \hline
     \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption{$\Delta$\acrshort{ssim} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}
+    \label{tab:delta-ssim-paciente}
 \end{table}
 
 \begin{table}[htbp]
     \centering
-    \caption{Redução global de \acrshort{mae} agregada por paciente no conjunto de teste ($n=41$). Valores positivos representam redução do erro; IC: intervalo de confiança de 95\%.}
-    \label{tab:delta-mae-paciente}
     \begin{tabular}{ccc}
+        \multicolumn{3}{c}{\textbf{$\Delta$PSNR Global (dB, IC 95\%)}} \\[4pt]
         \hline
-        \textbf{Seed} & \textbf{Single Model (HU), IC} & \textbf{Dual Model (HU), IC} \\
+        \textbf{Seed} & \textbf{Single Model} & \textbf{Dual Model} \\
+        \hline
+        42   & 6.96 [6.22; 7.68] & 6.96 [6.24; 7.65] \\
+        1337 & 7.05 [6.33; 7.75] & 6.85 [6.12; 7.55] \\
+        2024 & 7.11 [6.36; 7.83] & 7.06 [6.31; 7.78] \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption{$\Delta$\acrshort{psnr} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}
+    \label{tab:delta-psnr-paciente}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccc}
+        \multicolumn{3}{c}{\textbf{$\Delta$MAE Global (HU, IC 95\%)}} \\[4pt]
+        \hline
+        \textbf{Seed} & \textbf{Single Model} & \textbf{Dual Model} \\
         \hline
         42   & 15.3 [12.2; 19.0] & 15.3 [12.3; 18.9] \\
         1337 & 15.6 [12.4; 19.3] & 15.2 [12.1; 18.8] \\
         2024 & 15.7 [12.5; 19.5] & 15.5 [12.4; 19.3] \\
         \hline
     \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption{$\Delta$\acrshort{mae} global agregado por paciente no conjunto de teste ($n=41$). Valores $>0$ representam melhoria; IC: intervalo de confiança de 95\%.}
+    \label{tab:delta-mae-paciente}
 \end{table}
 
-As distribuições por fatia da corrida Single Model com seed 2024 são ilustradas na \autoref{fig:global-distribuicoes}. Esta corrida é mostrada apenas como exemplo visual por ter sido selecionada previamente pela métrica de validação; as conclusões quantitativas deste capítulo baseiam-se nas seis corridas apresentadas nas tabelas. A dispersão das fatias explica a diferença entre a análise descritiva por imagem e a inferência por paciente reportada acima.
-
-\begin{figure}[htbp]
+Nota-se que o Single Model para as sementes 1337 e 2024 apresentam praticamente o mesmo desempenho em\acrshort{ssim}. No entanto, em\acrshort{psnr} e\acrshort{mae} o mesmo modelo se sai melhor com a seed 2024. Isso já coloca a versão Single com semente 2024 em evidência para ser o candidato selecionado para a avaliação externa. Porém, ainda é necessário verificar o desempenho por\acrshort{roi}, já que essas métricas são muito mais informativas a respeito de onde o modelo está realmente melhorando a imagem. As distribuições por fatia da corrida Single Model com seed 2024 são ilustradas na \autoref{fig:global-distribuicoes}.
+\begingroup
+\setlength{\intextsep}{4pt}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.49\linewidth]{Figures/Generated/evaluation/boxplot-global-psnr-distribution-7a8640dd.png}
-    \includegraphics[width=0.49\linewidth]{Figures/Generated/evaluation/boxplot-global-ssim-distribution-d8846b9b.png}
-    \caption{Distribuição por fatia das métricas globais para o Single Model, seed 2024. O painel esquerdo apresenta \acrshort{psnr} e o direito apresenta \acrshort{ssim}; em ambos, a comparação é entre a entrada com artefactos e a reconstrução do modelo.}
-    \label{fig:global-distribuicoes}
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Global/boxplot_global_ssim_distribution.pdf}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Global/boxplot_global_psnr_distribution.pdf}
+\end{figure}
+\captionsetup{skip=1.5pt}
+\captionof{figure}{Distribuições por fatia do \acrshort{ssim} e do \acrshort{psnr} globais para o Single Model, seed 2024.}
+\label{fig:global-distribuicoes}
+\endgroup
 
 \subsection{Avaliação por regiões de interesse}
 \label{sec:avaliacao-roi}
 
-A avaliação global não distingue o comportamento do modelo nas regiões diretamente afetadas pelos artefactos daquele nas regiões corporais distantes do implante. Por isso, cada fatia é dividida em duas zonas complementares, definidas a partir da diferença entre a entrada com artefactos e a referência limpa. Esta estratificação permite quantificar separadamente a correção onde ela é necessária e a alteração introduzida fora dessa região.
+As regiões de interesse e o cálculo das métricas por zona seguiram o procedimento descrito na \autoref{subsec:metodos-roi}. Esta estratificação permite quantificar separadamente a correção na região diretamente afetada pelos artefactos e as alterações introduzidas nas regiões corporais distantes do implante.
 
-Sejam $I_{\mathrm{in}}$ a imagem de entrada, $I_{\mathrm{ref}}$ a referência limpa e $M_{\mathrm{body}}$ a máscara corporal. Calcula-se a diferença assinada $d=I_{\mathrm{ref}}-I_{\mathrm{in}}$ e remove-se o seu valor mediano no corpo, $b=\mathrm{mediana}(d\mid M_{\mathrm{body}})$, para evitar que um desvio global devido ao endurecimento de feixe seja interpretado como artefacto local. Nas avaliações finais congeladas, utilizou-se $\tau=0{,}03$ na escala normalizada, equivalente a aproximadamente 42~HU acima deste \textit{bias}. A máscara inicial é ainda restringida à região corporal e pequenos componentes com menos de 20 pixels são removidos.
-
-\begin{table}[htbp]
-    \centering
-    \caption{Definição das regiões de interesse utilizada nas avaliações finais.}
-    \label{tab:roi-definicao}
-    \begin{tabular}{p{0.22\linewidth}p{0.68\linewidth}}
-        \hline
-        \textbf{Região} & \textbf{Definição operacional} \\
-        \hline
-        Zona de Artefacto ($\mathcal{R}_{\mathrm{art}}$) & $M_{\mathrm{art}}=\left[\lvert d-b\rvert>\tau\right]\cap M_{\mathrm{body}}$, com $\tau=0{,}03$. Não foi aplicada dilatação adicional ($r=0$), preservando a geometria observada dos \textit{streaks}. \\
-        Zona Distante ($\mathcal{R}_{\mathrm{dist}}$) & $M_{\mathrm{dist}}=M_{\mathrm{body}}\setminus M_{\mathrm{art}}$. Esta zona é reportada de forma descritiva; a interpretação clínica da preservação anatómica é reservada à avaliação externa por leitores. \\
-        \hline
-    \end{tabular}
-\end{table}
-
-A \autoref{fig:final-roi-examples} ilustra as duas zonas em fatias representativas. Em cada exemplo, a sobreposição vermelha identifica a Zona de Artefacto e a verde identifica a Zona Distante.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.88\linewidth]{Figures/roi_example_sample_0000.png}\\[3pt]
-    \includegraphics[width=0.88\linewidth]{Figures/roi_example_sample_0003.png}\\[3pt]
-    \includegraphics[width=0.88\linewidth]{Figures/roi_example_sample_0006.png}
-    \caption{Exemplos de zonas de \acrshort{roi} em fatias de \acrshort{ct} com artefactos metálicos. As fatias representam diferentes anatomias e padrões de artefacto, ilustrando que a extensão da Zona de Artefacto é determinada individualmente a partir da discrepância entre entrada e referência.}
-    \label{fig:final-roi-examples}
-\end{figure}
-
-Para cada zona, são calculados \acrshort{psnr}, \acrshort{ssim} de escala única e \acrshort{mae}. Os resultados são expressos como variações face à entrada corrompida; para \acrshort{psnr} e \acrshort{ssim}, valores positivos indicam melhoria, enquanto para \acrshort{mae} um $\Delta\mathrm{MAE}$ positivo representa redução do erro:
-\[
-\Delta\mathrm{PSNR}_{\mathrm{ROI}}=
-\mathrm{PSNR}(\hat I\mid_{\mathrm{ROI}},I_{\mathrm{ref}}\mid_{\mathrm{ROI}})-
-\mathrm{PSNR}(I_{\mathrm{in}}\mid_{\mathrm{ROI}},I_{\mathrm{ref}}\mid_{\mathrm{ROI}}),
-\]
-\[
-\Delta\mathrm{SSIM}_{\mathrm{ROI}}=
-\mathrm{SSIM}(\hat I\mid_{\mathrm{ROI}},I_{\mathrm{ref}}\mid_{\mathrm{ROI}})-
-\mathrm{SSIM}(I_{\mathrm{in}}\mid_{\mathrm{ROI}},I_{\mathrm{ref}}\mid_{\mathrm{ROI}}).
-\]
-O \acrshort{ssim} é calculado com janela local de $11\times11$ pixels, usando um recorte com contexto em redor da região avaliada.
-
-Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 pacientes independentes, são apresentados na \autoref{tab:roi-resultados}. Todas as seis corridas apresentaram melhoria substancial na Zona de Artefacto: $\Delta$PSNR entre 11,47 e 11,86~dB, $\Delta$SSIM entre 0,322 e 0,328 e redução de \acrshort{mae} entre 96,9 e 98,5~HU. Na Zona Distante, as alterações médias foram menores ($\Delta$PSNR entre 1,36 e 1,61~dB; $\Delta$SSIM entre 0,057 e 0,058; redução de \acrshort{mae} entre 3,2 e 3,6~HU), devendo ser interpretadas como descrição quantitativa e não como validação clínica de preservação anatómica.
+Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 pacientes independentes, são apresentados nas \autoref{tab:roi-delta-psnr}, \autoref{tab:roi-delta-ssim} e \autoref{tab:roi-reducao-mae}. Todas as seis corridas apresentaram melhoria substancial na Zona de Artefacto: $\Delta$PSNR entre 11,47 e 11,86~dB, $\Delta$SSIM entre 0,322 e 0,328 e redução de \acrshort{mae} entre 96,9 e 98,5~HU. Na Zona Distante, as alterações médias foram menores ($\Delta$PSNR entre 1,36 e 1,61~dB; $\Delta$SSIM entre 0,057 e 0,058; redução de \acrshort{mae} entre 3,2 e 3,6~HU), devendo ser interpretadas como descrição quantitativa e não como validação clínica de preservação anatómica.
 
 \begin{table}[htbp]
     \centering
     \small
-    \caption{Resultados por \acrshort{roi} no conjunto de teste. Os valores são médias das métricas agregadas por paciente ($n=41$); $\Delta\mathrm{MAE}>0$ corresponde a redução do erro.}
-    \label{tab:roi-resultados}
-    \begin{tabular}{llrrrrrr}
+    \begin{tabular}{cccc}
+        \multicolumn{4}{c}{\textbf{$\Delta$SSIM}} \\[4pt]
         \hline
-        \textbf{Modelo} & \textbf{Seed} & \multicolumn{3}{c}{\textbf{Zona de Artefacto}} & \multicolumn{3}{c}{\textbf{Zona Distante}} \\
-        \cline{3-5}\cline{6-8}
-        & & $\Delta$PSNR & $\Delta$SSIM & $\Delta$MAE & $\Delta$PSNR & $\Delta$SSIM & $\Delta$MAE \\
-        & & (dB) & & (HU) & (dB) & & (HU) \\
+        \textbf{Seed} & \textbf{Model} & \textbf{Artifact ROI} & \textbf{Clean ROI} \\
         \hline
-        Single Model & 42   & 11,75 & 0,328 & 97,8 & 1,46 & 0,058 & 3,3 \\
-        Single Model & 1337 & 11,84 & 0,328 & 98,5 & 1,53 & 0,058 & 3,5 \\
-        Single Model & 2024 & 11,86 & 0,328 & 98,4 & 1,61 & 0,058 & 3,6 \\
-        Dual Model   & 42   & 11,65 & 0,323 & 97,5 & 1,48 & 0,057 & 3,4 \\
-        Dual Model   & 1337 & 11,47 & 0,322 & 96,9 & 1,36 & 0,057 & 3,2 \\
-        Dual Model   & 2024 & 11,84 & 0,327 & 98,3 & 1,53 & 0,058 & 3,5 \\
+        \multirow{2}{*}{42} & Single Model & $0.3276 \pm 0.0954$ & $0.0579 \pm 0.0426$ \\
+                             & Dual Model   & $0.3233 \pm 0.0937$ & $0.0568 \pm 0.0421$ \\
+        \hline
+        \multirow{2}{*}{1337} & Single Model & $0.3278 \pm 0.0933$ & $0.0582 \pm 0.0421$ \\
+                               & Dual Model   & $0.3224 \pm 0.0953$ & $0.0566 \pm 0.0422$ \\
+        \hline
+        \multirow{2}{*}{2024} & Single Model & $0.3279 \pm 0.0955$ & $0.0581 \pm 0.0422$ \\
+                               & Dual Model   & $0.3266 \pm 0.0954$ & $0.0576 \pm 0.0422$ \\
         \hline
     \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption{$\Delta$\acrshort{ssim} por \acrshort{roi} no conjunto de teste. Os valores são média $\pm$ desvio-padrão entre pacientes ($n=41$).}
+    \label{tab:roi-delta-ssim}
+\end{table}
+    
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabular}{cccc}
+        \multicolumn{4}{c}{\textbf{$\Delta$PSNR (dB)}} \\[4pt]
+        \hline
+        \textbf{Seed} & \textbf{Model} & \textbf{Artifact ROI} & \textbf{Clean ROI} \\
+        \hline
+        \multirow{2}{*}{42} & Single Model & $11.75 \pm 2.59$ & $1.46 \pm 1.43$ \\
+                             & Dual Model   & $11.65 \pm 2.53$ & $1.48 \pm 1.43$ \\
+        \hline
+        \multirow{2}{*}{1337} & Single Model & $11.84 \pm 2.54$ & $1.53 \pm 1.35$ \\
+                               & Dual Model   & $11.47 \pm 2.57$ & $1.36 \pm 1.52$ \\
+        \hline
+        \multirow{2}{*}{2024} & Single Model & $11.86 \pm 2.69$ & $1.61 \pm 1.41$ \\
+                               & Dual Model   & $11.84 \pm 2.62$ & $1.53 \pm 1.48$ \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption{$\Delta$\acrshort{psnr} por \acrshort{roi} no conjunto de teste. Os valores são média $\pm$ desvio-padrão entre pacientes ($n=41$).}
+    \label{tab:roi-delta-psnr}
 \end{table}
 
-As \autoref{fig:roi-boxplots} e \autoref{fig:roi-safety} mostram a distribuição por imagem para a corrida Single Model com seed 2024, selecionada previamente pela métrica de validação. Os diagramas de caixa evidenciam a separação entre a correção na Zona de Artefacto e a alteração menor na Zona Distante. O diagrama de dispersão permite identificar heterogeneidade entre fatias, incluindo casos individuais com alterações desfavoráveis na zona distante; por isso, esta figura não deve ser interpretada como substituto da avaliação externa por médicos.
-
-\begin{figure}[htbp]
+\begin{table}[htbp]
     \centering
-    \includegraphics[width=0.49\linewidth]{Figures/Generated/evaluation/boxplot-roi-delta-psnr-6f56551d.png}
-    \includegraphics[width=0.49\linewidth]{Figures/Generated/evaluation/boxplot-roi-delta-mae-f6351a38.png}
-    \caption{Distribuição por imagem das variações de \acrshort{psnr} e \acrshort{mae} nas duas zonas para o Single Model, seed 2024. O painel esquerdo apresenta $\Delta$PSNR; o painel direito apresenta a redução de \acrshort{mae}.}
-    \label{fig:roi-boxplots}
+    \small
+    \begin{tabular}{cccc}
+        \multicolumn{4}{c}{\textbf{$\Delta$MAE (HU)}} \\[4pt]
+        \hline
+        \textbf{Seed} & \textbf{Model} & \textbf{Artifact ROI} & \textbf{Clean ROI} \\
+        \hline
+        \multirow{2}{*}{42} & Single Model & $97.8 \pm 19.6$ & $3.3 \pm 3.2$ \\
+                             & Dual Model   & $97.5 \pm 19.1$ & $3.4 \pm 3.1$ \\
+        \hline
+        \multirow{2}{*}{1337} & Single Model & $98.5 \pm 19.6$ & $3.5 \pm 3.1$ \\
+                               & Dual Model   & $96.9 \pm 19.9$ & $3.2 \pm 3.3$ \\
+        \hline
+        \multirow{2}{*}{2024} & Single Model & $98.4 \pm 20.2$ & $3.6 \pm 3.1$ \\
+                               & Dual Model   & $98.3 \pm 19.8$ & $3.5 \pm 3.3$ \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption{Redução de \acrshort{mae} por \acrshort{roi} no conjunto de teste. Os valores são média $\pm$ desvio-padrão entre pacientes ($n=41$); valores positivos correspondem a redução do erro.}
+    \label{tab:roi-reducao-mae}
+\end{table}
+
+Novamente, o Single Model com sementes 1337 e 2024 apresentam desempenhos muito semelhantes em\acrshort{ssim}, com a semente 2024 levando uma minúscula vantagem. Já na análise por\acrshort{roi}, o melhor desempenho em\acrshort{psnr} e\acrshort{mae} com a semente 2024 fica menos evidente do que na análise global, especialmente quando considera-se as alterações na Zona Distante. Mesmo assim, as alterações na Zona Distante são pequenas e varia pouco entre os modelos e sementes. Dessa forma, foi decidido priorizar o desempenho da semente na análise Global e por ROI (mesmo que muito pequena) para selecionar o modelo que seguirá para a avaliação externa. A escolha final recaiu sobre o Single Model, seed 2024, que apresentou o melhor desempenho global e por ROI.
+As \autoref{fig:roi-boxplots} e \autoref{fig:roi-safety} mostram a distribuição por imagem para a corrida selecionada. Por simplicidade, os gráficos de agora em diante são apresentados apenas para o modelo selecionado, mas os dados de todas as corridas estão disponíveis no apêndice \ref{apendice:avaliacao-interna}.
+
+Os diagramas de caixa evidenciam a separação entre a correção na Zona de Artefacto e a alteração menor na Zona Distante. O diagrama de dispersão permite identificar heterogeneidade entre fatias, incluindo casos individuais com alterações desfavoráveis na zona distante.
+
+\FloatBarrier
+\begingroup
+\setlength{\intextsep}{4pt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.82\linewidth]{Figures/Generated/evaluation/scatter-roi-safety-8e831fe6.png}
-    \caption{Relação por imagem entre a melhoria de \acrshort{psnr} na Zona de Artefacto e a alteração de \acrshort{psnr} na Zona Distante para o Single Model, seed 2024. A cor codifica a redução de \acrshort{mae} na Zona Distante.}
-    \label{fig:roi-safety}
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf}
 \end{figure}
 
-\section{Comparação pareada single-head versus dual-head}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf}
+\end{figure}
+\captionsetup{skip=1.5pt}
+\captionof{figure}{Distribuições por imagem das variações de\acrshort{ssim},\acrshort{psnr} e\acrshort{mae} nas zonas de artefacto e distante para o Single Model, seed 2024.}
+\label{fig:roi-boxplots}
+\endgroup
+
+\begingroup
+\setlength{\intextsep}{4pt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf}
+\end{figure}
+\captionsetup{skip=2pt}
+\captionof{figure}{Relação por imagem entre a melhoria de\acrshort{ssim} \textbackslash\acrshort{psnr} na Zona de Artefacto e a alteração de\acrshort{ssim} \textbackslash\acrshort{psnr} na Zona Distante para o Single Model, seed 2024. A cor codifica a redução de\acrshort{mae} na Zona Distante.}
+\label{fig:roi-safety}
+\endgroup
+
+\section{Comparação pareada Single x Dual Model}
 \textit{[A preencher: diferença dual menos single, Wilcoxon bilateral, IC 95\% bootstrap e p-valores ajustados por Holm.]}
 \input{Chapters/Final/Generated/PairedComparison}
 
