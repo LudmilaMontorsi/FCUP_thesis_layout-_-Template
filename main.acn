@@ -39,9 +39,6 @@
 \glossaryentry{U-Net?\glossentry{unet}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{CT?\glossentry{ct}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{HU?\glossentry{hu}|setentrycounter[]{page}"\glsnumberformat}{xi}
-\glossaryentry{ASPP?\glossentry{aspp}|setentrycounter[]{page}"\glsnumberformat}{xi}
-\glossaryentry{CBAM?\glossentry{cbam}|setentrycounter[]{page}"\glsnumberformat}{xi}
-\glossaryentry{SE?\glossentry{se}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{MAR?\glossentry{mar}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{NMAR?\glossentry{nmar}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{FBP?\glossentry{fbp}|setentrycounter[]{page}"\glsnumberformat}{xi}
@@ -61,14 +58,9 @@
 \glossaryentry{iMAR?\glossentry{imar}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{SEMAR?\glossentry{semar}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{AMP?\glossentry{amp}|setentrycounter[]{page}"\glsnumberformat}{xi}
-\glossaryentry{GAP?\glossentry{gap}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{ReLU?\glossentry{relu}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{BN?\glossentry{bn}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{NPY?\glossentry{npy}|setentrycounter[]{page}"\glsnumberformat}{xi}
-\glossaryentry{FC?\glossentry{fc}|setentrycounter[]{page}"\glsnumberformat}{xi}
-\glossaryentry{FLOPs?\glossentry{flops}|setentrycounter[]{page}"\glsnumberformat}{xi}
-\glossaryentry{SE-Net?\glossentry{senet}|setentrycounter[]{page}"\glsnumberformat}{xi}
-\glossaryentry{MLP?\glossentry{mlp}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{CT-MAR?\glossentry{ctmar}|setentrycounter[]{page}"\glsnumberformat}{xi}
 \glossaryentry{CT?\glossentry{ct}|setentrycounter[]{page}"\glsnumberformat}{2}
 \glossaryentry{MAR?\glossentry{mar}|setentrycounter[]{page}"\glsnumberformat}{2}
@@ -145,6 +137,7 @@
 \glossaryentry{CT-MAR?\glossentry{ctmar}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{CT-MAR?\glossentry{ctmar}|setentrycounter[]{page}"\glsnumberformat}{13}
 \glossaryentry{CT-MAR?\glossentry{ctmar}|setentrycounter[]{page}"\glsnumberformat}{13}
+\glossaryentry{GPU?\glossentry{gpu}|setentrycounter[]{page}"\glsnumberformat}{13}
 \glossaryentry{MS-SSIM?\glossentry{ms-ssim}|setentrycounter[]{page}"\glsnumberformat}{14}
 \glossaryentry{CT-MAR?\glossentry{ctmar}|setentrycounter[]{page}"\glsnumberformat}{14}
 \glossaryentry{SSIM?\glossentry{ssim}|setentrycounter[]{page}"\glsnumberformat}{14}
@@ -225,7 +218,7 @@
 \glossaryentry{MS-SSIM?\glossentry{ms-ssim}|setentrycounter[]{page}"\glsnumberformat}{34}
 \glossaryentry{MS-SSIM?\glossentry{ms-ssim}|setentrycounter[]{page}"\glsnumberformat}{34}
 \glossaryentry{MS-SSIM?\glossentry{ms-ssim}|setentrycounter[]{page}"\glsnumberformat}{34}
-\glossaryentry{MS-SSIM?\glossentry{ms-ssim}|setentrycounter[]{page}"\glsnumberformat}{35}
+\glossaryentry{MS-SSIM?\glossentry{ms-ssim}|setentrycounter[]{page}"\glsnumberformat}{34}
 \glossaryentry{SSIM?\glossentry{ssim}|setentrycounter[]{page}"\glsnumberformat}{36}
 \glossaryentry{SSIM?\glossentry{ssim}|setentrycounter[]{page}"\glsnumberformat}{36}
 \glossaryentry{SSIM?\glossentry{ssim}|setentrycounter[]{page}"\glsnumberformat}{43}

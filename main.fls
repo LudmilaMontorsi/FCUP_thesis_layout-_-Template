@@ -792,6 +792,8 @@ INPUT .\Figures\score_distribution.pdf
 INPUT .\Figures\score_distribution.pdf
 INPUT .\Figures\score_distribution.pdf
 INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8t.tfm
+INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvro8t.vf
+INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8r.tfm
 INPUT .\Chapters\Final\Generated\Training.tex
 INPUT .\Chapters\Final\Generated\Training.tex
 INPUT .\Chapters\Final\Generated\Training.tex
@@ -834,8 +836,6 @@ INPUT .\Figures\Generated\training\training-curves-dualhead-157d2305.pdf
 INPUT .\Figures\Generated\training\training-curves-dualhead-157d2305.pdf
 INPUT .\Figures\Generated\training\training-curves-dualhead-157d2305.pdf
 INPUT .\Figures\Generated\training\training-curves-dualhead-157d2305.pdf
-INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvro8t.vf
-INPUT C:\Users\ludmy\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8r.tfm
 INPUT .\Tables\Generated\best_validation_ssim.tex
 INPUT .\Tables\Generated\best_validation_ssim.tex
 INPUT Tables\Generated\best_validation_ssim.tex

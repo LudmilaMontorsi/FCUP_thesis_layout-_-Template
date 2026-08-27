@@ -16,6 +16,7 @@ Todos os pares que tiveram a correspondencia aprovada automaticamente pelo fato 
     \centering
     \includegraphics[width=\textwidth]{Figures/ssim_distribution_full.pdf} \\[4pt]
     \includegraphics[width=\textwidth]{Figures/ssim_distribution_zoom.pdf}
+    \captionsetup{skip=2pt}
     \caption{Distribuição de MS-SSIM entre pares correspondentes (\acrshort{ctmar} vs DL/Stroke, aprovados automaticamente). Acima: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. Abaixo: zoom do histograma para a região de maior interesse, com destaque para os pares com MS-SSIM inferior a 0.9, que foram sujeitos a revisão manual.}
     \label{fig:ssim_distribution}
 \end{figure}
@@ -28,6 +29,7 @@ Os pares com pontuação de\acrshort{ms-ssim} abaixo de 0.9 eram 340 no total, a
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/ssim_ecdf_final.pdf}
+    \captionsetup{skip=2pt}
     \caption{Distribuição de MS-SSIM entre pares correspondentes (\acrshort{ctmar} vs DL/Stroke, aprovados automaticamente). À esquerda: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. À direita: ECDF correspondente. Os pares com MS-SSIM inferior a 0.9 foram sujeitos a revisão manual.}
     \label{fig:ECDF}
 \end{figure}
@@ -37,6 +39,7 @@ Os pares com pontuação de\acrshort{ms-ssim} abaixo de 0.9 eram 340 no total, a
     \includegraphics[width=0.70\textwidth]{Figures/image4.png}\\[2pt]
     \includegraphics[width=0.70\textwidth]{Figures/image5.png}\\[2pt]
     \includegraphics[width=0.70\textwidth]{Figures/image6.png}
+    \captionsetup{skip=2pt}
     \caption{Exemplos de pares correspondentes com valores de\acrshort{ms-ssim} (0.7597, 0.7694 e 0.7717, respetivamente) aprovados após revisão visual humana mesmo com pontuações baixas.}
     \label{fig:manual_review_examples}
 \end{figure}
@@ -49,13 +52,15 @@ Os pares reprovados apresentavam\acrshort{ms-ssim} claramente fora do padrão (<
     \includegraphics[width=0.70\textwidth]{Figures/image1.png}\\[4pt]
     \includegraphics[width=0.70\textwidth]{Figures/image2.png}\\[4pt]
     \includegraphics[width=0.70\textwidth]{Figures/image3.png}
+    \captionsetup{skip=2pt}
     \caption{3 pares reprovados após inspeção visual humana com valores de \acrshort{ms-ssim} (head\_1159: 0.4573, head\_369: 0.5652 e head\_763: 0.6009, respetivamente). As pontuações desses pares na similaridade de cosseno foram head\_1159: 0.9960, head\_369: 0.9952 e head\_763: 0.9951.}
     \label{fig:reproved_examples}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Figures/cosine_scatter_audited.pdf}
+    \includegraphics[width=0.98\textwidth]{Figures/cosine_scatter_audited.pdf}
+    \captionsetup{skip=2pt}
     \caption{Distribuição dos valores de similaridade de cosseno para os pares inspecionados visualmente.}
     \label{fig:cosine_scatter_audited}
 \end{figure}
@@ -64,7 +69,8 @@ Os pares com\acrshort{ms-ssim} mais críticos logo acima dos reprovados tinham v
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Figures/ssim_scatter_dist.pdf}
+    \includegraphics[width=0.95\textwidth]{Figures/ssim_scatter_dist.pdf}
+    \captionsetup{skip=2pt}
     \caption{Distribuição dos valores de\acrshort{ms-ssim} para os pares inspecionados visualmente.}
     \label{fig:ssim_scatter_dist}
 \end{figure}
@@ -77,7 +83,8 @@ Com relação aos possíveis falsos negativos que poderiam ter resultado em excl
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Figures/score_distribution.pdf}
+    \includegraphics[width=0.98\textwidth]{Figures/score_distribution.pdf}
+    \captionsetup{skip=2pt}
     \caption{Distribuição dos \textit{scores} de similaridade de cosseno (DL vs Stroke EIT) para os pares sem correspondência aprovada em nenhum dos dois \textit{datasets} de origem (N=435). Histograma laranja mostra a distribuição das pontuações dos 435 pares reprovados no Stroke EIT Dataset. O histograma em azul, mostra a distribuição dos mesmos 435 pares reprovados no Deep Lesion Dataset.}
     \label{fig:score_distribution_bad}
 \end{figure}
@@ -86,7 +93,7 @@ Com relação aos possíveis falsos negativos que poderiam ter resultado em excl
 \section{Treino dos modelos}
 \subsection{Convergência e seleção dos checkpoints}
 % A preencher: curvas de treino/validação e checkpoints selecionados pelo monitor pré-especificado.
-A seleção do checkpoint para avaliação final foi baseada na melhor versão do \acrshort{ssim} calculado na partição de validação. Obviamente, no modelo Dual, esse critério foi aplicado na saída de reconstrução. Apenas o melhor checkpoint por corrida foi preservado, em formato .keras, com nome que contém arquitetura, época e métrica monitorizada. O CSV de treino marca explicitamente a linha correspondente com \texttt{best\_checkpoint=1}.
+A seleção do \textit{checkpoint} para avaliação final foi baseada na melhor versão do\acrshort{ssim} calculado na partição de validação. Obviamente, no modelo Dual, esse critério foi aplicado na saída de reconstrução. Apenas o melhor checkpoint por corrida foi preservado, em formato .keras, com nome que contém arquitetura, época e métrica monitorizada. O CSV de treino marca explicitamente a linha correspondente com \texttt{best\_checkpoint=1}.
 
 A regra de paragem definia um máximo de épocas de 300 e um mínimo de 5, com\textit{Early Stopping} após 15 épocas sem melhoria mínima de 0.0001 no\acrshort{ssim} da partição de validação. Consequentemente, devido à restauração dos pesos da melhor época, a época final de treino não é necessariamente a selecionada.
 

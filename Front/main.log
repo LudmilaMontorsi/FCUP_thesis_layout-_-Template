@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.2.1)  9 MAY 2026 22:25
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.2.1)  26 AUG 2026 21:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -870,33 +870,33 @@ File: msc/title.pdf Graphic file (type pdf)
 File: logos/fcup.pdf Graphic file (type pdf)
 <use logos/fcup.pdf>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 299.
+(Font)              <9> on input line 301.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 299.
+(Font)              <6> on input line 301.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 299.
+(Font)              <5> on input line 301.
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--301
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 292--301
+Underfull \hbox (badness 10000) in paragraph at lines 294--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--301
+Underfull \hbox (badness 10000) in paragraph at lines 294--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--301
+Underfull \hbox (badness 10000) in paragraph at lines 294--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--301
+Underfull \hbox (badness 10000) in paragraph at lines 294--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--303
 
  []
 
@@ -912,9 +912,9 @@ File: logos/fcup.pdf Graphic file (type pdf)
 File: msc/front.pdf Graphic file (type pdf)
 <use msc/front.pdf>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 643.
+(Font)              <10.95> on input line 649.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 643.
+(Font)              <8> on input line 649.
 File: logos/up.pdf Graphic file (type pdf)
 <use logos/up.pdf>
 File: logos/fc.pdf Graphic file (type pdf)
@@ -930,7 +930,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  23758 strings out of 402986
  476781 string characters out of 5448504
- 923208 words of memory out of 5000000
+ 923224 words of memory out of 5000000
  52093 multiletter control sequences out of 15000+600000
  631900 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
