@@ -23,7 +23,7 @@
 \backcite {sahuTransformingCTImaging2025}{{7}{3.1}{section.3.1}}
 \backcite {kleberAdvancementsSupervisedDeep2024}{{7}{3.1}{section.3.1}}
 \backcite {sellesAdvancesMetalArtifact2024}{{7}{3.1}{section.3.1}}
-\backcite {gjestebyDeepLearningMethods2017}{{8}{3.2}{section.3.2}}
+\backcite {gjestebyDeepLearningMethods2017}{{7}{3.2}{section.3.2}}
 \backcite {zhangConvolutionalNeuralNetwork2018}{{8}{3.2}{section.3.2}}
 \backcite {ronnebergerUNetConvolutionalNetworks2015}{{8}{3.2}{section.3.2}}
 \backcite {kleberAdvancementsSupervisedDeep2024}{{8}{3.2}{section.3.2}}
@@ -32,7 +32,7 @@
 \backcite {gjestebyDeepLearningMethods2017}{{8}{3.2}{section.3.2}}
 \backcite {zhangConvolutionalNeuralNetwork2018}{{8}{3.2}{section.3.2}}
 \backcite {linDuDoNetDualDomain2019}{{8}{3.2}{section.3.2}}
-\backcite {yuMetalArtifactReduction2021}{{9}{3.2}{section.3.2}}
+\backcite {yuMetalArtifactReduction2021}{{8}{3.2}{section.3.2}}
 \backcite {huangMultimodalFeaturefusionCT2022}{{9}{3.2}{section.3.2}}
 \backcite {yiGenerativeAdversarialNetwork2019}{{9}{3.2}{section.3.2}}
 \backcite {zhouwangImageQualityAssessment2004}{{9}{3.3}{section.3.3}}

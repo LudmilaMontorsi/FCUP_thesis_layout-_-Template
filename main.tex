@@ -40,25 +40,9 @@
 % Start counting pages in an unused scheme to fix backref
 \pagenumbering{Alph}
 
-% Includes the front pages (cover and etc.)
-%\pagestyle{empty}
-\includepdf[pages={1},pagecommand={%
-    % Add clickable links overlay on the front page (coordinates from Front/main.pax)
-    \begin{tikzpicture}[remember picture,overlay]
-        % Link for author email (adjusted for new title layout)
-        \node[inner sep=0pt,minimum height=20.03pt,minimum width=204.31pt] at ([shift={(176.055pt,181.775pt)}]current page.south west) 
-            {\href{mailto:mp.ludmila.montorsi@gmail.com}{\phantom{\rule{204.31pt}{20.03pt}}}};
-        % Link for degree name (adjusted for new title layout)
-        \node[inner sep=0pt,minimum height=13.36pt,minimum width=146.83pt] at ([shift={(147.315pt,162.97pt)}]current page.south west) 
-            {\href{https://sigarra.up.pt/fcup/pt/cur_geral.cur_view?pv_curso_id=894&pv_origem=CAND&pv_ano_lectivo=2025}{\phantom{\rule{146.83pt}{13.36pt}}}};
-        % Link for department (adjusted for new title layout)
-        \node[inner sep=0pt,minimum height=11.13pt,minimum width=167.78pt] at ([shift={(157.79pt,147.935pt)}]current page.south west) 
-            {\href{http://dfa.fc.up.pt/}{\phantom{\rule{167.78pt}{11.13pt}}}};
-        % Link for faculty (adjusted for new title layout)
-        \node[inner sep=0pt,minimum height=11.13pt,minimum width=216.54pt] at ([shift={(182.17pt,133.585pt)}]current page.south west) 
-            {\href{https://www.up.pt/fcup/pt/}{\phantom{\rule{216.54pt}{11.13pt}}}};
-    \end{tikzpicture}
-}]{Front/main}
+% The PAX sidecar generated from Front/main.pdf restores the link rectangles
+% emitted by the cover itself, so they follow text reflow automatically.
+\includepdf[pages={1}]{Front/main}
 %\cleardoublepage
 % (Front/main tem 1 página)\includepdf[pages={2},pagecommand={},scale=1,link=true]{Front/main}
 %\cleardoublepage

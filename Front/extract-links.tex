@@ -1,0 +1,7 @@
+% Generates main.pax from the link annotations embedded in main.pdf.
+% Compile this file with LuaLaTeX after compiling main.tex.
+\documentclass{article}
+\directlua{require("newpax")}
+\directlua{newpax.writepax("main")}
+\begin{document}
+\end{document}

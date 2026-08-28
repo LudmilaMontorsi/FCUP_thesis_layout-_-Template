@@ -4,6 +4,7 @@
     "singlehead",
     "dualhead"
   ],
+  "comparison_seed": "2024",
   "artifacts": [
     {
       "category": "materials",
@@ -57,157 +58,181 @@
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_psnr_distribution.pdf",
       "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-2be35fd4.pdf",
-      "sha256": "6b69fe9b7e4c5bc97f660aa85a1331bb6533ca4ca2b301e0483e71b21a8df466"
+      "sha256": "9083033956532f8f3cc9269ddac256fe744b64b12cea7d93e8c088f6ef927eff"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_psnr_distribution.png",
       "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-7a8640dd.png",
-      "sha256": "68359cd6b70890f53bc417f5301ae7a1d70b5b81e6913da19f3d7d630b922aa5"
+      "sha256": "1cfec9312c88a54832f74722d5c47c4a80d476ddd82319bdf4363c4db6fb2a33"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_ssim_distribution.pdf",
       "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-fe2cec3a.pdf",
-      "sha256": "ada44efd61d2439341707c11865fe68fde6f6c676ee58b0c368c6ab0773b8d3d"
+      "sha256": "6da3b1a26dc30e5b674e21bdf225ae7734b9d9d0da78d730900afccc907a9755"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_ssim_distribution.png",
       "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-d8846b9b.png",
-      "sha256": "7d91d2b04ed34dfc8b6baa65438acf30241161d503434fe54e6ddfceff739ccd"
+      "sha256": "6deadfdf8be48314b9845be0d7104fe197ce77b241765e749304da24a46e3d5e"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
       "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-97e4460d.pdf",
-      "sha256": "d14af2150f4caa43405a5400944b028fa41933e914fba2ea97d920111fdc4144"
+      "sha256": "445d6f904a2f968813e17362f40eddd3434ae36d7a7c5b28008b051fb2dc3455"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_mae.png",
       "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-f6351a38.png",
-      "sha256": "8f476b25d6c59fe3085aed1a2aed91624d6b499266c325242b02266d3b9f01f6"
+      "sha256": "acc47a95f6a6b7d3286f47f8ca668616a17d02918e3049684520e87e7e2530f3"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_psnr.pdf",
       "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-89c2d63f.pdf",
-      "sha256": "f6011c5efcf42f266b170a5fe74792e4327b96d817fa2808c813aaf7058022d8"
+      "sha256": "620b883d42200fdf46e1720f9ddb8e0d7d124d305079813eca808d0c869dfc19"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_psnr.png",
       "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-6f56551d.png",
-      "sha256": "4a856338eac25cdc8cc19be6f5866c95c81e2305bd3134dbd6b9ae3b3e10557e"
+      "sha256": "42979e3ffd1157cfc1eb126b946ab40494ca2c66a56672016e926bf704e50427"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-ssim-cb62d6ec.pdf",
+      "sha256": "f16014a6d5fcf391c78a859d8938a2891fbbaa5066f521e4d4c4a828755dab78"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-ssim-5655d171.png",
+      "sha256": "36a7ceaaaf582841fc98c308af8348944fd6eeaaa9dbe1a19c70a90a5802948c"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.pdf",
       "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-527e760a.pdf",
-      "sha256": "539b61fad672024970aab6980dfa634c3e29d698b40ce601b7389e547d122eec"
+      "sha256": "4e613446084a217f7c104f62c6dba55381c832bb58ce0d1456a3c8dabbdbe852"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.png",
       "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-04ea358b.png",
-      "sha256": "21c23215ac61eac9081d679f8935dd576b45b2a7621f981f2f3d7c64816a93b5"
+      "sha256": "c3c3e456ee41c0df6bee79ceaba3758c4168b9b2dde7d7ff143f80a02b91fa21"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.pdf",
       "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-3c07ff7e.pdf",
-      "sha256": "a346a239eb847aa9752061e88331c067df9897aef61e607fedb56400ffcd7176"
+      "sha256": "105bb5727a95ca3f5b357a6fb616d95ca08e855ff17597d71f31773c7e15c295"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.png",
       "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-b03f6488.png",
-      "sha256": "e96d1c9576de4e45cd421fe544d6c8fd70d5a928eadfaa9a0de8b10d8cccd473"
+      "sha256": "69ed1d7ffb91c5fd0f9119ec145e57f363714e58ee6b523421a2118daa274269"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_psnr.pdf",
       "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-fcc00d7a.pdf",
-      "sha256": "d035d2452d4352b2dc1ca061b48a5bba8b37fbc7d8ef1fc7400a8daebb977a81"
+      "sha256": "fad58d20b6162dff8dc832b11c4d0368bb6f81c75a22f73b28d5d409fae42c6d"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_psnr.png",
       "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-72bf9380.png",
-      "sha256": "2c04a92cc6affd308a40a65986e86a1a29a2d62652b351328395a4b747bacb61"
+      "sha256": "18869765c060b32297f33c8d4ae07829737cbb05cdacb7714237869f6b6536e5"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_ssim.pdf",
       "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-fba91b6b.pdf",
-      "sha256": "d64fbf7bcb8ca8c9f4553794c9c79b0d7a3987b54975440b731c0ed3364608b7"
+      "sha256": "c38d0aed0860dd37b196368959f19488395c2efa1fc647298aa0b1ccc958830f"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_ssim.png",
       "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-abb77a0b.png",
-      "sha256": "5d1a9cfed1cd31a846922e48c45d87644d7948bb59ce4c986afce768bccea933"
+      "sha256": "bc99599e12610db6a064b8f829988b34a5e4bf6b7f229c9c76f0e7d13f92bfc4"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_epi_distribution.pdf",
       "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-fc534ee4.pdf",
-      "sha256": "e8327aa2efab227268897383395bbd96a240b746838710d8950acba7d878a6ef"
+      "sha256": "af32d2c31e7f46c763c060bb8e6b5390c76182a3733385b6044caa84c26ea85b"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_epi_distribution.png",
       "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-bcd639bf.png",
-      "sha256": "6772fddcc54a8c21785091d754913b3c4d3ad3556000ebaa9dd5905344896c2d"
+      "sha256": "d63e78dd4a2378942074341484c9fd6fe579675d924847bf77dd0c57c0359838"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_texture_distribution.pdf",
       "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-06e1319d.pdf",
-      "sha256": "34b743b4946d1c917d1ede305b3b33c41230591cbd28eab91514b63fb44eec51"
+      "sha256": "a1a16ebd9f77f2b35bb335daebd7968691cc5bd98e225e248127d821bcf5adec"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_texture_distribution.png",
       "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-8d28c516.png",
-      "sha256": "663c0d1a5d3655fa64a2a7042ff08450009ee4d9a3596adda7a7cb3f8206e730"
+      "sha256": "f125cfabf1f703154334bb421670235a0701087255247cbb8840394b510d6df1"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
       "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-5b23d2e9.pdf",
-      "sha256": "b5a311cfc9179f0a8ca9310c84302e4368c40276eb2f16fc3caf8dbf42297e69"
+      "sha256": "324d3fd29d535a37d77c356e084642c81686f7be9bb2a1359b4ddd8fadf79d3a"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-bf7dd83e.png",
-      "sha256": "dbc8fcc15944296ca3580aa7ff7bda294aed20a21ea6fc7f0f36d53b064824b4"
+      "sha256": "0212ec50d956dc72cf1f5ac4cb6b6dfce45d04f7727e18f3ef2c9e7719817689"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.pdf",
       "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-4149b486.pdf",
-      "sha256": "e1895c2869a40016006fc24ae22f5a0dd97ad5ca4cdafe4b6a8d48314aab83fb"
+      "sha256": "9cd21b42d7d571c065fedafe6cbe99404e396a89837bf8c96eb302b5c51482d7"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-c9bf4c54.png",
-      "sha256": "7d5765cc2d93b5e2aaf559e9993be9c074725692feb6c5d1c7a7544a82dc98c2"
+      "sha256": "3c056236488146b7428c70656ec3e34e0c46e990c6188e3cf750761ca61101e9"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety.pdf",
       "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-3993aa31.pdf",
-      "sha256": "cc2026815cda4b8be19661af0c2f1c1401aabdef218abea617fedd6caf16cb08"
+      "sha256": "4cf54b5bac51890ab77c304c505b90cb302b483bc0b74350fb633d034a23f485"
     },
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety.png",
       "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-8e831fe6.png",
-      "sha256": "81ae91beb77a37b801c7cf844883a08705db248e48bd847dddb504c6adfdc923"
+      "sha256": "6f054f2da2a06658baba0b3bf8c444caf8e7c99237fcfda694aff783cd7c0f8e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-ssim-922e7189.pdf",
+      "sha256": "4f8ce455394687e5d7f50bd3ab905cf51040423edaf79212795c9737fed3971e"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-ssim-9495e31d.png",
+      "sha256": "6189d17f23aedc407af3aeed552779cc19fc2f2e7df611dc37bcc66773acf061"
     },
     {
       "category": "scatter",
@@ -373,75 +398,21 @@
     },
     {
       "category": "ablation",
-      "source": "outputs\\ablation\\seed_1337\\comparison_test\\comparison_bar_charts.png",
-      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-c89cdffe.png",
-      "sha256": "e11cb0de9e4d9d240617761f00bbb05e067b09d60e544a580c99b3f2cb989aaf"
+      "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_bar_charts.pdf",
+      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-76dfb4b9.pdf",
+      "sha256": "79b7df6e96bf1344e9446081dc096b5bdaa8510b1bec8ccb7b9fb065f1e99f9c"
     },
     {
       "category": "ablation",
-      "source": "outputs\\ablation\\seed_1337\\comparison_test\\comparison_scatter_tradeoff.png",
-      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-63875aed.png",
-      "sha256": "45ff97b8cc74598e135c38de253b7bbaf454cd9f9471316a416c6323d902ea7a"
+      "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_scatter_texture_tradeoff.pdf",
+      "destination": "Figures\\Generated\\paired\\comparison-scatter-texture-tradeoff-176849f0.pdf",
+      "sha256": "a0f5e0376235ef881a5ad4ff429c01549aed464bc60ffd2ccb598a324fe495fc"
     },
     {
       "category": "ablation",
-      "source": "outputs\\ablation\\seed_1337\\comparison_val\\comparison_bar_charts.png",
-      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-a6234831.png",
-      "sha256": "1da73480b23403a151038bb3b4e6c4b09e4b227ddb5382b586486abd1986df89"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_1337\\comparison_val\\comparison_scatter_tradeoff.png",
-      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-75c6cf22.png",
-      "sha256": "30d78edf2a85fef0d77b219fcea3e2a1c413cd063a0a82943d1e43cc39cd5ec0"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_bar_charts.png",
-      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-3254d43f.png",
-      "sha256": "1b2b60e92b139fcfe39e8bedd8771d9eefb742e4dbc482c40640857dae7b029b"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_scatter_tradeoff.png",
-      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-ecd46a35.png",
-      "sha256": "73b8f74339fe7bde6620ec965958d878052809d82a42686f51394ba315bd949b"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_2024\\comparison_val\\comparison_bar_charts.png",
-      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-7e5e6605.png",
-      "sha256": "4c973caca57aaa5551f3b1e75fe181da3be6729fc3f4c88c39b835499203e3f3"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_2024\\comparison_val\\comparison_scatter_tradeoff.png",
-      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-7710b9c3.png",
-      "sha256": "d3d2432e7428ed72639e3af40079448636ed89bf6a78a6f9215f6f62d75b5fa1"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_42\\comparison_test\\comparison_bar_charts.png",
-      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-04e44abd.png",
-      "sha256": "e5ca68c3576fe1b0d517f36964d9407e01ae8edefe124fcf53a736ac1589a008"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_42\\comparison_test\\comparison_scatter_tradeoff.png",
-      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-fbd2724f.png",
-      "sha256": "7a9357025da748ba70459ab9ec13978fd76eef73e16fe5d0f5adb4999c4cc435"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_42\\comparison_val\\comparison_bar_charts.png",
-      "destination": "Figures\\Generated\\paired\\comparison-bar-charts-f32b459d.png",
-      "sha256": "f7ad6567a585de13cdced353d8d10852bc89697c5065fbd3590e1ff816edefb7"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_42\\comparison_val\\comparison_scatter_tradeoff.png",
-      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-b30276ce.png",
-      "sha256": "c038f295de455ed8c75ce880db16d38462237a53184beac2c5f95b7511581392"
+      "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_scatter_tradeoff.pdf",
+      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-55d68aa0.pdf",
+      "sha256": "0367378fb9f9b13c07e2d174bf2e645f31337b06b939adc8b47a95ecee4fdda7"
     },
     {
       "category": "benchmark",

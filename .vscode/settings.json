@@ -1,0 +1,28 @@
+{
+  "latex-workshop.latex.tools": [
+    {
+      "name": "front-xelatex",
+      "command": "xelatex",
+      "args": ["-interaction=nonstopmode", "-file-line-error", "main.tex"],
+      "cwd": "%DIR%/Front"
+    },
+    {
+      "name": "front-newpax",
+      "command": "lualatex",
+      "args": ["-interaction=nonstopmode", "-file-line-error", "extract-links.tex"],
+      "cwd": "%DIR%/Front"
+    },
+    {
+      "name": "thesis-pdflatex",
+      "command": "latexmk",
+      "args": ["-pdf", "-interaction=nonstopmode", "-file-line-error", "%DOC%"],
+      "cwd": "%DIR%"
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Build thesis with dynamic cover links",
+      "tools": ["front-xelatex", "front-newpax", "thesis-pdflatex"]
+    }
+  ]
+}

@@ -336,10 +336,10 @@ Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 p
     \label{tab:roi-reducao-mae}
 \end{table}
 
-Novamente, o Single Model com sementes 1337 e 2024 apresentam desempenhos muito semelhantes em\acrshort{ssim}, com a semente 2024 levando uma minúscula vantagem. Já na análise por\acrshort{roi}, o melhor desempenho em\acrshort{psnr} e\acrshort{mae} com a semente 2024 fica menos evidente do que na análise global, especialmente quando considera-se as alterações na Zona Distante. Mesmo assim, as alterações na Zona Distante são pequenas e varia pouco entre os modelos e sementes. Dessa forma, foi decidido priorizar o desempenho da semente na análise Global e por ROI (mesmo que muito pequena) para selecionar o modelo que seguirá para a avaliação externa. A escolha final recaiu sobre o Single Model, seed 2024, que apresentou o melhor desempenho global e por ROI.
+Novamente, o Single Model com sementes 1337 e 2024 apresentam desempenhos muito semelhantes em\acrshort{ssim}, com a semente 2024 levando uma minúscula vantagem. Já na análise por\acrshort{roi}, o melhor desempenho em\acrshort{psnr} e\acrshort{mae} com a semente 2024 fica menos evidente do que na análise global, especialmente quando considera-se as alterações na Zona Limpa. Mesmo assim, as alterações na Zona Limpa são pequenas e varia pouco entre os modelos e sementes. Dessa forma, foi decidido priorizar o desempenho da semente na análise Global e por ROI (mesmo que muito pequena) para selecionar o modelo que seguirá para a avaliação externa. A escolha final recaiu sobre o Single Model, seed 2024, que apresentou o melhor desempenho global e por ROI.
 As \autoref{fig:roi-boxplots} e \autoref{fig:roi-safety} mostram a distribuição por imagem para a corrida selecionada. Por simplicidade, os gráficos de agora em diante são apresentados apenas para o modelo selecionado, mas os dados de todas as corridas estão disponíveis no apêndice \ref{apendice:avaliacao-interna}.
 
-Os diagramas de caixa evidenciam a separação entre a correção na Zona de Artefacto e a alteração menor na Zona Distante. O diagrama de dispersão permite identificar heterogeneidade entre fatias, incluindo casos individuais com alterações desfavoráveis na zona distante.
+Os diagramas de caixa evidenciam a separação entre a correção na Zona de Artefacto e a alteração menor na Zona Limpa. O diagrama de dispersão permite identificar heterogeneidade entre fatias, incluindo casos individuais com alterações desfavoráveis na Zona Limpa.
 
 \FloatBarrier
 \begingroup
@@ -359,7 +359,7 @@ Os diagramas de caixa evidenciam a separação entre a correção na Zona de Art
     \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf}
 \end{figure}
 \captionsetup{skip=1.5pt}
-\captionof{figure}{Distribuições por imagem das variações de\acrshort{ssim},\acrshort{psnr} e\acrshort{mae} nas zonas de artefacto e distante para o Single Model, seed 2024.}
+\captionof{figure}{Distribuições por imagem das variações de\acrshort{ssim},\acrshort{psnr} e\acrshort{mae} nas zonas de artefacto e limpa para o Single Model, seed 2024.}
 \label{fig:roi-boxplots}
 \endgroup
 
@@ -375,12 +375,12 @@ Os diagramas de caixa evidenciam a separação entre a correção na Zona de Art
     \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf}
 \end{figure}
 \captionsetup{skip=2pt}
-\captionof{figure}{Relação por imagem entre a melhoria de\acrshort{ssim} \textbackslash\acrshort{psnr} na Zona de Artefacto e a alteração de\acrshort{ssim} \textbackslash\acrshort{psnr} na Zona Distante para o Single Model, seed 2024. A cor codifica a redução de\acrshort{mae} na Zona Distante.}
+\captionof{figure}{Relação por imagem entre a melhoria de\acrshort{ssim} \textbackslash\acrshort{psnr} na Zona de Artefacto e a alteração de\acrshort{ssim} \textbackslash\acrshort{psnr} na Zona Limpa para o Single Model, seed 2024. A cor codifica a redução de\acrshort{mae} na Zona Limpa.}
 \label{fig:roi-safety}
 \endgroup
 
 \section{Comparação pareada Single x Dual Model}
-\textit{[A preencher: diferença dual menos single, Wilcoxon bilateral, IC 95\% bootstrap e p-valores ajustados por Holm.]}
+%A preencher: diferença dual menos single, Wilcoxon bilateral, IC 95\% bootstrap e p-valores ajustados por Holm.
 \input{Chapters/Final/Generated/PairedComparison}
 
 \section{Desempenho computacional}

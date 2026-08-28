@@ -27,8 +27,9 @@
 \contentsline {table}{\numberline {5.10}{\ignorespaces $\Delta $\acrshort {ssim} por \acrshort {roi} no conjunto de teste. Os valores são média $\pm $ desvio-padrão entre pacientes ($n=41$).}}{48}{table.caption.42}%
 \contentsline {table}{\numberline {5.11}{\ignorespaces $\Delta $\acrshort {psnr} por \acrshort {roi} no conjunto de teste. Os valores são média $\pm $ desvio-padrão entre pacientes ($n=41$).}}{48}{table.caption.43}%
 \contentsline {table}{\numberline {5.12}{\ignorespaces Redução de \acrshort {mae} por \acrshort {roi} no conjunto de teste. Os valores são média $\pm $ desvio-padrão entre pacientes ($n=41$); valores positivos correspondem a redução do erro.}}{48}{table.caption.44}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Ablation study: model comparison for artifact removal.}}{51}{table.caption.50}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces Comparacao pareada dual-head menos single-head, agregada por paciente.}}{51}{table.caption.51}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Improvement over the corrupted input on the test set.}}{51}{table.caption.50}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Structural preservation metrics on the test set.}}{51}{table.caption.51}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Patient-level paired comparison between architectures ($n=41$). Negative differences favor the Single Model.}}{52}{table.caption.52}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
