@@ -9,9 +9,9 @@
 \vspace {0.3cm}
 \contentsline {chapter}{Índice}{v}{dummy.4}%
 \contentsline {chapter}{Lista de Figuras}{viii}{dummy.5}%
-\contentsline {chapter}{Lista de Gráficos}{x}{dummy.6}%
-\contentsline {chapter}{Lista de Tabelas}{xi}{dummy.7}%
-\contentsline {chapter}{Lista de Abreviaturas}{xiii}{section*.5}%
+\contentsline {chapter}{Lista de Gráficos}{ix}{dummy.6}%
+\contentsline {chapter}{Lista de Tabelas}{x}{dummy.7}%
+\contentsline {chapter}{Lista de Abreviaturas}{xi}{section*.5}%
 \vspace {0.3cm}
 \contentsline {chapter}{\numberline {1}Introdução}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Contexto clínico e técnico}{3}{section.1.1}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  28 AUG 2026 23:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  29 AUG 2026 21:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1118,11 +1118,11 @@ File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \glo@main@file=\write6
 \openout6 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 243.
+Package glossaries Info: Writing glossary file main.glo on input line 250.
 \glo@acronym@file=\write7
 \openout7 = `main.acn'.
 
-Package glossaries Info: Writing glossary file main.acn on input line 243.
+Package glossaries Info: Writing glossary file main.acn on input line 250.
 ) (vars.tex)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -1406,14 +1406,14 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 -----------------------------------------------------
  Lista de Figuras
 -----------------------------------------------------
-(main.lof [8
-
-
-])
+(main.lof)
 \tf@lof=\write10
 \openout10 = `main.lof'.
 
- [9]
+ [8
+
+
+]
 -----------------------------------------------------
  Lista de Gráficos
 -----------------------------------------------------
@@ -1421,7 +1421,7 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 \tf@logr=\write11
 \openout11 = `main.logr'.
 
- [10
+ [9
 
 
 ]
@@ -1432,17 +1432,17 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 \tf@lot=\write12
 \openout12 = `main.lot'.
 
- (main.acr [11
+ (main.acr [10
 
 
-] [12] [13
+] [11
 
 
 ])
 -----------------------------------------------------
  Dedicatory
 -----------------------------------------------------
-[14]) (Chapters/Final/1.Introduction.tex
+[12]) (Chapters/Final/1.Introduction.tex
 Cap\'{\i }tulo 1.
 [1
 
@@ -1471,14 +1471,14 @@ Overfull \hbox (1.7174pt too wide) in paragraph at lines 255--257
 \T1/phv/m/n/10.95 O pri-meiro mo-delo con-siste em uma ar-qui-te-tura ba-se-ada em [][][]U-Net[][] [[]], com-posta por \T1/phv/m/sl/10.95 encoder-
  []
 
-<Figures/Generated/materials/unet-single-compact-132d4a1a.png, id=1055, 714.38895pt x 498.663pt>
+<Figures/Generated/materials/unet-single-compact-132d4a1a.png, id=935, 714.38895pt x 498.663pt>
 File: Figures/Generated/materials/unet-single-compact-132d4a1a.png Graphic file (type png)
 <use Figures/Generated/materials/unet-single-compact-132d4a1a.png>
 Package pdftex.def Info: Figures/Generated/materials/unet-single-compact-132d4a1a.png  used on input line 260.
 (pdftex.def)             Requested size: 432.48051pt x 301.88606pt.
 * Missing: Figures/Generated/materials/unet-single-compact-132d4a1a.pax
 [19]
-<Figures/Generated/materials/unet-dual-compact-8441faa2.png, id=1068, 714.38895pt x 498.663pt>
+<Figures/Generated/materials/unet-dual-compact-8441faa2.png, id=951, 714.38895pt x 498.663pt>
 File: Figures/Generated/materials/unet-dual-compact-8441faa2.png Graphic file (type png)
 <use Figures/Generated/materials/unet-dual-compact-8441faa2.png>
 Package pdftex.def Info: Figures/Generated/materials/unet-dual-compact-8441faa2.png  used on input line 277.
@@ -1486,20 +1486,20 @@ Package pdftex.def Info: Figures/Generated/materials/unet-dual-compact-8441faa2.
 
 * Missing: Figures/Generated/materials/unet-dual-compact-8441faa2.pax
 [20 <./Figures/Generated/materials/unet-single-compact-132d4a1a.png>] [21 <./Figures/Generated/materials/unet-dual-compact-8441faa2.png>] [22] [23] [24]
-<Figures/roi_example_sample_0000.png, id=1133, 705.71655pt x 364.9635pt>
+<Figures/roi_example_sample_0000.png, id=1016, 705.71655pt x 364.9635pt>
 File: Figures/roi_example_sample_0000.png Graphic file (type png)
 <use Figures/roi_example_sample_0000.png>
 Package pdftex.def Info: Figures/roi_example_sample_0000.png  used on input line 363.
 (pdftex.def)             Requested size: 400.61703pt x 207.18488pt.
 
 * Missing: Figures/roi_example_sample_0000.pax
-<Figures/roi_example_sample_0003.png, id=1134, 705.71655pt x 364.9635pt>
+<Figures/roi_example_sample_0003.png, id=1017, 705.71655pt x 364.9635pt>
 File: Figures/roi_example_sample_0003.png Graphic file (type png)
 <use Figures/roi_example_sample_0003.png>
 Package pdftex.def Info: Figures/roi_example_sample_0003.png  used on input line 364.
 (pdftex.def)             Requested size: 400.61703pt x 207.18488pt.
 * Missing: Figures/roi_example_sample_0003.pax
-<Figures/roi_example_sample_0006.png, id=1135, 705.71655pt x 364.9635pt>
+<Figures/roi_example_sample_0006.png, id=1018, 705.71655pt x 364.9635pt>
 File: Figures/roi_example_sample_0006.png Graphic file (type png)
 <use Figures/roi_example_sample_0006.png>
 Package pdftex.def Info: Figures/roi_example_sample_0006.png  used on input line 365.
@@ -1515,13 +1515,13 @@ Cap\'{\i }tulo 5.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 10.
 
-<Figures/ssim_distribution_full.pdf, id=1168, 505.89pt x 303.534pt>
+<Figures/ssim_distribution_full.pdf, id=1050, 505.89pt x 303.534pt>
 File: Figures/ssim_distribution_full.pdf Graphic file (type pdf)
 <use Figures/ssim_distribution_full.pdf>
 Package pdftex.def Info: Figures/ssim_distribution_full.pdf  used on input line 17.
 (pdftex.def)             Requested size: 455.24411pt x 273.15027pt.
 * Missing: Figures/ssim_distribution_full.pax
-<Figures/ssim_distribution_zoom.pdf, id=1169, 505.89pt x 303.534pt>
+<Figures/ssim_distribution_zoom.pdf, id=1051, 505.89pt x 303.534pt>
 File: Figures/ssim_distribution_zoom.pdf Graphic file (type pdf)
 <use Figures/ssim_distribution_zoom.pdf>
 Package pdftex.def Info: Figures/ssim_distribution_zoom.pdf  used on input line 18.
@@ -1530,59 +1530,59 @@ Package pdftex.def Info: Figures/ssim_distribution_zoom.pdf  used on input line 
 [29
 
 ] [30 <./Figures/ssim_distribution_full.pdf> <./Figures/ssim_distribution_zoom.pdf>]
-<Figures/ssim_ecdf_final.pdf, id=1301, 505.89pt x 325.215pt>
+<Figures/ssim_ecdf_final.pdf, id=1184, 505.89pt x 325.215pt>
 File: Figures/ssim_ecdf_final.pdf Graphic file (type pdf)
 <use Figures/ssim_ecdf_final.pdf>
 Package pdftex.def Info: Figures/ssim_ecdf_final.pdf  used on input line 31.
 (pdftex.def)             Requested size: 455.24411pt x 292.66101pt.
 
 * Missing: Figures/ssim_ecdf_final.pax
-<Figures/image4.png, id=1303, 1169.87062pt x 654.94687pt>
+<Figures/image4.png, id=1186, 1169.87062pt x 654.94687pt>
 File: Figures/image4.png Graphic file (type png)
 <use Figures/image4.png>
 Package pdftex.def Info: Figures/image4.png  used on input line 39.
 (pdftex.def)             Requested size: 318.66948pt x 178.40703pt.
 * Missing: Figures/image4.pax
-<Figures/image5.png, id=1304, 1158.57843pt x 642.14906pt>
+<Figures/image5.png, id=1187, 1158.57843pt x 642.14906pt>
 File: Figures/image5.png Graphic file (type png)
 <use Figures/image5.png>
 Package pdftex.def Info: Figures/image5.png  used on input line 40.
 (pdftex.def)             Requested size: 318.66948pt x 176.62582pt.
 * Missing: Figures/image5.pax
-<Figures/image6.png, id=1305, 1156.32pt x 649.67719pt>
+<Figures/image6.png, id=1188, 1156.32pt x 649.67719pt>
 File: Figures/image6.png Graphic file (type png)
 <use Figures/image6.png>
 Package pdftex.def Info: Figures/image6.png  used on input line 41.
 (pdftex.def)             Requested size: 318.66948pt x 179.04343pt.
 * Missing: Figures/image6.pax
 [31 <./Figures/ssim_ecdf_final.pdf>] [32 <./Figures/image4.png> <./Figures/image5.png> <./Figures/image6.png>]
-<Figures/image1.png, id=1376, 1044.90375pt x 572.89032pt>
+<Figures/image1.png, id=1259, 1044.90375pt x 572.89032pt>
 File: Figures/image1.png Graphic file (type png)
 <use Figures/image1.png>
 Package pdftex.def Info: Figures/image1.png  used on input line 52.
 (pdftex.def)             Requested size: 318.66948pt x 174.71817pt.
 
 * Missing: Figures/image1.pax
-<Figures/image2.png, id=1377, 1158.57843pt x 615.80063pt>
+<Figures/image2.png, id=1260, 1158.57843pt x 615.80063pt>
 File: Figures/image2.png Graphic file (type png)
 <use Figures/image2.png>
 Package pdftex.def Info: Figures/image2.png  used on input line 53.
 (pdftex.def)             Requested size: 318.66948pt x 169.37857pt.
 * Missing: Figures/image2.pax
-<Figures/image3.png, id=1378, 1162.3425pt x 560.0925pt>
+<Figures/image3.png, id=1261, 1162.3425pt x 560.0925pt>
 File: Figures/image3.png Graphic file (type png)
 <use Figures/image3.png>
 Package pdftex.def Info: Figures/image3.png  used on input line 54.
 (pdftex.def)             Requested size: 318.66948pt x 153.55159pt.
 * Missing: Figures/image3.pax
-<Figures/cosine_scatter_audited.pdf, id=1380, 505.89pt x 303.534pt>
+<Figures/cosine_scatter_audited.pdf, id=1263, 505.89pt x 303.534pt>
 File: Figures/cosine_scatter_audited.pdf Graphic file (type pdf)
 <use Figures/cosine_scatter_audited.pdf>
 Package pdftex.def Info: Figures/cosine_scatter_audited.pdf  used on input line 62.
 (pdftex.def)             Requested size: 446.13727pt x 267.68504pt.
 * Missing: Figures/cosine_scatter_audited.pax
 [33 <./Figures/image1.png> <./Figures/image2.png> <./Figures/image3.png>]
-<Figures/ssim_scatter_dist.pdf, id=1394, 505.89pt x 303.534pt>
+<Figures/ssim_scatter_dist.pdf, id=1276, 505.89pt x 303.534pt>
 File: Figures/ssim_scatter_dist.pdf Graphic file (type pdf)
 <use Figures/ssim_scatter_dist.pdf>
 Package pdftex.def Info: Figures/ssim_scatter_dist.pdf  used on input line 72.
@@ -1590,7 +1590,7 @@ Package pdftex.def Info: Figures/ssim_scatter_dist.pdf  used on input line 72.
 
 * Missing: Figures/ssim_scatter_dist.pax
 [34 <./Figures/cosine_scatter_audited.pdf> <./Figures/ssim_scatter_dist.pdf>]
-<Figures/score_distribution.pdf, id=1520, 505.89pt x 303.534pt>
+<Figures/score_distribution.pdf, id=1402, 505.89pt x 303.534pt>
 File: Figures/score_distribution.pdf Graphic file (type pdf)
 <use Figures/score_distribution.pdf>
 Package pdftex.def Info: Figures/score_distribution.pdf  used on input line 86.
@@ -1600,7 +1600,7 @@ Package pdftex.def Info: Figures/score_distribution.pdf  used on input line 86.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 88.
 [35 <./Figures/score_distribution.pdf>] (Chapters/Final/Generated/Training.tex
-<Figures/Generated/training/training-curves-dualhead-eaf42068.pdf, id=1578, 487.45317pt x 780.83719pt>
+<Figures/Generated/training/training-curves-dualhead-eaf42068.pdf, id=1461, 487.45317pt x 780.83719pt>
 File: Figures/Generated/training/training-curves-dualhead-eaf42068.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-eaf42068.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-eaf42068.pdf  used on input line 4.
@@ -1610,13 +1610,13 @@ Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-eaf
 
 LaTeX Warning: Float too large for page by 62.89041pt on input line 7.
 
-<Figures/Generated/training/training-curves-singlehead-d7cddf63.pdf, id=1579, 487.89381pt x 637.74258pt>
+<Figures/Generated/training/training-curves-singlehead-d7cddf63.pdf, id=1462, 487.89381pt x 637.74258pt>
 File: Figures/Generated/training/training-curves-singlehead-d7cddf63.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-d7cddf63.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-d7cddf63.pdf  used on input line 11.
 (pdftex.def)             Requested size: 446.13727pt x 583.17844pt.
 * Missing: Figures/Generated/training/training-curves-singlehead-d7cddf63.pax
-<Figures/Generated/training/training-curves-dualhead-7a26d315.pdf, id=1580, 487.45317pt x 780.83719pt>
+<Figures/Generated/training/training-curves-dualhead-7a26d315.pdf, id=1463, 487.45317pt x 780.83719pt>
 File: Figures/Generated/training/training-curves-dualhead-7a26d315.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-7a26d315.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-7a26d315.pdf  used on input line 18.
@@ -1625,13 +1625,13 @@ Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-7a2
 
 LaTeX Warning: Float too large for page by 62.89041pt on input line 21.
 
-<Figures/Generated/training/training-curves-singlehead-bcb9eae9.pdf, id=1581, 488.19287pt x 637.74258pt>
+<Figures/Generated/training/training-curves-singlehead-bcb9eae9.pdf, id=1464, 488.19287pt x 637.74258pt>
 File: Figures/Generated/training/training-curves-singlehead-bcb9eae9.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-bcb9eae9.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-bcb9eae9.pdf  used on input line 25.
 (pdftex.def)             Requested size: 446.13727pt x 582.80864pt.
 * Missing: Figures/Generated/training/training-curves-singlehead-bcb9eae9.pax
-<Figures/Generated/training/training-curves-dualhead-157d2305.pdf, id=1582, 487.45317pt x 780.83719pt>
+<Figures/Generated/training/training-curves-dualhead-157d2305.pdf, id=1465, 487.45317pt x 780.83719pt>
 File: Figures/Generated/training/training-curves-dualhead-157d2305.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-157d2305.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-157d2305.pdf  used on input line 32.
@@ -1640,7 +1640,7 @@ Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-157
 
 LaTeX Warning: Float too large for page by 62.89041pt on input line 35.
 
-<Figures/Generated/training/training-curves-singlehead-94df11ed.pdf, id=1583, 484.26106pt x 637.74258pt>
+<Figures/Generated/training/training-curves-singlehead-94df11ed.pdf, id=1466, 484.26106pt x 637.74258pt>
 File: Figures/Generated/training/training-curves-singlehead-94df11ed.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-94df11ed.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-94df11ed.pdf  used on input line 39.
@@ -1649,7 +1649,7 @@ Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-9
 ) [36] [37 <./Figures/Generated/training/training-curves-dualhead-eaf42068.pdf>] [38 <./Figures/Generated/training/training-curves-singlehead-d7cddf63.pdf>] [39 <./Figures/Generated/training/training-curves-dualhead-7a26d315.pdf>] [40 <./Figures/Generated/training/training-curves-singlehead-bcb9eae9.pdf>] [41 <./Figures/Generated/training/training-curves-dualhead-157d2305.pdf>] [42 <./Figures/Generated/training/training-curves-singlehead-94df11ed.pdf>] (Tables/Generated/best_validation_ssim.tex) (Tables/Generated/best_validation_psnr.tex) (Tables/Generated/mae_at_best_validation_ssim.tex) [43
 
 ] [44]
-<Figures/Generated/evaluation_final/Global/boxplot_global_ssim_distribution.pdf, id=2284, 570.75734pt x 499.34868pt>
+<Figures/Generated/evaluation_final/Global/boxplot_global_ssim_distribution.pdf, id=2167, 570.75734pt x 499.34868pt>
 File: Figures/Generated/evaluation_final/Global/boxplot_global_ssim_distribution.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Global/boxplot_global_ssim_distribution.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Global/boxplot_global_ssim_distribution.pdf  used on input line 251.
@@ -1657,18 +1657,13 @@ Package pdftex.def Info: Figures/Generated/evaluation_final/Global/boxplot_globa
 
 * Missing: Figures/Generated/evaluation_final/Global/boxplot_global_ssim_distribution.pax
 [45]
-<Figures/Generated/evaluation_final/Global/boxplot_global_psnr_distribution.pdf, id=2290, 570.8822pt x 499.34868pt>
+<Figures/Generated/evaluation_final/Global/boxplot_global_psnr_distribution.pdf, id=2172, 570.8822pt x 499.34868pt>
 File: Figures/Generated/evaluation_final/Global/boxplot_global_psnr_distribution.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Global/boxplot_global_psnr_distribution.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Global/boxplot_global_psnr_distribution.pdf  used on input line 256.
 (pdftex.def)             Requested size: 382.40338pt x 334.48569pt.
 
 * Missing: Figures/Generated/evaluation_final/Global/boxplot_global_psnr_distribution.pax
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 259.
-See the caption package documentation for explanation.
-
 [46 <./Figures/Generated/evaluation_final/Global/boxplot_global_ssim_distribution.pdf>]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 10.42007pt on input line 273.
@@ -1683,7 +1678,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Warning: Reference `apendice:avaliacao-interna' on page 47 undefined on input line 340.
 
 [47 <./Figures/Generated/evaluation_final/Global/boxplot_global_psnr_distribution.pdf>]
-<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf, id=2446, 570.75734pt x 499.15659pt>
+<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf, id=2329, 570.75734pt x 499.15659pt>
 File: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf  used on input line 349.
@@ -1691,91 +1686,71 @@ Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/boxplot_roi_delt
 
 * Missing: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pax
 [48]
-<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf, id=2451, 570.92735pt x 499.15659pt>
+<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf, id=2334, 570.92735pt x 499.15659pt>
 File: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf  used on input line 354.
 (pdftex.def)             Requested size: 382.40338pt x 334.34178pt.
 
 * Missing: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pax
-<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf, id=2452, 570.90224pt x 499.15659pt>
+<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf, id=2335, 570.90224pt x 499.15659pt>
 File: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf  used on input line 359.
 (pdftex.def)             Requested size: 382.40338pt x 334.35701pt.
 * Missing: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pax
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 362.
-See the caption package documentation for explanation.
-
 [49 <./Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf> <./Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf>]
-<Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf, id=2594, 687.93689pt x 570.02524pt>
+<Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf, id=2477, 687.93689pt x 570.02524pt>
 File: Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf  used on input line 370.
 (pdftex.def)             Requested size: 382.40338pt x 316.87222pt.
 
 * Missing: Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pax
-<Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf, id=2595, 688.93709pt x 569.90541pt>
+<Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf, id=2478, 688.93709pt x 569.90541pt>
 File: Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf  used on input line 375.
 (pdftex.def)             Requested size: 382.40338pt x 316.34473pt.
 * Missing: Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pax
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 378.
-See the caption package documentation for explanation.
-
 [50 <./Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf> <./Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf>] (Chapters/Final/Generated/PairedComparison.tex (Tables/Generated/paired_comparison.tex)
-<Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf, id=2762, 598.16914pt x 258.57602pt>
+<Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf, id=2645, 598.16914pt x 258.57602pt>
 File: Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf Graphic file (type pdf)
 <use Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf>
 Package pdftex.def Info: Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf  used on input line 6.
 (pdftex.def)             Requested size: 432.48051pt x 186.9558pt.
 
 * Missing: Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pax
-<Figures/Generated/paired/comparison-scatter-texture-tradeoff-176849f0.pdf, id=2763, 530.25789pt x 410.00603pt>
+<Figures/Generated/paired/comparison-scatter-texture-tradeoff-176849f0.pdf, id=2646, 530.25789pt x 410.00603pt>
 File: Figures/Generated/paired/comparison-scatter-texture-tradeoff-176849f0.pdf Graphic file (type pdf)
 <use Figures/Generated/paired/comparison-scatter-texture-tradeoff-176849f0.pdf>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-texture-tradeoff-176849f0.pdf  used on input line 15.
 (pdftex.def)             Requested size: 382.40338pt x 295.67958pt.
 * Missing: Figures/Generated/paired/comparison-scatter-texture-tradeoff-176849f0.pax
 [51 <./Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf>]
-<Figures/Generated/paired/comparison-scatter-tradeoff-55d68aa0.pdf, id=2857, 530.25789pt x 410.01117pt>
+<Figures/Generated/paired/comparison-scatter-tradeoff-55d68aa0.pdf, id=2739, 530.25789pt x 410.01117pt>
 File: Figures/Generated/paired/comparison-scatter-tradeoff-55d68aa0.pdf Graphic file (type pdf)
 <use Figures/Generated/paired/comparison-scatter-tradeoff-55d68aa0.pdf>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-tradeoff-55d68aa0.pdf  used on input line 20.
 (pdftex.def)             Requested size: 382.40338pt x 295.68329pt.
 
 * Missing: Figures/Generated/paired/comparison-scatter-tradeoff-55d68aa0.pax
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 23.
-See the caption package documentation for explanation.
-
 [52 <./Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf> <./Figures/Generated/paired/comparison-scatter-texture-tradeoff-176849f0.pdf>]
-<Figures/Generated/paired/comparison-scatter-artifact-roi-tradeoff-6da4f008.pdf, id=2988, 552.7557pt x 409.89072pt>
+<Figures/Generated/paired/comparison-scatter-artifact-roi-tradeoff-6da4f008.pdf, id=2870, 552.7557pt x 409.89072pt>
 File: Figures/Generated/paired/comparison-scatter-artifact-roi-tradeoff-6da4f008.pdf Graphic file (type pdf)
 <use Figures/Generated/paired/comparison-scatter-artifact-roi-tradeoff-6da4f008.pdf>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-artifact-roi-tradeoff-6da4f008.pdf  used on input line 31.
 (pdftex.def)             Requested size: 382.40338pt x 283.56917pt.
 
 * Missing: Figures/Generated/paired/comparison-scatter-artifact-roi-tradeoff-6da4f008.pax
-<Figures/Generated/paired/comparison-scatter-artifact-roi-texture-tradeoff-f549c97b.pdf, id=2989, 552.7557pt x 410.00603pt>
+<Figures/Generated/paired/comparison-scatter-artifact-roi-texture-tradeoff-f549c97b.pdf, id=2871, 552.7557pt x 410.00603pt>
 File: Figures/Generated/paired/comparison-scatter-artifact-roi-texture-tradeoff-f549c97b.pdf Graphic file (type pdf)
 <use Figures/Generated/paired/comparison-scatter-artifact-roi-texture-tradeoff-f549c97b.pdf>
 Package pdftex.def Info: Figures/Generated/paired/comparison-scatter-artifact-roi-texture-tradeoff-f549c97b.pdf  used on input line 36.
 (pdftex.def)             Requested size: 382.40338pt x 283.64894pt.
 * Missing: Figures/Generated/paired/comparison-scatter-artifact-roi-texture-tradeoff-f549c97b.pax
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 39.
-See the caption package documentation for explanation.
-
 [53 <./Figures/Generated/paired/comparison-scatter-tradeoff-55d68aa0.pdf> <./Figures/Generated/paired/comparison-scatter-artifact-roi-tradeoff-6da4f008.pdf>]) (Chapters/Final/Generated/Benchmark.tex
-<Figures/Generated/benchmark/benchmark-latency-5d3a49bf.png, id=3164, 932.283pt x 357.4956pt>
+<Figures/Generated/benchmark/benchmark-latency-5d3a49bf.png, id=3047, 932.283pt x 357.4956pt>
 File: Figures/Generated/benchmark/benchmark-latency-5d3a49bf.png Graphic file (type png)
 <use Figures/Generated/benchmark/benchmark-latency-5d3a49bf.png>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-5d3a49bf.png  used on input line 4.
@@ -1826,16 +1801,16 @@ Package rerunfilecheck Info: File `main.brf' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  45176 strings out of 467870
- 936596 string characters out of 5418356
- 1364428 words of memory out of 5000000
- 72893 multiletter control sequences out of 15000+600000
+ 936642 string characters out of 5418356
+ 1354480 words of memory out of 5000000
+ 72895 multiletter control sequences out of 15000+600000
  731530 words of font info for 181 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  108i,18n,114p,2572b,1434s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0800.pk> <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (80 pages, 7490807 bytes).
+Output written on main.pdf (78 pages, 7464773 bytes).
 PDF statistics:
- 3549 PDF objects out of 3580 (max. 8388607)
- 299 named destinations out of 1000 (max. 500000)
+ 3431 PDF objects out of 3580 (max. 8388607)
+ 297 named destinations out of 1000 (max. 500000)
  832 words of extra memory for PDF output out of 10000 (max. 10000000)
 

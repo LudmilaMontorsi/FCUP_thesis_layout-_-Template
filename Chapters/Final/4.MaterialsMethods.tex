@@ -72,7 +72,7 @@ Nem todas as fatias puderam ser rastreadas, mas a maioria dos dados foi associad
 
 \begin{table}[H]
     \centering
-    \caption{Resultados do rastreio antes da análise complementar com\acrshort{ms-ssim}.}
+    \caption[Initial pair-matching screening]{Resultados do rastreio antes da análise complementar com\acrshort{ms-ssim}.}
     \label{tab:final-rastreio-msssim}
     \begin{tabular}{lccc}
         \hline
@@ -90,7 +90,7 @@ Na etapa de avaliação via\acrshort{ms-ssim}, dentre todos os pares com pontua�
 
 \begin{table}[H]
     \centering
-    \caption{Resultados do rastreio depois da análise complementar com\acrshort{ms-ssim}.}
+    \caption[Pair matching after MS-SSIM review]{Resultados do rastreio depois da análise complementar com\acrshort{ms-ssim}.}
     \label{tab:final-rastreio-pos-msssim}
     \begin{tabular}{lccc}
         \hline
@@ -108,7 +108,7 @@ Dado que uma quantidade significativa dos dados pôde ser rastreada com elevada 
 
 \begin{table}[H]
     \centering
-    \caption{Dados dos pares sem correspondência que foram excluídos antes e após a análise complementar com\acrshort{ms-ssim}.}
+    \caption[Excluded unmatched pairs before and after MS-SSIM review]{Dados dos pares sem correspondência que foram excluídos antes e após a análise complementar com\acrshort{ms-ssim}.}
     \label{tab:final-cluster-excluidos}
     \begin{tabular}{lcc}
         \hline
@@ -145,7 +145,7 @@ Após o particionamento, os subconjuntos de treino, validação e teste apresent
 
 \begin{table}[H]
     \centering
-    \caption{Distribuição anatómica por subconjunto ao nível de pacientes.}
+    \caption[Patient-level anatomical distribution by split]{Distribuição anatómica por subconjunto ao nível de pacientes.}
     \label{tab:final-split-anatomico}
     \begin{tabular}{lcccc}
         \hline
@@ -166,7 +166,7 @@ A partição paciente-nível foi definida uma única vez, com semente aleatória
 
 \begin{table}[H]
     \centering
-    \caption{Distribuição percentual dos pacientes por subconjunto.}
+    \caption[Patient distribution by split]{Distribuição percentual dos pacientes por subconjunto.}
     \label{tab:final-split-patient-subconjunto}
     \begin{tabular}{lccc}
         \hline
@@ -185,7 +185,7 @@ Devido a grande variação na quantidade de fatias por paciente, a distribuiçã
 
 \begin{table}[H]
     \centering
-    \caption{Distribuição dos pares por subconjunto e categoria anatómica.}
+    \caption[Pair distribution by split and anatomical category]{Distribuição dos pares por subconjunto e categoria anatómica.}
     \label{tab:final-split-pares}
     \begin{tabular}{lcccccc}
         \hline
@@ -204,7 +204,7 @@ Devido a grande variação na quantidade de fatias por paciente, a distribuiçã
 
 \begin{table}[H]
     \centering
-    \caption{Distribuição percentual dos pares por subconjunto.}
+    \caption[Pair distribution by split]{Distribuição percentual dos pares por subconjunto.}
     \label{tab:final-split-pares-subconjunto}
     \begin{tabular}{lccc}
         \hline
@@ -258,7 +258,7 @@ Li et al \cite{liUNetBasedDynamic2024}, aplicam blocos de\Acrfull{bn} e funçõe
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{Figures/Generated/materials/unet-single-compact-132d4a1a.png}
-\caption{Diagrama da arquitetura Single Supervision.}
+\caption[Single Supervision U-Net architecture]{Diagrama da arquitetura Single Supervision.}
 \end{figure}
 
 
@@ -275,7 +275,7 @@ As duas arquiteturas foram avaliadas entre si para determinar o impacto da super
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{Figures/Generated/materials/unet-dual-compact-8441faa2.png}
-\caption{Diagrama da arquitetura Dual Supervision.}
+\caption[Dual Supervision U-Net architecture]{Diagrama da arquitetura Dual Supervision.}
 \end{figure}
 
 
@@ -363,7 +363,7 @@ A \autoref{fig:final-roi-examples} ilustra a aplicação das duas zonas em fatia
     \includegraphics[width=0.88\linewidth]{Figures/roi_example_sample_0000.png}\\[3pt]
     \includegraphics[width=0.88\linewidth]{Figures/roi_example_sample_0003.png}\\[3pt]
     \includegraphics[width=0.88\linewidth]{Figures/roi_example_sample_0006.png}
-    \caption{Exemplos de zonas de \acrshort{roi} em fatias de \acrshort{ct} com artefatos metálicos. Em cada par, a imagem da esquerda mostra a Zona de Artefato ($\mathcal{R}_{art}$, sobreposição a vermelho) e a da direita a Zona Distante ($\mathcal{R}_{dist}$, sobreposição a verde). As fatias cobrem anatomias torácica (topo), abdominal (meio) e torácica com implante unilateral (base), ilustrando a variabilidade da extensão e forma da zona de artefato em função da localização e número de implantes metálicos.}
+    \caption[Artifact and distant ROI examples]{Exemplos de zonas de \acrshort{roi} em fatias de \acrshort{ct} com artefatos metálicos. Em cada par, a imagem da esquerda mostra a Zona de Artefato ($\mathcal{R}_{art}$, sobreposição a vermelho) e a da direita a Zona Distante ($\mathcal{R}_{dist}$, sobreposição a verde). As fatias cobrem anatomias torácica (topo), abdominal (meio) e torácica com implante unilateral (base), ilustrando a variabilidade da extensão e forma da zona de artefato em função da localização e número de implantes metálicos.}
     \label{fig:final-roi-examples}
 \end{figure}
 
@@ -385,7 +385,7 @@ Assim, $\Delta\mathrm{PSNR}>0$ e $\Delta\mathrm{SSIM}>0$ indicam melhoria face �
 
 \begin{table}[H]
     \centering
-    \caption{Métricas utilizadas por contexto de avaliação.}
+    \caption[Evaluation metrics by context]{Métricas utilizadas por contexto de avaliação.}
     \label{tab:final-metricas-contexto}
     \begin{tabular}{lcccc}
         \hline

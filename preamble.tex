@@ -230,6 +230,7 @@
 % Use \graphiccaption{texto da legenda} em vez de \caption{texto da legenda}
 % para que o gráfico apareça na Lista de Gráficos
 \newcommand{\graphiccaption}[2][]{%
+  \captionsetup{list=no}%
   \ifx\\#1\\
     \caption{#2}%
     \addcontentsline{logr}{figure}{\protect\numberline{\thefigure}#2}%
@@ -240,6 +241,12 @@
 }
 
 % Inicializar glossário - DEVE vir no final do preamble
+% Variant for a shared caption placed outside a figure environment.
+\newcommand{\graphiccaptionof}[2][]{%
+  \captionsetup{type=figure,list=no}%
+  \graphiccaption[#1]{#2}%
+}
+
 \makeglossaries
 
 % Remover espaço extra antes de acrônimos
