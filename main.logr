@@ -1,18 +1,16 @@
-\contentsline {figure}{\numberline {5.1}MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)}{30}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.2}MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)}{31}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.5}Cosine similarity of MS-SSIM-audited pairs}{34}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.6}MS-SSIM distribution of audited pairs}{34}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.7}Score distribution of excluded pairs: DL vs Stroke EIT}{35}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.8}Training curves: Dual Model, seed 1337}{37}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.9}Training curves: Single Model, seed 1337}{38}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.10}Training curves: Dual Model, seed 2024}{39}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.11}Training curves: Single Model, seed 2024}{40}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.12}Training curves: Dual Model, seed 42}{41}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.13}Training curves: Single Model, seed 42}{42}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.14}Per-image global PSNR and SSIM}{47}{figure.caption.42}%
-\contentsline {figure}{\numberline {5.15}Per-image ROI metric improvements}{50}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.16}Artifact-ROI correction versus distant-ROI change}{51}{figure.caption.52}%
-\contentsline {figure}{\numberline {5.17}Global PSNR and SSIM improvement}{52}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.18}Global structural improvement and preservation trade-offs}{53}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.19}Artifact-ROI structural improvement and preservation trade-offs}{54}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.20}Inference per Slice Latency (batch=1)}{54}{figure.caption.63}%
+\contentsline {figure}{\numberline {5.1}MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)}{31}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.2}MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)}{32}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.5}Cosine similarity of MS-SSIM-audited pairs}{35}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.6}MS-SSIM distribution of audited pairs}{35}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.7}Score distribution of excluded pairs: DL vs Stroke EIT}{36}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.8}Training curves: Dual Model, seed 1337}{38}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.9}Training curves: Single Model, seed 1337}{39}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.10}Training curves: Dual Model, seed 2024}{40}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.11}Training curves: Single Model, seed 2024}{41}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.12}Training curves: Dual Model, seed 42}{42}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.13}Training curves: Single Model, seed 42}{43}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.14}Per-image global PSNR and SSIM}{48}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.15}Per-image ROI metric improvements}{51}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.16}Artifact-ROI correction versus distant-ROI change}{52}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.17}Global PSNR and SSIM improvement}{54}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.18}Benchmark Latency}{55}{figure.caption.58}%

@@ -114,30 +114,7 @@
       "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-ssim-5655d171.png",
       "sha256": "36a7ceaaaf582841fc98c308af8348944fd6eeaaa9dbe1a19c70a90a5802948c"
     },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.pdf",
-      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-527e760a.pdf",
-      "sha256": "4e613446084a217f7c104f62c6dba55381c832bb58ce0d1456a3c8dabbdbe852"
-    },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_epi_vs_delta_psnr.png",
-      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-04ea358b.png",
-      "sha256": "c3c3e456ee41c0df6bee79ceaba3758c4168b9b2dde7d7ff143f80a02b91fa21"
-    },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.pdf",
-      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-3c07ff7e.pdf",
-      "sha256": "105bb5727a95ca3f5b357a6fb616d95ca08e855ff17597d71f31773c7e15c295"
-    },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\correlation_global_texture_vs_delta_ssim.png",
-      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-b03f6488.png",
-      "sha256": "69ed1d7ffb91c5fd0f9119ec145e57f363714e58ee6b523421a2118daa274269"
-    },
+ 
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_psnr.pdf",
@@ -162,30 +139,7 @@
       "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-abb77a0b.png",
       "sha256": "bc99599e12610db6a064b8f829988b34a5e4bf6b7f229c9c76f0e7d13f92bfc4"
     },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_epi_distribution.pdf",
-      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-fc534ee4.pdf",
-      "sha256": "af32d2c31e7f46c763c060bb8e6b5390c76182a3733385b6044caa84c26ea85b"
-    },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_epi_distribution.png",
-      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-bcd639bf.png",
-      "sha256": "d63e78dd4a2378942074341484c9fd6fe579675d924847bf77dd0c57c0359838"
-    },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_texture_distribution.pdf",
-      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-06e1319d.pdf",
-      "sha256": "a1a16ebd9f77f2b35bb335daebd7968691cc5bd98e225e248127d821bcf5adec"
-    },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_texture_distribution.png",
-      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-8d28c516.png",
-      "sha256": "f125cfabf1f703154334bb421670235a0701087255247cbb8840394b510d6df1"
-    },
+    
     {
       "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
@@ -402,18 +356,7 @@
       "destination": "Figures\\Generated\\paired\\comparison-bar-charts-76dfb4b9.pdf",
       "sha256": "79b7df6e96bf1344e9446081dc096b5bdaa8510b1bec8ccb7b9fb065f1e99f9c"
     },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_scatter_texture_tradeoff.pdf",
-      "destination": "Figures\\Generated\\paired\\comparison-scatter-texture-tradeoff-176849f0.pdf",
-      "sha256": "a0f5e0376235ef881a5ad4ff429c01549aed464bc60ffd2ccb598a324fe495fc"
-    },
-    {
-      "category": "ablation",
-      "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_scatter_tradeoff.pdf",
-      "destination": "Figures\\Generated\\paired\\comparison-scatter-tradeoff-55d68aa0.pdf",
-      "sha256": "0367378fb9f9b13c07e2d174bf2e645f31337b06b939adc8b47a95ecee4fdda7"
-    },
+
     {
       "category": "benchmark",
       "source": "outputs\\benchmark\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\benchmark_latency.png",

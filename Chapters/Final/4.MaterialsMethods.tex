@@ -399,7 +399,17 @@ Assim, $\Delta\mathrm{PSNR}>0$ e $\Delta\mathrm{SSIM}>0$ indicam melhoria face �
 \end{table}
 
 \subsection{Análise estatística}
-\textit{[A preencher: paciente como unidade independente, Wilcoxon bilateral, intervalos bootstrap e correção de Holm.]}
+Em todas as análises inferenciais, o paciente constituiu a unidade experimental independente. Para evitar pseudorreplicação decorrente da inclusão de múltiplas fatias de um mesmo paciente, as métricas calculadas por fatia foram primeiro agregadas pela média dentro de cada paciente. Assim, para cada métrica $m$ e paciente $p$, foram comparados valores pareados da entrada e da reconstrução, ou das duas arquiteturas, conforme a análise.
+
+Para avaliar a melhoria face à entrada corrompida, foram calculadas as diferenças pareadas por paciente $d_p=m_{\mathrm{Model},p}-m_{\mathrm{Input},p}$ para \acrshort{psnr} e \acrshort{ssim}. Para \acrshort{mae}, cuja redução representa melhor desempenho, utilizou-se $d_p=m_{\mathrm{Input},p}-m_{\mathrm{Model},p}$. A hipótese nula em cada teste foi que a mediana das diferenças pareadas era igual a zero. A comparação direta entre arquiteturas utilizou $d_p=m_{\mathrm{Dual},p}-m_{\mathrm{Single},p}$, de modo que valores negativos favorecem o Single Model. Os valores de $p$ brutos foram obtidos pelo teste de postos sinalizados de Wilcoxon bilateral, com nível de significância $\alpha=0{,}05$.
+
+Os valores de $p$ apresentados nas tabelas de comparação foram ajustados pelo procedimento sequencial de Holm, que controla a taxa de erro familiar sem pressupor independência entre os testes. Para os $m$ valores de $p$ brutos ordenados, $p_{(1)}\leq\cdots\leq p_{(m)}$, o valor ajustado na posição $i$ foi calculado como
+\[
+p^{\mathrm{Holm}}_{(i)}=\max_{j\leq i}\left\{\min\left[1,\,(m-j+1)p_{(j)}\right]\right\}.
+\]
+Na tabela de melhoria da reconstrução, a correção foi aplicada conjuntamente aos quatro testes correspondentes a \acrshort{psnr} e \acrshort{ssim} para cada uma das duas arquiteturas. Na comparação pareada Single Model versus Dual Model, a correção foi aplicada conjuntamente aos dois testes, um para \acrshort{psnr} e outro para \acrshort{ssim}.
+
+Os intervalos de confiança de 95\% reportados para as diferenças médias foram obtidos por \textit{bootstrap} percentil ao nível do paciente. Para cada métrica, o vetor de $n=41$ diferenças pareadas por paciente foi reamostrado com reposição, mantendo $n$ observações em cada reamostra; a média da diferença foi então calculada em cada uma das 10\,000 reamostragens. Os limites inferior e superior do intervalo correspondem, respetivamente, aos percentis 2,5 e 97,5 da distribuição empírica dessas médias. Este procedimento não pressupõe normalidade das diferenças e preserva o paciente, e não a fatia, como unidade de inferência. Foi utilizada a semente 1337 para tornar as reamostragens determinísticas. As análises por \acrshort{roi} foram apresentadas de forma descritiva, mantendo a interpretação clínica da preservação anatómica para a avaliação externa por leitores.
 
 \section{Avaliação externa por médicos}
 \label{sec:avaliacao-medicos}
@@ -407,6 +417,11 @@ A validação externa foi realizada em dados independentes provenientes do\acrfu
 
 \subsection{Desenho e casos}
 \textit{[A preencher: estudo observacional, transversal, multileitor e cego quanto à condição A/B; conjunto TCIA, 2 casos de treino excluídos da análise, 15 casos principais e 2 repetições ocultas.]}
+
+\subsection{Caracterização quantitativa entrada--saída}
+Como caracterização complementar da alteração introduzida pelo modelo nos casos externos, foram calculados \acrshort{ssim}, \acrshort{psnr} e \acrshort{mae} diretamente entre a imagem de entrada e a respetiva saída do \textit{Single Model}, seed 2024. As métricas foram avaliadas apenas nos 15 casos principais do conjunto externo congelado; os dois casos de treino foram excluídos. O domínio de cálculo foi a máscara corporal efetiva, corrigida manualmente durante a preparação dos casos. Para \acrshort{psnr}, utilizou-se a janela de intensidade $[-1000,400]$~HU, com amplitude de $1400$~HU.
+
+Não existe referência limpa para estes casos reais. Assim, \acrshort{ssim} e \acrshort{psnr} maiores, bem como \acrshort{mae} menor, descrevem menor alteração global entre entrada e saída, e não maior acurácia de remoção de artefactos nem melhoria face a uma referência. As estatísticas foram resumidas por caso, como média e desvio-padrão, e os intervalos de confiança de 95\% para a média foram obtidos por \textit{bootstrap} percentil com 10\,000 reamostragens e semente 1337. A interpretação da aceitabilidade clínica dessas alterações permaneceu reservada para a avaliação cega por leitores.
 
 \subsection{Participantes e proteção de dados}
 \textit{[A preencher: recrutamento direto, autodeclaração de uso mensal de CT, categorias profissionais retidas e ausência de identificadores diretos.]}

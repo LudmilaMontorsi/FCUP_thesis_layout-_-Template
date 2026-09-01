@@ -151,6 +151,7 @@ A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global
         2024 & $0.8361 \pm 0.0880$ & $0.9442 \pm 0.0288$ & $0.9432 \pm 0.0292$ \\
         \hline
     \end{tabular}
+    \par\smallskip\footnotesize All input and model values are computed against the clean reference (\textit{ground truth}).
     \captionsetup{skip=2pt}
     \caption[Per-slice global SSIM on the test set]{\acrshort{ssim} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
     \label{tab:global-ssim}
@@ -168,6 +169,7 @@ A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global
         2024 & $27.39 \pm 4.14$ & $35.20 \pm 2.84$ & $35.16 \pm 2.82$ \\
         \hline
     \end{tabular}
+    \par\smallskip\footnotesize All input and model values are computed against the clean reference (\textit{ground truth}).
     \captionsetup{skip=2pt}
     \caption[Per-slice global PSNR on the test set]{\acrshort{psnr} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
     \label{tab:global-psnr}
@@ -185,6 +187,7 @@ A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global
         2024 & $36.569 \pm 21.906$ & $17.341 \pm 5.573$ & $17.475 \pm 5.563$ \\
         \hline
     \end{tabular}
+    \par\smallskip\footnotesize All input and model values are computed against the clean reference (\textit{ground truth}).
     \captionsetup{skip=2pt}
     \caption[Per-slice global MAE on the test set]{\acrshort{mae} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
     \label{tab:global-mae}
@@ -204,6 +207,7 @@ Os deltas e respetivos intervalos de confiança por paciente são apresentados n
         2024 & 0.0891 [0.0732; 0.1066] & 0.0879 [0.0719; 0.1053] \\
         \hline
     \end{tabular}
+    \par\smallskip\footnotesize Note: $\Delta\mathrm{SSIM}=\mathrm{SSIM}(\mathrm{Model},\mathrm{GT})-\mathrm{SSIM}(\mathrm{Input},\mathrm{GT})$.
     \captionsetup{skip=2pt}
     \caption[Patient-level global $\Delta$SSIM]{$\Delta$\acrshort{ssim} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}
     \label{tab:delta-ssim-paciente}
@@ -221,6 +225,7 @@ Os deltas e respetivos intervalos de confiança por paciente são apresentados n
         2024 & 7.11 [6.36; 7.83] & 7.06 [6.31; 7.78] \\
         \hline
     \end{tabular}
+    \par\smallskip\footnotesize Note: $\Delta\mathrm{PSNR}=\mathrm{PSNR}(\mathrm{Model},\mathrm{GT})-\mathrm{PSNR}(\mathrm{Input},\mathrm{GT})$.
     \captionsetup{skip=2pt}
     \caption[Patient-level global $\Delta$PSNR]{$\Delta$\acrshort{psnr} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}
     \label{tab:delta-psnr-paciente}
@@ -238,6 +243,7 @@ Os deltas e respetivos intervalos de confiança por paciente são apresentados n
         2024 & 15.7 [12.5; 19.5] & 15.5 [12.4; 19.3] \\
         \hline
     \end{tabular}
+    \par\smallskip\footnotesize Note: $\Delta\mathrm{MAE}=\mathrm{MAE}(\mathrm{Input},\mathrm{GT})-\mathrm{MAE}(\mathrm{Model},\mathrm{GT})$; positive values indicate error reduction.
     \captionsetup{skip=2pt}
     \caption[Patient-level global $\Delta$MAE]{$\Delta$\acrshort{mae} global agregado por paciente no conjunto de teste ($n=41$). Valores $>0$ representam melhoria; IC: intervalo de confiança de 95\%.}
     \label{tab:delta-mae-paciente}
@@ -285,6 +291,7 @@ Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 p
                                & Dual Model   & $0.3266 \pm 0.0954$ & $0.0576 \pm 0.0422$ \\
         \hline
     \end{tabular}
+    \par\smallskip\footnotesize Note: $\Delta\mathrm{SSIM}=\mathrm{SSIM}(\mathrm{Model},\mathrm{GT})-\mathrm{SSIM}(\mathrm{Input},\mathrm{GT})$ within the indicated ROI.
     \captionsetup{skip=2pt}
     \caption[ROI $\Delta$SSIM]{$\Delta$\acrshort{ssim} por \acrshort{roi} no conjunto de teste. Os valores são média $\pm$ desvio-padrão entre pacientes ($n=41$).}
     \label{tab:roi-delta-ssim}
@@ -308,6 +315,7 @@ Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 p
                                & Dual Model   & $11.84 \pm 2.62$ & $1.53 \pm 1.48$ \\
         \hline
     \end{tabular}
+    \par\smallskip\footnotesize Note: $\Delta\mathrm{PSNR}=\mathrm{PSNR}(\mathrm{Model},\mathrm{GT})-\mathrm{PSNR}(\mathrm{Input},\mathrm{GT})$ within the indicated ROI.
     \captionsetup{skip=2pt}
     \caption[ROI $\Delta$PSNR]{$\Delta$\acrshort{psnr} por \acrshort{roi} no conjunto de teste. Os valores são média $\pm$ desvio-padrão entre pacientes ($n=41$).}
     \label{tab:roi-delta-psnr}
@@ -331,6 +339,7 @@ Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 p
                                & Dual Model   & $98.3 \pm 19.8$ & $3.5 \pm 3.3$ \\
         \hline
     \end{tabular}
+    \par\smallskip\footnotesize Note: $\Delta\mathrm{MAE}=\mathrm{MAE}(\mathrm{Input},\mathrm{GT})-\mathrm{MAE}(\mathrm{Model},\mathrm{GT})$ within the indicated ROI; positive values indicate error reduction.
     \captionsetup{skip=2pt}
     \caption[ROI MAE reduction]{Redução de \acrshort{mae} por \acrshort{roi} no conjunto de teste. Os valores são média $\pm$ desvio-padrão entre pacientes ($n=41$); valores positivos correspondem a redução do erro.}
     \label{tab:roi-reducao-mae}
@@ -380,11 +389,71 @@ Os diagramas de caixa evidenciam a separação entre a correção na Zona de Art
 \endgroup
 
 \section{Comparação pareada Single x Dual Model}
-%A preencher: diferença dual menos single, Wilcoxon bilateral, IC 95\% bootstrap e p-valores ajustados por Holm.
-\input{Chapters/Final/Generated/PairedComparison}
+\label{sec:comparacao-pareada-single-dual}
+
+Esta análise compara exclusivamente os dois \textit{checkpoints} finais treinados com a seed 2024, um por arquitetura. A seleção do Single Model, seed 2024, para prosseguir para a avaliação externa já havia sido definida com base no desempenho de validação. Portanto, os resultados no conjunto de teste apresentados nesta secção têm caráter de avaliação interna final: não foram utilizados para escolher novos \textit{checkpoints}, ajustar hiperparâmetros ou alterar a arquitetura a avaliar externamente.
+
+As métricas por fatia foram agregadas por paciente antes dos testes de hipótese, resultando em $n=41$ observações independentes. As médias e os desvios-padrão apresentados na \autoref{tab:ablation_improvement} descrevem a distribuição das $n=1478$ fatias do conjunto de teste. Em contraste, os resultados da \autoref{tab:workflow-paired-comparison} --- diferenças médias, intervalos de confiança e valores de $p$ --- são calculados a partir das médias por paciente. Esta estratégia evita pseudorrepetição decorrente de múltiplas fatias do mesmo indivíduo.
+
+Para cada arquitetura, a melhoria face à entrada corrompida foi avaliada com testes de postos sinalizados de Wilcoxon bilaterais, comparando as métricas de saída com as métricas da entrada em cada paciente. A hipótese nula corresponde à ausência de diferença sistemática entre a reconstrução e a entrada corrompida. Esta família compreendeu quatro testes: \acrshort{psnr} e \acrshort{ssim} para o Single Model e para o Dual Model. Os quatro valores de $p$ foram ajustados conjuntamente pelo procedimento de Holm, com nível de significância bilateral de $\alpha=0{,}05$.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{ccccc}
+\multicolumn{5}{c}{\textbf{Reconstruction Quality}} \\[3pt]
+\toprule
+\textbf{Model} & \textbf{$\Delta$SSIM} & \textbf{$p_{\mathrm{SSIM}}$ (Holm)} & \textbf{$\Delta$PSNR (dB)} & \textbf{$p_{\mathrm{PSNR}}$ (Holm)} \\
+\midrule
+Dual Model & $0.1071 \pm 0.0897$ & $5.46\times10^{-12}$ & $7.77 \pm 3.56$ & $5.46\times10^{-12}$ \\\\
+Single Model & $0.1081 \pm 0.0897$ & $5.46\times10^{-12}$ & $7.82 \pm 3.58$ & $3.64\times10^{-12}$ \\\\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Holm-adjusted two-sided Wilcoxon $p$-values for improvement over the corrupted input.
+\captionsetup{skip=2pt}
+\caption[Improvement over corrupted input]{Improvement over the corrupted input on the test set.}
+\label{tab:ablation_improvement}
+\end{table}
+
+
+A \autoref{tab:ablation_improvement} mostra que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$\acrshort{ssim} de $0{,}1081 \pm 0{,}0897$ e $\Delta$\acrshort{psnr} de $7{,}82 \pm 3{,}58$ dB, enquanto o Dual Model apresentou $0{,}1071 \pm 0{,}0897$ e $7{,}77 \pm 3{,}56$ dB, respetivamente. Todos os testes de melhoria face à entrada permaneceram significativos após o ajuste de Holm. A coincidência de três dos quatro valores de $p$ ajustados resulta do carácter sequencial e monotónico do procedimento de Holm; não representa reutilização indevida de um mesmo teste estatístico.
+
+Estes testes confirmam que cada arquitetura melhora a entrada corrompida, mas não constituem uma comparação direta entre arquiteturas. Esta distinção é essencial: valores de $p$ pequenos na \autoref{tab:ablation_improvement} não permitem, por si só, afirmar que uma arquitetura é superior à outra.
+
+Os valores absolutos subjacentes à comparação pareada são agregados primeiro por paciente, atribuindo o mesmo peso a cada um dos 41 pacientes. Por essa razão, não coincidem necessariamente com as médias por fatia apresentadas nas tabelas globais anteriores, nas quais pacientes com diferentes números de fatias contribuem com pesos distintos.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{cccc}
+\multicolumn{4}{c}{\textbf{Dual Model $-$ Single Model}} \\[3pt]
+\hline
+\textbf{Metric} & \textbf{Mean Difference} & \textbf{95\% CI} & \textbf{$p$ (Holm)} \\
+\hline
+PSNR (dB) & $-0.054$ & $[-0.099; -0.012]$ & $1.09\times10^{-2}$ \\
+SSIM & $-0.0012$ & $[-0.0015; -0.0009]$ & $7.82\times10^{-11}$ \\
+\hline
+\end{tabular}
+\captionsetup{skip=2pt}
+\caption[Paired Single vs Dual Model comparison]{Patient-level paired comparison between architectures ($n=41$). Negative differences favor the Single Model.}
+\label{tab:workflow-paired-comparison}
+\end{table}
+
+A comparação direta entre arquiteturas é apresentada na \autoref{tab:workflow-paired-comparison}. Para esta análise, calculou-se, em cada paciente, a diferença Dual Model menos Single Model. Foram aplicados testes de Wilcoxon bilaterais para \acrshort{psnr} e \acrshort{ssim}, com correção de Holm conjunta para os dois testes. Os intervalos de confiança de 95\% para a diferença média foram obtidos por \textit{bootstrap} percentil com 10\,000 reamostragens. Assim, valores negativos favorecem o Single Model.
+
+O Single Model apresentou vantagem média de $0{,}054$ dB em \acrshort{psnr} e de $0{,}0012$ em \acrshort{ssim}. Os intervalos de confiança não incluíram zero e os valores de $p$ ajustados foram $1{,}09\times10^{-2}$ para \acrshort{psnr} e $7{,}82\times10^{-11}$ para \acrshort{ssim}. Embora estas diferenças sejam estatisticamente significativas e consistentes entre pacientes, a sua magnitude absoluta é pequena. Portanto, os resultados fornecem evidência de uma vantagem quantitativa global discreta do Single Model, mas não justificam, isoladamente, uma inferência de superioridade clínica. O gráfico de barras resume a melhoria global semelhante obtida pelas duas arquiteturas.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\linewidth]{Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf}
+\captionsetup{skip=2pt}
+\graphiccaption[Global PSNR and SSIM improvement]{Global PSNR and SSIM improvement over the corrupted input for the Single and Dual Models on the test set.}
+\end{figure}
 
 \section{Desempenho computacional}
-\textit{[A preencher: benchmark de inferência, se reportado.]}
+O desempenho temporal foi quantificado para o checkpoint do \textit{Single Model} com a seed 2024, selecionado para a avaliação externa, na partição de teste interna ($n=1478$ fatias). O benchmark foi executado no ambiente descrito em Materiais e Métodos, com GPU NVIDIA RTX A4500, utilizando lote unitário, após cinco passagens de aquecimento. Para cada fatia, a latência foi medida desde a chamada do modelo até à sincronização explícita da saída com a CPU. Consequentemente, esta medição inclui a execução da inferência e a sincronização da saída, mas não inclui o carregamento das imagens nem as etapas externas de pré-processamento ou de apresentação dos resultados.
+
+A latência média foi de $24{,}13\,\mathrm{ms}$ por fatia (desvio-padrão: $0{,}69\,\mathrm{ms}$; mediana: $24{,}30\,\mathrm{ms}$), correspondendo a um débito de $41{,}4$ fatias por segundo. Os percentis 95 e 99 foram, respetivamente, $24{,}66\,\mathrm{ms}$ e $27{,}53\,\mathrm{ms}$ por fatia. A proximidade entre a média, a mediana e o percentil 95 indica estabilidade da latência na maior parte das execuções; a distribuição completa e a variação por fatia são apresentadas na \autoref{fig:benchmark-latency}. Estes valores caracterizam a configuração experimental utilizada e não representam, por si só, o tempo de resposta de um fluxo clínico completo ou de outro ambiente computacional.
 \input{Chapters/Final/Generated/Benchmark}
 
 \section{Avaliação externa por médicos}
@@ -392,6 +461,17 @@ Os diagramas de caixa evidenciam a separação entre a correção na Zona de Art
 
 \subsection{Estado da recolha e participantes}
 \textit{[A preencher: estado de pré-produção, piloto ou recolha concluída; número de leitores analisados e características categóricas, apenas quando existirem dados reais.]}
+
+\subsection{Caracterização quantitativa entrada--saída}
+Antes da avaliação por leitores, a alteração global produzida pelo \textit{Single Model}, seed 2024, foi caracterizada nos 15 casos principais do conjunto externo congelado. Os dois casos de treino foram excluídos desta síntese. Como estes exames reais não dispõem de referência limpa, as métricas da \autoref{tab:external-input-output-global} comparam exclusivamente a imagem de entrada com a saída do modelo, dentro da máscara corporal efetiva corrigida manualmente.
+
+\input{Chapters/Final/Generated/ExternalInputOutputMetrics}
+
+No conjunto externo, a similaridade média entrada--saída foi de $0{,}8953$ para \acrshort{ssim} e $33{,}14$~dB para \acrshort{psnr}, enquanto a magnitude média da alteração foi de $21{,}12$~HU em \acrshort{mae}. A dispersão entre casos, expressa pelos desvios-padrão e intervalos de confiança da tabela, evidencia heterogeneidade no grau de alteração produzido pela reconstrução. Estes resultados descrevem a preservação e a modificação global das imagens externas, mas não permitem inferir, sem referência limpa, acurácia de remoção de artefactos ou benefício clínico. Essa interpretação é abordada pela avaliação cega por leitores nas subseções seguintes.
+
+Para tornar visível esta heterogeneidade, selecionaram-se de forma descritiva os três casos com maior e os três com menor \acrshort{ssim} entre entrada e saída. Os primeiros representam os pares com menor alteração estrutural global, enquanto os segundos representam aqueles com maior alteração. Esta seleção não define casos ``melhores'' ou ``piores'': sem referência limpa, não quantifica a remoção de artefactos nem estabelece aceitabilidade clínica. As métricas correspondentes e os pares de imagens são apresentados na \autoref{tab:external-ssim-extremes}, \autoref{fig:external-least-structurally-changed} e \autoref{fig:external-most-structurally-changed}.
+
+\input{Chapters/Final/Generated/ExternalInputOutputExamples}
 
 \subsection{Desfecho primário: visualização anatómica}
 \textit{[A preencher: comparação pareada entre entrada e saída para visualização de tecidos e limites anatómicos.]}

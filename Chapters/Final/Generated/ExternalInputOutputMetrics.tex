@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{ccc}
+\multicolumn{3}{c}{\textbf{Input--Output Similarity and Change}} \\[3pt]
+\hline
+\textbf{Metric} & \textbf{Mean $\pm$ SD} & \textbf{95\% CI} \\
+\hline
+SSIM (Input, Output) & $0.8953 \pm 0.0729$ & $[0.8572; 0.9290]$ \\
+PSNR (Input, Output) (dB) & $33.14 \pm 6.49$ & $[29.95; 36.21]$ \\
+MAE (Input, Output) (HU) & $21.12 \pm 15.26$ & $[14.54; 29.26]$ \\
+\hline
+\end{tabular}
+\par\smallskip\footnotesize No artifact-free reference is available. Metrics were calculated within the manually corrected effective body mask and quantify input--output similarity or change; they do not measure artifact-removal accuracy or improvement.
+\captionsetup{skip=2pt}
+\caption[External input-output global metrics]{Global input--output metrics in the frozen external main set ($n=15$) for \texttt{singlehead-033-0.9511-ssim\_hu.keras}. Values are mean $\pm$ standard deviation; 95\% CIs are percentile bootstrap intervals for the mean.}
+\label{tab:external-input-output-global}
+\end{table}

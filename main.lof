@@ -10,8 +10,10 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Dual Supervision U-Net architecture}}{21}{figure.caption.15}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Artifact and distant ROI examples}}{26}{figure.caption.16}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Visually approved low MS-SSIM pairs}}{32}{figure.caption.20}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Visually rejected pairs}}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Visually approved low MS-SSIM pairs}}{33}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Visually rejected pairs}}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Least structurally changed external cases}}{57}{figure.caption.61}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Most structurally changed external cases}}{58}{figure.caption.62}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
