@@ -27,10 +27,10 @@
 \contentsline {table}{\numberline {5.10}{\ignorespaces ROI $\Delta $SSIM}}{49}{table.caption.43}%
 \contentsline {table}{\numberline {5.11}{\ignorespaces ROI $\Delta $PSNR}}{49}{table.caption.44}%
 \contentsline {table}{\numberline {5.12}{\ignorespaces ROI MAE reduction}}{49}{table.caption.45}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Improvement over corrupted input}}{53}{table.caption.53}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces Paired Single vs Dual Model comparison}}{53}{table.caption.54}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces External input-output global metrics}}{56}{table.caption.59}%
-\contentsline {table}{\numberline {5.16}{\ignorespaces Illustrative external cases by input-output SSIM}}{59}{table.caption.60}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Improvement over corrupted input}}{59}{table.caption.59}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Paired Single vs Dual Model comparison}}{60}{table.caption.60}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces External input-output global metrics}}{62}{table.caption.65}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Illustrative external cases by input-output SSIM}}{63}{table.caption.66}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

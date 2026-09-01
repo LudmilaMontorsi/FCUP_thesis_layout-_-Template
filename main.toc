@@ -63,26 +63,27 @@
 \contentsline {section}{\numberline {5.3}Avaliação interna no conjunto de teste}{45}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Desfechos globais}{45}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Avaliação por regiões de interesse}{48}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Comparação pareada Single x Dual Model}{52}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Desempenho computacional}{54}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Avaliação externa por médicos}{56}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Estado da recolha e participantes}{56}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Caracterização quantitativa entrada--saída}{56}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Desfecho primário: visualização anatómica}{59}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Desfechos secundários e segurança percebida}{59}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Interpretação limitada ao desenho observacional}{59}{subsection.5.6.5}%
-\contentsline {chapter}{\numberline {6}Discussão}{60}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Síntese dos achados principais}{60}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Interpretação da comparação arquitetural}{60}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Preservação anatómica e segurança da reconstrução}{60}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Generalização e avaliação externa}{60}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Avaliação por médicos}{60}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Limitações}{61}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Implicações e trabalho futuro}{61}{section.6.7}%
-\contentsline {chapter}{\numberline {7}Conclusões}{62}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusões do estudo}{62}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Contribuições da dissertação}{62}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Perspetivas futuras}{62}{section.7.3}%
+\contentsline {subsection}{\numberline {5.3.3}Mapas de resíduos em casos extremos}{52}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Comparação pareada Single x Dual Model}{59}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Desempenho computacional}{61}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Avaliação externa por médicos}{62}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Estado da recolha e participantes}{62}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Caracterização quantitativa entrada -- saída}{62}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Desfecho primário: visualização anatómica}{66}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Desfechos secundários e segurança percebida}{66}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Interpretação limitada ao desenho observacional}{66}{subsection.5.6.5}%
+\contentsline {chapter}{\numberline {6}Discussão}{67}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Síntese dos achados principais}{67}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Interpretação da comparação arquitetural}{67}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Preservação anatómica e segurança da reconstrução}{67}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Generalização e avaliação externa}{67}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Avaliação por médicos}{67}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Limitações}{68}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Implicações e trabalho futuro}{68}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Conclusões}{69}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusões do estudo}{69}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Contribuições da dissertação}{69}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Perspetivas futuras}{69}{section.7.3}%
 \vspace {0.5cm}
-\contentsline {chapter}{Bibliography}{62}{dummy.8}%
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{68}{appendix.A}%
+\contentsline {chapter}{Bibliography}{69}{dummy.8}%
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{75}{appendix.A}%

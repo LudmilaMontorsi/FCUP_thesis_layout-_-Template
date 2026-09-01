@@ -388,6 +388,16 @@ Os diagramas de caixa evidenciam a separação entre a correção na Zona de Art
 \label{fig:roi-safety}
 \endgroup
 
+\subsection{Mapas de resíduos em casos extremos}
+\label{sec:mapas-residuos-extremos}
+
+Para complementar os resultados, foram inspecionados seis casos individuais do Single Model, seed 2024, na partição de teste. A seleção foi feita exclusivamente pelo $\Delta$\acrshort{ssim} na Zona de Artefacto por fatia: os três maiores valores correspondem à maior melhoria estrutural nessa região face à entrada e os três menores valores à menor melhoria estrutural. Assim, os termos ``maior'' e ``menor'' melhoria nesta subseção referem-se apenas a esse critério quantitativo e não constituem uma classificação clínica dos casos.
+
+Em cada mapa, a primeira linha apresenta a alteração necessária em relação à referência limpa ($r_{\mathrm{target}}=\mathrm{GT}-\mathrm{Input}$), a alteração produzida pelo modelo ($r_{\mathrm{model}}=\mathrm{Output}-\mathrm{Input}$) e o erro residual remanescente ($r_{\mathrm{diff}}= r_{\mathrm{model}} - r_{\mathrm{target}} = \mathrm{Output}-\mathrm{GT}$). A segunda linha mostra o erro absoluto da entrada, o erro absoluto da saída e a respetiva diferença, em que verde indica redução do erro e vermelho indica agravamento. O contorno amarelo delimita a Zona de Artefacto. As escalas de cor são ajustadas individualmente a cada fatia para preservar os detalhes em casos com resíduos pequenos. No entanto, a comparação entre casos deve privilegiar os padrões espaciais e as estatísticas apresentadas em cada painel, e não apenas a intensidade aparente das cores. Abaixo de cada mapa é apresentada a visualização correspondente da entrada com artefactos, da saída do modelo e da referência limpa.
+
+\input{Chapters/Final/Generated/InternalResidualCaseExtremes}
+\FloatBarrier
+
 \section{Comparação pareada Single x Dual Model}
 \label{sec:comparacao-pareada-single-dual}
 
@@ -395,7 +405,7 @@ Esta análise compara exclusivamente os dois \textit{checkpoints} finais treinad
 
 As métricas por fatia foram agregadas por paciente antes dos testes de hipótese, resultando em $n=41$ observações independentes. As médias e os desvios-padrão apresentados na \autoref{tab:ablation_improvement} descrevem a distribuição das $n=1478$ fatias do conjunto de teste. Em contraste, os resultados da \autoref{tab:workflow-paired-comparison} --- diferenças médias, intervalos de confiança e valores de $p$ --- são calculados a partir das médias por paciente. Esta estratégia evita pseudorrepetição decorrente de múltiplas fatias do mesmo indivíduo.
 
-Para cada arquitetura, a melhoria face à entrada corrompida foi avaliada com testes de postos sinalizados de Wilcoxon bilaterais, comparando as métricas de saída com as métricas da entrada em cada paciente. A hipótese nula corresponde à ausência de diferença sistemática entre a reconstrução e a entrada corrompida. Esta família compreendeu quatro testes: \acrshort{psnr} e \acrshort{ssim} para o Single Model e para o Dual Model. Os quatro valores de $p$ foram ajustados conjuntamente pelo procedimento de Holm, com nível de significância bilateral de $\alpha=0{,}05$.
+Para cada arquitetura, a melhoria face à entrada corrompida foi avaliada com testes de postos sinalizados de Wilcoxon bilaterais, comparando as métricas de saída com as métricas da entrada em cada paciente. A hipótese nula corresponde à ausência de diferença sistemática entre a reconstrução e a entrada corrompida. Esta família compreendeu quatro testes:\acrshort{psnr} e\acrshort{ssim} para o Single Model e para o Dual Model. Os quatro valores de $p$ foram ajustados conjuntamente pelo procedimento de Holm, com nível de significância bilateral de $\alpha=0{,}05$.
 
 \begin{table}[htbp]
 \centering
@@ -416,7 +426,7 @@ Single Model & $0.1081 \pm 0.0897$ & $5.46\times10^{-12}$ & $7.82 \pm 3.58$ & $3
 \end{table}
 
 
-A \autoref{tab:ablation_improvement} mostra que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$\acrshort{ssim} de $0{,}1081 \pm 0{,}0897$ e $\Delta$\acrshort{psnr} de $7{,}82 \pm 3{,}58$ dB, enquanto o Dual Model apresentou $0{,}1071 \pm 0{,}0897$ e $7{,}77 \pm 3{,}56$ dB, respetivamente. Todos os testes de melhoria face à entrada permaneceram significativos após o ajuste de Holm. A coincidência de três dos quatro valores de $p$ ajustados resulta do carácter sequencial e monotónico do procedimento de Holm; não representa reutilização indevida de um mesmo teste estatístico.
+A \autoref{tab:ablation_improvement} mostra que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$SSIM de $0{,}1081 \pm 0{,}0897$ e $\Delta$PSNR de $7{,}82 \pm 3{,}58$ dB, enquanto o Dual Model apresentou $0{,}1071 \pm 0{,}0897$ e $7{,}77 \pm 3{,}56$ dB, respetivamente. Todos os testes de melhoria face à entrada permaneceram significativos após o ajuste de Holm. A coincidência de três dos quatro valores de $p$ ajustados resulta do carácter sequencial e monotónico do procedimento de Holm.
 
 Estes testes confirmam que cada arquitetura melhora a entrada corrompida, mas não constituem uma comparação direta entre arquiteturas. Esta distinção é essencial: valores de $p$ pequenos na \autoref{tab:ablation_improvement} não permitem, por si só, afirmar que uma arquitetura é superior à outra.
 
@@ -439,9 +449,9 @@ SSIM & $-0.0012$ & $[-0.0015; -0.0009]$ & $7.82\times10^{-11}$ \\
 \label{tab:workflow-paired-comparison}
 \end{table}
 
-A comparação direta entre arquiteturas é apresentada na \autoref{tab:workflow-paired-comparison}. Para esta análise, calculou-se, em cada paciente, a diferença Dual Model menos Single Model. Foram aplicados testes de Wilcoxon bilaterais para \acrshort{psnr} e \acrshort{ssim}, com correção de Holm conjunta para os dois testes. Os intervalos de confiança de 95\% para a diferença média foram obtidos por \textit{bootstrap} percentil com 10\,000 reamostragens. Assim, valores negativos favorecem o Single Model.
+A comparação direta entre arquiteturas é apresentada na \autoref{tab:workflow-paired-comparison}. Para esta análise, calculou-se, em cada paciente, a diferença Dual Model menos Single Model. Foram aplicados testes de Wilcoxon bilaterais para\acrshort{psnr} e\acrshort{ssim}, com correção de Holm conjunta para os dois testes. Os intervalos de confiança de 95\% para a diferença média foram obtidos por \textit{bootstrap} percentil com 10\,000 reamostragens. Assim, valores negativos favorecem o Single Model.
 
-O Single Model apresentou vantagem média de $0{,}054$ dB em \acrshort{psnr} e de $0{,}0012$ em \acrshort{ssim}. Os intervalos de confiança não incluíram zero e os valores de $p$ ajustados foram $1{,}09\times10^{-2}$ para \acrshort{psnr} e $7{,}82\times10^{-11}$ para \acrshort{ssim}. Embora estas diferenças sejam estatisticamente significativas e consistentes entre pacientes, a sua magnitude absoluta é pequena. Portanto, os resultados fornecem evidência de uma vantagem quantitativa global discreta do Single Model, mas não justificam, isoladamente, uma inferência de superioridade clínica. O gráfico de barras resume a melhoria global semelhante obtida pelas duas arquiteturas.
+O Single Model apresentou vantagem média de $0{,}054$ dB em\acrshort{psnr} e de $0{,}0012$ em\acrshort{ssim}. Os intervalos de confiança não incluíram zero e os valores de $p$ ajustados foram $1{,}09\times10^{-2}$ para\acrshort{psnr} e $7{,}82\times10^{-11}$ para\acrshort{ssim}. Embora estas diferenças sejam estatisticamente significativas e consistentes entre pacientes, a sua magnitude absoluta é pequena. Portanto, os resultados fornecem evidência de uma vantagem quantitativa global discreta do Single Model, mas não justificam, isoladamente, uma inferência de superioridade clínica. O gráfico de barras resume a melhoria global semelhante obtida pelas duas arquiteturas.
 
 \begin{figure}[htbp]
 \centering
@@ -451,7 +461,7 @@ O Single Model apresentou vantagem média de $0{,}054$ dB em \acrshort{psnr} e d
 \end{figure}
 
 \section{Desempenho computacional}
-O desempenho temporal foi quantificado para o checkpoint do \textit{Single Model} com a seed 2024, selecionado para a avaliação externa, na partição de teste interna ($n=1478$ fatias). O benchmark foi executado no ambiente descrito em Materiais e Métodos, com GPU NVIDIA RTX A4500, utilizando lote unitário, após cinco passagens de aquecimento. Para cada fatia, a latência foi medida desde a chamada do modelo até à sincronização explícita da saída com a CPU. Consequentemente, esta medição inclui a execução da inferência e a sincronização da saída, mas não inclui o carregamento das imagens nem as etapas externas de pré-processamento ou de apresentação dos resultados.
+O desempenho temporal foi quantificado para o checkpoint do modelo selecionado para a avaliação externa, na partição de teste interna ($n=1478$ fatias). O benchmark foi executado no ambiente descrito em Materiais e Métodos, com GPU NVIDIA RTX A4500, utilizando lote unitário, após cinco passagens de aquecimento. Para cada fatia, a latência foi medida desde a chamada do modelo até à sincronização explícita da saída com a CPU. Consequentemente, esta medição inclui a execução da inferência e a sincronização da saída, mas não inclui o carregamento das imagens nem as etapas externas de pré-processamento ou de apresentação dos resultados.
 
 A latência média foi de $24{,}13\,\mathrm{ms}$ por fatia (desvio-padrão: $0{,}69\,\mathrm{ms}$; mediana: $24{,}30\,\mathrm{ms}$), correspondendo a um débito de $41{,}4$ fatias por segundo. Os percentis 95 e 99 foram, respetivamente, $24{,}66\,\mathrm{ms}$ e $27{,}53\,\mathrm{ms}$ por fatia. A proximidade entre a média, a mediana e o percentil 95 indica estabilidade da latência na maior parte das execuções; a distribuição completa e a variação por fatia são apresentadas na \autoref{fig:benchmark-latency}. Estes valores caracterizam a configuração experimental utilizada e não representam, por si só, o tempo de resposta de um fluxo clínico completo ou de outro ambiente computacional.
 \input{Chapters/Final/Generated/Benchmark}
@@ -460,24 +470,25 @@ A latência média foi de $24{,}13\,\mathrm{ms}$ por fatia (desvio-padrão: $0{,
 \label{sec:resultados-avaliacao-medicos}
 
 \subsection{Estado da recolha e participantes}
-\textit{[A preencher: estado de pré-produção, piloto ou recolha concluída; número de leitores analisados e características categóricas, apenas quando existirem dados reais.]}
+% A preencher: estado de pré-produção, piloto ou recolha concluída; número de leitores analisados e características categóricas, apenas quando existirem dados reais.
 
-\subsection{Caracterização quantitativa entrada--saída}
-Antes da avaliação por leitores, a alteração global produzida pelo \textit{Single Model}, seed 2024, foi caracterizada nos 15 casos principais do conjunto externo congelado. Os dois casos de treino foram excluídos desta síntese. Como estes exames reais não dispõem de referência limpa, as métricas da \autoref{tab:external-input-output-global} comparam exclusivamente a imagem de entrada com a saída do modelo, dentro da máscara corporal efetiva corrigida manualmente.
+\subsection{Caracterização quantitativa entrada -- saída}
+Antes da avaliação por profissionais, a alteração global produzida pelo \textit{Single Model} foi caracterizada nos 15 casos principais do conjunto externo. Os dois casos de treino foram excluídos desta síntese. Como estes exames reais não dispõem de referência limpa, as métricas da \autoref{tab:external-input-output-global} comparam exclusivamente a imagem de entrada com a saída do modelo, dentro da máscara corporal.
 
 \input{Chapters/Final/Generated/ExternalInputOutputMetrics}
 
-No conjunto externo, a similaridade média entrada--saída foi de $0{,}8953$ para \acrshort{ssim} e $33{,}14$~dB para \acrshort{psnr}, enquanto a magnitude média da alteração foi de $21{,}12$~HU em \acrshort{mae}. A dispersão entre casos, expressa pelos desvios-padrão e intervalos de confiança da tabela, evidencia heterogeneidade no grau de alteração produzido pela reconstrução. Estes resultados descrevem a preservação e a modificação global das imagens externas, mas não permitem inferir, sem referência limpa, acurácia de remoção de artefactos ou benefício clínico. Essa interpretação é abordada pela avaliação cega por leitores nas subseções seguintes.
+No conjunto externo, a similaridade média entrada--saída foi de $0{.}8953$ para\acrshort{ssim} e $33{.}14$~dB para\acrshort{psnr}, enquanto a magnitude média da alteração foi de $21{.}12$~HU em\acrshort{mae}. A dispersão entre casos, expressa pelos desvios-padrão e intervalos de confiança da tabela, evidencia heterogeneidade no grau de alteração produzido pela reconstrução. Estes resultados descrevem a preservação e a modificação global das imagens externas, mas não permitem inferir, sem referência limpa, acurácia de remoção de artefactos ou benefício clínico. Essa interpretação é abordada pela avaliação cega por médicos nas subseções seguintes.
 
-Para tornar visível esta heterogeneidade, selecionaram-se de forma descritiva os três casos com maior e os três com menor \acrshort{ssim} entre entrada e saída. Os primeiros representam os pares com menor alteração estrutural global, enquanto os segundos representam aqueles com maior alteração. Esta seleção não define casos ``melhores'' ou ``piores'': sem referência limpa, não quantifica a remoção de artefactos nem estabelece aceitabilidade clínica. As métricas correspondentes e os pares de imagens são apresentados na \autoref{tab:external-ssim-extremes}, \autoref{fig:external-least-structurally-changed} e \autoref{fig:external-most-structurally-changed}.
+Para tornar visível esta heterogeneidade, selecionou-se de forma descritiva os três casos com maior e os três com menor\acrshort{ssim} entre entrada e saída. Os primeiros representam os pares com menor alteração estrutural global, enquanto os segundos representam aqueles com maior alteração.
 
 \input{Chapters/Final/Generated/ExternalInputOutputExamples}
 
+\FloatBarrier
 \subsection{Desfecho primário: visualização anatómica}
-\textit{[A preencher: comparação pareada entre entrada e saída para visualização de tecidos e limites anatómicos.]}
+% A preencher: comparação pareada entre entrada e saída para visualização de tecidos e limites anatómicos.
 
 \subsection{Desfechos secundários e segurança percebida}
-\textit{[A preencher: interferência do artefacto, preferência A/B, possível dano, utilidade complementar e consistência intraleitor.]}
+% A preencher: interferência do artefacto, preferência A/B, possível dano, utilidade complementar e consistência intraleitor.
 
 \subsection{Interpretação limitada ao desenho observacional}
-\textit{[A preencher: reportar intervalos de confiança e limitações; não inferir benefício clínico para além das avaliações realizadas.]}
+% A preencher: reportar intervalos de confiança e limitações; não inferir benefício clínico para além das avaliações realizadas.

@@ -1,0 +1,25 @@
+\babel@toc {english}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\babel@toc {portuguese}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Single Supervision U-Net architecture}}{19}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Dual Supervision U-Net architecture}}{20}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Artifact and distant ROI examples}}{25}{figure.caption.16}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Visually approved low MS-SSIM pairs}}{32}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Visually rejected pairs}}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Greatest Global $\Delta $SSIM: head_1399}}{53}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Greatest Global $\Delta $SSIM: head_1304}}{54}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Greatest Global $\Delta $SSIM: head_1275}}{55}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Least Global $\Delta $SSIM: body_11949}}{56}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Least Global $\Delta $SSIM: body_11960}}{57}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Least Global $\Delta $SSIM: body_11950}}{58}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Least structurally changed external cases}}{64}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Most structurally changed external cases}}{65}{figure.caption.68}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
