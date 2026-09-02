@@ -1449,4 +1449,77 @@ Cap\'{\i }tulo 1.
 
 
 ]
-Package babel Info: 'portuguese' activates 'portuges' shorthands
+Package babel Info: 'portuguese' activates 'portuges' shorthands.
+(babel)             Reported on input line 26.
+ [2] [3]) (Chapters/Final/2.Objectives.tex [4]
+Cap\'{\i }tulo 2.
+) (Chapters/Final/3.RelatedWork.tex [5
+
+] [6]
+Cap\'{\i }tulo 3.
+[7
+
+] [8]) (Chapters/Final/4.MaterialsMethods.tex [9]
+Cap\'{\i }tulo 4.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 18.
+(C:\Users\ludmy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+) [10
+
+] [11] [12] [13] [14] [15] [16] [17] [18]
+Overfull \hbox (1.7174pt too wide) in paragraph at lines 255--257
+\T1/phv/m/n/10.95 O pri-meiro mo-delo con-siste em uma ar-qui-te-tura ba-se-ada em [][][]U-Net[][] [[]], com-posta por \T1/phv/m/sl/10.95 encoder-
+ []
+
+<Figures/Generated/materials/unet-single-compact-132d4a1a.png, id=974, 714.38895pt x 498.663pt>
+File: Figures/Generated/materials/unet-single-compact-132d4a1a.png Graphic file (type png)
+<use Figures/Generated/materials/unet-single-compact-132d4a1a.png>
+Package pdftex.def Info: Figures/Generated/materials/unet-single-compact-132d4a1a.png  used on input line 260.
+(pdftex.def)             Requested size: 432.48051pt x 301.88606pt.
+* Missing: Figures/Generated/materials/unet-single-compact-132d4a1a.pax
+[19]
+<Figures/Generated/materials/unet-dual-compact-8441faa2.png, id=990, 714.38895pt x 498.663pt>
+File: Figures/Generated/materials/unet-dual-compact-8441faa2.png Graphic file (type png)
+<use Figures/Generated/materials/unet-dual-compact-8441faa2.png>
+Package pdftex.def Info: Figures/Generated/materials/unet-dual-compact-8441faa2.png  used on input line 277.
+(pdftex.def)             Requested size: 432.48051pt x 301.88606pt.
+
+* Missing: Figures/Generated/materials/unet-dual-compact-8441faa2.pax
+[20 <./Figures/Generated/materials/unet-single-compact-132d4a1a.png>] [21 <./Figures/Generated/materials/unet-dual-compact-8441faa2.png>] [22] [23] [24]
+<Figures/roi_example_sample_0000.png, id=1055, 705.71655pt x 364.9635pt>
+File: Figures/roi_example_sample_0000.png Graphic file (type png)
+<use Figures/roi_example_sample_0000.png>
+Package pdftex.def Info: Figures/roi_example_sample_0000.png  used on input line 363.
+(pdftex.def)             Requested size: 400.61703pt x 207.18488pt.
+
+* Missing: Figures/roi_example_sample_0000.pax
+<Figures/roi_example_sample_0003.png, id=1056, 705.71655pt x 364.9635pt>
+File: Figures/roi_example_sample_0003.png Graphic file (type png)
+<use Figures/roi_example_sample_0003.png>
+Package pdftex.def Info: Figures/roi_example_sample_0003.png  used on input line 364.
+(pdftex.def)             Requested size: 400.61703pt x 207.18488pt.
+* Missing: Figures/roi_example_sample_0003.pax
+<Figures/roi_example_sample_0006.png, id=1057, 705.71655pt x 364.9635pt>
+File: Figures/roi_example_sample_0006.png Graphic file (type png)
+<use Figures/roi_example_sample_0006.png>
+Package pdftex.def Info: Figures/roi_example_sample_0006.png  used on input line 365.
+(pdftex.def)             Requested size: 400.61703pt x 207.18488pt.
+* Missing: Figures/roi_example_sample_0006.pax
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 366.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 366.
+[25] [26 <./Figures/roi_example_sample_0000.png> <./Figures/roi_example_sample_0003.png> <./Figures/roi_example_sample_0006.png>] [27] [28]) (Chapters/Final/5.Results.tex [29]
+Cap\'{\i }tulo 5.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\acrshort' on input line 10.
+
+<Figures/ssim_distribution_full.pdf, id=1109, 505.89pt x 303.534pt>
+File: Figures/ssim_distribution_full.pdf Graphic file (type pdf)
+<use Figures/ssim_distribution_full.pdf>
+Package pdftex.def Info: Figures/ssim_distribution_full.pdf  used on input line 17.
+(pdftex.def)             Requested size: 455.24411pt x 273.15027pt.
+* Missing: Figures/ssim_distribution_full.pax
+<Figures/ssim_distribution_zoom.pdf, id=1110, 505.89pt x 303.534pt>
+File: Figures/ssim_distribution_zoom.pdf Graphic f
