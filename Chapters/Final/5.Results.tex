@@ -401,36 +401,43 @@ Em cada mapa, a primeira linha apresenta a alteração necessária em relação 
 \section{Comparação pareada Single x Dual Model}
 \label{sec:comparacao-pareada-single-dual}
 
+\subsection{Análises Estatísticas Globais}
 Esta análise compara exclusivamente os dois \textit{checkpoints} finais treinados com a seed 2024, um por arquitetura. A seleção do Single Model, seed 2024, para prosseguir para a avaliação externa já havia sido definida com base no desempenho de validação. Portanto, os resultados no conjunto de teste apresentados nesta secção têm caráter de avaliação interna final: não foram utilizados para escolher novos \textit{checkpoints}, ajustar hiperparâmetros ou alterar a arquitetura a avaliar externamente.
 
-As métricas por fatia foram agregadas por paciente antes dos testes de hipótese, resultando em $n=41$ observações independentes. As médias e os desvios-padrão apresentados na \autoref{tab:ablation_improvement} descrevem a distribuição das $n=1478$ fatias do conjunto de teste. Em contraste, os resultados da \autoref{tab:workflow-paired-comparison} --- diferenças médias, intervalos de confiança e valores de $p$ --- são calculados a partir das médias por paciente. Esta estratégia evita pseudorrepetição decorrente de múltiplas fatias do mesmo indivíduo.
+As métricas por fatia foram agregadas por paciente antes de todos os resumos e testes de hipótese, resultando em $n=41$ observações independentes. Assim, as médias, os intervalos de confiança de 95\% e os valores de $p$ apresentados na \autoref{tab:ablation_improvement} referem-se às médias por paciente, atribuindo o mesmo peso a cada indivíduo. Os resultados da \autoref{tab:workflow-paired-comparison} são calculados na mesma unidade estatística.
 
-Para cada arquitetura, a melhoria face à entrada corrompida foi avaliada com testes de postos sinalizados de Wilcoxon bilaterais, comparando as métricas de saída com as métricas da entrada em cada paciente. A hipótese nula corresponde à ausência de diferença sistemática entre a reconstrução e a entrada corrompida. Esta família compreendeu quatro testes:\acrshort{psnr} e\acrshort{ssim} para o Single Model e para o Dual Model. Os quatro valores de $p$ foram ajustados conjuntamente pelo procedimento de Holm, com nível de significância bilateral de $\alpha=0{,}05$.
+As duas tabelas desta secção apresentam exclusivamente métricas globais, calculadas em todos os píxeis da máscara corporal de cada fatia; os píxeis de fundo são excluídos. Portanto, estes resultados não são restritos à Zona de Artefacto nem à região distante. As análises por ROI constituem uma avaliação complementar da distribuição espacial do desempenho e devem ser interpretadas separadamente das comparações globais aqui apresentadas.
+
+Os diagnósticos por paciente mostraram assimetria e desvio da normalidade para $\Delta$SSIM. Assim, a evidência primária foi baseada no teste de sinais binomial exato, que avalia a predominância de melhorias sem pressupor simetria das diferenças. Para $\Delta$PSNR, cuja distribuição por paciente não mostrou evidência de afastamento da normalidade, foi utilizado o teste t bilateral de uma amostra para a melhoria média. O Wilcoxon para $\Delta$SSIM foi reportado como análise de sensibilidade.
+
+Os diagnósticos de distribuição foram verificados separadamente para ambos os modelos antes de aplicar esta regra comum por métrica. Para $\Delta$\acrshort{ssim}, o teste de Shapiro--Wilk indicou desvio da normalidade no Single Model ($W=0{,}9158$; $p=0{,}0050$; assimetria $=1{,}087$) e no Dual Model ($W=0{,}9162$; $p=0{,}0052$; assimetria $=1{,}056$), sustentando o uso do teste de sinais em ambas as arquiteturas. Para $\Delta$\acrshort{psnr}, não houve evidência de afastamento da normalidade nos diagnósticos do Single Model ($W=0{,}9742$; $p=0{,}4675$) ou do Dual Model ($W=0{,}9734$; $p=0{,}4427$), o que foi compatível com o uso do teste $t$ para a melhoria média em ambos os modelos.
 
 \begin{table}[htbp]
 \centering
 \small
-\begin{tabular}{ccccc}
-\multicolumn{5}{c}{\textbf{Reconstruction Quality}} \\[3pt]
+\begin{tabular}{lcccccc}
+\multicolumn{7}{c}{\textbf{Reconstruction Quality}} \\[3pt]
 \toprule
-\textbf{Model} & \textbf{$\Delta$SSIM} & \textbf{$p_{\mathrm{SSIM}}$ (Holm)} & \textbf{$\Delta$PSNR (dB)} & \textbf{$p_{\mathrm{PSNR}}$ (Holm)} \\
+\textbf{Model} & \multicolumn{3}{c}{\textbf{$\Delta$SSIM}} & \multicolumn{3}{c}{\textbf{$\Delta$PSNR (dB)}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+ & \textbf{Mean} & \textbf{95\% CI} & \textbf{$p$ (Holm)} & \textbf{Mean} & \textbf{95\% CI} & \textbf{$p$ (Holm)} \\
 \midrule
-Dual Model & $0.1071 \pm 0.0897$ & $5.46\times10^{-12}$ & $7.77 \pm 3.56$ & $5.46\times10^{-12}$ \\\\
-Single Model & $0.1081 \pm 0.0897$ & $5.46\times10^{-12}$ & $7.82 \pm 3.58$ & $3.64\times10^{-12}$ \\\\
+Dual Model & $0.0879$ & $[0.0731; 0.1062]$ & $7.64\times10^{-11}$ & $7.06$ & $[6.30; 7.81]$ & $5.90\times10^{-21}$ \\\\
+Single Model & $0.0891$ & $[0.0744; 0.1075]$ & $7.64\times10^{-11}$ & $7.11$ & $[6.35; 7.87]$ & $5.90\times10^{-21}$ \\\\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Holm-adjusted two-sided Wilcoxon $p$-values for improvement over the corrupted input.
+\par\smallskip\footnotesize Global body-mask-aware metrics, aggregated at the patient level ($n=41$); no ROI restriction. The 95\% CIs use BCa bootstrap for $\Delta$SSIM and one-sample $t$ intervals for $\Delta$PSNR. Holm-adjusted two-sided $p$-values use the exact binomial sign test for $\Delta$SSIM and the one-sample $t$-test for $\Delta$PSNR, across the four primary tests (two models $\times$ two metrics).
 \captionsetup{skip=2pt}
 \caption[Improvement over corrupted input]{Improvement over the corrupted input on the test set.}
 \label{tab:ablation_improvement}
 \end{table}
 
 
-A \autoref{tab:ablation_improvement} mostra que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$SSIM de $0{,}1081 \pm 0{,}0897$ e $\Delta$PSNR de $7{,}82 \pm 3{,}58$ dB, enquanto o Dual Model apresentou $0{,}1071 \pm 0{,}0897$ e $7{,}77 \pm 3{,}56$ dB, respetivamente. Todos os testes de melhoria face à entrada permaneceram significativos após o ajuste de Holm. A coincidência de três dos quatro valores de $p$ ajustados resulta do carácter sequencial e monotónico do procedimento de Holm.
+A \autoref{tab:ablation_improvement} mostra que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$SSIM médio de $0{,}0891$ (IC 95\% BCa: $[0{,}0744; 0{,}1075]$) e $\Delta$PSNR médio de $7{,}11$ dB (IC 95\% $t$: $[6{,}35; 7{,}87]$), enquanto o Dual Model apresentou $0{,}0879$ (IC 95\% BCa: $[0{,}0731; 0{,}1062]$) e $7{,}06$ dB (IC 95\% $t$: $[6{,}30; 7{,}81]$), respetivamente. Todos os quatro testes primários de melhoria face à entrada permaneceram significativos após o ajuste de Holm. Os valores de $p$ de $\Delta$\acrshort{ssim} e de $\Delta$\acrshort{psnr} respondem a questões inferenciais distintas --- predominância de melhoria e melhoria média, respetivamente --- e, por isso, não devem ser comparados em magnitude.
 
 Estes testes confirmam que cada arquitetura melhora a entrada corrompida, mas não constituem uma comparação direta entre arquiteturas. Esta distinção é essencial: valores de $p$ pequenos na \autoref{tab:ablation_improvement} não permitem, por si só, afirmar que uma arquitetura é superior à outra.
 
-Os valores absolutos subjacentes à comparação pareada são agregados primeiro por paciente, atribuindo o mesmo peso a cada um dos 41 pacientes. Por essa razão, não coincidem necessariamente com as médias por fatia apresentadas nas tabelas globais anteriores, nas quais pacientes com diferentes números de fatias contribuem com pesos distintos.
+Os valores absolutos subjacentes à comparação pareada são igualmente agregados por paciente, atribuindo o mesmo peso a cada um dos 41 pacientes. Assim, ambas as tabelas desta secção utilizam a mesma unidade estatística; valores apresentados anteriormente ao nível da fatia podem diferir por atribuírem pesos distintos a pacientes com números de fatias diferentes.
 
 \begin{table}[htbp]
 \centering
@@ -438,20 +445,21 @@ Os valores absolutos subjacentes à comparação pareada são agregados primeiro
 \begin{tabular}{cccc}
 \multicolumn{4}{c}{\textbf{Dual Model $-$ Single Model}} \\[3pt]
 \hline
-\textbf{Metric} & \textbf{Mean Difference} & \textbf{95\% CI} & \textbf{$p$ (Holm)} \\
+\textbf{Metric} & \textbf{Mean Difference} & \textbf{95\% BCa CI} & \textbf{$p$ (sign test; Holm)} \\
 \hline
-PSNR (dB) & $-0.054$ & $[-0.099; -0.012]$ & $1.09\times10^{-2}$ \\
-SSIM & $-0.0012$ & $[-0.0015; -0.0009]$ & $7.82\times10^{-11}$ \\
+PSNR (dB) & $-0.054$ & $[-0.107; -0.017]$ & $2.75\times10^{-2}$ \\
+SSIM & $-0.0012$ & $[-0.0015; -0.0010]$ & $1.57\times10^{-9}$ \\
 \hline
 \end{tabular}
+\par\smallskip\footnotesize Mean differences with patient-level 95\% BCa bootstrap CIs (10\,000 resamples); two-sided exact binomial sign-test $p$-values, Holm-adjusted across PSNR and SSIM.
 \captionsetup{skip=2pt}
 \caption[Paired Single vs Dual Model comparison]{Patient-level paired comparison between architectures ($n=41$). Negative differences favor the Single Model.}
 \label{tab:workflow-paired-comparison}
 \end{table}
 
-A comparação direta entre arquiteturas é apresentada na \autoref{tab:workflow-paired-comparison}. Para esta análise, calculou-se, em cada paciente, a diferença Dual Model menos Single Model. Foram aplicados testes de Wilcoxon bilaterais para\acrshort{psnr} e\acrshort{ssim}, com correção de Holm conjunta para os dois testes. Os intervalos de confiança de 95\% para a diferença média foram obtidos por \textit{bootstrap} percentil com 10\,000 reamostragens. Assim, valores negativos favorecem o Single Model.
+A comparação direta entre arquiteturas é apresentada na \autoref{tab:workflow-paired-comparison}. Para esta análise, calculou-se, em cada paciente, a diferença Dual Model menos Single Model. Foram aplicados testes binomiais exatos de sinais bilaterais para\acrshort{psnr} e\acrshort{ssim}, excluindo diferenças nulas e com correção de Holm conjunta para os dois testes. Esta análise testa se uma arquitetura supera a outra em mais pacientes do que o esperado ao acaso, sem pressupor simetria das diferenças. Os intervalos de confiança de 95\% obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens quantificam a diferença média, enquanto os valores de $p$ avaliam a predominância direcional. Assim, valores negativos favorecem o Single Model.
 
-O Single Model apresentou vantagem média de $0{,}054$ dB em\acrshort{psnr} e de $0{,}0012$ em\acrshort{ssim}. Os intervalos de confiança não incluíram zero e os valores de $p$ ajustados foram $1{,}09\times10^{-2}$ para\acrshort{psnr} e $7{,}82\times10^{-11}$ para\acrshort{ssim}. Embora estas diferenças sejam estatisticamente significativas e consistentes entre pacientes, a sua magnitude absoluta é pequena. Portanto, os resultados fornecem evidência de uma vantagem quantitativa global discreta do Single Model, mas não justificam, isoladamente, uma inferência de superioridade clínica. O gráfico de barras resume a melhoria global semelhante obtida pelas duas arquiteturas.
+O Single Model apresentou vantagem média de $0{,}054$ dB em\acrshort{psnr} e de $0{,}0012$ em\acrshort{ssim}. Os intervalos de confiança não incluíram zero e os valores de $p$ ajustados foram $2{,}75\times10^{-2}$ para\acrshort{psnr} e $1{,}57\times10^{-9}$ para\acrshort{ssim}; as diferenças favoreceram o Single Model em 28 dos 41 pacientes para\acrshort{psnr} e em 39 dos 41 pacientes para\acrshort{ssim}. Embora estas diferenças sejam estatisticamente significativas, a sua magnitude absoluta é pequena. Portanto, os resultados fornecem evidência de uma vantagem quantitativa global discreta do Single Model, mas não justificam, isoladamente, uma inferência de superioridade clínica. O gráfico de barras resume a melhoria global semelhante obtida pelas duas arquiteturas.
 
 \begin{figure}[htbp]
 \centering
@@ -459,6 +467,8 @@ O Single Model apresentou vantagem média de $0{,}054$ dB em\acrshort{psnr} e de
 \captionsetup{skip=2pt}
 \graphiccaption[Global PSNR and SSIM improvement]{Global PSNR and SSIM improvement over the corrupted input for the Single and Dual Models on the test set.}
 \end{figure}
+
+\subsection{Análise Estatísticas por ROI}
 
 \section{Desempenho computacional}
 O desempenho temporal foi quantificado para o checkpoint do modelo selecionado para a avaliação externa, na partição de teste interna ($n=1478$ fatias). O benchmark foi executado no ambiente descrito em Materiais e Métodos, com GPU NVIDIA RTX A4500, utilizando lote unitário, após cinco passagens de aquecimento. Para cada fatia, a latência foi medida desde a chamada do modelo até à sincronização explícita da saída com a CPU. Consequentemente, esta medição inclui a execução da inferência e a sincronização da saída, mas não inclui o carregamento das imagens nem as etapas externas de pré-processamento ou de apresentação dos resultados.
