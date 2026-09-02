@@ -29,8 +29,12 @@
 \contentsline {table}{\numberline {5.12}{\ignorespaces ROI MAE reduction}}{49}{table.caption.45}%
 \contentsline {table}{\numberline {5.13}{\ignorespaces Improvement over corrupted input}}{60}{table.caption.59}%
 \contentsline {table}{\numberline {5.14}{\ignorespaces Paired Single vs Dual Model comparison}}{60}{table.caption.60}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces External input-output global metrics}}{63}{table.caption.65}%
-\contentsline {table}{\numberline {5.16}{\ignorespaces Illustrative external cases by input-output SSIM}}{64}{table.caption.66}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Artifact-ROI improvement over corrupted input}}{62}{table.caption.62}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Paired Artifact-ROI comparison between architectures}}{62}{table.caption.63}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Distant-ROI preservation magnitude}}{63}{table.caption.64}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Paired Distant-ROI preservation comparison}}{63}{table.caption.65}%
+\contentsline {table}{\numberline {5.19}{\ignorespaces External input-output global metrics}}{65}{table.caption.69}%
+\contentsline {table}{\numberline {5.20}{\ignorespaces Illustrative external cases by input-output SSIM}}{66}{table.caption.70}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
