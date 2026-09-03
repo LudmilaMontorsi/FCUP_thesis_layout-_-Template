@@ -27,14 +27,20 @@
 \contentsline {table}{\numberline {5.10}{\ignorespaces ROI $\Delta $SSIM}}{49}{table.caption.43}%
 \contentsline {table}{\numberline {5.11}{\ignorespaces ROI $\Delta $PSNR}}{49}{table.caption.44}%
 \contentsline {table}{\numberline {5.12}{\ignorespaces ROI MAE reduction}}{49}{table.caption.45}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Improvement over corrupted input}}{60}{table.caption.59}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces Paired Single vs Dual Model comparison}}{60}{table.caption.60}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces Artifact-ROI improvement over corrupted input}}{62}{table.caption.62}%
-\contentsline {table}{\numberline {5.16}{\ignorespaces Paired Artifact-ROI comparison between architectures}}{62}{table.caption.63}%
-\contentsline {table}{\numberline {5.17}{\ignorespaces Distant-ROI preservation magnitude}}{63}{table.caption.64}%
-\contentsline {table}{\numberline {5.18}{\ignorespaces Paired Distant-ROI preservation comparison}}{63}{table.caption.65}%
-\contentsline {table}{\numberline {5.19}{\ignorespaces External input-output global metrics}}{65}{table.caption.69}%
-\contentsline {table}{\numberline {5.20}{\ignorespaces Illustrative external cases by input-output SSIM}}{66}{table.caption.70}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces SSIM improvement over corrupted input}}{60}{table.caption.59}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces PSNR improvement over corrupted input}}{60}{table.caption.60}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces MAE reduction over corrupted input}}{60}{table.caption.61}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Paired Single vs Dual Model comparison}}{61}{table.caption.62}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Artifact-ROI SSIM improvement}}{62}{table.caption.64}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Artifact-ROI PSNR improvement}}{62}{table.caption.65}%
+\contentsline {table}{\numberline {5.19}{\ignorespaces Artifact-ROI MAE reduction}}{63}{table.caption.66}%
+\contentsline {table}{\numberline {5.20}{\ignorespaces Paired Artifact-ROI improvement comparison}}{63}{table.caption.67}%
+\contentsline {table}{\numberline {5.21}{\ignorespaces Distant-ROI SSIM preservation magnitude}}{63}{table.caption.68}%
+\contentsline {table}{\numberline {5.22}{\ignorespaces Distant-ROI PSNR preservation magnitude}}{64}{table.caption.69}%
+\contentsline {table}{\numberline {5.23}{\ignorespaces Distant-ROI MAE preservation magnitude}}{64}{table.caption.70}%
+\contentsline {table}{\numberline {5.24}{\ignorespaces Paired Distant-ROI preservation advantage}}{64}{table.caption.71}%
+\contentsline {table}{\numberline {5.25}{\ignorespaces External input-output global metrics}}{66}{table.caption.75}%
+\contentsline {table}{\numberline {5.26}{\ignorespaces Illustrative external cases by input-output SSIM}}{67}{table.caption.76}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

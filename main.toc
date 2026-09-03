@@ -66,26 +66,26 @@
 \contentsline {subsection}{\numberline {5.3.3}Mapas de resíduos em casos extremos}{52}{subsection.5.3.3}%
 \contentsline {section}{\numberline {5.4}Comparação pareada Single x Dual Model}{59}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Análises Estatísticas Globais}{59}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Análise Estatística por ROI}{61}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Desempenho computacional}{63}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Avaliação externa por médicos}{65}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Estado da recolha e participantes}{65}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Caracterização quantitativa entrada -- saída}{65}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Desfecho primário: visualização anatómica}{68}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Desfechos secundários e segurança percebida}{68}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Interpretação limitada ao desenho observacional}{68}{subsection.5.6.5}%
-\contentsline {chapter}{\numberline {6}Discussão}{69}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Síntese dos achados principais}{69}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Interpretação da comparação arquitetural}{69}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Preservação anatómica e segurança da reconstrução}{69}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Generalização e avaliação externa}{69}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Avaliação por médicos}{69}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Limitações}{70}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Implicações e trabalho futuro}{70}{section.6.7}%
-\contentsline {chapter}{\numberline {7}Conclusões}{71}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusões do estudo}{71}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Contribuições da dissertação}{71}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Perspetivas futuras}{71}{section.7.3}%
+\contentsline {subsection}{\numberline {5.4.2}Análise Estatística por ROI}{62}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Desempenho computacional}{64}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Avaliação externa por médicos}{66}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Estado da recolha e participantes}{66}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Caracterização quantitativa entrada -- saída}{66}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Desfecho primário: visualização anatómica}{70}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Desfechos secundários e segurança percebida}{70}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Interpretação limitada ao desenho observacional}{70}{subsection.5.6.5}%
+\contentsline {chapter}{\numberline {6}Discussão}{71}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Síntese dos achados principais}{71}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Interpretação da comparação arquitetural}{71}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Preservação anatómica e segurança da reconstrução}{71}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Generalização e avaliação externa}{71}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Avaliação por médicos}{71}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Limitações}{72}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Implicações e trabalho futuro}{72}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Conclusões}{73}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusões do estudo}{73}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Contribuições da dissertação}{73}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Perspetivas futuras}{73}{section.7.3}%
 \vspace {0.5cm}
-\contentsline {chapter}{Bibliography}{71}{dummy.8}%
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{77}{appendix.A}%
+\contentsline {chapter}{Bibliography}{73}{dummy.8}%
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{79}{appendix.A}%

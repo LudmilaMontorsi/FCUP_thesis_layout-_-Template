@@ -404,62 +404,96 @@ Em cada mapa, a primeira linha apresenta a alteração necessária em relação 
 \subsection{Análises Estatísticas Globais}
 Esta análise compara exclusivamente os dois \textit{checkpoints} finais treinados com a seed 2024, um por arquitetura. A seleção do Single Model, seed 2024, para prosseguir para a avaliação externa já havia sido definida com base nn desempenho de validação. Portanto, os resultados no conjunto de teste apresentados nesta secção têm caráter de avaliação interna final: não foram utilizados para escolher novos \textit{checkpoints}, ajustar hiperparâmetros ou alterar a arquitetura a avaliar externamente.
 
-As métricas por fatia foram agregadas por paciente antes de todos os resumos e testes de hipótese, resultando em $n=41$ observações independentes. Assim, as médias, os intervalos de confiança de 95\% e os valores de $p$ apresentados na \autoref{tab:ablation_improvement} referem-se às médias por paciente, atribuindo o mesmo peso a cada indivíduo. Os resultados da \autoref{tab:workflow-paired-comparison} são calculados na mesma unidade estatística.
+As métricas por fatia foram agregadas por paciente antes de todos os resumos e testes de hipótese, resultando em $n=41$ observações independentes. Assim, as médias, os intervalos de confiança de 95\% e os valores de $p$ apresentados nas tabelas desta secção referem-se às médias por paciente, atribuindo o mesmo peso a cada indivíduo.
 
-As duas tabelas desta secção apresentam exclusivamente métricas globais, calculadas em todos os píxeis da máscara corporal de cada fatia; os píxeis de fundo são excluídos. Portanto, estes resultados não são restritos à Zona de Artefacto nem à região distante. As análises por ROI constituem uma avaliação complementar da distribuição espacial do desempenho e devem ser interpretadas separadamente das comparações globais aqui apresentadas.
+As tabelas desta secção apresentam exclusivamente análise das métricas globais, calculadas em todos os píxeis da máscara corporal de cada fatia. Os píxels de fundo são excluídos. As análises por ROI constituem uma avaliação complementar da distribuição espacial do desempenho e serão analisadas separadamente na próxima secção.
 
-Os diagnósticos por paciente mostraram assimetria e desvio da normalidade para $\Delta$SSIM. Assim, a evidência primária foi baseada no teste de sinais binomial exato, que avalia a predominância de melhorias sem pressupor simetria das diferenças. Para $\Delta$PSNR, cuja distribuição por paciente não mostrou evidência de afastamento da normalidade, foi utilizado o teste t bilateral de uma amostra para a melhoria média. O Wilcoxon para $\Delta$SSIM foi reportado como análise de sensibilidade.
+Os diagnósticos por paciente mostraram assimetria e desvio da normalidade para $\Delta$SSIM e $\Delta$MAE. Assim, a evidência primária para essas métricas foi baseada no teste de sinais binomial exato, que avalia a predominância de melhorias sem pressupor simetria das diferenças. Para $\Delta$PSNR, cuja distribuição por paciente não mostrou evidência de afastamento da normalidade, foi utilizado o teste $t$ bilateral de uma amostra para a melhoria média.
 
-Os diagnósticos de distribuição foram verificados separadamente para ambos os modelos antes de aplicar esta regra comum por métrica. Para $\Delta$\acrshort{ssim}, o teste de Shapiro--Wilk indicou desvio da normalidade no Single Model ($W=0{,}9158$; $p=0{,}0050$; assimetria $=1{,}087$) e no Dual Model ($W=0{,}9162$; $p=0{,}0052$; assimetria $=1{,}056$), sustentando o uso do teste de sinais em ambas as arquiteturas. Para $\Delta$\acrshort{psnr}, não houve evidência de afastamento da normalidade nos diagnósticos do Single Model ($W=0{,}9742$; $p=0{,}4675$) ou do Dual Model ($W=0{,}9734$; $p=0{,}4427$), o que foi compatível com o uso do teste $t$ para a melhoria média em ambos os modelos.
+Os diagnósticos de distribuição foram verificados separadamente para ambos os modelos antes de aplicar esta regra comum por métrica. Para $\Delta$SSIM, o teste de Shapiro--Wilk indicou desvio da normalidade no Single Model ($W=0{.}9158$; $p=0{.}0050$; assimetria $=1{.}087$) e no Dual Model ($W=0{.}9162$; $p=0{.}0052$; assimetria $=1{.}056$), sustentando o uso do teste de sinais em ambas as arquiteturas. Para $\Delta$MAE, observou-se o mesmo padrão no Single Model ($W=0{.}7607$; $p=8{.}95\times10^{-7}$; assimetria $=2{.}281$) e no Dual Model ($W=0{.}7686$; $p=1{.}27\times10^{-6}$; assimetria $=2{.}200$). Para $\Delta$PSNR, não houve evidência de afastamento da normalidade nos diagnósticos do Single Model ($W=0{.}9742$; $p=0{.}4675$) ou do Dual Model ($W=0{.}9734$; $p=0{.}4427$), o que foi compatível com o uso do teste $t$ para a melhoria média em ambos os modelos.
 
 \begin{table}[htbp]
 \centering
 \small
-\begin{tabular}{lcccccc}
-\multicolumn{7}{c}{\textbf{Reconstruction Quality}} \\[3pt]
+\begin{tabular}{lccc}
+\multicolumn{4}{c}{\textbf{Reconstruction Quality: SSIM}} \\[3pt]
 \toprule
-\textbf{Model} & \multicolumn{3}{c}{\textbf{$\Delta$SSIM}} & \multicolumn{3}{c}{\textbf{$\Delta$PSNR (dB)}} \\
-\cmidrule(lr){2-4}\cmidrule(lr){5-7}
- & \textbf{Mean} & \textbf{95\% CI} & \textbf{$p$ (Holm)} & \textbf{Mean} & \textbf{95\% CI} & \textbf{$p$ (Holm)} \\
+\textbf{Model} & \textbf{Mean improvement} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
 \midrule
-Dual Model & $0.0879$ & $[0.0731; 0.1062]$ & $7.64\times10^{-11}$ & $7.06$ & $[6.30; 7.81]$ & $5.90\times10^{-21}$ \\\\
-Single Model & $0.0891$ & $[0.0744; 0.1075]$ & $7.64\times10^{-11}$ & $7.11$ & $[6.35; 7.87]$ & $5.90\times10^{-21}$ \\\\
+Single Model & $0.0891$ & $[0.0744; 0.1075]$ & $7.64\times10^{-11}$ \\\\
+Dual Model & $0.0879$ & $[0.0731; 0.1062]$ & $7.64\times10^{-11}$ \\\\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Global body-mask-aware metrics, aggregated at the patient level ($n=41$); no ROI restriction. The 95\% CIs use BCa bootstrap for $\Delta$SSIM and one-sample $t$ intervals for $\Delta$PSNR. Holm-adjusted two-sided $p$-values use the exact binomial sign test for $\Delta$SSIM and the one-sample $t$-test for $\Delta$PSNR, across the four primary tests (two models $\times$ two metrics).
+\par\smallskip\footnotesize Global body-mask-aware metric, aggregated at the patient level ($n=41$); no ROI restriction. Two-sided exact binomial sign-test $p$-values, Holm-adjusted separately within each model across SSIM, PSNR, and MAE.
 \captionsetup{skip=2pt}
-\caption[Improvement over corrupted input]{Improvement over the corrupted input on the test set.}
-\label{tab:ablation_improvement}
+\caption[SSIM improvement over corrupted input]{Global SSIM improvement over the corrupted input on the test set.}
+\label{tab:ablation_improvement_ssim}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\multicolumn{4}{c}{\textbf{Reconstruction Quality: PSNR}} \\[3pt]
+\toprule
+\textbf{Model} & \textbf{Mean improvement (dB)} & \textbf{95\% $t$ CI} & \textbf{$p$ (Holm)} \\
+\midrule
+Single Model & $7.11$ & $[6.35; 7.87]$ & $4.53\times10^{-21}$ \\\\
+Dual Model & $7.06$ & $[6.30; 7.81]$ & $4.42\times10^{-21}$ \\\\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Global body-mask-aware metric, aggregated at the patient level ($n=41$); no ROI restriction. Two-sided one-sample $t$-test $p$-values, Holm-adjusted separately within each model across SSIM, PSNR, and MAE.
+\captionsetup{skip=2pt}
+\caption[PSNR improvement over corrupted input]{Global PSNR improvement over the corrupted input on the test set.}
+\label{tab:ablation_improvement_psnr}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\multicolumn{4}{c}{\textbf{Reconstruction Quality: MAE}} \\[3pt]
+\toprule
+\textbf{Model} & \textbf{Mean reduction (HU)} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
+\midrule
+Single Model & $15.72$ & $[12.94; 20.14]$ & $7.64\times10^{-11}$ \\\\
+Dual Model & $15.54$ & $[12.79; 19.88]$ & $7.64\times10^{-11}$ \\\\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Global body-mask-aware metric, aggregated at the patient level ($n=41$); no ROI restriction. Positive $\Delta$MAE denotes error reduction. Two-sided exact binomial sign-test $p$-values, Holm-adjusted separately within each model across SSIM, PSNR, and MAE.
+\captionsetup{skip=2pt}
+\caption[MAE reduction over corrupted input]{Global MAE reduction over the corrupted input on the test set.}
+\label{tab:ablation_improvement_mae}
 \end{table}
 
 
-A \autoref{tab:ablation_improvement} mostra que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$SSIM médio de $0{,}0891$ (IC 95\% BCa: $[0{,}0744; 0{,}1075]$) e $\Delta$PSNR médio de $7{,}11$ dB (IC 95\% $t$: $[6{,}35; 7{,}87]$), enquanto o Dual Model apresentou $0{,}0879$ (IC 95\% BCa: $[0{,}0731; 0{,}1062]$) e $7{,}06$ dB (IC 95\% $t$: $[6{,}30; 7{,}81]$), respetivamente. Todos os quatro testes primários de melhoria face à entrada permaneceram significativos após o ajuste de Holm. Os valores de $p$ de $\Delta$\acrshort{ssim} e de $\Delta$\acrshort{psnr} respondem a questões inferenciais distintas --- predominância de melhoria e melhoria média, respetivamente --- e, por isso, não devem ser comparados em magnitude.
+A \autoref{tab:ablation_improvement_ssim}, a \autoref{tab:ablation_improvement_psnr} e a \autoref{tab:ablation_improvement_mae} mostram que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$SSIM médio de $0{.}0891$ (IC 95\% BCa: $[0{.}0744; 0{.}1075]$), $\Delta$PSNR médio de $7{.}11$ dB (IC 95\% $t$: $[6{.}35; 7{.}87]$) e redução média de MAE de $15{.}72$ HU (IC 95\% BCa: $[12{.}94; 20{.}14]$). O Dual Model apresentou $\Delta$SSIM de $0{.}0879$ (IC 95\% BCa: $[0{.}0731; 0{.}1062]$), $\Delta$PSNR de $7{.}06$ dB (IC 95\% $t$: $[6{.}30; 7{.}81]$) e redução média de MAE de $15{.}54$ HU (IC 95\% BCa: $[12{.}79; 19{.}88]$). Todos os seis testes primários de melhoria face à entrada permaneceram significativos após o ajuste de Holm aplicado separadamente dentro de cada arquitetura. Os valores de $p$ de $\Delta$SSIM e $\Delta$MAE avaliam a predominância de melhoria, enquanto os de $\Delta$PSNR avaliam a melhoria média, por isso, não devem ser comparados em magnitude.
 
-Estes testes confirmam que cada arquitetura melhora a entrada corrompida, mas não constituem uma comparação direta entre arquiteturas. Esta distinção é essencial: valores de $p$ pequenos na \autoref{tab:ablation_improvement} não permitem, por si só, afirmar que uma arquitetura é superior à outra.
+Estes testes confirmam que cada arquitetura melhora a entrada corrompida, mas não constituem uma comparação direta entre arquiteturas. Esta distinção é essencial: valores de $p$ pequenos nas tabelas \autoref{tab:ablation_improvement_ssim}, \autoref{tab:ablation_improvement_psnr}, \autoref{tab:ablation_improvement_mae} não permitem, por si só, afirmar que uma arquitetura é superior à outra.
 
-Os valores absolutos subjacentes à comparação pareada são igualmente agregados por paciente, atribuindo o mesmo peso a cada um dos 41 pacientes. Assim, ambas as tabelas desta secção utilizam a mesma unidade estatística; valores apresentados anteriormente ao nível da fatia podem diferir por atribuírem pesos distintos a pacientes com números de fatias diferentes.
-
+Os deltas de melhoria subjacentes à comparação pareada são igualmente agregados por paciente, atribuindo o mesmo peso a cada um dos 41 pacientes.
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{cccc}
-\multicolumn{4}{c}{\textbf{Dual Model $-$ Single Model}} \\[3pt]
+\multicolumn{4}{c}{\textbf{Dual Model $-$ Single Model: Improvement Deltas}} \\[3pt]
 \hline
 \textbf{Metric} & \textbf{Mean Difference} & \textbf{95\% BCa CI} & \textbf{$p$ (sign test; Holm)} \\
 \hline
-PSNR (dB) & $-0.054$ & $[-0.107; -0.017]$ & $2.75\times10^{-2}$ \\
-SSIM & $-0.0012$ & $[-0.0015; -0.0010]$ & $1.57\times10^{-9}$ \\
+$\Delta$SSIM & $-0.0012$ & $[-0.0015; -0.0010]$ & $2.35\times10^{-9}$ \\
+$\Delta$PSNR (dB) & $-0.054$ & $[-0.107; -0.017]$ & $2.75\times10^{-2}$ \\
+$\Delta$MAE (HU) & $-0.186$ & $[-0.338; -0.091]$ & $8.62\times10^{-4}$ \\
 \hline
 \end{tabular}
-\par\smallskip\footnotesize Mean differences with patient-level 95\% BCa bootstrap CIs (10\,000 resamples); two-sided exact binomial sign-test $p$-values, Holm-adjusted across PSNR and SSIM.
+\par\smallskip\footnotesize Differences of patient-level input-to-output improvement deltas (Dual Model $-$ Single Model), with 95\% BCa bootstrap CIs (10\,000 resamples). Two-sided exact binomial sign-test $p$-values are Holm-adjusted across PSNR, SSIM, and MAE. Negative differences favor the Single Model for all three metrics.
 \captionsetup{skip=2pt}
-\caption[Paired Single vs Dual Model comparison]{Patient-level paired comparison between architectures ($n=41$). Negative differences favor the Single Model.}
+\caption[Paired Single vs Dual Model comparison]{Patient-level paired comparison of improvement deltas between architectures ($n=41$).}
 \label{tab:workflow-paired-comparison}
 \end{table}
 
-A comparação direta entre arquiteturas é apresentada na \autoref{tab:workflow-paired-comparison}. Para esta análise, calculou-se, em cada paciente, a diferença Dual Model menos Single Model. Foram aplicados testes binomiais exatos de sinais bilaterais para\acrshort{psnr} e\acrshort{ssim}, excluindo diferenças nulas e com correção de Holm conjunta para os dois testes. Esta análise testa se uma arquitetura supera a outra em mais pacientes do que o esperado ao acaso, sem pressupor simetria das diferenças. Os intervalos de confiança de 95\% obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens quantificam a diferença média, enquanto os valores de $p$ avaliam a predominância direcional. Assim, valores negativos favorecem o Single Model.
+A comparação direta entre arquiteturas é apresentada na \autoref{tab:workflow-paired-comparison}. Para esta análise, calculou-se, em cada paciente, a diferença de melhoria Dual Model menos Single Model para $\Delta$SSIM, $\Delta$PSNR e $\Delta$MAE. Foram aplicados testes binomiais exatos de sinais bilaterais, excluindo diferenças nulas e com correção de Holm conjunta para os três testes. Esta análise testa se uma arquitetura melhora mais em mais pacientes do que o esperado ao acaso, sem pressupor simetria das diferenças. Os intervalos de confiança de 95\% obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens quantificam a diferença média, enquanto os valores de $p$ avaliam a predominância direcional. Em todas as métricas, valores negativos favorecem o Single Model.
 
-O Single Model apresentou vantagem média de $0{,}054$ dB em\acrshort{psnr} e de $0{,}0012$ em\acrshort{ssim}. Os intervalos de confiança não incluíram zero e os valores de $p$ ajustados foram $2{,}75\times10^{-2}$ para\acrshort{psnr} e $1{,}57\times10^{-9}$ para\acrshort{ssim}; as diferenças favoreceram o Single Model em 28 dos 41 pacientes para\acrshort{psnr} e em 39 dos 41 pacientes para\acrshort{ssim}. Embora estas diferenças sejam estatisticamente significativas, a sua magnitude absoluta é pequena. Portanto, os resultados fornecem evidência de uma vantagem quantitativa global discreta do Single Model, mas não justificam, isoladamente, uma inferência de superioridade clínica. O gráfico de barras resume a melhoria global semelhante obtida pelas duas arquiteturas.
+O Single Model apresentou vantagem média de $0{.}054$ dB em $\Delta$PSNR, de $0{.}0012$ em $\Delta$SSIM e de $0{.}186$ HU em $\Delta$MAE. Os intervalos de confiança não incluíram zero e os valores de $p$ ajustados foram $2{.}75\times10^{-2}$ para\acrshort{psnr}, $2{.}35\times10^{-9}$ para\acrshort{ssim} e $8{.}62\times10^{-4}$ para\acrshort{mae}. As diferenças favoreceram o Single Model em 28 dos 41 pacientes para\acrshort{psnr}, em 39 para\acrshort{ssim} e em 32 para\acrshort{mae}. Embora estas diferenças sejam estatisticamente significativas, a sua magnitude absoluta é pequena. Portanto, os resultados fornecem evidência de uma vantagem quantitativa global discreta do Single Model, mas não justificam, isoladamente, uma inferência de superioridade clínica. O gráfico de barras resume a melhoria global semelhante obtida pelas duas arquiteturas.
 
 \begin{figure}[htbp]
 \centering
@@ -468,99 +502,166 @@ O Single Model apresentou vantagem média de $0{,}054$ dB em\acrshort{psnr} e de
 \graphiccaption[Global PSNR and SSIM improvement]{Global PSNR and SSIM improvement over the corrupted input for the Single and Dual Models on the test set.}
 \end{figure}
 
+\FloatBarrier
 \subsection{Análise Estatística por ROI}
 \label{sec:analise-estatistica-roi}
 
-Como análise local complementar às métricas globais, foram avaliadas separadamente a Zona de Artefacto e a região distante. As métricas por fatia foram sempre agregadas por paciente antes dos resumos e testes ($n=41$), e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens. Na Zona de Artefacto, a questão é a melhoria face à entrada corrompida; por isso, foram analisados os deltas com sinal de \acrshort{psnr}, \acrshort{ssim} e \acrshort{mae}. Em cada modelo, foi aplicado o teste de sinais binomial exato bilateral, com correção de Holm na família das três métricas.
+Como análise local complementar às métricas globais, foram avaliadas separadamente a Zona de Artefacto e a Zona Limpa. As métricas por fatia foram sempre agregadas por paciente antes dos resumos e testes ($n=41$), e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens. Na Zona de Artefacto, a questão é a melhoria face à entrada corrompida, por isso, foram analisados os deltas com sinal de\acrshort{psnr},\acrshort{ssim} e\acrshort{mae}. Em cada modelo, foi aplicado o teste de sinais binomial exato bilateral, com correção de Holm na família das três métricas.
 
 \begin{table}[htbp]
 \centering
 \small
-\begin{tabular}{llccc}
+\begin{tabular}{lccc}
+\multicolumn{4}{c}{\textbf{Artifact ROI: SSIM}} \\[3pt]
 \toprule
-\textbf{Metric} & \textbf{Model} & \textbf{Mean improvement} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
+\textbf{Model} & \textbf{Mean improvement} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
 \midrule
-PSNR (dB) & Dual Model & $11.84$ & $[10.91; 12.55]$ & $2.73\times10^{-12}$ \\
-SSIM & Dual Model & $0.3266$ & $[0.2947; 0.3534]$ & $2.73\times10^{-12}$ \\
-MAE (HU) & Dual Model & $98.33$ & $[91.84; 104.06]$ & $2.73\times10^{-12}$ \\
-PSNR (dB) & Single Model & $11.86$ & $[10.90; 12.59]$ & $2.73\times10^{-12}$ \\
-SSIM & Single Model & $0.3279$ & $[0.2963; 0.3548]$ & $2.73\times10^{-12}$ \\
-MAE (HU) & Single Model & $98.38$ & $[91.75; 104.24]$ & $2.73\times10^{-12}$ \\
+Single Model & $0.3279$ & $[0.2963; 0.3548]$ & $2.73\times10^{-12}$ \\
+Dual Model & $0.3266$ & $[0.2947; 0.3534]$ & $2.73\times10^{-12}$ \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Patient-level Artifact-ROI improvements ($n=41$). Positive $\Delta$MAE denotes error reduction. Two-sided exact binomial sign-test $p$-values are Holm-adjusted across the three Artifact-ROI metrics separately for each model.
+\par\smallskip\footnotesize Patient-level Artifact-ROI improvement ($n=41$). Two-sided exact binomial sign-test $p$-values, Holm-adjusted across PSNR, SSIM, and MAE separately for each model.
 \captionsetup{skip=2pt}
-\caption[Artifact-ROI improvement over corrupted input]{Improvement over the corrupted input in the Artifact ROI.}
-\label{tab:roi-artifact-improvement}
+\caption[Artifact-ROI SSIM improvement]{SSIM improvement over the corrupted input in the Artifact ROI.}
+\label{tab:roi-artifact-improvement-ssim}
 \end{table}
 
-A \autoref{tab:roi-artifact-improvement} mostra melhoria nas três métricas na Zona de Artefacto para ambos os modelos. Os ganhos médios de \acrshort{psnr} foram aproximadamente $11{,}8$ dB e as reduções médias de \acrshort{mae} aproximadamente $98$ HU.
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\multicolumn{4}{c}{\textbf{Artifact ROI: PSNR}} \\[3pt]
+\toprule
+\textbf{Model} & \textbf{Mean improvement (dB)} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
+\midrule
+Single Model & $11.86$ & $[10.90; 12.59]$ & $2.73\times10^{-12}$ \\
+Dual Model & $11.84$ & $[10.91; 12.55]$ & $2.73\times10^{-12}$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Patient-level Artifact-ROI improvement ($n=41$). Two-sided exact binomial sign-test $p$-values, Holm-adjusted across PSNR, SSIM, and MAE separately for each model.
+\captionsetup{skip=2pt}
+\caption[Artifact-ROI PSNR improvement]{PSNR improvement over the corrupted input in the Artifact ROI.}
+\label{tab:roi-artifact-improvement-psnr}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\multicolumn{4}{c}{\textbf{Artifact ROI: MAE}} \\[3pt]
+\toprule
+\textbf{Model} & \textbf{Mean reduction (HU)} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
+\midrule
+Single Model & $98.38$ & $[91.75; 104.24]$ & $2.73\times10^{-12}$ \\
+Dual Model & $98.33$ & $[91.84; 104.06]$ & $2.73\times10^{-12}$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Patient-level Artifact-ROI improvement ($n=41$). Positive $\Delta$MAE denotes error reduction. Two-sided exact binomial sign-test $p$-values, Holm-adjusted across PSNR, SSIM, and MAE separately for each model.
+\captionsetup{skip=2pt}
+\caption[Artifact-ROI MAE reduction]{MAE reduction over the corrupted input in the Artifact ROI.}
+\label{tab:roi-artifact-improvement-mae}
+\end{table}
+\FloatBarrier
+
+As \autoref{tab:roi-artifact-improvement-ssim}, \autoref{tab:roi-artifact-improvement-psnr}, \autoref{tab:roi-artifact-improvement-mae} mostram melhoria nas três métricas na Zona de Artefacto para ambos os modelos. Os ganhos médios foram aproximadamente de $0{.}32$ para\acrshort{ssim}, $11{.}8$ dB para\acrshort{psnr} e $98$ HU para\acrshort{mae}.
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Metric} & \textbf{Dual $-$ Single} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
+\textbf{Metric} & \textbf{$\Delta_{\mathrm{Dual}}-\Delta_{\mathrm{Single}}$} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
 \midrule
-PSNR (dB) & $-0.019$ & $[-0.085; 0.060]$ & $0.533$ \\
-SSIM & $-0.0013$ & $[-0.0025; 0.0002]$ & $0.0345$ \\
-MAE (HU) & $0.049$ & $[-0.345; 0.318]$ & $0.422$ \\
+$\Delta$SSIM & $-0.0013$ & $[-0.0025; 0.0002]$ & $0.0345$ \\
+$\Delta$PSNR (dB) & $-0.019$ & $[-0.085; 0.060]$ & $0.533$ \\
+$\Delta$MAE (HU) & $-0.049$ & $[-0.318; 0.345]$ & $0.422$ \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Patient-level paired comparison ($n=41$). Differences are Dual Model minus Single Model. The 95\% BCa bootstrap CIs use 10\,000 reamostragens; two-sided exact binomial sign-test $p$-values are Holm-adjusted across the three Artifact-ROI metrics. For PSNR and SSIM, negative differences favor the Single Model; for MAE, positive differences favor the Single Model.
+\par\smallskip\footnotesize Patient-level paired comparison of input-to-output improvement deltas ($n=41$). Differences are $\Delta_{\mathrm{Dual}}-\Delta_{\mathrm{Single}}$; negative differences favor the Single Model for all metrics. The 95\% BCa bootstrap CIs use 10\,000 reamostragens; two-sided exact binomial sign-test $p$-values are Holm-adjusted across the three Artifact-ROI metrics.
 \captionsetup{skip=2pt}
-\caption[Paired Artifact-ROI comparison between architectures]{Patient-level paired comparison in the Artifact ROI.}
+\caption[Paired Artifact-ROI improvement comparison]{Patient-level paired comparison of improvement deltas in the Artifact ROI.}
 \label{tab:roi-artifact-paired-comparison}
 \end{table}
 
-Na comparação direta das métricas na Zona de Artefacto (\autoref{tab:roi-artifact-paired-comparison}), a diferença em \acrshort{ssim} foi pequena, mas permaneceu significativa após a correção de Holm ($p_{\mathrm{Holm}}=0{,}0345$), favorecendo o Single Model. As diferenças em \acrshort{psnr} e \acrshort{mae} não foram significativas após o ajuste.
+Na comparação direta dos deltas de melhoria na Zona de Artefacto (\autoref{tab:roi-artifact-paired-comparison}), a diferença em\acrshort{ssim} foi pequena, mas permaneceu significativa após a correção de Holm ($p_{\mathrm{Holm}}=0{.}0345$), favorecendo o Single Model. As diferenças nos deltas de\acrshort{psnr} e\acrshort{mae} não foram significativas após o ajuste.
 
-Na região distante, a pergunta é distinta: pretende-se caracterizar a preservação do tecido fora da zona de artefacto, cujo alvo é alteração nula em relação à entrada. Por isso, foi calculado, em cada paciente, o valor médio de $|\Delta|$ por fatia; valores menores representam uma reconstrução mais próxima da entrada. Como não foi pré-especificada uma margem de equivalência clinicamente justificada, não é possível testar nem concluir equivalência a zero. Assim, a \autoref{tab:roi-distant-preservation} reporta a magnitude da alteração e os seus intervalos de confiança, sem valor de $p$ contra zero.
+Na região distante, a pergunta é distinta: pretende-se caracterizar a preservação do tecido fora da zona de artefacto, cujo alvo é alteração nula em relação à entrada. Por isso, foi calculado, em cada paciente, o valor médio de $|\Delta|$ por fatia. Valores menores representam uma reconstrução mais próxima da entrada. Como não foi pré-especificada uma margem de equivalência clinicamente justificada, não é possível testar nem concluir equivalência a zero. Assim, as \autoref{tab:roi-distant-preservation-ssim}, \autoref{tab:roi-distant-preservation-psnr}, \autoref{tab:roi-distant-preservation-mae} reportam a magnitude da alteração e os seus intervalos de confiança, sem valor de $p$ contra zero.
 
 \begin{table}[htbp]
 \centering
 \small
-\begin{tabular}{llcc}
+\begin{tabular}{lcc}
+\multicolumn{3}{c}{\textbf{Distant ROI: SSIM}} \\[3pt]
 \toprule
-\textbf{Model} & \textbf{Metric} & \textbf{Mean $|\Delta|$} & \textbf{95\% BCa CI} \\
+\textbf{Model} & \textbf{Mean $|\Delta|$} & \textbf{95\% BCa CI} \\
 \midrule
-Single Model & PSNR (dB) & $1.99$ & $[1.66; 2.34]$ \\
- & SSIM & $0.0599$ & $[0.0503; 0.0754]$ \\
- & MAE (HU) & $4.30$ & $[3.60; 5.16]$ \\
-\midrule
-Dual Model & PSNR (dB) & $1.97$ & $[1.64; 2.33]$ \\
- & SSIM & $0.0595$ & $[0.0499; 0.0748]$ \\
- & MAE (HU) & $4.24$ & $[3.54; 5.08]$ \\
+Single Model & $0.0599$ & $[0.0503; 0.0754]$ \\
+Dual Model & $0.0595$ & $[0.0499; 0.0748]$ \\
 \bottomrule
 \end{tabular}
 \par\smallskip\footnotesize Patient-level mean absolute per-slice input-to-output change ($n=41$). Lower values are closer to zero. No equivalence margin or hypothesis test against zero was prespecified.
 \captionsetup{skip=2pt}
-\caption[Distant-ROI preservation magnitude]{Magnitude of input-to-output change in the Distant ROI.}
-\label{tab:roi-distant-preservation}
+\captionof{table}[Distant-ROI SSIM preservation magnitude]{Magnitude of SSIM input-to-output change in the Distant ROI.}
+\label{tab:roi-distant-preservation-ssim}
 \end{table}
 
-Para comparar as arquiteturas quanto à preservação relativa da região distante, foram comparados os valores emparelhados de $|\Delta|$ (Dual Model $-$ Single Model) através do teste de sinais binomial exato bilateral, com correção de Holm na família das três métricas. Este teste responde apenas qual modelo introduziu menor alteração, e não se essa alteração é clinicamente desprezível.
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lcc}
+\multicolumn{3}{c}{\textbf{Distant ROI: PSNR}} \\[3pt]
+\toprule
+\textbf{Model} & \textbf{Mean $|\Delta|$ (dB)} & \textbf{95\% BCa CI} \\
+\midrule
+Single Model & $1.99$ & $[1.66; 2.34]$ \\
+Dual Model & $1.97$ & $[1.64; 2.33]$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Patient-level mean absolute per-slice input-to-output change ($n=41$). Lower values are closer to zero. No equivalence margin or hypothesis test against zero was prespecified.
+\captionsetup{skip=2pt}
+\caption[Distant-ROI PSNR preservation magnitude]{Magnitude of PSNR input-to-output change in the Distant ROI.}
+\label{tab:roi-distant-preservation-psnr}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lcc}
+\multicolumn{3}{c}{\textbf{Distant ROI: MAE}} \\[3pt]
+\toprule
+\textbf{Model} & \textbf{Mean $|\Delta|$ (HU)} & \textbf{95\% BCa CI} \\
+\midrule
+Single Model & $4.30$ & $[3.60; 5.16]$ \\
+Dual Model & $4.24$ & $[3.54; 5.08]$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Patient-level mean absolute per-slice input-to-output change ($n=41$). Lower values are closer to zero. No equivalence margin or hypothesis test against zero was prespecified.
+\captionsetup{skip=2pt}
+\caption[Distant-ROI MAE preservation magnitude]{Magnitude of MAE input-to-output change in the Distant ROI.}
+\label{tab:roi-distant-preservation-mae}
+\end{table}
+\FloatBarrier
+Para comparar as arquiteturas quanto à preservação relativa da região distante, foi definida, para cada paciente, a vantagem de preservação do Dual Model, $|\Delta|_{\mathrm{Single}}-|\Delta|_{\mathrm{Dual}}$, e aplicado o teste de sinais binomial exato bilateral, com correção de Holm na família das três métricas. Esta parametrização é mantida separada da comparação dos deltas de melhoria da Zona de Artefacto: aqui, o desfecho é a magnitude da alteração e o melhor valor é o mais próximo de zero. Valores positivos indicam menor alteração pelo Dual Model. Este teste responde apenas qual modelo introduziu menor alteração, e não se essa alteração é clinicamente desprezível.
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Metric} & \textbf{Dual $-$ Single in $|\Delta|$} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
+\textbf{Metric} & \textbf{Dual preservation advantage} & \textbf{95\% BCa CI} & \textbf{$p$ (Holm)} \\
 \midrule
-PSNR (dB) & $-0.020$ & $[-0.069; 0.104]$ & $0.0275$ \\
-SSIM & $-0.000390$ & $[-0.000642; -0.000056]$ & $3.37\times10^{-4}$ \\
-MAE (HU) & $-0.066$ & $[-0.155; 0.050]$ & $0.00865$ \\
+SSIM & $0.000390$ & $[0.000056; 0.000642]$ & $3.37\times10^{-4}$ \\
+PSNR (dB) & $0.020$ & $[-0.104; 0.069]$ & $0.0275$ \\
+MAE (HU) & $0.066$ & $[-0.050; 0.155]$ & $0.00865$ \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Patient-level paired comparison of mean absolute per-slice changes ($n=41$). Negative differences favor the Dual Model, which is closer to zero. The 95\% BCa bootstrap CIs use 10\,000 reamostragens; two-sided exact binomial sign-test $p$-values are Holm-adjusted across the three Distant-ROI metrics.
+\par\smallskip\footnotesize Patient-level paired preservation advantage ($n=41$), defined as $|\Delta|_{\mathrm{Single}}-|\Delta|_{\mathrm{Dual}}$. Positive values favor the Dual Model because its mean absolute input-to-output change is smaller. The 95\% BCa bootstrap CIs use 10\,000 reamostragens, two-sided exact binomial sign-test $p$-values are Holm-adjusted across the three Distant-ROI metrics.
 \captionsetup{skip=2pt}
-\caption[Paired Distant-ROI preservation comparison]{Relative preservation of the Distant ROI between architectures.}
+\caption[Paired Distant-ROI preservation advantage]{Relative preservation advantage of the Dual Model in the Distant ROI.}
 \label{tab:roi-distant-paired-preservation}
 \end{table}
 
-Na comparação relativa (\autoref{tab:roi-distant-paired-preservation}), o Dual Model apresentou menor alteração absoluta em \acrshort{psnr}, \acrshort{ssim} e \acrshort{mae} após a correção de Holm. Esta evidência indica preservação relativa superior ao Single Model na região distante, mas não demonstra equivalência a alteração nula. As análises por ROI são complementares e locais; não substituem a conclusão baseada nas métricas globais.
+Na comparação relativa (\autoref{tab:roi-distant-paired-preservation}), o Dual Model apresentou menor alteração absoluta em \acrshort{psnr}, \acrshort{ssim} e \acrshort{mae} após a correção de Holm. Esta evidência indica preservação relativa superior ao Single Model na região distante, mas não demonstra equivalência a alteração nula.
 
 \section{Desempenho computacional}
 O desempenho temporal foi quantificado para o checkpoint do modelo selecionado para a avaliação externa, na partição de teste interna ($n=1478$ fatias). O benchmark foi executado no ambiente descrito em Materiais e Métodos, com GPU NVIDIA RTX A4500, utilizando lote unitário, após cinco passagens de aquecimento. Para cada fatia, a latência foi medida desde a chamada do modelo até à sincronização explícita da saída com a CPU. Consequentemente, esta medição inclui a execução da inferência e a sincronização da saída, mas não inclui o carregamento das imagens nem as etapas externas de pré-processamento ou de apresentação dos resultados.
