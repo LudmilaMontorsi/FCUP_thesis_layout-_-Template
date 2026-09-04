@@ -9,8 +9,15 @@
 \contentsline {figure}{\numberline {5.11}Training curves: Single Model, seed 2024}{41}{figure.caption.28}%
 \contentsline {figure}{\numberline {5.12}Training curves: Dual Model, seed 42}{42}{figure.caption.29}%
 \contentsline {figure}{\numberline {5.13}Training curves: Single Model, seed 42}{43}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.14}Per-image global PSNR and SSIM}{48}{figure.caption.42}%
-\contentsline {figure}{\numberline {5.15}Per-image ROI metric improvements}{51}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.16}Artifact-ROI correction versus distant-ROI change}{52}{figure.caption.52}%
-\contentsline {figure}{\numberline {5.23}Global PSNR and SSIM improvement}{62}{figure.caption.63}%
-\contentsline {figure}{\numberline {5.24}Benchmark Latency}{66}{figure.caption.74}%
+\contentsline {figure}{\numberline {5.14}Per-image global PSNR and SSIM improvement}{49}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.15}Patient-level Bland--Altman agreement of mean HU}{49}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.16}Per-image ROI metric improvements}{53}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.17}Artifact-ROI correction versus distant-ROI change}{53}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.24}Global PSNR and SSIM improvement}{64}{figure.caption.64}%
+\contentsline {figure}{\numberline {A.1}Pixel-level HU agreement}{87}{figure.caption.92}%
+\contentsline {figure}{\numberline {A.2}Per-image input-output global metrics}{89}{figure.caption.95}%
+\contentsline {figure}{\numberline {A.3}Patient-level artifact load and improvement}{90}{figure.caption.98}%
+\contentsline {figure}{\numberline {A.4}Worst-case slices by global $\Delta $SSIM}{91}{figure.caption.99}%
+\contentsline {figure}{\numberline {A.5}Worst-case slices by global $\Delta $PSNR}{92}{figure.caption.100}%
+\contentsline {figure}{\numberline {A.6}Worst-case slices: joint $\Delta $PSNR vs. $\Delta $SSIM}{93}{figure.caption.101}%
+\contentsline {figure}{\numberline {A.7}Benchmark Latency}{94}{figure.caption.104}%

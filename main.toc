@@ -11,7 +11,7 @@
 \contentsline {chapter}{Lista de Figuras}{viii}{dummy.5}%
 \contentsline {chapter}{Lista de Gráficos}{ix}{dummy.6}%
 \contentsline {chapter}{Lista de Tabelas}{x}{dummy.7}%
-\contentsline {chapter}{Lista de Abreviaturas}{xi}{section*.5}%
+\contentsline {chapter}{Lista de Abreviaturas}{xii}{section*.5}%
 \vspace {0.3cm}
 \contentsline {chapter}{\numberline {1}Introdução}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Contexto clínico e técnico}{3}{section.1.1}%
@@ -44,7 +44,7 @@
 \contentsline {subsection}{\numberline {4.4.2}Função de Perda}{22}{subsection.4.4.2}%
 \contentsline {section}{\numberline {4.5}Avaliação interna}{23}{section.4.5}%
 \contentsline {subsection}{\numberline {4.5.1}Métricas globais}{24}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Avaliação por regiões de interesse}{24}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.2}Avaliação por regiões de interesse}{25}{subsection.4.5.2}%
 \contentsline {subsection}{\numberline {4.5.3}Análise estatística}{27}{subsection.4.5.3}%
 \contentsline {section}{\numberline {4.6}Avaliação externa por médicos}{28}{section.4.6}%
 \contentsline {subsection}{\numberline {4.6.1}Desenho e casos}{28}{subsection.4.6.1}%
@@ -62,30 +62,31 @@
 \contentsline {subsection}{\numberline {5.2.2}Rastreabilidade das execuções}{45}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Avaliação interna no conjunto de teste}{45}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Desfechos globais}{45}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Avaliação por regiões de interesse}{48}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Mapas de resíduos em casos extremos}{52}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Comparação pareada Single x Dual Model}{59}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Análises Estatísticas Globais}{59}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Análise Estatística por ROI}{62}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Desempenho computacional}{64}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Avaliação externa por médicos}{66}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Estado da recolha e participantes}{66}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Caracterização quantitativa entrada -- saída}{66}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Desfecho primário: visualização anatómica}{70}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Desfechos secundários e segurança percebida}{70}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Interpretação limitada ao desenho observacional}{70}{subsection.5.6.5}%
-\contentsline {chapter}{\numberline {6}Discussão}{71}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Síntese dos achados principais}{71}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Interpretação da comparação arquitetural}{71}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Preservação anatómica e segurança da reconstrução}{71}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Generalização e avaliação externa}{71}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Avaliação por médicos}{71}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Limitações}{72}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Implicações e trabalho futuro}{72}{section.6.7}%
-\contentsline {chapter}{\numberline {7}Conclusões}{73}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusões do estudo}{73}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Contribuições da dissertação}{73}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Perspetivas futuras}{73}{section.7.3}%
+\contentsline {subsection}{\numberline {5.3.2}Avaliação por regiões de interesse}{50}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Mapas de resíduos em casos extremos}{54}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Comparação pareada Single x Dual Model}{61}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Análises Estatísticas Globais}{61}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Análise Estatística por ROI}{64}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Avaliação externa por médicos}{67}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Estado da recolha e participantes}{67}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Caracterização quantitativa entrada -- saída}{68}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Desfecho primário: visualização anatómica}{72}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Desfechos secundários e segurança percebida}{72}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Interpretação limitada ao desenho observacional}{74}{subsection.5.5.5}%
+\contentsline {chapter}{\numberline {6}Discussão}{75}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Síntese dos achados principais}{75}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Interpretação da comparação arquitetural}{76}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Preservação anatómica e segurança da reconstrução}{76}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Generalização e avaliação externa}{77}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Avaliação por médicos}{78}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Limitações}{78}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Implicações e trabalho futuro}{79}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Conclusões}{81}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusões do estudo}{81}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Contribuições da dissertação}{81}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Perspetivas futuras}{81}{section.7.3}%
 \vspace {0.5cm}
-\contentsline {chapter}{Bibliography}{73}{dummy.8}%
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{79}{appendix.A}%
+\contentsline {chapter}{Bibliography}{81}{dummy.8}%
+\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{87}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Casos de pior desempenho}{91}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Desempenho computacional}{93}{section.A.2}%

@@ -340,6 +340,8 @@ Após a seleção do melhor checkpoint de cada uma das seis corridas na validaç
 
 \subsection{Métricas globais}
 Para a avaliação global, as imagens preditas e de referência são desnormalizadas para a janela $[-1000, 400]$ HU, correspondendo a uma amplitude $\mathrm{MAX} = 1400$ HU. Adicionalmente, a região de avaliação é recortada ao menor retângulo envolvente (\textit{bounding box}) da máscara corporal antes da avaliação de SSIM, eliminando janelas de varredura compostas exclusivamente por fundo — que pontuariam $\text{SSIM} = 1{,}0$ artificialmente e inflariam a métrica global.
+
+Como verificação descritiva complementar de possível deslocamento radiométrico global, foi construído um diagrama de Bland--Altman entre a reconstrução e a referência limpa. Para cada paciente, a média em HU de cada imagem foi calculada sobre todos os pixels válidos da máscara corporal das respetivas fatias, ponderada pelo número de pixels de cada fatia. O gráfico apresenta a diferença média por paciente ($\mathrm{Model}-\mathrm{GT}$) em função da média das duas medidas, bem como o viés médio e os limites de concordância $\bar d \pm 1{,}96\,SD_d$. Esta análise tem caráter exclusivamente descritivo, com o paciente como unidade do gráfico, e não substitui as métricas de fidelidade nem a avaliação regional da redução de artefactos.
 \subsection{Avaliação por regiões de interesse}
 \label{subsec:metodos-roi}
 

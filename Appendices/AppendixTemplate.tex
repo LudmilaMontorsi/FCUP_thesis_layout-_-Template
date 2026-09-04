@@ -1,7 +1,93 @@
-% Appendix Template
+\chapter{Supplementary Internal Evaluation}
+\label{apendice:avaliacao-interna}
 
-\chapter{Appendix Title Here} % Main appendix title
+Este apêndice reúne verificações quantitativas complementares da avaliação interna. A figura seguinte é apresentada apenas como diagnóstico visual da concordância radiométrica ao nível de pixel e não constitui análise inferencial, pois os pixels amostrados não são observações independentes.
 
-\label{AppendixX} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.82\linewidth]{Figures/Generated/evaluation_final/Appendix/scatter_pixel_hu_balanced.pdf}
+    \captionsetup{skip=1.5pt}
+    \graphiccaption[Pixel-level HU agreement]{Pixel-level HU agreement between the Single Model reconstruction and the clean reference. The hexbin uses a fixed equal-patient stratified sample of 100,000 valid body-mask pixels from 41 test-set patients. It is a descriptive calibration diagnostic; no hypothesis test or confidence interval is derived from the sampled pixels.}
+    \label{fig:appendix-pixel-hu-agreement}
+\end{figure}
 
-Write your Appendix content here.
+Os gráficos seguintes complementam os histogramas de deltas globais apresentados no corpo do texto. Cada ponto corresponde a uma fatia de teste e, portanto, estes gráficos não são utilizados para inferência estatística.
+
+\begingroup
+\setlength{\intextsep}{4pt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/scatter_global_ssim_baseline_vs_model.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/scatter_global_psnr_baseline_vs_model.pdf}
+\end{figure}
+\captionsetup{skip=1.5pt}
+\graphiccaptionof[Per-image input-output global metrics]{Per-image global SSIM (top) and PSNR (bottom) for the corrupted input and the Single Model reconstruction, seed 2024. The identity line denotes no change, marker color encodes the corresponding global delta. These slice-level relationships are descriptive, whereas statistical inference used patient-level aggregation.}
+\label{fig:appendix-global-input-model}
+\endgroup
+
+Como análise exploratória de heterogeneidade, a \autoref{fig:appendix-artifact-load-association} relaciona a carga de artefato com a melhoria global. Cada ponto corresponde à média de todas as fatias de um paciente ($n=41$), atribuindo o mesmo peso a cada paciente. A carga foi definida como a média da fração área de artefato/área corporal por fatia; os deltas correspondem à métrica da reconstrução menos a métrica da entrada, ambas contra a referência limpa. Foram calculadas correlações de Spearman bilaterais, com IC de 95\% por \textit{bootstrap} BCa pareado (10\,000 reamostragens; semente 1337), e a curva de tendência é uma estimação LOWESS da biblioteca \textit{Statsmodels}. Esta análise não integra a família de testes de hipótese primários nem recebeu ajuste de Holm. Observou-se associação positiva entre a carga de artefato e a melhoria: $\rho=0{,}479$ para $\Delta$PSNR (IC 95\% [0{,}156; 0{,}717], $p=0{,}00154$) e $\rho=0{,}569$ para $\Delta$SSIM (IC 95\% [0{,}225; 0{,}794], $p=0{,}000104$).
+
+\begingroup
+\setlength{\intextsep}{4pt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_ssim_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_psnr_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf}
+\end{figure}
+\captionsetup{skip=1.5pt}
+\graphiccaptionof[Patient-level artifact load and improvement]{Exploratory patient-level association between mean artifact fraction and global improvement for the Single Model, seed 2024: $\Delta$SSIM (top) and $\Delta$PSNR (bottom). Each point is one patient's mean across its test-set slices ($n=41$). Lines show Statsmodels LOWESS trends; annotations report two-sided Spearman correlations and paired BCa bootstrap 95\% confidence intervals.}
+\label{fig:appendix-artifact-load-association}
+\endgroup
+
+\section{Casos de pior desempenho}
+\label{sec:appendix-worst-cases}
+
+Como caracterização complementar das fatias com pior desempenho, identificaram-se dois grupos por fatia para o Single Model, seed 2024, no conjunto de teste: primeiro pelo percentil 5 inferior de $\Delta$SSIM, a métrica utilizada para a seleção do \textit{checkpoint}, e depois, de forma complementar, pelo percentil 5 inferior de $\Delta$PSNR. Esta seleção é puramente descritiva: não constitui um teste de hipótese e serve apenas para situar, em termos quantitativos, os grupos de fatias cujos exemplos visuais individuais são discutidos na \autoref{sec:mapas-residuos-extremos}.
+
+Pelo critério de $\Delta$SSIM ($N=74$/1478 fatias; limiar $=0{,}0146$), a melhoria média de $\Delta$PSNR manteve-se positiva ($1{,}88$~dB), mas a melhoria média de $\Delta$SSIM foi ligeiramente negativa ($-0{,}0019$), com redução média de\acrshort{mae} na Zona de Artefacto de $65{,}2$~HU (\autoref{fig:appendix-worst-cases-ssim}). Ou seja, o subconjunto mais desfavorável segundo a métrica principal de seleção inclui, em média, uma pequena degradação de\acrshort{ssim}, ainda que a maioria das restantes fatias continue a melhorar substancialmente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/worst_cases_ssim_distribution.pdf}
+    \captionsetup{skip=1.5pt}
+    \graphiccaption[Worst-case slices by global $\Delta$SSIM]{Bottom 5th-percentile slices by global $\Delta$SSIM for the Single Model, seed 2024, test split ($N=74$/1478, threshold $=0.0146$, highlighted in red). Descriptive; no inferential test is derived from this subset.}
+    \label{fig:appendix-worst-cases-ssim}
+\end{figure}
+
+Pelo critério complementar de $\Delta$PSNR ($N=74$/1478 fatias; limiar $=2{,}59$~dB), este grupo não é idêntico ao definido por $\Delta$SSIM: a melhoria média permaneceu positiva nas três métricas ($\Delta$PSNR médio $=1{,}23$~dB; $\Delta$SSIM médio $=0{,}0071$; $\Delta$MAE médio na Zona de Artefacto $=62{,}0$~HU), embora com dispersão elevada e alguns casos individuais de degradação face à entrada, visíveis na cauda esquerda da \autoref{fig:appendix-worst-cases-psnr}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/worst_cases_delta_psnr_distribution.pdf}
+    \captionsetup{skip=1.5pt}
+    \graphiccaption[Worst-case slices by global $\Delta$PSNR]{Bottom 5th-percentile slices by global $\Delta$PSNR for the Single Model, seed 2024, test split ($N=74$/1478, threshold $=2.59$~dB, highlighted in red). Descriptive; no inferential test is derived from this subset.}
+    \label{fig:appendix-worst-cases-psnr}
+\end{figure}
+
+Por fim, a \autoref{fig:appendix-worst-cases} relaciona conjuntamente $\Delta$PSNR e $\Delta$SSIM por fatia, destacando a cauda de pior desempenho definida por $\Delta$PSNR do parágrafo anterior, permitindo visualizar a dispersão bivariada dos casos desfavoráveis.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/worst_cases_scatter_delta_psnr_vs_delta_ssim.pdf}
+    \captionsetup{skip=1.5pt}
+    \graphiccaption[Worst-case slices: joint $\Delta$PSNR vs. $\Delta$SSIM]{Bottom 5th-percentile slices by global $\Delta$PSNR for the Single Model, seed 2024, test split ($N=74$/1478, threshold $=2.59$~dB, highlighted in red). $\Delta$PSNR vs. $\Delta$SSIM scatter. Descriptive; no inferential test is derived from this subset.}
+    \label{fig:appendix-worst-cases}
+\end{figure}
+
+\section{Desempenho computacional}
+\label{sec:appendix-computational-performance}
+
+O desempenho temporal foi quantificado para o checkpoint do modelo selecionado para a avaliação externa, na partição de teste interna ($n=1478$ fatias). O benchmark foi executado no ambiente descrito em Materiais e Métodos, com GPU NVIDIA RTX A4500, utilizando lote unitário, após cinco passagens de aquecimento. Para cada fatia, a latência foi medida desde a chamada do modelo até à sincronização explícita da saída com a CPU. Consequentemente, esta medição inclui a execução da inferência e a sincronização da saída, mas não inclui o carregamento das imagens nem as etapas externas de pré-processamento ou de apresentação dos resultados.
+
+A latência média foi de $24{,}13\,\mathrm{ms}$ por fatia (desvio-padrão: $0{,}69\,\mathrm{ms}$; mediana: $24{,}30\,\mathrm{ms}$), correspondendo a um débito de $41{,}4$ fatias por segundo. Os percentis 95 e 99 foram, respetivamente, $24{,}66\,\mathrm{ms}$ e $27{,}53\,\mathrm{ms}$ por fatia. A proximidade entre a média, a mediana e o percentil 95 indica estabilidade da latência na maior parte das execuções; a distribuição completa e a variação por fatia são apresentadas na \autoref{fig:benchmark-latency}. Estes valores caracterizam a configuração experimental utilizada e não representam, por si só, o tempo de resposta de um fluxo clínico completo ou de outro ambiente computacional.
+\input{Chapters/Final/Generated/Benchmark}
+
+

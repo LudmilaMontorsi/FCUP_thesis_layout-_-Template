@@ -2,10 +2,9 @@
 \label{chap:final-resultados}
 
 \section{Coorte final e integridade experimental}
-\textit{[A preencher: pares incluídos, pacientes, distribuição anatómica, partições e resultados das verificações de integridade.]}
-
+% A preencher: pares incluídos, pacientes, distribuição anatómica, partições e resultados das verificações de integridade.
 \subsection{Resultados da Aprovação Automática x Inspeção Manual}
-É  importante deixar claro como ficou a distribuição dos dados que foram aprovados e reprovados automaticamente, e também quais foram avaliados manualmente. O gráfico abaixo, mapeia todos os pares do \acrshort{ctmar} Dataset, destacando os que foram aprovados automaticamente, os que foram reprovados e os que foram sujeitos a inspeção visual humana. A distribuição anatómica dos pares é representada por cores, permitindo uma análise visual da relação entre a aprovação automática e a localização anatómica dos artefatos metálicos.
+É  importante deixar claro como ficou a distribuição dos dados que foram aprovados e reprovados automaticamente, e também quais foram avaliados manualmente. O gráfico abaixo, mapeia todos os pares do\acrshort{ctmar} Dataset, destacando os que foram aprovados automaticamente, os que foram reprovados e os que foram sujeitos a inspeção visual humana. A distribuição anatómica dos pares é representada por cores, permitindo uma análise visual da relação entre a aprovação automática e a localização anatómica dos artefatos metálicos.
 
 \subsection{Análise Complementar com\acrshort{ms-ssim}}
 
@@ -193,6 +192,8 @@ A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global
     \label{tab:global-mae}
 \end{table}
 
+Embora a seleção do 	extit{Single Model}, seed 2024, tenha sido definida na validação, as tabelas por semente mostram que esta não corresponde a um resultado isolado: as três execuções do Single Model apresentaram desempenho global muito próximo e superior ao das execuções Dual Model. A seed 2024 ficou no extremo favorável para acrshort{ssim} e acrshort{psnr}, e apresentou o menor acrshort{mae}. Esta comparação entre sementes é descritiva, não constituindo um teste de hipótese entre inicializações.
+
 Os deltas e respetivos intervalos de confiança por paciente são apresentados na \autoref{tab:delta-psnr-paciente}, na \autoref{tab:delta-ssim-paciente} e na \autoref{tab:delta-mae-paciente}. Todas as corridas melhoraram as três métricas; os testes de Wilcoxon bilaterais foram significativos para os três desfechos em todas as corridas ($p<0{,}001$). Os intervalos de confiança não incluem o valor nulo, sustentando a melhoria global face à entrada com artefactos.
 
 \begin{table}[htbp]
@@ -249,23 +250,35 @@ Os deltas e respetivos intervalos de confiança por paciente são apresentados n
     \label{tab:delta-mae-paciente}
 \end{table}
 
-Nota-se que o Single Model para as sementes 1337 e 2024 apresentam praticamente o mesmo desempenho em\acrshort{ssim}. No entanto, em\acrshort{psnr} e\acrshort{mae} o mesmo modelo se sai melhor com a seed 2024. Isso já coloca a versão Single com semente 2024 em evidência para ser o candidato selecionado para a avaliação externa. Porém, ainda é necessário verificar o desempenho por\acrshort{roi}, já que essas métricas são muito mais informativas a respeito de onde o modelo está realmente melhorando a imagem. As distribuições por fatia da corrida Single Model com seed 2024 são ilustradas na \autoref{fig:global-distribuicoes}.
+Para a corrida selecionada, Single Model com seed 2024, os histogramas da \autoref{fig:global-improvement-histograms} mostram a distribuição dos deltas globais por fatia. Embora estes gráficos sejam descritivos e as fatias de um mesmo paciente não sejam independentes, eles tornam visíveis os poucos casos desfavoráveis: 12 de 1478 fatias ($0{,}8\%$) apresentaram $\Delta$PSNR negativo e 24 ($1{,}6\%$) apresentaram $\Delta$SSIM negativo. A inferência estatística permanece baseada nas médias por paciente apresentadas nas tabelas anteriores.
 \begingroup
 \setlength{\intextsep}{4pt}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Global/boxplot_global_ssim_distribution.pdf}
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Global/histogram_global_delta_ssim.pdf}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Global/boxplot_global_psnr_distribution.pdf}
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Global/histogram_global_delta_psnr.pdf}
 \end{figure}
 \captionsetup{skip=1.5pt}
-\graphiccaptionof[Per-image global PSNR and SSIM]{Distribuições por fatia do \acrshort{ssim} e do \acrshort{psnr} globais para o Single Model, seed 2024.}
-\label{fig:global-distribuicoes}
+\graphiccaptionof[Per-image global PSNR and SSIM improvement]{Per-image global improvement over the corrupted input for the Single Model, seed 2024: $\Delta$SSIM (top) and $\Delta$PSNR (bottom). Green bars indicate improvement and red bars indicate degradation. The distributions are descriptive; inferential analyses used patient-level aggregation.}
+\label{fig:global-improvement-histograms}
 \endgroup
 
+Nota-se que o Single Model para as sementes 1337 e 2024 apresentam praticamente o mesmo desempenho em\acrshort{ssim}. No entanto, em\acrshort{psnr} e\acrshort{mae} o mesmo modelo se sai melhor com a seed 2024. Isso já coloca a versão Single com semente 2024 em evidência para ser o candidato selecionado para a avaliação externa. Porém, ainda é necessário verificar o desempenho por\acrshort{roi}, já que essas métricas são muito mais informativas a respeito de onde o modelo está realmente melhorando a imagem.
+
+Como verificação descritiva complementar da calibração global em unidades HU, a \autoref{fig:bland-altman-patient-hu} apresenta a concordância entre a média de HU da reconstrução e a da referência limpa, agregada por paciente. Cada ponto corresponde a um dos 41 pacientes, a média de cada paciente foi calculada sobre todos os pixels válidos da máscara corporal, ponderada pelo número de pixels em cada fatia. O viés médio foi de $+4.19$~HU, com limites de concordância de 95\% entre $+1.45$ e $+6.93$~HU. Esta análise descreve um pequeno deslocamento positivo da intensidade média global, mas não quantifica a remoção local de artefactos nem substitui as métricas globais e por \acrshort{roi}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Global/bland_altman_patient_mean_hu.pdf}
+    \captionsetup{skip=1.5pt}
+    \graphiccaption[Patient-level Bland--Altman agreement of mean HU]{Bland--Altman agreement between the Single Model reconstruction and the clean reference for patient-level mean HU ($n=41$). Each patient mean was calculated over all valid body-mask pixels; positive differences indicate higher mean HU in the reconstruction. The limits of agreement are descriptive.}
+    \label{fig:bland-altman-patient-hu}
+\end{figure}
+\FloatBarrier
 \subsection{Avaliação por regiões de interesse}
 \label{sec:avaliacao-roi}
 
@@ -663,24 +676,110 @@ MAE (HU) & $0.066$ & $[-0.050; 0.155]$ & $0.00865$ \\
 
 Na comparação relativa (\autoref{tab:roi-distant-paired-preservation}), o Dual Model apresentou menor alteração absoluta em \acrshort{psnr}, \acrshort{ssim} e \acrshort{mae} após a correção de Holm. Esta evidência indica preservação relativa superior ao Single Model na região distante, mas não demonstra equivalência a alteração nula.
 
-\section{Desempenho computacional}
-O desempenho temporal foi quantificado para o checkpoint do modelo selecionado para a avaliação externa, na partição de teste interna ($n=1478$ fatias). O benchmark foi executado no ambiente descrito em Materiais e Métodos, com GPU NVIDIA RTX A4500, utilizando lote unitário, após cinco passagens de aquecimento. Para cada fatia, a latência foi medida desde a chamada do modelo até à sincronização explícita da saída com a CPU. Consequentemente, esta medição inclui a execução da inferência e a sincronização da saída, mas não inclui o carregamento das imagens nem as etapas externas de pré-processamento ou de apresentação dos resultados.
-
-A latência média foi de $24{,}13\,\mathrm{ms}$ por fatia (desvio-padrão: $0{,}69\,\mathrm{ms}$; mediana: $24{,}30\,\mathrm{ms}$), correspondendo a um débito de $41{,}4$ fatias por segundo. Os percentis 95 e 99 foram, respetivamente, $24{,}66\,\mathrm{ms}$ e $27{,}53\,\mathrm{ms}$ por fatia. A proximidade entre a média, a mediana e o percentil 95 indica estabilidade da latência na maior parte das execuções; a distribuição completa e a variação por fatia são apresentadas na \autoref{fig:benchmark-latency}. Estes valores caracterizam a configuração experimental utilizada e não representam, por si só, o tempo de resposta de um fluxo clínico completo ou de outro ambiente computacional.
-\input{Chapters/Final/Generated/Benchmark}
+O desempenho computacional (latência e débito de inferência) do modelo selecionado para a avaliação externa é caracterizado no \autoref{sec:appendix-computational-performance}.
 
 \section{Avaliação externa por médicos}
 \label{sec:resultados-avaliacao-medicos}
 
 \subsection{Estado da recolha e participantes}
-% A preencher: estado de pré-produção, piloto ou recolha concluída; número de leitores analisados e características categóricas, apenas quando existirem dados reais.
+% A preencher: número final de leitores recrutados, respostas completas e datas efetivas de fecho da recolha.
+
+A avaliação externa consiste numa comparação pareada cega ao rótulo de processamento: em cada caso, os leitores visualizam simultaneamente a entrada com artefacto e a saída do \textit{Single Model}, seed 2024, identificadas apenas como ``Imagem A'' e ``Imagem B'' (nunca como entrada/saída ou antes/depois). A posição esquerda/direita é contrabalançada entre leitores e mantida constante entre um caso e a sua repetição oculta. Cada sessão apresenta 19 comparações: 2 casos de treino (excluídos da análise), 15 casos principais e 2 repetições ocultas de casos já apresentados, usadas exclusivamente para avaliar a consistência intraleitor. Os médicos foram recrutados diretamente pela investigadora, com autodeclaração do uso clínico de\acrshort{ct} com frequência mínima mensal; não foram recolhidos nome, contacto, país, número de registo profissional ou qualquer comprovativo de qualificação.
+
+A recolha foi autorizada a 27 de agosto de 2026, com uma janela de recolha de aproximadamente 7 dias. A meta de recrutamento foi de 7 leitores, com um mínimo aceitável de 5. A \autoref{tab:external-reader-recruitment} resume o estado do recrutamento e da conclusão das respostas.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lc}
+\toprule
+\textbf{Indicador} & \textbf{Valor} \\
+\midrule
+Leitores recrutados & \textit{[a preencher]} \\
+Leitores que completaram as 19 comparações & \textit{[a preencher]} \\
+Respostas totais válidas (leitores $\times$ 15 casos principais) & \textit{[a preencher]} \\
+Data de início da recolha & 2026-08-27 \\
+Data de fecho da recolha & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Meta de recrutamento: 7 leitores (mínimo aceitável: 5).
+\captionsetup{skip=2pt}
+\caption[Recruitment and completion status]{Estado do recrutamento e da conclusão das respostas da avaliação externa.}
+\label{tab:external-reader-recruitment}
+\end{table}
+
+As características autodeclaradas dos leitores que completaram a avaliação são apresentadas na \autoref{tab:external-reader-profile}. Nenhuma destas variáveis permite identificar individualmente um participante.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{llcc}
+\toprule
+\textbf{Variável} & \textbf{Categoria} & \textbf{N} & \textbf{\%} \\
+\midrule
+\multirow{2}{*}{Jurisdição} & Brasil & \textit{[a preencher]} & \textit{[a preencher]} \\
+                            & Portugal & \textit{[a preencher]} & \textit{[a preencher]} \\
+\midrule
+\multirow{3}{*}{Frequência de uso de\acrshort{ct}} & Mensal & \textit{[a preencher]} & \textit{[a preencher]} \\
+                                          & Semanal & \textit{[a preencher]} & \textit{[a preencher]} \\
+                                          & Diária & \textit{[a preencher]} & \textit{[a preencher]} \\
+\midrule
+\multirow{4}{*}{Experiência com\acrshort{ct} (anos)} & $<2$ & \textit{[a preencher]} & \textit{[a preencher]} \\
+                                            & 2--5 & \textit{[a preencher]} & \textit{[a preencher]} \\
+                                            & 6--10 & \textit{[a preencher]} & \textit{[a preencher]} \\
+                                            & $>10$ & \textit{[a preencher]} & \textit{[a preencher]} \\
+\midrule
+\multirow{3}{*}{Experiência com redução de artefactos} & Nenhuma & \textit{[a preencher]} & \textit{[a preencher]} \\
+                                                         & Ocasional & \textit{[a preencher]} & \textit{[a preencher]} \\
+                                                         & Frequente & \textit{[a preencher]} & \textit{[a preencher]} \\
+\midrule
+\multirow{3}{*}{Tipo de monitor} & Diagnóstico & \textit{[a preencher]} & \textit{[a preencher]} \\
+                                  & Convencional & \textit{[a preencher]} & \textit{[a preencher]} \\
+                                  & Desconhecido & \textit{[a preencher]} & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\captionsetup{skip=2pt}
+\caption[Reader profile characteristics]{Características autodeclaradas dos leitores que completaram a avaliação externa.}
+\label{tab:external-reader-profile}
+\end{table}
+
+A distribuição por especialidade médica é apresentada separadamente na \autoref{tab:external-reader-specialty}, dado o maior número de categorias.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+\textbf{Especialidade} & \textbf{N} & \textbf{\%} \\
+\midrule
+Radiologia e Diagnóstico por Imagem & \textit{[a preencher]} & \textit{[a preencher]} \\
+Pneumologia & \textit{[a preencher]} & \textit{[a preencher]} \\
+Cirurgia Torácica ou Cardiotorácica & \textit{[a preencher]} & \textit{[a preencher]} \\
+Oncologia & \textit{[a preencher]} & \textit{[a preencher]} \\
+Medicina Interna ou Clínica Médica & \textit{[a preencher]} & \textit{[a preencher]} \\
+Medicina Intensiva & \textit{[a preencher]} & \textit{[a preencher]} \\
+Medicina de Emergência & \textit{[a preencher]} & \textit{[a preencher]} \\
+Cardiologia & \textit{[a preencher]} & \textit{[a preencher]} \\
+Gastroenterologia ou Hepatologia & \textit{[a preencher]} & \textit{[a preencher]} \\
+Cirurgia Geral ou outra especialidade cirúrgica & \textit{[a preencher]} & \textit{[a preencher]} \\
+Urologia & \textit{[a preencher]} & \textit{[a preencher]} \\
+Ortopedia ou Traumatologia & \textit{[a preencher]} & \textit{[a preencher]} \\
+Doenças Infecciosas ou Infectologia & \textit{[a preencher]} & \textit{[a preencher]} \\
+Outra especialidade médica & \textit{[a preencher]} & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\captionsetup{skip=2pt}
+\caption[Reader specialty distribution]{Distribuição por especialidade médica dos leitores que completaram a avaliação externa.}
+\label{tab:external-reader-specialty}
+\end{table}
+\FloatBarrier
 
 \subsection{Caracterização quantitativa entrada -- saída}
 Antes da avaliação por profissionais, a alteração global produzida pelo \textit{Single Model} foi caracterizada nos 15 casos principais do conjunto externo. Os dois casos de treino foram excluídos desta síntese. Como estes exames reais não dispõem de referência limpa, as métricas da \autoref{tab:external-input-output-global} comparam exclusivamente a imagem de entrada com a saída do modelo, dentro da máscara corporal.
 
 \input{Chapters/Final/Generated/ExternalInputOutputMetrics}
 
-No conjunto externo, a similaridade média entrada--saída foi de $0{.}8953$ para\acrshort{ssim} e $33{.}14$~dB para\acrshort{psnr}, enquanto a magnitude média da alteração foi de $21{.}12$~HU em\acrshort{mae}. A dispersão entre casos, expressa pelos desvios-padrão e intervalos de confiança da tabela, evidencia heterogeneidade no grau de alteração produzido pela reconstrução. Estes resultados descrevem a preservação e a modificação global das imagens externas, mas não permitem inferir, sem referência limpa, acurácia de remoção de artefactos ou benefício clínico. Essa interpretação é abordada pela avaliação cega por médicos nas subseções seguintes.
+No conjunto externo, a similaridade média entrada--saída foi de $0{.}8953$ para\acrshort{ssim} e $33{.}14$~dB para\acrshort{psnr}, enquanto a magnitude média da alteração foi de $21{.}12$~HU em\acrshort{mae}. A dispersão entre casos, expressa pelos desvios-padrão e intervalos de confiança da tabela,evidencia heterogeneidade no grau de alteração produzido pela reconstrução. Estes resultados descrevem a preservação e a modificação global das imagens externas, mas não permitem inferir, sem referência limpa, acurácia de remoção de artefactos ou benefício clínico. Essa interpretação é abordada pela avaliação cega por médicos nas subseções seguintes.
 
 Para tornar visível esta heterogeneidade, selecionou-se de forma descritiva os três casos com maior e os três com menor\acrshort{ssim} entre entrada e saída. Os primeiros representam os pares com menor alteração estrutural global, enquanto os segundos representam aqueles com maior alteração.
 
@@ -688,10 +787,150 @@ Para tornar visível esta heterogeneidade, selecionou-se de forma descritiva os 
 
 \FloatBarrier
 \subsection{Desfecho primário: visualização anatómica}
-% A preencher: comparação pareada entre entrada e saída para visualização de tecidos e limites anatómicos.
+% A preencher: frequências observadas, estimativa do modelo ordinal de efeitos mistos e respetivo IC 95%.
+
+O desfecho primário é a preferência pareada, por caso, quanto a qual imagem preserva melhor a região anatómica subjacente ao artefacto metálico (``Imagem A'' / ``Imagem B'' / ``Sem diferença''). As respostas são recodificadas para entrada/saída de acordo com a alocação de posição registada para cada apresentação, sem que os leitores tenham conhecimento dessa alocação durante a resposta. Casos de treino e repetições ocultas não integram esta análise ($n=15$ casos principais por leitor).
+
+A associação entre a condição preferida (entrada vs. saída) e o tipo de imagem foi estimada por um modelo ordinal de efeitos mistos, com efeitos aleatórios para leitor e para caso, de modo a contabilizar a estrutura de medições repetidas (múltiplos casos por leitor e múltiplos leitores por caso). Os intervalos de confiança de 95\% são priorizados na interpretação, em detrimento de valores de $p$ isolados.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Resposta} & \textbf{N} & \textbf{\%} & \textbf{IC 95\%} \\
+\midrule
+Preferiu a saída (Single Model) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Preferiu a entrada (com artefacto) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Frequências agrupadas sobre todas as respostas válidas (leitores $\times$ 15 casos principais); IC 95\% por \textit{bootstrap} ou método exato a especificar.
+\captionsetup{skip=2pt}
+\caption[Primary outcome: anatomical preservation preference]{Preferência pareada quanto à preservação da região anatómica subjacente ao artefacto metálico.}
+\label{tab:external-primary-outcome}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Efeito} & \textbf{Estimativa} & \textbf{IC 95\%} & \textbf{$p$} \\
+\midrule
+Condição (saída vs. entrada) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Modelo ordinal de efeitos mistos com efeitos aleatórios para leitor e caso; escala e parametrização do coeficiente a especificar (por exemplo, \textit{log-odds} ou proporção marginal prevista).
+\captionsetup{skip=2pt}
+\caption[Primary outcome: mixed-effects model estimate]{Estimativa do modelo ordinal de efeitos mistos para o desfecho primário.}
+\label{tab:external-primary-model}
+\end{table}
+\FloatBarrier
 
 \subsection{Desfechos secundários e segurança percebida}
-% A preencher: interferência do artefacto, preferência A/B, possível dano, utilidade complementar e consistência intraleitor.
+% A preencher: frequências e IC 95% por pergunta secundária; estatísticas de concordância intraleitor.
+
+Os desfechos secundários seguem o mesmo formato de comparação pareada por caso (``Imagem A'' / ``Imagem B'' / ``Sem diferença''), recodificado para entrada/saída, reportando-se frequências e intervalos de confiança de 95\% por pergunta, sem ajuste conjunto de multiplicidade, dado o caráter descritivo desta síntese.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Resposta} & \textbf{N} & \textbf{\%} & \textbf{IC 95\%} \\
+\midrule
+Preferiu a saída (menor intensidade de artefacto) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Preferiu a entrada & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\captionsetup{skip=2pt}
+\caption[Secondary outcome: artifact intensity]{Preferência pareada quanto à intensidade percebida de artefactos metálicos.}
+\label{tab:external-secondary-artifact-intensity}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Resposta} & \textbf{N} & \textbf{\%} & \textbf{IC 95\%} \\
+\midrule
+Preferiu a saída (menos distorção) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Preferiu a entrada & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Este item funciona como sinal exploratório de possível dano: preferência pela entrada sugere perceção de distorções ou artefactos introduzidos pelo modelo fora da zona de artefacto.
+\captionsetup{skip=2pt}
+\caption[Secondary outcome: distortion in other regions]{Preferência pareada quanto a artefactos ou distorções anatómicas introduzidas nas regiões distantes do artefacto.}
+\label{tab:external-secondary-distortion}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Resposta} & \textbf{N} & \textbf{\%} & \textbf{IC 95\%} \\
+\midrule
+Preferiu a saída para interpretação clínica & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Preferiu a entrada & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\captionsetup{skip=2pt}
+\caption[Secondary outcome: clinical preference]{Preferência pareada quanto à imagem escolhida para interpretação clínica.}
+\label{tab:external-secondary-clinical-preference}
+\end{table}
+
+Adicionalmente, no final da sessão, cada leitor respondeu uma vez a uma questão ordinal de 5 pontos sobre a utilidade complementar de uma versão processada com este padrão face ao exame de\acrshort{ct} original (\autoref{tab:external-secondary-utility}).
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+\textbf{Categoria} & \textbf{N} & \textbf{\%} \\
+\midrule
+Definitivamente não & \textit{[a preencher]} & \textit{[a preencher]} \\
+Provavelmente não & \textit{[a preencher]} & \textit{[a preencher]} \\
+Incerto & \textit{[a preencher]} & \textit{[a preencher]} \\
+Provavelmente sim & \textit{[a preencher]} & \textit{[a preencher]} \\
+Definitivamente sim & \textit{[a preencher]} & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Uma resposta por leitor (não por caso); $n=$ número de leitores que completaram a avaliação.
+\captionsetup{skip=2pt}
+\caption[Secondary outcome: complementary utility]{Utilidade complementar percebida de uma versão processada face ao exame de\acrshort{ct} original.}
+\label{tab:external-secondary-utility}
+\end{table}
+\FloatBarrier
+
+A consistência intraleitor foi avaliada através de duas repetições ocultas por leitor: o mesmo caso é reapresentado mais tarde na sessão, sem sinalização, na mesma posição esquerda/direita da primeira apresentação. A concordância entre a resposta original e a da repetição foi quantificada pelo coeficiente de correlação intraclasse ICC(2,1) (Shrout \& Fleiss, modelo de efeitos mistos, medida única, concordância absoluta) e, para a preferência binária saída/entrada, pelo coeficiente $\kappa$ de Fleiss (\autoref{tab:external-intra-reader-reliability}).
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Estatística} & \textbf{Valor} & \textbf{IC 95\%} & \textbf{Interpretação} \\
+\midrule
+ICC(2,1) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+$\kappa$ de Fleiss (saída vs. entrada) & \textit{[a preencher]} & --- & \textit{[a preencher]} \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize $n=2$ repetições ocultas por leitor. IC 95\% do ICC(2,1) pelo método baseado na distribuição $F$ (Shrout \& Fleiss, 1979).
+\captionsetup{skip=2pt}
+\caption[Intra-reader reliability]{Consistência intraleitor nas repetições ocultas.}
+\label{tab:external-intra-reader-reliability}
+\end{table}
+\FloatBarrier
 
 \subsection{Interpretação limitada ao desenho observacional}
-% A preencher: reportar intervalos de confiança e limitações; não inferir benefício clínico para além das avaliações realizadas.
+% A preencher: síntese final com os valores reais, uma vez concluída a recolha.
+
+Esta avaliação constitui uma comparação pareada, cega ao rótulo de processamento, entre a entrada com artefacto e a saída do \textit{Single Model}, seed 2024, num painel reduzido de leitores auto-recrutados e num conjunto fixo de 15 casos externos. Os intervalos de confiança de 95\% são priorizados em relação a valores de $p$ isolados, e nenhuma correção de multiplicidade é aplicada entre os desfechos secundários, dado o seu caráter exploratório e complementar ao desfecho primário.
+
+Este desenho permite concluir, quando os dados estiverem disponíveis, qual imagem os leitores preferem em cada dimensão avaliada, mas não permite inferir causalidade sobre desfechos clínicos a jusante (por exemplo, impacto diagnóstico ou terapêutico), nem generalizar além do conjunto de 15 casos e do painel de leitores efetivamente recrutado. A ausência de uma referência limpa nestes casos externos significa que a avaliação de exatidão anatómica depende inteiramente do julgamento dos leitores, e não de uma métrica objetiva de erro. Por fim, o número de leitores recrutados (meta de 7, mínimo aceitável de 5) limita a precisão das estimativas e a possibilidade de análises de subgrupo por especialidade ou experiência.

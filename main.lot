@@ -21,26 +21,36 @@
 \contentsline {table}{\numberline {5.4}{\ignorespaces Per-slice global SSIM on the test set}}{46}{table.caption.34}%
 \contentsline {table}{\numberline {5.5}{\ignorespaces Per-slice global PSNR on the test set}}{46}{table.caption.35}%
 \contentsline {table}{\numberline {5.6}{\ignorespaces Per-slice global MAE on the test set}}{46}{table.caption.36}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Patient-level global $\Delta $SSIM}}{46}{table.caption.37}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Patient-level global $\Delta $SSIM}}{47}{table.caption.37}%
 \contentsline {table}{\numberline {5.8}{\ignorespaces Patient-level global $\Delta $PSNR}}{47}{table.caption.38}%
 \contentsline {table}{\numberline {5.9}{\ignorespaces Patient-level global $\Delta $MAE}}{47}{table.caption.39}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces ROI $\Delta $SSIM}}{49}{table.caption.43}%
-\contentsline {table}{\numberline {5.11}{\ignorespaces ROI $\Delta $PSNR}}{49}{table.caption.44}%
-\contentsline {table}{\numberline {5.12}{\ignorespaces ROI MAE reduction}}{49}{table.caption.45}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces SSIM improvement over corrupted input}}{60}{table.caption.59}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces PSNR improvement over corrupted input}}{60}{table.caption.60}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces MAE reduction over corrupted input}}{60}{table.caption.61}%
-\contentsline {table}{\numberline {5.16}{\ignorespaces Paired Single vs Dual Model comparison}}{61}{table.caption.62}%
-\contentsline {table}{\numberline {5.17}{\ignorespaces Artifact-ROI SSIM improvement}}{62}{table.caption.64}%
-\contentsline {table}{\numberline {5.18}{\ignorespaces Artifact-ROI PSNR improvement}}{62}{table.caption.65}%
-\contentsline {table}{\numberline {5.19}{\ignorespaces Artifact-ROI MAE reduction}}{63}{table.caption.66}%
-\contentsline {table}{\numberline {5.20}{\ignorespaces Paired Artifact-ROI improvement comparison}}{63}{table.caption.67}%
-\contentsline {table}{\numberline {5.21}{\ignorespaces Distant-ROI SSIM preservation magnitude}}{63}{table.caption.68}%
-\contentsline {table}{\numberline {5.22}{\ignorespaces Distant-ROI PSNR preservation magnitude}}{64}{table.caption.69}%
-\contentsline {table}{\numberline {5.23}{\ignorespaces Distant-ROI MAE preservation magnitude}}{64}{table.caption.70}%
-\contentsline {table}{\numberline {5.24}{\ignorespaces Paired Distant-ROI preservation advantage}}{64}{table.caption.71}%
-\contentsline {table}{\numberline {5.25}{\ignorespaces External input-output global metrics}}{66}{table.caption.75}%
-\contentsline {table}{\numberline {5.26}{\ignorespaces Illustrative external cases by input-output SSIM}}{67}{table.caption.76}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces ROI $\Delta $SSIM}}{50}{table.caption.44}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces ROI $\Delta $PSNR}}{50}{table.caption.45}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces ROI MAE reduction}}{51}{table.caption.46}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces SSIM improvement over corrupted input}}{62}{table.caption.60}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces PSNR improvement over corrupted input}}{62}{table.caption.61}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces MAE reduction over corrupted input}}{62}{table.caption.62}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Paired Single vs Dual Model comparison}}{63}{table.caption.63}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Artifact-ROI SSIM improvement}}{64}{table.caption.65}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Artifact-ROI PSNR improvement}}{64}{table.caption.66}%
+\contentsline {table}{\numberline {5.19}{\ignorespaces Artifact-ROI MAE reduction}}{65}{table.caption.67}%
+\contentsline {table}{\numberline {5.20}{\ignorespaces Paired Artifact-ROI improvement comparison}}{65}{table.caption.68}%
+\contentsline {table}{\numberline {5.21}{\ignorespaces Distant-ROI SSIM preservation magnitude}}{65}{table.caption.69}%
+\contentsline {table}{\numberline {5.22}{\ignorespaces Distant-ROI PSNR preservation magnitude}}{66}{table.caption.70}%
+\contentsline {table}{\numberline {5.23}{\ignorespaces Distant-ROI MAE preservation magnitude}}{66}{table.caption.71}%
+\contentsline {table}{\numberline {5.24}{\ignorespaces Paired Distant-ROI preservation advantage}}{66}{table.caption.72}%
+\contentsline {table}{\numberline {5.25}{\ignorespaces Recruitment and completion status}}{67}{table.caption.73}%
+\contentsline {table}{\numberline {5.26}{\ignorespaces Reader profile characteristics}}{68}{table.caption.74}%
+\contentsline {table}{\numberline {5.27}{\ignorespaces Reader specialty distribution}}{68}{table.caption.75}%
+\contentsline {table}{\numberline {5.28}{\ignorespaces External input-output global metrics}}{69}{table.caption.76}%
+\contentsline {table}{\numberline {5.29}{\ignorespaces Illustrative external cases by input-output SSIM}}{69}{table.caption.77}%
+\contentsline {table}{\numberline {5.30}{\ignorespaces Primary outcome: anatomical preservation preference}}{72}{table.caption.84}%
+\contentsline {table}{\numberline {5.31}{\ignorespaces Primary outcome: mixed-effects model estimate}}{72}{table.caption.85}%
+\contentsline {table}{\numberline {5.32}{\ignorespaces Secondary outcome: artifact intensity}}{73}{table.caption.86}%
+\contentsline {table}{\numberline {5.33}{\ignorespaces Secondary outcome: distortion in other regions}}{73}{table.caption.87}%
+\contentsline {table}{\numberline {5.34}{\ignorespaces Secondary outcome: clinical preference}}{73}{table.caption.88}%
+\contentsline {table}{\numberline {5.35}{\ignorespaces Secondary outcome: complementary utility}}{73}{table.caption.89}%
+\contentsline {table}{\numberline {5.36}{\ignorespaces Intra-reader reliability}}{73}{table.caption.90}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

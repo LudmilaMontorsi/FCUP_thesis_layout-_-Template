@@ -56,30 +56,6 @@
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_psnr_distribution.pdf",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-2be35fd4.pdf",
-      "sha256": "9083033956532f8f3cc9269ddac256fe744b64b12cea7d93e8c088f6ef927eff"
-    },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_psnr_distribution.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-global-psnr-distribution-7a8640dd.png",
-      "sha256": "1cfec9312c88a54832f74722d5c47c4a80d476ddd82319bdf4363c4db6fb2a33"
-    },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_ssim_distribution.pdf",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-fe2cec3a.pdf",
-      "sha256": "6da3b1a26dc30e5b674e21bdf225ae7734b9d9d0da78d730900afccc907a9755"
-    },
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_global_ssim_distribution.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-global-ssim-distribution-d8846b9b.png",
-      "sha256": "6deadfdf8be48314b9845be0d7104fe197ce77b241765e749304da24a46e3d5e"
-    },
-    {
-      "category": "histograms",
       "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
       "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-97e4460d.pdf",
       "sha256": "445d6f904a2f968813e17362f40eddd3434ae36d7a7c5b28008b051fb2dc3455"
@@ -362,12 +338,6 @@
       "source": "outputs\\benchmark\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\benchmark_latency.png",
       "destination": "Figures\\Generated\\benchmark\\benchmark-latency-5d3a49bf.png",
       "sha256": "d91576e1900b369b4f71410eec3cd6fda449a21387b95efbc46dec7a96ac9e69"
-    },
-    {
-      "category": "seed_comparison",
-      "source": "outputs\\seed_comparison\\test\\stability_seed_comparison.png",
-      "destination": "Figures\\Generated\\evaluation\\stability-seed-comparison-39d600c0.png",
-      "sha256": "882086fd7547efed8602d33ac2f00d76671a6bd3be8e5b21a558ee047e94eb8b"
     }
   ],
   "tables": {
