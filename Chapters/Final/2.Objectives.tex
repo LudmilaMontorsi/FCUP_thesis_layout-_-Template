@@ -1,23 +1,28 @@
-\chapter{Objetivos e Questões de Investigação}
-\label{chap:final-objetivos}
+\chapter{Objectives and Investigation Question}
+\label{chap:final-objectives}
 
-\section{Objetivo geral}
-%  A preencher: desenvolver e avaliar uma abordagem reprodutível de redução de artefactos metálicos em CT.
+\section{General Objective}
 
-O objetivo geral desta dissertação é desenvolver, avaliar e comparar de forma rigorosa um modelo baseado em\textit{\glspl{cnn}} para deteção e redução de artefatos em imagens de Tomografia Computorizada, privilegiando a preservação anatómica, a robustez à variação de domínio e a interpretabilidade do processo de correção.
+The general objective of this dissertation is to develop, evaluate and rigourously compare a\acrshort{cnn} model for metal artifact reduction in\acrshort{ct}, prioritizing anatomical preservation, robustness to domain variation and interpretability of the correction process. Additionally, the study aims to investigate the generalization of the best performing model to real and external data, with a focus on clinical applicability. Healthcare professionals will be involved in the evaluation of the model's performance on real data, providing a comprehensive assessment of its effectiveness and potential for clinical use.
 
-\section{Objetivos específicos}
-Os objetivos específicos deste trabalho incluem:
+\section{Specific Objectives}
+The specific objectives of this study include:
 
 \begin{itemize}
-    \item Desenvolver um \textit{pipeline} reprodutível para treino e avaliação de modelos de redução de artefatos em\acrshort{ct} no domínio da imagem, com separação rigorosa entre dados de treino, validação e teste.
+    \item Develop a reproducible pipeline for training and evaluating metal artifact reduction models in\acrshort{ct} in the image domain, with rigorous separation between training, validation, and test data.
 
-    \item Avaliar o desempenho de uma arquitetura\acrshort{unet} convencional para reconstrução de imagem na redução de artefatos metálicos e compará-la com uma versão dela mesma com acréscimo de uma supervisão extra de máscara de artefato.
-
-    \item Avaliar o desempenho das duas versões utilizando métricas quantitativas (\acrshort{psnr},\acrshort{ms-ssim},\acrshort{ssim},\acrshort{bce} e\acrshort{dice} ), análise qualitativa e mapas de erro.
-
-    \item Investigar a capacidade de generalização da versão que se sair melhor na etapa de avaliação interna em dados reais e externos ao treino provenientes do\textit{\acrfull{tcia}}.
+    \item Evaluate the performance of a\acrfull{unet} to image reconstruction for metal artifact reduction and compare it with a version of itself with an additional supervision of artifact mask.
+    \item Evaluate the performance of the two versions using quantitative metrics like: \acrfull{psnr},\acrfull{ssim},\acrfull{mae}, \acrfull{bce} and \acrfull{dice}. Besides, performing error maps, statistical and qualitative analysis to assess the quality of the reconstructed images.
+    \item Investigate the generalization capability of the best performing version in the internal evaluation stage on real and external data from the\acrfull{tcia}.
 \end{itemize}
 
-\section{Hipóteses e desfechos}
-% A preencher: hipótese primária baseada em MS-SSIM, desfechos secundários e critérios de preservação.
+\section{Hypothesis and Outcomes}
+
+The primary hypothesis of this study is that the reconstruction produced by each architecture significantly improves the structural quality of the image compared to the artifact input, in the internal test partition. This hypothesis is operationalized through the\acrshort{ssim}, calculated in the\acrfull{roi} where the metal artifact is inserted and the clean\acrshort{roi} (where there is no artifact) would need to remain unchanged or poorly changed. The analyses were aggregated at the patient level ($n=41$), with a null hypothesis of median paired differences input--model equal to zero.
+
+The secondary hypothesis include: (i) the improvement of\acrshort{psnr} and\acrshort{mae}, in HU, compared to the input, under the same patient-level aggregation; (ii) the same triad of metrics (\acrshort{ssim},\acrshort{psnr} and\acrshort{mae}) calculated in global image; and (iii) a direct paired comparison between the Single Model and the Dual Model on the same three metrics, addressing the architectural comparison objective.
+
+As a criterion for anatomical preservation, it was defined that the change introduced in the Clean Zone should be substantially smaller, in magnitude, than the correction observed in the Artifact Zone, and that the global radiometric calibration bias, evaluated by Bland--Altman at the patient level, should be small relative to the amplitude of the\acrshort{hu} window used. A formal equivalence margin for the Distant Zone was not pre-specified. Preservation is therefore characterized descriptively, and not tested for statistical equivalence.
+
+Finally, as the external\acrshort{tcia} set does not have a clean reference, the generalization hypothesis is necessarily more limited: it is expected that the selected architecture produces, in the external cases, changes of plausible magnitude and without collapse to identity, but confirmation of artifact removal accuracy and clinical safety depends on blinded reader evaluation (\autoref{sec:avaliacao-medicos}), and not on a reference metric.
+

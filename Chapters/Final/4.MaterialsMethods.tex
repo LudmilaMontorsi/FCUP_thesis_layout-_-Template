@@ -1,9 +1,8 @@
-\chapter{Materiais e Métodos}
-\label{chap:final-metodos}
+\chapter{Materials and Methods}
+\label{chap:final-methods}
 
 \section{Dados, curadoria e rastreabilidade}
 \subsection{Conjunto CT-MAR e fontes de referência}
-% A preencher: dados de entrada, correspondência às fontes originais, inclusões e exclusões.
 
 O \textit{dataset} principal utilizado neste trabalho provém do \textit{\acrfull{ctmar}} \cite{hanedaAAPMCTMetal2025, AAPMCTMARBenchmarkTool} promovido pela \textit{American Association of Physicists in Medicine} e consiste em 14.000 pares de treino contendo imagens de\acrshort{ct} com artefatos metálicos simulados e suas versões originais sem artefatos. Os dados foram gerados através de um \textit{framework} de simulação híbrida \cite{petersHybridTrainingDatabase2025}, que incorpora imagens clínicas publicamente disponíveis e objetos metálicos simulados com o simulador CatSim, integrado na \textit{toolkit} de código aberto XCIST \cite{wuXCISTOpenAccess2022}. O conjunto é distribuído em duas categorias anatómicas:
 
@@ -24,7 +23,6 @@ Não havia no conjunto de dados informações adicionais sobre a que exame cada 
 
 
 \subsection{Particionamento ao nível do paciente}
-% A preencher: manifesto canónico, semente fixa, proporções treino/validação/teste e auditoria de leakage.
 
 O particionamento dos dados foi estratificado por pacientes, garantindo que os \textit{slices} de um mesmo paciente não fossem distribuídos entre os conjuntos de treino, validação e teste. Esta abordagem evita vazamento de informações e assegura uma avaliação mais realista da capacidade de generalização dos modelos.%____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -222,7 +220,6 @@ Devido a grande variação na quantidade de fatias por paciente, a distribuiçã
    
 
 \section{Pré-processamento}
-% A preencher: janela HU, normalização, máscaras corporais e máscaras de artefacto.
 
 \subsection{Verificação de integridade}
 Todos os pares foram validados através de um relatório de integridade, que verifica a existência de ambos os lados do par (imagem com artefacto e imagem limpa). Não houve nenhum par com dados faltantes, garantindo que o conjunto de dados estava completo e pronto para as etapas subsequentes de pré-processamento e treino dos modelos.
@@ -250,7 +247,6 @@ M_{diff}(i,j) = \begin{cases}
 
 \section{Arquiteturas em comparação}
 \subsection{U-Net}
-%A preencher: saída de reconstrução e configuração final.
 
 O primeiro modelo consiste em uma arquitetura baseada em\acrshort{unet} \cite{ronnebergerUNetConvolutionalNetworks2015}, composta por \textit{encoder-decoder} com conexões de atalho (\textit{skip connections}). 
 Li et al \cite{liUNetBasedDynamic2024}, aplicam blocos de\Acrfull{bn} e funções de ativação\acrfull{relu} após cada convolução dinâmica. Esse trabalho faz algo semelhante, mas opta por utilizar convoluções padrão com \textit{kernel} $3\times3$, seguida dos blocos de\acrshort{bn} e funções de ativação\textit{\acrshort{relu}}. A escolha por convoluções padrão é justificada pela simplicidade e eficiência computacional, além de manter a abordagem utilizada por Ronneberger et al \cite{ronnebergerUNetConvolutionalNetworks2015}. Assim como Li et al \cite{liUNetBasedDynamic2024}, o \textit{decoder} também utiliza \textit{bilinear upsampling}. Essa arquitetura possui apenas um \textit{output}.
@@ -263,8 +259,6 @@ Li et al \cite{liUNetBasedDynamic2024}, aplicam blocos de\Acrfull{bn} e funçõe
 
 
 \subsection{U-Net Dual Supervision}
-%A preencher: saída de reconstrução, supervisão auxiliar por máscara e configuração final.
-
 
 Uma variação do modelo acima descrito foi concebida, mantendo-se o \textit{encoder} e o \textit{decoder} compartilhados e acrescentando-se uma saída independente na última camada. Dessa forma, há duas saídas distintas no decoder, cada uma com sua própria função de perda. A primeira saída é responsável pela reconstrução da imagem corrigida, enquanto a segunda saída é dedicada à predição da máscara de artefatos.
 
@@ -280,7 +274,6 @@ As duas arquiteturas foram avaliadas entre si para determinar o impacto da super
 
 
 \section{Treino reprodutível}
-% A preencher: ambiente, precisão numérica, semente, função de perda, monitorização, checkpoint e critério de paragem.
 
 \subsection{Configuração, determinismo e seleção de checkpoint}
 
@@ -323,7 +316,6 @@ Os experimentos foram executados numa GPU NVIDIA RTX A4500, utilizando Python e 
 
 
 \section{Avaliação interna}
-%A preencher: avaliação integral e terminal da partição de teste, métricas globais e por região de interesse.
 Na fase de inferência, os modelos foram avaliados utilizando métricas quantitativas amplamente adotadas na literatura, em comparação com o \textit{Ground Truth}. As métricas utilizadas para a avaliação da qualidade da imagem reconstruída global e por ROI foram:
 \begin{itemize}
     \item \textbf{\acrshort{psnr}} ;
@@ -336,7 +328,7 @@ De fato, as literaturas recentes tem demonstrado performance estatísticamente m
 
 A validação interna foi conduzida nos conjuntos de validação e teste, avaliando consistência, estabilidade e capacidade de generalização intra-\textit{dataset}.
 
-Após a seleção do melhor checkpoint de cada uma das seis corridas na validação, os checkpoints foram comparados na partição de teste interna para selecionar a candidata à avaliação externa. A decisão privilegiou a maior melhoria de \acrshort{ssim} global e na Zona de Artefacto, seguido de melhor\acrshort{psnr} e\acrshort{mae} global e na Zona de Artefacto como forma de desempate. Após essa comparação, a corrida selecionada foi congelada, sem novo treino, ajuste de hiperparâmetros ou alteração dos pesos antes da avaliação externa.
+Após a seleção do melhor checkpoint de cada uma das seis corridas na validação, os checkpoints foram comparados na partição de teste interna para selecionar a candidata à avaliação externa. A decisão privilegiou a maior melhoria de \acrshort{ssim} na Zona de Artefacto e globalmente, seguida de melhor\acrshort{psnr} e\acrshort{mae} na Zona de Artefacto e globalmente como forma de desempate. Após essa comparação, a corrida selecionada foi congelada, sem novo treino, ajuste de hiperparâmetros ou alteração dos pesos antes da avaliação externa.
 
 \subsection{Métricas globais}
 Para a avaliação global, as imagens preditas e de referência são desnormalizadas para a janela $[-1000, 400]$ HU, correspondendo a uma amplitude $\mathrm{MAX} = 1400$ HU. Adicionalmente, a região de avaliação é recortada ao menor retângulo envolvente (\textit{bounding box}) da máscara corporal antes da avaliação de SSIM, eliminando janelas de varredura compostas exclusivamente por fundo — que pontuariam $\text{SSIM} = 1{,}0$ artificialmente e inflariam a métrica global.

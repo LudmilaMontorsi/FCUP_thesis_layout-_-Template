@@ -2,7 +2,6 @@
 \label{chap:final-resultados}
 
 \section{Coorte final e integridade experimental}
-% A preencher: pares incluídos, pacientes, distribuição anatómica, partições e resultados das verificações de integridade.
 \subsection{Resultados da Aprovação Automática x Inspeção Manual}
 É  importante deixar claro como ficou a distribuição dos dados que foram aprovados e reprovados automaticamente, e também quais foram avaliados manualmente. O gráfico abaixo, mapeia todos os pares do\acrshort{ctmar} Dataset, destacando os que foram aprovados automaticamente, os que foram reprovados e os que foram sujeitos a inspeção visual humana. A distribuição anatómica dos pares é representada por cores, permitindo uma análise visual da relação entre a aprovação automática e a localização anatómica dos artefatos metálicos.
 
@@ -91,7 +90,6 @@ Com relação aos possíveis falsos negativos que poderiam ter resultado em excl
 
 \section{Treino dos modelos}
 \subsection{Convergência e seleção dos checkpoints}
-% A preencher: curvas de treino/validação e checkpoints selecionados pelo monitor pré-especificado.
 A seleção do \textit{checkpoint} para avaliação final foi baseada na melhor versão do\acrshort{ssim} calculado na partição de validação. Obviamente, no modelo Dual, esse critério foi aplicado na saída de reconstrução. Apenas o melhor checkpoint por corrida foi preservado, em formato .keras, com nome que contém arquitetura, época e métrica monitorizada. O CSV de treino marca explicitamente a linha correspondente com \texttt{best\_checkpoint=1}.
 
 A regra de paragem definia um máximo de épocas de 300 e um mínimo de 5, com\textit{Early Stopping} após 15 épocas sem melhoria mínima de 0.0001 no\acrshort{ssim} da partição de validação. Consequentemente, devido à restauração dos pesos da melhor época, a época final de treino não é necessariamente a selecionada.
@@ -116,7 +114,6 @@ A escolha da corrida que avançará para a avaliação externa é uma decisão d
 
 
 \subsection{Rastreabilidade das execuções}
-% A preencher: snapshots de reprodutibilidade, versões do ambiente e hashes dos checkpoints.
 
 A rastreabilidade das execuções foi assegurada através de \textit{snapshots} de reprodutibilidade em formato JSON, preservados em \texttt{outputs/reproducibility/}. Foram congeladas seis avaliações internas finais, correspondentes às três inicializações aleatórias (seeds 42, 1337 e 2024) dos modelos Single Model e Dual Model. Todos os snapshots foram gerados a partir do commit \texttt{a950be7276a5585de45e8ae874c59c065a1985be}, no ramo \texttt{projeto\_final}, com árvore de trabalho limpa (\texttt{is\_dirty: false}).
 
@@ -419,7 +416,7 @@ Esta análise compara exclusivamente os dois \textit{checkpoints} finais treinad
 
 As métricas por fatia foram agregadas por paciente antes de todos os resumos e testes de hipótese, resultando em $n=41$ observações independentes. Assim, as médias, os intervalos de confiança de 95\% e os valores de $p$ apresentados nas tabelas desta secção referem-se às médias por paciente, atribuindo o mesmo peso a cada indivíduo.
 
-As tabelas desta secção apresentam exclusivamente análise das métricas globais, calculadas em todos os píxeis da máscara corporal de cada fatia. Os píxels de fundo são excluídos. As análises por ROI constituem uma avaliação complementar da distribuição espacial do desempenho e serão analisadas separadamente na próxima secção.
+As tabelas desta secção apresentam a análise das métricas globais, calculadas em todos os píxeis da máscara corporal de cada fatia (píxeis de fundo excluídos), como confirmação complementar da hipótese primária de melhoria estrutural, testada formalmente na Zona de Artefacto na secção seguinte.
 
 Os diagnósticos por paciente mostraram assimetria e desvio da normalidade para $\Delta$SSIM e $\Delta$MAE. Assim, a evidência primária para essas métricas foi baseada no teste de sinais binomial exato, que avalia a predominância de melhorias sem pressupor simetria das diferenças. Para $\Delta$PSNR, cuja distribuição por paciente não mostrou evidência de afastamento da normalidade, foi utilizado o teste $t$ bilateral de uma amostra para a melhoria média.
 
@@ -480,7 +477,7 @@ Dual Model & $15.54$ & $[12.79; 19.88]$ & $7.64\times10^{-11}$ \\\\
 \end{table}
 
 
-A \autoref{tab:ablation_improvement_ssim}, a \autoref{tab:ablation_improvement_psnr} e a \autoref{tab:ablation_improvement_mae} mostram que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$SSIM médio de $0{.}0891$ (IC 95\% BCa: $[0{.}0744; 0{.}1075]$), $\Delta$PSNR médio de $7{.}11$ dB (IC 95\% $t$: $[6{.}35; 7{.}87]$) e redução média de MAE de $15{.}72$ HU (IC 95\% BCa: $[12{.}94; 20{.}14]$). O Dual Model apresentou $\Delta$SSIM de $0{.}0879$ (IC 95\% BCa: $[0{.}0731; 0{.}1062]$), $\Delta$PSNR de $7{.}06$ dB (IC 95\% $t$: $[6{.}30; 7{.}81]$) e redução média de MAE de $15{.}54$ HU (IC 95\% BCa: $[12{.}79; 19{.}88]$). Todos os seis testes primários de melhoria face à entrada permaneceram significativos após o ajuste de Holm aplicado separadamente dentro de cada arquitetura. Os valores de $p$ de $\Delta$SSIM e $\Delta$MAE avaliam a predominância de melhoria, enquanto os de $\Delta$PSNR avaliam a melhoria média, por isso, não devem ser comparados em magnitude.
+A \autoref{tab:ablation_improvement_ssim}, a \autoref{tab:ablation_improvement_psnr} e a \autoref{tab:ablation_improvement_mae} mostram que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$SSIM médio de $0{.}0891$ (IC 95\% BCa: $[0{.}0744; 0{.}1075]$), $\Delta$PSNR médio de $7{.}11$ dB (IC 95\% $t$: $[6{.}35; 7{.}87]$) e redução média de MAE de $15{.}72$ HU (IC 95\% BCa: $[12{.}94; 20{.}14]$). O Dual Model apresentou $\Delta$SSIM de $0{.}0879$ (IC 95\% BCa: $[0{.}0731; 0{.}1062]$), $\Delta$PSNR de $7{.}06$ dB (IC 95\% $t$: $[6{.}30; 7{.}81]$) e redução média de MAE de $15{.}54$ HU (IC 95\% BCa: $[12{.}79; 19{.}88]$). Todos os seis testes de melhoria global face à entrada permaneceram significativos após o ajuste de Holm aplicado separadamente dentro de cada arquitetura. Os valores de $p$ de $\Delta$SSIM e $\Delta$MAE avaliam a predominância de melhoria, enquanto os de $\Delta$PSNR avaliam a melhoria média, por isso, não devem ser comparados em magnitude.
 
 Estes testes confirmam que cada arquitetura melhora a entrada corrompida, mas não constituem uma comparação direta entre arquiteturas. Esta distinção é essencial: valores de $p$ pequenos nas tabelas \autoref{tab:ablation_improvement_ssim}, \autoref{tab:ablation_improvement_psnr}, \autoref{tab:ablation_improvement_mae} não permitem, por si só, afirmar que uma arquitetura é superior à outra.
 
@@ -519,7 +516,7 @@ O Single Model apresentou vantagem média de $0{.}054$ dB em $\Delta$PSNR, de $0
 \subsection{Análise Estatística por ROI}
 \label{sec:analise-estatistica-roi}
 
-Como análise local complementar às métricas globais, foram avaliadas separadamente a Zona de Artefacto e a Zona Limpa. As métricas por fatia foram sempre agregadas por paciente antes dos resumos e testes ($n=41$), e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens. Na Zona de Artefacto, a questão é a melhoria face à entrada corrompida, por isso, foram analisados os deltas com sinal de\acrshort{psnr},\acrshort{ssim} e\acrshort{mae}. Em cada modelo, foi aplicado o teste de sinais binomial exato bilateral, com correção de Holm na família das três métricas.
+Esta secção testa formalmente a hipótese primária deste estudo -- a melhoria estrutural na Zona de Artefacto -- e carateriza de forma complementar a preservação na Zona Distante. As métricas por fatia foram sempre agregadas por paciente antes dos resumos e testes ($n=41$), e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens. Na Zona de Artefacto, a questão é a melhoria face à entrada corrompida, por isso, foram analisados os deltas com sinal de\acrshort{psnr},\acrshort{ssim} e\acrshort{mae}. Em cada modelo, foi aplicado o teste de sinais binomial exato bilateral, com correção de Holm na família das três métricas.
 
 \begin{table}[htbp]
 \centering
@@ -576,7 +573,7 @@ Dual Model & $98.33$ & $[91.84; 104.06]$ & $2.73\times10^{-12}$ \\
 \end{table}
 \FloatBarrier
 
-As \autoref{tab:roi-artifact-improvement-ssim}, \autoref{tab:roi-artifact-improvement-psnr}, \autoref{tab:roi-artifact-improvement-mae} mostram melhoria nas três métricas na Zona de Artefacto para ambos os modelos. Os ganhos médios foram aproximadamente de $0{.}32$ para\acrshort{ssim}, $11{.}8$ dB para\acrshort{psnr} e $98$ HU para\acrshort{mae}.
+As \autoref{tab:roi-artifact-improvement-ssim}, \autoref{tab:roi-artifact-improvement-psnr}, \autoref{tab:roi-artifact-improvement-mae} mostram melhoria nas três métricas na Zona de Artefacto para ambos os modelos. Os ganhos médios foram aproximadamente de $0{.}32$ para\acrshort{ssim}, $11{.}8$ dB para\acrshort{psnr} e $98$ HU para\acrshort{mae}. Estes resultados confirmam, para ambas as arquiteturas, a hipótese primária deste estudo de melhoria estrutural estatisticamente significativa na Zona de Artefacto.
 
 \begin{table}[htbp]
 \centering
