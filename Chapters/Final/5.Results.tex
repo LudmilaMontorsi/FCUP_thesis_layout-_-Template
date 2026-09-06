@@ -684,9 +684,9 @@ O desempenho computacional (latência e débito de inferência) do modelo seleci
 \subsection{Estado da recolha e participantes}
 % A preencher: número final de leitores recrutados, respostas completas e datas efetivas de fecho da recolha.
 
-A avaliação externa consiste numa comparação pareada cega ao rótulo de processamento: em cada caso, os leitores visualizam simultaneamente a entrada com artefacto e a saída do \textit{Single Model}, seed 2024, identificadas apenas como ``Imagem A'' e ``Imagem B'' (nunca como entrada/saída ou antes/depois). A posição esquerda/direita é contrabalançada entre leitores e mantida constante entre um caso e a sua repetição oculta. Cada sessão apresenta 19 comparações: 2 casos de treino (excluídos da análise), 15 casos principais e 2 repetições ocultas de casos já apresentados, usadas exclusivamente para avaliar a consistência intraleitor. Os médicos foram recrutados diretamente pela investigadora, com autodeclaração do uso clínico de\acrshort{ct} com frequência mínima mensal; não foram recolhidos nome, contacto, país, número de registo profissional ou qualquer comprovativo de qualificação.
+A avaliação externa consiste numa comparação pareada cega ao rótulo de processamento: em cada caso, os leitores visualizam simultaneamente a entrada com artefacto e a saída do modelo, identificadas apenas como ``Imagem A'' e ``Imagem B''. A posição esquerda/direita é contrabalançada entre leitores e mantida constante entre um caso e a sua repetição oculta. Cada sessão apresenta 19 comparações: 2 casos de treino (excluídos da análise), 15 casos principais e 2 repetições ocultas de casos já apresentados, usadas exclusivamente para avaliar a consistência intraleitor. Os médicos foram recrutados diretamente pela investigadora, com autodeclaração do uso clínico de\acrshort{ct} com frequência mínima mensal. Não foram recolhidos nome, contacto, número de registo profissional ou qualquer comprovativo de qualificação.
 
-A recolha foi autorizada a 27 de agosto de 2026, com uma janela de recolha de aproximadamente 7 dias. A meta de recrutamento foi de 7 leitores, com um mínimo aceitável de 5. A \autoref{tab:external-reader-recruitment} resume o estado do recrutamento e da conclusão das respostas.
+A \autoref{tab:external-reader-recruitment} resume o estado do recrutamento e da conclusão das respostas.
 
 \begin{table}[htbp]
 \centering
@@ -695,14 +695,12 @@ A recolha foi autorizada a 27 de agosto de 2026, com uma janela de recolha de ap
 \toprule
 \textbf{Indicador} & \textbf{Valor} \\
 \midrule
-Leitores recrutados & \textit{[a preencher]} \\
-Leitores que completaram as 19 comparações & \textit{[a preencher]} \\
+Total de Leitores & \textit{[a preencher]} \\
 Respostas totais válidas (leitores $\times$ 15 casos principais) & \textit{[a preencher]} \\
 Data de início da recolha & 2026-08-27 \\
 Data de fecho da recolha & \textit{[a preencher]} \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Meta de recrutamento: 7 leitores (mínimo aceitável: 5).
 \captionsetup{skip=2pt}
 \caption[Recruitment and completion status]{Estado do recrutamento e da conclusão das respostas da avaliação externa.}
 \label{tab:external-reader-recruitment}
@@ -779,7 +777,7 @@ Antes da avaliação por profissionais, a alteração global produzida pelo \tex
 
 \input{Chapters/Final/Generated/ExternalInputOutputMetrics}
 
-No conjunto externo, a similaridade média entrada--saída foi de $0{.}8953$ para\acrshort{ssim} e $33{.}14$~dB para\acrshort{psnr}, enquanto a magnitude média da alteração foi de $21{.}12$~HU em\acrshort{mae}. A dispersão entre casos, expressa pelos desvios-padrão e intervalos de confiança da tabela,evidencia heterogeneidade no grau de alteração produzido pela reconstrução. Estes resultados descrevem a preservação e a modificação global das imagens externas, mas não permitem inferir, sem referência limpa, acurácia de remoção de artefactos ou benefício clínico. Essa interpretação é abordada pela avaliação cega por médicos nas subseções seguintes.
+No conjunto externo, a similaridade média entrada--saída foi de $0{.}8953$ para\acrshort{ssim} e $33{.}14$~dB para\acrshort{psnr}, enquanto a magnitude média da alteração foi de $21{.}12$~HU em\acrshort{mae}. A dispersão entre casos, expressa pelos desvios-padrão e intervalos de confiança da tabela, evidencia heterogeneidade no grau de alteração produzido pela reconstrução. Estes resultados descrevem a preservação e a modificação global das imagens externas, mas não permitem inferir, sem referência limpa, acurácia de remoção de artefactos ou benefício clínico. Essa interpretação é abordada pela avaliação cega por médicos nas subseções seguintes.
 
 Para tornar visível esta heterogeneidade, selecionou-se de forma descritiva os três casos com maior e os três com menor\acrshort{ssim} entre entrada e saída. Os primeiros representam os pares com menor alteração estrutural global, enquanto os segundos representam aqueles com maior alteração.
 
@@ -931,6 +929,4 @@ $\kappa$ de Fleiss (saída vs. entrada) & \textit{[a preencher]} & --- & \textit
 \subsection{Interpretação limitada ao desenho observacional}
 % A preencher: síntese final com os valores reais, uma vez concluída a recolha.
 
-Esta avaliação constitui uma comparação pareada, cega ao rótulo de processamento, entre a entrada com artefacto e a saída do \textit{Single Model}, seed 2024, num painel reduzido de leitores auto-recrutados e num conjunto fixo de 15 casos externos. Os intervalos de confiança de 95\% são priorizados em relação a valores de $p$ isolados, e nenhuma correção de multiplicidade é aplicada entre os desfechos secundários, dado o seu caráter exploratório e complementar ao desfecho primário.
-
-Este desenho permite concluir, quando os dados estiverem disponíveis, qual imagem os leitores preferem em cada dimensão avaliada, mas não permite inferir causalidade sobre desfechos clínicos a jusante (por exemplo, impacto diagnóstico ou terapêutico), nem generalizar além do conjunto de 15 casos e do painel de leitores efetivamente recrutado. A ausência de uma referência limpa nestes casos externos significa que a avaliação de exatidão anatómica depende inteiramente do julgamento dos leitores, e não de uma métrica objetiva de erro. Por fim, o número de leitores recrutados (meta de 7, mínimo aceitável de 5) limita a precisão das estimativas e a possibilidade de análises de subgrupo por especialidade ou experiência.
+O desenho dessa avaliação permite concluir, quando os dados estiverem disponíveis, qual imagem os leitores preferem em cada dimensão avaliada, mas não permite inferir causalidade sobre desfechos clínicos (por exemplo, impacto diagnóstico ou terapêutico), nem generalizar além do conjunto de 15 casos e do painel de leitores efetivamente recrutado. A ausência de uma referência limpa nestes casos externos significa que a avaliação de exatidão anatómica depende inteiramente do julgamento dos leitores, e não de uma métrica objetiva de erro. Por fim, o número de leitores recrutados limita a precisão das estimativas e a possibilidade de análises de subgrupo por especialidade ou experiência.

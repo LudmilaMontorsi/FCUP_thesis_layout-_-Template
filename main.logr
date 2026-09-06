@@ -14,10 +14,10 @@
 \contentsline {figure}{\numberline {5.16}Per-image ROI metric improvements}{53}{figure.caption.50}%
 \contentsline {figure}{\numberline {5.17}Artifact-ROI correction versus distant-ROI change}{53}{figure.caption.53}%
 \contentsline {figure}{\numberline {5.24}Global PSNR and SSIM improvement}{64}{figure.caption.64}%
-\contentsline {figure}{\numberline {A.1}Pixel-level HU agreement}{87}{figure.caption.92}%
-\contentsline {figure}{\numberline {A.2}Per-image input-output global metrics}{89}{figure.caption.95}%
-\contentsline {figure}{\numberline {A.3}Patient-level artifact load and improvement}{90}{figure.caption.98}%
-\contentsline {figure}{\numberline {A.4}Worst-case slices by global $\Delta $SSIM}{91}{figure.caption.99}%
-\contentsline {figure}{\numberline {A.5}Worst-case slices by global $\Delta $PSNR}{92}{figure.caption.100}%
-\contentsline {figure}{\numberline {A.6}Worst-case slices: joint $\Delta $PSNR vs. $\Delta $SSIM}{93}{figure.caption.101}%
-\contentsline {figure}{\numberline {A.7}Benchmark Latency}{94}{figure.caption.104}%
+\contentsline {figure}{\numberline {A.1}Pixel-level HU agreement}{86}{figure.caption.92}%
+\contentsline {figure}{\numberline {A.2}Per-image input-output global metrics}{88}{figure.caption.95}%
+\contentsline {figure}{\numberline {A.3}Patient-level artifact load and improvement}{89}{figure.caption.98}%
+\contentsline {figure}{\numberline {A.4}Worst-case slices by global $\Delta $SSIM}{90}{figure.caption.99}%
+\contentsline {figure}{\numberline {A.5}Worst-case slices by global $\Delta $PSNR}{91}{figure.caption.100}%
+\contentsline {figure}{\numberline {A.6}Worst-case slices: joint $\Delta $PSNR vs. $\Delta $SSIM}{92}{figure.caption.101}%
+\contentsline {figure}{\numberline {A.7}Benchmark Latency}{93}{figure.caption.104}%
