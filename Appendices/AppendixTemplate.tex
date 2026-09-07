@@ -1,5 +1,5 @@
 \chapter{Supplementary Internal Evaluation}
-\label{apendice:avaliacao-interna}
+\label{apendice:internal-evaluation}
 
 Este apêndice reúne verificações quantitativas complementares da avaliação interna. A figura seguinte é apresentada apenas como diagnóstico visual da concordância radiométrica ao nível de pixel e não constitui análise inferencial, pois os pixels amostrados não são observações independentes.
 
@@ -47,7 +47,7 @@ Como análise exploratória de heterogeneidade, a \autoref{fig:appendix-artifact
 \label{fig:appendix-artifact-load-association}
 \endgroup
 
-\section{Casos de pior desempenho}
+\section{Worst Performance Cases}
 \label{sec:appendix-worst-cases}
 
 Como caracterização complementar das fatias com pior desempenho, identificaram-se dois grupos por fatia para o Single Model, seed 2024, no conjunto de teste: primeiro pelo percentil 5 inferior de $\Delta$SSIM, a métrica utilizada para a seleção do \textit{checkpoint}, e depois, de forma complementar, pelo percentil 5 inferior de $\Delta$PSNR. Esta seleção é puramente descritiva: não constitui um teste de hipótese e serve apenas para situar, em termos quantitativos, os grupos de fatias cujos exemplos visuais individuais são discutidos na \autoref{sec:mapas-residuos-extremos}.
@@ -82,7 +82,7 @@ Por fim, a \autoref{fig:appendix-worst-cases} relaciona conjuntamente $\Delta$PS
     \label{fig:appendix-worst-cases}
 \end{figure}
 
-\section{Desempenho computacional}
+\section{Computational Performance}
 \label{sec:appendix-computational-performance}
 
 O desempenho temporal foi quantificado para o checkpoint do modelo selecionado para a avaliação externa, na partição de teste interna ($n=1478$ fatias). O benchmark foi executado no ambiente descrito em Materiais e Métodos, com GPU NVIDIA RTX A4500, utilizando lote unitário, após cinco passagens de aquecimento. Para cada fatia, a latência foi medida desde a chamada do modelo até à sincronização explícita da saída com a CPU. Consequentemente, esta medição inclui a execução da inferência e a sincronização da saída, mas não inclui o carregamento das imagens nem as etapas externas de pré-processamento ou de apresentação dos resultados.

@@ -1,11 +1,11 @@
-\chapter{Resultados}
-\label{chap:final-resultados}
+\chapter{Results}
+\label{chap:final-results}
 
-\section{Coorte final e integridade experimental}
-\subsection{Resultados da Aprovação Automática x Inspeção Manual}
+\section{Final Cohort and Experimental Integrity}
+\subsection{Automatic Approval x Manually Inspection Results}
 É  importante deixar claro como ficou a distribuição dos dados que foram aprovados e reprovados automaticamente, e também quais foram avaliados manualmente. O gráfico abaixo, mapeia todos os pares do\acrshort{ctmar} Dataset, destacando os que foram aprovados automaticamente, os que foram reprovados e os que foram sujeitos a inspeção visual humana. A distribuição anatómica dos pares é representada por cores, permitindo uma análise visual da relação entre a aprovação automática e a localização anatómica dos artefatos metálicos.
 
-\subsection{Análise Complementar com\acrshort{ms-ssim}}
+\subsection{Complementary Analysis with\acrshort{ms-ssim}}
 
 Antes de avançar para a análise dos resultados dos modelos de redução de artefatos, foi realizada mais uma avaliação dos resultados\acrshort{ctmar} x DeepLesion/Stroke EIT para verificar a qualidade das correspondências automáticas. Esta etapa é crucial para garantir uma camada extra de confiança nos resultados obtidos pelo algoritmo de comparação de similaridade estrutural. 
 Todos os pares que tiveram a correspondencia aprovada automaticamente pelo fato de seu score ser acima de 0.994 foram revisados por um novo algoritmo que calcula o\acrshort{ms-ssim} entre as imagens correspondentes. Um histograma da distribuiuição dos\acrshort{ms-ssim} foi gerado, e os pares com pontuação menor que 0.9 foram revisados manualmente sendo aprovado ou recusado com base em avaliação humana.
@@ -88,9 +88,9 @@ Com relação aos possíveis falsos negativos que poderiam ter resultado em excl
 \end{figure}
 
 
-\section{Treino dos modelos}
-\subsection{Convergência e seleção dos checkpoints}
-A seleção do \textit{checkpoint} para avaliação final foi baseada na melhor versão do\acrshort{ssim} calculado na partição de validação. Obviamente, no modelo Dual, esse critério foi aplicado na saída de reconstrução. Apenas o melhor checkpoint por corrida foi preservado, em formato .keras, com nome que contém arquitetura, época e métrica monitorizada. O CSV de treino marca explicitamente a linha correspondente com \texttt{best\_checkpoint=1}.
+\section{Model Training}
+\subsection{Convergence and Checkpoint Selection}
+A seleção do \textit{checkpoint} para avaliação final foi baseada na melhor versão do\acrshort{ssim} calculado na partição de validação. Obviamente, no modelo Dual, esse critério foi aplicado na saída de reconstrução.
 
 A regra de paragem definia um máximo de épocas de 300 e um mínimo de 5, com\textit{Early Stopping} após 15 épocas sem melhoria mínima de 0.0001 no\acrshort{ssim} da partição de validação. Consequentemente, devido à restauração dos pesos da melhor época, a época final de treino não é necessariamente a selecionada.
 
@@ -113,20 +113,9 @@ O\acrshort{psnr} e\acrshort{mae} são apenas métricas complementares, mas não 
 A escolha da corrida que avançará para a avaliação externa é uma decisão distinta da seleção do checkpoint. Entre os checkpoints já selecionados, a comparação é efetuada na partição de teste, buscando equilíbrio entre a maior melhoria de\acrshort{ssim} na Zona de Artefacto e menor mudança de\acrshort{ssim} na Zona Distante. Após essa seleção não houve novo treino, ajuste de hiperparâmetros ou alterações nos pesos antes da avaliação externa.
 
 
-\subsection{Rastreabilidade das execuções}
-
-A rastreabilidade das execuções foi assegurada através de \textit{snapshots} de reprodutibilidade em formato JSON, preservados em \texttt{outputs/reproducibility/}. Foram congeladas seis avaliações internas finais, correspondentes às três inicializações aleatórias (seeds 42, 1337 e 2024) dos modelos Single Model e Dual Model. Todos os snapshots foram gerados a partir do commit \texttt{a950be7276a5585de45e8ae874c59c065a1985be}, no ramo \texttt{projeto\_final}, com árvore de trabalho limpa (\texttt{is\_dirty: false}).
-
-Cada snapshot regista o sistema operativo, a versão do Python e as versões das dependências relevantes. O ambiente de execução utilizou Python 3.11.9 em Windows 10, incluindo TensorFlow 2.15.0, NumPy 1.26.4, Pandas 2.2.2, scikit-image 0.21.0 e Matplotlib 3.7.5. Além disso, foram calculados hashes SHA-256 dos ficheiros de configuração, do manifesto canónico de pares, da definição da partição por paciente, dos metadados de geração dos tensores e do ficheiro de requisitos do ambiente.
-
-Para cada execução, o snapshot preserva o caminho, tamanho e hash SHA-256 do checkpoint, o comando completo usado na avaliação no conjunto de teste e os hashes dos ficheiros de saída, incluindo as métricas agregadas e as métricas por amostra. Assim, cada valor, tabela ou figura reportado pode ser associado de forma inequívoca ao código, ambiente, dados de entrada, checkpoint e resultados que o originaram.
-
-A seleção dos checkpoints foi efetuada exclusivamente com base na métrica de validação pré-especificada: \texttt{val\_ssim\_hu} no Single Model e \texttt{val\_img\_out\_ssim\_hu} na saída de reconstrução do Dual Model.
-
-
-\section{Avaliação interna no conjunto de teste}
-\subsection{Desfechos globais}
-\label{sec:desfechos-globais}
+\section{Internal Evaluation in Test Subset}
+\subsection{Global Outcomes}
+\label{sec:global-outcomes}
 
 A avaliação interna foi realizada na partição de teste fixa, composta por 1478 fatias de 41 pacientes independentes. Para cada checkpoint previamente selecionado na validação, foram calculados\acrshort{psnr},\acrshort{ssim} e\acrshort{mae} entre a reconstrução e a referência limpa. A unidade de agregação para a inferência estatística foi o paciente: as métricas foram primeiro resumidas dentro de cada paciente e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} percentil com 10000 reamostragens. O conjunto de teste não foi utilizado para escolher checkpoints.
 
@@ -276,8 +265,8 @@ Como verificação descritiva complementar da calibração global em unidades HU
     \label{fig:bland-altman-patient-hu}
 \end{figure}
 \FloatBarrier
-\subsection{Avaliação por regiões de interesse}
-\label{sec:avaliacao-roi}
+\subsection{Region of Interest Evaluation}
+\label{sec:roi-evaluation}
 
 As regiões de interesse e o cálculo das métricas por zona seguiram o procedimento descrito na \autoref{subsec:metodos-roi}. Esta estratificação permite quantificar separadamente a correção na região diretamente afetada pelos artefactos e as alterações introduzidas nas regiões corporais distantes do implante.
 
@@ -398,8 +387,8 @@ Os diagramas de caixa evidenciam a separação entre a correção na Zona de Art
 \label{fig:roi-safety}
 \endgroup
 
-\subsection{Mapas de resíduos em casos extremos}
-\label{sec:mapas-residuos-extremos}
+\subsection{Residual Maps in Extreme Cases}
+\label{sec:residual-maps-extremes}
 
 Para complementar os resultados, foram inspecionados seis casos individuais do Single Model, seed 2024, na partição de teste. A seleção foi feita exclusivamente pelo $\Delta$\acrshort{ssim} na Zona de Artefacto por fatia: os três maiores valores correspondem à maior melhoria estrutural nessa região face à entrada e os três menores valores à menor melhoria estrutural. Assim, os termos ``maior'' e ``menor'' melhoria nesta subseção referem-se apenas a esse critério quantitativo e não constituem uma classificação clínica dos casos.
 
@@ -408,10 +397,10 @@ Em cada mapa, a primeira linha apresenta a alteração necessária em relação 
 \input{Chapters/Final/Generated/InternalResidualCaseExtremes}
 \FloatBarrier
 
-\section{Comparação pareada Single x Dual Model}
-\label{sec:comparacao-pareada-single-dual}
+\section{Paired Comparison Single x Dual Model}
+\label{sec:paired-comparison-single-dual}
 
-\subsection{Análises Estatísticas Globais}
+\subsection{Global Statistical Analysis}
 Esta análise compara exclusivamente os dois \textit{checkpoints} finais treinados com a seed 2024, um por arquitetura. A seleção do Single Model, seed 2024, para prosseguir para a avaliação externa já havia sido definida com base nn desempenho de validação. Portanto, os resultados no conjunto de teste apresentados nesta secção têm caráter de avaliação interna final: não foram utilizados para escolher novos \textit{checkpoints}, ajustar hiperparâmetros ou alterar a arquitetura a avaliar externamente.
 
 As métricas por fatia foram agregadas por paciente antes de todos os resumos e testes de hipótese, resultando em $n=41$ observações independentes. Assim, as médias, os intervalos de confiança de 95\% e os valores de $p$ apresentados nas tabelas desta secção referem-se às médias por paciente, atribuindo o mesmo peso a cada indivíduo.
@@ -513,8 +502,8 @@ O Single Model apresentou vantagem média de $0{.}054$ dB em $\Delta$PSNR, de $0
 \end{figure}
 
 \FloatBarrier
-\subsection{Análise Estatística por ROI}
-\label{sec:analise-estatistica-roi}
+\subsection{Statistical Analysis per\acrshort{roi}}
+\label{sec:statistical-analysis-roi}
 
 Esta secção testa formalmente a hipótese primária deste estudo -- a melhoria estrutural na Zona de Artefacto -- e carateriza de forma complementar a preservação na Zona Distante. As métricas por fatia foram sempre agregadas por paciente antes dos resumos e testes ($n=41$), e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens. Na Zona de Artefacto, a questão é a melhoria face à entrada corrompida, por isso, foram analisados os deltas com sinal de\acrshort{psnr},\acrshort{ssim} e\acrshort{mae}. Em cada modelo, foi aplicado o teste de sinais binomial exato bilateral, com correção de Holm na família das três métricas.
 
@@ -675,10 +664,10 @@ Na comparação relativa (\autoref{tab:roi-distant-paired-preservation}), o Dual
 
 O desempenho computacional (latência e débito de inferência) do modelo selecionado para a avaliação externa é caracterizado no \autoref{sec:appendix-computational-performance}.
 
-\section{Avaliação externa por médicos}
-\label{sec:resultados-avaliacao-medicos}
+\section{External Evaluation for Doctors}
+\label{sec:external-evatluation-doctors}
 
-\subsection{Estado da recolha e participantes}
+\subsection{Capture Status and Participants}
 % A preencher: número final de leitores recrutados, respostas completas e datas efetivas de fecho da recolha.
 
 A avaliação externa consiste numa comparação pareada cega ao rótulo de processamento: em cada caso, os leitores visualizam simultaneamente a entrada com artefacto e a saída do modelo, identificadas apenas como ``Imagem A'' e ``Imagem B''. A posição esquerda/direita é contrabalançada entre leitores e mantida constante entre um caso e a sua repetição oculta. Cada sessão apresenta 19 comparações: 2 casos de treino (excluídos da análise), 15 casos principais e 2 repetições ocultas de casos já apresentados, usadas exclusivamente para avaliar a consistência intraleitor. Os médicos foram recrutados diretamente pela investigadora, com autodeclaração do uso clínico de\acrshort{ct} com frequência mínima mensal. Não foram recolhidos nome, contacto, número de registo profissional ou qualquer comprovativo de qualificação.
@@ -769,7 +758,7 @@ Outra especialidade médica & \textit{[a preencher]} & \textit{[a preencher]} \\
 \end{table}
 \FloatBarrier
 
-\subsection{Caracterização quantitativa entrada -- saída}
+\subsection{Quantitative Characterization of Input--Output}
 Antes da avaliação por profissionais, a alteração global produzida pelo \textit{Single Model} foi caracterizada nos 15 casos principais do conjunto externo. Os dois casos de treino foram excluídos desta síntese. Como estes exames reais não dispõem de referência limpa, as métricas da \autoref{tab:external-input-output-global} comparam exclusivamente a imagem de entrada com a saída do modelo, dentro da máscara corporal.
 
 \input{Chapters/Final/Generated/ExternalInputOutputMetrics}
@@ -781,7 +770,7 @@ Para tornar visível esta heterogeneidade, selecionou-se de forma descritiva os 
 \input{Chapters/Final/Generated/ExternalInputOutputExamples}
 
 \FloatBarrier
-\subsection{Desfecho primário: visualização anatómica}
+\subsection{Primary Outcome: Anatomical Visualization}
 % A preencher: frequências observadas, estimativa do modelo ordinal de efeitos mistos e respetivo IC 95%.
 
 O desfecho primário é a preferência pareada, por caso, quanto a qual imagem preserva melhor a região anatómica subjacente ao artefacto metálico (``Imagem A'' / ``Imagem B'' / ``Sem diferença''). As respostas são recodificadas para entrada/saída de acordo com a alocação de posição registada para cada apresentação, sem que os leitores tenham conhecimento dessa alocação durante a resposta. Casos de treino e repetições ocultas não integram esta análise ($n=15$ casos principais por leitor).
@@ -823,7 +812,7 @@ Condição (saída vs. entrada) & \textit{[a preencher]} & \textit{[a preencher]
 \end{table}
 \FloatBarrier
 
-\subsection{Desfechos secundários e segurança percebida}
+\subsection{Secondary Outcomes and Safety Perception}
 % A preencher: frequências e IC 95% por pergunta secundária; estatísticas de concordância intraleitor.
 
 Os desfechos secundários seguem o mesmo formato de comparação pareada por caso (``Imagem A'' / ``Imagem B'' / ``Sem diferença''), recodificado para entrada/saída, reportando-se frequências e intervalos de confiança de 95\% por pergunta, sem ajuste conjunto de multiplicidade, dado o caráter descritivo desta síntese.
@@ -923,7 +912,7 @@ $\kappa$ de Fleiss (saída vs. entrada) & \textit{[a preencher]} & --- & \textit
 \end{table}
 \FloatBarrier
 
-\subsection{Interpretação limitada ao desenho observacional}
+\subsection{Limited Interpretation to the Observational Design}
 % A preencher: síntese final com os valores reais, uma vez concluída a recolha.
 
 O desenho dessa avaliação permite concluir, quando os dados estiverem disponíveis, qual imagem os leitores preferem em cada dimensão avaliada, mas não permite inferir causalidade sobre desfechos clínicos (por exemplo, impacto diagnóstico ou terapêutico), nem generalizar além do conjunto de 15 casos e do painel de leitores efetivamente recrutado. A ausência de uma referência limpa nestes casos externos significa que a avaliação de exatidão anatómica depende inteiramente do julgamento dos leitores, e não de uma métrica objetiva de erro. Por fim, o número de leitores recrutados limita a precisão das estimativas e a possibilidade de análises de subgrupo por especialidade ou experiência.

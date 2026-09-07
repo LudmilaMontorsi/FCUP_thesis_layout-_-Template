@@ -1,72 +1,75 @@
 \chapter{Materials and Methods}
 \label{chap:final-methods}
 
-\section{Dados, curadoria e rastreabilidade}
-\subsection{Conjunto CT-MAR e fontes de referência}
+\section{Data, curation and traceability}
+\subsection{\acrshort{ctmar} Dataset and Reference Sources}
 
-O \textit{dataset} principal utilizado neste trabalho provém do \textit{\acrfull{ctmar}} \cite{hanedaAAPMCTMetal2025, AAPMCTMARBenchmarkTool} promovido pela \textit{American Association of Physicists in Medicine} e consiste em 14.000 pares de treino contendo imagens de\acrshort{ct} com artefatos metálicos simulados e suas versões originais sem artefatos. Os dados foram gerados através de um \textit{framework} de simulação híbrida \cite{petersHybridTrainingDatabase2025}, que incorpora imagens clínicas publicamente disponíveis e objetos metálicos simulados com o simulador CatSim, integrado na \textit{toolkit} de código aberto XCIST \cite{wuXCISTOpenAccess2022}. O conjunto é distribuído em duas categorias anatómicas:
+The main dataset used in this work comes from the\acrfull{ctmar} \cite{hanedaAAPMCTMetal2025, AAPMCTMARBenchmarkTool} promoted by the\acrfull{aapm} and consists of 14,000 training pairs containing\acrshort{ct} images with simulated metal artifacts and their original artifact-free versions. The data was generated through a hybrid simulation framework \cite{petersHybridTrainingDatabase2025}, which incorporates publicly available clinical images and simulated metallic objects with the CatSim simulator, integrated into the open-source XCIST toolkit \cite{wuXCISTOpenAccess2022}. The dataset is distributed into two anatomical categories:
 
 \begin{itemize}
-    \item \textbf{Head}: 1.626 (11.61\%) amostras derivadas da base \textit{UCLH Stroke EIT Data} \cite{gorenMultifrequencyElectricalImpedance2018, gorenUCLHStrokeEIT2017};
-    \item \textbf{Body}: 12.374 (88.38\%) amostras derivadas da base \textit{NIH DeepLesion Data} \cite{yanDeepLesionAutomatedMining2018}.
+    \item \textbf{Head}: 1.626 (11.61\%) samples derived from the \textit{UCLH Stroke EIT Data} \cite{gorenMultifrequencyElectricalImpedance2018, gorenUCLHStrokeEIT2017};
+    \item \textbf{Body}: 12.374 (88.38\%) samples derived from the \textit{NIH DeepLesion Data} \cite{yanDeepLesionAutomatedMining2018}.
 \end{itemize}
 
-Onde as pastas da categoria \textit{body} apresentavam\acrshort{ct}s de tronco, abragendo fatias axiais, torácica e abdominal. Os dados estão organizados em subpastas, cada uma contendo até 1.000 amostras. Foram utilizados apenas os seguintes ficheiros para treino e validação:
+Where the folders in the \textit{body} category contained trunk\acrshort{ct}s, covering axial, thoracic, and abdominal slices. The data is organized into subfolders, each containing up to 1,000 samples. Only the following files were used for training and validation:
 
 \begin{enumerate}
-    \item \textbf{Imagens sem metal (referência):} Ficheiros contidos na pasta \textit{Target} de dimensão 512×512×1 pixels;
-    \item \textbf{Imagens com artefatos metálicos (corrompidas):} Ficheiros contidos na pasta \textit{Baseline} de dimensão 512×512×1 pixels;
+    \item \textbf{Metal-free images (reference):} Files contained in the \textit{Target} folder of size 512×512×1 pixels;
+    \item \textbf{Images with metal artifacts (corrupted):} Files contained in the \textit{Baseline} folder of size 512×512×1 pixels;
 \end{enumerate}
 
-Todos os ficheiros de imagem (.raw) do \textit{dataset} são apresentados em formato binário sem cabeçalho, com precisão \textit{float32} em ordem \textit{little endian}. As imagens já vieram convertidas de coeficientes de atenuação linear (em unidades mm$^{-1}$) para\Acrfull{hu}, utilizando o valor de normalização de 0.02 mm$^{-1}$ para água.
-Não havia no conjunto de dados informações adicionais sobre a que exame cada \textit{slice} pertencia, se eram de um mesmo paciente, ou quais regiões anatómicas específicas estavam representadas. A única informação disponível era a organização por pasta, que indicava a categoria anatómica (Head ou Body). A falta de metadados detalhados impôs a necessidade de uma abordagem de pré-processamento cuidadosa para garantir que os dados fossem adequadamente organizados e utilizados durante o treino e validação dos modelos. Dessa forma, um esforço significativo foi dedicado ao rastreio das imagens aos conjuntos de dados originais (UCLH Stroke EIT Data e NIH DeepLesion Data) para obter informações adicionais sobre os exames e pacientes, permitindo um particionamento adequado dos dados.
+All image files (.raw) in the dataset are presented in binary format without a header, with float32 precision in little-endian order. The images were already converted from linear attenuation coefficients (in mm$^{-1}$ units) to\Acrfull{hu}, using the normalization value of 0.02 mm$^{-1}$ for water.
+There was not additional information about which exam each slice belonged to, if they were from the same patient, or which specific anatomical regions were represented. The only available information was the organization by folder, indicating the anatomical category (Head or Body). The lack of detailed metadata imposed the need for a careful pre-processing approach to ensure that the data was properly organized and used during model training and validation. Therefore, a significant effort was dedicated to tracking the images to the original datasets (UCLH Stroke EIT Data and NIH DeepLesion Data) to obtain additional information about the exams and patients, allowing for an appropriate partitioning of the data.
+
+\subsection{Partitioning at patient level}
+
+The data partitioning was stratified by patients, ensuring that slices from the same patient were not distributed across training, validation, and test sets. This approach prevents information leakage and ensures a more realistic assessment of the models generalization capability.
+
+%____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Due to the lack of detailed clinical metadata in the\acrshort{ctmar} dataset, an algorithmic screening of the slices to the original datasets (UCLH Stroke EIT and NIH DeepLesion Data) was necessary to enable the association of the provided metadata with the\acrshort{ctmar} slices. This process allowed for the identification of which exam and patient from DeepLesion/UCLH Stroke EIT each\acrshort{ctmar} image belonged to. This information was subsequently used to perform patient-level partitioning of the data into training, validation, and test sets, reducing the risk of data leakage between experimental sets.
 
 
-\subsection{Particionamento ao nível do paciente}
+The correct separation of the data is particularly important in medical imaging studies based on\acrshort{dl}, once slices belonging to the same exam often present high anatomical similarity. Thus, the simultaneous presence of images from the same patient in training and testing can artificially inflate the model's performance and compromise the assessment of its generalization capability \cite{onerTrainingMachineLearning2020}. 
 
-O particionamento dos dados foi estratificado por pacientes, garantindo que os \textit{slices} de um mesmo paciente não fossem distribuídos entre os conjuntos de treino, validação e teste. Esta abordagem evita vazamento de informações e assegura uma avaliação mais realista da capacidade de generalização dos modelos.%____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+The Deep Lesion images \cite{yanDeepLesionAutomatedMining2018} are stored in 16-bit PNG format, while the\acrshort{ctmar} images are provided in .raw format directly in Hounsfield units (HU). The UCLH Stroke EIT \cite{gorenMultifrequencyElectricalImpedance2018} provides the exams in DICOM format. Therefore, regardless of the original format, all images were converted to HU before comparison, ensuring uniformity across the different datasets.
 
-Dado que os dados do\acrshort{ctmar} \textit{dataset} não continham metadados clínicos detalhados, foi necessário realizar um rastreio algorítmico dos \textit{slices} até aos conjuntos de dados originais (UCLH Stroke EIT e NIH DeepLesion Data) para tornar possível a associação dos metadados fornecidos aos \textit{slices} do\acrshort{ctmar}. Este processo permitiu identificar a qual exame e paciente do DeepLesion/UCLH Stroke EIT cada imagem\acrshort{ctmar} pertencia. Essas informações foram posteriormente utilizadas para realizar o particionamento dos dados em treino, validação e teste ao nível do paciente, reduzindo o risco de \textit{data leakage} entre conjuntos experimentais.
+After the conversion, all images was represented on the same intensity scale to allow direct comparison.
 
-A correta separação dos dados é particularmente importante em estudos de imagem médica baseados em \textit{deep learning}, uma vez que \textit{slices} pertencentes ao mesmo exame frequentemente apresentam elevada similaridade anatómica. Dessa forma, a presença simultânea de imagens do mesmo paciente em treino e teste pode inflacionar artificialmente o desempenho do modelo e comprometer a avaliação da sua capacidade de generalização \cite{onerTrainingMachineLearning2020}.
+The screening algorithm was based on fact that\acrshort{ct} images preserve quantitative information in\acrshort{hu}, which directly reflects the tissue attenuation properties. Since anatomical structures exhibit high spatial continuity between consecutive slices of the same aquisition, images correponding to the same anatomical slice tend to present similar\acrshort{hu} distributions and highly consistent global structural patterns \cite{zhouwangImageQualityAssessment2004, hsiehComputedTomographyPrinciples2009}.   
 
-As imagens do dataset DeepLesion \cite{yanDeepLesionAutomatedMining2018} encontram-se armazenadas em formato PNG de 16 bits, enquanto as imagens do\acrshort{ctmar} são disponibilizadas em formato \texttt{.raw} diretamente em unidades de Hounsfield (HU). Já o UCLH Stroke EIT \cite{gorenMultifrequencyElectricalImpedance2018} disponibiliza os exames em formato DICOM. Assim, independentemente do formato original, todas as imagens foram convertidas para HU antes da comparação, garantindo uniformidade entre os diferentes conjuntos de dados.
+That way, the method was not designing to verify absolute pixel-to-pixel equality between images, but rather to determine whether the overall structural organization of the anatomy remains extremely similar across different representations of the same slice. This behavior is particularly important because small local variations in intensity, numerical discretization, and linear transformations associated with storing format conversion tend to preserve the global anatomical structure of the image even when small local intensity variations occur \cite{zhouwangImageQualityAssessment2004,hsiehComputedTomographyPrinciples2009}.
 
-Após a conversão, todas as imagens foram representadas numa mesma escala de intensidade para permitir comparação direta.
+Thus, the adopted methodology seeks to identify correspondences between images based on global structural similarity, allowing for a margin of local variation that does not compromise the correct identification of the exam and patient of origin. Initially, each image was reduced to a campact representation through \textit{downsampling}, preserving mainly the relevant global anatomical information. This step significantly reduces the computational cost without compromising the overall structure of the image.
 
-O algoritmo utilizado baseia-se no facto de que imagens CT preservam informação quantitativa em unidades de Hounsfield (HU), refletindo diretamente as propriedades de atenuação dos diferentes tecidos. Como as estruturas anatómicas apresentam elevada continuidade espacial entre \textit{slices} consecutivos de uma mesma aquisição, imagens correspondentes à mesma fatia anatómica tendem a apresentar distribuições semelhantes de HU e padrões estruturais globais altamente consistentes \cite{zhouwangImageQualityAssessment2004,hsiehComputedTomographyPrinciples2009}.
+Subsequently, a representative vector (\textit{fingerprint}) was calculated for each image. The fingerprints of the\acrshort{ctmar} images were then compared with the fingerprints of the DeepLesion and UCLH Stroke EIT images using a normalized dot product-based vector similarity metric (cosine similarity). It was chosen for being invariant to global scale differences between vectors — a relevant property given that the images come from different formats with different intensity normalizations. For each\acrshort{ctmar} image, the image with the highest similarity score was selected.
 
-Dessa forma, o método não procura verificar igualdade absoluta pixel-a-pixel entre imagens, mas sim determinar se a organização estrutural global da anatomia permanece extremamente semelhante entre diferentes representações da mesma fatia. Esse comportamento é particularmente importante porque pequenas variações locais de intensidade, discretização numérica e transformações lineares associadas à conversão entre formatos de armazenamento tendem a preservar a estrutura anatómica global da imagem mesmo quando ocorrem pequenas variações locais de intensidade \cite{zhouwangImageQualityAssessment2004,hsiehComputedTomographyPrinciples2009}. 
+Since the majority of the\acrshort{ctmar} images originated from DeepLesion, the screening process was initially prioritized on that dataset. Subsequently, the same methodology was applied to the DICOM exams from UCLH Stroke EIT to identify the remaining images. In this way, it was possible to implement a unified traceability strategy regardless of the storage format of the original datasets.
+
+The matching was considerd valid only when the score of similarity exceeded a previously defined empirically threshold. Cases with very high scores were automatically marked as safe matches, as it was observed that all pairs visually analyzed with a score above 0.993 effectively corresponded to the same image. To maintain an additional safety margin, the match was considered automatically valid only when the score exceeded 0.994.
+
+Scores below this threshold indicated potentially ambiguous matches and were subjected to manual visual inspection. Scores below approximately 0.98 indicated clearly incorrect matches and were automatically discarded without the need for manual review. Thus, all pairs with scores between 0.98 and 0.994 were visually analyzed to confirm the validity of the match. In order to avoid unnecessary exclusion of pairs, all pairs with a score below 0.98 for both datasets (DeepLesion and UCLH Stroke EIT) were subjected to visual inspection to ensure they were not erroneously discarded.
+
+For the 530 pairs that remained without approved matches after direct search in both source datasets, a complementary indirect matching step was applied. In this step, each unmatched\acrshort{ctmar} image was compared with already traced\acrshort{ctmar} images; the most similar neighbors were used to select candidate exams from DeepLesion and then all \textit{slices} of those exams were searched with $64\times64$ dimension \textit{fingerprints}. The 530 proposals were visually inspected: 95 matches were approved and incorporated into the consolidated manifest, while 435 remained without a safe match and were excluded.
+
+Moreover, the algorithm was designed to automatically ignore images that had already been verified as correct matches, reducing redundancies and accelerating future reprocessing. Given the high number of images present in the datasets, the processing was parallelized and optimized through the use of vectorized matrix operations. When available, the algorithm utilizes\acrshort{gpu} acceleration to reduce execution time. The calculated fingerprints were also cached to avoid unnecessary recomputation in subsequent runs.
+
+Although, the compact representation based exclusively on the mean of block intensities\acrshort{hu} is efficient, it can theoretically generate false positives when different patients exams are acquired with identical acquisition protocols or present very similar anatomical structures. Since these conditions tend to produce similar intensity distributions and, consequently, fingerprints with high scores. To mitigate this risk, a conservative automatic acceptance threshold (0.994) was adopted and a systematic visual validation of all pairs with scores between 0.98 and 0.994 was performed. Additionally, as a complementary safeguard, all automatic matches were analyzed in terms of\acrshort{ms-ssim}, where the pairs with the most critical scores were subjected to an additional visual review to ensure the reliability of the matches.
 
 
-Assim, a metodologia adotada procura identificar correspondências entre imagens com base na similaridade estrutural global, permitindo uma margem de variação local que não comprometa a identificação correta do exame e paciente de origem. Inicialmente, cada imagem foi reduzida para uma representação compacta através de \textit{downsampling}, preservando principalmente a informação anatómica global relevante. Essa etapa reduz significativamente o custo computacional sem comprometer a estrutura geral da imagem.
+Despite that, this limitation does not compromise the main objective of the methodology. Even though consecutive slices from the same exam often present high spatial redundancy and can therefore obtain very similar similarity scores. The purpose of the algorithm was not to perform rigorous voxel-to-voxel alignment, but rather to correctly identify the exam and patient of origin of each\acrshort{ctmar} image. In this way, even potential ambiguities between adjacent slices remain restricted to the same anatomical volume and do not introduce a relevant risk of data leakage between training, validation, and test sets. 
 
-Em seguida, foi calculado um vetor representativo (\textit{fingerprint}) para cada imagem. Os \textit{fingerprints} das imagens\acrshort{ctmar} foram então comparados com os \textit{fingerprints} das imagens DeepLesion e UCLH Stroke EIT através de uma métrica de similaridade vetorial baseada em produto escalar normalizado (similaridade de cosseno), escolhida por ser invariante a diferenças de escala global entre os vetores — propriedade relevante dado que as imagens provêm de formatos distintos com diferentes normalizações de intensidade. Para cada imagem\acrshort{ctmar}, foi selecionada a imagem com maior score de similaridade.
+The literature demonstrates that the quality of the pairs used in supervised studies directly influences the performance and generalization capability of\acrshort{mar} models \cite{linDuDoNetDualDomain2019, kleberAdvancementsSupervisedDeep2024}. In addition, structural metrics of image quality, such as\acrshort{ssim}, have been widely used in medical imaging due to their higher sensitivity to structural preservation \cite{zhouwangImageQualityAssessment2004}. Although the implemented method does not directly use\acrshort{ssim}, the adopted strategy seeks to precisely preserve the global structural information of the image during the matching process.
 
-Como a maior parte das imagens do\acrshort{ctmar} teve origem no DeepLesion, o processo de rastreio foi inicialmente priorizado nesse dataset. Posteriormente, a mesma metodologia foi aplicada aos exames DICOM do UCLH Stroke EIT para identificação das imagens restantes. Dessa forma, foi possível implementar uma estratégia unificada de rastreabilidade independentemente do formato de armazenamento dos datasets de origem.
+Moreover, the data utilization without any screening treatment would condition the entire project to an inherent data leakage from the dataset, compromising the evaluation of the models performance and the validity of the results. Thus, even if the screening method is not perfect, it represents a significant improvement over the total absence of screening, ensuring a more reliable basis.
 
-As correspondências foram consideradas válidas apenas quando o score de similaridade excedia um limiar previamente definido empiricamente. Casos com scores muito elevados foram automaticamente marcados como correspondências seguras, pois observou-se que todos os pares analisados visualmente com pontuação superior a 0.993 correspondiam efetivamente à mesma imagem. Para manter uma margem adicional de segurança, a correspondência foi considerada automaticamente válida apenas quando a pontuação excedia 0.994.
-
-Pontuações inferiores a esse limiar indicavam correspondências potencialmente ambíguas e eram submetidas à inspeção visual manual. Já pontuações inferiores a aproximadamente 0.98 indicavam correspondências claramente incorretas e eram automaticamente descartadas sem necessidade de revisão manual. Dessa forma, todos os pares que apresentavam pontuações entre 0.98 e 0.994 foram analisados visualmente para confirmação da validade da correspondência. A fim de evitar a exclusão de pares de forma desnecessaria, todos os pares com pontuação inferior a 0.98 para ambos os datasets (DeepLesion e UCLH Stroke EIT) foram submetidos a inspeção visual para garantir que não fossem erroneamente descartados.
-
-Para os 530 pares que permaneceram sem correspondência aprovada após a busca direta nos dois datasets de origem, foi aplicada uma etapa complementar de correspondência indireta. Nessa etapa, cada imagem\acrshort{ctmar} não correspondida foi comparada com imagens\acrshort{ctmar} já rastreadas; os vizinhos mais semelhantes foram usados para selecionar exames candidatos do DeepLesion e, em seguida, todos os \textit{slices} desses exames foram pesquisados com \textit{fingerprints} de dimensão $64\times64$. As 530 propostas foram inspecionadas visualmente: 95 correspondências foram aprovadas e incorporadas ao manifesto consolidado, enquanto 435 permaneceram sem correspondência segura e foram excluídas.
-
-Além disso, o método foi concebido para ignorar automaticamente imagens previamente verificadas como correspondências corretas, reduzindo redundâncias e acelerando reprocessamentos futuros.
-Devido ao elevado número de imagens presentes nos datasets, o processamento foi paralelizado e otimizado através da utilização de operações matriciais vetorizadas. Quando disponível, o algoritmo utiliza aceleração por\acrshort{gpu} para reduzir o tempo de execução. Os \textit{fingerprints} calculados também foram armazenados em cache para evitar recomputação desnecessária em execuções subsequentes.
-
-Embora a representação compacta baseada exclusivamente na média de intensidades dos blocos (HU) seja eficiente, ela pode, em teoria, gerar falsos positivos quando exames de pacientes diferentes são adquiridos com protocolos de aquisição idênticos ou apresentam estruturas anatómicas muito semelhantes, uma vez que essas condições tendem a produzir distribuições de intensidade similares e, consequentemente, \textit{fingerprints} com pontuação elevada. Para mitigar esse risco, adotou‑se um limiar de aceitação automática conservador (0,994) e a validação visual sistemática de todos os pares com scores entre 0,98 e 0,994. Adicionalmente, como salvaguarda complementar, todos os \textit{matches} automáticos foram analisados em termos de\acrshort{ms-ssim}, onde os pares com pontuações mais críticas foram submetidos a uma revisão visual adicional para garantir a confiabilidade das correspondências. 
-
-Apesar disso, essa limitação não compromete o objetivo principal da metodologia. Pois, mesmo que \textit{Slices} consecutivos de um mesmo exame frequentemente apresentem elevada redundância espacial e podem, portanto, obter scores de similaridade muito próximos entre si. O propósito do algoritmo não foi realizar alinhamento voxel-a-voxel rigoroso, mas sim identificar corretamente o exame e o paciente de origem de cada imagem\acrshort{ctmar}. Dessa forma, mesmo eventuais ambiguidades entre \textit{slices} adjacentes permanecem restritas ao mesmo volume anatómico e não introduzem risco relevante de \textit{data leakage} entre treino, validação e teste. 
-
-A literatura demonstra que a qualidade dos pares utilizados em estudos supervisionados influencia diretamente o desempenho e a capacidade de generalização dos modelos de MAR \cite{linDuDoNetDualDomain2019, kleberAdvancementsSupervisedDeep2024}. Além disso, métricas estruturais de qualidade de imagem, como o\acrshort{ssim}, têm sido amplamente utilizadas em imagem médica devido à sua maior sensibilidade à preservação estrutural \cite{zhouwangImageQualityAssessment2004}. Embora o método implementado não utilize diretamente\acrshort{ssim}, a estratégia adotada procura preservar precisamente a informação estrutural global da imagem durante o processo de correspondência.
-
-Mais ainda, a utilização dos dados sem qualquer tratamento de rastreio desse tipo, condicionaria todo o projeto a um vazamento de dados inerente ao dataset, comprometendo a avaliação do desempenho dos modelos e a validade dos resultados. Assim, mesmo que o método de rastreio não seja perfeito, ele representa uma melhoria significativa em relação à ausência total de rastreio, garantindo uma base mais confiável.
 %________________________________________ revisado bibliograficamente ________________________________________
 
-Tendo isso em conta, essa etapa constituiu um importante procedimento de controlo de qualidade do dataset experimental e foi fundamental para garantir um particionamento adequado dos dados utilizados no treino, validação e teste dos modelos, assegurando que os subconjuntos fossem estratificados por paciente e evitando vazamento de informação entre conjuntos experimentais.
+Taking this into account, this step constituted an important quality control procedure for the experimental dataset and was fundamental to ensure an appropriate partitioning of the data used in this work.
 
-\subsection{Coorte final e Exclusões}
-Nem todas as fatias puderam ser rastreadas, mas a maioria dos dados foi associado com sucesso aos exames originais. Ao final das etapas de correspondência direta e indireta, e antes da análise complementar com\acrshort{ms-ssim}, dos 14.000 pares disponibilizados pelo\acrshort{ctmar} Dataset, 11.942 foram rastreados até ao DeepLesion (incluindo os 95 recuperados pela correspondência indireta) e 1.623 até ao UCLH Stroke EIT, totalizando 13.565 pares com metadados associados \Ref{tab:final-rastreio-msssim}. 
+\subsection{Final Cohort and Exclusion of Unmatched Pairs}
+
+Not all slices could be traced, but most of the data was successfully associated with the original exams. At the end of the direct and indirect matching steps, and before the complementary analysis with\acrshort{ms-ssim}, out of the 14,000 pairs provided by the\acrshort{ctmar} Dataset, 11,942 were traced to DeepLesion (including the 95 recovered by indirect matching) and 1,623 to UCLH Stroke EIT, totaling 13,565 pairs with associated metadata \Ref{tab:final-rastreio-msssim}.
 
 \begin{table}[H]
     \centering
@@ -74,77 +77,80 @@ Nem todas as fatias puderam ser rastreadas, mas a maioria dos dados foi associad
     \label{tab:final-rastreio-msssim}
     \begin{tabular}{lccc}
         \hline
-        \textbf{Dataset} & \textbf{Rastreados} & \textbf{Correspondidos} & \textbf{Não correspondidos} \\
+        \textbf{Dataset} & \textbf{Traced} & \textbf{Matched} & \textbf{Unmatched} \\
         \hline
-        DeepLesion & 12.374 & 11.942 & 432 \\
-        UCLH Stroke & 1.626  & 1.623  & 3   \\
+        DeepLesion & 12,374 & 11,942 & 432 \\
+        UCLH Stroke & 1,626  & 1,623  & 3   \\
         \hline
-        \textbf{Total}  & \textbf{14.000} & \textbf{13.565} & \textbf{435} \\
+        \textbf{Total}  & \textbf{14,000} & \textbf{13,565} & \textbf{435} \\
         \hline
     \end{tabular}
 \end{table}
 
-Na etapa de avaliação via\acrshort{ms-ssim}, dentre todos os pares com pontuação abaixo de 0.90, apenas 3, anteriormente associados ao Deep Lesion, foram reprovados na inspeção visual \Ref{tab:final-rastreio-pos-msssim}.
+In the evaluation step through\acrshort{ms-ssim}, among all pairs with a score below 0.90, only 3, previously associated with Deep Lesion, were rejected in the visual inspection \Ref{tab:final-tracking-post-msssim}.
 
 \begin{table}[H]
     \centering
-    \caption[Pair matching after MS-SSIM review]{Resultados do rastreio depois da análise complementar com\acrshort{ms-ssim}.}
-    \label{tab:final-rastreio-pos-msssim}
+    \caption[Pair matching after MS-SSIM review]{Pair matching results after the complementary MS-SSIM analysis.}
+    \label{tab:final-tracking-post-msssim}
     \begin{tabular}{lccc}
         \hline
-        \textbf{Dataset} & \textbf{Rastreados} & \textbf{Correspondidos} & \textbf{Não correspondidos} \\
+        \textbf{Dataset} & \textbf{Traced} & \textbf{Matched} & \textbf{Unmatched} \\
         \hline
-        DeepLesion & 12.374 & 11.939 & 435 \\
-        UCLH Stroke    & 1.626  & 1.623  & 3   \\
+        DeepLesion & 12,374 & 11,939 & 435 \\
+        UCLH Stroke    & 1,626  & 1,623  & 3   \\
         \hline
-        \textbf{Total}  & \textbf{14.000} & \textbf{13.562} & \textbf{438} \\
+        \textbf{Total}  & \textbf{14,000} & \textbf{13,562} & \textbf{438} \\
         \hline
     \end{tabular}
 \end{table}
 
-Dado que uma quantidade significativa dos dados pôde ser rastreada com elevada confiabilidade, os casos restantes que não puderam ser agrupados de forma segura foram excluídos do processo de treino e validação. No total, 438 pares foram removidos por não apresentarem informação suficiente para garantir agrupamento seguro ao nível do paciente. Entre eles, os 3 pares reprovados por ser falso positivo na etapa de avaliação via\acrshort{ms-ssim}. Todos os pares removidos desse estudo foram inspecionados visualmente para confirmar a ausência de correspondência, garantindo que a exclusão foi justificada.
+Due to the fact that a significant amount of the data could be traced with high reliability, the remaining cases that could not be safely grouped were excluded from the training and validation process. In total, 438 pairs were removed for not having sufficient information to ensure safe grouping at the patient level. Among them, the 3 pairs rejected for being false positives in the evaluation step via\acrshort{ms-ssim}. All pairs removed from this study were visually inspected to confirm the absence of correspondence, ensuring that the exclusion was justified.
+
 
 \begin{table}[H]
     \centering
-    \caption[Excluded unmatched pairs before and after MS-SSIM review]{Dados dos pares sem correspondência que foram excluídos antes e após a análise complementar com\acrshort{ms-ssim}.}
-    \label{tab:final-cluster-excluidos}
+    \caption[Excluded unmatched pairs before and after MS-SSIM review]{Unmatched pairs data that was excluded before and after the complementary MS-SSIM analysis.}
+    \label{tab:final-excluded}
     \begin{tabular}{lcc}
         \hline
-        & \multicolumn{2}{c}{\textbf{Excluídos}} \\
+        & \multicolumn{2}{c}{\textbf{Excluded}} \\
         \cline{2-3}
-        & \textbf{Antes} & \textbf{Depois} \\
+        & \textbf{Before} & \textbf{After} \\
         \hline
         Total    & 435 & 438 \\
         \hline
     \end{tabular}
 \end{table}
 
-Assim, dos 14.000 pares originalmente disponibilizados pelo\acrshort{ctmar} Dataset, 13.562 foram incluídos neste trabalho, enquanto 438 foram excluídos para preservar a integridade do particionamento experimental e minimizar o risco de \textit{data leakage}.
+Thus, out of the 14,000 pairs originally provided by the\acrshort{ctmar} Dataset, 13,562 were included in this work, while 438 were excluded to preserve the integrity of the experimental partitioning and minimize the risk of data leakage.
+
 %____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-\subsection{Estratificação Anatómica} 
-A proporção anatómica dos 14.000 pares do\acrshort{ctmar} Dataset, mudou pouco após o processo de rastreio e exclusão dos pares com baixa confiabilidade. Dos 438 casos removidos 435 eram do tipo \textit{body}, 3 do tipo \textit{head}. A distribuição anatómica dos pares incluídos no estudo é a seguinte:
+\subsection{Anatomical Distribution and Stratification} 
+
+The anatomical proportion of 14,000 pairs in the\acrshort{ctmar} Dataset changed little after the screening and exclusion process of pairs with low reliability. Of the 438 removed cases, 435 were of the \textit{body} type and 3 of the \textit{head} type. The anatomical distribution of the pairs included in the study is as follows:
+
 \begin{itemize}
-    \item \textbf{Body}: aproximadamente 88.03\% ;
-    \item \textbf{Head}: aproximadamente 11.97\% .
+    \item \textbf{Body}: approximately 88.03\% ;
+    \item \textbf{Head}: approximately 11.97\% .
 \end{itemize}
 
+Stratification was implemented within each subset (train/val/test) to maintain the anatomical proportion at the patient level, ensuring that the relative proportion between categories is preserved across all subsets. In this way, the anatomical balance is preserved, ensuring that the models are trained and evaluated on an appropriate representation of the anatomical diversity present in the original dataset.
+ 
+At the patient level, the anatomical distribution is as follows:
 
-A estratificação foi implementada dentro de cada subconjunto (train/val/test) de modo a manter a proporção anatómica ao nível de pacientes, garantindo que a proporção relativa entre categorias seja preservada em todos os subconjuntos.
-Dessa forma, o balanceamento anatómico é preservado, garantindo que os modelos sejam treinados e avaliados em uma representação adequada da diversidade anatómica presente no conjunto de dados original. 
-
-A nível de pacientes, a distribuição anatómica é a seguinte:
 \begin{itemize}
-    \item \textbf{Body}: aproximadamente 95.9\% (258/269 pacientes);
-    \item \textbf{Head}: aproximadamente 4.1\% (11/269 pacientes).
+    \item \textbf{Body}: approximately 95.9\% (258/269 patients);
+    \item \textbf{Head}: approximately 4.1\% (11/269 patients).
 \end{itemize}
 
-Após o particionamento, os subconjuntos de treino, validação e teste apresentaram a seguinte distribuição:
+After partitioning, the train, validation, and test subsets had the following distribution:
 
 \begin{table}[H]
     \centering
-    \caption[Patient-level anatomical distribution by split]{Distribuição anatómica por subconjunto ao nível de pacientes.}
-    \label{tab:final-split-anatomico}
+    \caption[Patient-level anatomical distribution by split]{Patient-level anatomical distribution by split.}
+    \label{tab:final-split-anatomic}
     \begin{tabular}{lcccc}
         \hline
         \textbf{Split} & \textbf{Body} & \textbf{Head}  &\textbf{\% Body} & \textbf{\% Head} \\
@@ -158,17 +164,15 @@ Após o particionamento, os subconjuntos de treino, validação e teste apresent
     \end{tabular}
 \end{table}
 
-
-A partição paciente-nível foi definida uma única vez, com semente aleatória fixa, mantendo aproximadamente 70\% dos pacientes para treino, 15\% para validação e 15\% para teste. Esta partição fixa garantiu subconjuntos independentes para validação e teste e foi mantida inalterada em todas as repetições experimentais.
-
+The patient-level partition was defined only once, with a fixed random seed, maintaining approximately 70\% of the patients for training, 15\% for validation, and 15\% for testing. This fixed partition ensured independent subsets for validation and testing and was kept unchanged across all experimental repetitions.
 
 \begin{table}[H]
     \centering
-    \caption[Patient distribution by split]{Distribuição percentual dos pacientes por subconjunto.}
-    \label{tab:final-split-patient-subconjunto}
+    \caption[Patient distribution by split]{Patient distribution by split.}
+    \label{tab:final-split-patient-subset}
     \begin{tabular}{lccc}
         \hline
-        \textbf{Split} & \textbf{Pacientes} & \textbf{\% Total}\\
+        \textbf{Split} & \textbf{Patients} & \textbf{\% Total}\\
         \hline
         Train  & 187 & 69.52\%\\
         Val    & 41 & 15.24\%\\
@@ -179,12 +183,12 @@ A partição paciente-nível foi definida uma única vez, com semente aleatória
     \end{tabular}
 \end{table}
 
-Devido a grande variação na quantidade de fatias por paciente, a distribuição anatómica ao nível de pares é bastante diferente da distribuição ao nível de pacientes (Tabelas \ref{tab:final-split-pares} e \ref{tab:final-split-pares-subconjunto}). O mesmo ocorre para a distribuição dos pares totais. Dessa forma, a proporção $\sim$ 70/15/15 foi mantida ao nível de pacientes mas ao nível dos pares não segue exatamente a mesma proporção.
+Due to the large variation in the number of slices per patient, the anatomical distribution at the pair level is quite different from the distribution at the patient level (\ref{tab:final-split-pairs} and \ref{tab:final-split-pairs-subset}). The same occurs for the total pairs distribution. Thus, the proportion of $\sim$ 70/15/15 was maintained at the patient level, but at the pair level it does not follow exactly the same proportion.
 
 \begin{table}[H]
     \centering
-    \caption[Pair distribution by split and anatomical category]{Distribuição dos pares por subconjunto e categoria anatómica.}
-    \label{tab:final-split-pares}
+    \caption[Pair distribution by split and anatomical category]{Pair distribution by split and anatomical category.}
+    \label{tab:final-split-pairs}
     \begin{tabular}{lcccccc}
         \hline
         \textbf{Split}  & \textbf{Body} & \textbf{Head}  & \textbf{\% Body} & \textbf{\% Head}\\
@@ -202,11 +206,11 @@ Devido a grande variação na quantidade de fatias por paciente, a distribuiçã
 
 \begin{table}[H]
     \centering
-    \caption[Pair distribution by split]{Distribuição percentual dos pares por subconjunto.}
-    \label{tab:final-split-pares-subconjunto}
+    \caption[Pair distribution by split]{Pair distribution by split.}
+    \label{tab:final-split-pairs-subset}
     \begin{tabular}{lccc}
         \hline
-        \textbf{Split} & \textbf{Pares} & \textbf{\% Total}\\
+        \textbf{Split} & \textbf{Pairs} & \textbf{\% Total}\\
         \hline
         Train  & 9\,516 & 70.17\%\\
         Val    & 2\,532 & 18.67\%\\
@@ -219,150 +223,173 @@ Devido a grande variação na quantidade de fatias por paciente, a distribuiçã
 
    
 
-\section{Pré-processamento}
+\section{Pre-processing}
 
-\subsection{Verificação de integridade}
-Todos os pares foram validados através de um relatório de integridade, que verifica a existência de ambos os lados do par (imagem com artefacto e imagem limpa). Não houve nenhum par com dados faltantes, garantindo que o conjunto de dados estava completo e pronto para as etapas subsequentes de pré-processamento e treino dos modelos.
+\subsection{Integrity Verification}
 
-\subsection{Máscara Corporal}
+All pairs were validated through an integrity report, which checks for the existence of both sides of the pair (artifact image and clean image). There were no pairs with missing data, ensuring that the dataset was complete and ready for subsequent pre-processing and model training steps.
 
- As imagens de\Acrshort{ct} frequentemente contêm grandes áreas de fundo que não contribuem para a tarefa de remoção de artefatos metálicos. Isso cria um desequilíbrio de classes nos dados de treino que predomina voxels de fundo irrelevantes sobre as regiões anatómicas de interesse. Esse desequilíbrio, por sua vez, dificulta a aprendizagem e desvia o foco do modelo das estruturas clinicamente relevantes \cite{taghanakiComboLossHandling2021, kesimalUseDeepLearning2026}. Para abordar esse desafio, foi implementada uma etapa de pré-processamento também baseada em\Acrfull{dl}. Uma\acrshort{unet} foi treinada para segmentar o tecido corporal do fundo, gerando máscaras binárias que foram aplicadas às imagens originais para isolar as regiões de interesse. Esse modelo foi treinado utilizando $\sim$ 1.500 amostras do próprio\acrshort{ctmar} \textit{dataset}, onde as máscaras de segmentação foram geradas automaticamente através de um processo de limiarização. Além disso, um refinamento manual foi feito nas máscaras obtidas para garantir a qualidade dos dados de treino e consequentemente a eficácia do modelo de segmentação.
+\subsection{Background Removal through Body Mask}
 
- Esta etapa foi crucial para reduzir a influência de artefatos de fundo e melhorar a qualidade das \textit{features} extraídas durante o treino.
+The \acrshort{ct} images often contain large background areas that do not contribute to the task of metal artifact removal. That creates a class imbalance in the training data, where irrelevant background voxels dominate over the anatomical regions of interest. This imbalance, in turn, hinders the learning and deviates the model focus from clinically relevant structures \cite{taghanakiComboLossHandling2021, kesimalUseDeepLearning2026}. To address this challenge, a pre-processing step also based on\acrshort{dl} was implemented. A\acrshort{unet} was trained to segment the body tissue from the background, generating binary masks that were applied to the original images to isolate the regions of interest. This model was trained using $\sim$ 1,500 samples from the\acrshort{ctmar}, where the segmentation masks were automatically generated through a thresholding process. Additionally, a manual refinement was performed on the obtained masks to ensure the quality of the training data and consequently the effectiveness of the segmentation model.
 
-\subsection{Janela de intensidade e normalização}
-As intensidades das imagens vêm expressas em\acrshort{hu} do\acrshort{ctmar} \textit{dataset}. Para reduzir variações extremas foi aplicada uma janela de intensidade adequada ao contexto anatómico. Após o janelamento, os valores foram normalizados para o intervalo $[0,1]$ e são gerados tensores\acrshort{npy} de dimensão $256 \times 256$ 2D para cada fatia e seu par.
+This step was essential to reduce the influence of background artifacts and improve the quality of features extraction during training. 
 
-\subsection{Máscara de artefacto para supervisão auxiliar}
-Foram produzidas máscaras binárias de diferença das regiões afetadas por artefatos que foram utilizadas como sinal de supervisão adicional na arquitetura com dupla supervisão. Essas máscaras são utilizadas exclusivamente durante o treino, não sendo necessárias durante a inferência. A máscara binária de diferenças é definida formalmente como:
+
+\subsection{Intensity Window and Normalization}
+
+The image intensities are expressed in\acrshort{hu} from the\acrshort{ctmar}. To reduce extreme variations, an intensity window appropriate to the anatomical context was applied. After windowing, the values were normalized to the range $[0,1]$ and 2D tensors of dimension $256 \times 256$ were generated for each slice and its pair.
+
+\subsection{Artifact Mask for Auxiliary Supervision}
+Binary difference masks of the affected regions by artifacts were produced and used as an additional supervision signal in the dual architeture. These masks are exclusively used during the training and are not required during inference. The binary difference mask is formally defined as: 
 
 \begin{equation}
 M_{diff}(i,j) = \begin{cases}
-1 ; & \text{se } |I_{artifact}(i,j) - I_{clean}(i,j)| > \tau \\
-0 ; & \text{caso contrário}
+1 ; & \text{if } |I_{artifact}(i,j) - I_{clean}(i,j)| > \tau \\
+0 ; & \text{otherwise}
 \end{cases}
 \end{equation}
-\noindent onde $I_{artifact}$ representa a imagem com artefatos, $I_{clean}$ a imagem de referência limpa, e $\tau$ é o limiar de diferença normalizada. O valor desse limiar foi definido empiricamente para capturar regiões com diferenças perceptíveis mantendo robustez a ruído de baixa amplitude.
+\noindent where $I_{artifact}$ represents the image with artifacts, $I_{clean}$ the clean reference image, and $\tau$ is the normalized difference threshold. The value of this threshold was empirically defined to capture regions with perceptible differences while maintaining robustness to low-amplitude noise.
 
 
-\section{Arquiteturas em comparação}
-\subsection{U-Net}
+\section{Compared Architectures}
+\subsection{U-Net Single Supervision}
 
-O primeiro modelo consiste em uma arquitetura baseada em\acrshort{unet} \cite{ronnebergerUNetConvolutionalNetworks2015}, composta por \textit{encoder-decoder} com conexões de atalho (\textit{skip connections}). 
-Li et al \cite{liUNetBasedDynamic2024}, aplicam blocos de\Acrfull{bn} e funções de ativação\acrfull{relu} após cada convolução dinâmica. Esse trabalho faz algo semelhante, mas opta por utilizar convoluções padrão com \textit{kernel} $3\times3$, seguida dos blocos de\acrshort{bn} e funções de ativação\textit{\acrshort{relu}}. A escolha por convoluções padrão é justificada pela simplicidade e eficiência computacional, além de manter a abordagem utilizada por Ronneberger et al \cite{ronnebergerUNetConvolutionalNetworks2015}. Assim como Li et al \cite{liUNetBasedDynamic2024}, o \textit{decoder} também utiliza \textit{bilinear upsampling}. Essa arquitetura possui apenas um \textit{output}.
+The first model consist of an architecture based on\acrshort{unet} \cite{ronnebergerUNetConvolutionalNetworks2015}, composed of encoder-decoder with skip connections. Li et al \cite{liUNetBasedDynamic2024}, apply blocks of\Acrfull{bn} and\acrfull{relu} activation functions after each dynamic convolution. This work does something similar, but chooses to use standard convolutions with $3\times3$ kernel, followed by\acrshort{bn} blocks and\acrshort{relu} activation functions. The choice for standard convolutions is justified by simplicity and computational efficiency, in addition to maintaining the approach used by Ronneberger et al \cite{ronnebergerUNetConvolutionalNetworks2015}. Like Li et al \cite{liUNetBasedDynamic2024}, the decoder also uses bilinear upsampling. This architecture has only one output.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{Figures/Generated/materials/unet-single-compact-132d4a1a.png}
-\caption[Single Supervision U-Net architecture]{Diagrama da arquitetura Single Supervision.}
+\caption[Single Supervision U-Net architecture]{Single supervision arquitecture diagram.}
 \end{figure}
 
 
 \subsection{U-Net Dual Supervision}
 
-Uma variação do modelo acima descrito foi concebida, mantendo-se o \textit{encoder} e o \textit{decoder} compartilhados e acrescentando-se uma saída independente na última camada. Dessa forma, há duas saídas distintas no decoder, cada uma com sua própria função de perda. A primeira saída é responsável pela reconstrução da imagem corrigida, enquanto a segunda saída é dedicada à predição da máscara de artefatos.
+A variation of the model described above was conceived, maintaining the shared \textit{encoder} and \textit{decoder} and adding an independent output in the last layer. Thus, there are two distinct outputs in the decoder, each with its own loss function. The first output is responsible for reconstructing the corrected image, while the second output is dedicated to predicting the artifact mask.
 
-A justificativa para a adição da supervisão auxiliar da máscara de artefatos baseia-se na premissa de que a presença de uma perda adicional focada na segmentação de regiões afetadas por artefatos pode fornecer informações complementares ao modelo, auxiliando na aprendizagem de representações mais robustas e discriminativas. Essa abordagem é inspirada em trabalhos anteriores que demonstraram que a supervisão multi-tarefa pode melhorar o desempenho em tarefas relacionadas \cite{caruanaMultitaskLearning, ruderOverviewMultiTaskLearning2017}.
+The rationale for adding the auxiliary supervision of the artifact mask is based on the premise that the presence of an additional loss focused on segmenting regions affected by artifacts can provide complementary information to the model, aiding in learning more robust and discriminative representations. This approach is inspired by previous works that have shown that multi-task supervision can improve performance in related tasks \cite{caruanaMultitaskLearning, ruderOverviewMultiTaskLearning2017}.
 
-As duas arquiteturas foram avaliadas entre si para determinar o impacto da supervisão adicional com máscara de artefatos na qualidade da reconstrução e na capacidade de redução de artefatos. Toda a base de ambos os modelos são iguais, sendo a única diferença a presença da saída de predição da máscara de artefatos na segunda versão. Dessa forma, a comparação entre as duas arquiteturas é justa e isolada, permitindo avaliar exclusivamente o impacto da supervisão adicional da máscara de artefatos.
+The two architectures were evaluated against each other to determine the impact of the additional supervision with artifact mask on reconstruction quality and artifact reduction capability. All model bases are identical, with the presence of the artifact mask prediction output being the only difference in the second version. Thus, the comparison between the two architectures is fair and isolated, allowing for an exclusive evaluation of the impact of the additional supervision of the artifact mask.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{Figures/Generated/materials/unet-dual-compact-8441faa2.png}
-\caption[Dual Supervision U-Net architecture]{Diagrama da arquitetura Dual Supervision.}
+\caption[Dual Supervision U-Net architecture]{Dual supervision architecture diagram.}
 \end{figure}
 
 
-\section{Treino reprodutível}
+\section{Reproducible Training}
 
-\subsection{Configuração, determinismo e seleção de checkpoint}
+\subsection{Settings, determinism and checkpoint selection}
 
-Os dois modelos foram treinados sob a mesma configuração, com precisão \textit{float32}. Para avaliar a estabilidade face às diferentes inicializações e ordens de apresentação dos lotes, cada arquitetura foi treinada com operações determinísticas e com as sementes \texttt{1337}, \texttt{42} e \texttt{2024}, sempre sobre a mesma partição dos pacientes. A precisão mista foi desativada e os lotes foram mantidos completos, incluindo o último lote de cada época, de modo a evitar que amostras fossem excluídas do treino, validação ou avaliação.
+Both models were trained under the same settings, with \textit{float32} precision. To assess stability against different initializations and batch presentation orders, each architecture was trained with deterministic operations and with seeds \texttt{1337}, \texttt{42}, and \texttt{2024}, always on the same patient partition.\acrfull{amp} was disabled and batches were kept complete, including the last batch of each epoch, to avoid samples being excluded from training, validation, or evaluation.
 
-Foi utilizado o otimizador AdamW, com taxa de aprendizagem inicial de $2{.}26 \times 10^{-4}$, \textit{weight decay} de $1{.}00 \times 10^{-4}$ e \textit{gradient clipping} com norma 1.00, idênticos para as duas arquiteturas. A taxa de aprendizagem foi ajustada pelo scheduler \textit{ReduceLROnPlateau}, com fator de redução 0.50, paciência de duas épocas, \textit{cooldown} de uma época e valor mínimo de $1{.}00 \times 10^{-6}$, monitorizando a métrica \acrshort{ssim} da imagem reconstruída no conjunto de validação, em ambos os modelos. O treino tinha um limite máximo de 300 épocas e a paragem antecipada só podia ser acionada após, no mínimo, cinco épocas e ocorria quando a métrica monitorizada não melhorava pelo menos $1{.}00 \times 10^{-4}$ durante 15 épocas consecutivas. Em cada execução, foi retido o checkpoint correspondente ao melhor valor da métrica de validação monitorizada.
+The AdamW optimizer was used, with an initial learning rate of $2{.}26 \times 10^{-4}$, weight decay of $1{.}00 \times 10^{-4}$ and gradient clipping with norm 1.00, identical for both architectures. The learning rate was adjusted by the ReduceLROnPlateau scheduler, with a reduction factor of 0.50, patience of two epochs, cooldown of one epoch and minimum value of $1{.}00 \times 10^{-6}$, monitoring the reconstructed image\acrshort{ssim} on the validation set in both models. The training had a maximum limit of 300 epochs and early stopping could only be triggered after at least five epochs and occurred when the monitored metric did not improve by at least $1{.}00 \times 10^{-4}$ for 15 consecutive epochs. In each run, the checkpoint corresponding to the best value of the monitored validation metric was retained.
 
-Durante o treino, foram monitorizadas as seguintes quantidades:
+Only the best checkpoint per run was preserved, saved in \texttt{.keras} format with a filename encoding the architecture, epoch, and monitored metric; the training CSV explicitly flags the corresponding row with \texttt{best\_checkpoint=1}. Checkpoint selection relied exclusively on the pre-specified validation metric: \texttt{val\_ssim\_hu} for the Single Model and \texttt{val\_img\_out\_ssim\_hu} for the reconstruction output of the Dual Model.
+
+Run traceability was ensured through reproducibility snapshots in JSON format, preserved in \texttt{outputs/reproducibility/}. Six final internal evaluations were frozen, corresponding to the three random initializations (seeds 42, 1337, and 2024) of the Single Model and Dual Model. All snapshots were generated from commit \texttt{a950be7276a5585de45e8ae874c59c065a1985be}, on branch \texttt{projeto\_final}, with a clean working tree (\texttt{is\_dirty: false}).
+
+Each snapshot records the operating system, Python version, and relevant dependency versions. The execution environment used Python 3.11.9 on Windows 10, including TensorFlow 2.15.0, NumPy 1.26.4, Pandas 2.2.2, scikit-image 0.21.0, and Matplotlib 3.7.5. In addition, SHA-256 hashes were computed for the configuration files, the canonical pair manifest, the patient-level partition definition, the tensor generation metadata, and the environment requirements file.
+
+For each run, the snapshot preserves the path, size, and SHA-256 hash of the checkpoint, the full command used for evaluation on the test set, and the hashes of the output files, including aggregated and per-sample metrics. Thus, every value, table, or figure reported can be unambiguously traced to the code, environment, input data, checkpoint, and results that produced it.
+
+During the training, the following quantities were monitored:
 \begin{itemize}
-    \item \textbf{Perda de reconstrução}, para acompanhar a otimização da imagem corrigida;
-    \item \textbf{Perda de segmentação}, apenas no modelo dual, para acompanhar a supervisão auxiliar da máscara;
-    \item \textbf{SSIM, PSNR e MAE na escala HU}, calculados na região corporal para acompanhar a fidelidade estrutural e radiométrica das reconstruções.
+    \item \textbf{Reconstruction loss}, to track the optimization of the corrected image;
+    \item \textbf{Segmentation loss}, only in the dual model, to track the auxiliary supervision of the artifact mask;
+    \item \textbf{SSIM, PSNR, and MAE in HU scale}, calculated in the body region to track the structural and radiometric fidelity of the reconstructions.
 \end{itemize}
-\subsection{Função de Perda}
+
+\subsection{Loss Functions}
 
 \begin{itemize}
-    \item \textbf{Reconstrução}: Apesar de L2 ser amplamente utilizada para restauração de imagem, Zhao et al. \cite{zhaoLossFunctionsImage2017} destacam os melhores resultados de L1 ao estudar diferentes funções de perda para essa tarefa. Os autores também estudaram funções de perda baseadas em\acrshort{ssim} e\acrshort{ms-ssim}, sendo que a primeira alcança resultados igual ou levemente inferior a L1, equanto a segunda apresenta desempenho melhor que\acrshort{ssim} mas ainda não supera L1 de forma clara. O trabalho também testa um mix de L1 e\acrshort{ms-ssim}, e obteve-se resultados superiores em todas as métricas avaliadas pelos autores. Essa combinação é justificada pela complementaridade entre as duas funções, onde L1 favorece fidelidade local e\acrshort{ms-ssim} promove preservação estrutural, resultando em uma correção mais equilibrada dos artefatos. Embora o melhor resultado relatado pelos autores tenha envolvido L1 e\acrshort{ms-ssim}, neste trabalho adotou-se a soma ponderada de L1 e \acrshort{ssim}. Esta escolha mantém o princípio geral de combinar uma componente de fidelidade por píxel com uma componente estrutural, sem reproduzir a formulação específica nem os pesos utilizados por Zhao et al.
-    Os pesos utilizados para o protocolo experimental foram 0.7 para L1 e 0.3 para\acrshort{ssim}.
-    A relação adotada para a combinação das funções de perda é a seguinte:
+    \item \textbf{Reconstruction}: Despite L2 being widely used for image restoration, Zhao et al. \cite{zhaoLossFunctionsImage2017} highlight the best results studying differents loss functions for this task and show that it consistently underperforms perceptually-motivated alternatives. The authors studied loss functions based on L1,\acrshort{ssim} and\acrshort{ms-ssim}, being that second achieves equal or tiny inferior results than L1, while the third achieves better performance than\acrshort{ssim} but still does not clearly outperform L1. The paper also tests a mix of L1 and\acrshort{ms-ssim}, and obtained superior results in all metrics evaluated by the authors. This combination is justified by the complementarity between the two functions, where L1 favors local fidelity and\acrshort{ms-ssim} promotes structural preservation, resulting in a more balanced correction of artifacts. Although the best result reported by the authors involved L1 and\acrshort{ms-ssim}, in this work the weighted sum of L1 and\acrshort{ssim} was adopted. This choice maintains the general principle of combining a pixel fidelity component with a structural component, without reproducing the specific formulation or weights used by Zhao et al.
+    
+    The weights used for the experimental protocol were 0.7 for L1 and 0.3 for\acrshort{ssim}.
+    The relation adopted for the combination of the loss functions is as follows:
         \[
         \mathcal{L}_{Recon} = 0{.}7 \cdot \mathcal{L}_{L1} + 0{.}3 \cdot (1 - \text{SSIM})
         \]
 
-    Na perda híbrida, Zhao et al. \cite{zhaoLossFunctionsImage2017} aplicam uma ponderação espacial Gaussiana à componente L1, de modo a compatibilizá-la com a distribuição espacial dos gradientes da componente\acrshort{ms-ssim}. Neste trabalho, a componente L1 foi calculada diretamente como o erro absoluto médio na região corporal, sem ponderação Gaussiana adicional. Como a normalização utilizada é linear em relação aos valores de\acrshort{hu}, esta componente mantém uma penalização diretamente proporcional ao erro radiométrico, enquanto o\acrshort{ssim} contribui para a preservação estrutural local.
-    Essa combinação de função de perda é adotada para a arquitetura \textit{single task} e também para a cabeça de reconstrução da arquitetura \textit{dual}. Dessa forma, garante-se que a ablação entre as duas versões seja justa, isolando o impacto da supervisão adicional da máscara.
+    Zhao et al. \cite{zhaoLossFunctionsImage2017} applied a Gaussian spatial weighting to the L1 component in the hybrid loss, in order to make it compatible with the spatial distribution of the gradients of the\acrshort{ms-ssim} component. In this work, the L1 component was calculated directly as the mean absolute error in the body region, without additional Gaussian weighting. Since the normalization used is linear with respect to\acrshort{hu} values, this component maintains a penalty directly proportional to the radiometric error, while\acrshort{ssim} contributes to local structural preservation.
 
-    \item \textbf{Supervisão auxiliar da máscara}: A cabeça de predição da máscara de artefatos, presente na arquitetura \textit{dual}, foi treinada com a soma da perda Dice e da\acrfull{bce}. Essa combinação fornece simultaneamente supervisão para a sobreposição global entre as máscaras e para a classificação por píxel, sendo adequada a problemas de segmentação com desequilíbrio de classes \cite{taghanakiComboLossHandling2021}.
-     A relação adotada para a combinação das funções de perda é a seguinte:
+    This combination of loss function is adopted for the Single Model and also for the reconstruction output of the Dual Model. In this way, it is ensured that the ablation between the two versions is fair, isolating the impact of the additional supervision of the mask.
+
+    \item \textbf{Mask auxiliary supervision}: The mask artifact prediction output, present in Dual Model, was trained with the sum of\acrfull{dice} loss and\acrfull{bce}. This combination provides simultaneous supervision for global overlap between masks and pixel-wise classification, being suitable for segmentation problems with class imbalance \cite{taghanakiComboLossHandling2021}.
+     The relation adopted for the combination of the loss functions is as follows:
         \[
         \mathcal{L}_{Seg} = \mathcal{L}_{Dice} + \mathcal{L}_{BCE}
         \]
-     A função de perda total para a versão \textit{dual-head} é composta pela ponderação das perdas de reconstrução e segmentação, e é definida como:
+     The total loss function for the dual-head version is composed of the weighted sum of the reconstruction and segmentation losses, and is defined as:
         \[
         \mathcal{L} = 1{.}0 \cdot \mathcal{L}_{Recon} + 0{.}045 \cdot \mathcal{L}_{Seg}
         \]
 \end{itemize}
 
-Os experimentos foram executados numa GPU NVIDIA RTX A4500, utilizando Python e TensorFlow/Keras.
 
+\section{Internal Evaluation}
+In the inference phase, the models were evaluated using quantitative metrics widely adopted in the literature, in comparison with the Ground Truth. The metrics used to evaluate reconstructed image quality were:
 
-
-\section{Avaliação interna}
-Na fase de inferência, os modelos foram avaliados utilizando métricas quantitativas amplamente adotadas na literatura, em comparação com o \textit{Ground Truth}. As métricas utilizadas para a avaliação da qualidade da imagem reconstruída global e por ROI foram:
 \begin{itemize}
     \item \textbf{\acrshort{psnr}} ;
     \item \textbf{\acrshort{ssim}} ;
     \item \textbf{\acrshort{mae}}.
 \end{itemize}
 
-Wang et al. \cite{wangMultiscaleStructuralSimilarity2003a} descrevem\acrshort{ms-ssim} como um método de avaliação de qualidade de imagem através de cinco escalas com \textit{downsampling} iterativo por fator 2, resultando em uma redução de resolução de até 1/16 do tamanho original. O método foi validado em bases de dados de imagens completas, sem considerar aplicação em regiões fragmentadas ou espacialmente seletivas. Devido ao \textit{downsampling} progressivo, a aplicação\acrshort{ms-ssim} em\acrshort{roi}s  pequenas ou fragmentadas (como a zona distante em nossa análise) resultaria na mistura de pixels de\acrshort{roi} e não-ROI  nas escalas reduzidas, comprometendo a interpretabilidade dos resultados. Por isso, utilizou-se\acrshort{ssim} regular em vez de\acrshort{ms-ssim} nesse trabalho.
-De fato, as literaturas recentes tem demonstrado performance estatísticamente muito melhor em fidelidade para\acrshort{ms-ssim} e\acrshort{ssim} comparado a outras métricas de avaliação de qualidade de imagem\cite{linzhangFSIMFeatureSimilarity2011}. Especialmente para imagens médicas, onde a fidelidade das imagens preditas é crucial, a escolha de métricas que refletem a percepção humana de qualidade e preservação estrutural é fundamental. Portanto,\acrshort{ssim} foi selecionado como a principal métrica para avaliação quantitativa da qualidade das imagens reconstruídas, garantindo uma análise robusta e relevante para o contexto clínico. E o\acrshort{psnr} foi utilizado como métrica complementar para avaliar a fidelidade radiométrica das reconstruções, especialmente importante em tomografias computadorizadas onde a precisão dos valores de\acrshort{hu} é essencial para diagnóstico e planejamento clínico.
+The recent literature have demonstrated statistically superior performance in fidelity for\acrshort{ms-ssim} and\acrshort{ssim} compared to other image quality assessment metrics \cite{linzhangFSIMFeatureSimilarity2011}. Especially for medical images, where the fidelity of predicted images is crucial, the choice of metrics that reflect human perception of quality and structural preservation is fundamental. Therefore,\acrshort{ssim} was selected as the primary metric for quantitative evaluation of the quality of reconstructed images, ensuring a robust and relevant analysis for the clinical context. And\acrshort{psnr} was used as a complementary metric to assess the radiometric fidelity of reconstructions, especially important in computed tomography where the accuracy of\acrshort{hu} values is essential for diagnosis and clinical planning.
 
-A validação interna foi conduzida nos conjuntos de validação e teste, avaliando consistência, estabilidade e capacidade de generalização intra-\textit{dataset}.
+The internal validation was conducted on the validation and test subsets, evaluating consistency, stability, and intra-dataset generalization capability.
 
-Após a seleção do melhor checkpoint de cada uma das seis corridas na validação, os checkpoints foram comparados na partição de teste interna para selecionar a candidata à avaliação externa. A decisão privilegiou a maior melhoria de \acrshort{ssim} na Zona de Artefacto e globalmente, seguida de melhor\acrshort{psnr} e\acrshort{mae} na Zona de Artefacto e globalmente como forma de desempate. Após essa comparação, a corrida selecionada foi congelada, sem novo treino, ajuste de hiperparâmetros ou alteração dos pesos antes da avaliação externa.
+After the selection of the best checkpoint from each of the six runs in validation, the checkpoints were compared on the internal test partition to select the best architecture for external evaluation. The decision favored the greatest improvement in\acrshort{ssim} in the Artifact Zone and globally, followed by better\acrshort{psnr} and\acrshort{mae} in the Artifact Zone and globally as a tiebreaker. After this comparison, the selected architecture was frozen, without further training, hyperparameter tuning, or weight adjustment before external evaluation.  
 
-\subsection{Métricas globais}
-Para a avaliação global, as imagens preditas e de referência são desnormalizadas para a janela $[-1000, 400]$ HU, correspondendo a uma amplitude $\mathrm{MAX} = 1400$ HU. Adicionalmente, a região de avaliação é recortada ao menor retângulo envolvente (\textit{bounding box}) da máscara corporal antes da avaliação de SSIM, eliminando janelas de varredura compostas exclusivamente por fundo — que pontuariam $\text{SSIM} = 1{,}0$ artificialmente e inflariam a métrica global.
+\subsection{Global Metrics}
+For global evaluation, the predicted and reference images are denormalized to the window $[-1000, 400]$\acrshort{hu}, corresponding to a range $\mathrm{MAX} = 1400$\acrshort{hu}. Additionally, the evaluation region is cropped to the smallest bounding box of the body mask before\acrshort{ssim} evaluation, eliminating scan windows composed exclusively of background — which would artificially score $\text{SSIM} = 1{,}0$ and inflate the global metric.  
 
-Como verificação descritiva complementar de possível deslocamento radiométrico global, foi construído um diagrama de Bland--Altman entre a reconstrução e a referência limpa. Para cada paciente, a média em HU de cada imagem foi calculada sobre todos os pixels válidos da máscara corporal das respetivas fatias, ponderada pelo número de pixels de cada fatia. O gráfico apresenta a diferença média por paciente ($\mathrm{Model}-\mathrm{GT}$) em função da média das duas medidas, bem como o viés médio e os limites de concordância $\bar d \pm 1{,}96\,SD_d$. Esta análise tem caráter exclusivamente descritivo, com o paciente como unidade do gráfico, e não substitui as métricas de fidelidade nem a avaliação regional da redução de artefactos.
-\subsection{Avaliação por regiões de interesse}
-\label{subsec:metodos-roi}
+As a complementary descriptive verification of possible global radiometric shift, a Bland--Altman diagram was constructed between the reconstruction and the clean reference. For each patient, the mean in\acrshort{hu} of each image was calculated over all valid pixels of the body mask of the respective slices, weighted by the number of pixels in each slice. The graph presents the mean difference per patient ($\mathrm{Model}-\mathrm{GT}$) as a function of the mean of the two measures, as well as the mean bias and limits of agreement $\bar d \pm 1{,}96\,SD_d$. This analysis is purely descriptive, with the patient as the unit of the graph, and does not replace fidelity metrics or regional evaluation of artifact reduction.
 
-A avaliação global não distingue o comportamento do modelo nas regiões diretamente afetadas pelos artefatos daquele nas regiões corporais distantes do implante. Por isso, cada fatia foi dividida em duas zonas complementares a partir da diferença entre a entrada com artefatos e a referência limpa. Sejam $I_{\mathrm{in}}$ a imagem de entrada, $I_{\mathrm{ref}}$ a referência limpa e $M_{\mathrm{body}}$ a máscara corporal. Calculou-se a diferença assinada $d=I_{\mathrm{ref}}-I_{\mathrm{in}}$ e removeu-se o seu valor mediano no corpo, $b=\mathrm{mediana}(d\mid M_{\mathrm{body}})$, evitando que um desvio global associado ao endurecimento de feixe fosse interpretado como artefato local.
+\subsection{\acrshort{roi} Metrics}
+\label{subsec:methods-roi}
 
-A Zona de Artefato ($\mathcal{R}_{\mathrm{art}}$) foi definida por
+The global evaluation does not distinguish the model's behavior in regions directly affected by artifacts from that in body regions distant from the implant. Therefore, each slice was divided into two complementary zones based on the difference between the artifact-corrupted input and the clean reference. Let $I_{\mathrm{in}}$ be the input image, $I_{\mathrm{ref}}$ the clean reference, and $M_{\mathrm{body}}$ the body mask. The signed difference $d=I_{\mathrm{ref}}-I_{\mathrm{in}}$ was calculated, and its median value in the body, $b=\mathrm{median}(d\mid M_{\mathrm{body}})$, was removed to avoid interpreting a global deviation associated with beam hardening as a local artifact.
+
+
+The artifact Zone ($\mathcal{R}_{\mathrm{art}}$) was defined as:
 \[
 M_{\mathrm{art}}=\left[\lvert d-b\rvert>\tau\right]\cap M_{\mathrm{body}},
-\qquad \tau=0{,}03,
+\qquad \tau=0{,}03.
 \]
-valor equivalente a aproximadamente 42~HU na escala normalizada utilizada. Componentes conectados com menos de 20 pixels foram removidos. Não foi aplicada dilatação morfológica adicional ($r=0$), preservando a geometria observada dos \textit{streaks}. A Zona Distante ($\mathcal{R}_{\mathrm{dist}}$) foi definida como o complemento da zona de artefato na região corporal,
+which is approximately 42~HU in the normalized scale used. Connected components with fewer than 20 pixels were removed. No additional morphological dilation was applied ($r=0$), preserving the observed geometry of the \textit{streaks}. The Distant Zone ($\mathcal{R}_{\mathrm{dist}}$) was defined as the complement of the artifact zone in the body region.
 \[
 M_{\mathrm{dist}}=M_{\mathrm{body}}\setminus M_{\mathrm{art}}.
 \]
-Esta zona quantifica alterações fora da região diretamente afetada; a interpretação clínica da preservação anatómica foi reservada à avaliação externa por leitores.
+This zone quantifies changes outside the directly affected region; the clinical interpretation of anatomical preservation was reserved for external evaluation by readers.
 
-A \autoref{fig:final-roi-examples} ilustra a aplicação das duas zonas em fatias representativas do conjunto de dados, cobrindo diferentes regiões anatómicas e padrões de artefato.
+The \autoref{fig:final-roi-examples} illustrates the application of the two zones in representative slices of the dataset, covering different anatomical regions and artifact patterns.
+
+\begingroup
+\setlength{\intextsep}{4pt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{Figures/roi_example_sample_0000.png}
+\end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.88\linewidth]{Figures/roi_example_sample_0000.png}\\[3pt]
-    \includegraphics[width=0.88\linewidth]{Figures/roi_example_sample_0003.png}\\[3pt]
-    \includegraphics[width=0.88\linewidth]{Figures/roi_example_sample_0006.png}
-    \caption[Artifact and distant ROI examples]{Exemplos de zonas de \acrshort{roi} em fatias de \acrshort{ct} com artefatos metálicos. Em cada par, a imagem da esquerda mostra a Zona de Artefato ($\mathcal{R}_{art}$, sobreposição a vermelho) e a da direita a Zona Distante ($\mathcal{R}_{dist}$, sobreposição a verde). As fatias cobrem anatomias torácica (topo), abdominal (meio) e torácica com implante unilateral (base), ilustrando a variabilidade da extensão e forma da zona de artefato em função da localização e número de implantes metálicos.}
-    \label{fig:final-roi-examples}
+    \includegraphics[width=0.95\linewidth]{Figures/roi_example_sample_0003.png}
 \end{figure}
 
-Em todos os contextos de avaliação, as métricas foram expressas como variações relativamente ao desempenho da entrada corrompida. Seja $\Omega$ o domínio de avaliação, que pode corresponder à região global definida acima ($\Omega_{\mathrm{global}}$), à Zona de Artefato ($\mathcal{R}_{\mathrm{art}}$) ou à Zona Distante ($\mathcal{R}_{\mathrm{dist}}$), e seja $\hat I$ a reconstrução produzida pelo modelo. As variações foram definidas por:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{Figures/roi_example_sample_0006.png}
+\captionsetup{skip=1.5pt}
+\caption[Artifact and distant ROI examples]{Artifact Zone\acrshort{roi} (left) and Clean Zone\acrshort{roi} (right) examples.}
+\end{figure}
+\label{fig:final-roi-examples}
+\endgroup
 
+In every evaluation context, the metrics were expressed as variations relative to the performance of the corrupted input. Let $\Omega$ be the evaluation domain, which can correspond to the global region defined above ($\Omega_{\mathrm{global}}$), the Artifact Zone ($\mathcal{R}_{\mathrm{art}}$), or the Distant Zone ($\mathcal{R}_{\mathrm{dist}}$), and let $\hat I$ be the reconstruction produced by the model. The variations were defined by:
 \[
 \Delta\mathrm{PSNR}_{\Omega} = \mathrm{PSNR}(\hat I\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}) - \mathrm{PSNR}(I_{\mathrm{in}}\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega})
 \]
@@ -375,15 +402,15 @@ Em todos os contextos de avaliação, as métricas foram expressas como variaç�
 \Delta\mathrm{MAE}_{\Omega} = \mathrm{MAE}(I_{\mathrm{in}}\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}) - \mathrm{MAE}(\hat I\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}).
 \]
 
-Assim, $\Delta\mathrm{PSNR}>0$ e $\Delta\mathrm{SSIM}>0$ indicam melhoria face à entrada corrompida. Como menor \acrshort{mae} representa melhor fidelidade, a ordem da subtração foi invertida para essa métrica: $\Delta\mathrm{MAE}>0$ indica redução do erro e, portanto, melhoria; $\Delta\mathrm{MAE}<0$ indica aumento do erro. Utilizou-se \acrshort{ssim} regular, calculado com janela local de $11\times11$ pixels e recorte com contexto em redor da região avaliada.
+Thus, $\Delta\mathrm{PSNR}>0$ and $\Delta\mathrm{SSIM}>0$ indicate improvement over the corrupted input. Since lower \acrshort{mae} represents better fidelity, the order of subtraction was reversed for this metric: $\Delta\mathrm{MAE}>0$ indicates error reduction and, therefore, improvement; $\Delta\mathrm{MAE}<0$ indicates error increase. Regular \acrshort{ssim} was used, calculated with a local window of $11\times11$ pixels and cropping with context around the evaluated region.
 
 \begin{table}[H]
     \centering
-    \caption[Evaluation metrics by context]{Métricas utilizadas por contexto de avaliação.}
-    \label{tab:final-metricas-contexto}
+    \caption[Evaluation metrics by context]{Evaluation metrics by context.}
+    \label{tab:final-metrics-context}
     \begin{tabular}{lcccc}
         \hline
-        \textbf{Métrica} & \textbf{Treino} & \textbf{Global} & \textbf{ROI Artefato} & \textbf{ROI Distante} \\
+        \textbf{Metric} & \textbf{Train} & \textbf{Global} & \textbf{Artifact Zone} & \textbf{Clean Zone} \\
         \hline
         PSNR    & \checkmark & \checkmark & \checkmark & \checkmark \\
         SSIM    & \checkmark & \checkmark & \checkmark & \checkmark \\
@@ -391,40 +418,40 @@ Assim, $\Delta\mathrm{PSNR}>0$ e $\Delta\mathrm{SSIM}>0$ indicam melhoria face �
         \hline
     \end{tabular}
 \end{table}
+%______________________________________________________________________________
+\subsection{Statistical Analysis}
+In all inferential analysis, the patient constituted the independent experimental unit. To avoid pseudoreplication resulting from the inclusion of multiple slices from the same patient, the metrics calculated per slice were first aggregated by mean within each patient. Thus, for each metric $m$ and patient $p$, paired values of the input and reconstruction, or of the two architectures, were compared according to the analysis.
 
-\subsection{Análise estatística}
-Em todas as análises inferenciais, o paciente constituiu a unidade experimental independente. Para evitar pseudorreplicação decorrente da inclusão de múltiplas fatias de um mesmo paciente, as métricas calculadas por fatia foram primeiro agregadas pela média dentro de cada paciente. Assim, para cada métrica $m$ e paciente $p$, foram comparados valores pareados da entrada e da reconstrução, ou das duas arquiteturas, conforme a análise.
+To evaluate the improvement over the corrupted input, paired differences per patient $d_p=m_{\mathrm{Model},p}-m_{\mathrm{Input},p}$ were calculated for\acrshort{psnr} and\acrshort{ssim}. For\acrshort{mae}, whose reduction represents better performance, $d_p=m_{\mathrm{Input},p}-m_{\mathrm{Model},p}$ was used. The null hypothesis in each test was that the median of the paired differences was equal to zero. The direct comparison between architectures used $d_p=m_{\mathrm{Dual},p}-m_{\mathrm{Single},p}$, so that negative values favor the Single Model. 
 
-Para avaliar a melhoria face à entrada corrompida, foram calculadas as diferenças pareadas por paciente $d_p=m_{\mathrm{Model},p}-m_{\mathrm{Input},p}$ para \acrshort{psnr} e \acrshort{ssim}. Para \acrshort{mae}, cuja redução representa melhor desempenho, utilizou-se $d_p=m_{\mathrm{Input},p}-m_{\mathrm{Model},p}$. A hipótese nula em cada teste foi que a mediana das diferenças pareadas era igual a zero. A comparação direta entre arquiteturas utilizou $d_p=m_{\mathrm{Dual},p}-m_{\mathrm{Single},p}$, de modo que valores negativos favorecem o Single Model. Os valores de $p$ brutos foram obtidos pelo teste de postos sinalizados de Wilcoxon bilateral, com nível de significância $\alpha=0{,}05$.
-
-Os valores de $p$ apresentados nas tabelas de comparação foram ajustados pelo procedimento sequencial de Holm, que controla a taxa de erro familiar sem pressupor independência entre os testes. Para os $m$ valores de $p$ brutos ordenados, $p_{(1)}\leq\cdots\leq p_{(m)}$, o valor ajustado na posição $i$ foi calculado como
+The values of $p$ presented in the comparison tables were adjusted using the Holm sequential procedure, which controls the family-wise error rate without assuming independence between tests. For the $m$ raw $p$ values ordered as $p_{(1)}\leq\cdots\leq p_{(m)}$, the adjusted value at position $i$ was calculated as:
 \[
 p^{\mathrm{Holm}}_{(i)}=\max_{j\leq i}\left\{\min\left[1,\,(m-j+1)p_{(j)}\right]\right\}.
 \]
-Na tabela de melhoria da reconstrução, a correção foi aplicada conjuntamente aos quatro testes correspondentes a \acrshort{psnr} e \acrshort{ssim} para cada uma das duas arquiteturas. Na comparação pareada Single Model versus Dual Model, a correção foi aplicada conjuntamente aos dois testes, um para \acrshort{psnr} e outro para \acrshort{ssim}.
 
-Os intervalos de confiança de 95\% reportados para as diferenças médias foram obtidos por \textit{bootstrap} percentil ao nível do paciente. Para cada métrica, o vetor de $n=41$ diferenças pareadas por paciente foi reamostrado com reposição, mantendo $n$ observações em cada reamostra; a média da diferença foi então calculada em cada uma das 10\,000 reamostragens. Os limites inferior e superior do intervalo correspondem, respetivamente, aos percentis 2,5 e 97,5 da distribuição empírica dessas médias. Este procedimento não pressupõe normalidade das diferenças e preserva o paciente, e não a fatia, como unidade de inferência. Foi utilizada a semente 1337 para tornar as reamostragens determinísticas. As análises por \acrshort{roi} foram apresentadas de forma descritiva, mantendo a interpretação clínica da preservação anatómica para a avaliação externa por leitores.
+In the reconstruction improvement table, the correction was applied jointly to the four corresponding tests for\acrshort{psnr} and\acrshort{ssim} for each of the two architectures. In the paired comparison Single Model versus Dual Model, the correction was applied jointly to the two tests, one for\acrshort{psnr} and another for\acrshort{ssim}.
 
-\section{Avaliação externa por médicos}
+The confidence interval of 95\% reported for the mean differences was obtained by patient-level percentile \textit{bootstrap}. For each metric, the vector of $n=41$ paired differences per patient was resampled with replacement, maintaining $n$ observations in each resample; the mean difference was then calculated in each of the 10,000 resamples. The lower and upper limits of the interval correspond, respectively, to the 2.5 and 97.5 percentiles of the empirical distribution of these means. This procedure does not assume normality of the differences and preserves the patient, rather than the slice, as the unit of inference. Seed 1337 was used to make the resampling deterministic.
+
+\section{External Evaluation}
 \label{sec:avaliacao-medicos}
-A validação externa foi realizada em dados independentes provenientes do\acrfull{tcia}, permitindo avaliar o impacto de \textit{domain shift} e a robustez do modelo em cenários não vistos durante o treino.
 
-\subsection{Desenho e casos}
-\textit{[A preencher: estudo observacional, transversal, multileitor e cego quanto à condição A/B; conjunto TCIA, 2 casos de treino excluídos da análise, 15 casos principais e 2 repetições ocultas.]}
+The external evaluation was realized in independent data provided by the\acrfull{tcia}, allowing to assess the impact of domain shift and the robustness of the model in scenarios not seen during training.
 
-\subsection{Caracterização quantitativa entrada--saída}
-Como caracterização complementar da alteração introduzida pelo modelo nos casos externos, foram calculados \acrshort{ssim}, \acrshort{psnr} e \acrshort{mae} diretamente entre a imagem de entrada e a respetiva saída do \textit{Single Model}, seed 2024. As métricas foram avaliadas apenas nos 15 casos principais do conjunto externo congelado; os dois casos de treino foram excluídos. O domínio de cálculo foi a máscara corporal efetiva, corrigida manualmente durante a preparação dos casos. Para \acrshort{psnr}, utilizou-se a janela de intensidade $[-1000,400]$~HU, com amplitude de $1400$~HU.
+\subsection{Design and Cases}
+% A preencher: estudo observacional, transversal, multileitor e cego quanto à condição A/B; conjunto TCIA, 2 casos de treino excluídos da análise, 15 casos principais e 2 repetições ocultas.
 
-Não existe referência limpa para estes casos reais. Assim, \acrshort{ssim} e \acrshort{psnr} maiores, bem como \acrshort{mae} menor, descrevem menor alteração global entre entrada e saída, e não maior acurácia de remoção de artefactos nem melhoria face a uma referência. As estatísticas foram resumidas por caso, como média e desvio-padrão, e os intervalos de confiança de 95\% para a média foram obtidos por \textit{bootstrap} percentil com 10\,000 reamostragens e semente 1337. A interpretação da aceitabilidade clínica dessas alterações permaneceu reservada para a avaliação cega por leitores.
+\subsection{Quantitative Characterization of Input--Output}
 
-\subsection{Participantes e proteção de dados}
-\textit{[A preencher: recrutamento direto, autodeclaração de uso mensal de CT, categorias profissionais retidas e ausência de identificadores diretos.]}
+As a complementary characterization of the alteration introduced by the model in external cases,\acrshort{ssim},\acrshort{psnr}, and\acrshort{mae} were calculated directly between the input image and the respective output of the model selected for that. The metrics was evaluated only in the 15 main cases of the frozen external set; the two training cases were excluded. The calculation domain was the effective body mask, manually corrected during case preparation. For\acrshort{psnr}, the intensity window $[-1000,400]$\acrshort{hu} with amplitude $1400$\acrshort{hu} was used.
 
-\subsection{Apresentação e instrumento de avaliação}
-\textit{[A preencher: apresentação simultânea e contrabalanceada de entrada/saída como Imagem A/B; escalas ordinais para interferência do artefacto e visualização anatómica, preferência pareada e sinalização de possível dano.]}
+There is no clean reference for these real cases. Thus, higher\acrshort{ssim} and\acrshort{psnr}, as well as lower\acrshort{mae}, describe less global alteration between input and output, and not greater accuracy of artifact removal or improvement compared to a reference. The statistics were summarized per case, such as mean and standard deviation, and the 95\% confidence intervals for the mean were obtained by percentile \textit{bootstrap} with 10,000 resamplings and seed 1337. The interpretation of the clinical acceptability of these alterations remained reserved for blind evaluation by readers.
 
-\subsection{Desfechos e análise}
-\textit{[A preencher: desfecho primário de diferença pareada na visualização de tecidos e limites anatómicos; desfechos secundários, consistência intraleitor e análise ordinal compatível com amostra pequena.]}
+\subsection{Presentation and Evaluation Instrument}
+% A preencher: apresentação simultânea e contrabalanceada de entrada/saída como Imagem A/B; escalas ordinais para interferência do artefacto e visualização anatómica, preferência pareada e sinalização de possível dano.
 
-\subsection{Estado operacional}
-\textit{[A preencher: distinguir claramente pré-produção, piloto e recolha concluída; não apresentar resultados clínicos antes da recolha aprovada e concluída.]}
+\subsection{Outcomes and Analysis}
+% A preencher: desfecho primário de diferença pareada na visualização de tecidos e limites anatómicos; desfechos secundários, consistência intraleitor e análise ordinal compatível com amostra pequena.
+
+\subsection{Operational Status}
+% preencher: distinguir claramente pré-produção, piloto e recolha concluída; não apresentar resultados clínicos antes da recolha aprovada e concluída.

@@ -24,67 +24,65 @@
 \contentsline {section}{\numberline {3.2}Artifact Reduction based on Deep Learning}{6}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Reproducible Evaluation and Generalization}{8}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Materials and Methods}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Dados, curadoria e rastreabilidade}{9}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Conjunto CT-MAR e fontes de referência}{9}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Particionamento ao nível do paciente}{10}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Coorte final e Exclusões}{13}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Estratificação Anatómica}{15}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2}Pré-processamento}{16}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Verificação de integridade}{16}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Máscara Corporal}{17}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Janela de intensidade e normalização}{17}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Máscara de artefacto para supervisão auxiliar}{17}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Arquiteturas em comparação}{18}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}U-Net}{18}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.1}Data, curation and traceability}{9}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}\acrshort {ctmar} Dataset and Reference Sources}{9}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Partitioning at patient level}{10}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Final Cohort and Exclusion of Unmatched Pairs}{13}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Anatomical Distribution and Stratification}{14}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Pre-processing}{16}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Integrity Verification}{16}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Background Removal through Body Mask}{16}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Intensity Window and Normalization}{17}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Artifact Mask for Auxiliary Supervision}{17}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Compared Architectures}{17}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}U-Net Single Supervision}{17}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}U-Net Dual Supervision}{18}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Treino reprodutível}{20}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Configuração, determinismo e seleção de checkpoint}{20}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Função de Perda}{20}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Avaliação interna}{22}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Métricas globais}{23}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Avaliação por regiões de interesse}{23}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Análise estatística}{26}{subsection.4.5.3}%
-\contentsline {section}{\numberline {4.6}Avaliação externa por médicos}{27}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Desenho e casos}{27}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Caracterização quantitativa entrada--saída}{28}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}Participantes e proteção de dados}{28}{subsection.4.6.3}%
-\contentsline {subsection}{\numberline {4.6.4}Apresentação e instrumento de avaliação}{28}{subsection.4.6.4}%
-\contentsline {subsection}{\numberline {4.6.5}Desfechos e análise}{28}{subsection.4.6.5}%
-\contentsline {subsection}{\numberline {4.6.6}Estado operacional}{28}{subsection.4.6.6}%
-\contentsline {chapter}{\numberline {5}Resultados}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Coorte final e integridade experimental}{29}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Resultados da Aprovação Automática x Inspeção Manual}{29}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Análise Complementar com\acrshort {ms-ssim}}{29}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Treino dos modelos}{36}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Convergência e seleção dos checkpoints}{36}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Rastreabilidade das execuções}{44}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Avaliação interna no conjunto de teste}{44}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Desfechos globais}{44}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Avaliação por regiões de interesse}{49}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Mapas de resíduos em casos extremos}{53}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Comparação pareada Single x Dual Model}{60}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Análises Estatísticas Globais}{60}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Análise Estatística por ROI}{63}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Avaliação externa por médicos}{66}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Estado da recolha e participantes}{66}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Caracterização quantitativa entrada -- saída}{67}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Desfecho primário: visualização anatómica}{70}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Desfechos secundários e segurança percebida}{71}{subsection.5.5.4}%
-\contentsline {subsection}{\numberline {5.5.5}Interpretação limitada ao desenho observacional}{72}{subsection.5.5.5}%
-\contentsline {chapter}{\numberline {6}Discussão}{73}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Síntese dos achados principais}{73}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Interpretação da comparação arquitetural}{74}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Preservação anatómica e segurança da reconstrução}{75}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Generalização e avaliação externa}{76}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Avaliação por médicos}{76}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Limitações}{77}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Implicações e trabalho futuro}{78}{section.6.7}%
-\contentsline {chapter}{\numberline {7}Conclusões}{79}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusões do estudo}{79}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Contribuições da dissertação}{79}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Perspetivas futuras}{79}{section.7.3}%
+\contentsline {section}{\numberline {4.4}Reproducible Training}{19}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Settings, determinism and checkpoint selection}{19}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Loss Functions}{21}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Internal Evaluation}{22}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Global Metrics}{23}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}\acrshort {roi} Metrics}{23}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Statistical Analysis}{26}{subsection.4.5.3}%
+\contentsline {section}{\numberline {4.6}External Evaluation}{26}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Design and Cases}{27}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Quantitative Characterization of Input--Output}{27}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Presentation and Evaluation Instrument}{27}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Outcomes and Analysis}{27}{subsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.6.5}Operational Status}{27}{subsection.4.6.5}%
+\contentsline {chapter}{\numberline {5}Results}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Final Cohort and Experimental Integrity}{28}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Automatic Approval x Manually Inspection Results}{28}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Complementary Analysis with\acrshort {ms-ssim}}{28}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Model Training}{35}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Convergence and Checkpoint Selection}{35}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Internal Evaluation in Test Subset}{43}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Global Outcomes}{43}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Region of Interest Evaluation}{47}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Residual Maps in Extreme Cases}{51}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Paired Comparison Single x Dual Model}{58}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Global Statistical Analysis}{58}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Statistical Analysis per\acrshort {roi}}{61}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}External Evaluation for Doctors}{64}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Capture Status and Participants}{64}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Quantitative Characterization of Input--Output}{65}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Primary Outcome: Anatomical Visualization}{68}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Secondary Outcomes and Safety Perception}{69}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Limited Interpretation to the Observational Design}{70}{subsection.5.5.5}%
+\contentsline {chapter}{\numberline {6}Discussion}{71}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary of the main Findings}{71}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Architectural Comparison Interpretation}{72}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Anatomical Preservation and Reconstruction Safety}{73}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Generalization and External Evaluation}{74}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Evaluation for Doctors and Clinical Implications}{74}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Limitations}{75}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Implications and Future Work}{76}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Conclusions}{77}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Study Conclusions}{77}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Dissertation Contributions}{77}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Perspectives}{77}{section.7.3}%
 \vspace {0.5cm}
-\contentsline {chapter}{Bibliography}{79}{dummy.8}%
-\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{85}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Casos de pior desempenho}{89}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Desempenho computacional}{91}{section.A.2}%
+\contentsline {chapter}{Bibliography}{77}{dummy.8}%
+\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{83}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Worst Performance Cases}{87}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Computational Performance}{89}{section.A.2}%
