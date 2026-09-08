@@ -351,15 +351,16 @@ As a complementary descriptive verification of possible global radiometric shift
 \subsection{\acrshort{roi} Metrics}
 \label{subsec:methods-roi}
 
-The global evaluation does not distinguish the model's behavior in regions directly affected by artifacts from that in body regions distant from the implant. Therefore, each slice was divided into two complementary zones based on the difference between the artifact-corrupted input and the clean reference. Let $I_{\mathrm{in}}$ be the input image, $I_{\mathrm{ref}}$ the clean reference, and $M_{\mathrm{body}}$ the body mask. The signed difference $d=I_{\mathrm{ref}}-I_{\mathrm{in}}$ was calculated, and its median value in the body, $b=\mathrm{median}(d\mid M_{\mathrm{body}})$, was removed to avoid interpreting a global deviation associated with beam hardening as a local artifact.
+The global evaluation does not distinguish the model's behavior in regions directly affected by artifacts from that in body regions distant from the implant. Therefore, each slice was divided into two complementary zones based on the difference between the artifact-corrupted input and the clean reference.
 
+Metal artifacts affect an image in two distinct ways: they create sharp local streaks close to the implant, and they also introduce a small, near-uniform intensity shift across the whole slice (a beam-hardening bias, typically only a few tens of HU). To isolate the local streaks from this global shift, the signed difference between the clean reference $I_{\mathrm{ref}}$ and the artifact-corrupted input $I_{\mathrm{in}}$ was first computed within the body mask $M_{\mathrm{body}}$, $d=I_{\mathrm{ref}}-I_{\mathrm{in}}$. Its median value in the body, $b=\mathrm{median}(d\mid M_{\mathrm{body}})$, was then subtracted from $d$: this removes the uniform bias, so that a pixel is flagged as an artifact only when it deviates from that de-biased baseline, rather than simply because the whole slice is slightly shifted.\footnote{Implemented in \texttt{src/utils/roi\_zones.py} (function \texttt{generate\_artifact\_mask}), the single canonical implementation shared by the training-time monitoring callbacks and all evaluation scripts, so that every reported metric uses an identical\acrshort{roi} definition.}
 
-The artifact Zone ($\mathcal{R}_{\mathrm{art}}$) was defined as:
+The Artifact Zone ($\mathcal{R}_{\mathrm{art}}$) keeps only the body pixels whose de-biased difference exceeds a fixed threshold $\tau$:
 \[
 M_{\mathrm{art}}=\left[\lvert d-b\rvert>\tau\right]\cap M_{\mathrm{body}} ,
-\qquad \tau=0{.}03.
+\qquad \tau=0{.}03\ (\approx 42~\mathrm{HU}\text{ in the normalized scale used}).
 \]
-which is approximately 42~HU in the normalized scale used. Connected components with fewer than 20 pixels were removed. No additional morphological dilation was applied ($r=0$), preserving the observed geometry of the \textit{streaks}. The Distant Zone ($\mathcal{R}_{\mathrm{dist}}$) was defined as the complement of the artifact zone in the body region.
+Small connected components (fewer than 20 pixels) were then discarded to suppress isolated noise pixels while preserving genuine streak segments; no additional morphological dilation was applied ($r=0$), preserving the observed geometry of the \textit{streaks}. The Distant Zone ($\mathcal{R}_{\mathrm{dist}}$) is simply everything else inside the body:
 \[
 M_{\mathrm{dist}}=M_{\mathrm{body}}\setminus M_{\mathrm{art}}.
 \]
