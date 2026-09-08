@@ -283,4 +283,53 @@ Hang Zhao, Orazio Gallo, Iuri Frosio, and Jan Kautz.
 \newblock {\em IEEE Transactions on Image Processing}, 20(8):2378--2386, August
   2011.
 
+\bibitem{clarkCancerImagingArchive2013}
+Kenneth Clark, Bruce Vendt, Kirk Smith, John Freymann, Justin Kirby, Paul
+  Koppel, Stephen Moore, Stanley Phillips, David Maffitt, Michael Pringle,
+  Lawrence Tarbox, and Fred Prior.
+\newblock The {{Cancer Imaging Archive}} ({{TCIA}}): {{Maintaining}} and
+  operating a public information repository.
+\newblock {\em Journal of Digital Imaging}, 26(6):1045--1057, December 2013.
+
+\bibitem{albertinaCancerGenomeAtlas2016}
+B.~Albertina, M.~Watson, C.~Holback, R.~Jarosz, S.~Kirk, Y.~Lee,
+  K.~Rieger-Christ, and J.~Lemmerman.
+\newblock The {{Cancer Genome Atlas Lung Adenocarcinoma Collection}}
+  ({{TCGA-LUAD}}), 2016.
+
+\bibitem{armatoDataLIDCIDRI2015}
+Samuel~G. Armato, Geoffrey McLennan, Luc Bidaut, Michael~F. McNitt-Gray,
+  Charles~R. Meyer, Anthony~P. Reeves, Binsheng Zhao, Denise~R. Aberle,
+  Claudia~I. Henschke, Eric~A. Hoffman, Ella~A. Kazerooni, Heber MacMahon,
+  Edwin J.~R. {Van Beek}, David Yankelevitz, Alberto~M. Biancardi, Peyton~H.
+  Bland, Matthew~S. Brown, Roger~M. Engelmann, Gary~E. Laderach, Daniel Max,
+  Richard~C. Pais, David P.-Y. Qing, Rachael~Y. Roberts, Amanda~R. Smith, Adam
+  Starkey, Poonam Batra, Philip Caligiuri, Ali Farooqi, Gregory~W. Gladish,
+  C.~Matilda Jude, Reginald~F. Munden, Iva Petkovska, Leslie~E. Quint,
+  Lawrence~H. Schwartz, Baskaran Sundaram, Lori~E. Dodd, Charles Fenimore,
+  David Gur, Nicholas Petrick, John Freymann, Justin Kirby, Brian Hughes,
+  Alessi {Vande Casteele}, Sangeeta Gupte, Maha Sallam, Michael~D. Heath,
+  Michael~H. Kuhn, Ekta Dharaiya, Richard Burns, David~S. Fryd, Marcos
+  Salganicoff, Vikram Anand, Uri Shreter, Stephen Vastagh, Barbara~Y. Croft,
+  and Laurence~P. Clarke.
+\newblock Data from {{LIDC-IDRI}}, 2015.
+
+\bibitem{repopVAResearchPrecision2024}
+{The Research for Precision Oncology Program} and {the Applied Proteogenomics
+  Organizational Learning and Outcomes (APOLLO) Research Network}.
+\newblock {{VA Research Precision Oncology Program}} -- {{APOLLO}}
+  ({{VAREPOP-APOLLO}}), 2024.
+
+\bibitem{cptacClinicalProteomicTumorSarcomas2019}
+{National Cancer Institute Clinical Proteomic Tumor Analysis Consortium
+  (CPTAC)}.
+\newblock The {{Clinical Proteomic Tumor Analysis Consortium Sarcomas
+  Collection}} ({{CPTAC-SAR}}), 2019.
+
+\bibitem{cptacClinicalProteomicTumorPancreatic2018}
+{National Cancer Institute Clinical Proteomic Tumor Analysis Consortium
+  (CPTAC)}.
+\newblock The {{Clinical Proteomic Tumor Analysis Consortium Pancreatic Ductal
+  Adenocarcinoma Collection}} ({{CPTAC-PDA}}), 2018.
+
 \end{thebibliography}

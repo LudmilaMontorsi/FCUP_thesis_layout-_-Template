@@ -7,45 +7,45 @@ Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: Bibliography.bib
 Warning--empty journal in caruanaMultitaskLearning
 Warning--empty year in caruanaMultitaskLearning
-You've used 44 entries,
+You've used 50 entries,
             1791 wiz_defined-function locations,
-            749 strings with 15192 characters,
-and the built_in function-call counts, 11436 in all, are:
-= -- 929
-> -- 675
+            778 strings with 17905 characters,
+and the built_in function-call counts, 13250 in all, are:
+= -- 998
+> -- 925
 < -- 5
-+ -- 242
-- -- 198
-* -- 961
-:= -- 1841
-add.period$ -- 130
-call.type$ -- 44
-change.case$ -- 43
++ -- 328
+- -- 278
+* -- 1138
+:= -- 2184
+add.period$ -- 143
+call.type$ -- 50
+change.case$ -- 49
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 434
-empty$ -- 1038
-format.name$ -- 198
-if$ -- 2474
+cite$ -- 52
+duplicate$ -- 468
+empty$ -- 1154
+format.name$ -- 278
+if$ -- 2822
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 39
-newline$ -- 216
-num.names$ -- 45
-pop$ -- 119
+int.to.str$ -- 50
+missing$ -- 40
+newline$ -- 241
+num.names$ -- 51
+pop$ -- 155
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 209
+skip$ -- 233
 stack$ -- 0
-substring$ -- 790
-swap$ -- 94
+substring$ -- 821
+swap$ -- 100
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 97
-width$ -- 46
-write$ -- 471
+while$ -- 105
+width$ -- 52
+write$ -- 522
 (There were 2 warnings)

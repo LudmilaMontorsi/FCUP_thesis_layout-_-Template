@@ -27,7 +27,7 @@
 \contentsline {section}{\numberline {4.1}Data, curation and traceability}{9}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}\acrshort {ctmar} Dataset and Reference Sources}{9}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Partitioning at patient level}{10}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Final Cohort and Exclusion of Unmatched Pairs}{13}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.3}Final Group and Exclusion of Unmatched Pairs}{13}{subsection.4.1.3}%
 \contentsline {subsection}{\numberline {4.1.4}Anatomical Distribution and Stratification}{14}{subsection.4.1.4}%
 \contentsline {section}{\numberline {4.2}Pre-processing}{16}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Integrity Verification}{16}{subsection.4.2.1}%
@@ -46,44 +46,44 @@
 \contentsline {subsection}{\numberline {4.5.3}Statistical Analysis}{26}{subsection.4.5.3}%
 \contentsline {section}{\numberline {4.6}External Evaluation}{27}{section.4.6}%
 \contentsline {subsection}{\numberline {4.6.1}Design and Cases}{27}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Quantitative Characterization of Input--Output}{27}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}Presentation and Evaluation Instrument}{27}{subsection.4.6.3}%
-\contentsline {subsection}{\numberline {4.6.4}Outcomes and Analysis}{27}{subsection.4.6.4}%
-\contentsline {subsection}{\numberline {4.6.5}Operational Status}{27}{subsection.4.6.5}%
-\contentsline {chapter}{\numberline {5}Results}{28}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Final Cohort and Experimental Integrity}{28}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Automatic Approval and Manual Review Outcomes}{28}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Complementary Analysis with\acrshort {ms-ssim}}{29}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Model Training}{36}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Training Convergence and Per-Run Checkpoint Selection}{36}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3}Internal Evaluation in Test Subset}{39}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Global Outcomes}{39}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Region of Interest Evaluation}{43}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Selection of the External-Evaluation Candidate}{43}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Residual Maps in Extreme Cases}{47}{subsection.5.3.4}%
-\contentsline {section}{\numberline {5.4}Paired Comparison Single x Dual Model}{54}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Global Statistical Analysis}{54}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Statistical Analysis per\acrshort {roi}}{57}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}External Evaluation for Doctors}{60}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Capture Status and Participants}{60}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Quantitative Characterization of Input--Output}{61}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Primary Outcome: Anatomical Visualization}{64}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Secondary Outcomes and Safety Perception}{65}{subsection.5.5.4}%
-\contentsline {subsection}{\numberline {5.5.5}Limited Interpretation to the Observational Design}{66}{subsection.5.5.5}%
-\contentsline {chapter}{\numberline {6}Discussion}{67}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary of the Main Findings}{67}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Architectural Comparison Interpretation}{68}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Anatomical Preservation and Reconstruction Safety}{69}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Generalization and External Evaluation}{70}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Reader Evaluation and Clinical Implications}{70}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Limitations}{71}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Implications and Future Work}{72}{section.6.7}%
-\contentsline {chapter}{\numberline {7}Conclusions}{73}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Study Conclusions}{73}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Dissertation Contributions}{73}{section.7.2}%
+\contentsline {subsection}{\numberline {4.6.2}Quantitative Characterization of Input--Output}{28}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Presentation and Evaluation Instrument}{28}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Outcomes and Analysis}{29}{subsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.6.5}Operational Status}{29}{subsection.4.6.5}%
+\contentsline {chapter}{\numberline {5}Results}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Final Group and Experimental Integrity}{30}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Automatic Approval and Manual Review Outcomes}{30}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Complementary Analysis with\acrshort {ms-ssim}}{31}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Model Training}{38}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Training Convergence and Per-Run Checkpoint Selection}{38}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Internal Evaluation in Test Subset}{41}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Global Outcomes}{41}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Region of Interest Evaluation}{45}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Selection of the External-Evaluation Candidate}{45}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Residual Maps in Extreme Cases}{49}{subsection.5.3.4}%
+\contentsline {section}{\numberline {5.4}Paired Comparison Single x Dual Model}{56}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Global Statistical Analysis}{56}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Statistical Analysis per\acrshort {roi}}{59}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}External Evaluation for Doctors}{61}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Capture Status and Participants}{61}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Quantitative Characterization of Input--Output}{63}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Primary Outcome: Anatomical Visualization}{66}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Secondary Outcomes and Safety Perception}{67}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Limited Interpretation to the Observational Design}{68}{subsection.5.5.5}%
+\contentsline {chapter}{\numberline {6}Discussion}{69}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary of the Main Findings}{69}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Architectural Comparison Interpretation}{70}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Anatomical Preservation and Reconstruction Safety}{71}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Generalization and External Evaluation}{72}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Reader Evaluation and Clinical Implications}{72}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Limitations}{73}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Implications and Future Work}{74}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Conclusions}{75}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Study Conclusions}{75}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Dissertation Contributions}{75}{section.7.2}%
 \vspace {0.5cm}
-\contentsline {chapter}{Bibliography}{73}{dummy.8}%
-\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{79}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Training Convergence Across Runs}{79}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Worst Performance Cases}{92}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Computational Performance}{95}{section.A.3}%
+\contentsline {chapter}{Bibliography}{75}{dummy.8}%
+\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{82}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Training Convergence Across Runs}{82}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Worst Performance Cases}{95}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Computational Performance}{98}{section.A.3}%
