@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1788903250.76979 "main.aux" "main.bbl" "main" 1788904120.88221 0
+["bibtex main"] 1788903250.76979 "main.aux" "main.bbl" "main" 1788904650.23404 0
   "./Bibliography.bib" 1788903239 100185 092ff2e6e0993d091db8d4eea30d4533 ""
   "C:/Users/ludmy/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1788904119 49552 6e868753a45a519d9b76ebe1bd6e3a53 "pdflatex"
+  "main.aux" 1788904648 49552 6e868753a45a519d9b76ebe1bd6e3a53 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1788904107.11741 "c:/Users/ludmy/Desktop/FCUP_thesis_layout _ Template/main.tex" "main.pdf" "main" 1788904120.8832 0
+["pdflatex"] 1788904637.04955 "c:/Users/ludmy/Desktop/FCUP_thesis_layout _ Template/main.tex" "main.pdf" "main" 1788904650.23497 0
   "Appendices/AppendixTemplate.tex" 1788875016 10005 eb490164a8026984abe36a367642d07f ""
   "C:/Users/ludmy/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1787954836 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/ludmy/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt0800.pk" 1778095681 15192 d785342a2b8214a7acf199c44400675b ""
@@ -377,8 +377,8 @@
   "Figures/ssim_distribution_zoom.pdf" 1786998548 21608 2a13d701d25ddcc4d8dfa5e0e95a3df0 ""
   "Figures/ssim_ecdf_final.pdf" 1786998549 22122 f976859cde54b800b15457011dcf8b22 ""
   "Figures/ssim_scatter_dist.pdf" 1786998784 84266 d09859deeacfb748c085862365bf4e25 ""
-  "Front/main.pax" 1788904105 1007 c8d9ee0eddb9fb795eddd9d072e7a31a ""
-  "Front/main.pdf" 1788904104 56469 b977a0fb0feb2a787fb26b281c6a5b1d ""
+  "Front/main.pax" 1788904636 1007 0f0d70ea1ce011c51575e3d0859d114b ""
+  "Front/main.pdf" 1788904635 56469 0ca0530c1bf4dbedb692a3e5b0e5b2f6 ""
   "Tables/Generated/best_validation_psnr.tex" 1788869397 823 020d5e61a9c63bc6fa44f6bff92804e9 ""
   "Tables/Generated/best_validation_ssim.tex" 1788869395 843 fc2dc0d6d18d60664709f57967b453cf ""
   "Tables/Generated/mae_at_best_validation_ssim.tex" 1788869399 824 3639e3c39d2bef6d1450d75dc144d5cc ""
@@ -386,18 +386,18 @@
   "c:/Users/ludmy/Desktop/FCUP_thesis_layout _ Template/main.tex" 1788735782 3427 8a64012ab98fe109d02168344a8dbda4 ""
   "epigraphoverload.tex" 1769970949 1188 6dd9414e5b47083e75549dcf4cf895e6 ""
   "main.acr" 0 -1 0 ""
-  "main.aux" 1788904119 49552 6e868753a45a519d9b76ebe1bd6e3a53 "pdflatex"
+  "main.aux" 1788904648 49552 6e868753a45a519d9b76ebe1bd6e3a53 "pdflatex"
   "main.bbl" 1788903251 15388 2aa82c50e1017ef712b07b5e1cab3793 "bibtex main"
-  "main.brf" 1788904119 5501 7ec2e9797eccb60542fe0c18772185d9 "pdflatex"
-  "main.lof" 1788904119 1864 26d1e1ba4910a08e6ec51229da25b276 "pdflatex"
-  "main.logr" 1788904119 2830 b13f2075fb1c04cc513008d06b7303b0 "pdflatex"
-  "main.lot" 1788904119 5400 7bd4d2ea98f9e14889276cdd4ed5ef9b "pdflatex"
-  "main.out" 1788904119 17842 2b8c24bc50f8a85bffcc37a0af57aa27 "pdflatex"
+  "main.brf" 1788904648 5501 7ec2e9797eccb60542fe0c18772185d9 "pdflatex"
+  "main.lof" 1788904648 1864 26d1e1ba4910a08e6ec51229da25b276 "pdflatex"
+  "main.logr" 1788904648 2830 b13f2075fb1c04cc513008d06b7303b0 "pdflatex"
+  "main.lot" 1788904648 5400 7bd4d2ea98f9e14889276cdd4ed5ef9b "pdflatex"
+  "main.out" 1788904648 17842 2b8c24bc50f8a85bffcc37a0af57aa27 "pdflatex"
   "main.tex" 1788735782 3427 8a64012ab98fe109d02168344a8dbda4 ""
-  "main.toc" 1788904119 7490 4d6ab3a56b7c95ece6dc416a8e78c9fb "pdflatex"
+  "main.toc" 1788904648 7490 4d6ab3a56b7c95ece6dc416a8e78c9fb "pdflatex"
   "preamble.tex" 1788791360 10310 94a89422bf7283bca1ebcd918d6d8ce6 ""
   "precontent.tex" 1788900858 11299 83f6341c57e83e89c9321d7da4b804e6 ""
-  "vars.tex" 1788657197 2543 d770d6313af3821b905250ee3b948118 ""
+  "vars.tex" 1788904612 2598 fd55f538924061a220f0d5350d5996e7 ""
   (generated)
   "main.acn"
   "main.aux"
