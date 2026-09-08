@@ -351,22 +351,11 @@ As a complementary descriptive verification of possible global radiometric shift
 \subsection{\acrshort{roi} Metrics}
 \label{subsec:methods-roi}
 
-The global evaluation does not distinguish the model's behavior in regions directly affected by artifacts from that in body regions distant from the implant. Therefore, each slice was divided into two complementary zones based on the difference between the artifact-corrupted input and the clean reference.
+The global evaluation does not distinguish the model's behavior in regions directly affected by artifacts from that in body regions distant from the implant. Therefore, each slice was divided into two complementary zones based on how much the artifact-corrupted input differs from the clean reference. Metal artifacts do not only cause strong local streaks near the implant; they are typically accompanied by a faint, almost uniform intensity shift across the whole slice, a side effect of beam hardening. To avoid mistaking this global shift for a local artifact, the pixel-wise difference between the clean reference and the input was first computed, and its typical (median) value over the body region was estimated and subtracted out, so that only deviations beyond this baseline shift were considered.
 
-Metal artifacts affect an image in two distinct ways: they create sharp local streaks close to the implant, and they also introduce a small, near-uniform intensity shift across the whole slice (a beam-hardening bias, typically only a few tens of HU). To isolate the local streaks from this global shift, the signed difference between the clean reference $I_{\mathrm{ref}}$ and the artifact-corrupted input $I_{\mathrm{in}}$ was first computed within the body mask $M_{\mathrm{body}}$, $d=I_{\mathrm{ref}}-I_{\mathrm{in}}$. Its median value in the body, $b=\mathrm{median}(d\mid M_{\mathrm{body}})$, was then subtracted from $d$: this removes the uniform bias, so that a pixel is flagged as an artifact only when it deviates from that de-biased baseline, rather than simply because the whole slice is slightly shifted.\footnote{Implemented in \texttt{src/utils/roi\_zones.py} (function \texttt{generate\_artifact\_mask}), the single canonical implementation shared by the training-time monitoring callbacks and all evaluation scripts, so that every reported metric uses an identical\acrshort{roi} definition.}
+The Artifact Zone was then defined as the set of body pixels whose bias-corrected difference exceeds a fixed threshold, equivalent to about 42~HU on the normalized intensity scale used ($\tau=0{.}03$). Connected-component filtering (using SciPy's image-labeling utilities) was applied to discard components smaller than 20 pixels, which correspond to isolated CT quantum-noise pixels rather than genuine artifact streaks. No additional morphological dilation was applied, preserving the observed geometry of the \textit{streaks}. The Distant Zone was defined simply as the remaining body region outside the Artifact Zone. This zone quantifies changes outside the directly affected region. The clinical interpretation of anatomical preservation was reserved for external evaluation by readers.
 
-The Artifact Zone ($\mathcal{R}_{\mathrm{art}}$) keeps only the body pixels whose de-biased difference exceeds a fixed threshold $\tau$:
-\[
-M_{\mathrm{art}}=\left[\lvert d-b\rvert>\tau\right]\cap M_{\mathrm{body}} ,
-\qquad \tau=0{.}03\ (\approx 42~\mathrm{HU}\text{ in the normalized scale used}).
-\]
-Small connected components (fewer than 20 pixels) were then discarded to suppress isolated noise pixels while preserving genuine streak segments; no additional morphological dilation was applied ($r=0$), preserving the observed geometry of the \textit{streaks}. The Distant Zone ($\mathcal{R}_{\mathrm{dist}}$) is simply everything else inside the body:
-\[
-M_{\mathrm{dist}}=M_{\mathrm{body}}\setminus M_{\mathrm{art}}.
-\]
-This zone quantifies changes outside the directly affected region; the clinical interpretation of anatomical preservation was reserved for external evaluation by readers.
-
-The \autoref{fig:final-roi-examples} illustrates the application of the two zones in representative slices of the dataset, covering different anatomical regions and artifact patterns.
+The \autoref{fig:final-roi-examples} illustrates the application of the two zones in representative slices of the dataset, covering different artifact patterns.
 
 \begingroup
 \setlength{\intextsep}{4pt}
@@ -402,7 +391,7 @@ In every evaluation context, the metrics were expressed as variations relative t
 \Delta\mathrm{MAE}_{\Omega} = \mathrm{MAE}(I_{\mathrm{in}}\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}) - \mathrm{MAE}(\hat I\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}).
 \]
 
-Thus, $\Delta\mathrm{PSNR}>0$ and $\Delta\mathrm{SSIM}>0$ indicate improvement over the corrupted input. Since lower \acrshort{mae} represents better fidelity, the order of subtraction was reversed for this metric: $\Delta\mathrm{MAE}>0$ indicates error reduction and, therefore, improvement; $\Delta\mathrm{MAE}<0$ indicates error increase. Regular \acrshort{ssim} was used, calculated with a local window of $11\times11$ pixels and cropping with context around the evaluated region.
+Thus, $\Delta\mathrm{PSNR}>0$ and $\Delta\mathrm{SSIM}>0$ indicate improvement over the corrupted input. Since lower\acrshort{mae} represents better fidelity, the order of subtraction was reversed for this metric: $\Delta\mathrm{MAE}>0$ indicates error reduction and, therefore, improvement; $\Delta\mathrm{MAE}<0$ indicates error increase. Regular\acrshort{ssim} was used, calculated with a local window of $11\times11$ pixels and cropping with context around the evaluated region.
 
 \begin{table}[H]
     \centering
@@ -420,14 +409,11 @@ Thus, $\Delta\mathrm{PSNR}>0$ and $\Delta\mathrm{SSIM}>0$ indicate improvement o
 \end{table}
 %______________________________________________________________________________
 \subsection{Statistical Analysis}
-In all inferential analysis, the patient constituted the independent experimental unit. To avoid pseudoreplication resulting from the inclusion of multiple slices from the same patient, the metrics calculated per slice were first aggregated by mean within each patient. Thus, for each metric $m$ and patient $p$, paired values of the input and reconstruction, or of the two architectures, were compared according to the analysis.
+In all inferential analysis, the patient constituted the independent experimental unit. To avoid pseudoreplication resulting from the inclusion of multiple slices from the same patient, the metrics calculated per slice were first aggregated by mean within each patient, so that every patient contributed exactly one paired observation to each comparison.
 
-To evaluate the improvement over the corrupted input, paired differences per patient $d_p=m_{\mathrm{Model},p}-m_{\mathrm{Input},p}$ were calculated for\acrshort{psnr} and\acrshort{ssim}. For\acrshort{mae}, whose reduction represents better performance, $d_p=m_{\mathrm{Input},p}-m_{\mathrm{Model},p}$ was used. The null hypothesis in each test was that the median of the paired differences was equal to zero. The direct comparison between architectures used $d_p=m_{\mathrm{Dual},p}-m_{\mathrm{Single},p}$, so that negative values favor the Single Model. 
+To evaluate the improvement over the corrupted input, for each patient the output's value was compared with the corrupted input's value, for both\acrshort{psnr} and\acrshort{ssim}, so that a positive difference always represents improvement. For\acrshort{mae}, whose reduction represents better performance, the subtraction was reversed so that a positive difference also represents improvement. In every test, the null hypothesis was that there was no typical (median) difference between the paired values. The direct comparison between the two architectures followed the same logic, subtracting the Single Model's value from the Dual Model's value for each patient, so that negative differences favor the Single Model.
 
-The values of $p$ presented in the comparison tables were adjusted using the Holm sequential procedure, which controls the family-wise error rate without assuming independence between tests. For the $m$ raw $p$ values ordered as $p_{(1)}\leq\cdots\leq p_{(m)}$, the adjusted value at position $i$ was calculated as:
-\[
-p^{\mathrm{Holm}}_{(i)}=\max_{j\leq i}\left\{\min\left[1,\,(m-j+1)p_{(j)}\right]\right\}.
-\]
+The $p$-values presented in the comparison tables were adjusted using the Holm sequential procedure, which controls the probability of at least one false positive across a family of related tests without assuming that the tests are independent: the smallest raw $p$-values are penalized the most, while the relative ordering between tests is preserved. This correction was computed in Python with the \texttt{multipletests} function from the \texttt{statsmodels} library, using the \texttt{'holm'} method.
 
 In the reconstruction improvement table, the correction was applied jointly to the four corresponding tests for\acrshort{psnr} and\acrshort{ssim} for each of the two architectures. In the paired comparison Single Model versus Dual Model, the correction was applied jointly to the two tests, one for\acrshort{psnr} and another for\acrshort{ssim}.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  8 SEP 2026 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  8 SEP 2026 18:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1477,20 +1477,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 <Figures/roi_example_sample_0000.png, id=1137, 705.71655pt x 364.9635pt>
 File: Figures/roi_example_sample_0000.png Graphic file (type png)
 <use Figures/roi_example_sample_0000.png>
-Package pdftex.def Info: Figures/roi_example_sample_0000.png  used on input line 374.
+Package pdftex.def Info: Figures/roi_example_sample_0000.png  used on input line 364.
 (pdftex.def)             Requested size: 432.48051pt x 223.66321pt.
 
 * Missing: Figures/roi_example_sample_0000.pax
 <Figures/roi_example_sample_0003.png, id=1138, 705.71655pt x 364.9635pt>
 File: Figures/roi_example_sample_0003.png Graphic file (type png)
 <use Figures/roi_example_sample_0003.png>
-Package pdftex.def Info: Figures/roi_example_sample_0003.png  used on input line 379.
+Package pdftex.def Info: Figures/roi_example_sample_0003.png  used on input line 369.
 (pdftex.def)             Requested size: 432.48051pt x 223.66321pt.
 * Missing: Figures/roi_example_sample_0003.pax
 <Figures/roi_example_sample_0006.png, id=1139, 705.71655pt x 364.9635pt>
 File: Figures/roi_example_sample_0006.png Graphic file (type png)
 <use Figures/roi_example_sample_0006.png>
-Package pdftex.def Info: Figures/roi_example_sample_0006.png  used on input line 384.
+Package pdftex.def Info: Figures/roi_example_sample_0006.png  used on input line 374.
 (pdftex.def)             Requested size: 432.48051pt x 223.66321pt.
 * Missing: Figures/roi_example_sample_0006.pax
 [24 <./Figures/roi_example_sample_0000.png> <./Figures/roi_example_sample_0003.png>] [25 <./Figures/roi_example_sample_0006.png>] [26]) (Chapters/Final/5.Results.tex [27]
@@ -2226,9 +2226,9 @@ pdfTeX warning (dest): name{glo:ctmar} has been referenced but does not exist, r
 pdfTeX warning (dest): name{glo:ct} has been referenced but does not exist, replaced by a fixed one
 
  <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0800.pk> <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (111 pages, 12083064 bytes).
+Output written on main.pdf (111 pages, 12079959 bytes).
 PDF statistics:
- 6908 PDF objects out of 7423 (max. 8388607)
+ 6909 PDF objects out of 7423 (max. 8388607)
  405 named destinations out of 1000 (max. 500000)
  1056 words of extra memory for PDF output out of 10000 (max. 10000000)
 
