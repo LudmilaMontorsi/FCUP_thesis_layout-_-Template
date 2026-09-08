@@ -20,155 +20,297 @@
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_1337\\training_001_dualhead\\training_curves_dualhead.pdf",
-      "destination": "Figures\\Generated\\training\\training-curves-dualhead-eaf42068.pdf",
-      "sha256": "321fa530467541d596d5a6afff4c7abf8c9ed773239c5981276fea2f51d150b3"
+      "source": "outputs\\training_curves\\seed_1337\\training_001_dualhead\\training_curves_dualhead_pair_01_loss.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-01-loss-ad3e34d5.pdf",
+      "sha256": "90ec7596bd99a2b760c81dae8f9f1c799d6df9a6fcd992779f4504a7a7594f97"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_1337\\training_008_singlehead\\training_curves_singlehead.pdf",
-      "destination": "Figures\\Generated\\training\\training-curves-singlehead-d7cddf63.pdf",
-      "sha256": "78455607417109f62f463258fdf082e5f59365142f6d32dfd375268e6faaa858"
+      "source": "outputs\\training_curves\\seed_1337\\training_001_dualhead\\training_curves_dualhead_pair_02_psnr_ssim.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-02-psnr-ssim-a2bedecb.pdf",
+      "sha256": "7cde02b64c3785d1bf679a0c0e0f3b2cbef348bc69deb15e887998bb6c6f1acb"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_2024\\training_001_dualhead\\training_curves_dualhead.pdf",
-      "destination": "Figures\\Generated\\training\\training-curves-dualhead-7a26d315.pdf",
-      "sha256": "887dcea770b797003a917b164c1bea768bee137303425d6ef1fb9f63aa4bbc5f"
+      "source": "outputs\\training_curves\\seed_1337\\training_001_dualhead\\training_curves_dualhead_pair_03_mae_dice.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-03-mae-dice-3c0cd1ca.pdf",
+      "sha256": "cb4e3d2d1b7c07da16caf12aa2420e102219f12d0571ad88050ac979e5271e4f"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_2024\\training_001_singlehead\\training_curves_singlehead.pdf",
-      "destination": "Figures\\Generated\\training\\training-curves-singlehead-bcb9eae9.pdf",
-      "sha256": "0b7bd05c232c75edfb60c78b063d96f03270e0cf97ace59f33250f909cc51cb8"
+      "source": "outputs\\training_curves\\seed_1337\\training_001_dualhead\\training_curves_dualhead_pair_04_lr_gap.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-04-lr-gap-3f97ba9f.pdf",
+      "sha256": "684ef763484e3007f9d19462503fdd19b58825aea19f4437266a713efa0a64ee"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_42\\training_001_dualhead\\training_curves_dualhead.pdf",
-      "destination": "Figures\\Generated\\training\\training-curves-dualhead-157d2305.pdf",
-      "sha256": "307fca2fb3b2720041e671faf281c67c83980de89a6a68b679474bcfea6b6f90"
+      "source": "outputs\\training_curves\\seed_1337\\training_008_singlehead\\training_curves_singlehead_pair_01_loss_psnr.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-pair-01-loss-psnr-2b6ea850.pdf",
+      "sha256": "3fcac63a3199803f37ce9cb40954ff280258005d1aaa292affebf9f5b66881b7"
     },
     {
       "category": "training",
-      "source": "outputs\\training_curves\\seed_42\\training_001_singlehead\\training_curves_singlehead.pdf",
-      "destination": "Figures\\Generated\\training\\training-curves-singlehead-94df11ed.pdf",
-      "sha256": "0ca853d3a5a28b08c6d11447f96b35c3938ff1799338d3d74dc5f143eb9e8130"
+      "source": "outputs\\training_curves\\seed_1337\\training_008_singlehead\\training_curves_singlehead_pair_02_ssim_mae.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-pair-02-ssim-mae-dbf1eb22.pdf",
+      "sha256": "24a8418f108b2b4153f3ff39f6e8ca7d072c8d4668a6ef2a4d55cde2248e4117"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_1337\\training_008_singlehead\\training_curves_singlehead_pair_03_lr_gap.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-pair-03-lr-gap-31221acf.pdf",
+      "sha256": "5cfd8a2b9f52cd798e43459ce05f92c76e561a82580f4fd0defab8466e62bada"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_dualhead\\training_curves_dualhead_pair_01_loss.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-01-loss-419f6af3.pdf",
+      "sha256": "d7478be4e5ce90eba84a615c9e4ff3a456c64529bc0f0892b0676318b2940925"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_dualhead\\training_curves_dualhead_pair_02_psnr_ssim.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-02-psnr-ssim-bc0a0156.pdf",
+      "sha256": "a8329544f5c58e3d59017c9e6669c8165fd371552646e67f1c32ec4efff1b452"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_dualhead\\training_curves_dualhead_pair_03_mae_dice.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-03-mae-dice-bde647ae.pdf",
+      "sha256": "7392e454041706bdd437e1c7995e6d16ad8e9ef9a6932c0c27c8cb3483e4f452"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_dualhead\\training_curves_dualhead_pair_04_lr_gap.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-04-lr-gap-06e153c6.pdf",
+      "sha256": "44bdbcde03e40ca7288b2d53f0da7e63c50364d0a749936789e8548f13e9f7b8"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_singlehead\\training_curves_singlehead_pair_01_loss_psnr.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-pair-01-loss-psnr-6e359ebd.pdf",
+      "sha256": "434da7d28bc96238bf2539b726a73b6a4cea04c8ce0acffa6994a043c437b7f4"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_singlehead\\training_curves_singlehead_pair_02_ssim_mae.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-pair-02-ssim-mae-80362d3f.pdf",
+      "sha256": "ae3ff689f8a4db3ce8fa64053b583d2aacb28a73f92936a51d4b5f82ed93f350"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_2024\\training_001_singlehead\\training_curves_singlehead_pair_03_lr_gap.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-pair-03-lr-gap-c975e425.pdf",
+      "sha256": "60f7967f600ea3743f272bd9195857318b55b80ce1ae131bd847c1613faa9703"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_dualhead\\training_curves_dualhead_pair_01_loss.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-01-loss-e3314fde.pdf",
+      "sha256": "0555a3d8118fb51351ca1beab2161ccc0530b89140b4658603937407c7b3edad"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_dualhead\\training_curves_dualhead_pair_02_psnr_ssim.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-02-psnr-ssim-edde567e.pdf",
+      "sha256": "7deca3d19179d3bd763d6205d493e6a6ddfd892ab4821c5c289209f644815881"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_dualhead\\training_curves_dualhead_pair_03_mae_dice.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-03-mae-dice-16a94110.pdf",
+      "sha256": "4740ea54cd1e501611389e6efa1b1dc8ace6defb12178e2a8a1cc461a503380a"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_dualhead\\training_curves_dualhead_pair_04_lr_gap.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-dualhead-pair-04-lr-gap-f902b5f6.pdf",
+      "sha256": "8868b7b5692b558180231d25f6c720f923f0ab99443724228b5b84e398dde5bc"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_singlehead\\training_curves_singlehead_pair_01_loss_psnr.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-pair-01-loss-psnr-2dbea9f5.pdf",
+      "sha256": "634903923f1e5b203e75a5b38cd4bc3efe7645ebb77e6c7e81b0adfe92b94a1c"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_singlehead\\training_curves_singlehead_pair_02_ssim_mae.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-pair-02-ssim-mae-c7bfb6d4.pdf",
+      "sha256": "8465d88cfb208271685cd0d16d00663afb89938ad0f48ca2699ddfc35d7d10bb"
+    },
+    {
+      "category": "training",
+      "source": "outputs\\training_curves\\seed_42\\training_001_singlehead\\training_curves_singlehead_pair_03_lr_gap.pdf",
+      "destination": "Figures\\Generated\\training\\training-curves-singlehead-pair-03-lr-gap-be217cb8.pdf",
+      "sha256": "022cc4097494714c00a4896303a5d1e137b032ca0ee526491f466008d7b79d73"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-97e4460d.pdf",
-      "sha256": "445d6f904a2f968813e17362f40eddd3434ae36d7a7c5b28008b051fb2dc3455"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_mae.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-2809e634.pdf",
+      "sha256": "820c5c3663ae358e327df4b1e7636e8445c7d41439d23373291080f279f26f8b"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_mae.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-f6351a38.png",
-      "sha256": "acc47a95f6a6b7d3286f47f8ca668616a17d02918e3049684520e87e7e2530f3"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_mae.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-mae-a69c3ca2.png",
+      "sha256": "875b5bf90fa8425cbc1878f6a261913f4e04e1f120fea47bd383b07a1356acc7"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_psnr.pdf",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-89c2d63f.pdf",
-      "sha256": "620b883d42200fdf46e1720f9ddb8e0d7d124d305079813eca808d0c869dfc19"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-014f3a02.pdf",
+      "sha256": "8d6afef79be93922db78d9eeccafc65982e86ce5d0b827eb3729ee9008f10685"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_psnr.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-6f56551d.png",
-      "sha256": "42979e3ffd1157cfc1eb126b946ab40494ca2c66a56672016e926bf704e50427"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-psnr-89620f8c.png",
+      "sha256": "e8a803a9f39db76102175654b6e7aeb2e657b9363a38f34d1fe540f0440e0216"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_ssim.pdf",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-ssim-cb62d6ec.pdf",
-      "sha256": "f16014a6d5fcf391c78a859d8938a2891fbbaa5066f521e4d4c4a828755dab78"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-ssim-fcb9fde9.pdf",
+      "sha256": "2230eaeeefd30335b433464ecff0438ea3104d55da8db2936376782fb94cbede"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\boxplot_roi_delta_ssim.png",
-      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-ssim-5655d171.png",
-      "sha256": "36a7ceaaaf582841fc98c308af8348944fd6eeaaa9dbe1a19c70a90a5802948c"
-    },
- 
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_psnr.pdf",
-      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-fcc00d7a.pdf",
-      "sha256": "fad58d20b6162dff8dc832b11c4d0368bb6f81c75a22f73b28d5d409fae42c6d"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\boxplot_roi_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\boxplot-roi-delta-ssim-577df2fe.png",
+      "sha256": "094c5c1f4d520446ab368cfd3d0934e19cb0723be0d90c6697e658d3806f3413"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_psnr.png",
-      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-72bf9380.png",
-      "sha256": "18869765c060b32297f33c8d4ae07829737cbb05cdacb7714237869f6b6536e5"
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-58fa5cc1.pdf",
+      "sha256": "e928efd33590e4de9eea875b89bea11f5edce9976fc34cdbdce249e902cb782b"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_ssim.pdf",
-      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-fba91b6b.pdf",
-      "sha256": "c38d0aed0860dd37b196368959f19488395c2efa1fc647298aa0b1ccc958830f"
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\correlation_global_epi_vs_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-epi-vs-delta-psnr-23127644.png",
+      "sha256": "b11350dcd6d34d5134aca1ecb5e98586df26660b4256e17c4fc6e2e7e7064456"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\histogram_global_delta_ssim.png",
-      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-abb77a0b.png",
-      "sha256": "bc99599e12610db6a064b8f829988b34a5e4bf6b7f229c9c76f0e7d13f92bfc4"
-    },
-    
-    {
-      "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
-      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-5b23d2e9.pdf",
-      "sha256": "324d3fd29d535a37d77c356e084642c81686f7be9bb2a1359b4ddd8fadf79d3a"
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-0fc23480.pdf",
+      "sha256": "4aae0a8039823360b9e5506b309182e328fec83ad733543d1e64028d740628d6"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-bf7dd83e.png",
-      "sha256": "0212ec50d956dc72cf1f5ac4cb6b6dfce45d04f7727e18f3ef2c9e7719817689"
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\correlation_global_texture_vs_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\correlation-global-texture-vs-delta-ssim-4962c1ba.png",
+      "sha256": "6ffbcaa5c355173a2690e0bb9d568d17214e0b9c78ec4c1e5e85b72333d6585f"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.pdf",
-      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-4149b486.pdf",
-      "sha256": "9cd21b42d7d571c065fedafe6cbe99404e396a89837bf8c96eb302b5c51482d7"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_delta_psnr.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-110b2fe8.pdf",
+      "sha256": "7cddfd3f91eb3e975aa0129ebe5a9b0f8dd54574b5fcee3b76d2cffc26cb34a8"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-c9bf4c54.png",
-      "sha256": "3c056236488146b7428c70656ec3e34e0c46e990c6188e3cf750761ca61101e9"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_delta_psnr.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-psnr-e2457729.png",
+      "sha256": "415aea76df88e156c2a134aa6f7d2ce79132fa2353ccf7ef92777c686141a0bd"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety.pdf",
-      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-3993aa31.pdf",
-      "sha256": "4cf54b5bac51890ab77c304c505b90cb302b483bc0b74350fb633d034a23f485"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_delta_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-42445696.pdf",
+      "sha256": "b264b936704769e06c7761a68a384a723f58fc3a05c46e7b2f43c142c9e899fc"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-8e831fe6.png",
-      "sha256": "6f054f2da2a06658baba0b3bf8c444caf8e7c99237fcfda694aff783cd7c0f8e"
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\histogram_global_delta_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-delta-ssim-ae880e7f.png",
+      "sha256": "adf4dd1e78abfc5ec8e502a95476aae12434f69005b3fa65893628abbbcff94d"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety_ssim.pdf",
-      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-ssim-922e7189.pdf",
-      "sha256": "4f8ce455394687e5d7f50bd3ab905cf51040423edaf79212795c9737fed3971e"
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_epi_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-acfe06b4.pdf",
+      "sha256": "cec1ce30489c3c9926983a8975ee969ea7ef46197d4dbbcf3c24982205a730d8"
     },
     {
       "category": "histograms",
-      "source": "outputs\\histograms\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_roi_safety_ssim.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-ssim-9495e31d.png",
-      "sha256": "6189d17f23aedc407af3aeed552779cc19fc2f2e7df611dc37bcc66773acf061"
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_epi_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-epi-distribution-9f8fad53.png",
+      "sha256": "84208bc6d83b4201aaa8f562e11055b341e26b063f94f2a2b49bd13c54cfc15a"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_texture_distribution.pdf",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-0c066b5b.pdf",
+      "sha256": "d5345d68a1840bc3d2f726507adc27dab91a6fbf20bc3f7b8f89fcf879285cfe"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_42\\singlehead-031-0.9510-ssim_hu\\val\\histogram_global_texture_distribution.png",
+      "destination": "Figures\\Generated\\evaluation\\histogram-global-texture-distribution-d55ee5ab.png",
+      "sha256": "4f80761a006678ae546c60670d66147bb15bc1ec09de235a69bc3327a3d5f432"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-4fc30cba.pdf",
+      "sha256": "f2b3bb8ca8fb335ed8c228276df177b5251441f876164649611ad5fc82b8a535"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_global_psnr_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-psnr-baseline-vs-model-6f5a20c6.png",
+      "sha256": "9f06a35b95d84149ea0ab2c8c85fe3efdbc0e3c39b89c19be01fca261cc378c6"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-76854152.pdf",
+      "sha256": "a18dd8ddf5d417fb044c3865d5164ea6fda46dbcb2f6e9acf2458db5f0a8d23f"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_global_ssim_baseline_vs_model.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-global-ssim-baseline-vs-model-2e564035.png",
+      "sha256": "e16b380899994a75b4235651a7b5605072fdd3019eab1c25024fbcfb3db74419"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_roi_safety.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-9b0f2e40.pdf",
+      "sha256": "76c00fa79a2ab961d6e6bd832d3f097a2b296555b2c6ae78c594e0558761f513"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_roi_safety.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-5d7f4c4a.png",
+      "sha256": "c576d2593afa5427119e13b85322d825c1d4cc5bbe802d5017e5968a8076e774"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_roi_safety_ssim.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-ssim-85fb7920.pdf",
+      "sha256": "58808565f4fd4bb3353c17715cefd06bbd2bfa2f7b2fdb5bda3d30961391daba"
+    },
+    {
+      "category": "histograms",
+      "source": "outputs\\histograms\\seed_2024\\dualhead-023-0.9503-img_out_ssim_hu\\test\\scatter_roi_safety_ssim.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-roi-safety-ssim-3d7fe7bc.png",
+      "sha256": "28a79de9a24c030c5191888fef6019b165c5f7369019908d586ea90b455e3fec"
     },
     {
       "category": "scatter",
-      "source": "outputs\\scatter_bland_altman\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\bland_altman.png",
-      "destination": "Figures\\Generated\\evaluation\\bland-altman-ac1cf9ac.png",
-      "sha256": "75bcd813973dc484c07b3723decc9571da712715c711328a8bdf0e802884feac"
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\bland_altman.pdf",
+      "destination": "Figures\\Generated\\evaluation\\bland-altman-45e9e6fa.pdf",
+      "sha256": "3aa85e29f42c22ce79b6d3d87d8e21764445f8d8c6978babe1bfe0f6b27a20dd"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\bland_altman.png",
+      "destination": "Figures\\Generated\\evaluation\\bland-altman-5fe9bcb6.png",
+      "sha256": "4b29fc32c04e3537e0fee04014d3065667d0b81617cf9dc7eb5f9e6eed7b6fd2"
     },
     {
       "category": "scatter",
@@ -178,9 +320,15 @@
     },
     {
       "category": "scatter",
-      "source": "outputs\\scatter_bland_altman\\seed_1337\\dualhead-028-0.9490-img_out_ssim_hu\\test\\scatter_pixel_hu.png",
-      "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-3c45e30e.png",
-      "sha256": "b2815bb4559b7568c9dcdee605e0f72657b8077c4efa3579855e92ac3544b353"
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_pixel_hu.pdf",
+      "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-1396dbc6.pdf",
+      "sha256": "f0aacd86d51d9e4b456823731b67655ec1e4504fddaf146c580f018f64226a05"
+    },
+    {
+      "category": "scatter",
+      "source": "outputs\\scatter_bland_altman\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\scatter_pixel_hu.png",
+      "destination": "Figures\\Generated\\evaluation\\scatter-pixel-hu-f5c56e48.png",
+      "sha256": "729a141ace202c8d1bbc748639b28599806a2f4d164becd296ba68fa3ce0b27e"
     },
     {
       "category": "worst_cases",
@@ -330,20 +478,36 @@
       "category": "ablation",
       "source": "outputs\\ablation\\seed_2024\\comparison_test\\comparison_bar_charts.pdf",
       "destination": "Figures\\Generated\\paired\\comparison-bar-charts-76dfb4b9.pdf",
-      "sha256": "79b7df6e96bf1344e9446081dc096b5bdaa8510b1bec8ccb7b9fb065f1e99f9c"
+      "sha256": "bf7802f09db6dddea4e4370e3b5d6a0b985c2076081a806f478df789d757316c"
     },
-
     {
       "category": "benchmark",
-      "source": "outputs\\benchmark\\seed_42\\singlehead-031-0.9510-ssim_hu\\test\\benchmark_latency.png",
-      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-5d3a49bf.png",
-      "sha256": "d91576e1900b369b4f71410eec3cd6fda449a21387b95efbc46dec7a96ac9e69"
+      "source": "outputs\\benchmark\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\benchmark_latency_histogram.pdf",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-histogram-91086c81.pdf",
+      "sha256": "33c9d7c9869f25023fb98b10b1526a98290d5f15e6cdc6e73df0a5b233c76c97"
+    },
+    {
+      "category": "benchmark",
+      "source": "outputs\\benchmark\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\benchmark_latency_histogram.png",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-histogram-6c98e13a.png",
+      "sha256": "568a0c83142d1ad3d6028b14ed97039e1c7cf8842afe541cdc8339b5549c27b8"
+    },
+    {
+      "category": "benchmark",
+      "source": "outputs\\benchmark\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\benchmark_latency_per_slice.pdf",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-per-slice-fe3b1d76.pdf",
+      "sha256": "b81e03fbb54cf7588b583ca3f92f798abc9ae644c851386f2462a383fc5b2a2a"
+    },
+    {
+      "category": "benchmark",
+      "source": "outputs\\benchmark\\seed_2024\\singlehead-033-0.9511-ssim_hu\\test\\benchmark_latency_per_slice.png",
+      "destination": "Figures\\Generated\\benchmark\\benchmark-latency-per-slice-6724a16d.png",
+      "sha256": "d829b14b1f7d78eba6f5f128fbb7622a388fee1762b487ff4a121d98218006c7"
     }
   ],
   "tables": {
     "internal_metrics": true,
     "paired_comparison": true,
-    "ablation": true,
-    "seed_comparison": false
+    "ablation": true
   }
 }

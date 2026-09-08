@@ -1,0 +1,39 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{llccc}
+\multicolumn{5}{c}{\textbf{Reconstruction Quality}} \\[3pt]
+\toprule
+\textbf{Model} & \textbf{Metric} & \textbf{Mean improvement} & \textbf{95\% CI} & \textbf{$p$ (Holm)} \\
+\midrule
+Dual Model & SSIM & $0.0879$ & $[0.0731; 0.1062]$ & $7.64\times10^{-11}$ \\\\
+Dual Model & PSNR (dB) & $7.06$ & $[6.30; 7.81]$ & $4.42\times10^{-21}$ \\\\
+Dual Model & MAE (HU) & $15.54$ & $[12.79; 19.88]$ & $7.64\times10^{-11}$ \\\\
+Single Model & SSIM & $0.0891$ & $[0.0744; 0.1075]$ & $7.64\times10^{-11}$ \\\\
+Single Model & PSNR (dB) & $7.11$ & $[6.35; 7.87]$ & $4.53\times10^{-21}$ \\\\
+Single Model & MAE (HU) & $15.72$ & $[12.94; 20.14]$ & $7.64\times10^{-11}$ \\\\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Global body-mask-aware metrics, aggregated at the patient level ($n=41$); no ROI restriction. The 95\% CIs use BCa bootstrap for $\Delta$SSIM and $\Delta$MAE and one-sample $t$ intervals for $\Delta$PSNR. Holm-adjusted two-sided $p$-values use exact binomial sign tests for $\Delta$SSIM and $\Delta$MAE and one-sample $t$-tests for $\Delta$PSNR, separately within each model across the three global metrics. Positive $\Delta$MAE denotes error reduction.
+\captionsetup{skip=2pt}
+\caption[Improvement over corrupted input]{Improvement over the corrupted input on the test set.}
+\label{tab:ablation_improvement}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{cccc}
+\multicolumn{4}{c}{\textbf{Dual Model $-$ Single Model}} \\[3pt]
+\hline
+\textbf{Metric} & \textbf{Mean Difference} & \textbf{95\% CI} & \textbf{$p$ (Holm)} \\
+\hline
+delta\_psnr & $-0.0536$ & $[-0.1075; -0.0165]$ & $2.75\times10^{-2}$ \\
+delta\_ssim & $-0.0012$ & $[-0.0015; -0.0010]$ & $2.35\times10^{-9}$ \\
+delta\_mae\_hu & $-0.1856$ & $[-0.3381; -0.0906]$ & $8.62\times10^{-4}$ \\
+\hline
+\end{tabular}
+\captionsetup{skip=2pt}
+\caption[Paired Single vs Dual Model comparison]{Patient-level paired comparison between architectures ($n=41$). Negative differences favor the Single Model.}
+\label{tab:workflow-paired-comparison}
+\end{table}

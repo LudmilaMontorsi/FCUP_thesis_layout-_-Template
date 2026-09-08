@@ -2,33 +2,39 @@
 \label{chap:final-results}
 
 \section{Final Cohort and Experimental Integrity}
-\subsection{Automatic Approval x Manually Inspection Results}
-É  importante deixar claro como ficou a distribuição dos dados que foram aprovados e reprovados automaticamente, e também quais foram avaliados manualmente. O gráfico abaixo, mapeia todos os pares do\acrshort{ctmar} Dataset, destacando os que foram aprovados automaticamente, os que foram reprovados e os que foram sujeitos a inspeção visual humana. A distribuição anatómica dos pares é representada por cores, permitindo uma análise visual da relação entre a aprovação automática e a localização anatómica dos artefatos metálicos.
+\subsection{Automatic Approval and Manual Review Outcomes}
+
+The final curation outcome of every pair in the\acrshort{ctmar} dataset was recovered from the canonical manifest. Retained pairs were classified as manually reviewed when either source-level decision was \texttt{manual\_approved}; all remaining retained pairs were classified as automatically retained. Pairs not included in the final cohort were classified as excluded after verification. This final category comprises 435 pairs without a secure correspondence and three pairs rejected after the complementary\acrshort{ms-ssim} review.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{Figures/Generated/final_cohort_curation_overview.pdf}
+    \captionsetup{skip=2pt}
+    \graphiccaption[Final cohort curation]{Final curation outcomes for all 14,000\acrshort{ctmar} pairs. The upper panel reports the global distribution of outcomes; the lower panel reports the percentage within each anatomical subset. The manifest labels distinguish \textit{Body} and \textit{Head} subsets, rather than the precise anatomical location of a metallic implant.}
+    \label{fig:final-cohort-curation}
+\end{figure}
 
 \subsection{Complementary Analysis with\acrshort{ms-ssim}}
 
-Antes de avançar para a análise dos resultados dos modelos de redução de artefatos, foi realizada mais uma avaliação dos resultados\acrshort{ctmar} x DeepLesion/Stroke EIT para verificar a qualidade das correspondências automáticas. Esta etapa é crucial para garantir uma camada extra de confiança nos resultados obtidos pelo algoritmo de comparação de similaridade estrutural. 
-Todos os pares que tiveram a correspondencia aprovada automaticamente pelo fato de seu score ser acima de 0.994 foram revisados por um novo algoritmo que calcula o\acrshort{ms-ssim} entre as imagens correspondentes. Um histograma da distribuiuição dos\acrshort{ms-ssim} foi gerado, e os pares com pontuação menor que 0.9 foram revisados manualmente sendo aprovado ou recusado com base em avaliação humana.
+Before advancing to the analysis of the results of the artifact reduction models, another evaluation of the\acrshort{ctmar} x DeepLesion/Stroke EIT results was conducted to verify the quality of the automatic matches. This step is crucial to ensure an extra layer of confidence in the results obtained by the structural similarity comparison algorithm.
+Every pair that had its match automatically approved due to its score being above 0.994 was reviewed by a new algorithm that calculates the\acrshort{ms-ssim} between the corresponding images. A histogram of the\acrshort{ms-ssim} distribution was generated, and pairs with scores below 0.9 were manually reviewed and either approved or rejected based on human evaluation.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/ssim_distribution_full.pdf} \\[4pt]
     \includegraphics[width=\textwidth]{Figures/ssim_distribution_zoom.pdf}
     \captionsetup{skip=2pt}
-    \graphiccaption[MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)]{Distribuição de MS-SSIM entre pares correspondentes (\acrshort{ctmar} vs DL/Stroke, aprovados automaticamente). Acima: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. Abaixo: zoom do histograma para a região de maior interesse, com destaque para os pares com MS-SSIM inferior a 0.9, que foram sujeitos a revisão manual.}
+    \graphiccaption[MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)]{\acrshort{ms-ssim} distribution between corresponding pairs (\acrshort{ctmar} vs DL/Stroke, automatically approved). Above: histogram with percentiles P1 and P5, median, mean, and threshold of 0.9. Below: zoom of the histogram for the region of greatest interest, highlighting pairs with\acrshort{ms-ssim} below 0.9, which were subject to manual review.}
     \label{fig:ssim_distribution}
 \end{figure}
 
+The distribution analysis between the corresponding pairs reveals that most pairs exhibit high structural similarity, with a mean value of 0.9694 and a median of 0.9830, indicating that the automatic matching process is generally reliable and effective in identifying corresponding pairs between the\acrshort{ctmar} and DeepLesion/Stroke EIT datasets.
 
-A análise da distribuição entre os pares correspondentes revela que a maioria dos pares apresenta alta similaridade estrutural, com um valor médio de 0.9694 e uma mediana de 0.9830, indicando que o processo de correspondência automática é, em geral, confiável e eficaz na identificação de pares correspondentes entre os datasets\acrshort{ctmar} e DeepLesion/Stroke EIT.
-
-Os pares com pontuação de\acrshort{ms-ssim} abaixo de 0.9 eram 340 no total, apenas 3 foram reprovados após inspeção visual humana \ref{fig:ECDF}. Nessa inspeção, percebe-se que mesmo os casos com pontuações bastante baixas de\acrshort{ms-ssim} não eram falsos positivos e sim devido a diferenças no pós-processamento ou tratamento geral das imagens que geram alterações locais no qual o\acrshort{ms-ssim} é mais sensível. Isso pode ser visualizado na figura \ref{fig:manual_review_examples}. Esse fato evidencia a eficácia da estratégia de correspondência por similaridade estrutural global adotada, que conseguiu identificar os pares com precisão, com apenas 3 falsos positivos identificados, mesmo após análise rigorosa \ref{fig:reproved_examples}. Mostrando que a metodologia é robusta e teve desempenho superior em detectar slices nesse trabalho do que uso do próprio\acrshort{ms-ssim}. Pois, enquanto as diferenças locais afetaram o\acrshort{ms-ssim} de forma mais significativa, a metodologia baseada em similaridade de cosseno conseguiu identificar as correspondências corretas com pontuação global elevada, mesmo em casos de diferenças locais acentuadas.
-
+The pairs with\acrshort{ms-ssim} scores below 0.9 totaled 340, of which only 3 were rejected after human visual inspection \ref{fig:ECDF}. In this inspection, it was observed that even cases with quite low\acrshort{ms-ssim} scores were not false positives but rather due to differences in post-processing or general image treatment that generate local alterations to which\acrshort{ms-ssim} is more sensitive. This can be visualized in figure \ref{fig:manual_review_examples}. This fact highlights the effectiveness of the global structural similarity matching strategy adopted, which managed to identify pairs accurately, with only 3 false positives identified even after rigorous analysis \ref{fig:reproved_examples}. This shows that the methodology is robust and performed better in detecting slices in this work than using\acrshort{ms-ssim} itself. While local differences affected\acrshort{ms-ssim} more significantly, the cosine similarity-based methodology was able to identify correct matches with high global scores, even in cases of pronounced local differences.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/ssim_ecdf_final.pdf}
     \captionsetup{skip=2pt}
-    \graphiccaption[MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)]{Distribuição de MS-SSIM entre pares correspondentes (\acrshort{ctmar} vs DL/Stroke, aprovados automaticamente). À esquerda: histograma com os percentis P1 e P5, mediana, média e limiar de 0.9. À direita: ECDF correspondente. Os pares com MS-SSIM inferior a 0.9 foram sujeitos a revisão manual.}
+    \graphiccaption[MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)]{\acrshort{ms-ssim} distribution between corresponding pairs (\acrshort{ctmar} vs DL/Stroke, automatically approved). Left: histogram with percentiles P1 and P5, median, mean, and threshold of 0.9. Right: corresponding ECDF. Pairs with MS-SSIM below 0.9 were subject to manual review.}
     \label{fig:ECDF}
 \end{figure}
 
@@ -38,20 +44,18 @@ Os pares com pontuação de\acrshort{ms-ssim} abaixo de 0.9 eram 340 no total, a
     \includegraphics[width=0.70\textwidth]{Figures/image5.png}\\[2pt]
     \includegraphics[width=0.70\textwidth]{Figures/image6.png}
     \captionsetup{skip=2pt}
-    \caption[Visually approved low MS-SSIM pairs]{Exemplos de pares correspondentes com valores de\acrshort{ms-ssim} (0.7597, 0.7694 e 0.7717, respetivamente) aprovados após revisão visual humana mesmo com pontuações baixas.}
+    \caption[Visually approved low MS-SSIM pairs]{Examples of corresponding pairs with low\acrshort{ms-ssim} values (0.7597, 0.7694, and 0.7717, respectively) approved after human visual inspection despite low scores.}
     \label{fig:manual_review_examples}
 \end{figure}
 
-
-Os pares reprovados apresentavam\acrshort{ms-ssim} claramente fora do padrão (< 0.61), com valores extremamente baixos, como podem ver na figura \Ref{fig:reproved_examples}. Além disso, representaram os pares com pontuação mais próximas do limiar de aceitação automática de 0.994 \ref{fig:cosine_scatter_audited}. Demonstrando que os casos em que o método falha são outliers claros em\acrshort{ms-ssim} e permanecem justamente na zona cinzenta e propensa a erros da determinação empírica do limiar de aceitação automática. Além disso, os pares reprovados possuem características visuais bastante particulares com fundo dominando a imagem e poucas estruturas anatômicas visíveis, o que torna a avaliação de similaridade estrutural mais desafiadora devido a grande homogeneidade das características visuais.
-
+Clearly, the reproved pairs presented\acrshort{ms-ssim} values significantly below the standard (< 0.61), with extremely low scores, as shown in figure \ref{fig:reproved_examples}. Additionally, they represented pairs with scores closer to the automatic acceptance threshold of 0.994 \ref{fig:cosine_scatter_audited}. This demonstrates that the cases where the method fails are clear outliers in\acrshort{ms-ssim} and remain precisely in the gray area prone to errors in the empirical determination of the automatic acceptance threshold. Furthermore, the reproved pairs have very particular visual characteristics, with backgrounds dominating the image and few visible anatomical structures, making structural similarity assessment more challenging due to the high homogeneity of visual features.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.70\textwidth]{Figures/image1.png}\\[4pt]
     \includegraphics[width=0.70\textwidth]{Figures/image2.png}\\[4pt]
     \includegraphics[width=0.70\textwidth]{Figures/image3.png}
     \captionsetup{skip=2pt}
-    \caption[Visually rejected pairs]{3 pares reprovados após inspeção visual humana com valores de \acrshort{ms-ssim} (head\_1159: 0.4573, head\_369: 0.5652 e head\_763: 0.6009, respetivamente). As pontuações desses pares na similaridade de cosseno foram head\_1159: 0.9960, head\_369: 0.9952 e head\_763: 0.9951.}
+    \caption[Visually rejected pairs]{Three reproved pairs after human visual inspection with\acrshort{ms-ssim} values (head\_1159: 0.4573, head\_369: 0.5652, and head\_763: 0.6009, respectively). The cosine similarity scores for these pairs were head\_1159: 0.9960, head\_369: 0.9952, and head\_763: 0.9951.}
     \label{fig:reproved_examples}
 \end{figure}
 
@@ -59,69 +63,52 @@ Os pares reprovados apresentavam\acrshort{ms-ssim} claramente fora do padrão (<
     \centering
     \includegraphics[width=0.98\textwidth]{Figures/cosine_scatter_audited.pdf}
     \captionsetup{skip=2pt}
-    \graphiccaption[Cosine similarity of MS-SSIM-audited pairs]{Distribuição dos valores de similaridade de cosseno para os pares inspecionados visualmente.}
+    \graphiccaption[Cosine similarity of\acrshort{ms-ssim}-audited pairs]{Cosine similarity distribution of visually inspected pairs.}
     \label{fig:cosine_scatter_audited}
 \end{figure}
 
-Os pares com\acrshort{ms-ssim} mais críticos logo acima dos reprovados tinham valores maiores que 0.75 \ref{fig:manual_review_examples}, demonstrando uma distancia clara entre os falsos positivos e os aprovados visualmente. Todos os pares inspecionados com pontuação acima desse valor de\acrshort{ms-ssim} passaram no teste de inspeção visual \ref{fig:ssim_scatter_dist}. Como os pares que não passaram por esse escrutínio tinham pontuação acima de 0.90 em\acrshort{ms-ssim}, é seguro assumir que os pares automaticamente aprovados com pontuação acima desse limiar são confiáveis.
+The pairs with the most critical\acrshort{ms-ssim} scores just above the reproved ones had values greater than 0.75 \ref{fig:manual_review_examples}, demonstrating a clear distance between false positives and visually approved pairs. All inspected pairs with scores above this\acrshort{ms-ssim} value passed the visual inspection test \ref{fig:ssim_scatter_dist}. Since the pairs that did not undergo this scrutiny had scores above 0.90 in\acrshort{ms-ssim}, it is safe to assume that automatically approved pairs with scores above this threshold are reliable.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Figures/ssim_scatter_dist.pdf}
     \captionsetup{skip=2pt}
-    \graphiccaption[MS-SSIM distribution of audited pairs]{Distribuição dos valores de\acrshort{ms-ssim} para os pares inspecionados visualmente.}
+    \graphiccaption[MS-SSIM distribution of audited pairs]{\acrshort{ms-ssim} values distribution for visually inspected pairs.}
     \label{fig:ssim_scatter_dist}
 \end{figure}
 
+In the direct search, 530 pairs did not obtain approved matches in either of the two source datasets. The complementary indirect matching step recovered 95 of these cases after visual inspection, leaving 435 pairs without secure matches. 
 
-Na busca direta, 530 pares não obtiveram correspondência aprovada em nenhum dos dois datasets de origem. A etapa complementar de correspondência indireta recuperou 95 desses casos após inspeção visual, restando 435 pares sem correspondência segura.
-
-Com relação aos possíveis falsos negativos que poderiam ter resultado em exclusão de pares de forma injusta nesse estudo, a metodologia adotada foi ainda mais robusta. Já que eram poucos os pares que não tiveram aprovação em nenhum dos dois datasets de origem, ficou fácil verificar visualmente cada um desses casos para confirmar se realmente não havia correspondência ou se o método falhou em identificá-la. Dos 435 pares excluídos 245 foram excluídos devido ao críterio automatizado baseado no limiar de 0.98. Nenhum desses casos eram realmente falsos negativos, confirmando mais uma vez a eficácia do método de correspondência automática adotado.
- Os outros 190 pares caíram na faixa de pontuação pouco confiável (0.98 -- 0.994) e foram marcados como falsa correspondência nessa etapa evidenciando a importancia de ter-se determinado uma zona cinzenta de pontuação para a qual o método de correspondência automática não é eficiente, e que a revisão visual humana torna-se indispensável \ref{fig:score_distribution_bad}.
-
+With relation to possible false negatives that could have resulted in unfair exclusion of pairs in this study, the adopted methodology was even more robust. Since there were few pairs that did not receive approval in either of the two source datasets, it was easy to visually verify each of these cases to confirm whether there was really no match or if the method failed to identify it. Of the 435 excluded pairs, 245 were excluded due to the automated criterion based on the threshold of 0.98. None of these cases were really false negatives, confirming once again the effectiveness of the adopted automatic matching method.
+The others 190 pairs fell into the low-reliability score range (0.98 -- 0.994) and were marked as false matches at this stage, highlighting the importance of having determined a gray area of scores for which the automatic matching method is not efficient, and where human visual review becomes indispensable \ref{fig:score_distribution_bad}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.98\textwidth]{Figures/score_distribution.pdf}
     \captionsetup{skip=2pt}
-    \graphiccaption[Score distribution of excluded pairs: DL vs Stroke EIT]{Distribuição dos \textit{scores} de similaridade de cosseno (DL vs Stroke EIT) para os pares sem correspondência aprovada em nenhum dos dois \textit{datasets} de origem (N=435). Histograma laranja mostra a distribuição das pontuações dos 435 pares reprovados no Stroke EIT Dataset. O histograma em azul, mostra a distribuição dos mesmos 435 pares reprovados no Deep Lesion Dataset.}
+    \graphiccaption[Score distribution of excluded pairs: DL vs Stroke EIT]{Score distribution of excluded pairs (DL x Stroke EIT) for pairs without approved matches in either of the two source datasets (N=435). The orange histogram shows the distribution of scores for the 435 pairs rejected in the Stroke EIT Dataset. The blue histogram shows the distribution of the same 435 pairs rejected in the Deep Lesion Dataset.}
     \label{fig:score_distribution_bad}
 \end{figure}
 
 
 \section{Model Training}
-\subsection{Convergence and Checkpoint Selection}
-A seleção do \textit{checkpoint} para avaliação final foi baseada na melhor versão do\acrshort{ssim} calculado na partição de validação. Obviamente, no modelo Dual, esse critério foi aplicado na saída de reconstrução.
+\subsection{Training Convergence and Per-Run Checkpoint Selection}
 
-A regra de paragem definia um máximo de épocas de 300 e um mínimo de 5, com\textit{Early Stopping} após 15 épocas sem melhoria mínima de 0.0001 no\acrshort{ssim} da partição de validação. Consequentemente, devido à restauração dos pesos da melhor época, a época final de treino não é necessariamente a selecionada.
+All six deterministic runs converged and terminated between epochs 38 and 47, after the learning rate reached its lower bound. The best validation\acrshort{ssim} values occurred between epochs 23 and 44, before training termination, supporting restoration of the best checkpoint weights rather than use of the final epoch.
 
-O otimizador monitoriza a mesma métrica, reduzindo o \textit{learning rate} em 0.5 após 2 épocas sem melhoria relevante (ReduceLROnPlateau), até 1x10\textsuperscript{-6} com uma época de \textit{cooldown}. O mesmo valor de variação mínima de 0.0001 foi usado no \textit{Scheduler} e no \textit{Early Stopping}.
-\FloatBarrier
-\input{Chapters/Final/Generated/Training}
-\FloatBarrier
+The highest validation reconstruction\acrshort{ssim} was 0.95113, obtained by the Single Model with seed 2024 at epoch 33. At that same checkpoint, validation\acrshort{psnr} was 35.30099~dB and validation\acrshort{mae} was 17.19180~HU. These values identify the validation-selected checkpoint for this individual run. They did not, by themselves, determine the candidate for external evaluation: that decision was made later by comparing the six validation-frozen checkpoints on the internal test partition according to the pre-specified Artifact-ROI criterion.
 
-Nas 6 corridas, todas terminaram entre 38 e 47 épocas, após a taxa de aprendizagem atingir o limite mínimo. Os melhores\acrshortpl{ssim} de validação ocorreram nas épocas 23–44, antes da paragem, o que sustenta o uso de restauração dos melhores pesos.
+The convergence curves for the two seed-2024 architectures are shown below as page-breakable chart pairs. The complete set of six runs and the validation tables for all model--seed combinations are provided in \autoref{sec:appendix-training-details}.
 
-O maior valor de\acrshort{ssim} foi 0.95113 do Single Model, seed 2024, na época 33. O valor de\acrshort{psnr} variou entre $\sim$ 35.0 dB - 35.3 dB, com o maior valor de 35.3009 dB do Single Model, seed 2024, na mesma época 33. Os resultados detalhados podem ser visualizados nas Tabelas \ref{tab:best-validation-ssim}, \ref{tab:best-validation-psnr} e \ref{tab:mae-at-best-validation-ssim}.
-\input{Tables/Generated/best_validation_ssim.tex}
-\input{Tables/Generated/best_validation_psnr.tex}
-\input{Tables/Generated/mae_at_best_validation_ssim.tex}
-\FloatBarrier
-O melhor resultado de\acrshort{mae} foi 17.1918 HU também do Single Model, seed 2024, na época 33. Podemos notar que o Single Model teve desempenho superior nas 3 métricas.
-
-O\acrshort{psnr} e\acrshort{mae} são apenas métricas complementares, mas não são o foco principal de seleção do melhor checkpoint que considera apenas o\acrshort{ssim} isoladamente. Além disso, as métricas separadas por\acrshort{roi}, análises visuais, e métricas de teste interno são avaliações feitas após a seleção do melhor checkpoint e portanto não alteram o checkpoint escolhido.
-
-A escolha da corrida que avançará para a avaliação externa é uma decisão distinta da seleção do checkpoint. Entre os checkpoints já selecionados, a comparação é efetuada na partição de teste, buscando equilíbrio entre a maior melhoria de\acrshort{ssim} na Zona de Artefacto e menor mudança de\acrshort{ssim} na Zona Distante. Após essa seleção não houve novo treino, ajuste de hiperparâmetros ou alterações nos pesos antes da avaliação externa.
+\input{Chapters/Final/Generated/TrainingSeed2024}
 
 
 \section{Internal Evaluation in Test Subset}
 \subsection{Global Outcomes}
 \label{sec:global-outcomes}
 
-A avaliação interna foi realizada na partição de teste fixa, composta por 1478 fatias de 41 pacientes independentes. Para cada checkpoint previamente selecionado na validação, foram calculados\acrshort{psnr},\acrshort{ssim} e\acrshort{mae} entre a reconstrução e a referência limpa. A unidade de agregação para a inferência estatística foi o paciente: as métricas foram primeiro resumidas dentro de cada paciente e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} percentil com 10000 reamostragens. O conjunto de teste não foi utilizado para escolher checkpoints.
+The internal evaluation was conducted on the fixed test partition, composed of 1478 slices from 41 independent patients. For each checkpoint previously selected in validation,\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae} were calculated between the reconstruction and the clean reference. The unit of aggregation for statistical inference was the patient: metrics were first summarized within each patient, and 95\% confidence intervals were obtained by percentile bootstrap with 10,000 resamplings. The test set was not used to change any run's checkpoint; it was used once to compare the six validation-frozen candidates for the external-evaluation decision described in \autoref{sec:external-candidate-selection}.
 
-A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global-mae} apresentam as médias por fatia. Como todas as corridas foram avaliadas na mesma partição de teste, o valor da entrada é comum aos dois modelos em cada seed. Em todas as corridas, a reconstrução aumentou o \acrshort{psnr} global de 27,39~dB para 34,95--35,20~dB, aumentou o \acrshort{ssim} de 0,8361 para 0,9421--0,9442 e reduziu o \acrshort{mae} de 36,6~HU para 17,3--17,8~HU.
-
-
+The \autoref{tab:global-psnr}, \autoref{tab:global-ssim}, and \autoref{tab:global-mae} present the slice-wise means. Since all runs were evaluated on the same test partition, the input value is common to both models for each seed. In all runs, reconstruction increased the global\acrshort{psnr} from 27.39~dB to 34.95--35.20~dB, increased\acrshort{ssim} from 0.8361 to 0.9421--0.9442, and reduced\acrshort{mae} from 36.6~HU to 17.3--17.8~HU.
 
 \begin{table}[htbp]
     \centering
@@ -138,7 +125,7 @@ A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global
     \end{tabular}
     \par\smallskip\footnotesize All input and model values are computed against the clean reference (\textit{ground truth}).
     \captionsetup{skip=2pt}
-    \caption[Per-slice global SSIM on the test set]{\acrshort{ssim} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
+    \caption[Per-slice global SSIM on the test set]{Global\acrshort{ssim} per slice in test subset ($n=1478$), expressed as mean $\pm$ standard deviation.}
     \label{tab:global-ssim}
 \end{table}
 
@@ -156,7 +143,7 @@ A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global
     \end{tabular}
     \par\smallskip\footnotesize All input and model values are computed against the clean reference (\textit{ground truth}).
     \captionsetup{skip=2pt}
-    \caption[Per-slice global PSNR on the test set]{\acrshort{psnr} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
+    \caption[Per-slice global\acrshort{psnr} on the test set]{Global\acrshort{psnr} per slice in test subset ($n=1478$), expressed as mean $\pm$ standard deviation.}
     \label{tab:global-psnr}
 \end{table}
 
@@ -174,13 +161,13 @@ A \autoref{tab:global-psnr}, a \autoref{tab:global-ssim} e a \autoref{tab:global
     \end{tabular}
     \par\smallskip\footnotesize All input and model values are computed against the clean reference (\textit{ground truth}).
     \captionsetup{skip=2pt}
-    \caption[Per-slice global MAE on the test set]{\acrshort{mae} global por fatia no conjunto de teste ($n=1478$), expresso como média $\pm$ desvio padrão.}
+    \caption[Per-slice global MAE on the test set]{Global\acrshort{mae} per slice in test subset ($n=1478$), expressed as mean $\pm$ standard deviation.}
     \label{tab:global-mae}
 \end{table}
 
-Embora a seleção do 	extit{Single Model}, seed 2024, tenha sido definida na validação, as tabelas por semente mostram que esta não corresponde a um resultado isolado: as três execuções do Single Model apresentaram desempenho global muito próximo e superior ao das execuções Dual Model. A seed 2024 ficou no extremo favorável para acrshort{ssim} e acrshort{psnr}, e apresentou o menor acrshort{mae}. Esta comparação entre sementes é descritiva, não constituindo um teste de hipótese entre inicializações.
+The seed-wise global tables show that the Single Model, seed 2024, was not an isolated run: the three Single Model runs had very similar global performance. Seed 2024 was at the favorable extreme for global\acrshort{ssim},\acrshort{psnr}, and\acrshort{mae}. This comparison between seeds is descriptive and did not determine the external-evaluation candidate; the pre-specified selection endpoint was Artifact-ROI $\Delta$\acrshort{ssim}, reported below.
 
-Os deltas e respetivos intervalos de confiança por paciente são apresentados na \autoref{tab:delta-psnr-paciente}, na \autoref{tab:delta-ssim-paciente} e na \autoref{tab:delta-mae-paciente}. Todas as corridas melhoraram as três métricas; os testes de Wilcoxon bilaterais foram significativos para os três desfechos em todas as corridas ($p<0{,}001$). Os intervalos de confiança não incluem o valor nulo, sustentando a melhoria global face à entrada com artefactos.
+The patient-level deltas and their confidence intervals are shown in \autoref{tab:delta-psnr-paciente}, \autoref{tab:delta-ssim-paciente}, and \autoref{tab:delta-mae-paciente}. All six runs showed positive mean improvement for the three global metrics, and the corresponding confidence intervals excluded the null value. These global results provide complementary evidence of improvement over the corrupted input; they were not used to rank the candidates for external evaluation.
 
 \begin{table}[htbp]
     \centering
@@ -196,7 +183,7 @@ Os deltas e respetivos intervalos de confiança por paciente são apresentados n
     \end{tabular}
     \par\smallskip\footnotesize Note: $\Delta\mathrm{SSIM}=\mathrm{SSIM}(\mathrm{Model},\mathrm{GT})-\mathrm{SSIM}(\mathrm{Input},\mathrm{GT})$.
     \captionsetup{skip=2pt}
-    \caption[Patient-level global $\Delta$SSIM]{$\Delta$\acrshort{ssim} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}
+    \caption[Patient-level global $\Delta$SSIM]{$\Delta$\acrshort{ssim} global aggregated per patient in the test subset ($n=41$). IC: 95\% confidence interval.}
     \label{tab:delta-ssim-paciente}
 \end{table}
 
@@ -214,7 +201,7 @@ Os deltas e respetivos intervalos de confiança por paciente são apresentados n
     \end{tabular}
     \par\smallskip\footnotesize Note: $\Delta\mathrm{PSNR}=\mathrm{PSNR}(\mathrm{Model},\mathrm{GT})-\mathrm{PSNR}(\mathrm{Input},\mathrm{GT})$.
     \captionsetup{skip=2pt}
-    \caption[Patient-level global $\Delta$PSNR]{$\Delta$\acrshort{psnr} global agregado por paciente no conjunto de teste ($n=41$). IC: intervalo de confiança de 95\%.}
+    \caption[Patient-level global $\Delta$PSNR]{$\Delta$\acrshort{psnr} global aggregated per patient in the test subset ($n=41$). IC: 95\% confidence interval.}
     \label{tab:delta-psnr-paciente}
 \end{table}
 
@@ -232,11 +219,11 @@ Os deltas e respetivos intervalos de confiança por paciente são apresentados n
     \end{tabular}
     \par\smallskip\footnotesize Note: $\Delta\mathrm{MAE}=\mathrm{MAE}(\mathrm{Input},\mathrm{GT})-\mathrm{MAE}(\mathrm{Model},\mathrm{GT})$; positive values indicate error reduction.
     \captionsetup{skip=2pt}
-    \caption[Patient-level global $\Delta$MAE]{$\Delta$\acrshort{mae} global agregado por paciente no conjunto de teste ($n=41$). Valores $>0$ representam melhoria; IC: intervalo de confiança de 95\%.}
+    \caption[Patient-level global $\Delta$MAE]{$\Delta$\acrshort{mae} global aggregated per patient in the test subset ($n=41$). Values $>0$ indicate improvement; IC: 95\% confidence interval.}
     \label{tab:delta-mae-paciente}
 \end{table}
 
-Para a corrida selecionada, Single Model com seed 2024, os histogramas da \autoref{fig:global-improvement-histograms} mostram a distribuição dos deltas globais por fatia. Embora estes gráficos sejam descritivos e as fatias de um mesmo paciente não sejam independentes, eles tornam visíveis os poucos casos desfavoráveis: 12 de 1478 fatias ($0{,}8\%$) apresentaram $\Delta$PSNR negativo e 24 ($1{,}6\%$) apresentaram $\Delta$SSIM negativo. A inferência estatística permanece baseada nas médias por paciente apresentadas nas tabelas anteriores.
+For the selected run, Single Model with seed 2024, the histograms in \autoref{fig:global-improvement-histograms} show the per-slice distribution of the global deltas. Although these plots are descriptive and slices from the same patient are not independent, they make the few unfavorable cases visible: 12 of 1478 slices ($0{.}8\%$) showed a negative $\Delta$PSNR and 24 ($1{.}6\%$) showed a negative $\Delta$SSIM. Statistical inference remains based on the patient-level means presented in the preceding tables.
 \begingroup
 \setlength{\intextsep}{4pt}
 \begin{figure}[H]
@@ -253,9 +240,9 @@ Para a corrida selecionada, Single Model com seed 2024, os histogramas da \autor
 \label{fig:global-improvement-histograms}
 \endgroup
 
-Nota-se que o Single Model para as sementes 1337 e 2024 apresentam praticamente o mesmo desempenho em\acrshort{ssim}. No entanto, em\acrshort{psnr} e\acrshort{mae} o mesmo modelo se sai melhor com a seed 2024. Isso já coloca a versão Single com semente 2024 em evidência para ser o candidato selecionado para a avaliação externa. Porém, ainda é necessário verificar o desempenho por\acrshort{roi}, já que essas métricas são muito mais informativas a respeito de onde o modelo está realmente melhorando a imagem.
+The Single Model runs with seeds 1337 and 2024 had virtually identical global \acrshort{ssim}. The seed-2024 run was slightly more favorable for global \acrshort{psnr} and \acrshort{mae}; however, these global metrics were complementary and did not determine the external-evaluation candidate. The pre-specified decision endpoint was then assessed by region of interest, where it directly measures the location of structural correction.
 
-Como verificação descritiva complementar da calibração global em unidades HU, a \autoref{fig:bland-altman-patient-hu} apresenta a concordância entre a média de HU da reconstrução e a da referência limpa, agregada por paciente. Cada ponto corresponde a um dos 41 pacientes, a média de cada paciente foi calculada sobre todos os pixels válidos da máscara corporal, ponderada pelo número de pixels em cada fatia. O viés médio foi de $+4.19$~HU, com limites de concordância de 95\% entre $+1.45$ e $+6.93$~HU. Esta análise descreve um pequeno deslocamento positivo da intensidade média global, mas não quantifica a remoção local de artefactos nem substitui as métricas globais e por \acrshort{roi}.
+As a complementary descriptive verification of the global calibration in HU units, \autoref{fig:bland-altman-patient-hu} presents the agreement between the mean HU of the reconstruction and that of the clean reference, aggregated per patient. Each point corresponds to one of the 41 patients; each patient's mean was calculated over all valid body-mask pixels, weighted by the number of pixels in each slice. The mean bias was $+4.19$~HU, with 95\% limits of agreement between $+1.45$ and $+6.93$~HU. This analysis describes a small positive shift in global mean intensity, but does not quantify local artifact removal, nor does it replace the global and\acrshort{roi} metrics.
 
 \begin{figure}[htbp]
     \centering
@@ -268,9 +255,9 @@ Como verificação descritiva complementar da calibração global em unidades HU
 \subsection{Region of Interest Evaluation}
 \label{sec:roi-evaluation}
 
-As regiões de interesse e o cálculo das métricas por zona seguiram o procedimento descrito na \autoref{subsec:metodos-roi}. Esta estratificação permite quantificar separadamente a correção na região diretamente afetada pelos artefactos e as alterações introduzidas nas regiões corporais distantes do implante.
+The regions of interest and the per-zone metric calculation followed the procedure described in \autoref{subsec:methods-roi}. This stratification makes it possible to separately quantify the correction in the region directly affected by artifacts and the changes introduced in body regions distant from the implant.
 
-Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 pacientes independentes, são apresentados nas \autoref{tab:roi-delta-psnr}, \autoref{tab:roi-delta-ssim} e \autoref{tab:roi-reducao-mae}. Todas as seis corridas apresentaram melhoria substancial na Zona de Artefacto: $\Delta$PSNR entre 11,47 e 11,86~dB, $\Delta$SSIM entre 0,322 e 0,328 e redução de \acrshort{mae} entre 96,9 e 98,5~HU. Na Zona Distante, as alterações médias foram menores ($\Delta$PSNR entre 1,36 e 1,61~dB; $\Delta$SSIM entre 0,057 e 0,058; redução de \acrshort{mae} entre 3,2 e 3,6~HU), devendo ser interpretadas como descrição quantitativa e não como validação clínica de preservação anatómica.
+The final results, first aggregated per patient and then summarized over 41 independent patients, are presented in \autoref{tab:roi-delta-psnr}, \autoref{tab:roi-delta-ssim}, and \autoref{tab:roi-reducao-mae}. All six runs showed substantial improvement in the Artifact Zone: $\Delta$PSNR between 11.47 and 11.86~dB, $\Delta$SSIM between 0.322 and 0.328, and\acrshort{mae} reduction between 96.9 and 98.5~HU. In the Distant Zone, the mean changes were smaller ($\Delta$PSNR between 1.36 and 1.61~dB; $\Delta$SSIM between 0.057 and 0.058;\acrshort{mae} reduction between 3.2 and 3.6~HU), and should be interpreted as a quantitative description rather than as clinical validation of anatomical preservation.
 
 \begin{table}[htbp]
     \centering
@@ -292,7 +279,7 @@ Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 p
     \end{tabular}
     \par\smallskip\footnotesize Note: $\Delta\mathrm{SSIM}=\mathrm{SSIM}(\mathrm{Model},\mathrm{GT})-\mathrm{SSIM}(\mathrm{Input},\mathrm{GT})$ within the indicated ROI.
     \captionsetup{skip=2pt}
-    \caption[ROI $\Delta$SSIM]{$\Delta$\acrshort{ssim} por \acrshort{roi} no conjunto de teste. Os valores são média $\pm$ desvio-padrão entre pacientes ($n=41$).}
+    \caption[ROI $\Delta$SSIM]{$\Delta$\acrshort{ssim} by\acrshort{roi} on the test set. Values are mean $\pm$ standard deviation across patients ($n=41$).}
     \label{tab:roi-delta-ssim}
 \end{table}
     
@@ -316,7 +303,7 @@ Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 p
     \end{tabular}
     \par\smallskip\footnotesize Note: $\Delta\mathrm{PSNR}=\mathrm{PSNR}(\mathrm{Model},\mathrm{GT})-\mathrm{PSNR}(\mathrm{Input},\mathrm{GT})$ within the indicated ROI.
     \captionsetup{skip=2pt}
-    \caption[ROI $\Delta$PSNR]{$\Delta$\acrshort{psnr} por \acrshort{roi} no conjunto de teste. Os valores são média $\pm$ desvio-padrão entre pacientes ($n=41$).}
+    \caption[ROI $\Delta$PSNR]{$\Delta$\acrshort{psnr} by\acrshort{roi} on the test set. Values are mean $\pm$ standard deviation across patients ($n=41$).}
     \label{tab:roi-delta-psnr}
 \end{table}
 
@@ -340,14 +327,18 @@ Os resultados finais, agregados primeiro por paciente e depois resumidos em 41 p
     \end{tabular}
     \par\smallskip\footnotesize Note: $\Delta\mathrm{MAE}=\mathrm{MAE}(\mathrm{Input},\mathrm{GT})-\mathrm{MAE}(\mathrm{Model},\mathrm{GT})$ within the indicated ROI; positive values indicate error reduction.
     \captionsetup{skip=2pt}
-    \caption[ROI MAE reduction]{Redução de \acrshort{mae} por \acrshort{roi} no conjunto de teste. Os valores são média $\pm$ desvio-padrão entre pacientes ($n=41$); valores positivos correspondem a redução do erro.}
+    \caption[ROI MAE reduction]{\acrshort{mae} reduction by\acrshort{roi} on the test set. Values are mean $\pm$ standard deviation across patients ($n=41$); positive values correspond to error reduction.}
     \label{tab:roi-reducao-mae}
 \end{table}
 
-Novamente, o Single Model com sementes 1337 e 2024 apresentam desempenhos muito semelhantes em\acrshort{ssim}, com a semente 2024 levando uma minúscula vantagem. Já na análise por\acrshort{roi}, o melhor desempenho em\acrshort{psnr} e\acrshort{mae} com a semente 2024 fica menos evidente do que na análise global, especialmente quando considera-se as alterações na Zona Limpa. Mesmo assim, as alterações na Zona Limpa são pequenas e varia pouco entre os modelos e sementes. Dessa forma, foi decidido priorizar o desempenho da semente na análise Global e por ROI (mesmo que muito pequena) para selecionar o modelo que seguirá para a avaliação externa. A escolha final recaiu sobre o Single Model, seed 2024, que apresentou o melhor desempenho global e por ROI.
-As \autoref{fig:roi-boxplots} e \autoref{fig:roi-safety} mostram a distribuição por imagem para a corrida selecionada. Por simplicidade, os gráficos de agora em diante são apresentados apenas para o modelo selecionado, mas os dados de todas as corridas estão disponíveis no apêndice \ref{apendice:avaliacao-interna}.
+\subsection{Selection of the External-Evaluation Candidate}
+\label{sec:external-candidate-selection}
 
-Os diagramas de caixa evidenciam a separação entre a correção na Zona de Artefacto e a alteração menor na Zona Limpa. O diagrama de dispersão permite identificar heterogeneidade entre fatias, incluindo casos individuais com alterações desfavoráveis na Zona Limpa.
+Among the six checkpoints previously frozen by validation \acrshort{ssim}, the Single Model with seed 2024 had the highest mean patient-level Artifact-ROI $\Delta$\acrshort{ssim} ($0.3279 \pm 0.0955$). Its mean Distant-ROI $\Delta$\acrshort{ssim} was $0.0581 \pm 0.0422$, substantially smaller than the improvement observed in the Artifact Zone. This satisfies the pre-specified descriptive preservation safeguard; because no numerical Distant-Zone equivalence margin was defined, it must not be interpreted as formal evidence of anatomical safety. The global results and the other ROI metrics reported above were complementary and did not override this primary endpoint. The Single Model, seed 2024, was therefore selected for external evaluation, after which its architecture, seed, weights, and hyperparameters remained unchanged.
+
+The \autoref{fig:roi-boxplots} and \autoref{fig:roi-safety} show the image-level distributions for the selected run. For clarity, the remaining plots present only this model; data for all six runs are available in Appendix \ref{apendice:internal-evaluation}.
+
+The box plots highlight the separation between the correction in the Artifact Zone and the smaller change in the Clean Zone. The scatter plot allows identification of heterogeneity between slices, including individual cases with unfavorable changes in the Clean Zone.
 
 \FloatBarrier
 \begingroup
@@ -367,7 +358,7 @@ Os diagramas de caixa evidenciam a separação entre a correção na Zona de Art
     \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf}
 \end{figure}
 \captionsetup{skip=1.5pt}
-\graphiccaptionof[Per-image ROI metric improvements]{Distribuições por imagem das variações de\acrshort{ssim},\acrshort{psnr} e\acrshort{mae} nas zonas de artefacto e limpa para o Single Model, seed 2024.}
+\graphiccaptionof[Per-image ROI metric improvements]{Per-image distributions of\acrshort{ssim},\acrshort{psnr}, and\acrshort{mae} changes in the artifact and clean zones for the Single Model, seed 2024.}
 \label{fig:roi-boxplots}
 \endgroup
 
@@ -383,16 +374,16 @@ Os diagramas de caixa evidenciam a separação entre a correção na Zona de Art
     \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf}
 \end{figure}
 \captionsetup{skip=2pt}
-\graphiccaptionof[Artifact-ROI correction versus distant-ROI change]{Relação por imagem entre a melhoria de\acrshort{ssim} \textbackslash\acrshort{psnr} na Zona de Artefacto e a alteração de\acrshort{ssim} \textbackslash\acrshort{psnr} na Zona Limpa para o Single Model, seed 2024. A cor codifica a redução de\acrshort{mae} na Zona Limpa.}
+\graphiccaptionof[Artifact-ROI correction versus distant-ROI change]{Per-image relationship between the\acrshort{ssim} \textbackslash\acrshort{psnr} improvement in the Artifact Zone and the\acrshort{ssim} \textbackslash\acrshort{psnr} change in the Clean Zone for the Single Model, seed 2024. Color encodes the\acrshort{mae} reduction in the Clean Zone.}
 \label{fig:roi-safety}
 \endgroup
 
 \subsection{Residual Maps in Extreme Cases}
 \label{sec:residual-maps-extremes}
 
-Para complementar os resultados, foram inspecionados seis casos individuais do Single Model, seed 2024, na partição de teste. A seleção foi feita exclusivamente pelo $\Delta$\acrshort{ssim} na Zona de Artefacto por fatia: os três maiores valores correspondem à maior melhoria estrutural nessa região face à entrada e os três menores valores à menor melhoria estrutural. Assim, os termos ``maior'' e ``menor'' melhoria nesta subseção referem-se apenas a esse critério quantitativo e não constituem uma classificação clínica dos casos.
+To complement the results, six individual cases from the Single Model, seed 2024, were inspected in the test partition. The selection was made exclusively by the per-slice $\Delta$\acrshort{ssim} in the Artifact Zone: the three highest values correspond to the greatest structural improvement in that region relative to the input, and the three lowest values to the smallest structural improvement. Thus, the terms ``greatest'' and ``smallest'' improvement in this subsection refer only to this quantitative criterion and do not constitute a clinical classification of the cases.
 
-Em cada mapa, a primeira linha apresenta a alteração necessária em relação à referência limpa ($r_{\mathrm{target}}=\mathrm{GT}-\mathrm{Input}$), a alteração produzida pelo modelo ($r_{\mathrm{model}}=\mathrm{Output}-\mathrm{Input}$) e o erro residual remanescente ($r_{\mathrm{diff}}= r_{\mathrm{model}} - r_{\mathrm{target}} = \mathrm{Output}-\mathrm{GT}$). A segunda linha mostra o erro absoluto da entrada, o erro absoluto da saída e a respetiva diferença, em que verde indica redução do erro e vermelho indica agravamento. O contorno amarelo delimita a Zona de Artefacto. As escalas de cor são ajustadas individualmente a cada fatia para preservar os detalhes em casos com resíduos pequenos. No entanto, a comparação entre casos deve privilegiar os padrões espaciais e as estatísticas apresentadas em cada painel, e não apenas a intensidade aparente das cores. Abaixo de cada mapa é apresentada a visualização correspondente da entrada com artefactos, da saída do modelo e da referência limpa.
+In each map, the first row shows the change required relative to the clean reference ($r_{\mathrm{target}}=\mathrm{GT}-\mathrm{Input}$), the change produced by the model ($r_{\mathrm{model}}=\mathrm{Output}-\mathrm{Input}$), and the remaining residual error ($r_{\mathrm{diff}}= r_{\mathrm{model}} - r_{\mathrm{target}} = \mathrm{Output}-\mathrm{GT}$). The second row shows the absolute error of the input, the absolute error of the output, and their difference, where green indicates error reduction and red indicates worsening. The yellow outline delimits the Artifact Zone. Color scales are adjusted individually for each slice to preserve detail in cases with small residuals. However, comparison between cases should prioritize the spatial patterns and the statistics presented in each panel, rather than the apparent color intensity alone. Below each map, the corresponding visualization of the artifact input, the model output, and the clean reference is shown.
 
 \input{Chapters/Final/Generated/InternalResidualCaseExtremes}
 \FloatBarrier
@@ -401,15 +392,15 @@ Em cada mapa, a primeira linha apresenta a alteração necessária em relação 
 \label{sec:paired-comparison-single-dual}
 
 \subsection{Global Statistical Analysis}
-Esta análise compara exclusivamente os dois \textit{checkpoints} finais treinados com a seed 2024, um por arquitetura. A seleção do Single Model, seed 2024, para prosseguir para a avaliação externa já havia sido definida com base nn desempenho de validação. Portanto, os resultados no conjunto de teste apresentados nesta secção têm caráter de avaliação interna final: não foram utilizados para escolher novos \textit{checkpoints}, ajustar hiperparâmetros ou alterar a arquitetura a avaliar externamente.
+This analysis compares exclusively the two final checkpoints trained with seed 2024, one per architecture. Each had first been selected within its own run using validation reconstruction \acrshort{ssim}. The preceding ROI comparison of all six validation-frozen checkpoints selected the Single Model, seed 2024, for external evaluation. Accordingly, the global architecture comparison reported here is complementary: it neither defined the external-candidate selection endpoint nor changed checkpoints, hyperparameters, weights, or the architecture advanced to external evaluation.
 
-As métricas por fatia foram agregadas por paciente antes de todos os resumos e testes de hipótese, resultando em $n=41$ observações independentes. Assim, as médias, os intervalos de confiança de 95\% e os valores de $p$ apresentados nas tabelas desta secção referem-se às médias por paciente, atribuindo o mesmo peso a cada indivíduo.
+Per-slice metrics were aggregated per patient before all summaries and hypothesis tests, resulting in $n=41$ independent observations. Thus, the means, 95\% confidence intervals, and $p$-values presented in the tables of this section refer to per-patient means, giving equal weight to each individual.
 
-As tabelas desta secção apresentam a análise das métricas globais, calculadas em todos os píxeis da máscara corporal de cada fatia (píxeis de fundo excluídos), como confirmação complementar da hipótese primária de melhoria estrutural, testada formalmente na Zona de Artefacto na secção seguinte.
+The tables in this section present the analysis of the global metrics, calculated over all pixels of the body mask of each slice (background pixels excluded), as a complementary confirmation of the primary hypothesis of structural improvement, formally tested in the Artifact Zone in the following section.
 
-Os diagnósticos por paciente mostraram assimetria e desvio da normalidade para $\Delta$SSIM e $\Delta$MAE. Assim, a evidência primária para essas métricas foi baseada no teste de sinais binomial exato, que avalia a predominância de melhorias sem pressupor simetria das diferenças. Para $\Delta$PSNR, cuja distribuição por paciente não mostrou evidência de afastamento da normalidade, foi utilizado o teste $t$ bilateral de uma amostra para a melhoria média.
+Patient-level diagnostics showed skewness and departure from normality for $\Delta$SSIM and $\Delta$MAE. Thus, the primary evidence for these metrics was based on the exact binomial sign test, which assesses the predominance of improvements without assuming symmetry of the differences. For $\Delta$PSNR, whose patient-level distribution showed no evidence of departure from normality, the two-sided one-sample $t$-test was used for the mean improvement.
 
-Os diagnósticos de distribuição foram verificados separadamente para ambos os modelos antes de aplicar esta regra comum por métrica. Para $\Delta$SSIM, o teste de Shapiro--Wilk indicou desvio da normalidade no Single Model ($W=0{.}9158$; $p=0{.}0050$; assimetria $=1{.}087$) e no Dual Model ($W=0{.}9162$; $p=0{.}0052$; assimetria $=1{.}056$), sustentando o uso do teste de sinais em ambas as arquiteturas. Para $\Delta$MAE, observou-se o mesmo padrão no Single Model ($W=0{.}7607$; $p=8{.}95\times10^{-7}$; assimetria $=2{.}281$) e no Dual Model ($W=0{.}7686$; $p=1{.}27\times10^{-6}$; assimetria $=2{.}200$). Para $\Delta$PSNR, não houve evidência de afastamento da normalidade nos diagnósticos do Single Model ($W=0{.}9742$; $p=0{.}4675$) ou do Dual Model ($W=0{.}9734$; $p=0{.}4427$), o que foi compatível com o uso do teste $t$ para a melhoria média em ambos os modelos.
+Distribution diagnostics were checked separately for both models before applying this common per-metric rule. For $\Delta$SSIM, the Shapiro--Wilk test indicated a departure from normality in the Single Model ($W=0{.}9158$; $p=0{.}0050$; skewness $=1{.}087$) and in the Dual Model ($W=0{.}9162$; $p=0{.}0052$; skewness $=1{.}056$), supporting the use of the sign test in both architectures. For $\Delta$MAE, the same pattern was observed in the Single Model ($W=0{.}7607$; $p=8{.}95\times10^{-7}$; skewness $=2{.}281$) and in the Dual Model ($W=0{.}7686$; $p=1{.}27\times10^{-6}$; skewness $=2{.}200$). For $\Delta$PSNR, there was no evidence of departure from normality in the diagnostics for the Single Model ($W=0{.}9742$; $p=0{.}4675$) or the Dual Model ($W=0{.}9734$; $p=0{.}4427$), which was compatible with the use of the $t$-test for the mean improvement in both models.
 
 \begin{table}[htbp]
 \centering
@@ -466,11 +457,11 @@ Dual Model & $15.54$ & $[12.79; 19.88]$ & $7.64\times10^{-11}$ \\\\
 \end{table}
 
 
-A \autoref{tab:ablation_improvement_ssim}, a \autoref{tab:ablation_improvement_psnr} e a \autoref{tab:ablation_improvement_mae} mostram que ambas as arquiteturas melhoraram substancialmente a qualidade global da reconstrução face à entrada corrompida. O Single Model apresentou $\Delta$SSIM médio de $0{.}0891$ (IC 95\% BCa: $[0{.}0744; 0{.}1075]$), $\Delta$PSNR médio de $7{.}11$ dB (IC 95\% $t$: $[6{.}35; 7{.}87]$) e redução média de MAE de $15{.}72$ HU (IC 95\% BCa: $[12{.}94; 20{.}14]$). O Dual Model apresentou $\Delta$SSIM de $0{.}0879$ (IC 95\% BCa: $[0{.}0731; 0{.}1062]$), $\Delta$PSNR de $7{.}06$ dB (IC 95\% $t$: $[6{.}30; 7{.}81]$) e redução média de MAE de $15{.}54$ HU (IC 95\% BCa: $[12{.}79; 19{.}88]$). Todos os seis testes de melhoria global face à entrada permaneceram significativos após o ajuste de Holm aplicado separadamente dentro de cada arquitetura. Os valores de $p$ de $\Delta$SSIM e $\Delta$MAE avaliam a predominância de melhoria, enquanto os de $\Delta$PSNR avaliam a melhoria média, por isso, não devem ser comparados em magnitude.
+\autoref{tab:ablation_improvement_ssim}, \autoref{tab:ablation_improvement_psnr}, and \autoref{tab:ablation_improvement_mae} show that both architectures substantially improved the global reconstruction quality relative to the corrupted input. The Single Model showed a mean $\Delta$SSIM of $0{.}0891$ (95\% BCa CI: $[0{.}0744; 0{.}1075]$), a mean $\Delta$PSNR of $7{.}11$ dB (95\% $t$ CI: $[6{.}35; 7{.}87]$), and a mean MAE reduction of $15{.}72$ HU (95\% BCa CI: $[12{.}94; 20{.}14]$). The Dual Model showed a $\Delta$SSIM of $0{.}0879$ (95\% BCa CI: $[0{.}0731; 0{.}1062]$), a $\Delta$PSNR of $7{.}06$ dB (95\% $t$ CI: $[6{.}30; 7{.}81]$), and a mean MAE reduction of $15{.}54$ HU (95\% BCa CI: $[12{.}79; 19{.}88]$). All six tests of global improvement over the input remained significant after the Holm adjustment applied separately within each architecture. The $p$-values for $\Delta$SSIM and $\Delta$MAE assess the predominance of improvement, whereas those for $\Delta$PSNR assess the mean improvement; therefore, they should not be compared in magnitude.
 
-Estes testes confirmam que cada arquitetura melhora a entrada corrompida, mas não constituem uma comparação direta entre arquiteturas. Esta distinção é essencial: valores de $p$ pequenos nas tabelas \autoref{tab:ablation_improvement_ssim}, \autoref{tab:ablation_improvement_psnr}, \autoref{tab:ablation_improvement_mae} não permitem, por si só, afirmar que uma arquitetura é superior à outra.
+These tests confirm that each architecture improves upon the corrupted input, but they do not constitute a direct comparison between architectures. This distinction is essential: small $p$-values in \autoref{tab:ablation_improvement_ssim}, \autoref{tab:ablation_improvement_psnr}, \autoref{tab:ablation_improvement_mae} do not, by themselves, allow one to claim that one architecture is superior to the other.
 
-Os deltas de melhoria subjacentes à comparação pareada são igualmente agregados por paciente, atribuindo o mesmo peso a cada um dos 41 pacientes.
+The improvement deltas underlying the paired comparison are likewise aggregated per patient, giving equal weight to each of the 41 patients.
 \begin{table}[htbp]
 \centering
 \small
@@ -490,9 +481,9 @@ $\Delta$MAE (HU) & $-0.186$ & $[-0.338; -0.091]$ & $8.62\times10^{-4}$ \\
 \label{tab:workflow-paired-comparison}
 \end{table}
 
-A comparação direta entre arquiteturas é apresentada na \autoref{tab:workflow-paired-comparison}. Para esta análise, calculou-se, em cada paciente, a diferença de melhoria Dual Model menos Single Model para $\Delta$SSIM, $\Delta$PSNR e $\Delta$MAE. Foram aplicados testes binomiais exatos de sinais bilaterais, excluindo diferenças nulas e com correção de Holm conjunta para os três testes. Esta análise testa se uma arquitetura melhora mais em mais pacientes do que o esperado ao acaso, sem pressupor simetria das diferenças. Os intervalos de confiança de 95\% obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens quantificam a diferença média, enquanto os valores de $p$ avaliam a predominância direcional. Em todas as métricas, valores negativos favorecem o Single Model.
+The direct comparison between architectures is presented in \autoref{tab:workflow-paired-comparison}. For this analysis, the improvement difference Dual Model minus Single Model was calculated for each patient for $\Delta$SSIM, $\Delta$PSNR, and $\Delta$MAE. Two-sided exact binomial sign tests were applied, excluding null differences, with a joint Holm correction across the three tests. This analysis tests whether one architecture improves more in more patients than expected by chance, without assuming symmetry of the differences. The 95\% confidence intervals obtained by BCa bootstrap with 10,000 resamples quantify the mean difference, while the $p$-values assess directional predominance. For all metrics, negative values favor the Single Model.
 
-O Single Model apresentou vantagem média de $0{.}054$ dB em $\Delta$PSNR, de $0{.}0012$ em $\Delta$SSIM e de $0{.}186$ HU em $\Delta$MAE. Os intervalos de confiança não incluíram zero e os valores de $p$ ajustados foram $2{.}75\times10^{-2}$ para\acrshort{psnr}, $2{.}35\times10^{-9}$ para\acrshort{ssim} e $8{.}62\times10^{-4}$ para\acrshort{mae}. As diferenças favoreceram o Single Model em 28 dos 41 pacientes para\acrshort{psnr}, em 39 para\acrshort{ssim} e em 32 para\acrshort{mae}. Embora estas diferenças sejam estatisticamente significativas, a sua magnitude absoluta é pequena. Portanto, os resultados fornecem evidência de uma vantagem quantitativa global discreta do Single Model, mas não justificam, isoladamente, uma inferência de superioridade clínica. O gráfico de barras resume a melhoria global semelhante obtida pelas duas arquiteturas.
+The Single Model showed a mean advantage of $0{.}054$ dB in $\Delta$PSNR, $0{.}0012$ in $\Delta$SSIM, and $0{.}186$ HU in $\Delta$MAE. The confidence intervals did not include zero, and the adjusted $p$-values were $2{.}75\times10^{-2}$ for\acrshort{psnr}, $2{.}35\times10^{-9}$ for\acrshort{ssim}, and $8{.}62\times10^{-4}$ for\acrshort{mae}. The differences favored the Single Model in 28 of the 41 patients for\acrshort{psnr}, in 39 for\acrshort{ssim}, and in 32 for\acrshort{mae}. Although these differences are statistically significant, their absolute magnitude is small. Therefore, the results provide evidence of a modest overall quantitative advantage for the Single Model, but do not, by themselves, justify an inference of clinical superiority. The bar chart summarizes the similar global improvement obtained by both architectures.
 
 \begin{figure}[htbp]
 \centering
@@ -505,7 +496,7 @@ O Single Model apresentou vantagem média de $0{.}054$ dB em $\Delta$PSNR, de $0
 \subsection{Statistical Analysis per\acrshort{roi}}
 \label{sec:statistical-analysis-roi}
 
-Esta secção testa formalmente a hipótese primária deste estudo -- a melhoria estrutural na Zona de Artefacto -- e carateriza de forma complementar a preservação na Zona Distante. As métricas por fatia foram sempre agregadas por paciente antes dos resumos e testes ($n=41$), e os intervalos de confiança de 95\% foram obtidos por \textit{bootstrap} BCa com 10\,000 reamostragens. Na Zona de Artefacto, a questão é a melhoria face à entrada corrompida, por isso, foram analisados os deltas com sinal de\acrshort{psnr},\acrshort{ssim} e\acrshort{mae}. Em cada modelo, foi aplicado o teste de sinais binomial exato bilateral, com correção de Holm na família das três métricas.
+This section formally tests the primary hypothesis of this study -- the structural improvement in the Artifact Zone -- and complementarily characterizes preservation in the Distant Zone. Per-slice metrics were always aggregated per patient before summaries and tests ($n=41$), and 95\% confidence intervals were obtained by BCa bootstrap with 10,000 resamples. In the Artifact Zone, the question is improvement relative to the corrupted input, so the signed deltas of\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae} were analyzed. For each model, the two-sided exact binomial sign test was applied, with Holm correction across the family of three metrics.
 
 \begin{table}[htbp]
 \centering
@@ -562,7 +553,7 @@ Dual Model & $98.33$ & $[91.84; 104.06]$ & $2.73\times10^{-12}$ \\
 \end{table}
 \FloatBarrier
 
-As \autoref{tab:roi-artifact-improvement-ssim}, \autoref{tab:roi-artifact-improvement-psnr}, \autoref{tab:roi-artifact-improvement-mae} mostram melhoria nas três métricas na Zona de Artefacto para ambos os modelos. Os ganhos médios foram aproximadamente de $0{.}32$ para\acrshort{ssim}, $11{.}8$ dB para\acrshort{psnr} e $98$ HU para\acrshort{mae}. Estes resultados confirmam, para ambas as arquiteturas, a hipótese primária deste estudo de melhoria estrutural estatisticamente significativa na Zona de Artefacto.
+\autoref{tab:roi-artifact-improvement-ssim}, \autoref{tab:roi-artifact-improvement-psnr}, and \autoref{tab:roi-artifact-improvement-mae} show improvement in the three metrics in the Artifact Zone for both models. The mean gains were approximately $0{.}32$ for\acrshort{ssim}, $11{.}8$ dB for\acrshort{psnr}, and $98$ HU for\acrshort{mae}. These results confirm, for both architectures, this study's primary hypothesis of statistically significant structural improvement in the Artifact Zone.
 
 \begin{table}[htbp]
 \centering
@@ -582,9 +573,9 @@ $\Delta$MAE (HU) & $-0.049$ & $[-0.318; 0.345]$ & $0.422$ \\
 \label{tab:roi-artifact-paired-comparison}
 \end{table}
 
-Na comparação direta dos deltas de melhoria na Zona de Artefacto (\autoref{tab:roi-artifact-paired-comparison}), a diferença em\acrshort{ssim} foi pequena, mas permaneceu significativa após a correção de Holm ($p_{\mathrm{Holm}}=0{.}0345$), favorecendo o Single Model. As diferenças nos deltas de\acrshort{psnr} e\acrshort{mae} não foram significativas após o ajuste.
+In the direct comparison of improvement deltas in the Artifact Zone (\autoref{tab:roi-artifact-paired-comparison}), the difference in\acrshort{ssim} was small but remained significant after the Holm correction ($p_{\mathrm{Holm}}=0{.}0345$), favoring the Single Model. The differences in the\acrshort{psnr} and\acrshort{mae} deltas were not significant after adjustment.
 
-Na região distante, a pergunta é distinta: pretende-se caracterizar a preservação do tecido fora da zona de artefacto, cujo alvo é alteração nula em relação à entrada. Por isso, foi calculado, em cada paciente, o valor médio de $|\Delta|$ por fatia. Valores menores representam uma reconstrução mais próxima da entrada. Como não foi pré-especificada uma margem de equivalência clinicamente justificada, não é possível testar nem concluir equivalência a zero. Assim, as \autoref{tab:roi-distant-preservation-ssim}, \autoref{tab:roi-distant-preservation-psnr}, \autoref{tab:roi-distant-preservation-mae} reportam a magnitude da alteração e os seus intervalos de confiança, sem valor de $p$ contra zero.
+In the distant region, the question is different: the goal is to characterize tissue preservation outside the artifact zone, whose target is null change relative to the input. Therefore, the mean per-slice $|\Delta|$ was calculated for each patient. Lower values represent a reconstruction closer to the input. Since no clinically justified equivalence margin was pre-specified, it is not possible to test or conclude equivalence to zero. Thus, \autoref{tab:roi-distant-preservation-ssim}, \autoref{tab:roi-distant-preservation-psnr}, \autoref{tab:roi-distant-preservation-mae} report the magnitude of the change and its confidence intervals, without a $p$-value against zero.
 
 \begin{table}[htbp]
 \centering
@@ -640,7 +631,7 @@ Dual Model & $4.24$ & $[3.54; 5.08]$ \\
 \label{tab:roi-distant-preservation-mae}
 \end{table}
 \FloatBarrier
-Para comparar as arquiteturas quanto à preservação relativa da região distante, foi definida, para cada paciente, a vantagem de preservação do Dual Model, $|\Delta|_{\mathrm{Single}}-|\Delta|_{\mathrm{Dual}}$, e aplicado o teste de sinais binomial exato bilateral, com correção de Holm na família das três métricas. Esta parametrização é mantida separada da comparação dos deltas de melhoria da Zona de Artefacto: aqui, o desfecho é a magnitude da alteração e o melhor valor é o mais próximo de zero. Valores positivos indicam menor alteração pelo Dual Model. Este teste responde apenas qual modelo introduziu menor alteração, e não se essa alteração é clinicamente desprezível.
+To compare the architectures regarding relative preservation in the distant region, the Dual Model's preservation advantage was defined for each patient as $|\Delta|_{\mathrm{Single}}-|\Delta|_{\mathrm{Dual}}$, and the two-sided exact binomial sign test was applied, with Holm correction across the family of three metrics. This parameterization is kept separate from the comparison of improvement deltas in the Artifact Zone: here, the outcome is the magnitude of change, and the better value is the one closest to zero. Positive values indicate a smaller change introduced by the Dual Model. This test answers only which model introduced a smaller change, not whether that change is clinically negligible.
 
 \begin{table}[htbp]
 \centering
@@ -660,138 +651,138 @@ MAE (HU) & $0.066$ & $[-0.050; 0.155]$ & $0.00865$ \\
 \label{tab:roi-distant-paired-preservation}
 \end{table}
 
-Na comparação relativa (\autoref{tab:roi-distant-paired-preservation}), o Dual Model apresentou menor alteração absoluta em \acrshort{psnr}, \acrshort{ssim} e \acrshort{mae} após a correção de Holm. Esta evidência indica preservação relativa superior ao Single Model na região distante, mas não demonstra equivalência a alteração nula.
+In the relative comparison (\autoref{tab:roi-distant-paired-preservation}), the Dual Model showed a smaller absolute change in\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae} after the Holm correction. This evidence indicates relatively superior preservation compared with the Single Model in the distant region, but does not demonstrate equivalence to null change.
 
-O desempenho computacional (latência e débito de inferência) do modelo selecionado para a avaliação externa é caracterizado no \autoref{sec:appendix-computational-performance}.
+The computational performance (inference latency and throughput) of the model selected for external evaluation is characterized in \autoref{sec:appendix-computational-performance}.
 
 \section{External Evaluation for Doctors}
 \label{sec:external-evatluation-doctors}
 
 \subsection{Capture Status and Participants}
-% A preencher: número final de leitores recrutados, respostas completas e datas efetivas de fecho da recolha.
+% To fill: final number of recruited readers, completed responses, and actual data-collection closing dates.
 
-A avaliação externa consiste numa comparação pareada cega ao rótulo de processamento: em cada caso, os leitores visualizam simultaneamente a entrada com artefacto e a saída do modelo, identificadas apenas como ``Imagem A'' e ``Imagem B''. A posição esquerda/direita é contrabalançada entre leitores e mantida constante entre um caso e a sua repetição oculta. Cada sessão apresenta 19 comparações: 2 casos de treino (excluídos da análise), 15 casos principais e 2 repetições ocultas de casos já apresentados, usadas exclusivamente para avaliar a consistência intraleitor. Os médicos foram recrutados diretamente pela investigadora, com autodeclaração do uso clínico de\acrshort{ct} com frequência mínima mensal. Não foram recolhidos nome, contacto, número de registo profissional ou qualquer comprovativo de qualificação.
+The external evaluation consists of a paired comparison blinded to the processing label: in each case, readers simultaneously view the artifact input and the model output, identified only as ``Image A'' and ``Image B''. The left/right position is counterbalanced across readers and kept constant between a case and its hidden repeat. Each session presents 19 comparisons: 2 training cases (excluded from the analysis), 15 main cases, and 2 hidden repeats of previously presented cases, used exclusively to assess intra-reader consistency. Physicians were recruited directly by the researcher, with self-declaration of clinical\acrshort{ct} use with a minimum monthly frequency. No name, contact information, professional registration number, or proof of qualification was collected.
 
-A \autoref{tab:external-reader-recruitment} resume o estado do recrutamento e da conclusão das respostas.
+\autoref{tab:external-reader-recruitment} summarizes the status of recruitment and response completion.
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lc}
 \toprule
-\textbf{Indicador} & \textbf{Valor} \\
+\textbf{Indicator} & \textbf{Value} \\
 \midrule
-Total de Leitores & \textit{[a preencher]} \\
-Respostas totais válidas (leitores $\times$ 15 casos principais) & \textit{[a preencher]} \\
-Data de início da recolha & 2026-08-27 \\
-Data de fecho da recolha & \textit{[a preencher]} \\
+Total Readers & \textit{[to fill]} \\
+Total valid responses (readers $\times$ 15 main cases) & \textit{[to fill]} \\
+Data collection start date & 2026-08-27 \\
+Data collection closing date & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
 \captionsetup{skip=2pt}
-\caption[Recruitment and completion status]{Estado do recrutamento e da conclusão das respostas da avaliação externa.}
+\caption[Recruitment and completion status]{Status of recruitment and response completion for the external evaluation.}
 \label{tab:external-reader-recruitment}
 \end{table}
 
-As características autodeclaradas dos leitores que completaram a avaliação são apresentadas na \autoref{tab:external-reader-profile}. Nenhuma destas variáveis permite identificar individualmente um participante.
+The self-reported characteristics of the readers who completed the evaluation are presented in \autoref{tab:external-reader-profile}. None of these variables allow individual identification of a participant.
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{llcc}
 \toprule
-\textbf{Variável} & \textbf{Categoria} & \textbf{N} & \textbf{\%} \\
+\textbf{Variable} & \textbf{Category} & \textbf{N} & \textbf{\%} \\
 \midrule
-\multirow{2}{*}{Jurisdição} & Brasil & \textit{[a preencher]} & \textit{[a preencher]} \\
-                            & Portugal & \textit{[a preencher]} & \textit{[a preencher]} \\
+\multirow{2}{*}{Jurisdiction} & Brazil & \textit{[to fill]} & \textit{[to fill]} \\
+                            & Portugal & \textit{[to fill]} & \textit{[to fill]} \\
 \midrule
-\multirow{3}{*}{Frequência de uso de\acrshort{ct}} & Mensal & \textit{[a preencher]} & \textit{[a preencher]} \\
-                                          & Semanal & \textit{[a preencher]} & \textit{[a preencher]} \\
-                                          & Diária & \textit{[a preencher]} & \textit{[a preencher]} \\
+\multirow{3}{*}{CT usage frequency} & Monthly & \textit{[to fill]} & \textit{[to fill]} \\
+                                          & Weekly & \textit{[to fill]} & \textit{[to fill]} \\
+                                          & Daily & \textit{[to fill]} & \textit{[to fill]} \\
 \midrule
-\multirow{4}{*}{Experiência com\acrshort{ct} (anos)} & $<2$ & \textit{[a preencher]} & \textit{[a preencher]} \\
-                                            & 2--5 & \textit{[a preencher]} & \textit{[a preencher]} \\
-                                            & 6--10 & \textit{[a preencher]} & \textit{[a preencher]} \\
-                                            & $>10$ & \textit{[a preencher]} & \textit{[a preencher]} \\
+\multirow{4}{*}{CT experience (years)} & $<2$ & \textit{[to fill]} & \textit{[to fill]} \\
+                                            & 2--5 & \textit{[to fill]} & \textit{[to fill]} \\
+                                            & 6--10 & \textit{[to fill]} & \textit{[to fill]} \\
+                                            & $>10$ & \textit{[to fill]} & \textit{[to fill]} \\
 \midrule
-\multirow{3}{*}{Experiência com redução de artefactos} & Nenhuma & \textit{[a preencher]} & \textit{[a preencher]} \\
-                                                         & Ocasional & \textit{[a preencher]} & \textit{[a preencher]} \\
-                                                         & Frequente & \textit{[a preencher]} & \textit{[a preencher]} \\
+\multirow{3}{*}{Experience with artifact reduction} & None & \textit{[to fill]} & \textit{[to fill]} \\
+                                                         & Occasional & \textit{[to fill]} & \textit{[to fill]} \\
+                                                         & Frequent & \textit{[to fill]} & \textit{[to fill]} \\
 \midrule
-\multirow{3}{*}{Tipo de monitor} & Diagnóstico & \textit{[a preencher]} & \textit{[a preencher]} \\
-                                  & Convencional & \textit{[a preencher]} & \textit{[a preencher]} \\
-                                  & Desconhecido & \textit{[a preencher]} & \textit{[a preencher]} \\
+\multirow{3}{*}{Monitor type} & Diagnostic & \textit{[to fill]} & \textit{[to fill]} \\
+                                  & Conventional & \textit{[to fill]} & \textit{[to fill]} \\
+                                  & Unknown & \textit{[to fill]} & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
 \captionsetup{skip=2pt}
-\caption[Reader profile characteristics]{Características autodeclaradas dos leitores que completaram a avaliação externa.}
+\caption[Reader profile characteristics]{Self-reported characteristics of the readers who completed the external evaluation.}
 \label{tab:external-reader-profile}
 \end{table}
 
-A distribuição por especialidade médica é apresentada separadamente na \autoref{tab:external-reader-specialty}, dado o maior número de categorias.
+The distribution by medical specialty is presented separately in \autoref{tab:external-reader-specialty}, given the larger number of categories.
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lcc}
 \toprule
-\textbf{Especialidade} & \textbf{N} & \textbf{\%} \\
+\textbf{Specialty} & \textbf{N} & \textbf{\%} \\
 \midrule
-Radiologia e Diagnóstico por Imagem & \textit{[a preencher]} & \textit{[a preencher]} \\
-Pneumologia & \textit{[a preencher]} & \textit{[a preencher]} \\
-Cirurgia Torácica ou Cardiotorácica & \textit{[a preencher]} & \textit{[a preencher]} \\
-Oncologia & \textit{[a preencher]} & \textit{[a preencher]} \\
-Medicina Interna ou Clínica Médica & \textit{[a preencher]} & \textit{[a preencher]} \\
-Medicina Intensiva & \textit{[a preencher]} & \textit{[a preencher]} \\
-Medicina de Emergência & \textit{[a preencher]} & \textit{[a preencher]} \\
-Cardiologia & \textit{[a preencher]} & \textit{[a preencher]} \\
-Gastroenterologia ou Hepatologia & \textit{[a preencher]} & \textit{[a preencher]} \\
-Cirurgia Geral ou outra especialidade cirúrgica & \textit{[a preencher]} & \textit{[a preencher]} \\
-Urologia & \textit{[a preencher]} & \textit{[a preencher]} \\
-Ortopedia ou Traumatologia & \textit{[a preencher]} & \textit{[a preencher]} \\
-Doenças Infecciosas ou Infectologia & \textit{[a preencher]} & \textit{[a preencher]} \\
-Outra especialidade médica & \textit{[a preencher]} & \textit{[a preencher]} \\
+Radiology and Diagnostic Imaging & \textit{[to fill]} & \textit{[to fill]} \\
+Pulmonology & \textit{[to fill]} & \textit{[to fill]} \\
+Thoracic or Cardiothoracic Surgery & \textit{[to fill]} & \textit{[to fill]} \\
+Oncology & \textit{[to fill]} & \textit{[to fill]} \\
+Internal Medicine or General Medicine & \textit{[to fill]} & \textit{[to fill]} \\
+Intensive Care Medicine & \textit{[to fill]} & \textit{[to fill]} \\
+Emergency Medicine & \textit{[to fill]} & \textit{[to fill]} \\
+Cardiology & \textit{[to fill]} & \textit{[to fill]} \\
+Gastroenterology or Hepatology & \textit{[to fill]} & \textit{[to fill]} \\
+General Surgery or other surgical specialty & \textit{[to fill]} & \textit{[to fill]} \\
+Urology & \textit{[to fill]} & \textit{[to fill]} \\
+Orthopedics or Traumatology & \textit{[to fill]} & \textit{[to fill]} \\
+Infectious Diseases & \textit{[to fill]} & \textit{[to fill]} \\
+Other medical specialty & \textit{[to fill]} & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
 \captionsetup{skip=2pt}
-\caption[Reader specialty distribution]{Distribuição por especialidade médica dos leitores que completaram a avaliação externa.}
+\caption[Reader specialty distribution]{Distribution by medical specialty of the readers who completed the external evaluation.}
 \label{tab:external-reader-specialty}
 \end{table}
 \FloatBarrier
 
 \subsection{Quantitative Characterization of Input--Output}
-Antes da avaliação por profissionais, a alteração global produzida pelo \textit{Single Model} foi caracterizada nos 15 casos principais do conjunto externo. Os dois casos de treino foram excluídos desta síntese. Como estes exames reais não dispõem de referência limpa, as métricas da \autoref{tab:external-input-output-global} comparam exclusivamente a imagem de entrada com a saída do modelo, dentro da máscara corporal.
+Before the professional evaluation, the global change produced by the \textit{Single Model} was characterized in the 15 main cases of the external set. The two training cases were excluded from this summary. Since these real exams do not have a clean reference, the metrics in \autoref{tab:external-input-output-global} compare exclusively the input image with the model output, within the body mask.
 
 \input{Chapters/Final/Generated/ExternalInputOutputMetrics}
 
-No conjunto externo, a similaridade média entrada--saída foi de $0{.}8953$ para\acrshort{ssim} e $33{.}14$~dB para\acrshort{psnr}, enquanto a magnitude média da alteração foi de $21{.}12$~HU em\acrshort{mae}. A dispersão entre casos, expressa pelos desvios-padrão e intervalos de confiança da tabela, evidencia heterogeneidade no grau de alteração produzido pela reconstrução. Estes resultados descrevem a preservação e a modificação global das imagens externas, mas não permitem inferir, sem referência limpa, acurácia de remoção de artefactos ou benefício clínico. Essa interpretação é abordada pela avaliação cega por médicos nas subseções seguintes.
+In the external set, the mean input--output similarity was $0{.}8953$ for\acrshort{ssim} and $33{.}14$~dB for\acrshort{psnr}, while the mean magnitude of change was $21{.}12$~HU in\acrshort{mae}. The dispersion between cases, expressed by the standard deviations and confidence intervals in the table, evidences heterogeneity in the degree of change produced by the reconstruction. These results describe the preservation and overall modification of the external images, but do not allow inference, without a clean reference, of artifact-removal accuracy or clinical benefit. This interpretation is addressed by the blinded evaluation by physicians in the following subsections.
 
-Para tornar visível esta heterogeneidade, selecionou-se de forma descritiva os três casos com maior e os três com menor\acrshort{ssim} entre entrada e saída. Os primeiros representam os pares com menor alteração estrutural global, enquanto os segundos representam aqueles com maior alteração.
+To make this heterogeneity visible, the three cases with the highest and the three with the lowest input--output\acrshort{ssim} were selected descriptively. The former represent the pairs with the smallest overall structural change, while the latter represent those with the greatest change.
 
 \input{Chapters/Final/Generated/ExternalInputOutputExamples}
 
 \FloatBarrier
 \subsection{Primary Outcome: Anatomical Visualization}
-% A preencher: frequências observadas, estimativa do modelo ordinal de efeitos mistos e respetivo IC 95%.
+% To fill: observed frequencies, mixed-effects ordinal model estimate, and respective 95% CI.
 
-O desfecho primário é a preferência pareada, por caso, quanto a qual imagem preserva melhor a região anatómica subjacente ao artefacto metálico (``Imagem A'' / ``Imagem B'' / ``Sem diferença''). As respostas são recodificadas para entrada/saída de acordo com a alocação de posição registada para cada apresentação, sem que os leitores tenham conhecimento dessa alocação durante a resposta. Casos de treino e repetições ocultas não integram esta análise ($n=15$ casos principais por leitor).
+The primary outcome is the paired preference, per case, regarding which image better preserves the anatomical region underlying the metal artifact (``Image A'' / ``Image B'' / ``No difference''). Responses are recoded to input/output according to the position allocation recorded for each presentation, without readers being aware of this allocation while responding. Training cases and hidden repeats are not part of this analysis ($n=15$ main cases per reader).
 
-A associação entre a condição preferida (entrada vs. saída) e o tipo de imagem foi estimada por um modelo ordinal de efeitos mistos, com efeitos aleatórios para leitor e para caso, de modo a contabilizar a estrutura de medições repetidas (múltiplos casos por leitor e múltiplos leitores por caso). Os intervalos de confiança de 95\% são priorizados na interpretação, em detrimento de valores de $p$ isolados.
+The association between the preferred condition (input vs. output) and the image type was estimated by a mixed-effects ordinal model, with random effects for reader and case, in order to account for the repeated-measures structure (multiple cases per reader and multiple readers per case). 95\% confidence intervals are prioritized in the interpretation, over isolated $p$-values.
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Resposta} & \textbf{N} & \textbf{\%} & \textbf{IC 95\%} \\
+\textbf{Response} & \textbf{N} & \textbf{\%} & \textbf{95\% CI} \\
 \midrule
-Preferiu a saída (Single Model) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
-Preferiu a entrada (com artefacto) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
-Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Preferred output (Single Model) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Preferred input (with artifact) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Frequências agrupadas sobre todas as respostas válidas (leitores $\times$ 15 casos principais); IC 95\% por \textit{bootstrap} ou método exato a especificar.
+\par\smallskip\footnotesize Pooled frequencies over all valid responses (readers $\times$ 15 main cases); 95\% CI by\textit{bootstrap} or exact method to be specified.
 \captionsetup{skip=2pt}
-\caption[Primary outcome: anatomical preservation preference]{Preferência pareada quanto à preservação da região anatómica subjacente ao artefacto metálico.}
+\caption[Primary outcome: anatomical preservation preference]{Paired preference regarding preservation of the anatomical region underlying the metal artifact.}
 \label{tab:external-primary-outcome}
 \end{table}
 
@@ -800,37 +791,37 @@ Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a pr
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Efeito} & \textbf{Estimativa} & \textbf{IC 95\%} & \textbf{$p$} \\
+\textbf{Effect} & \textbf{Estimate} & \textbf{95\% CI} & \textbf{$p$} \\
 \midrule
-Condição (saída vs. entrada) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Condition (output vs. input) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Modelo ordinal de efeitos mistos com efeitos aleatórios para leitor e caso; escala e parametrização do coeficiente a especificar (por exemplo, \textit{log-odds} ou proporção marginal prevista).
+\par\smallskip\footnotesize Mixed-effects ordinal model with random effects for reader and case; scale and parametrization of the coefficient to be specified (e.g.,\textit{log-odds} or predicted marginal proportion).
 \captionsetup{skip=2pt}
-\caption[Primary outcome: mixed-effects model estimate]{Estimativa do modelo ordinal de efeitos mistos para o desfecho primário.}
+\caption[Primary outcome: mixed-effects model estimate]{Mixed-effects ordinal model estimate for the primary outcome.}
 \label{tab:external-primary-model}
 \end{table}
 \FloatBarrier
 
 \subsection{Secondary Outcomes and Safety Perception}
-% A preencher: frequências e IC 95% por pergunta secundária; estatísticas de concordância intraleitor.
+% To fill: frequencies and 95% CI per secondary question; intra-reader agreement statistics.
 
-Os desfechos secundários seguem o mesmo formato de comparação pareada por caso (``Imagem A'' / ``Imagem B'' / ``Sem diferença''), recodificado para entrada/saída, reportando-se frequências e intervalos de confiança de 95\% por pergunta, sem ajuste conjunto de multiplicidade, dado o caráter descritivo desta síntese.
+The secondary outcomes follow the same paired per-case comparison format (``Image A'' / ``Image B'' / ``No difference''), recoded to input/output, with frequencies and 95\% confidence intervals reported per question, without a joint multiplicity adjustment, given the descriptive nature of this summary.
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Resposta} & \textbf{N} & \textbf{\%} & \textbf{IC 95\%} \\
+\textbf{Response} & \textbf{N} & \textbf{\%} & \textbf{95\% CI} \\
 \midrule
-Preferiu a saída (menor intensidade de artefacto) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
-Preferiu a entrada & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
-Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Preferred output (lower artifact intensity) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Preferred input & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
 \captionsetup{skip=2pt}
-\caption[Secondary outcome: artifact intensity]{Preferência pareada quanto à intensidade percebida de artefactos metálicos.}
+\caption[Secondary outcome: artifact intensity]{Paired preference regarding the perceived intensity of metal artifacts.}
 \label{tab:external-secondary-artifact-intensity}
 \end{table}
 
@@ -839,16 +830,16 @@ Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a pr
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Resposta} & \textbf{N} & \textbf{\%} & \textbf{IC 95\%} \\
+\textbf{Response} & \textbf{N} & \textbf{\%} & \textbf{95\% CI} \\
 \midrule
-Preferiu a saída (menos distorção) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
-Preferiu a entrada & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
-Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Preferred output (less distortion) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Preferred input & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Este item funciona como sinal exploratório de possível dano: preferência pela entrada sugere perceção de distorções ou artefactos introduzidos pelo modelo fora da zona de artefacto.
+\par\smallskip\footnotesize This item functions as an exploratory signal of possible harm: preference for the input suggests perceived distortions or artifacts introduced by the model outside the artifact zone.
 \captionsetup{skip=2pt}
-\caption[Secondary outcome: distortion in other regions]{Preferência pareada quanto a artefactos ou distorções anatómicas introduzidas nas regiões distantes do artefacto.}
+\caption[Secondary outcome: distortion in other regions]{Paired preference regarding artifacts or anatomical distortions introduced in regions distant from the artifact.}
 \label{tab:external-secondary-distortion}
 \end{table}
 
@@ -857,62 +848,62 @@ Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a pr
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Resposta} & \textbf{N} & \textbf{\%} & \textbf{IC 95\%} \\
+\textbf{Response} & \textbf{N} & \textbf{\%} & \textbf{95\% CI} \\
 \midrule
-Preferiu a saída para interpretação clínica & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
-Preferiu a entrada & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
-Sem diferença & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
+Preferred output for clinical interpretation & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Preferred input & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
 \captionsetup{skip=2pt}
-\caption[Secondary outcome: clinical preference]{Preferência pareada quanto à imagem escolhida para interpretação clínica.}
+\caption[Secondary outcome: clinical preference]{Paired preference regarding the image chosen for clinical interpretation.}
 \label{tab:external-secondary-clinical-preference}
 \end{table}
 
-Adicionalmente, no final da sessão, cada leitor respondeu uma vez a uma questão ordinal de 5 pontos sobre a utilidade complementar de uma versão processada com este padrão face ao exame de\acrshort{ct} original (\autoref{tab:external-secondary-utility}).
+Additionally, at the end of the session, each reader answered once a 5-point ordinal question about the complementary usefulness of a version processed with this pattern relative to the original\acrshort{ct} exam (\autoref{tab:external-secondary-utility}).
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lcc}
 \toprule
-\textbf{Categoria} & \textbf{N} & \textbf{\%} \\
+\textbf{Category} & \textbf{N} & \textbf{\%} \\
 \midrule
-Definitivamente não & \textit{[a preencher]} & \textit{[a preencher]} \\
-Provavelmente não & \textit{[a preencher]} & \textit{[a preencher]} \\
-Incerto & \textit{[a preencher]} & \textit{[a preencher]} \\
-Provavelmente sim & \textit{[a preencher]} & \textit{[a preencher]} \\
-Definitivamente sim & \textit{[a preencher]} & \textit{[a preencher]} \\
+Definitely not & \textit{[to fill]} & \textit{[to fill]} \\
+Probably not & \textit{[to fill]} & \textit{[to fill]} \\
+Uncertain & \textit{[to fill]} & \textit{[to fill]} \\
+Probably yes & \textit{[to fill]} & \textit{[to fill]} \\
+Definitely yes & \textit{[to fill]} & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Uma resposta por leitor (não por caso); $n=$ número de leitores que completaram a avaliação.
+\par\smallskip\footnotesize One response per reader (not per case); $n=$ number of readers who completed the evaluation.
 \captionsetup{skip=2pt}
-\caption[Secondary outcome: complementary utility]{Utilidade complementar percebida de uma versão processada face ao exame de\acrshort{ct} original.}
+\caption[Secondary outcome: complementary utility]{Perceived complementary usefulness of a processed version relative to the original\acrshort{ct} exam.}
 \label{tab:external-secondary-utility}
 \end{table}
 \FloatBarrier
 
-A consistência intraleitor foi avaliada através de duas repetições ocultas por leitor: o mesmo caso é reapresentado mais tarde na sessão, sem sinalização, na mesma posição esquerda/direita da primeira apresentação. A concordância entre a resposta original e a da repetição foi quantificada pelo coeficiente de correlação intraclasse ICC(2,1) (Shrout \& Fleiss, modelo de efeitos mistos, medida única, concordância absoluta) e, para a preferência binária saída/entrada, pelo coeficiente $\kappa$ de Fleiss (\autoref{tab:external-intra-reader-reliability}).
+Intra-reader consistency was assessed through two hidden repeats per reader: the same case is re-presented later in the session, without signaling, in the same left/right position as the first presentation. Agreement between the original response and the repeat was quantified by the intraclass correlation coefficient ICC(2,1) (Shrout \& Fleiss, mixed-effects model, single measure, absolute agreement) and, for the binary output/input preference, by Fleiss's $\kappa$ coefficient (\autoref{tab:external-intra-reader-reliability}).
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lccc}
 \toprule
-\textbf{Estatística} & \textbf{Valor} & \textbf{IC 95\%} & \textbf{Interpretação} \\
+\textbf{Statistic} & \textbf{Value} & \textbf{95\% CI} & \textbf{Interpretation} \\
 \midrule
-ICC(2,1) & \textit{[a preencher]} & \textit{[a preencher]} & \textit{[a preencher]} \\
-$\kappa$ de Fleiss (saída vs. entrada) & \textit{[a preencher]} & --- & \textit{[a preencher]} \\
+ICC(2,1) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Fleiss's $\kappa$ (output vs. input) & \textit{[to fill]} & --- & \textit{[to fill]} \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize $n=2$ repetições ocultas por leitor. IC 95\% do ICC(2,1) pelo método baseado na distribuição $F$ (Shrout \& Fleiss, 1979).
+\par\smallskip\footnotesize $n=2$ hidden repeats per reader. 95\% CI of ICC(2,1) by the $F$-distribution-based method (Shrout \& Fleiss, 1979).
 \captionsetup{skip=2pt}
-\caption[Intra-reader reliability]{Consistência intraleitor nas repetições ocultas.}
+\caption[Intra-reader reliability]{Intra-reader consistency in the hidden repeats.}
 \label{tab:external-intra-reader-reliability}
 \end{table}
 \FloatBarrier
 
 \subsection{Limited Interpretation to the Observational Design}
-% A preencher: síntese final com os valores reais, uma vez concluída a recolha.
+% To fill: final synthesis with the actual values, once data collection is concluded.
 
-O desenho dessa avaliação permite concluir, quando os dados estiverem disponíveis, qual imagem os leitores preferem em cada dimensão avaliada, mas não permite inferir causalidade sobre desfechos clínicos (por exemplo, impacto diagnóstico ou terapêutico), nem generalizar além do conjunto de 15 casos e do painel de leitores efetivamente recrutado. A ausência de uma referência limpa nestes casos externos significa que a avaliação de exatidão anatómica depende inteiramente do julgamento dos leitores, e não de uma métrica objetiva de erro. Por fim, o número de leitores recrutados limita a precisão das estimativas e a possibilidade de análises de subgrupo por especialidade ou experiência.
+The design of this evaluation will make it possible to conclude, once the data are available, which image readers prefer along each assessed dimension, but it does not allow inference of causality regarding clinical outcomes (for example, diagnostic or therapeutic impact), nor generalization beyond the set of 15 cases and the panel of readers actually recruited. The absence of a clean reference in these external cases means that the assessment of anatomical accuracy depends entirely on readers' judgment, rather than on an objective error metric. Finally, the number of recruited readers limits the precision of the estimates and the possibility of subgroup analyses by specialty or experience.

@@ -1,7 +1,21 @@
 \chapter{Supplementary Internal Evaluation}
 \label{apendice:internal-evaluation}
 
-Este apêndice reúne verificações quantitativas complementares da avaliação interna. A figura seguinte é apresentada apenas como diagnóstico visual da concordância radiométrica ao nível de pixel e não constitui análise inferencial, pois os pixels amostrados não são observações independentes.
+\section{Training Convergence Across Runs}
+\label{sec:appendix-training-details}
+
+This section provides the complete convergence documentation for the six deterministic training runs. Each run's checkpoint was selected exclusively from validation reconstruction \acrshort{ssim}, as specified in Materials and Methods. The six frozen checkpoints were subsequently compared once on the internal test partition to select the external-evaluation candidate by Artifact-ROI $\Delta$\acrshort{ssim}, with a descriptive Distant-Zone preservation safeguard. The figures and tables below document per-run checkpoint selection and did not, by themselves, determine the final external-evaluation candidate.
+
+\FloatBarrier
+\input{Chapters/Final/Generated/Training}
+\FloatBarrier
+
+\input{Tables/Generated/best_validation_ssim.tex}
+\input{Tables/Generated/best_validation_psnr.tex}
+\input{Tables/Generated/mae_at_best_validation_ssim.tex}
+\FloatBarrier
+
+This appendix presents complementary quantitative checks for the internal evaluation. The following figure is included solely as a visual diagnostic of pixel-level radiometric agreement and does not constitute inferential analysis, because sampled pixels are not independent observations.
 
 \begin{figure}[htbp]
     \centering
@@ -11,7 +25,7 @@ Este apêndice reúne verificações quantitativas complementares da avaliação
     \label{fig:appendix-pixel-hu-agreement}
 \end{figure}
 
-Os gráficos seguintes complementam os histogramas de deltas globais apresentados no corpo do texto. Cada ponto corresponde a uma fatia de teste e, portanto, estes gráficos não são utilizados para inferência estatística.
+The following plots complement the global-delta histograms presented in the main text. Each point represents one test slice; accordingly, these plots were not used for statistical inference.
 
 \begingroup
 \setlength{\intextsep}{4pt}
@@ -29,7 +43,7 @@ Os gráficos seguintes complementam os histogramas de deltas globais apresentado
 \label{fig:appendix-global-input-model}
 \endgroup
 
-Como análise exploratória de heterogeneidade, a \autoref{fig:appendix-artifact-load-association} relaciona a carga de artefato com a melhoria global. Cada ponto corresponde à média de todas as fatias de um paciente ($n=41$), atribuindo o mesmo peso a cada paciente. A carga foi definida como a média da fração área de artefato/área corporal por fatia; os deltas correspondem à métrica da reconstrução menos a métrica da entrada, ambas contra a referência limpa. Foram calculadas correlações de Spearman bilaterais, com IC de 95\% por \textit{bootstrap} BCa pareado (10\,000 reamostragens; semente 1337), e a curva de tendência é uma estimação LOWESS da biblioteca \textit{Statsmodels}. Esta análise não integra a família de testes de hipótese primários nem recebeu ajuste de Holm. Observou-se associação positiva entre a carga de artefato e a melhoria: $\rho=0{,}479$ para $\Delta$PSNR (IC 95\% [0{,}156; 0{,}717], $p=0{,}00154$) e $\rho=0{,}569$ para $\Delta$SSIM (IC 95\% [0{,}225; 0{,}794], $p=0{,}000104$).
+As an exploratory analysis of heterogeneity, \autoref{fig:appendix-artifact-load-association} relates artifact burden to global improvement. Each point represents the mean across all slices of one patient ($n=41$), giving each patient equal weight. Artifact burden was defined as the mean artifact-area/body-area fraction per slice; deltas correspond to the reconstruction metric minus the input metric, both calculated against the clean reference. Two-sided Spearman correlations were calculated with paired BCa bootstrap 95\% confidence intervals (10\,000 resamples; seed 1337), and the trend curve is a LOWESS estimate from \textit{Statsmodels}. This analysis was not part of the primary hypothesis-testing family and did not receive Holm adjustment. A positive association was observed between artifact burden and improvement: $\rho=0{,}479$ for $\Delta$PSNR (95\% CI [0{,}156; 0{,}717], $p=0{,}00154$) and $\rho=0{,}569$ for $\Delta$SSIM (95\% CI [0{,}225; 0{,}794], $p=0{,}000104$).
 
 \begingroup
 \setlength{\intextsep}{4pt}
@@ -50,9 +64,9 @@ Como análise exploratória de heterogeneidade, a \autoref{fig:appendix-artifact
 \section{Worst Performance Cases}
 \label{sec:appendix-worst-cases}
 
-Como caracterização complementar das fatias com pior desempenho, identificaram-se dois grupos por fatia para o Single Model, seed 2024, no conjunto de teste: primeiro pelo percentil 5 inferior de $\Delta$SSIM, a métrica utilizada para a seleção do \textit{checkpoint}, e depois, de forma complementar, pelo percentil 5 inferior de $\Delta$PSNR. Esta seleção é puramente descritiva: não constitui um teste de hipótese e serve apenas para situar, em termos quantitativos, os grupos de fatias cujos exemplos visuais individuais são discutidos na \autoref{sec:mapas-residuos-extremos}.
+As a complementary characterization of lower-performing slices, two slice-level groups were identified for the Single Model, seed 2024, in the test set: first by the bottom fifth percentile of global $\Delta$SSIM and then, complementarily, by the bottom fifth percentile of global $\Delta$PSNR. This slice-level classification is purely descriptive: it does not constitute a hypothesis test or reproduce the patient-level candidate-selection analysis, whose primary endpoint was Artifact-ROI $\Delta$SSIM, and it serves only to quantitatively situate the slice groups whose individual visual examples are discussed in \autoref{sec:residual-maps-extremes}.
 
-Pelo critério de $\Delta$SSIM ($N=74$/1478 fatias; limiar $=0{,}0146$), a melhoria média de $\Delta$PSNR manteve-se positiva ($1{,}88$~dB), mas a melhoria média de $\Delta$SSIM foi ligeiramente negativa ($-0{,}0019$), com redução média de\acrshort{mae} na Zona de Artefacto de $65{,}2$~HU (\autoref{fig:appendix-worst-cases-ssim}). Ou seja, o subconjunto mais desfavorável segundo a métrica principal de seleção inclui, em média, uma pequena degradação de\acrshort{ssim}, ainda que a maioria das restantes fatias continue a melhorar substancialmente.
+Using the global $\Delta$SSIM criterion ($N=74$/1478 slices; threshold $=0{,}0146$), mean $\Delta$PSNR improvement remained positive ($1{,}88$~dB), but mean $\Delta$SSIM improvement was slightly negative ($-0{,}0019$), with a mean Artifact-Zone \acrshort{mae} reduction of $65{,}2$~HU (\autoref{fig:appendix-worst-cases-ssim}). Thus, the most unfavorable subset according to this descriptive global criterion included a small mean \acrshort{ssim} degradation, even though most remaining slices continued to improve substantially.
 
 \begin{figure}[H]
     \centering
@@ -62,7 +76,7 @@ Pelo critério de $\Delta$SSIM ($N=74$/1478 fatias; limiar $=0{,}0146$), a melho
     \label{fig:appendix-worst-cases-ssim}
 \end{figure}
 
-Pelo critério complementar de $\Delta$PSNR ($N=74$/1478 fatias; limiar $=2{,}59$~dB), este grupo não é idêntico ao definido por $\Delta$SSIM: a melhoria média permaneceu positiva nas três métricas ($\Delta$PSNR médio $=1{,}23$~dB; $\Delta$SSIM médio $=0{,}0071$; $\Delta$MAE médio na Zona de Artefacto $=62{,}0$~HU), embora com dispersão elevada e alguns casos individuais de degradação face à entrada, visíveis na cauda esquerda da \autoref{fig:appendix-worst-cases-psnr}.
+Using the complementary $\Delta$PSNR criterion ($N=74$/1478 slices; threshold $=2{,}59$~dB), this group was not identical to that defined by $\Delta$SSIM: mean improvement remained positive for all three metrics (mean $\Delta$PSNR $=1{,}23$~dB; mean $\Delta$SSIM $=0{,}0071$; mean Artifact-Zone $\Delta$MAE $=62{,}0$~HU), although with substantial dispersion and some individual cases of degradation relative to the input, visible in the left tail of \autoref{fig:appendix-worst-cases-psnr}.
 
 \begin{figure}[H]
     \centering
@@ -72,7 +86,7 @@ Pelo critério complementar de $\Delta$PSNR ($N=74$/1478 fatias; limiar $=2{,}59
     \label{fig:appendix-worst-cases-psnr}
 \end{figure}
 
-Por fim, a \autoref{fig:appendix-worst-cases} relaciona conjuntamente $\Delta$PSNR e $\Delta$SSIM por fatia, destacando a cauda de pior desempenho definida por $\Delta$PSNR do parágrafo anterior, permitindo visualizar a dispersão bivariada dos casos desfavoráveis.
+Finally, \autoref{fig:appendix-worst-cases} jointly relates slice-level $\Delta$PSNR and $\Delta$SSIM, highlighting the lower-performance tail defined by $\Delta$PSNR in the preceding paragraph and allowing visualization of the bivariate dispersion of unfavorable cases.
 
 \begin{figure}[H]
     \centering
@@ -85,9 +99,7 @@ Por fim, a \autoref{fig:appendix-worst-cases} relaciona conjuntamente $\Delta$PS
 \section{Computational Performance}
 \label{sec:appendix-computational-performance}
 
-O desempenho temporal foi quantificado para o checkpoint do modelo selecionado para a avaliação externa, na partição de teste interna ($n=1478$ fatias). O benchmark foi executado no ambiente descrito em Materiais e Métodos, com GPU NVIDIA RTX A4500, utilizando lote unitário, após cinco passagens de aquecimento. Para cada fatia, a latência foi medida desde a chamada do modelo até à sincronização explícita da saída com a CPU. Consequentemente, esta medição inclui a execução da inferência e a sincronização da saída, mas não inclui o carregamento das imagens nem as etapas externas de pré-processamento ou de apresentação dos resultados.
+Runtime performance was quantified for the checkpoint of the model selected for external evaluation, on the internal test partition ($n=1478$ slices). The benchmark was run in the environment described in Materials and Methods, using an NVIDIA RTX A4500 GPU, batch size one, and five warm-up passes. For each slice, latency was measured from the model call to explicit synchronization of the output with the CPU. Consequently, this measurement includes inference execution and output synchronization, but excludes image loading and external preprocessing or result-presentation stages.
 
-A latência média foi de $24{,}13\,\mathrm{ms}$ por fatia (desvio-padrão: $0{,}69\,\mathrm{ms}$; mediana: $24{,}30\,\mathrm{ms}$), correspondendo a um débito de $41{,}4$ fatias por segundo. Os percentis 95 e 99 foram, respetivamente, $24{,}66\,\mathrm{ms}$ e $27{,}53\,\mathrm{ms}$ por fatia. A proximidade entre a média, a mediana e o percentil 95 indica estabilidade da latência na maior parte das execuções; a distribuição completa e a variação por fatia são apresentadas na \autoref{fig:benchmark-latency}. Estes valores caracterizam a configuração experimental utilizada e não representam, por si só, o tempo de resposta de um fluxo clínico completo ou de outro ambiente computacional.
+Mean latency was $24{,}13\,\mathrm{ms}$ per slice (standard deviation: $0{,}69\,\mathrm{ms}$; median: $24{,}30\,\mathrm{ms}$), corresponding to a throughput of $41{,}4$ slices per second. The 95th and 99th percentiles were $24{,}66\,\mathrm{ms}$ and $27{,}53\,\mathrm{ms}$ per slice, respectively. The proximity of the mean, median, and 95th percentile indicates latency stability for most runs; the complete distribution and slice-level variation are shown in \autoref{fig:benchmark-latency}. These values characterize the experimental configuration used and do not, by themselves, represent the response time of a complete clinical workflow or of another computational environment.
 \input{Chapters/Final/Generated/Benchmark}
-
-

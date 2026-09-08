@@ -215,15 +215,15 @@
 \@writefile{brf}{\backcite{ruderOverviewMultiTaskLearning2017}{{18}{4.3.2}{subsection.4.3.2}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Dual Supervision U-Net architecture}}{19}{figure.caption.13}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Reproducible Training}{19}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Settings, determinism and checkpoint selection}{19}{subsection.4.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Settings, determinism and two-stage selection}{19}{subsection.4.4.1}\protected@file@percent }
 \citation{zhaoLossFunctionsImage2017}
 \citation{zhaoLossFunctionsImage2017}
-\citation{taghanakiComboLossHandling2021}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Loss Functions}{21}{subsection.4.4.2}\protected@file@percent }
 \@writefile{brf}{\backcite{zhaoLossFunctionsImage2017}{{21}{4.4.2}{subsection.4.4.2}}}
 \@writefile{brf}{\backcite{zhaoLossFunctionsImage2017}{{21}{4.4.2}{subsection.4.4.2}}}
-\@writefile{brf}{\backcite{taghanakiComboLossHandling2021}{{21}{4.4.2}{subsection.4.4.2}}}
+\citation{taghanakiComboLossHandling2021}
 \citation{linzhangFSIMFeatureSimilarity2011}
+\@writefile{brf}{\backcite{taghanakiComboLossHandling2021}{{22}{4.4.2}{subsection.4.4.2}}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.5}Internal Evaluation}{22}{section.4.5}\protected@file@percent }
 \@writefile{brf}{\backcite{linzhangFSIMFeatureSimilarity2011}{{22}{4.5}{section.4.5}}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Global Metrics}{23}{subsection.4.5.1}\protected@file@percent }
@@ -247,170 +247,165 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chap:final-results}{{5}{28}{Results}{chapter.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Final Cohort and Experimental Integrity}{28}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Automatic Approval x Manually Inspection Results}{28}{subsection.5.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Complementary Analysis with\acrshort {ms-ssim}}{28}{subsection.5.1.2}\protected@file@percent }
-\@writefile{logr}{\contentsline {figure}{\numberline {5.1}MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)}{29}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:ssim_distribution}{{5.1}{29}{MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)}{figure.caption.18}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {5.2}MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)}{30}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:ECDF}{{5.2}{30}{MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)}{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Visually approved low MS-SSIM pairs}}{31}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:manual_review_examples}{{5.3}{31}{Visually approved low MS-SSIM pairs}{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Visually rejected pairs}}{32}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:reproved_examples}{{5.4}{32}{Visually rejected pairs}{figure.caption.21}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {5.5}Cosine similarity of MS-SSIM-audited pairs}{33}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:cosine_scatter_audited}{{5.5}{33}{Cosine similarity of MS-SSIM-audited pairs}{figure.caption.22}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {5.6}MS-SSIM distribution of audited pairs}{33}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:ssim_scatter_dist}{{5.6}{33}{MS-SSIM distribution of audited pairs}{figure.caption.23}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {5.7}Score distribution of excluded pairs: DL vs Stroke EIT}{34}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:score_distribution_bad}{{5.7}{34}{Score distribution of excluded pairs: DL vs Stroke EIT}{figure.caption.24}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Model Training}{35}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Convergence and Checkpoint Selection}{35}{subsection.5.2.1}\protected@file@percent }
-\@writefile{logr}{\contentsline {figure}{\numberline {5.8}Training curves: Dual Model, seed 1337}{36}{figure.caption.25}\protected@file@percent }
-\@writefile{logr}{\contentsline {figure}{\numberline {5.9}Training curves: Single Model, seed 1337}{37}{figure.caption.26}\protected@file@percent }
-\@writefile{logr}{\contentsline {figure}{\numberline {5.10}Training curves: Dual Model, seed 2024}{38}{figure.caption.27}\protected@file@percent }
-\@writefile{logr}{\contentsline {figure}{\numberline {5.11}Training curves: Single Model, seed 2024}{39}{figure.caption.28}\protected@file@percent }
-\@writefile{logr}{\contentsline {figure}{\numberline {5.12}Training curves: Dual Model, seed 42}{40}{figure.caption.29}\protected@file@percent }
-\@writefile{logr}{\contentsline {figure}{\numberline {5.13}Training curves: Single Model, seed 42}{41}{figure.caption.30}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Best validation SSIM by model and seed}}{42}{table.caption.31}\protected@file@percent }
-\newlabel{tab:best-validation-ssim}{{5.1}{42}{Best validation SSIM by model and seed}{table.caption.31}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Validation PSNR at best validation SSIM}}{42}{table.caption.32}\protected@file@percent }
-\newlabel{tab:best-validation-psnr}{{5.2}{42}{Validation PSNR at best validation SSIM}{table.caption.32}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Validation MAE at best validation SSIM}}{42}{table.caption.33}\protected@file@percent }
-\newlabel{tab:mae-at-best-validation-ssim}{{5.3}{42}{Validation MAE at best validation SSIM}{table.caption.33}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Internal Evaluation in Test Subset}{43}{section.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Global Outcomes}{43}{subsection.5.3.1}\protected@file@percent }
-\newlabel{sec:global-outcomes}{{5.3.1}{43}{Global Outcomes}{subsection.5.3.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Per-slice global SSIM on the test set}}{43}{table.caption.34}\protected@file@percent }
-\newlabel{tab:global-ssim}{{5.4}{43}{Per-slice global SSIM on the test set}{table.caption.34}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Per-slice global PSNR on the test set}}{43}{table.caption.35}\protected@file@percent }
-\newlabel{tab:global-psnr}{{5.5}{43}{Per-slice global PSNR on the test set}{table.caption.35}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Per-slice global MAE on the test set}}{43}{table.caption.36}\protected@file@percent }
-\newlabel{tab:global-mae}{{5.6}{43}{Per-slice global MAE on the test set}{table.caption.36}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Patient-level global $\Delta $SSIM}}{44}{table.caption.37}\protected@file@percent }
-\newlabel{tab:delta-ssim-paciente}{{5.7}{44}{Patient-level global $\Delta $SSIM}{table.caption.37}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Patient-level global $\Delta $PSNR}}{44}{table.caption.38}\protected@file@percent }
-\newlabel{tab:delta-psnr-paciente}{{5.8}{44}{Patient-level global $\Delta $PSNR}{table.caption.38}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Patient-level global $\Delta $MAE}}{44}{table.caption.39}\protected@file@percent }
-\newlabel{tab:delta-mae-paciente}{{5.9}{44}{Patient-level global $\Delta $MAE}{table.caption.39}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {5.14}Per-image global PSNR and SSIM improvement}{46}{figure.caption.42}\protected@file@percent }
-\newlabel{fig:global-improvement-histograms}{{5.14}{46}{Per-image global PSNR and SSIM improvement}{figure.caption.42}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {5.15}Patient-level Bland--Altman agreement of mean HU}{47}{figure.caption.43}\protected@file@percent }
-\newlabel{fig:bland-altman-patient-hu}{{5.15}{47}{Patient-level Bland--Altman agreement of mean HU}{figure.caption.43}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Region of Interest Evaluation}{47}{subsection.5.3.2}\protected@file@percent }
-\newlabel{sec:roi-evaluation}{{5.3.2}{47}{Region of Interest Evaluation}{subsection.5.3.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces ROI $\Delta $SSIM}}{48}{table.caption.44}\protected@file@percent }
-\newlabel{tab:roi-delta-ssim}{{5.10}{48}{ROI $\Delta $SSIM}{table.caption.44}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces ROI $\Delta $PSNR}}{48}{table.caption.45}\protected@file@percent }
-\newlabel{tab:roi-delta-psnr}{{5.11}{48}{ROI $\Delta $PSNR}{table.caption.45}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces ROI MAE reduction}}{48}{table.caption.46}\protected@file@percent }
-\newlabel{tab:roi-reducao-mae}{{5.12}{48}{ROI MAE reduction}{table.caption.46}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {5.16}Per-image ROI metric improvements}{50}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:roi-boxplots}{{5.16}{50}{Per-image ROI metric improvements}{figure.caption.50}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {5.17}Artifact-ROI correction versus distant-ROI change}{51}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:roi-safety}{{5.17}{51}{Artifact-ROI correction versus distant-ROI change}{figure.caption.53}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Residual Maps in Extreme Cases}{51}{subsection.5.3.3}\protected@file@percent }
-\newlabel{sec:residual-maps-extremes}{{5.3.3}{51}{Residual Maps in Extreme Cases}{subsection.5.3.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1147}}{52}{figure.caption.54}\protected@file@percent }
-\newlabel{fig:residual-greatest-structural-improvement-1250}{{5.18}{52}{Greatest Artifact-ROI $\Delta $SSIM: head\_1147}{figure.caption.54}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1274}}{53}{figure.caption.55}\protected@file@percent }
-\newlabel{fig:residual-greatest-structural-improvement-1364}{{5.19}{53}{Greatest Artifact-ROI $\Delta $SSIM: head\_1274}{figure.caption.55}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1280}}{54}{figure.caption.56}\protected@file@percent }
-\newlabel{fig:residual-greatest-structural-improvement-1369}{{5.20}{54}{Greatest Artifact-ROI $\Delta $SSIM: head\_1280}{figure.caption.56}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_11949}}{55}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:residual-least-structural-improvement-0716}{{5.21}{55}{Least Artifact-ROI $\Delta $SSIM: body\_11949}{figure.caption.57}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_2906}}{56}{figure.caption.58}\protected@file@percent }
-\newlabel{fig:residual-least-structural-improvement-1122}{{5.22}{56}{Least Artifact-ROI $\Delta $SSIM: body\_2906}{figure.caption.58}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_11956}}{57}{figure.caption.59}\protected@file@percent }
-\newlabel{fig:residual-least-structural-improvement-0723}{{5.23}{57}{Least Artifact-ROI $\Delta $SSIM: body\_11956}{figure.caption.59}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Paired Comparison Single x Dual Model}{58}{section.5.4}\protected@file@percent }
-\newlabel{sec:paired-comparison-single-dual}{{5.4}{58}{Paired Comparison Single x Dual Model}{section.5.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Global Statistical Analysis}{58}{subsection.5.4.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.13}{\ignorespaces SSIM improvement over corrupted input}}{59}{table.caption.60}\protected@file@percent }
-\newlabel{tab:ablation_improvement_ssim}{{5.13}{59}{SSIM improvement over corrupted input}{table.caption.60}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.14}{\ignorespaces PSNR improvement over corrupted input}}{59}{table.caption.61}\protected@file@percent }
-\newlabel{tab:ablation_improvement_psnr}{{5.14}{59}{PSNR improvement over corrupted input}{table.caption.61}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.15}{\ignorespaces MAE reduction over corrupted input}}{59}{table.caption.62}\protected@file@percent }
-\newlabel{tab:ablation_improvement_mae}{{5.15}{59}{MAE reduction over corrupted input}{table.caption.62}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.16}{\ignorespaces Paired Single vs Dual Model comparison}}{60}{table.caption.63}\protected@file@percent }
-\newlabel{tab:workflow-paired-comparison}{{5.16}{60}{Paired Single vs Dual Model comparison}{table.caption.63}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {5.24}Global PSNR and SSIM improvement}{61}{figure.caption.64}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Statistical Analysis per\acrshort {roi}}{61}{subsection.5.4.2}\protected@file@percent }
-\newlabel{sec:statistical-analysis-roi}{{5.4.2}{61}{Statistical Analysis per\acrshort {roi}}{subsection.5.4.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.17}{\ignorespaces Artifact-ROI SSIM improvement}}{61}{table.caption.65}\protected@file@percent }
-\newlabel{tab:roi-artifact-improvement-ssim}{{5.17}{61}{Artifact-ROI SSIM improvement}{table.caption.65}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.18}{\ignorespaces Artifact-ROI PSNR improvement}}{61}{table.caption.66}\protected@file@percent }
-\newlabel{tab:roi-artifact-improvement-psnr}{{5.18}{61}{Artifact-ROI PSNR improvement}{table.caption.66}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.19}{\ignorespaces Artifact-ROI MAE reduction}}{62}{table.caption.67}\protected@file@percent }
-\newlabel{tab:roi-artifact-improvement-mae}{{5.19}{62}{Artifact-ROI MAE reduction}{table.caption.67}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.20}{\ignorespaces Paired Artifact-ROI improvement comparison}}{62}{table.caption.68}\protected@file@percent }
-\newlabel{tab:roi-artifact-paired-comparison}{{5.20}{62}{Paired Artifact-ROI improvement comparison}{table.caption.68}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.21}{\ignorespaces Distant-ROI SSIM preservation magnitude}}{62}{table.caption.69}\protected@file@percent }
-\newlabel{tab:roi-distant-preservation-ssim}{{5.21}{62}{Distant-ROI SSIM preservation magnitude}{table.caption.69}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.22}{\ignorespaces Distant-ROI PSNR preservation magnitude}}{63}{table.caption.70}\protected@file@percent }
-\newlabel{tab:roi-distant-preservation-psnr}{{5.22}{63}{Distant-ROI PSNR preservation magnitude}{table.caption.70}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.23}{\ignorespaces Distant-ROI MAE preservation magnitude}}{63}{table.caption.71}\protected@file@percent }
-\newlabel{tab:roi-distant-preservation-mae}{{5.23}{63}{Distant-ROI MAE preservation magnitude}{table.caption.71}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.24}{\ignorespaces Paired Distant-ROI preservation advantage}}{63}{table.caption.72}\protected@file@percent }
-\newlabel{tab:roi-distant-paired-preservation}{{5.24}{63}{Paired Distant-ROI preservation advantage}{table.caption.72}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}External Evaluation for Doctors}{64}{section.5.5}\protected@file@percent }
-\newlabel{sec:external-evatluation-doctors}{{5.5}{64}{External Evaluation for Doctors}{section.5.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Capture Status and Participants}{64}{subsection.5.5.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.25}{\ignorespaces Recruitment and completion status}}{64}{table.caption.73}\protected@file@percent }
-\newlabel{tab:external-reader-recruitment}{{5.25}{64}{Recruitment and completion status}{table.caption.73}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.26}{\ignorespaces Reader profile characteristics}}{64}{table.caption.74}\protected@file@percent }
-\newlabel{tab:external-reader-profile}{{5.26}{64}{Reader profile characteristics}{table.caption.74}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.27}{\ignorespaces Reader specialty distribution}}{65}{table.caption.75}\protected@file@percent }
-\newlabel{tab:external-reader-specialty}{{5.27}{65}{Reader specialty distribution}{table.caption.75}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Quantitative Characterization of Input--Output}{65}{subsection.5.5.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.28}{\ignorespaces External input-output global metrics}}{65}{table.caption.76}\protected@file@percent }
-\newlabel{tab:external-input-output-global}{{5.28}{65}{External input-output global metrics}{table.caption.76}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.29}{\ignorespaces Illustrative external cases by input-output SSIM}}{66}{table.caption.77}\protected@file@percent }
-\newlabel{tab:external-ssim-extremes}{{5.29}{66}{Illustrative external cases by input-output SSIM}{table.caption.77}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.25}{\ignorespaces Least structurally changed external cases}}{67}{figure.5.25}\protected@file@percent }
-\newlabel{fig:external-least-structurally-changed}{{5.25}{67}{Least structurally changed external cases}{figure.5.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.26}{\ignorespaces Most structurally changed external cases}}{68}{figure.5.26}\protected@file@percent }
-\newlabel{fig:external-most-structurally-changed}{{5.26}{68}{Most structurally changed external cases}{figure.5.26}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Primary Outcome: Anatomical Visualization}{68}{subsection.5.5.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.30}{\ignorespaces Primary outcome: anatomical preservation preference}}{69}{table.caption.84}\protected@file@percent }
-\newlabel{tab:external-primary-outcome}{{5.30}{69}{Primary outcome: anatomical preservation preference}{table.caption.84}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.31}{\ignorespaces Primary outcome: mixed-effects model estimate}}{69}{table.caption.85}\protected@file@percent }
-\newlabel{tab:external-primary-model}{{5.31}{69}{Primary outcome: mixed-effects model estimate}{table.caption.85}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.4}Secondary Outcomes and Safety Perception}{69}{subsection.5.5.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.32}{\ignorespaces Secondary outcome: artifact intensity}}{69}{table.caption.86}\protected@file@percent }
-\newlabel{tab:external-secondary-artifact-intensity}{{5.32}{69}{Secondary outcome: artifact intensity}{table.caption.86}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.33}{\ignorespaces Secondary outcome: distortion in other regions}}{69}{table.caption.87}\protected@file@percent }
-\newlabel{tab:external-secondary-distortion}{{5.33}{69}{Secondary outcome: distortion in other regions}{table.caption.87}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.34}{\ignorespaces Secondary outcome: clinical preference}}{70}{table.caption.88}\protected@file@percent }
-\newlabel{tab:external-secondary-clinical-preference}{{5.34}{70}{Secondary outcome: clinical preference}{table.caption.88}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.35}{\ignorespaces Secondary outcome: complementary utility}}{70}{table.caption.89}\protected@file@percent }
-\newlabel{tab:external-secondary-utility}{{5.35}{70}{Secondary outcome: complementary utility}{table.caption.89}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.36}{\ignorespaces Intra-reader reliability}}{70}{table.caption.90}\protected@file@percent }
-\newlabel{tab:external-intra-reader-reliability}{{5.36}{70}{Intra-reader reliability}{table.caption.90}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.5}Limited Interpretation to the Observational Design}{70}{subsection.5.5.5}\protected@file@percent }
-\pp@pagectr{footnote}{6}{86}{71}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{71}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Automatic Approval and Manual Review Outcomes}{28}{subsection.5.1.1}\protected@file@percent }
+\@writefile{logr}{\contentsline {figure}{\numberline {5.1}Final cohort curation}{29}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:final-cohort-curation}{{5.1}{29}{Final cohort curation}{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Complementary Analysis with\acrshort {ms-ssim}}{29}{subsection.5.1.2}\protected@file@percent }
+\@writefile{logr}{\contentsline {figure}{\numberline {5.2}MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)}{30}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:ssim_distribution}{{5.2}{30}{MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)}{figure.caption.19}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.3}MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)}{31}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:ECDF}{{5.3}{31}{MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Visually approved low MS-SSIM pairs}}{32}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:manual_review_examples}{{5.4}{32}{Visually approved low MS-SSIM pairs}{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Visually rejected pairs}}{33}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:reproved_examples}{{5.5}{33}{Visually rejected pairs}{figure.caption.22}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.6}Cosine similarity of\acrshort {ms-ssim}-audited pairs}{34}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:cosine_scatter_audited}{{5.6}{34}{Cosine similarity of\acrshort {ms-ssim}-audited pairs}{figure.caption.23}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.7}MS-SSIM distribution of audited pairs}{34}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:ssim_scatter_dist}{{5.7}{34}{MS-SSIM distribution of audited pairs}{figure.caption.24}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.8}Score distribution of excluded pairs: DL vs Stroke EIT}{35}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:score_distribution_bad}{{5.8}{35}{Score distribution of excluded pairs: DL vs Stroke EIT}{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Model Training}{36}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Training Convergence and Per-Run Checkpoint Selection}{36}{subsection.5.2.1}\protected@file@percent }
+\@writefile{logr}{\contentsline {figure}{\numberline {5.9}Training convergence (results): Single Model, seed 2024}{37}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:results-training-convergence-single-model-seed-2024}{{5.9}{37}{Training convergence (results): Single Model, seed 2024}{figure.caption.29}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.10}Training convergence (results): Dual Model, seed 2024}{39}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:results-training-convergence-dual-model-seed-2024}{{5.10}{39}{Training convergence (results): Dual Model, seed 2024}{figure.caption.34}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Internal Evaluation in Test Subset}{39}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Global Outcomes}{39}{subsection.5.3.1}\protected@file@percent }
+\newlabel{sec:global-outcomes}{{5.3.1}{39}{Global Outcomes}{subsection.5.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Per-slice global SSIM on the test set}}{40}{table.caption.35}\protected@file@percent }
+\newlabel{tab:global-ssim}{{5.1}{40}{Per-slice global SSIM on the test set}{table.caption.35}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Per-slice global\acrshort {psnr} on the test set}}{40}{table.caption.36}\protected@file@percent }
+\newlabel{tab:global-psnr}{{5.2}{40}{Per-slice global\acrshort {psnr} on the test set}{table.caption.36}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Per-slice global MAE on the test set}}{40}{table.caption.37}\protected@file@percent }
+\newlabel{tab:global-mae}{{5.3}{40}{Per-slice global MAE on the test set}{table.caption.37}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Patient-level global $\Delta $SSIM}}{40}{table.caption.38}\protected@file@percent }
+\newlabel{tab:delta-ssim-paciente}{{5.4}{40}{Patient-level global $\Delta $SSIM}{table.caption.38}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Patient-level global $\Delta $PSNR}}{41}{table.caption.39}\protected@file@percent }
+\newlabel{tab:delta-psnr-paciente}{{5.5}{41}{Patient-level global $\Delta $PSNR}{table.caption.39}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Patient-level global $\Delta $MAE}}{41}{table.caption.40}\protected@file@percent }
+\newlabel{tab:delta-mae-paciente}{{5.6}{41}{Patient-level global $\Delta $MAE}{table.caption.40}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.11}Per-image global PSNR and SSIM improvement}{42}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:global-improvement-histograms}{{5.11}{42}{Per-image global PSNR and SSIM improvement}{figure.caption.43}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.12}Patient-level Bland--Altman agreement of mean HU}{43}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:bland-altman-patient-hu}{{5.12}{43}{Patient-level Bland--Altman agreement of mean HU}{figure.caption.44}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Region of Interest Evaluation}{43}{subsection.5.3.2}\protected@file@percent }
+\newlabel{sec:roi-evaluation}{{5.3.2}{43}{Region of Interest Evaluation}{subsection.5.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Selection of the External-Evaluation Candidate}{43}{subsection.5.3.3}\protected@file@percent }
+\newlabel{sec:external-candidate-selection}{{5.3.3}{43}{Selection of the External-Evaluation Candidate}{subsection.5.3.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces ROI $\Delta $SSIM}}{44}{table.caption.45}\protected@file@percent }
+\newlabel{tab:roi-delta-ssim}{{5.7}{44}{ROI $\Delta $SSIM}{table.caption.45}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces ROI $\Delta $PSNR}}{44}{table.caption.46}\protected@file@percent }
+\newlabel{tab:roi-delta-psnr}{{5.8}{44}{ROI $\Delta $PSNR}{table.caption.46}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces ROI MAE reduction}}{44}{table.caption.47}\protected@file@percent }
+\newlabel{tab:roi-reducao-mae}{{5.9}{44}{ROI MAE reduction}{table.caption.47}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.13}Per-image ROI metric improvements}{46}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:roi-boxplots}{{5.13}{46}{Per-image ROI metric improvements}{figure.caption.51}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.14}Artifact-ROI correction versus distant-ROI change}{47}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:roi-safety}{{5.14}{47}{Artifact-ROI correction versus distant-ROI change}{figure.caption.54}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Residual Maps in Extreme Cases}{47}{subsection.5.3.4}\protected@file@percent }
+\newlabel{sec:residual-maps-extremes}{{5.3.4}{47}{Residual Maps in Extreme Cases}{subsection.5.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1147}}{48}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:residual-greatest-structural-improvement-1250}{{5.15}{48}{Greatest Artifact-ROI $\Delta $SSIM: head\_1147}{figure.caption.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1274}}{49}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:residual-greatest-structural-improvement-1364}{{5.16}{49}{Greatest Artifact-ROI $\Delta $SSIM: head\_1274}{figure.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1280}}{50}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:residual-greatest-structural-improvement-1369}{{5.17}{50}{Greatest Artifact-ROI $\Delta $SSIM: head\_1280}{figure.caption.57}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_11949}}{51}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:residual-least-structural-improvement-0716}{{5.18}{51}{Least Artifact-ROI $\Delta $SSIM: body\_11949}{figure.caption.58}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_2906}}{52}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:residual-least-structural-improvement-1122}{{5.19}{52}{Least Artifact-ROI $\Delta $SSIM: body\_2906}{figure.caption.59}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_11956}}{53}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:residual-least-structural-improvement-0723}{{5.20}{53}{Least Artifact-ROI $\Delta $SSIM: body\_11956}{figure.caption.60}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Paired Comparison Single x Dual Model}{54}{section.5.4}\protected@file@percent }
+\newlabel{sec:paired-comparison-single-dual}{{5.4}{54}{Paired Comparison Single x Dual Model}{section.5.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Global Statistical Analysis}{54}{subsection.5.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces SSIM improvement over corrupted input}}{55}{table.caption.61}\protected@file@percent }
+\newlabel{tab:ablation_improvement_ssim}{{5.10}{55}{SSIM improvement over corrupted input}{table.caption.61}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces PSNR improvement over corrupted input}}{55}{table.caption.62}\protected@file@percent }
+\newlabel{tab:ablation_improvement_psnr}{{5.11}{55}{PSNR improvement over corrupted input}{table.caption.62}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces MAE reduction over corrupted input}}{55}{table.caption.63}\protected@file@percent }
+\newlabel{tab:ablation_improvement_mae}{{5.12}{55}{MAE reduction over corrupted input}{table.caption.63}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.13}{\ignorespaces Paired Single vs Dual Model comparison}}{56}{table.caption.64}\protected@file@percent }
+\newlabel{tab:workflow-paired-comparison}{{5.13}{56}{Paired Single vs Dual Model comparison}{table.caption.64}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {5.21}Global PSNR and SSIM improvement}{57}{figure.caption.65}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Statistical Analysis per\acrshort {roi}}{57}{subsection.5.4.2}\protected@file@percent }
+\newlabel{sec:statistical-analysis-roi}{{5.4.2}{57}{Statistical Analysis per\acrshort {roi}}{subsection.5.4.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.14}{\ignorespaces Artifact-ROI SSIM improvement}}{57}{table.caption.66}\protected@file@percent }
+\newlabel{tab:roi-artifact-improvement-ssim}{{5.14}{57}{Artifact-ROI SSIM improvement}{table.caption.66}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.15}{\ignorespaces Artifact-ROI PSNR improvement}}{57}{table.caption.67}\protected@file@percent }
+\newlabel{tab:roi-artifact-improvement-psnr}{{5.15}{57}{Artifact-ROI PSNR improvement}{table.caption.67}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.16}{\ignorespaces Artifact-ROI MAE reduction}}{58}{table.caption.68}\protected@file@percent }
+\newlabel{tab:roi-artifact-improvement-mae}{{5.16}{58}{Artifact-ROI MAE reduction}{table.caption.68}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.17}{\ignorespaces Paired Artifact-ROI improvement comparison}}{58}{table.caption.69}\protected@file@percent }
+\newlabel{tab:roi-artifact-paired-comparison}{{5.17}{58}{Paired Artifact-ROI improvement comparison}{table.caption.69}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.18}{\ignorespaces Distant-ROI SSIM preservation magnitude}}{58}{table.caption.70}\protected@file@percent }
+\newlabel{tab:roi-distant-preservation-ssim}{{5.18}{58}{Distant-ROI SSIM preservation magnitude}{table.caption.70}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.19}{\ignorespaces Distant-ROI PSNR preservation magnitude}}{59}{table.caption.71}\protected@file@percent }
+\newlabel{tab:roi-distant-preservation-psnr}{{5.19}{59}{Distant-ROI PSNR preservation magnitude}{table.caption.71}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.20}{\ignorespaces Distant-ROI MAE preservation magnitude}}{59}{table.caption.72}\protected@file@percent }
+\newlabel{tab:roi-distant-preservation-mae}{{5.20}{59}{Distant-ROI MAE preservation magnitude}{table.caption.72}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.21}{\ignorespaces Paired Distant-ROI preservation advantage}}{59}{table.caption.73}\protected@file@percent }
+\newlabel{tab:roi-distant-paired-preservation}{{5.21}{59}{Paired Distant-ROI preservation advantage}{table.caption.73}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}External Evaluation for Doctors}{60}{section.5.5}\protected@file@percent }
+\newlabel{sec:external-evatluation-doctors}{{5.5}{60}{External Evaluation for Doctors}{section.5.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Capture Status and Participants}{60}{subsection.5.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.22}{\ignorespaces Recruitment and completion status}}{60}{table.caption.74}\protected@file@percent }
+\newlabel{tab:external-reader-recruitment}{{5.22}{60}{Recruitment and completion status}{table.caption.74}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.23}{\ignorespaces Reader profile characteristics}}{60}{table.caption.75}\protected@file@percent }
+\newlabel{tab:external-reader-profile}{{5.23}{60}{Reader profile characteristics}{table.caption.75}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.24}{\ignorespaces Reader specialty distribution}}{61}{table.caption.76}\protected@file@percent }
+\newlabel{tab:external-reader-specialty}{{5.24}{61}{Reader specialty distribution}{table.caption.76}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Quantitative Characterization of Input--Output}{61}{subsection.5.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.25}{\ignorespaces External input-output global metrics}}{61}{table.caption.77}\protected@file@percent }
+\newlabel{tab:external-input-output-global}{{5.25}{61}{External input-output global metrics}{table.caption.77}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.26}{\ignorespaces Illustrative external cases by input-output SSIM}}{62}{table.caption.78}\protected@file@percent }
+\newlabel{tab:external-ssim-extremes}{{5.26}{62}{Illustrative external cases by input-output SSIM}{table.caption.78}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Least structurally changed external cases}}{63}{figure.5.22}\protected@file@percent }
+\newlabel{fig:external-least-structurally-changed}{{5.22}{63}{Least structurally changed external cases}{figure.5.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Most structurally changed external cases}}{64}{figure.5.23}\protected@file@percent }
+\newlabel{fig:external-most-structurally-changed}{{5.23}{64}{Most structurally changed external cases}{figure.5.23}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Primary Outcome: Anatomical Visualization}{64}{subsection.5.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.27}{\ignorespaces Primary outcome: anatomical preservation preference}}{65}{table.caption.85}\protected@file@percent }
+\newlabel{tab:external-primary-outcome}{{5.27}{65}{Primary outcome: anatomical preservation preference}{table.caption.85}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.28}{\ignorespaces Primary outcome: mixed-effects model estimate}}{65}{table.caption.86}\protected@file@percent }
+\newlabel{tab:external-primary-model}{{5.28}{65}{Primary outcome: mixed-effects model estimate}{table.caption.86}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.4}Secondary Outcomes and Safety Perception}{65}{subsection.5.5.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.29}{\ignorespaces Secondary outcome: artifact intensity}}{65}{table.caption.87}\protected@file@percent }
+\newlabel{tab:external-secondary-artifact-intensity}{{5.29}{65}{Secondary outcome: artifact intensity}{table.caption.87}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.30}{\ignorespaces Secondary outcome: distortion in other regions}}{65}{table.caption.88}\protected@file@percent }
+\newlabel{tab:external-secondary-distortion}{{5.30}{65}{Secondary outcome: distortion in other regions}{table.caption.88}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.31}{\ignorespaces Secondary outcome: clinical preference}}{65}{table.caption.89}\protected@file@percent }
+\newlabel{tab:external-secondary-clinical-preference}{{5.31}{65}{Secondary outcome: clinical preference}{table.caption.89}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.32}{\ignorespaces Secondary outcome: complementary utility}}{66}{table.caption.90}\protected@file@percent }
+\newlabel{tab:external-secondary-utility}{{5.32}{66}{Secondary outcome: complementary utility}{table.caption.90}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.33}{\ignorespaces Intra-reader reliability}}{66}{table.caption.91}\protected@file@percent }
+\newlabel{tab:external-intra-reader-reliability}{{5.33}{66}{Intra-reader reliability}{table.caption.91}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.5}Limited Interpretation to the Observational Design}{66}{subsection.5.5.5}\protected@file@percent }
+\pp@pagectr{footnote}{6}{82}{67}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{67}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:final-discussion}{{6}{71}{Discussion}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Summary of the main Findings}{71}{section.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Architectural Comparison Interpretation}{72}{section.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Anatomical Preservation and Reconstruction Safety}{73}{section.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Generalization and External Evaluation}{74}{section.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Evaluation for Doctors and Clinical Implications}{74}{section.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Limitations}{75}{section.6.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Implications and Future Work}{76}{section.6.7}\protected@file@percent }
+\newlabel{chap:final-discussion}{{6}{67}{Discussion}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Summary of the Main Findings}{67}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Architectural Comparison Interpretation}{68}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Anatomical Preservation and Reconstruction Safety}{69}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Generalization and External Evaluation}{70}{section.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Reader Evaluation and Clinical Implications}{70}{section.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Limitations}{71}{section.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Implications and Future Work}{72}{section.6.7}\protected@file@percent }
 \bibstyle{unsrt}
 \bibdata{Bibliography}
-\pp@pagectr{footnote}{7}{92}{77}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{77}{chapter.7}\protected@file@percent }
+\pp@pagectr{footnote}{7}{88}{73}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{73}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:final-conclusions}{{7}{77}{Conclusions}{chapter.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Study Conclusions}{77}{section.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Dissertation Contributions}{77}{section.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Perspectives}{77}{section.7.3}\protected@file@percent }
+\newlabel{chap:final-conclusions}{{7}{73}{Conclusions}{chapter.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Study Conclusions}{73}{section.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Dissertation Contributions}{73}{section.7.2}\protected@file@percent }
 \@writefile{toc}{\vspace  {0.5cm}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{77}{dummy.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{73}{dummy.8}\protected@file@percent }
 \bibcite{November81895}{{1}{}{{}}{{}}}
 \bibcite{okunoFisicaRadiacoes2010}{{2}{}{{}}{{}}}
 \bibcite{howellEARLYCLINICALUSE2016}{{3}{}{{}}{{}}}
@@ -455,29 +450,49 @@
 \bibcite{ruderOverviewMultiTaskLearning2017}{{42}{}{{}}{{}}}
 \bibcite{zhaoLossFunctionsImage2017}{{43}{}{{}}{{}}}
 \bibcite{linzhangFSIMFeatureSimilarity2011}{{44}{}{{}}{{}}}
-\pp@pagectr{footnote}{8}{98}{83}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{83}{appendix.A}\protected@file@percent }
+\pp@pagectr{footnote}{8}{94}{79}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{79}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{apendice:internal-evaluation}{{A}{83}{Supplementary Internal Evaluation}{appendix.A}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {A.1}Pixel-level HU agreement}{83}{figure.caption.92}\protected@file@percent }
-\newlabel{fig:appendix-pixel-hu-agreement}{{A.1}{83}{Pixel-level HU agreement}{figure.caption.92}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {A.2}Per-image input-output global metrics}{85}{figure.caption.95}\protected@file@percent }
-\newlabel{fig:appendix-global-input-model}{{A.2}{85}{Per-image input-output global metrics}{figure.caption.95}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {A.3}Patient-level artifact load and improvement}{86}{figure.caption.98}\protected@file@percent }
-\newlabel{fig:appendix-artifact-load-association}{{A.3}{86}{Patient-level artifact load and improvement}{figure.caption.98}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Worst Performance Cases}{87}{section.A.1}\protected@file@percent }
-\newlabel{sec:appendix-worst-cases}{{A.1}{87}{Worst Performance Cases}{section.A.1}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {A.4}Worst-case slices by global $\Delta $SSIM}{87}{figure.caption.99}\protected@file@percent }
-\newlabel{fig:appendix-worst-cases-ssim}{{A.4}{87}{Worst-case slices by global $\Delta $SSIM}{figure.caption.99}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {A.5}Worst-case slices by global $\Delta $PSNR}{88}{figure.caption.100}\protected@file@percent }
-\newlabel{fig:appendix-worst-cases-psnr}{{A.5}{88}{Worst-case slices by global $\Delta $PSNR}{figure.caption.100}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {A.6}Worst-case slices: joint $\Delta $PSNR vs. $\Delta $SSIM}{89}{figure.caption.101}\protected@file@percent }
-\newlabel{fig:appendix-worst-cases}{{A.6}{89}{Worst-case slices: joint $\Delta $PSNR vs. $\Delta $SSIM}{figure.caption.101}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}Computational Performance}{89}{section.A.2}\protected@file@percent }
-\newlabel{sec:appendix-computational-performance}{{A.2}{89}{Computational Performance}{section.A.2}{}}
-\@writefile{logr}{\contentsline {figure}{\numberline {A.7}Benchmark Latency}{90}{figure.caption.104}\protected@file@percent }
-\newlabel{fig:benchmark-latency}{{A.7}{90}{Benchmark Latency}{figure.caption.104}{}}
+\newlabel{apendice:internal-evaluation}{{A}{79}{Supplementary Internal Evaluation}{appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Training Convergence Across Runs}{79}{section.A.1}\protected@file@percent }
+\newlabel{sec:appendix-training-details}{{A.1}{79}{Training Convergence Across Runs}{section.A.1}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.1}Training convergence: Single Model, seed 42}{80}{figure.caption.96}\protected@file@percent }
+\newlabel{fig:appendix-training-convergence-single-model-seed-42}{{A.1}{80}{Training convergence: Single Model, seed 42}{figure.caption.96}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.2}Training convergence: Dual Model, seed 42}{82}{figure.caption.101}\protected@file@percent }
+\newlabel{fig:appendix-training-convergence-dual-model-seed-42}{{A.2}{82}{Training convergence: Dual Model, seed 42}{figure.caption.101}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.3}Training convergence: Single Model, seed 1337}{83}{figure.caption.105}\protected@file@percent }
+\newlabel{fig:appendix-training-convergence-single-model-seed-1337}{{A.3}{83}{Training convergence: Single Model, seed 1337}{figure.caption.105}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.4}Training convergence: Dual Model, seed 1337}{85}{figure.caption.110}\protected@file@percent }
+\newlabel{fig:appendix-training-convergence-dual-model-seed-1337}{{A.4}{85}{Training convergence: Dual Model, seed 1337}{figure.caption.110}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.5}Training convergence: Single Model, seed 2024}{86}{figure.caption.114}\protected@file@percent }
+\newlabel{fig:appendix-training-convergence-single-model-seed-2024}{{A.5}{86}{Training convergence: Single Model, seed 2024}{figure.caption.114}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.6}Training convergence: Dual Model, seed 2024}{88}{figure.caption.119}\protected@file@percent }
+\newlabel{fig:appendix-training-convergence-dual-model-seed-2024}{{A.6}{88}{Training convergence: Dual Model, seed 2024}{figure.caption.119}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Best validation SSIM by model and seed}}{88}{table.caption.120}\protected@file@percent }
+\newlabel{tab:best-validation-ssim}{{A.1}{88}{Best validation SSIM by model and seed}{table.caption.120}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Validation PSNR at best validation SSIM}}{88}{table.caption.121}\protected@file@percent }
+\newlabel{tab:best-validation-psnr}{{A.2}{88}{Validation PSNR at best validation SSIM}{table.caption.121}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.3}{\ignorespaces Validation MAE at best validation SSIM}}{88}{table.caption.122}\protected@file@percent }
+\newlabel{tab:mae-at-best-validation-ssim}{{A.3}{88}{Validation MAE at best validation SSIM}{table.caption.122}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.7}Pixel-level HU agreement}{89}{figure.caption.123}\protected@file@percent }
+\newlabel{fig:appendix-pixel-hu-agreement}{{A.7}{89}{Pixel-level HU agreement}{figure.caption.123}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.8}Per-image input-output global metrics}{91}{figure.caption.126}\protected@file@percent }
+\newlabel{fig:appendix-global-input-model}{{A.8}{91}{Per-image input-output global metrics}{figure.caption.126}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.9}Patient-level artifact load and improvement}{92}{figure.caption.129}\protected@file@percent }
+\newlabel{fig:appendix-artifact-load-association}{{A.9}{92}{Patient-level artifact load and improvement}{figure.caption.129}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}Worst Performance Cases}{92}{section.A.2}\protected@file@percent }
+\newlabel{sec:appendix-worst-cases}{{A.2}{92}{Worst Performance Cases}{section.A.2}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.10}Worst-case slices by global $\Delta $SSIM}{93}{figure.caption.130}\protected@file@percent }
+\newlabel{fig:appendix-worst-cases-ssim}{{A.10}{93}{Worst-case slices by global $\Delta $SSIM}{figure.caption.130}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.11}Worst-case slices by global $\Delta $PSNR}{94}{figure.caption.131}\protected@file@percent }
+\newlabel{fig:appendix-worst-cases-psnr}{{A.11}{94}{Worst-case slices by global $\Delta $PSNR}{figure.caption.131}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.12}Worst-case slices: joint $\Delta $PSNR vs. $\Delta $SSIM}{95}{figure.caption.132}\protected@file@percent }
+\newlabel{fig:appendix-worst-cases}{{A.12}{95}{Worst-case slices: joint $\Delta $PSNR vs. $\Delta $SSIM}{figure.caption.132}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}Computational Performance}{95}{section.A.3}\protected@file@percent }
+\newlabel{sec:appendix-computational-performance}{{A.3}{95}{Computational Performance}{section.A.3}{}}
+\@writefile{logr}{\contentsline {figure}{\numberline {A.13}Benchmark Latency}{96}{figure.caption.135}\protected@file@percent }
+\newlabel{fig:benchmark-latency}{{A.13}{96}{Benchmark Latency}{figure.caption.135}{}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
 \gdef\svg@ink@ver@settings{{\m@ne }{inkscape}{\m@ne }}
-\gdef \@abspage@last{105}
+\gdef \@abspage@last{111}

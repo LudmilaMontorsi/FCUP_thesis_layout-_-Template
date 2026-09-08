@@ -73,8 +73,6 @@ Not all slices could be traced, but most of the data was successfully associated
 
 \begin{table}[H]
     \centering
-    \caption[Initial pair-matching screening]{Resultados do rastreio antes da análise complementar com\acrshort{ms-ssim}.}
-    \label{tab:final-rastreio-msssim}
     \begin{tabular}{lccc}
         \hline
         \textbf{Dataset} & \textbf{Traced} & \textbf{Matched} & \textbf{Unmatched} \\
@@ -85,14 +83,14 @@ Not all slices could be traced, but most of the data was successfully associated
         \textbf{Total}  & \textbf{14,000} & \textbf{13,565} & \textbf{435} \\
         \hline
     \end{tabular}
+    \caption[Initial pair-matching screening]{Resultados do rastreio antes da análise complementar com\acrshort{ms-ssim}.}
+    \label{tab:final-rastreio-msssim}
 \end{table}
 
 In the evaluation step through\acrshort{ms-ssim}, among all pairs with a score below 0.90, only 3, previously associated with Deep Lesion, were rejected in the visual inspection \Ref{tab:final-tracking-post-msssim}.
 
 \begin{table}[H]
     \centering
-    \caption[Pair matching after MS-SSIM review]{Pair matching results after the complementary MS-SSIM analysis.}
-    \label{tab:final-tracking-post-msssim}
     \begin{tabular}{lccc}
         \hline
         \textbf{Dataset} & \textbf{Traced} & \textbf{Matched} & \textbf{Unmatched} \\
@@ -103,15 +101,14 @@ In the evaluation step through\acrshort{ms-ssim}, among all pairs with a score b
         \textbf{Total}  & \textbf{14,000} & \textbf{13,562} & \textbf{438} \\
         \hline
     \end{tabular}
+    \caption[Pair matching after MS-SSIM review]{Pair matching results after the complementary MS-SSIM analysis.}
+    \label{tab:final-tracking-post-msssim}
 \end{table}
 
 Due to the fact that a significant amount of the data could be traced with high reliability, the remaining cases that could not be safely grouped were excluded from the training and validation process. In total, 438 pairs were removed for not having sufficient information to ensure safe grouping at the patient level. Among them, the 3 pairs rejected for being false positives in the evaluation step via\acrshort{ms-ssim}. All pairs removed from this study were visually inspected to confirm the absence of correspondence, ensuring that the exclusion was justified.
 
-
 \begin{table}[H]
     \centering
-    \caption[Excluded unmatched pairs before and after MS-SSIM review]{Unmatched pairs data that was excluded before and after the complementary MS-SSIM analysis.}
-    \label{tab:final-excluded}
     \begin{tabular}{lcc}
         \hline
         & \multicolumn{2}{c}{\textbf{Excluded}} \\
@@ -121,6 +118,8 @@ Due to the fact that a significant amount of the data could be traced with high 
         Total    & 435 & 438 \\
         \hline
     \end{tabular}
+    \caption[Excluded unmatched pairs before and after MS-SSIM review]{Unmatched pairs data that was excluded before and after the complementary MS-SSIM analysis.}
+    \label{tab:final-excluded}
 \end{table}
 
 Thus, out of the 14,000 pairs originally provided by the\acrshort{ctmar} Dataset, 13,562 were included in this work, while 438 were excluded to preserve the integrity of the experimental partitioning and minimize the risk of data leakage.
@@ -149,8 +148,6 @@ After partitioning, the train, validation, and test subsets had the following di
 
 \begin{table}[H]
     \centering
-    \caption[Patient-level anatomical distribution by split]{Patient-level anatomical distribution by split.}
-    \label{tab:final-split-anatomic}
     \begin{tabular}{lcccc}
         \hline
         \textbf{Split} & \textbf{Body} & \textbf{Head}  &\textbf{\% Body} & \textbf{\% Head} \\
@@ -162,14 +159,14 @@ After partitioning, the train, validation, and test subsets had the following di
         \textbf{Total} & \textbf{258} & \textbf{11} & \textbf{--} & \textbf{--} \\
         \hline
     \end{tabular}
+    \caption[Patient-level anatomical distribution by split]{Patient-level anatomical distribution by split.}
+    \label{tab:final-split-anatomic}
 \end{table}
 
 The patient-level partition was defined only once, with a fixed random seed, maintaining approximately 70\% of the patients for training, 15\% for validation, and 15\% for testing. This fixed partition ensured independent subsets for validation and testing and was kept unchanged across all experimental repetitions.
 
 \begin{table}[H]
     \centering
-    \caption[Patient distribution by split]{Patient distribution by split.}
-    \label{tab:final-split-patient-subset}
     \begin{tabular}{lccc}
         \hline
         \textbf{Split} & \textbf{Patients} & \textbf{\% Total}\\
@@ -181,14 +178,14 @@ The patient-level partition was defined only once, with a fixed random seed, mai
         \textbf{Total} & \textbf{269} & \textbf{100\%} \\
         \hline
     \end{tabular}
+    \caption[Patient distribution by split]{Patient distribution by split.}
+    \label{tab:final-split-patient-subset}
 \end{table}
 
 Due to the large variation in the number of slices per patient, the anatomical distribution at the pair level is quite different from the distribution at the patient level (\ref{tab:final-split-pairs} and \ref{tab:final-split-pairs-subset}). The same occurs for the total pairs distribution. Thus, the proportion of $\sim$ 70/15/15 was maintained at the patient level, but at the pair level it does not follow exactly the same proportion.
 
 \begin{table}[H]
     \centering
-    \caption[Pair distribution by split and anatomical category]{Pair distribution by split and anatomical category.}
-    \label{tab:final-split-pairs}
     \begin{tabular}{lcccccc}
         \hline
         \textbf{Split}  & \textbf{Body} & \textbf{Head}  & \textbf{\% Body} & \textbf{\% Head}\\
@@ -200,14 +197,14 @@ Due to the large variation in the number of slices per patient, the anatomical d
         \textbf{Total} & \textbf{11\,939} & \textbf{1\,623} & \textbf{--} & \textbf{--} \\
         \hline
     \end{tabular}
+    \caption[Pair distribution by split and anatomical category]{Pair distribution by split and anatomical category.}
+    \label{tab:final-split-pairs}
 \end{table}
 
 
 
 \begin{table}[H]
     \centering
-    \caption[Pair distribution by split]{Pair distribution by split.}
-    \label{tab:final-split-pairs-subset}
     \begin{tabular}{lccc}
         \hline
         \textbf{Split} & \textbf{Pairs} & \textbf{\% Total}\\
@@ -219,6 +216,8 @@ Due to the large variation in the number of slices per patient, the anatomical d
         \textbf{Total} & \textbf{13\,562} & \textbf{100\%} \\
         \hline
     \end{tabular}
+    \caption[Pair distribution by split]{Pair distribution by split.}
+    \label{tab:final-split-pairs-subset}
 \end{table}
 
    
@@ -246,7 +245,7 @@ Binary difference masks of the affected regions by artifacts were produced and u
 \begin{equation}
 M_{diff}(i,j) = \begin{cases}
 1 ; & \text{if } |I_{artifact}(i,j) - I_{clean}(i,j)| > \tau \\
-0 ; & \text{otherwise}
+0 ; & \text{otherwise}.
 \end{cases}
 \end{equation}
 \noindent where $I_{artifact}$ represents the image with artifacts, $I_{clean}$ the clean reference image, and $\tau$ is the normalized difference threshold. The value of this threshold was empirically defined to capture regions with perceptible differences while maintaining robustness to low-amplitude noise.
@@ -281,13 +280,15 @@ The two architectures were evaluated against each other to determine the impact 
 
 \section{Reproducible Training}
 
-\subsection{Settings, determinism and checkpoint selection}
+\subsection{Settings, determinism and two-stage selection}
 
 Both models were trained under the same settings, with \textit{float32} precision. To assess stability against different initializations and batch presentation orders, each architecture was trained with deterministic operations and with seeds \texttt{1337}, \texttt{42}, and \texttt{2024}, always on the same patient partition.\acrfull{amp} was disabled and batches were kept complete, including the last batch of each epoch, to avoid samples being excluded from training, validation, or evaluation.
 
 The AdamW optimizer was used, with an initial learning rate of $2{.}26 \times 10^{-4}$, weight decay of $1{.}00 \times 10^{-4}$ and gradient clipping with norm 1.00, identical for both architectures. The learning rate was adjusted by the ReduceLROnPlateau scheduler, with a reduction factor of 0.50, patience of two epochs, cooldown of one epoch and minimum value of $1{.}00 \times 10^{-6}$, monitoring the reconstructed image\acrshort{ssim} on the validation set in both models. The training had a maximum limit of 300 epochs and early stopping could only be triggered after at least five epochs and occurred when the monitored metric did not improve by at least $1{.}00 \times 10^{-4}$ for 15 consecutive epochs. In each run, the checkpoint corresponding to the best value of the monitored validation metric was retained.
 
 Only the best checkpoint per run was preserved, saved in \texttt{.keras} format with a filename encoding the architecture, epoch, and monitored metric; the training CSV explicitly flags the corresponding row with \texttt{best\_checkpoint=1}. Checkpoint selection relied exclusively on the pre-specified validation metric: \texttt{val\_ssim\_hu} for the Single Model and \texttt{val\_img\_out\_ssim\_hu} for the reconstruction output of the Dual Model.
+
+Each of the six validation-selected checkpoints was evaluated once on the fixed internal test partition. The candidate advanced to external evaluation was selected from this frozen set by the highest mean patient-level $\Delta\acrshort{ssim}$ in the Artifact Zone. As a preservation safeguard, the corresponding changes in the Distant Zone were required to be substantially smaller than the correction observed in the Artifact Zone. No numerical equivalence margin was pre-specified for the Distant Zone; this comparison was therefore descriptive and did not constitute a separate clinical-safety endpoint. Global \acrshort{psnr}, \acrshort{ssim}, and \acrshort{mae}, together with the remaining region-of-interest metrics, were complementary and did not override this selection rule. Thus, the test partition was used only to compare the six already frozen candidates. It was not used to choose a new checkpoint, tune hyperparameters, alter weights, or trigger further training. Once selected, the architecture, seed, weights, and hyperparameters of the external-evaluation candidate were frozen.
 
 Run traceability was ensured through reproducibility snapshots in JSON format, preserved in \texttt{outputs/reproducibility/}. Six final internal evaluations were frozen, corresponding to the three random initializations (seeds 42, 1337, and 2024) of the Single Model and Dual Model. All snapshots were generated from commit \texttt{a950be7276a5585de45e8ae874c59c065a1985be}, on branch \texttt{projeto\_final}, with a clean working tree (\texttt{is\_dirty: false}).
 
@@ -297,9 +298,9 @@ For each run, the snapshot preserves the path, size, and SHA-256 hash of the che
 
 During the training, the following quantities were monitored:
 \begin{itemize}
-    \item \textbf{Reconstruction loss}, to track the optimization of the corrected image;
-    \item \textbf{Segmentation loss}, only in the dual model, to track the auxiliary supervision of the artifact mask;
-    \item \textbf{SSIM, PSNR, and MAE in HU scale}, calculated in the body region to track the structural and radiometric fidelity of the reconstructions.
+    \item \textbf{SSIM, PSNR, and MAE in HU scale}: calculated in the body region to track the structural and radiometric fidelity of the reconstructions;
+    \item \textbf{Reconstruction loss}: to track the optimization of the corrected image;
+    \item \textbf{Segmentation loss}: only in the dual model, to track the auxiliary supervision of the artifact mask.
 \end{itemize}
 
 \subsection{Loss Functions}
@@ -342,8 +343,6 @@ The recent literature have demonstrated statistically superior performance in fi
 
 The internal validation was conducted on the validation and test subsets, evaluating consistency, stability, and intra-dataset generalization capability.
 
-After the selection of the best checkpoint from each of the six runs in validation, the checkpoints were compared on the internal test partition to select the best architecture for external evaluation. The decision favored the greatest improvement in\acrshort{ssim} in the Artifact Zone and globally, followed by better\acrshort{psnr} and\acrshort{mae} in the Artifact Zone and globally as a tiebreaker. After this comparison, the selected architecture was frozen, without further training, hyperparameter tuning, or weight adjustment before external evaluation.  
-
 \subsection{Global Metrics}
 For global evaluation, the predicted and reference images are denormalized to the window $[-1000, 400]$\acrshort{hu}, corresponding to a range $\mathrm{MAX} = 1400$\acrshort{hu}. Additionally, the evaluation region is cropped to the smallest bounding box of the body mask before\acrshort{ssim} evaluation, eliminating scan windows composed exclusively of background — which would artificially score $\text{SSIM} = 1{,}0$ and inflate the global metric.  
 
@@ -357,8 +356,8 @@ The global evaluation does not distinguish the model's behavior in regions direc
 
 The artifact Zone ($\mathcal{R}_{\mathrm{art}}$) was defined as:
 \[
-M_{\mathrm{art}}=\left[\lvert d-b\rvert>\tau\right]\cap M_{\mathrm{body}},
-\qquad \tau=0{,}03.
+M_{\mathrm{art}}=\left[\lvert d-b\rvert>\tau\right]\cap M_{\mathrm{body}} ,
+\qquad \tau=0{.}03.
 \]
 which is approximately 42~HU in the normalized scale used. Connected components with fewer than 20 pixels were removed. No additional morphological dilation was applied ($r=0$), preserving the observed geometry of the \textit{streaks}. The Distant Zone ($\mathcal{R}_{\mathrm{dist}}$) was defined as the complement of the artifact zone in the body region.
 \[
@@ -406,8 +405,6 @@ Thus, $\Delta\mathrm{PSNR}>0$ and $\Delta\mathrm{SSIM}>0$ indicate improvement o
 
 \begin{table}[H]
     \centering
-    \caption[Evaluation metrics by context]{Evaluation metrics by context.}
-    \label{tab:final-metrics-context}
     \begin{tabular}{lcccc}
         \hline
         \textbf{Metric} & \textbf{Train} & \textbf{Global} & \textbf{Artifact Zone} & \textbf{Clean Zone} \\
@@ -417,6 +414,8 @@ Thus, $\Delta\mathrm{PSNR}>0$ and $\Delta\mathrm{SSIM}>0$ indicate improvement o
         MAE     & \checkmark & \checkmark & \checkmark & \checkmark\\
         \hline
     \end{tabular}
+    \caption[Evaluation metrics by context]{Evaluation metrics by context.}
+    \label{tab:final-metrics-context}
 \end{table}
 %______________________________________________________________________________
 \subsection{Statistical Analysis}
