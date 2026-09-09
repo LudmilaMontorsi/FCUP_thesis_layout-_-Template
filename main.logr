@@ -1,26 +1,26 @@
-\contentsline {figure}{\numberline {5.1}Final group curation}{31}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.2}MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)}{32}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.3}MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)}{33}{figure.caption.20}%
-\contentsline {figure}{\numberline {5.6}Cosine similarity of\acrshort {ms-ssim}-audited pairs}{36}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.7}MS-SSIM distribution of audited pairs}{36}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.8}Score distribution of excluded pairs: DL vs Stroke EIT}{37}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.9}Training convergence (results): Single Model, seed 2024}{39}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.10}Training convergence (results): Dual Model, seed 2024}{41}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.11}Per-image global PSNR and SSIM improvement}{44}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.12}Patient-level Bland--Altman agreement of mean HU}{45}{figure.caption.44}%
-\contentsline {figure}{\numberline {5.13}Per-image ROI metric improvements}{48}{figure.caption.51}%
-\contentsline {figure}{\numberline {5.14}Artifact-ROI correction versus distant-ROI change}{49}{figure.caption.54}%
-\contentsline {figure}{\numberline {5.21}Global PSNR and SSIM improvement}{58}{figure.caption.65}%
-\contentsline {figure}{\numberline {A.1}Training convergence: Single Model, seed 42}{83}{figure.caption.96}%
-\contentsline {figure}{\numberline {A.2}Training convergence: Dual Model, seed 42}{85}{figure.caption.101}%
-\contentsline {figure}{\numberline {A.3}Training convergence: Single Model, seed 1337}{86}{figure.caption.105}%
-\contentsline {figure}{\numberline {A.4}Training convergence: Dual Model, seed 1337}{88}{figure.caption.110}%
-\contentsline {figure}{\numberline {A.5}Training convergence: Single Model, seed 2024}{89}{figure.caption.114}%
-\contentsline {figure}{\numberline {A.6}Training convergence: Dual Model, seed 2024}{91}{figure.caption.119}%
-\contentsline {figure}{\numberline {A.7}Pixel-level HU agreement}{92}{figure.caption.123}%
-\contentsline {figure}{\numberline {A.8}Per-image input-output global metrics}{94}{figure.caption.126}%
-\contentsline {figure}{\numberline {A.9}Patient-level artifact load and improvement}{95}{figure.caption.129}%
-\contentsline {figure}{\numberline {A.10}Worst-case slices by global $\Delta $SSIM}{96}{figure.caption.130}%
-\contentsline {figure}{\numberline {A.11}Worst-case slices by global $\Delta $PSNR}{97}{figure.caption.131}%
-\contentsline {figure}{\numberline {A.12}Worst-case slices: joint $\Delta $PSNR vs. $\Delta $SSIM}{98}{figure.caption.132}%
-\contentsline {figure}{\numberline {A.13}Benchmark Latency}{99}{figure.caption.135}%
+\contentsline {figure}{\numberline {5.1}Final group curation}{32}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.2}MS-SSIM distribution and zoom (clean CT-MAR vs DL/Stroke)}{33}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.3}MS-SSIM ECDF (clean CT-MAR vs DL/Stroke)}{34}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.6}Cosine similarity of\acrshort {ms-ssim}-audited pairs}{37}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.7}MS-SSIM distribution of audited pairs}{37}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.8}Score distribution of excluded pairs: DL vs Stroke EIT}{38}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.9}Training convergence (results): Single Model, seed 2024}{40}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.10}Training convergence (results): Dual Model, seed 2024}{42}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.11}Per-image ROI metric improvements}{46}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.12}Artifact-ROI correction versus distant-ROI change}{46}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.13}Per-image global PSNR and SSIM improvement}{49}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.14}Patient-level Bland--Altman agreement of mean HU}{50}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.21}Global PSNR and SSIM improvement}{62}{figure.caption.73}%
+\contentsline {figure}{\numberline {A.1}Training convergence: Single Model, seed 42}{85}{figure.caption.96}%
+\contentsline {figure}{\numberline {A.2}Training convergence: Dual Model, seed 42}{87}{figure.caption.101}%
+\contentsline {figure}{\numberline {A.3}Training convergence: Single Model, seed 1337}{88}{figure.caption.105}%
+\contentsline {figure}{\numberline {A.4}Training convergence: Dual Model, seed 1337}{90}{figure.caption.110}%
+\contentsline {figure}{\numberline {A.5}Training convergence: Single Model, seed 2024}{91}{figure.caption.114}%
+\contentsline {figure}{\numberline {A.6}Training convergence: Dual Model, seed 2024}{93}{figure.caption.119}%
+\contentsline {figure}{\numberline {A.7}Pixel-level HU agreement}{94}{figure.caption.123}%
+\contentsline {figure}{\numberline {A.8}Per-image input-output global metrics}{96}{figure.caption.126}%
+\contentsline {figure}{\numberline {A.9}Patient-level artifact load and improvement}{97}{figure.caption.129}%
+\contentsline {figure}{\numberline {A.10}Worst-case slices by global $\Delta $SSIM}{98}{figure.caption.130}%
+\contentsline {figure}{\numberline {A.11}Worst-case slices by global $\Delta $PSNR}{99}{figure.caption.131}%
+\contentsline {figure}{\numberline {A.12}Worst-case slices: joint $\Delta $PSNR vs. $\Delta $SSIM}{100}{figure.caption.132}%
+\contentsline {figure}{\numberline {A.13}Benchmark Latency}{101}{figure.caption.135}%
