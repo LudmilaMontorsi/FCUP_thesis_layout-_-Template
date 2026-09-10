@@ -87,7 +87,7 @@ This step was essential to reduce the influence of background artifacts and impr
 
 \subsection{Intensity Window and Normalization}
 
-The image intensities are expressed in\acrshort{hu} from the\acrshort{ctmar}. To reduce extreme variations, an intensity window appropriate to the anatomical context was applied. After windowing, the values were normalized to the range $[0,1]$ and 2D tensors of dimension $256 \times 256$ were generated for each slice and its pair.
+The\acrshort{ctmar} source image intensities were expressed in \acrshort{hu}. A common intensity window of $[-1000, 400]\acrshort{hu}$ was applied to all images, followed by linear normalization to $[0,1]$. Each clean/artifact image pair was then independently resized using bicubic interpolation and stored as a single-channel two-dimensional tensor of $256 \times 256$ pixels.
 
 \subsection{Artifact Mask for Auxiliary Supervision}
 Binary difference masks of the affected regions by artifacts were produced and used as an additional supervision signal in the dual architeture. These masks are exclusively used during the training and are not required during inference. The binary difference mask is formally defined as: 
@@ -199,19 +199,19 @@ The \autoref{fig:final-roi-examples} illustrates the application of the two zone
 \setlength{\intextsep}{4pt}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\linewidth]{Figures/roi_example_sample_0000.png}
+    \includegraphics[width=0.95\linewidth]{Figures/roi_example_sample_0000.pdf}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\linewidth]{Figures/roi_example_sample_0003.png}
+    \includegraphics[width=0.95\linewidth]{Figures/roi_example_sample_0003.pdf}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\linewidth]{Figures/roi_example_sample_0006.png}
+    \includegraphics[width=0.95\linewidth]{Figures/roi_example_sample_0006.pdf}
 \captionsetup{skip=1.5pt}
-\caption[Artifact and distant ROI examples]{Artifact Zone\acrshort{roi} (left) and Clean Zone\acrshort{roi} (right) examples.}
+\caption[Artifact and clean ROI examples]{Artifact Zone\acrshort{roi} (left) and Clean Zone\acrshort{roi} (right) examples.}
 \end{figure}
 \label{fig:final-roi-examples}
 \endgroup
@@ -247,7 +247,7 @@ Thus, $\Delta\mathrm{PSNR}>0$ and $\Delta\mathrm{SSIM}>0$ indicate improvement o
 \end{table}
 %______________________________________________________________________________
 \subsection{Global Metrics}
-For global evaluation, the predicted and reference images are denormalized to the window $[-1000, 400]$\acrshort{hu}, corresponding to a range $\mathrm{MAX} = 1400$\acrshort{hu}. Additionally, the evaluation region is cropped to the smallest bounding box of the body mask before\acrshort{ssim} evaluation, eliminating scan windows composed exclusively of background — which would artificially score $\text{SSIM} = 1{,}0$ and inflate the global metric.  
+ After denormalization, the global evaluation region is cropped to the smallest bounding box of the body mask before\acrshort{ssim} evaluation, eliminating scan windows composed exclusively of background — which would artificially score $\text{SSIM} = 1{,}0$ and inflate the global metric.  
 
 As an additional, purely descriptive check for any overall shift in average HU values, a Bland--Altman plot was made comparing the reconstruction with the clean reference. For each patient, the mean\acrshort{hu} of each image was calculated over all valid pixels of the body mask of the respective slices, weighted by the number of pixels in each slice. The graph plots the mean difference per patient ($\mathrm{Model}-\mathrm{GT}$) against the average of the two measurements, together with the average difference (bias) and the range within which most differences fall ($\bar d \pm 1{,}96\,SD_d$, the limits of agreement). This plot is descriptive only, one point per patient, and does not replace the accuracy metrics above or the region-based analysis above.
 
@@ -291,9 +291,9 @@ For each case, the two images, the artifact input and the model output, are show
 
 \subsection{Outcomes and Analysis}
 
-The main question of the study, the primary outcome, is which image better shows the anatomy under the metal artifact, taken from the corresponding question described above. Since each doctor answers this question for every case, and every case is judged by every doctor, a statistical model was used that takes both of these repetitions into account at the same time, instead of simply counting how many times each answer was given. The other three per-case questions, together with the final usefulness question, are treated as secondary outcomes and are summarized more simply, as the frequency of each answer with a 95\% confidence interval.
+The main question of the study, the primary outcome, is which image better shows the anatomy under the metal artifact, taken from the corresponding question described above. Each displayed A/B answer was recoded to input, output, or no difference using the saved left/right allocation. To account for the fact that every reader judged every case, response proportions and the primary output--input contrast were accompanied by 95\% percentile confidence intervals from a two-way non-parametric cluster bootstrap, resampling readers and cases independently (10,000 resamples; seed 2024). The other three per-case questions, together with the final usefulness question, are treated as secondary outcomes and are summarized using the same descriptive approach; no multiplicity correction was applied.
 
-Because two cases are shown a second time to each doctor later in the same session, without saying so, it is possible to check how consistent each doctor is with themselves. For this consistency check, the intraclass correlation coefficient ICC(2,1) was used for answers on a scale, and Fleiss's $\kappa$ was used for the simple output-versus-input preference. Both are standard ways of answering the question ``if the same case is shown twice to the same doctor, how often do they answer the same way'', adapted here to work with only two repeats per doctor. Given the small number of doctors expected to take part, all of these analyses were planned to be simple and robust to a small sample, favoring frequencies and confidence intervals over more elaborate models wherever possible.
+Because two cases are shown a second time to each doctor later in the same session, without saying so, it is possible to check how consistent each doctor is with themselves. As these are nominal three-category responses and only two repeat pairs are available per reader, consistency is reported descriptively as exact agreement between the original and repeated answer for each question. Given the small number of doctors expected to take part, the confidence intervals and repeat agreement are interpreted descriptively rather than as definitive clinical evidence.
 
 \subsection{Operational Status}
 

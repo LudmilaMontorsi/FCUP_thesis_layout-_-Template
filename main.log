@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  10 SEP 2026 18:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.1)  10 SEP 2026 23:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1473,7 +1473,7 @@ File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 ) [10
 
 ] [11] [12] [13] [14] [15]
-<Figures/Generated/materials/unet-single-compact-132d4a1a.png, id=1056, 714.38895pt x 498.663pt>
+<Figures/Generated/materials/unet-single-compact-132d4a1a.png, id=1057, 714.38895pt x 498.663pt>
 File: Figures/Generated/materials/unet-single-compact-132d4a1a.png Graphic file (type png)
 <use Figures/Generated/materials/unet-single-compact-132d4a1a.png>
 Package pdftex.def Info: Figures/Generated/materials/unet-single-compact-132d4a1a.png  used on input line 109.
@@ -1481,7 +1481,7 @@ Package pdftex.def Info: Figures/Generated/materials/unet-single-compact-132d4a1
 
 * Missing: Figures/Generated/materials/unet-single-compact-132d4a1a.pax
 [16 <./Figures/Generated/materials/unet-single-compact-132d4a1a.png>]
-<Figures/Generated/materials/unet-dual-compact-8441faa2.png, id=1070, 714.38895pt x 498.663pt>
+<Figures/Generated/materials/unet-dual-compact-8441faa2.png, id=1071, 714.38895pt x 498.663pt>
 File: Figures/Generated/materials/unet-dual-compact-8441faa2.png Graphic file (type png)
 <use Figures/Generated/materials/unet-dual-compact-8441faa2.png>
 Package pdftex.def Info: Figures/Generated/materials/unet-dual-compact-8441faa2.png  used on input line 123.
@@ -1493,32 +1493,32 @@ Package pdftex.def Info: Figures/Generated/materials/unet-dual-compact-8441faa2.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 189.
 
-<Figures/roi_example_sample_0000.png, id=1127, 705.71655pt x 364.9635pt>
-File: Figures/roi_example_sample_0000.png Graphic file (type png)
-<use Figures/roi_example_sample_0000.png>
-Package pdftex.def Info: Figures/roi_example_sample_0000.png  used on input line 202.
-(pdftex.def)             Requested size: 432.48051pt x 223.66321pt.
+<Figures/roi_example_sample_0000.pdf, id=1128, 852.64366pt x 439.62563pt>
+File: Figures/roi_example_sample_0000.pdf Graphic file (type pdf)
+<use Figures/roi_example_sample_0000.pdf>
+Package pdftex.def Info: Figures/roi_example_sample_0000.pdf  used on input line 202.
+(pdftex.def)             Requested size: 432.48051pt x 222.99193pt.
 * Missing: Figures/roi_example_sample_0000.pax
 [21]
-<Figures/roi_example_sample_0003.png, id=1133, 705.71655pt x 364.9635pt>
-File: Figures/roi_example_sample_0003.png Graphic file (type png)
-<use Figures/roi_example_sample_0003.png>
-Package pdftex.def Info: Figures/roi_example_sample_0003.png  used on input line 207.
-(pdftex.def)             Requested size: 432.48051pt x 223.66321pt.
+<Figures/roi_example_sample_0003.pdf, id=1134, 852.64366pt x 439.62563pt>
+File: Figures/roi_example_sample_0003.pdf Graphic file (type pdf)
+<use Figures/roi_example_sample_0003.pdf>
+Package pdftex.def Info: Figures/roi_example_sample_0003.pdf  used on input line 207.
+(pdftex.def)             Requested size: 432.48051pt x 222.99193pt.
 
 * Missing: Figures/roi_example_sample_0003.pax
-<Figures/roi_example_sample_0006.png, id=1134, 705.71655pt x 364.9635pt>
-File: Figures/roi_example_sample_0006.png Graphic file (type png)
-<use Figures/roi_example_sample_0006.png>
-Package pdftex.def Info: Figures/roi_example_sample_0006.png  used on input line 212.
-(pdftex.def)             Requested size: 432.48051pt x 223.66321pt.
+<Figures/roi_example_sample_0006.pdf, id=1135, 852.64366pt x 439.62563pt>
+File: Figures/roi_example_sample_0006.pdf Graphic file (type pdf)
+<use Figures/roi_example_sample_0006.pdf>
+Package pdftex.def Info: Figures/roi_example_sample_0006.pdf  used on input line 212.
+(pdftex.def)             Requested size: 432.48051pt x 222.99193pt.
 * Missing: Figures/roi_example_sample_0006.pax
-[22 <./Figures/roi_example_sample_0000.png> <./Figures/roi_example_sample_0003.png>] [23 <./Figures/roi_example_sample_0006.png>] [24] [25] [26] [27]) (Chapters/Final/5.Results.tex [28]
+[22 <./Figures/roi_example_sample_0000.pdf> <./Figures/roi_example_sample_0003.pdf>] [23 <./Figures/roi_example_sample_0006.pdf>] [24] [25] [26] [27]) (Chapters/Final/5.Results.tex [28]
 Chapter 5.
 [29
 
 ]
-<Figures/Generated/final_cohort_curation_overview.pdf, id=1229, 520.10265pt x 387.52135pt>
+<Figures/Generated/final_cohort_curation_overview.pdf, id=1312, 520.10265pt x 387.52135pt>
 File: Figures/Generated/final_cohort_curation_overview.pdf Graphic file (type pdf)
 <use Figures/Generated/final_cohort_curation_overview.pdf>
 Package pdftex.def Info: Figures/Generated/final_cohort_curation_overview.pdf  used on input line 70.
@@ -1532,20 +1532,20 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 76.
 
-<Figures/ssim_distribution_full.pdf, id=1239, 505.89pt x 303.534pt>
+<Figures/ssim_distribution_full.pdf, id=1322, 505.89pt x 303.534pt>
 File: Figures/ssim_distribution_full.pdf Graphic file (type pdf)
 <use Figures/ssim_distribution_full.pdf>
 Package pdftex.def Info: Figures/ssim_distribution_full.pdf  used on input line 83.
 (pdftex.def)             Requested size: 455.24411pt x 273.15027pt.
 * Missing: Figures/ssim_distribution_full.pax
-<Figures/ssim_distribution_zoom.pdf, id=1240, 505.89pt x 303.534pt>
+<Figures/ssim_distribution_zoom.pdf, id=1323, 505.89pt x 303.534pt>
 File: Figures/ssim_distribution_zoom.pdf Graphic file (type pdf)
 <use Figures/ssim_distribution_zoom.pdf>
 Package pdftex.def Info: Figures/ssim_distribution_zoom.pdf  used on input line 84.
 (pdftex.def)             Requested size: 455.24411pt x 273.15027pt.
 * Missing: Figures/ssim_distribution_zoom.pax
 [31 <./Figures/Generated/final_cohort_curation_overview.pdf>]
-<Figures/ssim_ecdf_final.pdf, id=1272, 505.89pt x 325.215pt>
+<Figures/ssim_ecdf_final.pdf, id=1355, 505.89pt x 325.215pt>
 File: Figures/ssim_ecdf_final.pdf Graphic file (type pdf)
 <use Figures/ssim_ecdf_final.pdf>
 Package pdftex.def Info: Figures/ssim_ecdf_final.pdf  used on input line 95.
@@ -1553,47 +1553,47 @@ Package pdftex.def Info: Figures/ssim_ecdf_final.pdf  used on input line 95.
 
 * Missing: Figures/ssim_ecdf_final.pax
 [32 <./Figures/ssim_distribution_full.pdf> <./Figures/ssim_distribution_zoom.pdf>]
-<Figures/image4.png, id=1392, 1169.87062pt x 654.94687pt>
+<Figures/image4.png, id=1475, 1169.87062pt x 654.94687pt>
 File: Figures/image4.png Graphic file (type png)
 <use Figures/image4.png>
 Package pdftex.def Info: Figures/image4.png  used on input line 103.
 (pdftex.def)             Requested size: 318.66948pt x 178.40703pt.
 
 * Missing: Figures/image4.pax
-<Figures/image5.png, id=1393, 1158.57843pt x 642.14906pt>
+<Figures/image5.png, id=1476, 1158.57843pt x 642.14906pt>
 File: Figures/image5.png Graphic file (type png)
 <use Figures/image5.png>
 Package pdftex.def Info: Figures/image5.png  used on input line 104.
 (pdftex.def)             Requested size: 318.66948pt x 176.62582pt.
 * Missing: Figures/image5.pax
-<Figures/image6.png, id=1394, 1156.32pt x 649.67719pt>
+<Figures/image6.png, id=1477, 1156.32pt x 649.67719pt>
 File: Figures/image6.png Graphic file (type png)
 <use Figures/image6.png>
 Package pdftex.def Info: Figures/image6.png  used on input line 105.
 (pdftex.def)             Requested size: 318.66948pt x 179.04343pt.
 * Missing: Figures/image6.pax
 [33 <./Figures/ssim_ecdf_final.pdf>]
-<Figures/image1.png, id=1458, 1044.90375pt x 572.89032pt>
+<Figures/image1.png, id=1541, 1044.90375pt x 572.89032pt>
 File: Figures/image1.png Graphic file (type png)
 <use Figures/image1.png>
 Package pdftex.def Info: Figures/image1.png  used on input line 114.
 (pdftex.def)             Requested size: 318.66948pt x 174.71817pt.
 
 * Missing: Figures/image1.pax
-<Figures/image2.png, id=1459, 1158.57843pt x 615.80063pt>
+<Figures/image2.png, id=1542, 1158.57843pt x 615.80063pt>
 File: Figures/image2.png Graphic file (type png)
 <use Figures/image2.png>
 Package pdftex.def Info: Figures/image2.png  used on input line 115.
 (pdftex.def)             Requested size: 318.66948pt x 169.37857pt.
 * Missing: Figures/image2.pax
-<Figures/image3.png, id=1460, 1162.3425pt x 560.0925pt>
+<Figures/image3.png, id=1543, 1162.3425pt x 560.0925pt>
 File: Figures/image3.png Graphic file (type png)
 <use Figures/image3.png>
 Package pdftex.def Info: Figures/image3.png  used on input line 116.
 (pdftex.def)             Requested size: 318.66948pt x 153.55159pt.
 * Missing: Figures/image3.pax
 [34 <./Figures/image4.png> <./Figures/image5.png> <./Figures/image6.png>]
-<Figures/cosine_scatter_audited.pdf, id=1470, 505.89pt x 303.534pt>
+<Figures/cosine_scatter_audited.pdf, id=1553, 505.89pt x 303.534pt>
 File: Figures/cosine_scatter_audited.pdf Graphic file (type pdf)
 <use Figures/cosine_scatter_audited.pdf>
 Package pdftex.def Info: Figures/cosine_scatter_audited.pdf  used on input line 124.
@@ -1601,7 +1601,7 @@ Package pdftex.def Info: Figures/cosine_scatter_audited.pdf  used on input line 
 
 * Missing: Figures/cosine_scatter_audited.pax
 [35 <./Figures/image1.png> <./Figures/image2.png> <./Figures/image3.png>]
-<Figures/ssim_scatter_dist.pdf, id=1483, 505.89pt x 303.534pt>
+<Figures/ssim_scatter_dist.pdf, id=1566, 505.89pt x 303.534pt>
 File: Figures/ssim_scatter_dist.pdf Graphic file (type pdf)
 <use Figures/ssim_scatter_dist.pdf>
 Package pdftex.def Info: Figures/ssim_scatter_dist.pdf  used on input line 134.
@@ -1609,7 +1609,7 @@ Package pdftex.def Info: Figures/ssim_scatter_dist.pdf  used on input line 134.
 
 * Missing: Figures/ssim_scatter_dist.pax
 [36 <./Figures/cosine_scatter_audited.pdf> <./Figures/ssim_scatter_dist.pdf>]
-<Figures/score_distribution.pdf, id=1609, 505.89pt x 303.534pt>
+<Figures/score_distribution.pdf, id=1692, 505.89pt x 303.534pt>
 File: Figures/score_distribution.pdf Graphic file (type pdf)
 <use Figures/score_distribution.pdf>
 Package pdftex.def Info: Figures/score_distribution.pdf  used on input line 146.
@@ -1617,46 +1617,46 @@ Package pdftex.def Info: Figures/score_distribution.pdf  used on input line 146.
 
 * Missing: Figures/score_distribution.pax
 [37 <./Figures/score_distribution.pdf>] [38] (Chapters/Final/Generated/TrainingSeed2024.tex
-<Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-6e359ebd.pdf, id=1677, 488.17642pt x 243.4194pt>
+<Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-6e359ebd.pdf, id=1760, 488.17642pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-6e359ebd.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-6e359ebd.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-6e359ebd.pdf  used on input line 6.
 (pdftex.def)             Requested size: 446.13727pt x 222.46286pt.
 
 * Missing: Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-6e359ebd.pax
-<Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-80362d3f.pdf, id=1678, 488.03505pt x 243.4194pt>
+<Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-80362d3f.pdf, id=1761, 488.03505pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-80362d3f.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-80362d3f.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-80362d3f.pdf  used on input line 11.
 (pdftex.def)             Requested size: 446.13727pt x 222.52228pt.
 * Missing: Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-80362d3f.pax
-<Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-c975e425.pdf, id=1679, 487.44952pt x 243.4194pt>
+<Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-c975e425.pdf, id=1762, 487.44952pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-c975e425.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-c975e425.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-c975e425.pdf  used on input line 16.
 (pdftex.def)             Requested size: 446.13727pt x 222.79343pt.
 * Missing: Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-c975e425.pax
 [39] [40 <./Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-6e359ebd.pdf> <./Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-80362d3f.pdf> <./Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-c975e425.pdf>]
-<Figures/Generated/training/training-curves-dualhead-pair-01-loss-419f6af3.pdf, id=1918, 488.1437pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-01-loss-419f6af3.pdf, id=2001, 488.1437pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-01-loss-419f6af3.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-01-loss-419f6af3.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-01-loss-419f6af3.pdf  used on input line 30.
 (pdftex.def)             Requested size: 446.13727pt x 222.4777pt.
 
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-01-loss-419f6af3.pax
-<Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-bc0a0156.pdf, id=1919, 488.06277pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-bc0a0156.pdf, id=2002, 488.06277pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-bc0a0156.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-bc0a0156.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-bc0a0156.pdf  used on input line 35.
 (pdftex.def)             Requested size: 446.13727pt x 222.52228pt.
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-bc0a0156.pax
-<Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-bde647ae.pdf, id=1920, 480.3841pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-bde647ae.pdf, id=2003, 480.3841pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-bde647ae.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-bde647ae.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-bde647ae.pdf  used on input line 40.
 (pdftex.def)             Requested size: 446.13727pt x 226.06941pt.
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-bde647ae.pax
-<Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-06e153c6.pdf, id=1921, 487.45317pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-06e153c6.pdf, id=2004, 487.45317pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-06e153c6.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-06e153c6.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-06e153c6.pdf  used on input line 45.
@@ -1676,7 +1676,7 @@ LaTeX Font Info:    Font shape `U/msa/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 286.
  [43]
-<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf, id=2277, 570.75734pt x 499.15659pt>
+<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf, id=2360, 570.75734pt x 499.15659pt>
 File: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf  used on input line 355.
@@ -1684,49 +1684,49 @@ Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/boxplot_roi_delt
 
 * Missing: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pax
 [44]
-<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf, id=2282, 570.92735pt x 499.15659pt>
+<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf, id=2365, 570.92735pt x 499.15659pt>
 File: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf  used on input line 360.
 (pdftex.def)             Requested size: 382.40338pt x 334.34178pt.
 
 * Missing: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pax
-<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf, id=2283, 570.90224pt x 499.15659pt>
+<Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf, id=2366, 570.90224pt x 499.15659pt>
 File: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf  used on input line 365.
 (pdftex.def)             Requested size: 382.40338pt x 334.35701pt.
 * Missing: Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pax
 [45 <./Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_ssim.pdf> <./Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_psnr.pdf>]
-<Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf, id=2425, 687.93689pt x 570.02524pt>
+<Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf, id=2508, 680.31465pt x 570.02524pt>
 File: Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf  used on input line 376.
-(pdftex.def)             Requested size: 382.40338pt x 316.87222pt.
+(pdftex.def)             Requested size: 382.40338pt x 320.40355pt.
 
 * Missing: Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pax
-<Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf, id=2426, 688.93709pt x 569.90541pt>
+<Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf, id=2509, 681.31485pt x 569.90541pt>
 File: Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf  used on input line 381.
-(pdftex.def)             Requested size: 382.40338pt x 316.34473pt.
+(pdftex.def)             Requested size: 382.40338pt x 319.86662pt.
 * Missing: Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pax
 [46 <./Figures/Generated/evaluation_final/ROI/boxplot_roi_delta_mae.pdf> <./Figures/Generated/evaluation_final/ROI/scatter_roi_safety.pdf>] [47 <./Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf>] [48]
-<Figures/Generated/evaluation_final/Global/histogram_global_delta_ssim.pdf, id=2710, 570.96123pt x 499.42711pt>
+<Figures/Generated/evaluation_final/Global/histogram_global_delta_ssim.pdf, id=2789, 570.96123pt x 499.42711pt>
 File: Figures/Generated/evaluation_final/Global/histogram_global_delta_ssim.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Global/histogram_global_delta_ssim.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Global/histogram_global_delta_ssim.pdf  used on input line 513.
 (pdftex.def)             Requested size: 377.85344pt x 330.52214pt.
 
 * Missing: Figures/Generated/evaluation_final/Global/histogram_global_delta_ssim.pax
-<Figures/Generated/evaluation_final/Global/histogram_global_delta_psnr.pdf, id=2711, 570.96123pt x 499.43715pt>
+<Figures/Generated/evaluation_final/Global/histogram_global_delta_psnr.pdf, id=2790, 570.96123pt x 499.43715pt>
 File: Figures/Generated/evaluation_final/Global/histogram_global_delta_psnr.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Global/histogram_global_delta_psnr.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Global/histogram_global_delta_psnr.pdf  used on input line 518.
 (pdftex.def)             Requested size: 382.40338pt x 334.50682pt.
 * Missing: Figures/Generated/evaluation_final/Global/histogram_global_delta_psnr.pax
 [49 <./Figures/Generated/evaluation_final/Global/histogram_global_delta_ssim.pdf>]
-<Figures/Generated/evaluation_final/Global/bland_altman_patient_mean_hu.pdf, id=2791, 640.40315pt x 439.15881pt>
+<Figures/Generated/evaluation_final/Global/bland_altman_patient_mean_hu.pdf, id=2870, 640.40315pt x 439.15881pt>
 File: Figures/Generated/evaluation_final/Global/bland_altman_patient_mean_hu.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Global/bland_altman_patient_mean_hu.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Global/bland_altman_patient_mean_hu.pdf  used on input line 531.
@@ -1734,74 +1734,74 @@ Package pdftex.def Info: Figures/Generated/evaluation_final/Global/bland_altman_
 
 * Missing: Figures/Generated/evaluation_final/Global/bland_altman_patient_mean_hu.pax
 [50 <./Figures/Generated/evaluation_final/Global/histogram_global_delta_psnr.pdf>] (Chapters/Final/Generated/InternalResidualCaseExtremes.tex
-<Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_01_s1250.pdf, id=2873, 774.61581pt x 578.01547pt>
+<Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_01_s1250.pdf, id=2952, 774.61581pt x 578.01547pt>
 File: Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_01_s1250.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_01_s1250.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_01_s1250.pdf  used on input line 3.
 (pdftex.def)             Requested size: 409.71692pt x 305.72935pt.
 
 * Missing: Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_01_s1250.pax
-<Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_01_s1250.pdf, id=2874, 1076.82304pt x 480.95685pt>
+<Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_01_s1250.pdf, id=2953, 1076.82304pt x 480.95685pt>
 File: Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_01_s1250.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_01_s1250.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_01_s1250.pdf  used on input line 5.
 (pdftex.def)             Requested size: 409.71692pt x 182.993pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_01_s1250.pax
-<Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_02_s1364.pdf, id=2875, 774.61581pt x 578.01547pt>
+<Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_02_s1364.pdf, id=2954, 774.61581pt x 578.01547pt>
 File: Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_02_s1364.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_02_s1364.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_02_s1364.pdf  used on input line 13.
 (pdftex.def)             Requested size: 455.24411pt x 339.7032pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_02_s1364.pax
-<Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_02_s1364.pdf, id=2876, 1076.82304pt x 480.95685pt>
+<Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_02_s1364.pdf, id=2955, 1076.82304pt x 480.95685pt>
 File: Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_02_s1364.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_02_s1364.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_02_s1364.pdf  used on input line 15.
 (pdftex.def)             Requested size: 427.93057pt x 191.13173pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_02_s1364.pax
-<Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_03_s1369.pdf, id=2877, 774.61581pt x 578.01547pt>
+<Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_03_s1369.pdf, id=2956, 774.61581pt x 578.01547pt>
 File: Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_03_s1369.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_03_s1369.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_03_s1369.pdf  used on input line 23.
 (pdftex.def)             Requested size: 455.24411pt x 339.7032pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/residual_greatest_structural_improvement_03_s1369.pax
-<Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_03_s1369.pdf, id=2878, 1076.82304pt x 480.95685pt>
+<Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_03_s1369.pdf, id=2957, 1076.82304pt x 480.95685pt>
 File: Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_03_s1369.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_03_s1369.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_03_s1369.pdf  used on input line 25.
 (pdftex.def)             Requested size: 427.93057pt x 191.13173pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/visualization_greatest_structural_improvement_03_s1369.pax
-<Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_01_s0716.pdf, id=2879, 774.61581pt x 578.01547pt>
+<Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_01_s0716.pdf, id=2958, 774.61581pt x 578.01547pt>
 File: Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_01_s0716.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_01_s0716.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_01_s0716.pdf  used on input line 33.
 (pdftex.def)             Requested size: 455.24411pt x 339.7032pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_01_s0716.pax
-<Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_01_s0716.pdf, id=2880, 1076.82304pt x 480.95685pt>
+<Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_01_s0716.pdf, id=2959, 1076.82304pt x 480.95685pt>
 File: Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_01_s0716.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_01_s0716.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_01_s0716.pdf  used on input line 35.
 (pdftex.def)             Requested size: 427.93057pt x 191.13173pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_01_s0716.pax
-<Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_02_s1122.pdf, id=2881, 768.85994pt x 578.01547pt>
+<Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_02_s1122.pdf, id=2960, 768.85994pt x 578.01547pt>
 File: Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_02_s1122.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_02_s1122.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_02_s1122.pdf  used on input line 43.
 (pdftex.def)             Requested size: 455.24411pt x 342.2433pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_02_s1122.pax
-<Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_02_s1122.pdf, id=2882, 1076.82304pt x 480.95685pt>
+<Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_02_s1122.pdf, id=2961, 1076.82304pt x 480.95685pt>
 File: Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_02_s1122.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_02_s1122.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_02_s1122.pdf  used on input line 45.
 (pdftex.def)             Requested size: 427.93057pt x 191.13173pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_02_s1122.pax
-<Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_03_s0723.pdf, id=2883, 774.61581pt x 578.01547pt>
+<Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_03_s0723.pdf, id=2962, 774.61581pt x 578.01547pt>
 File: Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_03_s0723.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_03_s0723.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_03_s0723.pdf  used on input line 53.
 (pdftex.def)             Requested size: 455.24411pt x 339.7032pt.
 * Missing: Figures/Generated/evaluation_final/Residuals/residual_least_structural_improvement_03_s0723.pax
-<Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_03_s0723.pdf, id=2884, 1076.82304pt x 480.95685pt>
+<Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_03_s0723.pdf, id=2963, 1076.82304pt x 480.95685pt>
 File: Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_03_s0723.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_03_s0723.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Residuals/visualization_least_structural_improvement_03_s0723.pdf  used on input line 55.
@@ -1813,17 +1813,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 551.
 
 [58] [59] [60] [61] [62]
-<Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf, id=4210, 598.02737pt x 258.57602pt>
+<Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf, id=4289, 598.02737pt x 258.57602pt>
 File: Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf Graphic file (type pdf)
 <use Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf>
 Package pdftex.def Info: Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf  used on input line 807.
 (pdftex.def)             Requested size: 432.48051pt x 187.00314pt.
 
 * Missing: Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pax
-[63 <./Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf>]
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 831.
- [64] (Chapters/Final/Generated/ExternalInputOutputMetrics.tex
+[63 <./Figures/Generated/paired/comparison-bar-charts-76dfb4b9.pdf>] [64] (Chapters/Final/Generated/ExternalInputOutputMetrics.tex
 Underfull \hbox (badness 10000) in paragraph at lines 16--16
 []\T1/phv/m/n/8 Table 5.32 |Global input--output met-rics in the frozen ex-ter-nal main set ($\OML/zplm/m/it/8 n \OT1/zplm/m/n/8 = \OT1/ppl/m/n/8 15$\T1/phv/m/n/8 ) for
  []
@@ -1834,7 +1831,7 @@ Underfull \hbox (badness 1400) in paragraph at lines 16--16
  []
 
 ) (Chapters/Final/Generated/ExternalInputOutputExamples.tex
-<Figures/Generated/external_evaluation/external_least_structurally_changed_case_003.pdf, id=4276, 650.43pt x 375.804pt>
+<Figures/Generated/external_evaluation/external_least_structurally_changed_case_003.pdf, id=4355, 650.43pt x 375.804pt>
 File: Figures/Generated/external_evaluation/external_least_structurally_changed_case_003.pdf Graphic file (type pdf)
 <use Figures/Generated/external_evaluation/external_least_structurally_changed_case_003.pdf>
 Package pdftex.def Info: Figures/Generated/external_evaluation/external_least_structurally_changed_case_003.pdf  used on input line 27.
@@ -1842,14 +1839,14 @@ Package pdftex.def Info: Figures/Generated/external_evaluation/external_least_st
 
 * Missing: Figures/Generated/external_evaluation/external_least_structurally_changed_case_003.pax
 [65]
-<Figures/Generated/external_evaluation/external_least_structurally_changed_case_002.pdf, id=4282, 650.43pt x 375.804pt>
+<Figures/Generated/external_evaluation/external_least_structurally_changed_case_002.pdf, id=4361, 650.43pt x 375.804pt>
 File: Figures/Generated/external_evaluation/external_least_structurally_changed_case_002.pdf Graphic file (type pdf)
 <use Figures/Generated/external_evaluation/external_least_structurally_changed_case_002.pdf>
 Package pdftex.def Info: Figures/Generated/external_evaluation/external_least_structurally_changed_case_002.pdf  used on input line 32.
 (pdftex.def)             Requested size: 382.40338pt x 220.9483pt.
 
 * Missing: Figures/Generated/external_evaluation/external_least_structurally_changed_case_002.pax
-<Figures/Generated/external_evaluation/external_least_structurally_changed_case_012.pdf, id=4283, 650.43pt x 375.804pt>
+<Figures/Generated/external_evaluation/external_least_structurally_changed_case_012.pdf, id=4362, 650.43pt x 375.804pt>
 File: Figures/Generated/external_evaluation/external_least_structurally_changed_case_012.pdf Graphic file (type pdf)
 <use Figures/Generated/external_evaluation/external_least_structurally_changed_case_012.pdf>
 Package pdftex.def Info: Figures/Generated/external_evaluation/external_least_structurally_changed_case_012.pdf  used on input line 37.
@@ -1860,34 +1857,32 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 40.
 See the caption package documentation for explanation.
 
-[66 <./Figures/Generated/external_evaluation/external_least_structurally_changed_case_003.pdf> <./Figures/Generated/external_evaluation/external_least_structurally_changed_case_002.pdf>]
-<Figures/Generated/external_evaluation/external_most_structurally_changed_case_015.pdf, id=4390, 650.43pt x 375.804pt>
+[66 <./Figures/Generated/external_evaluation/external_least_structurally_changed_case_003.pdf> <./Figures/Generated/external_evaluation/external_least_structurally_changed_case_002.pdf> <./Figures/Generated/external_evaluation/external_least_structurally_changed_case_012.pdf>]
+<Figures/Generated/external_evaluation/external_most_structurally_changed_case_015.pdf, id=4521, 650.43pt x 375.804pt>
 File: Figures/Generated/external_evaluation/external_most_structurally_changed_case_015.pdf Graphic file (type pdf)
 <use Figures/Generated/external_evaluation/external_most_structurally_changed_case_015.pdf>
 Package pdftex.def Info: Figures/Generated/external_evaluation/external_most_structurally_changed_case_015.pdf  used on input line 48.
 (pdftex.def)             Requested size: 382.40338pt x 220.9483pt.
 
 * Missing: Figures/Generated/external_evaluation/external_most_structurally_changed_case_015.pax
-<Figures/Generated/external_evaluation/external_most_structurally_changed_case_005.pdf, id=4391, 650.43pt x 375.804pt>
+<Figures/Generated/external_evaluation/external_most_structurally_changed_case_005.pdf, id=4522, 650.43pt x 375.804pt>
 File: Figures/Generated/external_evaluation/external_most_structurally_changed_case_005.pdf Graphic file (type pdf)
 <use Figures/Generated/external_evaluation/external_most_structurally_changed_case_005.pdf>
 Package pdftex.def Info: Figures/Generated/external_evaluation/external_most_structurally_changed_case_005.pdf  used on input line 53.
 (pdftex.def)             Requested size: 382.40338pt x 220.9483pt.
 * Missing: Figures/Generated/external_evaluation/external_most_structurally_changed_case_005.pax
-[67 <./Figures/Generated/external_evaluation/external_least_structurally_changed_case_012.pdf> <./Figures/Generated/external_evaluation/external_most_structurally_changed_case_015.pdf>]
-<Figures/Generated/external_evaluation/external_most_structurally_changed_case_008.pdf, id=4498, 650.43pt x 375.804pt>
+<Figures/Generated/external_evaluation/external_most_structurally_changed_case_008.pdf, id=4523, 650.43pt x 375.804pt>
 File: Figures/Generated/external_evaluation/external_most_structurally_changed_case_008.pdf Graphic file (type pdf)
 <use Figures/Generated/external_evaluation/external_most_structurally_changed_case_008.pdf>
 Package pdftex.def Info: Figures/Generated/external_evaluation/external_most_structurally_changed_case_008.pdf  used on input line 58.
 (pdftex.def)             Requested size: 382.40338pt x 220.9483pt.
-
 * Missing: Figures/Generated/external_evaluation/external_most_structurally_changed_case_008.pax
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 61.
 See the caption package documentation for explanation.
 
-) [68 <./Figures/Generated/external_evaluation/external_most_structurally_changed_case_005.pdf> <./Figures/Generated/external_evaluation/external_most_structurally_changed_case_008.pdf>] [69]) (Chapters/Final/6.Discussion.tex [70]
+[67 <./Figures/Generated/external_evaluation/external_most_structurally_changed_case_015.pdf> <./Figures/Generated/external_evaluation/external_most_structurally_changed_case_005.pdf>]) [68 <./Figures/Generated/external_evaluation/external_most_structurally_changed_case_008.pdf>] [69]) (Chapters/Final/6.Discussion.tex [70]
 Chapter 6.
 [71
 
@@ -1924,20 +1919,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--6
 ] [80] [81] [82] [83]) (Appendices/AppendixTemplate.tex [84]
 Appendix A.
 (Chapters/Final/Generated/Training.tex
-<Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2dbea9f5.pdf, id=4825, 483.0848pt x 243.4194pt>
+<Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2dbea9f5.pdf, id=4904, 483.0848pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2dbea9f5.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2dbea9f5.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2dbea9f5.pdf  used on input line 6.
 (pdftex.def)             Requested size: 446.13727pt x 224.81027pt.
 
 * Missing: Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2dbea9f5.pax
-<Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-c7bfb6d4.pdf, id=4826, 488.05338pt x 243.4194pt>
+<Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-c7bfb6d4.pdf, id=4905, 488.05338pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-c7bfb6d4.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-c7bfb6d4.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-c7bfb6d4.pdf  used on input line 11.
 (pdftex.def)             Requested size: 446.13727pt x 222.52228pt.
 * Missing: Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-c7bfb6d4.pax
-<Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-be217cb8.pdf, id=4827, 487.45317pt x 243.4194pt>
+<Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-be217cb8.pdf, id=4906, 487.45317pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-be217cb8.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-be217cb8.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-be217cb8.pdf  used on input line 16.
@@ -1946,72 +1941,72 @@ Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-p
 [85
 
  <./Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2dbea9f5.pdf>]
-<Figures/Generated/training/training-curves-dualhead-pair-01-loss-e3314fde.pdf, id=4909, 488.1437pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-01-loss-e3314fde.pdf, id=4988, 488.1437pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-01-loss-e3314fde.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-01-loss-e3314fde.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-01-loss-e3314fde.pdf  used on input line 30.
 (pdftex.def)             Requested size: 446.13727pt x 222.4777pt.
 
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-01-loss-e3314fde.pax
-<Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-edde567e.pdf, id=4910, 488.06277pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-edde567e.pdf, id=4989, 488.06277pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-edde567e.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-edde567e.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-edde567e.pdf  used on input line 35.
 (pdftex.def)             Requested size: 446.13727pt x 222.52228pt.
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-edde567e.pax
-<Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-16a94110.pdf, id=4911, 488.1531pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-16a94110.pdf, id=4990, 488.1531pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-16a94110.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-16a94110.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-16a94110.pdf  used on input line 40.
 (pdftex.def)             Requested size: 446.13727pt x 222.4777pt.
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-16a94110.pax
-<Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-f902b5f6.pdf, id=4912, 487.45317pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-f902b5f6.pdf, id=4991, 487.45317pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-f902b5f6.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-f902b5f6.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-f902b5f6.pdf  used on input line 45.
 (pdftex.def)             Requested size: 446.13727pt x 222.79343pt.
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-f902b5f6.pax
 [86 <./Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-c7bfb6d4.pdf> <./Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-be217cb8.pdf>] [87 <./Figures/Generated/training/training-curves-dualhead-pair-01-loss-e3314fde.pdf> <./Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-edde567e.pdf> <./Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-16a94110.pdf>]
-<Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2b6ea850.pdf, id=5316, 487.69847pt x 243.4194pt>
+<Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2b6ea850.pdf, id=5395, 487.69847pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2b6ea850.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2b6ea850.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2b6ea850.pdf  used on input line 59.
 (pdftex.def)             Requested size: 446.13727pt x 222.67828pt.
 
 * Missing: Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2b6ea850.pax
-<Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-dbf1eb22.pdf, id=5317, 487.4892pt x 243.4194pt>
+<Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-dbf1eb22.pdf, id=5396, 487.4892pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-dbf1eb22.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-dbf1eb22.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-dbf1eb22.pdf  used on input line 64.
 (pdftex.def)             Requested size: 446.13727pt x 222.77856pt.
 * Missing: Figures/Generated/training/training-curves-singlehead-pair-02-ssim-mae-dbf1eb22.pax
-<Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-31221acf.pdf, id=5318, 487.1625pt x 243.4194pt>
+<Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-31221acf.pdf, id=5397, 487.1625pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-31221acf.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-31221acf.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-31221acf.pdf  used on input line 69.
 (pdftex.def)             Requested size: 446.13727pt x 222.91971pt.
 * Missing: Figures/Generated/training/training-curves-singlehead-pair-03-lr-gap-31221acf.pax
 [88 <./Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-f902b5f6.pdf> <./Figures/Generated/training/training-curves-singlehead-pair-01-loss-psnr-2b6ea850.pdf>]
-<Figures/Generated/training/training-curves-dualhead-pair-01-loss-ad3e34d5.pdf, id=5479, 488.1437pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-01-loss-ad3e34d5.pdf, id=5558, 488.1437pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-01-loss-ad3e34d5.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-01-loss-ad3e34d5.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-01-loss-ad3e34d5.pdf  used on input line 83.
 (pdftex.def)             Requested size: 446.13727pt x 222.4777pt.
 
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-01-loss-ad3e34d5.pax
-<Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-a2bedecb.pdf, id=5480, 488.06277pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-a2bedecb.pdf, id=5559, 488.06277pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-a2bedecb.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-a2bedecb.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-a2bedecb.pdf  used on input line 88.
 (pdftex.def)             Requested size: 446.13727pt x 222.52228pt.
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-02-psnr-ssim-a2bedecb.pax
-<Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-3c0cd1ca.pdf, id=5481, 488.1531pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-3c0cd1ca.pdf, id=5560, 488.1531pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-3c0cd1ca.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-3c0cd1ca.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-3c0cd1ca.pdf  used on input line 93.
 (pdftex.def)             Requested size: 446.13727pt x 222.4777pt.
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-03-mae-dice-3c0cd1ca.pax
-<Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-3f97ba9f.pdf, id=5482, 487.45317pt x 243.4194pt>
+<Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-3f97ba9f.pdf, id=5561, 487.45317pt x 243.4194pt>
 File: Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-3f97ba9f.pdf Graphic file (type pdf)
 <use Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-3f97ba9f.pdf>
 Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-3f97ba9f.pdf  used on input line 98.
@@ -2057,7 +2052,7 @@ Package pdftex.def Info: Figures/Generated/training/training-curves-dualhead-pai
 (pdftex.def)             Requested size: 446.13727pt x 222.79343pt.
 * Missing: Figures/Generated/training/training-curves-dualhead-pair-04-lr-gap-06e153c6.pax
 [92] [93]) (Tables/Generated/best_validation_ssim.tex) (Tables/Generated/best_validation_psnr.tex) (Tables/Generated/mae_at_best_validation_ssim.tex)
-<Figures/Generated/evaluation_final/Appendix/scatter_pixel_hu_balanced.pdf, id=5981, 508.25139pt x 494.51712pt>
+<Figures/Generated/evaluation_final/Appendix/scatter_pixel_hu_balanced.pdf, id=6060, 508.25139pt x 494.51712pt>
 File: Figures/Generated/evaluation_final/Appendix/scatter_pixel_hu_balanced.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Appendix/scatter_pixel_hu_balanced.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/scatter_pixel_hu_balanced.pdf  used on input line 22.
@@ -2065,37 +2060,37 @@ Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/scatter_pix
 
 * Missing: Figures/Generated/evaluation_final/Appendix/scatter_pixel_hu_balanced.pax
 [94]
-<Figures/Generated/evaluation_final/Appendix/scatter_global_ssim_baseline_vs_model.pdf, id=5988, 553.34592pt x 499.5576pt>
+<Figures/Generated/evaluation_final/Appendix/scatter_global_ssim_baseline_vs_model.pdf, id=6067, 558.92928pt x 499.5576pt>
 File: Figures/Generated/evaluation_final/Appendix/scatter_global_ssim_baseline_vs_model.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Appendix/scatter_global_ssim_baseline_vs_model.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/scatter_global_ssim_baseline_vs_model.pdf  used on input line 34.
-(pdftex.def)             Requested size: 382.40338pt x 345.2287pt.
+(pdftex.def)             Requested size: 382.40338pt x 341.7909pt.
 
 * Missing: Figures/Generated/evaluation_final/Appendix/scatter_global_ssim_baseline_vs_model.pax
 [95 <./Figures/Generated/evaluation_final/Appendix/scatter_pixel_hu_balanced.pdf>]
-<Figures/Generated/evaluation_final/Appendix/scatter_global_psnr_baseline_vs_model.pdf, id=6087, 550.25987pt x 499.43715pt>
+<Figures/Generated/evaluation_final/Appendix/scatter_global_psnr_baseline_vs_model.pdf, id=6166, 544.67651pt x 499.43715pt>
 File: Figures/Generated/evaluation_final/Appendix/scatter_global_psnr_baseline_vs_model.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Appendix/scatter_global_psnr_baseline_vs_model.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/scatter_global_psnr_baseline_vs_model.pdf  used on input line 39.
-(pdftex.def)             Requested size: 382.40338pt x 347.08875pt.
+(pdftex.def)             Requested size: 382.40338pt x 350.64766pt.
 
 * Missing: Figures/Generated/evaluation_final/Appendix/scatter_global_psnr_baseline_vs_model.pax
 [96 <./Figures/Generated/evaluation_final/Appendix/scatter_global_ssim_baseline_vs_model.pdf> <./Figures/Generated/evaluation_final/Appendix/scatter_global_psnr_baseline_vs_model.pdf>]
-<Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_ssim_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf, id=6237, 570.89911pt x 423.33307pt>
+<Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_ssim_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf, id=6315, 570.89911pt x 423.33307pt>
 File: Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_ssim_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_ssim_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_ssim_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf  used on input line 52.
 (pdftex.def)             Requested size: 382.40338pt x 283.56708pt.
 
 * Missing: Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_ssim_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pax
-<Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_psnr_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf, id=6238, 570.80188pt x 423.33307pt>
+<Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_psnr_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf, id=6316, 570.80188pt x 423.33307pt>
 File: Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_psnr_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_psnr_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_psnr_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf  used on input line 57.
 (pdftex.def)             Requested size: 382.40338pt x 283.6123pt.
 * Missing: Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_psnr_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pax
 [97 <./Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_ssim_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf>]
-<Figures/Generated/evaluation_final/Appendix/worst_cases_ssim_distribution.pdf, id=6345, 512.7958pt x 427.74178pt>
+<Figures/Generated/evaluation_final/Appendix/worst_cases_ssim_distribution.pdf, id=6423, 512.7958pt x 427.74178pt>
 File: Figures/Generated/evaluation_final/Appendix/worst_cases_ssim_distribution.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Appendix/worst_cases_ssim_distribution.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/worst_cases_ssim_distribution.pdf  used on input line 73.
@@ -2103,7 +2098,7 @@ Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/worst_cases
 
 * Missing: Figures/Generated/evaluation_final/Appendix/worst_cases_ssim_distribution.pax
 [98 <./Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_psnr_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf>]
-<Figures/Generated/evaluation_final/Appendix/worst_cases_delta_psnr_distribution.pdf, id=6453, 512.7958pt x 427.74178pt>
+<Figures/Generated/evaluation_final/Appendix/worst_cases_delta_psnr_distribution.pdf, id=6531, 512.7958pt x 427.74178pt>
 File: Figures/Generated/evaluation_final/Appendix/worst_cases_delta_psnr_distribution.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Appendix/worst_cases_delta_psnr_distribution.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/worst_cases_delta_psnr_distribution.pdf  used on input line 83.
@@ -2111,7 +2106,7 @@ Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/worst_cases
 
 * Missing: Figures/Generated/evaluation_final/Appendix/worst_cases_delta_psnr_distribution.pax
 [99 <./Figures/Generated/evaluation_final/Appendix/worst_cases_ssim_distribution.pdf>]
-<Figures/Generated/evaluation_final/Appendix/worst_cases_scatter_delta_psnr_vs_delta_ssim.pdf, id=6532, 512.77383pt x 432.07799pt>
+<Figures/Generated/evaluation_final/Appendix/worst_cases_scatter_delta_psnr_vs_delta_ssim.pdf, id=6610, 512.77383pt x 432.07799pt>
 File: Figures/Generated/evaluation_final/Appendix/worst_cases_scatter_delta_psnr_vs_delta_ssim.pdf Graphic file (type pdf)
 <use Figures/Generated/evaluation_final/Appendix/worst_cases_scatter_delta_psnr_vs_delta_ssim.pdf>
 Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/worst_cases_scatter_delta_psnr_vs_delta_ssim.pdf  used on input line 93.
@@ -2119,7 +2114,7 @@ Package pdftex.def Info: Figures/Generated/evaluation_final/Appendix/worst_cases
 
 * Missing: Figures/Generated/evaluation_final/Appendix/worst_cases_scatter_delta_psnr_vs_delta_ssim.pax
 [100 <./Figures/Generated/evaluation_final/Appendix/worst_cases_delta_psnr_distribution.pdf>] (Chapters/Final/Generated/Benchmark.tex
-<Figures/Generated/benchmark/benchmark-latency-histogram-91086c81.pdf, id=6615, 498.59149pt x 352.59479pt>
+<Figures/Generated/benchmark/benchmark-latency-histogram-91086c81.pdf, id=6693, 498.59149pt x 352.59479pt>
 File: Figures/Generated/benchmark/benchmark-latency-histogram-91086c81.pdf Graphic file (type pdf)
 <use Figures/Generated/benchmark/benchmark-latency-histogram-91086c81.pdf>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-histogram-91086c81.pdf  used on input line 6.
@@ -2127,7 +2122,7 @@ Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-histogram
 
 * Missing: Figures/Generated/benchmark/benchmark-latency-histogram-91086c81.pax
 [101 <./Figures/Generated/evaluation_final/Appendix/worst_cases_scatter_delta_psnr_vs_delta_ssim.pdf>]
-<Figures/Generated/benchmark/benchmark-latency-per-slice-fe3b1d76.pdf, id=6687, 498.53188pt x 352.59479pt>
+<Figures/Generated/benchmark/benchmark-latency-per-slice-fe3b1d76.pdf, id=6765, 498.53188pt x 352.59479pt>
 File: Figures/Generated/benchmark/benchmark-latency-per-slice-fe3b1d76.pdf Graphic file (type pdf)
 <use Figures/Generated/benchmark/benchmark-latency-per-slice-fe3b1d76.pdf>
 Package pdftex.def Info: Figures/Generated/benchmark/benchmark-latency-per-slice-fe3b1d76.pdf  used on input line 11.
@@ -2140,16 +2135,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F1122BA33C7E68F718D3FFEF60495733;18373.
+(rerunfilecheck)             Checksum: 081F9ADD741597AF70520B68F5F70BB4;18401.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 3F64B38C50ABD6B80CE638C1341168DD;6128.
  ) 
 Here is how much of TeX's memory you used:
- 45802 strings out of 467870
- 980225 string characters out of 5418356
- 1353470 words of memory out of 5000000
- 73397 multiletter control sequences out of 15000+600000
- 733261 words of font info for 180 fonts, out of 8000000 for 9000
+ 45799 strings out of 467870
+ 980262 string characters out of 5418356
+ 1355470 words of memory out of 5000000
+ 73395 multiletter control sequences out of 15000+600000
+ 730245 words of font info for 178 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  108i,18n,114p,3196b,1408s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -2240,9 +2235,9 @@ pdfTeX warning (dest): name{glo:ctmar} has been referenced but does not exist, r
 pdfTeX warning (dest): name{glo:ct} has been referenced but does not exist, replaced by a fixed one
 
  <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0800.pk> <C:\Users\ludmy\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/ludmy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (117 pages, 12111232 bytes).
+Output written on main.pdf (117 pages, 11875427 bytes).
 PDF statistics:
- 7009 PDF objects out of 7423 (max. 8388607)
+ 7087 PDF objects out of 7423 (max. 8388607)
  420 named destinations out of 1000 (max. 500000)
  1072 words of extra memory for PDF output out of 10000 (max. 10000000)
 

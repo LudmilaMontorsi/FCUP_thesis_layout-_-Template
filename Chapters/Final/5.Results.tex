@@ -381,7 +381,7 @@ The box plots highlight the separation between the correction in the Artifact Zo
     \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/ROI/scatter_roi_safety_ssim.pdf}
 \end{figure}
 \captionsetup{skip=2pt}
-\graphiccaptionof[Artifact-ROI correction versus distant-ROI change]{Per-image relationship between the\acrshort{ssim} \textbackslash\acrshort{psnr} improvement in the Artifact Zone and the\acrshort{ssim} \textbackslash\acrshort{psnr} change in the Clean Zone for the Single Model, seed 2024. Color encodes the\acrshort{mae} reduction in the Clean Zone.}
+\graphiccaptionof[Artifact-ROI correction versus clean-ROI change]{Per-image relationship between the\acrshort{ssim} \textbackslash\acrshort{psnr} improvement in the Artifact Zone and the\acrshort{ssim} \textbackslash\acrshort{psnr} change in the Clean Zone for the Single Model, seed 2024. Color encodes Clean Zone $|\Delta\mathrm{MAE}|$ in HU: green at 0--2 HU, yellow around 5 HU, orange around 10 HU, and red at or above 15 HU. Both plots use the same 0--15 HU scale, with values above 15 HU saturated in red. These color anchors are descriptive, not clinical thresholds.}
 \label{fig:roi-safety}
 \endgroup
 
@@ -811,7 +811,7 @@ The Single Model showed a mean advantage of $0{.}054$ dB in $\Delta$PSNR, $0{.}0
 
 \FloatBarrier
 
-\section{External Evaluation for Doctors}
+\section{External and Physician's Evaluation }
 \label{sec:external-evatluation-doctors}
 
 \subsection{Capture Status and Participants}
@@ -828,10 +828,10 @@ The external evaluation consists of a paired comparison blinded to the processin
 \toprule
 \textbf{Indicator} & \textbf{Value} \\
 \midrule
-Total Readers & \textit{[to fill]} \\
-Total valid responses (readers $\times$ 15 main cases) & \textit{[to fill]} \\
-Data collection start date & 2026-08-27 \\
-Data collection closing date & \textit{[to fill]} \\
+Total Readers & 5 \\
+Total valid responses (readers $\times$ 15 main cases) & 75 \\
+Data collection start date & 27-08-2026 \\
+Data collection closing date & 10-09-2026 \\
 \bottomrule
 \end{tabular}
 \captionsetup{skip=2pt}
@@ -849,25 +849,21 @@ The self-reported characteristics of the readers who completed the evaluation ar
 \toprule
 \textbf{Variable} & \textbf{Category} & \textbf{N} & \textbf{\%} \\
 \midrule
-\multirow{2}{*}{Jurisdiction} & Brazil & \textit{[to fill]} & \textit{[to fill]} \\
-                            & Portugal & \textit{[to fill]} & \textit{[to fill]} \\
+\multirow{2}{*}{Jurisdiction} & Brazil & 5 & 100 \\
 \midrule
-\multirow{3}{*}{CT usage frequency} & Monthly & \textit{[to fill]} & \textit{[to fill]} \\
-                                          & Weekly & \textit{[to fill]} & \textit{[to fill]} \\
-                                          & Daily & \textit{[to fill]} & \textit{[to fill]} \\
+\multirow{3}{*}{CT usage frequency} & Monthly & 4 & 80 \\
+                                          & Daily & 1 & 20 \\
 \midrule
-\multirow{4}{*}{CT experience (years)} & $<2$ & \textit{[to fill]} & \textit{[to fill]} \\
-                                            & 2--5 & \textit{[to fill]} & \textit{[to fill]} \\
-                                            & 6--10 & \textit{[to fill]} & \textit{[to fill]} \\
-                                            & $>10$ & \textit{[to fill]} & \textit{[to fill]} \\
+\multirow{4}{*}{CT experience (years)} & $<2$ & 2 & 40 \\
+                                            & 2--5 & 1 & 20 \\
+                                            & 6--10 & 1 & 20 \\
+                                            & $>10$ & 1 & 20 \\
 \midrule
-\multirow{3}{*}{Experience with artifact reduction} & None & \textit{[to fill]} & \textit{[to fill]} \\
-                                                         & Occasional & \textit{[to fill]} & \textit{[to fill]} \\
-                                                         & Frequent & \textit{[to fill]} & \textit{[to fill]} \\
+\multirow{3}{*}{Experience with artifact reduction} & None & 4 & 80 \\
+                                                         & Occasional & 1 & 20 \\
 \midrule
-\multirow{3}{*}{Monitor type} & Diagnostic & \textit{[to fill]} & \textit{[to fill]} \\
-                                  & Conventional & \textit{[to fill]} & \textit{[to fill]} \\
-                                  & Unknown & \textit{[to fill]} & \textit{[to fill]} \\
+\multirow{3}{*}{Monitor type} & Conventional & 3 & 60 \\
+                                  & Unknown & 2 & 40 \\
 \bottomrule
 \end{tabular}
 \captionsetup{skip=2pt}
@@ -884,20 +880,11 @@ The distribution by medical specialty is presented separately in \autoref{tab:ex
 \toprule
 \textbf{Specialty} & \textbf{N} & \textbf{\%} \\
 \midrule
-Radiology and Diagnostic Imaging & \textit{[to fill]} & \textit{[to fill]} \\
-Pulmonology & \textit{[to fill]} & \textit{[to fill]} \\
-Thoracic or Cardiothoracic Surgery & \textit{[to fill]} & \textit{[to fill]} \\
-Oncology & \textit{[to fill]} & \textit{[to fill]} \\
-Internal Medicine or General Medicine & \textit{[to fill]} & \textit{[to fill]} \\
-Intensive Care Medicine & \textit{[to fill]} & \textit{[to fill]} \\
-Emergency Medicine & \textit{[to fill]} & \textit{[to fill]} \\
-Cardiology & \textit{[to fill]} & \textit{[to fill]} \\
-Gastroenterology or Hepatology & \textit{[to fill]} & \textit{[to fill]} \\
-General Surgery or other surgical specialty & \textit{[to fill]} & \textit{[to fill]} \\
-Urology & \textit{[to fill]} & \textit{[to fill]} \\
-Orthopedics or Traumatology & \textit{[to fill]} & \textit{[to fill]} \\
-Infectious Diseases & \textit{[to fill]} & \textit{[to fill]} \\
-Other medical specialty & \textit{[to fill]} & \textit{[to fill]} \\
+Radiology and Diagnostic Imaging & 1 & 20 \\
+Internal Medicine or General Medicine & 1 & 20 \\
+Orthopedics or Traumatology & 1 & 20 \\
+Infectious Diseases & 1 & 20 \\
+Other medical specialty & 1 & 20 \\
 \bottomrule
 \end{tabular}
 \captionsetup{skip=2pt}
@@ -919,11 +906,10 @@ To make this heterogeneity visible, the three cases with the highest and the thr
 
 \FloatBarrier
 \subsection{Primary Outcome: Anatomical Visualization}
-% To fill: observed frequencies, mixed-effects ordinal model estimate, and respective 95% CI.
 
 The primary outcome is the paired preference, per case, regarding which image better preserves the anatomical region underlying the metal artifact (``Image A'' / ``Image B'' / ``No difference''). Answers are converted back to input/output using the left/right position recorded for each case, without the reader ever knowing this mapping while answering. Training cases and hidden repeats are not part of this analysis ($n=15$ main cases per reader).
 
-Because each doctor judges many cases, and each case is judged by many doctors, a statistical model was used that accounts for both of these repetitions at the same time (a model with a random effect for the reader and for the case), rather than treating every answer as fully independent. In interpreting the result, the 95\% confidence interval is given more weight than the $p$-value on its own.
+Because each doctor judges many cases, and each case is judged by many doctors, the 95\% confidence intervals were obtained with a two-way cluster bootstrap that resampled readers and cases independently, rather than treating the 75 responses as fully independent. The observed preference favored the Single Model in 42/75 presentations (56.0\%), whereas the artifact input was preferred in 21/75 (28.0\%); 12/75 presentations (16.0\%) were judged equivalent.
 
 \begin{table}[htbp]
 \centering
@@ -932,12 +918,12 @@ Because each doctor judges many cases, and each case is judged by many doctors, 
 \toprule
 \textbf{Response} & \textbf{N} & \textbf{\%} & \textbf{95\% CI} \\
 \midrule
-Preferred output (Single Model) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
-Preferred input (with artifact) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
-No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Preferred output (Single Model) & 42 & 56.0 & [28.0; 82.7] \\
+Preferred input (with artifact) & 21 & 28.0 & [10.7; 48.0] \\
+No difference & 12 & 16.0 & [1.3; 37.3] \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Pooled frequencies over all valid responses (readers $\times$ 15 main cases); 95\% CI by\textit{bootstrap} or exact method to be specified.
+\par\smallskip\footnotesize Pooled frequencies over 75 valid responses (5 readers $\times$ 15 main cases). 95\% CIs are percentile intervals from a two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024).
 \captionsetup{skip=2pt}
 \caption[Primary outcome: anatomical preservation preference]{Paired preference regarding preservation of the anatomical region underlying the metal artifact.}
 \label{tab:external-primary-outcome}
@@ -946,24 +932,23 @@ No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
 \begin{table}[htbp]
 \centering
 \small
-\begin{tabular}{lccc}
+\begin{tabular}{lcc}
 \toprule
-\textbf{Effect} & \textbf{Estimate} & \textbf{95\% CI} & \textbf{$p$} \\
+\textbf{Contrast} & \textbf{Difference (pp)} & \textbf{95\% CI} \\
 \midrule
-Condition (output vs. input) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Output preference $-$ input preference & $+28.0$ pp & [$-17.3$; $+70.7$] pp \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Mixed-effects ordinal model with random effects for reader and case; scale and parametrization of the coefficient to be specified (e.g.,\textit{log-odds} or predicted marginal proportion).
+\par\smallskip\footnotesize Difference between the two pooled proportions; 95\% CI by the same two-way cluster bootstrap. A positive value favors the Single Model. No null-hypothesis test is reported because this small reader panel is interpreted descriptively.
 \captionsetup{skip=2pt}
-\caption[Primary outcome: mixed-effects model estimate]{Mixed-effects ordinal model estimate for the primary outcome.}
+\caption[Primary outcome: output--input contrast]{Cluster-bootstrap contrast for the primary outcome.}
 \label{tab:external-primary-model}
 \end{table}
 \FloatBarrier
 
 \subsection{Secondary Outcomes and Safety Perception}
-% To fill: frequencies and 95% CI per secondary question; intra-reader agreement statistics.
 
-The secondary outcomes use the same per-case format (``Image A'' / ``Image B'' / ``No difference''), and are reported simply as the frequency of each answer with a 95\% confidence interval per question because this summary is descriptive, no correction for multiple comparisons was applied.
+The secondary outcomes use the same per-case format (``Image A'' / ``Image B'' / ``No difference''). They are reported descriptively as pooled frequencies with two-way cluster-bootstrap 95\% confidence intervals; no correction for multiple comparisons was applied.
 
 \begin{table}[htbp]
 \centering
@@ -972,11 +957,12 @@ The secondary outcomes use the same per-case format (``Image A'' / ``Image B'' /
 \toprule
 \textbf{Response} & \textbf{N} & \textbf{\%} & \textbf{95\% CI} \\
 \midrule
-Preferred output (lower artifact intensity) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
-Preferred input & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
-No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Preferred output (lower artifact intensity) & 61 & 81.3 & [65.3; 94.7] \\
+Preferred input & 8 & 10.7 & [1.3; 22.7] \\
+No difference & 6 & 8.0 & [0.0; 22.7] \\
 \bottomrule
 \end{tabular}
+\par\smallskip\footnotesize $n=75$ responses; 95\% CIs by two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024).
 \captionsetup{skip=2pt}
 \caption[Secondary outcome: artifact intensity]{Paired preference regarding the perceived intensity of metal artifacts.}
 \label{tab:external-secondary-artifact-intensity}
@@ -989,12 +975,12 @@ No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
 \toprule
 \textbf{Response} & \textbf{N} & \textbf{\%} & \textbf{95\% CI} \\
 \midrule
-Preferred output (less distortion) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
-Preferred input & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
-No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Preferred output (less distortion) & 47 & 62.7 & [38.7; 84.0] \\
+Preferred input & 17 & 22.7 & [9.3; 38.7] \\
+No difference & 11 & 14.7 & [1.3; 33.3] \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize This item functions as an exploratory signal of possible harm: preference for the input suggests perceived distortions or artifacts introduced by the model outside the artifact zone.
+\par\smallskip\footnotesize $n=75$ responses; 95\% CIs by two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024). This item functions as an exploratory signal of possible harm: preference for the input suggests perceived distortions or artifacts introduced by the model outside the artifact zone.
 \captionsetup{skip=2pt}
 \caption[Secondary outcome: distortion in other regions]{Paired preference regarding artifacts or anatomical distortions introduced in regions distant from the artifact.}
 \label{tab:external-secondary-distortion}
@@ -1007,11 +993,12 @@ No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
 \toprule
 \textbf{Response} & \textbf{N} & \textbf{\%} & \textbf{95\% CI} \\
 \midrule
-Preferred output for clinical interpretation & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
-Preferred input & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
-No difference & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
+Preferred output for clinical interpretation & 42 & 56.0 & [28.0; 82.7] \\
+Preferred input & 23 & 30.7 & [12.0; 53.3] \\
+No difference & 10 & 13.3 & [1.3; 32.0] \\
 \bottomrule
 \end{tabular}
+\par\smallskip\footnotesize $n=75$ responses; 95\% CIs by two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024).
 \captionsetup{skip=2pt}
 \caption[Secondary outcome: clinical preference]{Paired preference regarding the image chosen for clinical interpretation.}
 \label{tab:external-secondary-clinical-preference}
@@ -1026,41 +1013,42 @@ Additionally, at the end of the session, each reader answered once a 5-point ord
 \toprule
 \textbf{Category} & \textbf{N} & \textbf{\%} \\
 \midrule
-Definitely not & \textit{[to fill]} & \textit{[to fill]} \\
-Probably not & \textit{[to fill]} & \textit{[to fill]} \\
-Uncertain & \textit{[to fill]} & \textit{[to fill]} \\
-Probably yes & \textit{[to fill]} & \textit{[to fill]} \\
-Definitely yes & \textit{[to fill]} & \textit{[to fill]} \\
+Definitely not & 0 & 0 \\
+Probably not & 1 & 20 \\
+Uncertain & 1 & 20 \\
+Probably yes & 2 & 40 \\
+Definitely yes & 1 & 20 \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize One response per reader (not per case); $n=$ number of readers who completed the evaluation.
+\par\smallskip\footnotesize One response per reader (not per case); $n=5$ completed readers.
 \captionsetup{skip=2pt}
 \caption[Secondary outcome: complementary utility]{Perceived complementary usefulness of a processed version relative to the original\acrshort{ct} exam.}
 \label{tab:external-secondary-utility}
 \end{table}
 \FloatBarrier
 
-Intra-reader consistency was assessed through two hidden repeats per reader: the same case is re-presented later in the session, without signaling, in the same left/right position as the first presentation. Agreement between the original response and the repeat was quantified using the ICC(2,1) statistic, a standard way of measuring how consistent repeated ratings are, and, for the simple output-versus-input preference, using Fleiss's $\kappa$ (\autoref{tab:external-intra-reader-reliability}).
+Intra-reader consistency was assessed through two hidden repeats per reader: the same case is re-presented later in the session, without signaling, in the same left/right position as the first presentation. Because the responses are nominal and only 10 original--repeat pairs are available, the result is reported as exact agreement for each item (\autoref{tab:external-intra-reader-reliability}).
 
 \begin{table}[htbp]
 \centering
 \small
-\begin{tabular}{lccc}
+\begin{tabular}{lcc}
 \toprule
-\textbf{Statistic} & \textbf{Value} & \textbf{95\% CI} & \textbf{Interpretation} \\
+\textbf{Outcome} & \textbf{Exact agreement} & \textbf{Total Repetitions} \\
 \midrule
-ICC(2,1) & \textit{[to fill]} & \textit{[to fill]} & \textit{[to fill]} \\
-Fleiss's $\kappa$ (output vs. input) & \textit{[to fill]} & --- & \textit{[to fill]} \\
+Artifact intensity & 5/10 (50\%) & 10 \\
+Anatomical visualization & 4/10 (40\%) & 10 \\
+Other-region distortion & 4/10 (40\%) & 10 \\
+Clinical preference & 5/10 (50\%) & 10 \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize $n=2$ hidden repeats per reader. 95\% CI of ICC(2,1) by the $F$-distribution-based method (Shrout \& Fleiss, 1979).
+\par\smallskip\footnotesize Two cases were repeated for each of the five readers, yielding 10 paired original--repeat responses per outcome.
 \captionsetup{skip=2pt}
-\caption[Intra-reader reliability]{Intra-reader consistency in the hidden repeats.}
+\caption[Intra-reader repeat agreement]{Intra-reader exact agreement in the hidden repeats.}
 \label{tab:external-intra-reader-reliability}
 \end{table}
 \FloatBarrier
 
 \subsection{Limited Interpretation to the Observational Design}
-% To fill: final synthesis with the actual values, once data collection is concluded.
 
-The design of this evaluation will make it possible to conclude, once the data are available, which image readers prefer along each assessed dimension, but it does not allow inference of causality regarding clinical outcomes (for example, diagnostic or therapeutic impact), nor generalization beyond the set of 15 cases and the panel of readers actually recruited. The absence of a clean reference in these external cases means that the assessment of anatomical accuracy depends entirely on readers' judgment, rather than on an objective error metric. Finally, the number of recruited readers limits the precision of the estimates and the possibility of subgroup analyses by specialty or experience.
+In this completed panel, the preference frequencies describe how the five readers judged these 15 cases; they do not establish a causal effect on diagnostic or therapeutic outcomes and cannot be generalized beyond this reader--case sample. The absence of a clean reference in these external cases means that the assessment of anatomical accuracy depends entirely on readers' judgment, rather than on an objective error metric. The wide cluster-bootstrap intervals, the small number of readers, and the limited repeat agreement further constrain precision and preclude meaningful subgroup analyses by specialty or experience.

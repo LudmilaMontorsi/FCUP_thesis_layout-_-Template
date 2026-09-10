@@ -7,7 +7,7 @@
 \contentsline {figure}{\numberline {5.9}Training convergence (results): Single Model, seed 2024}{41}{figure.caption.29}%
 \contentsline {figure}{\numberline {5.10}Training convergence (results): Dual Model, seed 2024}{42}{figure.caption.34}%
 \contentsline {figure}{\numberline {5.11}Per-image ROI metric improvements}{46}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.12}Artifact-ROI correction versus distant-ROI change}{47}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.12}Artifact-ROI correction versus clean-ROI change}{47}{figure.caption.44}%
 \contentsline {figure}{\numberline {5.13}Per-image global PSNR and SSIM improvement}{50}{figure.caption.53}%
 \contentsline {figure}{\numberline {5.14}Patient-level Bland--Altman agreement of mean HU}{51}{figure.caption.54}%
 \contentsline {figure}{\numberline {5.21}Global PSNR and SSIM improvement}{63}{figure.caption.73}%
