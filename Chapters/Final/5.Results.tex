@@ -2,6 +2,66 @@
 \label{chap:final-results}
 
 \section{Final Group and Experimental Integrity}
+\subsection{Final Group and Exclusion of Unmatched Pairs}
+
+It's important to clarify, the final results of the tracing and matching process. First of all, not all slices could be traced for the matching algorithm, but most of the data was successfully associated with the original exams. At the end of the direct and indirect matching steps, and before the complementary analysis with\acrshort{ms-ssim}, out of the 14,000 pairs provided by the\acrshort{ctmar} Dataset, 11,942 were traced to DeepLesion (including the 95 recovered by indirect matching) and 1,623 to UCLH Stroke EIT, totaling 13,565 pairs with associated metadata \Ref{tab:final-rastreio-msssim}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Dataset} & \textbf{Traced} & \textbf{Matched} & \textbf{Unmatched} \\
+        \hline
+        DeepLesion & 12,374 & 11,942 & 432 \\
+        UCLH Stroke & 1,626  & 1,623  & 3   \\
+        \hline
+        \textbf{Total}  & \textbf{14,000} & \textbf{13,565} & \textbf{435} \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption[Initial pair-matching screening]{Resultados do rastreio antes da análise complementar com\acrshort{ms-ssim}.}
+    \label{tab:final-rastreio-msssim}
+\end{table}
+
+In the evaluation step through\acrshort{ms-ssim}, among all pairs with a score below 0.90, only 3, previously associated with Deep Lesion, were rejected in the visual inspection \Ref{tab:final-tracking-post-msssim}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Dataset} & \textbf{Traced} & \textbf{Matched} & \textbf{Unmatched} \\
+        \hline
+        DeepLesion & 12,374 & 11,939 & 435 \\
+        UCLH Stroke    & 1,626  & 1,623  & 3   \\
+        \hline
+        \textbf{Total}  & \textbf{14,000} & \textbf{13,562} & \textbf{438} \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption[Pair matching after MS-SSIM review]{Pair matching results after the complementary MS-SSIM analysis.}
+    \label{tab:final-tracking-post-msssim}
+\end{table}
+
+Due to the fact that a significant amount of the data could be traced with high reliability, the remaining cases that could not be safely grouped were excluded from the training and validation process. In total, 438 pairs were removed for not having sufficient information to ensure safe grouping at the patient level. Among them, the 3 pairs rejected for being false positives in the evaluation step via\acrshort{ms-ssim}. All pairs removed from this study were visually inspected to confirm the absence of correspondence, ensuring that the exclusion was justified.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcc}
+        \hline
+        & \multicolumn{2}{c}{\textbf{Excluded}} \\
+        \cline{2-3}
+        & \textbf{Before} & \textbf{After} \\
+        \hline
+        Total    & 435 & 438 \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption[Excluded unmatched pairs before and after MS-SSIM review]{Unmatched pairs data that was excluded before and after the complementary MS-SSIM analysis.}
+    \label{tab:final-excluded}
+\end{table}
+
+Thus, out of the 14,000 pairs originally provided by the\acrshort{ctmar} Dataset, 13,562 were included in this work, while 438 were excluded to preserve the integrity of the experimental partitioning and minimize the risk of data leakage.
+
 \subsection{Automatic Approval and Manual Review Outcomes}
 
 The final curation outcome of every pair in the\acrshort{ctmar} dataset was recovered from the canonical manifest. Retained pairs were classified as manually reviewed when either source-level decision was \texttt{manual\_approved}. All remaining retained pairs were classified as automatically retained. Pairs not included in the final group were classified as excluded after verification. This final category comprises 435 pairs without a secure correspondence and three pairs rejected after the complementary\acrshort{ms-ssim} review.
@@ -89,6 +149,98 @@ The others 190 pairs fell into the low-reliability score range (0.98 -- 0.994) a
     \label{fig:score_distribution_bad}
 \end{figure}
 
+
+\subsection{Anatomical Distribution and Stratification}
+\label{subsec:results-anatomical-distribution}
+
+The anatomical proportion of 14,000 pairs in the\acrshort{ctmar} Dataset changed little after the screening and exclusion process of pairs with low reliability. Of the 438 removed cases, 435 were of the \textit{body} type and 3 of the \textit{head} type. The anatomical distribution of the pairs at the slice level included in the study is as follows:
+
+\begin{itemize}
+    \item \textbf{Body}: approximately 88.03\% ;
+    \item \textbf{Head}: approximately 11.97\% .
+\end{itemize}
+
+The anatomical distribution of the pairs at the patient level included is found below:
+\begin{itemize}
+    \item \textbf{Body}: approximately 95.9\% (258/269 patients);
+    \item \textbf{Head}: approximately 4.1\% (11/269 patients).
+\end{itemize}
+
+After partitioning, the train, validation, and test subsets had the following distribution:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccc}
+        \hline
+        \textbf{Split} & \textbf{Body} & \textbf{Head}  &\textbf{\% Body} & \textbf{\% Head} \\
+        \hline
+        Train & 180 & 7 & 96.3\% & 3.7\% \\
+        Val   & 39  & 2  & 95.1\% & 4.9\% \\
+        Test  & 39  & 2  & 95.1\% & 4.9\% \\
+        \hline
+        \textbf{Total} & \textbf{258} & \textbf{11} & \textbf{--} & \textbf{--} \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption[Patient-level anatomical distribution by split]{Patient-level anatomical distribution by split.}
+    \label{tab:final-split-anatomic}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Split} & \textbf{Patients} & \textbf{\% Total}\\
+        \hline
+        Train  & 187 & 69.52\%\\
+        Val    & 41 & 15.24\%\\
+        Test   & 41 & 15.24\%\\
+        \hline
+        \textbf{Total} & \textbf{269} & \textbf{100\%} \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption[Patient distribution by split]{Patient distribution by split.}
+    \label{tab:final-split-patient-subset}
+\end{table}
+\FloatBarrier
+
+Due to the large variation in the number of slices per patient, the anatomical distribution at the pair level is quite different from the distribution at the patient level (\ref{tab:final-split-pairs} and \ref{tab:final-split-pairs-subset}). The same occurs for the total pairs distribution. Thus, the proportion of $\sim$ 70/15/15 was maintained at the patient level, but at the pair level it does not follow exactly the same proportion.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcccccc}
+        \hline
+        \textbf{Split}  & \textbf{Body} & \textbf{Head}  & \textbf{\% Body} & \textbf{\% Head}\\
+        \hline
+        Train  & 8\,563 & 953 & 89.98\% & 10.02\%\\
+        Val    & 2\,147 & 385 & 84.79\% & 15.21\%\\
+        Test   & 1\,229 & 285 & 81.17\% & 18.83\%\\
+        \hline
+        \textbf{Total} & \textbf{11\,939} & \textbf{1\,623} & \textbf{--} & \textbf{--} \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption[Pair distribution by split and anatomical category]{Pair distribution by split and anatomical category.}
+    \label{tab:final-split-pairs}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Split} & \textbf{Pairs} & \textbf{\% Total}\\
+        \hline
+        Train  & 9\,516 & 70.17\%\\
+        Val    & 2\,532 & 18.67\%\\
+        Test   & 1\,514 & 11.16\%\\
+        \hline
+        \textbf{Total} & \textbf{13\,562} & \textbf{100\%} \\
+        \hline
+    \end{tabular}
+    \captionsetup{skip=2pt}
+    \caption[Pair distribution by split]{Pair distribution by split.}
+    \label{tab:final-split-pairs-subset}
+\end{table}
 
 \section{Model Training}
 \subsection{Training Convergence and Per-Run Checkpoint Selection}

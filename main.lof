@@ -6,20 +6,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Single Supervision U-Net architecture}}{19}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Dual Supervision U-Net architecture}}{20}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Artifact and distant ROI examples}}{26}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Single Supervision U-Net architecture}}{16}{figure.caption.5}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Dual Supervision U-Net architecture}}{17}{figure.caption.6}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Artifact and distant ROI examples}}{23}{figure.caption.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Visually approved low MS-SSIM pairs}}{35}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Visually rejected pairs}}{36}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1147}}{51}{figure.caption.55}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1274}}{52}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1280}}{53}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_11949}}{54}{figure.caption.58}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_2906}}{55}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_11956}}{56}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Least structurally changed external cases}}{66}{figure.5.22}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Most structurally changed external cases}}{67}{figure.5.23}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Visually approved low MS-SSIM pairs}}{34}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Visually rejected pairs}}{35}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1147}}{52}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1274}}{53}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Greatest Artifact-ROI $\Delta $SSIM: head\_1280}}{54}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_11949}}{55}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_2906}}{56}{figure.caption.59}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Least Artifact-ROI $\Delta $SSIM: body\_11956}}{57}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Least structurally changed external cases}}{67}{figure.5.22}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Most structurally changed external cases}}{68}{figure.5.23}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

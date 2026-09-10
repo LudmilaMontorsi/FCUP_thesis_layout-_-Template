@@ -14,8 +14,8 @@ The main dataset used in this work comes from the\acrfull{ctmar} \cite{hanedaAAP
 Where the folders in the \textit{body} category contained trunk\acrshort{ct}s, covering axial, thoracic, and abdominal slices. The data is organized into subfolders, each containing up to 1,000 samples. Only the following files were used for training and validation:
 
 \begin{enumerate}
-    \item \textbf{Metal-free images (reference):} Files contained in the \textit{Target} folder of size 512×512×1 pixels;
-    \item \textbf{Images with metal artifacts (corrupted):} Files contained in the \textit{Baseline} folder of size 512×512×1 pixels;
+    \item \textbf{Metal-Free images (reference):} Files contained in the \textit{Target} folder of size 512×512×1 pixels;
+    \item \textbf{Images with metal artifacts (corrupted):} Files contained in the \textit{Baseline} folder of size 512×512×1 pixels.
 \end{enumerate}
 
 All image files (.raw) in the dataset are presented in binary format without a header, with float32 precision in little-endian order. The images were already converted from linear attenuation coefficients (in mm$^{-1}$ units) to\Acrfull{hu}, using the normalization value of 0.02 mm$^{-1}$ for water.
@@ -25,14 +25,14 @@ There was not additional information about which exam each slice belonged to, if
 
 The data partitioning was stratified by patients, ensuring that slices from the same patient were not distributed across training, validation, and test sets. This approach prevents information leakage and ensures a more realistic assessment of the models generalization capability.
 
-%____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+%________________________________________________________________________________________________________________________________________________________________
 
 Due to the lack of detailed clinical metadata in the\acrshort{ctmar} dataset, an algorithmic screening of the slices to the original datasets (UCLH Stroke EIT and NIH DeepLesion Data) was necessary to enable the association of the provided metadata with the\acrshort{ctmar} slices. This process allowed for the identification of which exam and patient from DeepLesion/UCLH Stroke EIT each\acrshort{ctmar} image belonged to. This information was subsequently used to perform patient-level partitioning of the data into training, validation, and test sets, reducing the risk of data leakage between experimental sets.
 
 
 The correct separation of the data is particularly important in medical imaging studies based on\acrshort{dl}, once slices belonging to the same exam often present high anatomical similarity. Thus, the simultaneous presence of images from the same patient in training and testing can artificially inflate the model's performance and compromise the assessment of its generalization capability \cite{onerTrainingMachineLearning2020}. 
 
-The Deep Lesion images \cite{yanDeepLesionAutomatedMining2018} are stored in 16-bit PNG format, while the\acrshort{ctmar} images are provided in .raw format directly in Hounsfield units (HU). The UCLH Stroke EIT \cite{gorenMultifrequencyElectricalImpedance2018} provides the exams in DICOM format. Therefore, regardless of the original format, all images were converted to HU before comparison, ensuring uniformity across the different datasets.
+The Deep Lesion images \cite{yanDeepLesionAutomatedMining2018} are stored in 16-bit PNG format, while the\acrshort{ctmar} images are provided in .raw format directly in\acrshort{hu}. The UCLH Stroke EIT \cite{gorenMultifrequencyElectricalImpedance2018} provides the exams in DICOM format. Therefore, regardless of the original format, all images were converted to\acrshort{hu} before comparison, ensuring uniformity across the different datasets.
 
 After the conversion, all images was represented on the same intensity scale to allow direct comparison.
 
@@ -50,7 +50,7 @@ The matching was considerd valid only when the score of similarity exceeded a pr
 
 Scores below this threshold indicated potentially ambiguous matches and were subjected to manual visual inspection. Scores below approximately 0.98 indicated clearly incorrect matches and were automatically discarded without the need for manual review. Thus, all pairs with scores between 0.98 and 0.994 were visually analyzed to confirm the validity of the match. In order to avoid unnecessary exclusion of pairs, all pairs with a score below 0.98 for both datasets (DeepLesion and UCLH Stroke EIT) were subjected to visual inspection to ensure they were not erroneously discarded.
 
-For the 530 pairs that remained without approved matches after direct search in both source datasets, a complementary indirect matching step was applied. In this step, each unmatched\acrshort{ctmar} image was compared with already traced\acrshort{ctmar} images; the most similar neighbors were used to select candidate exams from DeepLesion and then all \textit{slices} of those exams were searched with $64\times64$ dimension \textit{fingerprints}. The 530 proposals were visually inspected: 95 matches were approved and incorporated into the consolidated manifest, while 435 remained without a safe match and were excluded.
+For the 530 pairs that remained without approved matches after direct search in both source datasets, a complementary indirect matching step was applied. In this step, each unmatched\acrshort{ctmar} image was compared with already traced\acrshort{ctmar} images. The most similar neighbors were used to select candidate exams from DeepLesion and then all \textit{slices} of those exams were searched with $64\times64$ dimension \textit{fingerprints}. The 530 proposals were visually inspected: 95 matches were approved and incorporated into the consolidated manifest, while 435 remained without a safe match and were excluded.
 
 Moreover, the algorithm was designed to automatically ignore images that had already been verified as correct matches, reducing redundancies and accelerating future reprocessing. Given the high number of images present in the datasets, the processing was parallelized and optimized through the use of vectorized matrix operations. When available, the algorithm utilizes\acrshort{gpu} acceleration to reduce execution time. The calculated fingerprints were also cached to avoid unnecessary recomputation in subsequent runs.
 
@@ -63,165 +63,17 @@ The literature demonstrates that the quality of the pairs used in supervised stu
 
 Moreover, the data utilization without any screening treatment would condition the entire project to an inherent data leakage from the dataset, compromising the evaluation of the models performance and the validity of the results. Thus, even if the screening method is not perfect, it represents a significant improvement over the total absence of screening, ensuring a more reliable basis.
 
-%________________________________________ revisado bibliograficamente ________________________________________
-
 Taking this into account, this step constituted an important quality control procedure for the experimental dataset and was fundamental to ensure an appropriate partitioning of the data used in this work.
 
-\subsection{Final Group and Exclusion of Unmatched Pairs}
+%___________________________________________________________________________________________________________________________
 
-Not all slices could be traced, but most of the data was successfully associated with the original exams. At the end of the direct and indirect matching steps, and before the complementary analysis with\acrshort{ms-ssim}, out of the 14,000 pairs provided by the\acrshort{ctmar} Dataset, 11,942 were traced to DeepLesion (including the 95 recovered by indirect matching) and 1,623 to UCLH Stroke EIT, totaling 13,565 pairs with associated metadata \Ref{tab:final-rastreio-msssim}.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \hline
-        \textbf{Dataset} & \textbf{Traced} & \textbf{Matched} & \textbf{Unmatched} \\
-        \hline
-        DeepLesion & 12,374 & 11,942 & 432 \\
-        UCLH Stroke & 1,626  & 1,623  & 3   \\
-        \hline
-        \textbf{Total}  & \textbf{14,000} & \textbf{13,565} & \textbf{435} \\
-        \hline
-    \end{tabular}
-    \caption[Initial pair-matching screening]{Resultados do rastreio antes da análise complementar com\acrshort{ms-ssim}.}
-    \label{tab:final-rastreio-msssim}
-\end{table}
-
-In the evaluation step through\acrshort{ms-ssim}, among all pairs with a score below 0.90, only 3, previously associated with Deep Lesion, were rejected in the visual inspection \Ref{tab:final-tracking-post-msssim}.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \hline
-        \textbf{Dataset} & \textbf{Traced} & \textbf{Matched} & \textbf{Unmatched} \\
-        \hline
-        DeepLesion & 12,374 & 11,939 & 435 \\
-        UCLH Stroke    & 1,626  & 1,623  & 3   \\
-        \hline
-        \textbf{Total}  & \textbf{14,000} & \textbf{13,562} & \textbf{438} \\
-        \hline
-    \end{tabular}
-    \caption[Pair matching after MS-SSIM review]{Pair matching results after the complementary MS-SSIM analysis.}
-    \label{tab:final-tracking-post-msssim}
-\end{table}
-
-Due to the fact that a significant amount of the data could be traced with high reliability, the remaining cases that could not be safely grouped were excluded from the training and validation process. In total, 438 pairs were removed for not having sufficient information to ensure safe grouping at the patient level. Among them, the 3 pairs rejected for being false positives in the evaluation step via\acrshort{ms-ssim}. All pairs removed from this study were visually inspected to confirm the absence of correspondence, ensuring that the exclusion was justified.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lcc}
-        \hline
-        & \multicolumn{2}{c}{\textbf{Excluded}} \\
-        \cline{2-3}
-        & \textbf{Before} & \textbf{After} \\
-        \hline
-        Total    & 435 & 438 \\
-        \hline
-    \end{tabular}
-    \caption[Excluded unmatched pairs before and after MS-SSIM review]{Unmatched pairs data that was excluded before and after the complementary MS-SSIM analysis.}
-    \label{tab:final-excluded}
-\end{table}
-
-Thus, out of the 14,000 pairs originally provided by the\acrshort{ctmar} Dataset, 13,562 were included in this work, while 438 were excluded to preserve the integrity of the experimental partitioning and minimize the risk of data leakage.
-
-%____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-
-\subsection{Anatomical Distribution and Stratification} 
-
-The anatomical proportion of 14,000 pairs in the\acrshort{ctmar} Dataset changed little after the screening and exclusion process of pairs with low reliability. Of the 438 removed cases, 435 were of the \textit{body} type and 3 of the \textit{head} type. The anatomical distribution of the pairs included in the study is as follows:
-
-\begin{itemize}
-    \item \textbf{Body}: approximately 88.03\% ;
-    \item \textbf{Head}: approximately 11.97\% .
-\end{itemize}
+\subsection{Anatomical Distribution and Stratification}
 
 Stratification was implemented within each subset (train/val/test) to maintain the anatomical proportion at the patient level, ensuring that the relative proportion between categories is preserved across all subsets. In this way, the anatomical balance is preserved, ensuring that the models are trained and evaluated on an appropriate representation of the anatomical diversity present in the original dataset.
- 
-At the patient level, the anatomical distribution is as follows:
-
-\begin{itemize}
-    \item \textbf{Body}: approximately 95.9\% (258/269 patients);
-    \item \textbf{Head}: approximately 4.1\% (11/269 patients).
-\end{itemize}
-
-After partitioning, the train, validation, and test subsets had the following distribution:
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lcccc}
-        \hline
-        \textbf{Split} & \textbf{Body} & \textbf{Head}  &\textbf{\% Body} & \textbf{\% Head} \\
-        \hline
-        Train & 180 & 7 & 96.3\% & 3.7\% \\
-        Val   & 39  & 2  & 95.1\% & 4.9\% \\
-        Test  & 39  & 2  & 95.1\% & 4.9\% \\
-        \hline
-        \textbf{Total} & \textbf{258} & \textbf{11} & \textbf{--} & \textbf{--} \\
-        \hline
-    \end{tabular}
-    \caption[Patient-level anatomical distribution by split]{Patient-level anatomical distribution by split.}
-    \label{tab:final-split-anatomic}
-\end{table}
 
 The patient-level partition was defined only once, with a fixed random seed, maintaining approximately 70\% of the patients for training, 15\% for validation, and 15\% for testing. This fixed partition ensured independent subsets for validation and testing and was kept unchanged across all experimental repetitions.
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \hline
-        \textbf{Split} & \textbf{Patients} & \textbf{\% Total}\\
-        \hline
-        Train  & 187 & 69.52\%\\
-        Val    & 41 & 15.24\%\\
-        Test   & 41 & 15.24\%\\
-        \hline
-        \textbf{Total} & \textbf{269} & \textbf{100\%} \\
-        \hline
-    \end{tabular}
-    \caption[Patient distribution by split]{Patient distribution by split.}
-    \label{tab:final-split-patient-subset}
-\end{table}
-
-Due to the large variation in the number of slices per patient, the anatomical distribution at the pair level is quite different from the distribution at the patient level (\ref{tab:final-split-pairs} and \ref{tab:final-split-pairs-subset}). The same occurs for the total pairs distribution. Thus, the proportion of $\sim$ 70/15/15 was maintained at the patient level, but at the pair level it does not follow exactly the same proportion.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lcccccc}
-        \hline
-        \textbf{Split}  & \textbf{Body} & \textbf{Head}  & \textbf{\% Body} & \textbf{\% Head}\\
-        \hline
-        Train  & 8\,563 & 953 & 89.98\% & 10.02\%\\
-        Val    & 2\,147 & 385 & 84.79\% & 15.21\%\\
-        Test   & 1\,229 & 285 & 81.17\% & 18.83\%\\
-        \hline
-        \textbf{Total} & \textbf{11\,939} & \textbf{1\,623} & \textbf{--} & \textbf{--} \\
-        \hline
-    \end{tabular}
-    \caption[Pair distribution by split and anatomical category]{Pair distribution by split and anatomical category.}
-    \label{tab:final-split-pairs}
-\end{table}
-
-
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lccc}
-        \hline
-        \textbf{Split} & \textbf{Pairs} & \textbf{\% Total}\\
-        \hline
-        Train  & 9\,516 & 70.17\%\\
-        Val    & 2\,532 & 18.67\%\\
-        Test   & 1\,514 & 11.16\%\\
-        \hline
-        \textbf{Total} & \textbf{13\,562} & \textbf{100\%} \\
-        \hline
-    \end{tabular}
-    \caption[Pair distribution by split]{Pair distribution by split.}
-    \label{tab:final-split-pairs-subset}
-\end{table}
-
-   
-
+The resulting anatomical and split distributions are presented in \autoref{subsec:results-anatomical-distribution}.
 \section{Pre-processing}
 
 \subsection{Integrity Verification}
@@ -230,10 +82,8 @@ All pairs were validated through an integrity report, which checks for the exist
 
 \subsection{Background Removal through Body Mask}
 
-The \acrshort{ct} images often contain large background areas that do not contribute to the task of metal artifact removal. That creates a class imbalance in the training data, where irrelevant background voxels dominate over the anatomical regions of interest. This imbalance, in turn, hinders the learning and deviates the model focus from clinically relevant structures \cite{taghanakiComboLossHandling2021, kesimalUseDeepLearning2026}. To address this challenge, a pre-processing step also based on\acrshort{dl} was implemented. A\acrshort{unet} was trained to segment the body tissue from the background, generating binary masks that were applied to the original images to isolate the regions of interest. This model was trained using $\sim$ 1,500 samples from the\acrshort{ctmar}, where the segmentation masks were automatically generated through a thresholding process. Additionally, a manual refinement was performed on the obtained masks to ensure the quality of the training data and consequently the effectiveness of the segmentation model.
-
+The\acrshort{ct} images often contain large background areas that do not contribute to the task of metal artifact removal. That creates a class imbalance in the training data, where irrelevant background voxels dominate over the anatomical regions of interest. This imbalance, in turn, hinders the learning and deviates the model focus from clinically relevant structures \cite{taghanakiComboLossHandling2021, kesimalUseDeepLearning2026}. To address this challenge, a pre-processing step also based on\acrshort{dl} was implemented. A\acrshort{unet} was trained to segment the body tissue from the background, generating binary masks that were applied to the original images to isolate the regions of interest. This model was trained using $\sim$ 1,500 samples from the\acrshort{ctmar}, where the segmentation masks were automatically generated through a thresholding process. Additionally, a fraction of the generated masks was subjected to iterative manual refinement to improve data quality and was used to retrain the model. This process was repeated until masks of sufficient quality for the intended purpose were obtained.
 This step was essential to reduce the influence of background artifacts and improve the quality of features extraction during training. 
-
 
 \subsection{Intensity Window and Normalization}
 
@@ -249,7 +99,6 @@ M_{diff}(i,j) = \begin{cases}
 \end{equation}
 \noindent where $I_{artifact}$ represents the image with artifacts, $I_{clean}$ the clean reference image, and $\tau$ is the normalized difference threshold. The value of this threshold was empirically defined to capture regions with perceptible differences while maintaining robustness to low-amplitude noise.
 
-
 \section{Compared Architectures}
 \subsection{U-Net Single Supervision}
 
@@ -260,7 +109,6 @@ The first model consist of an architecture based on\acrshort{unet} \cite{ronnebe
 \includegraphics[width=0.95\linewidth]{Figures/Generated/materials/unet-single-compact-132d4a1a.png}
 \caption[Single Supervision U-Net architecture]{Single supervision arquitecture diagram.}
 \end{figure}
-
 
 \subsection{U-Net Dual Supervision}
 
@@ -276,7 +124,6 @@ The two architectures were evaluated against each other to determine the impact 
 \caption[Dual Supervision U-Net architecture]{Dual supervision architecture diagram.}
 \end{figure}
 
-
 \section{Reproducible Training}
 
 \subsection{Settings, determinism and two-stage selection}
@@ -287,13 +134,11 @@ The AdamW optimizer was used, with an initial learning rate of $2{.}26 \times 10
 
 Only the best checkpoint per run was preserved, saved in \texttt{.keras} format with a filename encoding the architecture, epoch, and monitored metric; the training CSV explicitly flags the corresponding row with \texttt{best\_checkpoint=1}. Checkpoint selection relied exclusively on the validation metric chosen in advance:\texttt{val\_ssim\_hu} for the Single Model and \texttt{val\_img\_out\_ssim\_hu} for the reconstruction output of the Dual Model.
 
-Each of the six validation-selected checkpoints was evaluated once on the fixed internal test partition. The candidate advanced to external evaluation was selected from this frozen set by the highest mean patient-level $\Delta\acrshort{ssim}$ in the Artifact Zone. As a preservation safeguard, the corresponding changes in the Distant Zone were required to be substantially smaller than the correction observed in the Artifact Zone. No specific numeric limit was set in advance for how small this Distant-Zone change had to be, so this comparison is only descriptive and is not, by itself, a formal safety check. Global\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae}, together with the remaining region-of-interest metrics, were complementary and did not override this selection rule. Thus, the test partition was used only to compare the six already frozen candidates. It was not used to choose a new checkpoint, tune hyperparameters, alter weights, or trigger further training. Once selected, the architecture, seed, weights, and hyperparameters of the external-evaluation candidate were frozen.
+Each of the six validation-selected checkpoints was evaluated on the fixed internal test partition. The candidate advanced to external evaluation was selected from this frozen set by the highest mean patient-level $\Delta\acrshort{ssim}$ in the Artifact Zone. As a preservation safeguard, the corresponding changes in the Distant Zone were required to be substantially smaller than the correction observed in the Artifact Zone. No specific numeric limit was set in advance for how small this Distant-Zone change had to be, so this comparison is only descriptive and is not, by itself, a formal safety check. Global\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae}, together with the remaining region-of-interest metrics, were complementary and did not override this selection rule. Thus, the test partition was used only to compare the six already frozen candidates. It was not used to choose a new checkpoint, tune hyperparameters, alter weights, or trigger further training. Once selected, the architecture, seed, weights, and hyperparameters of the external-evaluation candidate were frozen.
 
 Run traceability was ensured through reproducibility snapshots in JSON format, preserved in \texttt{outputs/reproducibility/}. Six final internal evaluations were frozen, corresponding to the three random initializations (seeds 42, 1337, and 2024) of the Single Model and Dual Model. All snapshots were generated from commit \texttt{a950be7276a5585de45e8ae874c59c065a1985be}, on branch \texttt{projeto\_final}, with a clean working tree (\texttt{is\_dirty: false}).
 
-Each snapshot records the operating system, Python version, and relevant dependency versions. The execution environment used Python 3.11.9 on Windows 10, including TensorFlow 2.15.0, NumPy 1.26.4, Pandas 2.2.2, scikit-image 0.21.0, and Matplotlib 3.7.5. In addition, SHA-256 hashes were computed for the configuration files, the canonical pair manifest, the patient-level partition definition, the tensor generation metadata, and the environment requirements file.
-
-For each run, the snapshot preserves the path, size, and SHA-256 hash of the checkpoint, the full command used for evaluation on the test set, and the hashes of the output files, including aggregated and per-sample metrics. Thus, every value, table, or figure reported can be unambiguously traced to the code, environment, input data, checkpoint, and results that produced it.
+Each snapshot records the operating system, Python version, and relevant dependency versions. The execution environment used Python 3.11.9 on Windows 10, including TensorFlow 2.15.0, NumPy 1.26.4, Pandas 2.2.2, scikit-image 0.21.0, and Matplotlib 3.7.5. In addition, SHA-256 hashes were computed for the configuration files, the canonical pair manifest, the patient-level partition definition, the tensor generation metadata, and the environment requirements file. Thus, every value, table, or figure reported can be unambiguously traced to the code, environment, input data, checkpoint, and results that produced it.
 
 During the training, the following quantities were monitored:
 \begin{itemize}
@@ -328,7 +173,6 @@ During the training, the following quantities were monitored:
         \]
 \end{itemize}
 
-
 \section{Internal Evaluation}
 In the inference phase, the models were evaluated using quantitative metrics widely adopted in the literature, in comparison with the Ground Truth. The metrics used to evaluate reconstructed image quality were:
 
@@ -342,17 +186,12 @@ Recent studies have shown that\acrshort{ms-ssim} and\acrshort{ssim} capture imag
 
 The internal validation was conducted on the validation and test subsets, evaluating consistency, stability, and intra-dataset generalization capability.
 
-\subsection{Global Metrics}
-For global evaluation, the predicted and reference images are denormalized to the window $[-1000, 400]$\acrshort{hu}, corresponding to a range $\mathrm{MAX} = 1400$\acrshort{hu}. Additionally, the evaluation region is cropped to the smallest bounding box of the body mask before\acrshort{ssim} evaluation, eliminating scan windows composed exclusively of background — which would artificially score $\text{SSIM} = 1{,}0$ and inflate the global metric.  
-
-As an additional, purely descriptive check for any overall shift in average HU values, a Bland--Altman plot was made comparing the reconstruction with the clean reference. For each patient, the mean\acrshort{hu} of each image was calculated over all valid pixels of the body mask of the respective slices, weighted by the number of pixels in each slice. The graph plots the mean difference per patient ($\mathrm{Model}-\mathrm{GT}$) against the average of the two measurements, together with the average difference (bias) and the range within which most differences fall ($\bar d \pm 1{,}96\,SD_d$, the limits of agreement). This plot is descriptive only, one point per patient, and does not replace the accuracy metrics above or the region-based analysis below.
-
 \subsection{\acrshort{roi} Metrics}
 \label{subsec:methods-roi}
 
-The global evaluation does not distinguish the model's behavior in regions directly affected by artifacts from that in body regions distant from the implant. Therefore, each slice was divided into two complementary zones based on how much the artifact-corrupted input differs from the clean reference. Metal artifacts do not only cause strong local streaks near the implant; they are typically accompanied by a faint, almost uniform intensity shift across the whole slice, a side effect of beam hardening. To avoid mistaking this global shift for a local artifact, the pixel-wise difference between the clean reference and the input was first computed, and its typical (median) value over the body region was estimated and subtracted out, so that only deviations beyond this baseline shift were considered.
+As the global evaluation does not distinguish the model's behavior in regions directly affected by artifacts from that in body regions distant from the implant. Therefore, each slice was divided into two complementary zones based on how much the artifact-corrupted input differs from the clean reference. Metal artifacts do not only cause strong local streaks near the implant. They are typically accompanied by a faint, almost uniform intensity shift across the whole slice, a side effect of beam hardening. To avoid mistaking this global shift for a local artifact, the pixel-wise difference between the clean reference and the input was first computed, and its typical (median) value over the body region was estimated and subtracted out, so that only deviations beyond this baseline shift were considered.
 
-The Artifact Zone was then defined as the set of body pixels whose bias-corrected difference exceeds a fixed threshold, equivalent to about 42~HU on the normalized intensity scale used ($\tau=0{.}03$). Connected-component filtering (using SciPy's image-labeling utilities) was applied to discard components smaller than 20 pixels, which correspond to isolated CT quantum-noise pixels rather than genuine artifact streaks. No additional morphological dilation was applied, preserving the observed geometry of the \textit{streaks}. The Distant Zone was defined simply as the remaining body region outside the Artifact Zone. This zone quantifies changes outside the directly affected region. The clinical interpretation of anatomical preservation was reserved for external evaluation by readers.
+The Artifact Zone was then defined as the set of body pixels whose bias-corrected difference exceeds a fixed threshold, equivalent to about 42~HU on the normalized intensity scale used ($\tau=0{.}03$). Connected-component filtering (using SciPy's image-labeling utilities) was applied to discard components smaller than 20 pixels, which correspond to isolated CT quantum-noise pixels rather than genuine artifact streaks. No additional morphological dilation was applied, preserving the observed geometry of the \textit{streaks}. The Clean/Distant Zone was defined simply as the remaining body region outside the Artifact Zone. This zone quantifies changes outside the directly affected region.
 
 The \autoref{fig:final-roi-examples} illustrates the application of the two zones in representative slices of the dataset, covering different artifact patterns.
 
@@ -377,7 +216,7 @@ The \autoref{fig:final-roi-examples} illustrates the application of the two zone
 \label{fig:final-roi-examples}
 \endgroup
 
-In every evaluation context, the metrics were expressed as variations relative to the performance of the corrupted input. Let $\Omega$ be the evaluation domain, which can correspond to the global region defined above ($\Omega_{\mathrm{global}}$), the Artifact Zone ($\mathcal{R}_{\mathrm{art}}$), or the Distant Zone ($\mathcal{R}_{\mathrm{dist}}$), and let $\hat I$ be the reconstruction produced by the model. The variations were defined by:
+In every evaluation context, the metrics were expressed as variations relative to the performance of the corrupted input. Global metrics was calculated too, as a complementary resource. Then, let $\Omega$ be the evaluation domain, which can correspond to the global region defined in the next subsection ($\Omega_{\mathrm{ Global}}$), the Artifact Zone ($\mathcal{R}_{\mathrm{ Art}}$), or the Clean Zone ($\mathcal{R}_{\mathrm{ Clean}}$), and let $\hat I$ be the reconstruction produced by the model. The variations were defined by:
 \[
 \Delta\mathrm{PSNR}_{\Omega} = \mathrm{PSNR}(\hat I\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega}) - \mathrm{PSNR}(I_{\mathrm{in}}\mid_{\Omega},\, I_{\mathrm{ref}}\mid_{\Omega})
 \]
@@ -407,6 +246,11 @@ Thus, $\Delta\mathrm{PSNR}>0$ and $\Delta\mathrm{SSIM}>0$ indicate improvement o
     \label{tab:final-metrics-context}
 \end{table}
 %______________________________________________________________________________
+\subsection{Global Metrics}
+For global evaluation, the predicted and reference images are denormalized to the window $[-1000, 400]$\acrshort{hu}, corresponding to a range $\mathrm{MAX} = 1400$\acrshort{hu}. Additionally, the evaluation region is cropped to the smallest bounding box of the body mask before\acrshort{ssim} evaluation, eliminating scan windows composed exclusively of background — which would artificially score $\text{SSIM} = 1{,}0$ and inflate the global metric.  
+
+As an additional, purely descriptive check for any overall shift in average HU values, a Bland--Altman plot was made comparing the reconstruction with the clean reference. For each patient, the mean\acrshort{hu} of each image was calculated over all valid pixels of the body mask of the respective slices, weighted by the number of pixels in each slice. The graph plots the mean difference per patient ($\mathrm{Model}-\mathrm{GT}$) against the average of the two measurements, together with the average difference (bias) and the range within which most differences fall ($\bar d \pm 1{,}96\,SD_d$, the limits of agreement). This plot is descriptive only, one point per patient, and does not replace the accuracy metrics above or the region-based analysis above.
+
 \subsection{Statistical Analysis}
 Every statistical comparison in this work used the patient, not the slice, as the unit of analysis. A patient with more slices should not count more than a patient with fewer slices, so before any comparison, the per-slice metrics were averaged within each patient, giving one paired value per patient.
 
@@ -425,15 +269,15 @@ The external evaluation was realized in independent data provided by the\acrfull
 
 \subsection{Design and Cases}
 
-The study consists in putting doctors to analyse the images produced by the model compared to the original images with artifacts. Every doctor looks at the same set of cases, one at a time, and for each one says which of the two images they prefer on a few simple questions. The evaluation was designed to be blind, with the doctors not knowing which image is the original and which is the model output. It was used a set of 15 samples from diverse\acrshort{tcia} datasets, with 2 additional hidden samples repeated for consistency check and 2 training samples excluded from the analysis.
-
-The cases were chosen from a larger pool of 48\acrshort{tcia} exams, mostly from the chest (31 cases), with a smaller number from the abdomen (6), the pelvis (1), and other or mixed regions (10). Each case corresponds to a single axial CT slice. The 17 cases used (15 main and 2 training) were drawn from five\acrshort{tcia} collections: TCGA-LUAD \cite{albertinaCancerGenomeAtlas2016}, LIDC-IDRI \cite{armatoDataLIDCIDRI2015}, VAREPOP-APOLLO \cite{repopVAResearchPrecision2024}, CPTAC-SAR \cite{cptacClinicalProteomicTumorSarcomas2019}, and CPTAC-PDA \cite{cptacClinicalProteomicTumorPancreatic2018}. The 2 hidden repeats were shown again later in the same session, at least five cases after they first appeared, without telling the reader that it was a repeat.
-
-In accordance with the data-usage policy of each collection, this work acknowledges: the results shown here are in whole or in part based upon data generated by the TCGA Research Network (\url{http://cancergenome.nih.gov/}), used in the TCGA-LUAD cases; the National Cancer Institute and the Foundation for the National Institutes of Health, for their critical role in the creation of the free publicly available LIDC/IDRI Database used in the LIDC-IDRI cases; the Veterans Health Administration's Research for Precision Oncology Program and the Applied Proteogenomics Organizational Learning and Outcomes (APOLLO) Research Network, whose data were used in the VAREPOP-APOLLO cases; and the National Cancer Institute Clinical Proteomic Tumor Analysis Consortium (CPTAC), whose data were used in the CPTAC-SAR and CPTAC-PDA cases.
+The study consists in putting doctors to analyse the images produced by the model compared to the original images with artifacts. Every doctor looks at the same set of cases, one at a time, and for each one says which of the two images they prefer on a few simple questions. The evaluation was designed to be blind, with the doctors not knowing which image is the original and which is the model output. It was used a set of 15 samples from diverse\acrshort{tcia} datasets, with 2 additional hidden samples repeated for consistency check and 2 training samples excluded from the analysis. The 2 hidden repeats were shown again later in the same session, at least five cases after they first appeared, without telling the reader that it was a repeat.
 
 A web application was developed to present the images in a randomized and counterbalanced manner, allowing the doctors to zoom jointly the pair for better visualization, and enabling two anatomical windowing options (soft tissue and lung). Whether the original or the model output appeared on the left or the right was shuffled between doctors, but kept the same when a case was repeated, so that this choice could not by itself explain any preference.
 
 The link to the application was sent to the physicians invited by the researcher, rather than through an open call, with a target of seven participants and at least five required for the results to be useful. To take part, a doctor only had to confirm that they use\acrshort{ct} in their clinical practice at least once a month. No name, contact details, professional license number, or other proof of qualification was collected. The only information kept about each doctor is their country, medical specialty, how often they use CT, years of experience, previous experience with artifact reduction, and monitor type — none of which can identify a specific person.
+
+The cases used in this evaluation were chosen from a larger pool of 48\acrshort{tcia} exams, mostly from the chest (31 cases), with a smaller number from the abdomen (6), the pelvis (1), and other or mixed regions (10). Each case corresponds to a single axial CT slice. The 17 cases used (15 main and 2 training) were drawn from five\acrshort{tcia} collections: TCGA-LUAD \cite{albertinaCancerGenomeAtlas2016}, LIDC-IDRI \cite{armatoDataLIDCIDRI2015}, VAREPOP-APOLLO \cite{repopVAResearchPrecision2024}, CPTAC-SAR \cite{cptacClinicalProteomicTumorSarcomas2019}, and CPTAC-PDA \cite{cptacClinicalProteomicTumorPancreatic2018}. 
+
+In accordance with the data-usage policy of each collection, this work acknowledges: the results shown here are in whole or in part based upon data generated by the TCGA Research Network (\url{http://cancergenome.nih.gov/}), used in the TCGA-LUAD cases; the National Cancer Institute and the Foundation for the National Institutes of Health, for their critical role in the creation of the free publicly available LIDC/IDRI Database used in the LIDC-IDRI cases; the Veterans Health Administration's Research for Precision Oncology Program and the Applied Proteogenomics Organizational Learning and Outcomes (APOLLO) Research Network, whose data were used in the VAREPOP-APOLLO cases; and the National Cancer Institute Clinical Proteomic Tumor Analysis Consortium (CPTAC), whose data were used in the CPTAC-SAR and CPTAC-PDA cases.
 
 \subsection{Quantitative Characterization of Input--Output}
 

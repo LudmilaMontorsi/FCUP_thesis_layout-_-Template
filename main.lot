@@ -6,51 +6,51 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Initial pair-matching screening}}{14}{table.caption.5}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Pair matching after MS-SSIM review}}{15}{table.caption.6}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Excluded unmatched pairs before and after MS-SSIM review}}{15}{table.caption.7}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Patient-level anatomical distribution by split}}{16}{table.caption.8}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Patient distribution by split}}{16}{table.caption.9}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Pair distribution by split and anatomical category}}{17}{table.caption.10}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Pair distribution by split}}{17}{table.caption.11}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Evaluation metrics by context}}{26}{table.caption.17}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Evaluation metrics by context}}{23}{table.caption.10}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces ROI $\Delta $SSIM}}{43}{table.caption.35}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces ROI $\Delta $PSNR}}{43}{table.caption.36}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces ROI MAE reduction}}{43}{table.caption.37}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Per-slice global SSIM on the test set}}{47}{table.caption.45}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Per-slice global\acrshort {psnr} on the test set}}{47}{table.caption.46}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Per-slice global MAE on the test set}}{47}{table.caption.47}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Patient-level global $\Delta $SSIM}}{48}{table.caption.48}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Patient-level global $\Delta $PSNR}}{48}{table.caption.49}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Patient-level global $\Delta $MAE}}{48}{table.caption.50}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Artifact-ROI SSIM improvement}}{57}{table.caption.61}%
-\contentsline {table}{\numberline {5.11}{\ignorespaces Artifact-ROI PSNR improvement}}{57}{table.caption.62}%
-\contentsline {table}{\numberline {5.12}{\ignorespaces Artifact-ROI MAE reduction}}{57}{table.caption.63}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Paired Artifact-ROI improvement comparison}}{58}{table.caption.64}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces Distant-ROI SSIM preservation magnitude}}{58}{table.caption.65}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces Distant-ROI PSNR preservation magnitude}}{58}{table.caption.66}%
-\contentsline {table}{\numberline {5.16}{\ignorespaces Distant-ROI MAE preservation magnitude}}{59}{table.caption.67}%
-\contentsline {table}{\numberline {5.17}{\ignorespaces Paired Distant-ROI preservation advantage}}{59}{table.caption.68}%
-\contentsline {table}{\numberline {5.18}{\ignorespaces SSIM improvement over corrupted input}}{60}{table.caption.69}%
-\contentsline {table}{\numberline {5.19}{\ignorespaces PSNR improvement over corrupted input}}{60}{table.caption.70}%
-\contentsline {table}{\numberline {5.20}{\ignorespaces MAE reduction over corrupted input}}{61}{table.caption.71}%
-\contentsline {table}{\numberline {5.21}{\ignorespaces Paired Single vs Dual Model comparison}}{62}{table.caption.72}%
-\contentsline {table}{\numberline {5.22}{\ignorespaces Recruitment and completion status}}{63}{table.caption.74}%
-\contentsline {table}{\numberline {5.23}{\ignorespaces Reader profile characteristics}}{63}{table.caption.75}%
-\contentsline {table}{\numberline {5.24}{\ignorespaces Reader specialty distribution}}{64}{table.caption.76}%
-\contentsline {table}{\numberline {5.25}{\ignorespaces External input-output global metrics}}{64}{table.caption.77}%
-\contentsline {table}{\numberline {5.26}{\ignorespaces Illustrative external cases by input-output SSIM}}{65}{table.caption.78}%
-\contentsline {table}{\numberline {5.27}{\ignorespaces Primary outcome: anatomical preservation preference}}{68}{table.caption.85}%
-\contentsline {table}{\numberline {5.28}{\ignorespaces Primary outcome: mixed-effects model estimate}}{68}{table.caption.86}%
-\contentsline {table}{\numberline {5.29}{\ignorespaces Secondary outcome: artifact intensity}}{68}{table.caption.87}%
-\contentsline {table}{\numberline {5.30}{\ignorespaces Secondary outcome: distortion in other regions}}{68}{table.caption.88}%
-\contentsline {table}{\numberline {5.31}{\ignorespaces Secondary outcome: clinical preference}}{68}{table.caption.89}%
-\contentsline {table}{\numberline {5.32}{\ignorespaces Secondary outcome: complementary utility}}{69}{table.caption.90}%
-\contentsline {table}{\numberline {5.33}{\ignorespaces Intra-reader reliability}}{69}{table.caption.91}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Initial pair-matching screening}}{29}{table.caption.11}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Pair matching after MS-SSIM review}}{29}{table.caption.12}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Excluded unmatched pairs before and after MS-SSIM review}}{30}{table.caption.13}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Patient-level anatomical distribution by split}}{38}{table.caption.22}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Patient distribution by split}}{38}{table.caption.23}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Pair distribution by split and anatomical category}}{38}{table.caption.24}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Pair distribution by split}}{39}{table.caption.25}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces ROI $\Delta $SSIM}}{43}{table.caption.35}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces ROI $\Delta $PSNR}}{43}{table.caption.36}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces ROI MAE reduction}}{44}{table.caption.37}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces Per-slice global SSIM on the test set}}{47}{table.caption.45}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Per-slice global\acrshort {psnr} on the test set}}{48}{table.caption.46}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Per-slice global MAE on the test set}}{48}{table.caption.47}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Patient-level global $\Delta $SSIM}}{48}{table.caption.48}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Patient-level global $\Delta $PSNR}}{48}{table.caption.49}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Patient-level global $\Delta $MAE}}{49}{table.caption.50}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Artifact-ROI SSIM improvement}}{58}{table.caption.61}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Artifact-ROI PSNR improvement}}{58}{table.caption.62}%
+\contentsline {table}{\numberline {5.19}{\ignorespaces Artifact-ROI MAE reduction}}{58}{table.caption.63}%
+\contentsline {table}{\numberline {5.20}{\ignorespaces Paired Artifact-ROI improvement comparison}}{59}{table.caption.64}%
+\contentsline {table}{\numberline {5.21}{\ignorespaces Distant-ROI SSIM preservation magnitude}}{59}{table.caption.65}%
+\contentsline {table}{\numberline {5.22}{\ignorespaces Distant-ROI PSNR preservation magnitude}}{59}{table.caption.66}%
+\contentsline {table}{\numberline {5.23}{\ignorespaces Distant-ROI MAE preservation magnitude}}{60}{table.caption.67}%
+\contentsline {table}{\numberline {5.24}{\ignorespaces Paired Distant-ROI preservation advantage}}{60}{table.caption.68}%
+\contentsline {table}{\numberline {5.25}{\ignorespaces SSIM improvement over corrupted input}}{61}{table.caption.69}%
+\contentsline {table}{\numberline {5.26}{\ignorespaces PSNR improvement over corrupted input}}{61}{table.caption.70}%
+\contentsline {table}{\numberline {5.27}{\ignorespaces MAE reduction over corrupted input}}{62}{table.caption.71}%
+\contentsline {table}{\numberline {5.28}{\ignorespaces Paired Single vs Dual Model comparison}}{63}{table.caption.72}%
+\contentsline {table}{\numberline {5.29}{\ignorespaces Recruitment and completion status}}{64}{table.caption.74}%
+\contentsline {table}{\numberline {5.30}{\ignorespaces Reader profile characteristics}}{64}{table.caption.75}%
+\contentsline {table}{\numberline {5.31}{\ignorespaces Reader specialty distribution}}{65}{table.caption.76}%
+\contentsline {table}{\numberline {5.32}{\ignorespaces External input-output global metrics}}{65}{table.caption.77}%
+\contentsline {table}{\numberline {5.33}{\ignorespaces Illustrative external cases by input-output SSIM}}{66}{table.caption.78}%
+\contentsline {table}{\numberline {5.34}{\ignorespaces Primary outcome: anatomical preservation preference}}{69}{table.caption.85}%
+\contentsline {table}{\numberline {5.35}{\ignorespaces Primary outcome: mixed-effects model estimate}}{69}{table.caption.86}%
+\contentsline {table}{\numberline {5.36}{\ignorespaces Secondary outcome: artifact intensity}}{69}{table.caption.87}%
+\contentsline {table}{\numberline {5.37}{\ignorespaces Secondary outcome: distortion in other regions}}{69}{table.caption.88}%
+\contentsline {table}{\numberline {5.38}{\ignorespaces Secondary outcome: clinical preference}}{69}{table.caption.89}%
+\contentsline {table}{\numberline {5.39}{\ignorespaces Secondary outcome: complementary utility}}{70}{table.caption.90}%
+\contentsline {table}{\numberline {5.40}{\ignorespaces Intra-reader reliability}}{70}{table.caption.91}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Best validation SSIM by model and seed}}{93}{table.caption.120}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Validation PSNR at best validation SSIM}}{93}{table.caption.121}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces Validation MAE at best validation SSIM}}{93}{table.caption.122}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Best validation SSIM by model and seed}}{94}{table.caption.120}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Validation PSNR at best validation SSIM}}{94}{table.caption.121}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Validation MAE at best validation SSIM}}{94}{table.caption.122}%
