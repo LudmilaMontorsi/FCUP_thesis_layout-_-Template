@@ -4,7 +4,7 @@
 \section{Training Convergence Across Runs}
 \label{sec:appendix-training-details}
 
-This section provides the complete convergence documentation for the six deterministic training runs. Each run's checkpoint was selected exclusively from validation reconstruction \acrshort{ssim}, as specified in Materials and Methods. The six frozen checkpoints were subsequently compared once on the internal test partition to select the external-evaluation candidate by Artifact-ROI $\Delta$\acrshort{ssim}, with a descriptive Distant-Zone preservation safeguard. The figures and tables below document per-run checkpoint selection and did not, by themselves, determine the final external-evaluation candidate.
+This section provides the complete convergence documentation for the six deterministic training runs. The figures and tables below document per-run checkpoint selection and did not, by themselves, determine the final external-evaluation candidate.
 
 \FloatBarrier
 \input{Chapters/Final/Generated/Training}
@@ -21,11 +21,11 @@ This appendix presents complementary quantitative checks for the internal evalua
     \centering
     \includegraphics[width=0.82\linewidth]{Figures/Generated/evaluation_final/Appendix/scatter_pixel_hu_balanced.pdf}
     \captionsetup{skip=1.5pt}
-    \graphiccaption[Pixel-level HU agreement]{Pixel-level HU agreement between the Single Model reconstruction and the clean reference. The hexbin uses a fixed equal-patient stratified sample of 100,000 valid body-mask pixels from 41 test-set patients. It is a descriptive calibration diagnostic; no hypothesis test or confidence interval is derived from the sampled pixels.}
+    \graphiccaption[Pixel-level HU agreement]{Pixel-level HU agreement between the Single Model reconstruction and the clean reference. The hexbin uses a fixed equal-patient stratified sample of 100,000 valid body-mask pixels from 41 test-set patients. It is a descriptive calibration diagnostic. No hypothesis test or confidence interval is derived from the sampled pixels.}
     \label{fig:appendix-pixel-hu-agreement}
 \end{figure}
 
-The following plots complement the global-delta histograms presented in the main text. Each point represents one test slice; accordingly, these plots were not used for statistical inference.
+The following plots complement the global-delta histograms presented in the main text. Each point represents one test slice, so these plots were not used for statistical inference.
 
 \begingroup
 \setlength{\intextsep}{4pt}
@@ -43,7 +43,7 @@ The following plots complement the global-delta histograms presented in the main
 \label{fig:appendix-global-input-model}
 \endgroup
 
-As an exploratory analysis of heterogeneity, \autoref{fig:appendix-artifact-load-association} relates artifact burden to global improvement. Each point represents the mean across all slices of one patient ($n=41$), giving each patient equal weight. Artifact burden was defined as the mean artifact-area/body-area fraction per slice; deltas correspond to the reconstruction metric minus the input metric, both calculated against the clean reference. Two-sided Spearman correlations were calculated with paired BCa bootstrap 95\% confidence intervals (10\,000 resamples; seed 1337), and the trend curve is a LOWESS estimate from \textit{Statsmodels}. This analysis was not part of the primary hypothesis-testing family and did not receive Holm adjustment. A positive association was observed between artifact burden and improvement: $\rho=0{,}479$ for $\Delta$PSNR (95\% CI [0{,}156; 0{,}717], $p=0{,}00154$) and $\rho=0{,}569$ for $\Delta$SSIM (95\% CI [0{,}225; 0{,}794], $p=0{,}000104$).
+As an exploratory analysis of heterogeneity, \autoref{fig:appendix-artifact-load-association} relates artifact burden to global improvement. Each point represents the mean across all slices of one patient ($n=41$), giving each patient equal weight. Artifact burden was defined as the mean artifact-area/body-area fraction per slice. Deltas correspond to the reconstruction metric minus the input metric, both calculated against the clean reference. Two-sided Spearman correlations were calculated with paired BCa bootstrap 95\% confidence intervals (10\,000 resamples; seed 1337), and the trend curve is a LOWESS estimate from \textit{Statsmodels}. This analysis was not part of the primary hypothesis-testing family and did not receive Holm adjustment. A positive association was observed between artifact burden and improvement: $\rho=0{.}479$ for $\Delta$PSNR (95\% CI [0{.}156; 0{.}717], $p=0{.}00154$) and $\rho=0{.}569$ for $\Delta$SSIM (95\% CI [0{.}225; 0{.}794], $p=0{.}000104$).
 
 \begingroup
 \setlength{\intextsep}{4pt}
@@ -57,7 +57,7 @@ As an exploratory analysis of heterogeneity, \autoref{fig:appendix-artifact-load
     \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/scatter_patient_delta_psnr_vs_artifact_fraction_singlehead-033-0.9511-ssim_hu.pdf}
 \end{figure}
 \captionsetup{skip=1.5pt}
-\graphiccaptionof[Patient-level artifact load and improvement]{Exploratory patient-level association between mean artifact fraction and global improvement for the Single Model, seed 2024: $\Delta$SSIM (top) and $\Delta$PSNR (bottom). Each point is one patient's mean across its test-set slices ($n=41$). Lines show Statsmodels LOWESS trends; annotations report two-sided Spearman correlations and paired BCa bootstrap 95\% confidence intervals.}
+\graphiccaptionof[Patient-level artifact load and improvement]{Exploratory patient-level association between mean artifact fraction and global improvement for the Single Model, seed 2024: $\Delta$SSIM (top) and $\Delta$PSNR (bottom). Each point is one patient's mean across its test-set slices ($n=41$). Lines show Statsmodels LOWESS trends. Annotations report two-sided Spearman correlations and paired BCa bootstrap 95\% confidence intervals.}
 \label{fig:appendix-artifact-load-association}
 \endgroup
 
@@ -66,23 +66,23 @@ As an exploratory analysis of heterogeneity, \autoref{fig:appendix-artifact-load
 
 As a complementary characterization of lower-performing slices, two slice-level groups were identified for the Single Model, seed 2024, in the test set: first by the bottom fifth percentile of global $\Delta$SSIM and then, complementarily, by the bottom fifth percentile of global $\Delta$PSNR. This slice-level classification is purely descriptive: it does not constitute a hypothesis test or reproduce the patient-level candidate-selection analysis, whose primary endpoint was Artifact-ROI $\Delta$SSIM, and it serves only to quantitatively situate the slice groups whose individual visual examples are discussed in \autoref{sec:residual-maps-extremes}.
 
-Using the global $\Delta$SSIM criterion ($N=74$/1478 slices; threshold $=0{,}0146$), mean $\Delta$PSNR improvement remained positive ($1{,}88$~dB), but mean $\Delta$SSIM improvement was slightly negative ($-0{,}0019$), with a mean Artifact-Zone \acrshort{mae} reduction of $65{,}2$~HU (\autoref{fig:appendix-worst-cases-ssim}). Thus, the most unfavorable subset according to this descriptive global criterion included a small mean \acrshort{ssim} degradation, even though most remaining slices continued to improve substantially.
+Using the global $\Delta$SSIM criterion ($N=74$/1478 slices; threshold $=0{.}0146$), mean $\Delta$PSNR improvement remained positive ($1{.}88$~dB), but mean $\Delta$SSIM improvement was slightly negative ($-0{.}0019$). The mean Artifact-Zone\acrshort{mae} reduction was $65{.}2$~HU (\autoref{fig:appendix-worst-cases-ssim}). Thus, the most unfavorable subset according to this descriptive global criterion included a small mean\acrshort{ssim} degradation, even though most remaining slices continued to improve substantially.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/worst_cases_ssim_distribution.pdf}
     \captionsetup{skip=1.5pt}
-    \graphiccaption[Worst-case slices by global $\Delta$SSIM]{Bottom 5th-percentile slices by global $\Delta$SSIM for the Single Model, seed 2024, test split ($N=74$/1478, threshold $=0.0146$, highlighted in red). Descriptive; no inferential test is derived from this subset.}
+    \graphiccaption[Worst-case slices by global $\Delta$SSIM]{Bottom 5th-percentile slices by global $\Delta$SSIM for the Single Model, seed 2024, test split ($N=74$/1478, threshold $=0.0146$, highlighted in red). Descriptive. No inferential test is derived from this subset.}
     \label{fig:appendix-worst-cases-ssim}
 \end{figure}
 
-Using the complementary $\Delta$PSNR criterion ($N=74$/1478 slices; threshold $=2{,}59$~dB), this group was not identical to that defined by $\Delta$SSIM: mean improvement remained positive for all three metrics (mean $\Delta$PSNR $=1{,}23$~dB; mean $\Delta$SSIM $=0{,}0071$; mean Artifact-Zone $\Delta$MAE $=62{,}0$~HU), although with substantial dispersion and some individual cases of degradation relative to the input, visible in the left tail of \autoref{fig:appendix-worst-cases-psnr}.
+Using the complementary $\Delta$PSNR criterion ($N=74$/1478 slices; threshold $=2{.}59$~dB), this group was not identical to that defined by $\Delta$SSIM. Mean improvement remained positive for all three metrics (mean $\Delta$PSNR $=1{.}23$~dB, mean $\Delta$SSIM $=0{.}0071$, mean Artifact-Zone $\Delta$MAE $=62{.}0$~HU), although with substantial dispersion and some individual cases of degradation relative to the input, visible in the left tail of \autoref{fig:appendix-worst-cases-psnr}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/worst_cases_delta_psnr_distribution.pdf}
     \captionsetup{skip=1.5pt}
-    \graphiccaption[Worst-case slices by global $\Delta$PSNR]{Bottom 5th-percentile slices by global $\Delta$PSNR for the Single Model, seed 2024, test split ($N=74$/1478, threshold $=2.59$~dB, highlighted in red). Descriptive; no inferential test is derived from this subset.}
+    \graphiccaption[Worst-case slices by global $\Delta$PSNR]{Bottom 5th-percentile slices by global $\Delta$PSNR for the Single Model, seed 2024, test split ($N=74$/1478, threshold $=2.59$~dB, highlighted in red). Descriptive. No inferential test is derived from this subset.}
     \label{fig:appendix-worst-cases-psnr}
 \end{figure}
 
@@ -92,7 +92,7 @@ Finally, \autoref{fig:appendix-worst-cases} jointly relates slice-level $\Delta$
     \centering
     \includegraphics[width=0.84\linewidth]{Figures/Generated/evaluation_final/Appendix/worst_cases_scatter_delta_psnr_vs_delta_ssim.pdf}
     \captionsetup{skip=1.5pt}
-    \graphiccaption[Worst-case slices: joint $\Delta$PSNR vs. $\Delta$SSIM]{Bottom 5th-percentile slices by global $\Delta$PSNR for the Single Model, seed 2024, test split ($N=74$/1478, threshold $=2.59$~dB, highlighted in red). $\Delta$PSNR vs. $\Delta$SSIM scatter. Descriptive; no inferential test is derived from this subset.}
+    \graphiccaption[Worst-case slices: joint $\Delta$PSNR vs. $\Delta$SSIM]{Bottom 5th-percentile slices by global $\Delta$PSNR for the Single Model, seed 2024, test split ($N=74$/1478, threshold $=2.59$~dB, highlighted in red). $\Delta$PSNR vs. $\Delta$SSIM scatter. Descriptive. No inferential test is derived from this subset.}
     \label{fig:appendix-worst-cases}
 \end{figure}
 
@@ -101,5 +101,5 @@ Finally, \autoref{fig:appendix-worst-cases} jointly relates slice-level $\Delta$
 
 Runtime performance was quantified for the checkpoint of the model selected for external evaluation, on the internal test partition ($n=1478$ slices). The benchmark was run in the environment described in Materials and Methods, using an NVIDIA RTX A4500 GPU, batch size one, and five warm-up passes. For each slice, latency was measured from the model call to explicit synchronization of the output with the CPU. Consequently, this measurement includes inference execution and output synchronization, but excludes image loading and external preprocessing or result-presentation stages.
 
-Mean latency was $24{,}13\,\mathrm{ms}$ per slice (standard deviation: $0{,}69\,\mathrm{ms}$; median: $24{,}30\,\mathrm{ms}$), corresponding to a throughput of $41{,}4$ slices per second. The 95th and 99th percentiles were $24{,}66\,\mathrm{ms}$ and $27{,}53\,\mathrm{ms}$ per slice, respectively. The proximity of the mean, median, and 95th percentile indicates latency stability for most runs; the complete distribution and slice-level variation are shown in \autoref{fig:benchmark-latency}. These values characterize the experimental configuration used and do not, by themselves, represent the response time of a complete clinical workflow or of another computational environment.
+Mean latency was $24{.}13\,\mathrm{ms}$ per slice (standard deviation: $0{.}69\,\mathrm{ms}$, median: $24{.}30\,\mathrm{ms}$), corresponding to a throughput of $41{.}4$ slices per second. The 95th and 99th percentiles were $24{.}66\,\mathrm{ms}$ and $27{.}53\,\mathrm{ms}$ per slice, respectively. The proximity of the mean, median, and 95th percentile indicates latency stability for most runs. The complete distribution and slice-level variation are shown in \autoref{fig:benchmark-latency}. These values characterize the experimental configuration used and do not, by themselves, represent the response time of a complete clinical workflow or of another computational environment.
 \input{Chapters/Final/Generated/Benchmark}

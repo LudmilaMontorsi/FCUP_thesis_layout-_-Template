@@ -4,7 +4,7 @@
 \section{Final Group and Experimental Integrity}
 \subsection{Final Group and Exclusion of Unmatched Pairs}
 
-It's important to clarify, the final results of the tracing and matching process. First of all, not all slices could be traced for the matching algorithm, but most of the data was successfully associated with the original exams. At the end of the direct and indirect matching steps, and before the complementary analysis with\acrshort{ms-ssim}, out of the 14,000 pairs provided by the\acrshort{ctmar} Dataset, 11,942 were traced to DeepLesion (including the 95 recovered by indirect matching) and 1,623 to UCLH Stroke EIT, totaling 13,565 pairs with associated metadata \Ref{tab:final-rastreio-msssim}.
+It is important to clarify the final results of the tracing and matching process. First of all, not all slices could be traced for the matching algorithm, but most of the data was successfully associated with the original exams. At the end of the direct and indirect matching steps, and before the complementary analysis with\acrshort{ms-ssim}, 11,942 of the 14,000 pairs provided by the\acrshort{ctmar} Dataset were traced to DeepLesion (including the 95 recovered by indirect matching), and 1,623 were traced to UCLH Stroke EIT. This totaled 13,565 pairs with associated metadata \Ref{tab:final-rastreio-msssim}.
 
 \begin{table}[H]
     \centering
@@ -19,9 +19,15 @@ It's important to clarify, the final results of the tracing and matching process
         \hline
     \end{tabular}
     \captionsetup{skip=2pt}
-    \caption[Initial pair-matching screening]{Resultados do rastreio antes da análise complementar com\acrshort{ms-ssim}.}
+    \caption[Initial pair-matching screening]{Screening results before the complementary\acrshort{ms-ssim} analysis.}
     \label{tab:final-rastreio-msssim}
 \end{table}
+\subsection{Reported and Recovered Patient Counts}
+\label{sec:reported-recovered-patient-counts}
+
+The challenge paper reports that 12,227 body images were derived from approximately 1,230 DeepLesion patients and that 1,773 head images were derived from 10 UCLH Stroke EIT patients \cite{hanedaAAPMCTMetal2025}. The official downloaded package used in this study instead labels its 14,000 cases as 12,374 \texttt{body} and 1,626 \texttt{head}. Its accompanying \texttt{README\_training\_data.txt} identifies these labels as the archive-folder organisation \cite{AAPMCTMARBenchmarkTool}. The difference is exactly 147 cases in each stratum while preserving the total of 14,000. It is therefore compatible with some head-anatomy images having been packaged under \texttt{body}. This possibility is recorded as a dataset-level labelling discrepancy and is not treated as a reclassification made by this study.
+
+The image-based traceability procedure recovered 258 distinct DeepLesion identifiers among the 11,939 retained \texttt{body} pairs and 11 Stroke EIT identifiers among the 1,623 retained \texttt{head} pairs, for 269 recovered source-patient identities. These are recovered identities, rather than an estimate of the complete source cohort. In particular, the discrepancy from the approximately 1,230 DeepLesion patients cited by the authors does not demonstrate that the remaining patients are absent: unmatched slices, conservative rejection of ambiguous candidates, source-image transformations, and the documented discrepancy between archive labels and the publication can all limit recovery. The published patient count was never used to accept a candidate or to change the patient-level partition.
 
 In the evaluation step through\acrshort{ms-ssim}, among all pairs with a score below 0.90, only 3, previously associated with Deep Lesion, were rejected in the visual inspection \Ref{tab:final-tracking-post-msssim}.
 
@@ -42,7 +48,7 @@ In the evaluation step through\acrshort{ms-ssim}, among all pairs with a score b
     \label{tab:final-tracking-post-msssim}
 \end{table}
 
-Due to the fact that a significant amount of the data could be traced with high reliability, the remaining cases that could not be safely grouped were excluded from the training and validation process. In total, 438 pairs were removed for not having sufficient information to ensure safe grouping at the patient level. Among them, the 3 pairs rejected for being false positives in the evaluation step via\acrshort{ms-ssim}. All pairs removed from this study were visually inspected to confirm the absence of correspondence, ensuring that the exclusion was justified.
+Due to the fact that a significant amount of the data could be traced with high reliability, the remaining cases that could not be safely grouped were excluded from the training and validation process. In total, 438 pairs were removed for not having sufficient information to ensure safe grouping at the patient level. Among them were the 3 pairs rejected for being false positives in the evaluation step via\acrshort{ms-ssim}. All pairs removed from this study were visually inspected to confirm the absence of correspondence, ensuring that the exclusion was justified.
 
 \begin{table}[H]
     \centering
@@ -64,12 +70,12 @@ Thus, out of the 14,000 pairs originally provided by the\acrshort{ctmar} Dataset
 
 \subsection{Automatic Approval and Manual Review Outcomes}
 
-The final curation outcome of every pair in the\acrshort{ctmar} dataset was recovered from the canonical manifest. Retained pairs were classified as manually reviewed when either source-level decision was \texttt{manual\_approved}. All remaining retained pairs were classified as automatically retained. Pairs not included in the final group were classified as excluded after verification. This final category comprises 435 pairs without a secure correspondence and three pairs rejected after the complementary\acrshort{ms-ssim} review.
+The final curation outcome of every pair in the\acrshort{ctmar} dataset was recovered from the canonical manifest. Retained pairs were classified as manually reviewed when either source-level decision was \texttt{manual\_approved}. All remaining retained pairs were classified as automatically retained. Pairs not included in the final group were classified as excluded after verification, matching the 438 pairs already identified above.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.80\textwidth]{Figures/Generated/final_cohort_curation_overview.pdf}
     \captionsetup{skip=2pt}
-    \graphiccaption[Final group curation]{Final curation outcomes for all 14,000\acrshort{ctmar} pairs. The upper panel reports the global distribution of outcomes; the lower panel reports the percentage within each anatomical subset. The manifest labels distinguish \textit{Body} and \textit{Head} subsets, rather than the precise anatomical location of a metallic implant.}
+    \graphiccaption[Final group curation]{Final curation outcomes for all 14,000\acrshort{ctmar} pairs. The upper panel reports the global distribution of outcomes. The lower panel reports the percentage within each anatomical subset. The manifest labels distinguish \textit{Body} and \textit{Head} subsets, rather than the precise anatomical location of a metallic implant.}
     \label{fig:final-cohort-curation}
 \end{figure}
 
@@ -87,9 +93,9 @@ Every pair that had its match automatically approved due to its score being abov
     \label{fig:ssim_distribution}
 \end{figure}
 
-The distribution analysis between the corresponding pairs reveals that most pairs exhibit high structural similarity, with a mean value of 0.9694 and a median of 0.9830, indicating that the automatic matching process is generally reliable and effective in identifying corresponding pairs between the\acrshort{ctmar} and DeepLesion/Stroke EIT datasets.
+The distribution analysis between the corresponding pairs reveals that most pairs exhibit high structural similarity, with a mean value of 0.9694 and a median of 0.9830. This indicates that the automatic matching process is generally reliable and effective in identifying corresponding pairs between the\acrshort{ctmar} and DeepLesion/Stroke EIT datasets.
 
-The pairs with\acrshort{ms-ssim} scores below 0.9 totaled 340, of which only 3 were rejected after human visual inspection \ref{fig:ECDF}. In this inspection, it was observed that even cases with quite low\acrshort{ms-ssim} scores were not false positives but rather due to differences in post-processing or general image treatment that generate local alterations to which\acrshort{ms-ssim} is more sensitive. This can be visualized in figure \ref{fig:manual_review_examples}. This fact highlights the effectiveness of the global structural similarity matching strategy adopted, which managed to identify pairs accurately, with only 3 false positives identified even after rigorous analysis \ref{fig:reproved_examples}. This shows that the methodology is robust and performed better in detecting slices in this work than using\acrshort{ms-ssim} itself. While local differences affected\acrshort{ms-ssim} more significantly, the cosine similarity-based methodology was able to identify correct matches with high global scores, even in cases of pronounced local differences.
+The pairs with\acrshort{ms-ssim} scores below 0.9 totaled 340, of which only 3 were rejected after human visual inspection \ref{fig:ECDF}. In this inspection, it was observed that even cases with quite low\acrshort{ms-ssim} scores were not false positives. Instead, they were due to differences in post-processing or general image treatment that generate local alterations to which\acrshort{ms-ssim} is more sensitive. This can be visualized in figure \ref{fig:manual_review_examples}. This fact highlights the effectiveness of the global structural similarity matching strategy adopted, which managed to identify pairs accurately, with only 3 false positives identified even after rigorous analysis \ref{fig:reproved_examples}. This shows that the methodology is robust and performed better in detecting slices in this work than using\acrshort{ms-ssim} itself. While local differences affected\acrshort{ms-ssim} more significantly, the cosine similarity-based methodology was able to identify correct matches with high global scores, even in cases of pronounced local differences.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Figures/ssim_ecdf_final.pdf}
@@ -140,7 +146,7 @@ The pairs with the most critical\acrshort{ms-ssim} scores just above the reprove
 In the direct search, 530 pairs did not obtain approved matches in either of the two source datasets. The complementary indirect matching step recovered 95 of these cases after visual inspection, leaving 435 pairs without secure matches. 
 
 With relation to possible false negatives that could have resulted in unfair exclusion of pairs in this study, the adopted methodology was even more robust. Since there were few pairs that did not receive approval in either of the two source datasets, it was easy to visually verify each of these cases to confirm whether there was really no match or if the method failed to identify it. Of the 435 excluded pairs, 245 were excluded due to the automated criterion based on the threshold of 0.98. None of these cases were really false negatives, confirming once again the effectiveness of the adopted automatic matching method.
-The others 190 pairs fell into the low-reliability score range (0.98 -- 0.994) and were marked as false matches at this stage, highlighting the importance of having determined a gray area of scores for which the automatic matching method is not efficient, and where human visual review becomes indispensable \ref{fig:score_distribution_bad}.
+The other 190 pairs fell into the low-reliability score range (0.98 -- 0.994) and were marked as false matches at this stage. This highlights the importance of having determined a gray area of scores for which the automatic matching method is not efficient, and where human visual review becomes indispensable \ref{fig:score_distribution_bad}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.98\textwidth]{Figures/score_distribution.pdf}
@@ -212,9 +218,9 @@ Due to the large variation in the number of slices per patient, the anatomical d
         \hline
         \textbf{Split}  & \textbf{Body} & \textbf{Head}  & \textbf{\% Body} & \textbf{\% Head}\\
         \hline
-        Train  & 8\,563 & 953 & 89.98\% & 10.02\%\\
-        Val    & 2\,147 & 385 & 84.79\% & 15.21\%\\
-        Test   & 1\,229 & 285 & 81.17\% & 18.83\%\\
+        Train  & 8\,491 & 953 & 89.91\% & 10.09\%\\
+        Val    & 2\,255 & 385 & 85.42\% & 14.58\%\\
+        Test   & 1\,193 & 285 & 80.72\% & 19.28\%\\
         \hline
         \textbf{Total} & \textbf{11\,939} & \textbf{1\,623} & \textbf{--} & \textbf{--} \\
         \hline
@@ -230,9 +236,9 @@ Due to the large variation in the number of slices per patient, the anatomical d
         \hline
         \textbf{Split} & \textbf{Pairs} & \textbf{\% Total}\\
         \hline
-        Train  & 9\,516 & 70.17\%\\
-        Val    & 2\,532 & 18.67\%\\
-        Test   & 1\,514 & 11.16\%\\
+        Train  & 9\,444 & 69.64\%\\
+        Val    & 2\,640 & 19.47\%\\
+        Test   & 1\,478 & 10.90\%\\
         \hline
         \textbf{Total} & \textbf{13\,562} & \textbf{100\%} \\
         \hline
@@ -263,7 +269,7 @@ The internal evaluation was conducted on the fixed test partition, composed of 1
 
 The regions of interest and the per-zone metric calculation followed the procedure described in \autoref{subsec:methods-roi}. This stratification makes it possible to separately quantify the correction in the region directly affected by artifacts and the changes introduced in body regions distant from the implant.
 
-The final results, first aggregated per patient and then summarized over 41 independent patients, are presented in \autoref{tab:roi-delta-ssim}, \autoref{tab:roi-delta-psnr}, and \autoref{tab:roi-reducao-mae}. All six runs showed substantial improvement in the Artifact Zone: $\Delta$PSNR between 11.47 and 11.86~dB, $\Delta$SSIM between 0.322 and 0.328, and\acrshort{mae} reduction between 96.9 and 98.5~HU. In the Distant Zone, the mean changes were smaller ($\Delta$PSNR between 1.36 and 1.61~dB; $\Delta$SSIM between 0.057 and 0.058;\acrshort{mae} reduction between 3.2 and 3.6~HU), and should be interpreted as a quantitative description rather than as clinical validation of anatomical preservation.
+The final results, first aggregated per patient and then summarized over 41 independent patients, are presented in \autoref{tab:roi-delta-ssim}, \autoref{tab:roi-delta-psnr}, and \autoref{tab:roi-reducao-mae}. All six runs showed substantial improvement in the Artifact Zone: $\Delta$PSNR between 11.47 and 11.86~dB, $\Delta$SSIM between 0.322 and 0.328, and\acrshort{mae} reduction between 96.9 and 98.5~HU. In the Clean Zone, the mean changes were smaller ($\Delta$PSNR between 1.36 and 1.61~dB, $\Delta$SSIM between 0.057 and 0.058,\acrshort{mae} reduction between 3.2 and 3.6~HU). These changes should be interpreted as a quantitative description rather than as clinical validation of anatomical preservation.
 
 \begin{table}[htbp]
     \centering
@@ -331,9 +337,9 @@ The final results, first aggregated per patient and then summarized over 41 inde
                                & Dual Model   & $98.3 \pm 19.8$ & $3.5 \pm 3.3$ \\
         \hline
     \end{tabular}
-    \par\smallskip\footnotesize Note: $\Delta\mathrm{MAE}=\mathrm{MAE}(\mathrm{Input},\mathrm{GT})-\mathrm{MAE}(\mathrm{Model},\mathrm{GT})$ within the indicated ROI; positive values indicate error reduction.
+    \par\smallskip\footnotesize Note: $\Delta\mathrm{MAE}=\mathrm{MAE}(\mathrm{Input},\mathrm{GT})-\mathrm{MAE}(\mathrm{Model},\mathrm{GT})$ within the indicated ROI. Positive values indicate error reduction.
     \captionsetup{skip=2pt}
-    \caption[ROI MAE reduction]{\acrshort{mae} reduction by\acrshort{roi} on the test set. Values are mean $\pm$ standard deviation across patients ($n=41$); positive values correspond to error reduction.}
+    \caption[ROI MAE reduction]{\acrshort{mae} reduction by\acrshort{roi} on the test set. Values are mean $\pm$ standard deviation across patients ($n=41$). Positive values correspond to error reduction.}
     \label{tab:roi-reducao-mae}
 \end{table}
 \FloatBarrier
@@ -341,7 +347,7 @@ The final results, first aggregated per patient and then summarized over 41 inde
 \subsection{Selection of the External-Evaluation Candidate}
 \label{sec:external-candidate-selection}
 
-Among the six checkpoints previously frozen by validation\acrshort{ssim}, the Single Model with seed 2024 had the highest mean patient-level Artifact-ROI $\Delta\acrshort{ssim}$ ($0.3279 \pm 0.0955$). Its mean Distant-ROI $\Delta\acrshort{ssim}$ was $0.0581 \pm 0.0422$, substantially smaller than the improvement observed in the Artifact Zone. This meets the preservation check that was planned in advance. But since no specific numeric limit was set for how small the Distant-Zone change should be, it should not be read as formal proof of anatomical safety. The Single Model, seed 2024, was therefore selected for external evaluation, after which its architecture, seed, weights, and hyperparameters remained unchanged. The other\acrshort{roi} metrics reported above are complementary and did not change this decision. The global metrics, reported next for completeness, are likewise complementary. 
+Among the six checkpoints previously frozen by validation\acrshort{ssim}, the Single Model with seed 2024 had the highest mean patient-level Artifact-ROI $\Delta\acrshort{ssim}$ ($0.3279 \pm 0.0955$). Its mean Clean-ROI $\Delta\acrshort{ssim}$ was $0.0581 \pm 0.0422$, substantially smaller than the improvement observed in the Artifact Zone. This meets the preservation check that was planned in advance. But since no specific numeric limit was set for how small the Clean-Zone change should be, it should not be read as formal proof of anatomical safety. The Single Model, seed 2024, was therefore selected for external evaluation, after which its architecture, seed, weights, and hyperparameters remained unchanged. The other\acrshort{roi} metrics reported above are complementary and did not change this decision. The global metrics, reported next for completeness, are likewise complementary. 
 
 The \autoref{fig:roi-boxplots} and \autoref{fig:roi-safety} show the image-level distributions for the selected run. For clarity, the remaining plots present only this model. Data for all six runs are available in Appendix \ref{apendice:internal-evaluation}.
 
@@ -453,7 +459,7 @@ The patient-level deltas and their confidence intervals are shown in \autoref{ta
 \begin{table}[htbp]
     \centering
     \begin{tabular}{ccc}
-        \multicolumn{3}{c}{\textbf{$\Delta$SSIM Global (IC 95\%)}} \\[4pt]
+        \multicolumn{3}{c}{\textbf{$\Delta$SSIM Global (95\% CI)}} \\[4pt]
         \hline
         \textbf{Seed} & \textbf{Single Model} & \textbf{Dual Model} \\
         \hline
@@ -464,14 +470,14 @@ The patient-level deltas and their confidence intervals are shown in \autoref{ta
     \end{tabular}
     \par\smallskip\footnotesize Note: $\Delta\mathrm{SSIM}=\mathrm{SSIM}(\mathrm{Model},\mathrm{GT})-\mathrm{SSIM}(\mathrm{Input},\mathrm{GT})$.
     \captionsetup{skip=2pt}
-    \caption[Patient-level global $\Delta$SSIM]{$\Delta\acrshort{ssim}$ global aggregated per patient in the test subset ($n=41$). IC: 95\% confidence interval.}
+    \caption[Patient-level global $\Delta$SSIM]{$\Delta\acrshort{ssim}$ global aggregated per patient in the test subset ($n=41$). CI: 95\% confidence interval.}
     \label{tab:delta-ssim-paciente}
 \end{table}
 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{ccc}
-        \multicolumn{3}{c}{\textbf{$\Delta$PSNR Global (dB, IC 95\%)}} \\[4pt]
+        \multicolumn{3}{c}{\textbf{$\Delta$PSNR Global (dB, 95\% CI)}} \\[4pt]
         \hline
         \textbf{Seed} & \textbf{Single Model} & \textbf{Dual Model} \\
         \hline
@@ -482,14 +488,14 @@ The patient-level deltas and their confidence intervals are shown in \autoref{ta
     \end{tabular}
     \par\smallskip\footnotesize Note: $\Delta\mathrm{PSNR}=\mathrm{PSNR}(\mathrm{Model},\mathrm{GT})-\mathrm{PSNR}(\mathrm{Input},\mathrm{GT})$.
     \captionsetup{skip=2pt}
-    \caption[Patient-level global $\Delta$PSNR]{$\Delta\acrshort{psnr}$ global aggregated per patient in the test subset ($n=41$). IC: 95\% confidence interval.}
+    \caption[Patient-level global $\Delta$PSNR]{$\Delta\acrshort{psnr}$ global aggregated per patient in the test subset ($n=41$). CI: 95\% confidence interval.}
     \label{tab:delta-psnr-paciente}
 \end{table}
 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{ccc}
-        \multicolumn{3}{c}{\textbf{$\Delta$MAE Global (HU, IC 95\%)}} \\[4pt]
+        \multicolumn{3}{c}{\textbf{$\Delta$MAE Global (HU, 95\% CI)}} \\[4pt]
         \hline
         \textbf{Seed} & \textbf{Single Model} & \textbf{Dual Model} \\
         \hline
@@ -498,9 +504,9 @@ The patient-level deltas and their confidence intervals are shown in \autoref{ta
         2024 & 15.7 [12.5; 19.5] & 15.5 [12.4; 19.3] \\
         \hline
     \end{tabular}
-    \par\smallskip\footnotesize Note: $\Delta\mathrm{MAE}=\mathrm{MAE}(\mathrm{Input},\mathrm{GT})-\mathrm{MAE}(\mathrm{Model},\mathrm{GT})$; positive values indicate error reduction.
+    \par\smallskip\footnotesize Note: $\Delta\mathrm{MAE}=\mathrm{MAE}(\mathrm{Input},\mathrm{GT})-\mathrm{MAE}(\mathrm{Model},\mathrm{GT})$. Positive values indicate error reduction.
     \captionsetup{skip=2pt}
-    \caption[Patient-level global $\Delta$MAE]{$\Delta\acrshort{mae}$ global aggregated per patient in the test subset ($n=41$). Values $>0$ indicate improvement; IC: 95\% confidence interval.}
+    \caption[Patient-level global $\Delta$MAE]{$\Delta\acrshort{mae}$ global aggregated per patient in the test subset ($n=41$). Values $>0$ indicate improvement. CI: 95\% confidence interval.}
     \label{tab:delta-mae-paciente}
 \end{table}
 \FloatBarrier
@@ -538,7 +544,7 @@ As an additional, purely descriptive check of the overall\acrshort{hu} calibrati
 \subsection{Residual Maps in Extreme Cases}
 \label{sec:residual-maps-extremes}
 
-To complement the results, six individual cases from the Single Model, seed 2024, were inspected in the test partition. The selection was made exclusively by the per-slice $\Delta\acrshort{ssim}$ in the Artifact Zone: the three highest values correspond to the greatest structural improvement in that region relative to the input, and the three lowest values to the smallest structural improvement. Thus, the terms ``greatest'' and ``smallest'' improvement in this subsection refer only to this quantitative criterion.
+To complement the results, six individual cases from the Single Model, seed 2024, were inspected in the test partition. The selection was made exclusively by the per-slice $\Delta\acrshort{ssim}$ in the Artifact Zone. The three highest values correspond to the greatest structural improvement in that region relative to the input, while the three lowest values correspond to the smallest structural improvement. Thus, the terms ``greatest'' and ``smallest'' improvement in this subsection refer only to this quantitative criterion.
 
 In each map, the first row shows the change required relative to the clean reference ($r_{\mathrm{target}}=\mathrm{GT}-\mathrm{Input}$), the change produced by the model ($r_{\mathrm{model}}=\mathrm{Output}-\mathrm{Input}$), and the remaining residual error ($r_{\mathrm{diff}}= r_{\mathrm{model}} - r_{\mathrm{target}} = \mathrm{Output}-\mathrm{GT}$). The second row shows the absolute error of the input, the absolute error of the output, and their difference, where green indicates error reduction and red indicates worsening. The yellow outline delimits the Artifact Zone. Color scales are adjusted individually for each slice to preserve detail in cases with small residuals. However, comparison between cases should prioritize the spatial patterns and the statistics presented in each panel, rather than the apparent color intensity alone. Below each map, the corresponding visualization of the artifact input, the model output, and the clean reference is shown.
 
@@ -551,7 +557,7 @@ In each map, the first row shows the change required relative to the clean refer
 \subsection{Statistical Analysis per\acrshort{roi}}
 \label{sec:statistical-analysis-roi}
 
-This section formally tests this study's main hypothesis -- that structure improves in the Artifact Zone -- and describes preservation in the Distant Zone as a complement. As before, per-slice metrics were always averaged per patient before any summary or test ($n=41$), and 95\% confidence intervals were obtained by resampling patients 10,000 times. In the Artifact Zone, the question is simply whether the model improved on the input, so the signed changes in\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae} were analyzed. For each model, the sign test was applied to each of the three metrics, with a joint Holm correction across them.
+This section formally tests this study's main hypothesis, that structure improves in the Artifact Zone, and describes preservation in the Clean Zone as a complement. As before, per-slice metrics were always averaged per patient before any summary or test ($n=41$), and 95\% confidence intervals were obtained by resampling patients 10,000 times. In the Artifact Zone, the question is simply whether the model improved on the input, so the signed changes in\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae} were analyzed. For each model, the sign test was applied to each of the three metrics, with a joint Holm correction across them.
 
 \begin{table}[htbp]
 \centering
@@ -622,7 +628,7 @@ $\Delta$PSNR (dB) & $-0.019$ & $[-0.085; 0.060]$ & $0.533$ \\
 $\Delta$MAE (HU) & $-0.049$ & $[-0.318; 0.345]$ & $0.422$ \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Patient-level paired comparison of input-to-output improvement deltas ($n=41$). Differences are $\Delta_{\mathrm{Dual}}-\Delta_{\mathrm{Single}}$; negative differences favor the Single Model for all metrics. The 95\% BCa bootstrap CIs use 10\,000 reamostragens; two-sided exact binomial sign-test $p$-values are Holm-adjusted across the three Artifact-ROI metrics.
+\par\smallskip\footnotesize Patient-level paired comparison of input-to-output improvement deltas ($n=41$). Differences are $\Delta_{\mathrm{Dual}}-\Delta_{\mathrm{Single}}$. Negative differences favor the Single Model for all metrics. The 95\% BCa bootstrap CIs use 10\,000 resamples. Two-sided exact binomial sign-test $p$-values are Holm-adjusted across the three Artifact-ROI metrics.
 \captionsetup{skip=2pt}
 \caption[Paired Artifact-ROI improvement comparison]{Patient-level paired comparison of improvement deltas in the Artifact ROI.}
 \label{tab:roi-artifact-paired-comparison}
@@ -632,13 +638,13 @@ $\Delta$MAE (HU) & $-0.049$ & $[-0.318; 0.345]$ & $0.422$ \\
 
 In the direct comparison of improvement deltas in the Artifact Zone (\autoref{tab:roi-artifact-paired-comparison}), the difference in\acrshort{ssim} was small but remained significant after the Holm correction ($p_{\mathrm{Holm}}=0{.}0345$), favoring the Single Model. The differences in the\acrshort{psnr} and\acrshort{mae} deltas were not significant after adjustment.
 
-In the distant region, the question is different: the goal is to see how well the tissue away from the artifact was left unchanged, since ideally there should be no change at all relative to the input. So the average per-slice $|\Delta|$ was calculated for each patient, where lower values mean the reconstruction stayed closer to the input. Because no specific ``close enough to zero'' limit was set in advance, it is not possible to formally test or conclude that the change is equivalent to zero. Thus, \autoref{tab:roi-distant-preservation-ssim}, \autoref{tab:roi-distant-preservation-psnr}, \autoref{tab:roi-distant-preservation-mae} report the size of the change and its confidence intervals, without a $p$-value against zero.
+In the Clean Zone, the question is different: the goal is to see how well the tissue away from the artifact was left unchanged, since ideally there should be no change at all relative to the input. So the average per-slice $|\Delta|$ was calculated for each patient, where lower values mean the reconstruction stayed closer to the input. Because no specific ``close enough to zero'' limit was set in advance, it is not possible to formally test or conclude that the change is equivalent to zero. Thus, \autoref{tab:roi-distant-preservation-ssim}, \autoref{tab:roi-clean-preservation-psnr}, \autoref{tab:roi-clean-preservation-mae} report the size of the change and its confidence intervals, without a $p$-value against zero.
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lcc}
-\multicolumn{3}{c}{\textbf{Distant ROI: SSIM}} \\[3pt]
+\multicolumn{3}{c}{\textbf{Clean ROI: SSIM}} \\[3pt]
 \toprule
 \textbf{Model} & \textbf{Mean $|\Delta|$} & \textbf{95\% BCa CI} \\
 \midrule
@@ -648,7 +654,7 @@ Dual Model & $0.0595$ & $[0.0499; 0.0748]$ \\
 \end{tabular}
 \par\smallskip\footnotesize Patient-level mean absolute per-slice input-to-output change ($n=41$). Lower values are closer to zero. No equivalence margin or hypothesis test against zero was prespecified.
 \captionsetup{skip=2pt}
-\captionof{table}[Distant-ROI SSIM preservation magnitude]{Magnitude of SSIM input-to-output change in the Distant ROI.}
+\captionof{table}[Clean-ROI SSIM preservation magnitude]{Magnitude of SSIM input-to-output change in the Clean ROI.}
 \label{tab:roi-distant-preservation-ssim}
 \end{table}
 
@@ -656,7 +662,7 @@ Dual Model & $0.0595$ & $[0.0499; 0.0748]$ \\
 \centering
 \small
 \begin{tabular}{lcc}
-\multicolumn{3}{c}{\textbf{Distant ROI: PSNR}} \\[3pt]
+\multicolumn{3}{c}{\textbf{Clean ROI: PSNR}} \\[3pt]
 \toprule
 \textbf{Model} & \textbf{Mean $|\Delta|$ (dB)} & \textbf{95\% BCa CI} \\
 \midrule
@@ -666,15 +672,15 @@ Dual Model & $1.97$ & $[1.64; 2.33]$ \\
 \end{tabular}
 \par\smallskip\footnotesize Patient-level mean absolute per-slice input-to-output change ($n=41$). Lower values are closer to zero. No equivalence margin or hypothesis test against zero was prespecified.
 \captionsetup{skip=2pt}
-\caption[Distant-ROI PSNR preservation magnitude]{Magnitude of PSNR input-to-output change in the Distant ROI.}
-\label{tab:roi-distant-preservation-psnr}
+\caption[Clean-ROI PSNR preservation magnitude]{Magnitude of PSNR input-to-output change in the Clean ROI.}
+\label{tab:roi-clean-preservation-psnr}
 \end{table}
 
 \begin{table}[htbp]
 \centering
 \small
 \begin{tabular}{lcc}
-\multicolumn{3}{c}{\textbf{Distant ROI: MAE}} \\[3pt]
+\multicolumn{3}{c}{\textbf{Clean ROI: MAE}} \\[3pt]
 \toprule
 \textbf{Model} & \textbf{Mean $|\Delta|$ (HU)} & \textbf{95\% BCa CI} \\
 \midrule
@@ -684,11 +690,11 @@ Dual Model & $4.24$ & $[3.54; 5.08]$ \\
 \end{tabular}
 \par\smallskip\footnotesize Patient-level mean absolute per-slice input-to-output change ($n=41$). Lower values are closer to zero. No equivalence margin or hypothesis test against zero was prespecified.
 \captionsetup{skip=2pt}
-\caption[Distant-ROI MAE preservation magnitude]{Magnitude of MAE input-to-output change in the Distant ROI.}
-\label{tab:roi-distant-preservation-mae}
+\caption[Clean-ROI MAE preservation magnitude]{Magnitude of MAE input-to-output change in the Clean ROI.}
+\label{tab:roi-clean-preservation-mae}
 \end{table}
 \FloatBarrier
-To compare the architectures on preservation in the distant region, the Dual Model's advantage was defined for each patient as $|\Delta|_{\mathrm{Single}}-|\Delta|_{\mathrm{Dual}}$, and the sign test was applied, with a joint Holm correction across the three metrics. This is a separate comparison from the Artifact-Zone improvement above: here, what matters is the size of the change, and the better value is the one closest to zero. Positive values indicate a smaller change introduced by the Dual Model. This test answers only which model introduced a smaller change, not whether that change is clinically negligible.
+To compare the architectures on preservation in the Clean Zone, the Dual Model's advantage was defined for each patient as $|\Delta|_{\mathrm{Single}}-|\Delta|_{\mathrm{Dual}}$, and the sign test was applied, with a joint Holm correction across the three metrics. This is a separate comparison from the Artifact-Zone improvement above: here, what matters is the size of the change, and the better value is the one closest to zero. Positive values indicate a smaller change introduced by the Dual Model. This test answers only which model introduced a smaller change, not whether that change is clinically negligible.
 
 \begin{table}[htbp]
 \centering
@@ -702,13 +708,13 @@ PSNR (dB) & $0.020$ & $[-0.104; 0.069]$ & $0.0275$ \\
 MAE (HU) & $0.066$ & $[-0.050; 0.155]$ & $0.00865$ \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Patient-level paired preservation advantage ($n=41$), defined as $|\Delta|_{\mathrm{Single}}-|\Delta|_{\mathrm{Dual}}$. Positive values favor the Dual Model because its mean absolute input-to-output change is smaller. The 95\% BCa bootstrap CIs use 10\,000 reamostragens, two-sided exact binomial sign-test $p$-values are Holm-adjusted across the three Distant-ROI metrics.
+\par\smallskip\footnotesize Patient-level paired preservation advantage ($n=41$), defined as $|\Delta|_{\mathrm{Single}}-|\Delta|_{\mathrm{Dual}}$. Positive values favor the Dual Model because its mean absolute input-to-output change is smaller. The 95\% BCa bootstrap CIs use 10\,000 resamples, two-sided exact binomial sign-test $p$-values are Holm-adjusted across the three Clean-ROI metrics.
 \captionsetup{skip=2pt}
-\caption[Paired Distant-ROI preservation advantage]{Relative preservation advantage of the Dual Model in the Distant ROI.}
-\label{tab:roi-distant-paired-preservation}
+\caption[Paired Clean-ROI preservation advantage]{Relative preservation advantage of the Dual Model in the Clean ROI.}
+\label{tab:roi-clean-paired-preservation}
 \end{table}
 
-In the relative comparison (\autoref{tab:roi-distant-paired-preservation}), the Dual Model showed a smaller absolute change in\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae} after the Holm correction. This suggests the Dual Model preserved the distant tissue somewhat better than the Single Model, but it does not prove the change was equivalent to none at all.
+In the relative comparison (\autoref{tab:roi-clean-paired-preservation}), the Dual Model showed a smaller absolute change in\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae} after the Holm correction. This suggests the Dual Model preserved the clean tissue somewhat better than the Single Model, but it does not prove the change was equivalent to none at all.
 
 The computational performance (inference latency and throughput) of the model selected for external evaluation is characterized in \autoref{sec:appendix-computational-performance}.
 
@@ -719,7 +725,7 @@ The tables in this section analyze the global metrics, calculated over all pixel
 
 Checking the distribution of the per-patient values for $\Delta$SSIM and $\Delta$MAE showed that they were skewed, not evenly spread around the middle. Because of this, the main evidence for these two metrics came from the sign test, which simply asks how often the model did better than the input, without assuming the improvements are symmetrically distributed. For $\Delta$PSNR, whose per-patient values showed no such skew, the two-sided one-sample $t$-test was used instead, to test the average improvement directly.
 
-This distribution check was done separately for each model before applying the same rule to both. For $\Delta$SSIM, the Shapiro--Wilk test showed the Single Model's values were not evenly distributed ($W=0{.}9158$; $p=0{.}0050$; skewness $=1{.}087$), and the same was true for the Dual Model ($W=0{.}9162$; $p=0{.}0052$; skewness $=1{.}056$), supporting the use of the sign test for both architectures. For $\Delta$MAE, the same pattern was found in the Single Model ($W=0{.}7607$; $p=8{.}95\times10^{-7}$; skewness $=2{.}281$) and in the Dual Model ($W=0{.}7686$; $p=1{.}27\times10^{-6}$; skewness $=2{.}200$). For $\Delta$PSNR, neither model's values showed this kind of unevenness (Single Model: $W=0{.}9742$; $p=0{.}4675$; Dual Model: $W=0{.}9734$; $p=0{.}4427$), which supported using the $t$-test for the average improvement in both models.
+This distribution check was done separately for each model before applying the same rule to both. For $\Delta$SSIM, the Shapiro--Wilk test showed the Single Model's values were not evenly distributed ($W=0{.}9158$, $p=0{.}0050$, skewness $=1{.}087$). The same was true for the Dual Model ($W=0{.}9162$, $p=0{.}0052$, skewness $=1{.}056$), supporting the use of the sign test for both architectures. For $\Delta$MAE, the same pattern was found in the Single Model ($W=0{.}7607$, $p=8{.}95\times10^{-7}$, skewness $=2{.}281$) and in the Dual Model ($W=0{.}7686$, $p=1{.}27\times10^{-6}$, skewness $=2{.}200$). For $\Delta$PSNR, neither model's values showed this kind of unevenness (Single Model: $W=0{.}9742$, $p=0{.}4675$; Dual Model: $W=0{.}9734$, $p=0{.}4427$), which supported using the $t$-test for the average improvement in both models.
 
 \begin{table}[htbp]
 \centering
@@ -733,7 +739,7 @@ Single Model & $0.0891$ & $[0.0744; 0.1075]$ & $7.64\times10^{-11}$ \\\\
 Dual Model & $0.0879$ & $[0.0731; 0.1062]$ & $7.64\times10^{-11}$ \\\\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Global body-mask-aware metric, aggregated at the patient level ($n=41$); no ROI restriction. Two-sided exact binomial sign-test $p$-values, Holm-adjusted separately within each model across SSIM, PSNR, and MAE.
+\par\smallskip\footnotesize Global body-mask-aware metric, aggregated at the patient level ($n=41$). No ROI restriction. Two-sided exact binomial sign-test $p$-values, Holm-adjusted separately within each model across SSIM, PSNR, and MAE.
 \captionsetup{skip=2pt}
 \caption[SSIM improvement over corrupted input]{Global SSIM improvement over the corrupted input on the test set.}
 \label{tab:ablation_improvement_ssim}
@@ -750,7 +756,7 @@ Single Model & $7.11$ & $[6.35; 7.87]$ & $4.53\times10^{-21}$ \\\\
 Dual Model & $7.06$ & $[6.30; 7.81]$ & $4.42\times10^{-21}$ \\\\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Global body-mask-aware metric, aggregated at the patient level ($n=41$); no ROI restriction. Two-sided one-sample $t$-test $p$-values, Holm-adjusted separately within each model across SSIM, PSNR, and MAE.
+\par\smallskip\footnotesize Global body-mask-aware metric, aggregated at the patient level ($n=41$). No ROI restriction. Two-sided one-sample $t$-test $p$-values, Holm-adjusted separately within each model across SSIM, PSNR, and MAE.
 \captionsetup{skip=2pt}
 \caption[PSNR improvement over corrupted input]{Global PSNR improvement over the corrupted input on the test set.}
 \label{tab:ablation_improvement_psnr}
@@ -767,7 +773,7 @@ Single Model & $15.72$ & $[12.94; 20.14]$ & $7.64\times10^{-11}$ \\\\
 Dual Model & $15.54$ & $[12.79; 19.88]$ & $7.64\times10^{-11}$ \\\\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Global body-mask-aware metric, aggregated at the patient level ($n=41$); no ROI restriction. Positive $\Delta$MAE denotes error reduction. Two-sided exact binomial sign-test $p$-values, Holm-adjusted separately within each model across SSIM, PSNR, and MAE.
+\par\smallskip\footnotesize Global body-mask-aware metric, aggregated at the patient level ($n=41$). No ROI restriction. Positive $\Delta$MAE denotes error reduction. Two-sided exact binomial sign-test $p$-values, Holm-adjusted separately within each model across SSIM, PSNR, and MAE.
 \captionsetup{skip=2pt}
 \caption[MAE reduction over corrupted input]{Global MAE reduction over the corrupted input on the test set.}
 \label{tab:ablation_improvement_mae}
@@ -909,7 +915,7 @@ To make this heterogeneity visible, the three cases with the highest and the thr
 
 The primary outcome is the paired preference, per case, regarding which image better preserves the anatomical region underlying the metal artifact (``Image A'' / ``Image B'' / ``No difference''). Answers are converted back to input/output using the left/right position recorded for each case, without the reader ever knowing this mapping while answering. Training cases and hidden repeats are not part of this analysis ($n=15$ main cases per reader).
 
-Because each doctor judges many cases, and each case is judged by many doctors, the 95\% confidence intervals were obtained with a two-way cluster bootstrap that resampled readers and cases independently, rather than treating the 75 responses as fully independent. The observed preference favored the Single Model in 42/75 presentations (56.0\%), whereas the artifact input was preferred in 21/75 (28.0\%); 12/75 presentations (16.0\%) were judged equivalent.
+Because each doctor judges many cases, and each case is judged by many doctors, the 95\% confidence intervals were obtained with a two-way cluster bootstrap that resampled readers and cases independently. This approach avoids treating the 75 responses as fully independent. The observed preference favored the Single Model in 42/75 presentations (56.0\%), whereas the artifact input was preferred in 21/75 (28.0\%). The remaining 12/75 presentations (16.0\%) were judged equivalent.
 
 \begin{table}[htbp]
 \centering
@@ -939,7 +945,7 @@ No difference & 12 & 16.0 & [1.3; 37.3] \\
 Output preference $-$ input preference & $+28.0$ pp & [$-17.3$; $+70.7$] pp \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Difference between the two pooled proportions; 95\% CI by the same two-way cluster bootstrap. A positive value favors the Single Model. No null-hypothesis test is reported because this small reader panel is interpreted descriptively.
+\par\smallskip\footnotesize Difference between the two pooled proportions. 95\% CI by the same two-way cluster bootstrap. A positive value favors the Single Model. No null-hypothesis test is reported because this small reader panel is interpreted descriptively.
 \captionsetup{skip=2pt}
 \caption[Primary outcome: output--input contrast]{Cluster-bootstrap contrast for the primary outcome.}
 \label{tab:external-primary-model}
@@ -948,7 +954,7 @@ Output preference $-$ input preference & $+28.0$ pp & [$-17.3$; $+70.7$] pp \\
 
 \subsection{Secondary Outcomes and Safety Perception}
 
-The secondary outcomes use the same per-case format (``Image A'' / ``Image B'' / ``No difference''). They are reported descriptively as pooled frequencies with two-way cluster-bootstrap 95\% confidence intervals; no correction for multiple comparisons was applied.
+The secondary outcomes use the same per-case format (``Image A'' / ``Image B'' / ``No difference''). They are reported descriptively as pooled frequencies with two-way cluster-bootstrap 95\% confidence intervals. No correction for multiple comparisons was applied.
 
 \begin{table}[htbp]
 \centering
@@ -962,7 +968,7 @@ Preferred input & 8 & 10.7 & [1.3; 22.7] \\
 No difference & 6 & 8.0 & [0.0; 22.7] \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize $n=75$ responses; 95\% CIs by two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024).
+\par\smallskip\footnotesize $n=75$ responses. 95\% CIs by two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024).
 \captionsetup{skip=2pt}
 \caption[Secondary outcome: artifact intensity]{Paired preference regarding the perceived intensity of metal artifacts.}
 \label{tab:external-secondary-artifact-intensity}
@@ -980,7 +986,7 @@ Preferred input & 17 & 22.7 & [9.3; 38.7] \\
 No difference & 11 & 14.7 & [1.3; 33.3] \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize $n=75$ responses; 95\% CIs by two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024). This item functions as an exploratory signal of possible harm: preference for the input suggests perceived distortions or artifacts introduced by the model outside the artifact zone.
+\par\smallskip\footnotesize $n=75$ responses. 95\% CIs by two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024). This item functions as an exploratory signal of possible harm: preference for the input suggests perceived distortions or artifacts introduced by the model outside the artifact zone.
 \captionsetup{skip=2pt}
 \caption[Secondary outcome: distortion in other regions]{Paired preference regarding artifacts or anatomical distortions introduced in regions distant from the artifact.}
 \label{tab:external-secondary-distortion}
@@ -998,7 +1004,7 @@ Preferred input & 23 & 30.7 & [12.0; 53.3] \\
 No difference & 10 & 13.3 & [1.3; 32.0] \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize $n=75$ responses; 95\% CIs by two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024).
+\par\smallskip\footnotesize $n=75$ responses. 95\% CIs by two-way cluster bootstrap over readers and cases (10,000 resamples; seed 2024).
 \captionsetup{skip=2pt}
 \caption[Secondary outcome: clinical preference]{Paired preference regarding the image chosen for clinical interpretation.}
 \label{tab:external-secondary-clinical-preference}
@@ -1020,7 +1026,7 @@ Probably yes & 2 & 40 \\
 Definitely yes & 1 & 20 \\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize One response per reader (not per case); $n=5$ completed readers.
+\par\smallskip\footnotesize One response per reader (not per case). $n=5$ completed readers.
 \captionsetup{skip=2pt}
 \caption[Secondary outcome: complementary utility]{Perceived complementary usefulness of a processed version relative to the original\acrshort{ct} exam.}
 \label{tab:external-secondary-utility}
@@ -1051,4 +1057,4 @@ Clinical preference & 5/10 (50\%) & 10 \\
 
 \subsection{Limited Interpretation to the Observational Design}
 
-In this completed panel, the preference frequencies describe how the five readers judged these 15 cases; they do not establish a causal effect on diagnostic or therapeutic outcomes and cannot be generalized beyond this reader--case sample. The absence of a clean reference in these external cases means that the assessment of anatomical accuracy depends entirely on readers' judgment, rather than on an objective error metric. The wide cluster-bootstrap intervals, the small number of readers, and the limited repeat agreement further constrain precision and preclude meaningful subgroup analyses by specialty or experience.
+In this completed panel, the preference frequencies describe how the five readers judged these 15 cases. They do not establish a causal effect on diagnostic or therapeutic outcomes and cannot be generalized beyond this reader--case sample. The absence of a clean reference in these external cases means that the assessment of anatomical accuracy depends entirely on readers' judgment, rather than on an objective error metric. The wide cluster-bootstrap intervals, the small number of readers, and the limited repeat agreement further constrain precision and preclude meaningful subgroup analyses by specialty or experience.
