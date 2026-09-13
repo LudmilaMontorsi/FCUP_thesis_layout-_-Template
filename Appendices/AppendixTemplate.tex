@@ -103,3 +103,27 @@ Runtime performance was quantified for the checkpoint of the model selected for 
 
 Mean latency was $24{.}13\,\mathrm{ms}$ per slice (standard deviation: $0{.}69\,\mathrm{ms}$, median: $24{.}30\,\mathrm{ms}$), corresponding to a throughput of $41{.}4$ slices per second. The 95th and 99th percentiles were $24{.}66\,\mathrm{ms}$ and $27{.}53\,\mathrm{ms}$ per slice, respectively. The proximity of the mean, median, and 95th percentile indicates latency stability for most runs. The complete distribution and slice-level variation are shown in \autoref{fig:benchmark-latency}. These values characterize the experimental configuration used and do not, by themselves, represent the response time of a complete clinical workflow or of another computational environment.
 \input{Chapters/Final/Generated/Benchmark}
+
+\clearpage
+\section{Exploratory Descriptive Results for Radiologists}
+\label{sec:appendix-radiologist-descriptive}
+
+Two of the six completed readers reported Radiology and Diagnostic Imaging as their specialty. Their responses are presented here as an exploratory descriptive subgroup, separately from the prespecified all-reader analysis. Each radiologist assessed the 15 non-repeat main-case presentations, yielding 30 paired image judgments per outcome. Because this subgroup contains only two readers, no confidence intervals, hypothesis tests, or comparisons with the other four readers were performed. The counts in \autoref{tab:appendix-radiologist-descriptive} should therefore not be interpreted as specialty-specific estimates.
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \caption[Descriptive external-evaluation responses from radiologists]{Exploratory descriptive external-evaluation responses from the two readers reporting Radiology and Diagnostic Imaging ($n=30$ non-repeat paired image judgments per outcome). Preferences are expressed relative to the original input CT and the processed output.}
+    \label{tab:appendix-radiologist-descriptive}
+    \begin{tabular}{lrrr}
+        \toprule
+        Outcome & Output & Input & No difference \\
+        \midrule
+        Artifact intensity & 26 (86.7\%) & 2 (6.7\%) & 2 (6.7\%) \\
+        Anatomical visualization & 19 (63.3\%) & 6 (20.0\%) & 5 (16.7\%) \\
+        Other-region distortion & 19 (63.3\%) & 8 (26.7\%) & 3 (10.0\%) \\
+        Clinical preference & 18 (60.0\%) & 8 (26.7\%) & 4 (13.3\%) \\
+        \bottomrule
+    \end{tabular}
+    \tablecaptionnote{The two radiologists also answered the final complementary-usefulness question: one selected ``Definitely yes'' and one selected ``Probably yes.'' These two individual responses are reported descriptively only.}
+\end{table}

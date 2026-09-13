@@ -91,3 +91,4 @@
 \contentsline {section}{\numberline {A.1}Training Convergence Across Runs}{86}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Worst Performance Cases}{99}{section.A.2}%
 \contentsline {section}{\numberline {A.3}Computational Performance}{101}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Exploratory Descriptive Results for Radiologists}{103}{section.A.4}%
