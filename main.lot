@@ -41,14 +41,14 @@
 \contentsline {table}{\numberline {5.32}{\ignorespaces Illustrative external cases by input-output SSIM}}{64}{table.caption.78}%
 \contentsline {table}{\numberline {5.33}{\ignorespaces Primary outcome: anatomical preservation preference}}{67}{table.caption.85}%
 \contentsline {table}{\numberline {5.34}{\ignorespaces Primary outcome: output--input contrast}}{67}{table.caption.86}%
-\contentsline {table}{\numberline {5.35}{\ignorespaces Secondary outcome: artifact intensity}}{67}{table.caption.87}%
-\contentsline {table}{\numberline {5.36}{\ignorespaces Secondary outcome: distortion in other regions}}{67}{table.caption.88}%
+\contentsline {table}{\numberline {5.35}{\ignorespaces Secondary outcome: artifact intensity}}{68}{table.caption.87}%
+\contentsline {table}{\numberline {5.36}{\ignorespaces Secondary outcome: distortion in other regions}}{68}{table.caption.88}%
 \contentsline {table}{\numberline {5.37}{\ignorespaces Secondary outcome: clinical preference}}{68}{table.caption.89}%
 \contentsline {table}{\numberline {5.38}{\ignorespaces Secondary outcome: complementary utility}}{68}{table.caption.90}%
 \contentsline {table}{\numberline {5.39}{\ignorespaces Intra-reader repeat agreement}}{68}{table.caption.91}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Best validation SSIM by model and seed}}{94}{table.caption.120}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Validation PSNR at best validation SSIM}}{94}{table.caption.121}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces Validation MAE at best validation SSIM}}{94}{table.caption.122}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Best validation SSIM by model and seed}}{95}{table.caption.120}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Validation PSNR at best validation SSIM}}{95}{table.caption.121}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Validation MAE at best validation SSIM}}{95}{table.caption.122}%

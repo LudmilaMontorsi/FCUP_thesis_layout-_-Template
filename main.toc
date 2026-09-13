@@ -70,24 +70,24 @@
 \contentsline {section}{\numberline {5.5}External and Physician's Evaluation }{62}{section.5.5}%
 \contentsline {subsection}{\numberline {5.5.1}Capture Status and Participants}{62}{subsection.5.5.1}%
 \contentsline {subsection}{\numberline {5.5.2}Quantitative Characterization of Input--Output}{63}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Primary Outcome: Anatomical Visualization}{66}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.3}Primary Outcome: Anatomical Visualization}{67}{subsection.5.5.3}%
 \contentsline {subsection}{\numberline {5.5.4}Secondary Outcomes and Safety Perception}{67}{subsection.5.5.4}%
-\contentsline {subsection}{\numberline {5.5.5}Limited Interpretation to the Observational Design}{68}{subsection.5.5.5}%
-\contentsline {chapter}{\numberline {6}Discussion}{69}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary of the Main Findings}{69}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Comparison with Prior Work}{69}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Architectural Comparison Interpretation}{70}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Anatomical Preservation and Reconstruction Safety}{71}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Generalization and External Evaluation}{72}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Reader Evaluation and Clinical Implications}{72}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Limitations}{73}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Implications and Future Work}{75}{section.6.8}%
-\contentsline {chapter}{\numberline {7}Conclusions}{77}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Study Conclusions}{77}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Dissertation Contributions}{78}{section.7.2}%
+\contentsline {subsection}{\numberline {5.5.5}Limited Interpretation to the Observational Design}{69}{subsection.5.5.5}%
+\contentsline {chapter}{\numberline {6}Discussion}{70}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary of the Main Findings}{70}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Comparison with Prior Work}{70}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Architectural Comparison Interpretation}{71}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Anatomical Preservation and Reconstruction Safety}{72}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Generalization and External Evaluation}{73}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Reader Evaluation and Clinical Implications}{73}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Limitations}{74}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Implications and Future Work}{76}{section.6.8}%
+\contentsline {chapter}{\numberline {7}Conclusions}{78}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Study Conclusions}{78}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Dissertation Contributions}{79}{section.7.2}%
 \vspace {0.5cm}
 \contentsline {chapter}{Bibliography}{79}{dummy.8}%
-\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{85}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Training Convergence Across Runs}{85}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Worst Performance Cases}{98}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Computational Performance}{100}{section.A.3}%
+\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{86}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Training Convergence Across Runs}{86}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Worst Performance Cases}{99}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Computational Performance}{101}{section.A.3}%
