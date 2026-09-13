@@ -14,9 +14,8 @@ Single Model & PSNR (dB) & $7.11$ & $[6.35; 7.87]$ & $4.53\times10^{-21}$ \\\\
 Single Model & MAE (HU) & $15.72$ & $[12.94; 20.14]$ & $7.64\times10^{-11}$ \\\\
 \bottomrule
 \end{tabular}
-\par\smallskip\footnotesize Global body-mask-aware metrics, aggregated at the patient level ($n=41$); no ROI restriction. The 95\% CIs use BCa bootstrap for $\Delta$SSIM and $\Delta$MAE and one-sample $t$ intervals for $\Delta$PSNR. Holm-adjusted two-sided $p$-values use exact binomial sign tests for $\Delta$SSIM and $\Delta$MAE and one-sample $t$-tests for $\Delta$PSNR, separately within each model across the three global metrics. Positive $\Delta$MAE denotes error reduction.
 \captionsetup{skip=2pt}
-\caption[Improvement over corrupted input]{Improvement over the corrupted input on the test set.}
+\caption[Improvement over corrupted input]{Improvement over the corrupted input on the test set.\tablecaptionnote{Global body-mask-aware metrics, aggregated at the patient level ($n=41$); no ROI restriction. The 95\% CIs use BCa bootstrap for $\Delta$SSIM and $\Delta$MAE and one-sample $t$ intervals for $\Delta$PSNR. Holm-adjusted two-sided $p$-values use exact binomial sign tests for $\Delta$SSIM and $\Delta$MAE and one-sample $t$-tests for $\Delta$PSNR, separately within each model across the three global metrics. Positive $\Delta$MAE denotes error reduction.}}
 \label{tab:ablation_improvement}
 \end{table}
 

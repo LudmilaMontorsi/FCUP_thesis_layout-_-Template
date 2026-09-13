@@ -1,7 +1,7 @@
 \[{pax}{0.1l}\\
 \[{file}{(./main.pdf)}{
-  Size={56468},
-  Date={D:20260912000417+01'00'},
+  Size={57028},
+  Date={D:20260913014108+01'00'},
 }\\
 \[{pagenum}{3}\\
 \[{page}{1}{0.0 0.0 595.28 841.89}{}\\
@@ -11,19 +11,19 @@
   Border={[0 0 0 ]},
   URI={(mailto:mp.ludmila.montorsi@gmail.com)},
 }\\
-\[{annot}{1}{Link}{73.897 216.546 220.727 229.902}{URI}{
+\[{annot}{1}{Link}{73.897 216.546 191.264 229.902}{URI}{
   C={[0 1 1 ]},
   H={/I},
   Border={[0 0 0 ]},
   URI={(https://sigarra.up.pt/fcup/pt/cur_geral.cur_view?pv_curso_id=894&pv_origem=CAND&pv_ano_lectivo=2025)},
 }\\
-\[{annot}{1}{Link}{73.897 202.622 241.681 213.752}{URI}{
+\[{annot}{1}{Link}{73.897 202.622 243.889 213.752}{URI}{
   C={[0 1 1 ]},
   H={/I},
   Border={[0 0 0 ]},
   URI={(http://dfa.fc.up.pt/)},
 }\\
-\[{annot}{1}{Link}{73.897 188.276 290.439 199.406}{URI}{
+\[{annot}{1}{Link}{73.897 188.276 272.128 199.406}{URI}{
   C={[0 1 1 ]},
   H={/I},
   Border={[0 0 0 ]},

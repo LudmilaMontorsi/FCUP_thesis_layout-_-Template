@@ -1,5 +1,6 @@
 \chapter{Materials and Methods}
 \label{chap:final-methods}
+This chapter describes the materials, procedures, and pre-specified analysis plan used throughout the study. It covers the datasets and traceability process, patient-level partitioning, preprocessing, model architectures, reproducible training protocol, internal evaluation, and external physician evaluation. Together, these procedures define the basis for the results and their interpretation in the subsequent chapters.
 
 \section{Data, curation and traceability}
 \subsection{\acrshort{ctmar} Dataset and Reference Sources}
@@ -8,17 +9,17 @@ The main dataset used in this work comes from the\acrfull{ctmar} \cite{hanedaAAP
 
 \begin{itemize}
     \item \textbf{Head}: 1,626 (11.61\%) samples derived from the \textit{UCLH Stroke EIT Data} \cite{gorenMultifrequencyElectricalImpedance2018, gorenUCLHStrokeEIT2017};
-    \item \textbf{Body}: 12,374 (88.38\%) samples derived from the \textit{NIH DeepLesion Data} \cite{yanDeepLesionAutomatedMining2018}.
+    \item \textbf{Body}: 12,374 (88.39\%) samples derived from the \textit{NIH DeepLesion Data} \cite{yanDeepLesionAutomatedMining2018}.
 \end{itemize}
 
 The folders in the \textit{body} category contained trunk\acrshort{ct}s, covering axial, thoracic, and abdominal slices. The data is organized into subfolders, each containing up to 1,000 samples. Only the following files were used for training and validation:
 
 \begin{enumerate}
-    \item \textbf{Metal-Free images (reference):} Files contained in the \textit{Target} folder of size 512Ã—512Ã—1 pixels;
-    \item \textbf{Images with metal artifacts (corrupted):} Files contained in the \textit{Baseline} folder of size 512Ã—512Ã—1 pixels.
+    \item \textbf{Metal-Free images (reference):} Files contained in the \textit{Target} folder of size 512x512 pixels;
+    \item \textbf{Images with metal artifacts (corrupted):} Files contained in the \textit{Baseline} folder of size 512x512 pixels.
 \end{enumerate}
 
-All image files (.raw) in the dataset are presented in binary format without a header, with float32 precision in little-endian order. The images were already converted from linear attenuation coefficients (in mm$^{-1}$ units) to\Acrfull{hu}, using the normalization value of 0.02 mm$^{-1}$ for water.
+The images were already converted from linear attenuation coefficients (in mm$^{-1}$ units) to\Acrfull{hu}, using the normalization value of 0.02 mm$^{-1}$ for water.
 There was not additional information about which exam each slice belonged to, if they were from the same patient, or which specific anatomical regions were represented. The only available information was the organization by folder, indicating the anatomical category (Head or Body). The lack of detailed metadata imposed the need for a careful pre-processing approach to ensure that the data was properly organized and used during model training and validation. Therefore, a significant effort was dedicated to tracking the images to the original datasets (UCLH Stroke EIT Data and NIH DeepLesion Data) to obtain additional information about the exams and patients, allowing for an appropriate partitioning of the data.
 
 \subsection{Partitioning at patient level}
@@ -50,7 +51,7 @@ The matching was considered valid only when the similarity score exceeded an emp
 
 Scores below this threshold indicated potentially ambiguous matches and were subjected to manual visual inspection. Scores below approximately 0.98 indicated clearly incorrect matches and were automatically discarded without the need for manual review. Thus, all pairs with scores between 0.98 and 0.994 were visually analyzed to confirm the validity of the match. In order to avoid unnecessary exclusion of pairs, all pairs with a score below 0.98 for both datasets (DeepLesion and UCLH Stroke EIT) were subjected to visual inspection to ensure they were not erroneously discarded.
 
-For the 530 pairs that remained without approved matches after direct search in both source datasets, a complementary indirect matching step was applied. In this step, each unmatched\acrshort{ctmar} image was compared with already traced\acrshort{ctmar} images. The most similar neighbors were used to select candidate exams from DeepLesion and then all \textit{slices} of those exams were searched with $64\times64$ dimension \textit{fingerprints}. The 530 proposals were visually inspected: 95 matches were approved and incorporated into the consolidated manifest, while 435 remained without a safe match and were excluded.
+For the 530 pairs that remained without approved matches after direct search in both source datasets, a complementary indirect matching step was applied. In this step, each unmatched\acrshort{ctmar} image was compared with already traced\acrshort{ctmar} images. The most similar neighbors were used to select candidate exams from DeepLesion and then all \textit{slices} of those exams were searched with $64\times64$ dimension \textit{fingerprints}. Of the 530 proposals visually inspected, 95 additional matches were approved and incorporated into the consolidated manifest, alongside those previously approved. The remaining 435 did not yield a reliable match and were excluded.
 
 Moreover, the algorithm was designed to automatically ignore images that had already been verified as correct matches, reducing redundancies and accelerating future reprocessing. Given the high number of images present in the datasets, the processing was parallelized and optimized through the use of vectorized matrix operations. When available, the algorithm utilizes\acrshort{gpu} acceleration to reduce execution time. The calculated fingerprints were also cached to avoid unnecessary recomputation in subsequent runs.
 
@@ -69,7 +70,7 @@ Taking this into account, this step constituted an important quality control pro
 
 \subsection{Anatomical Distribution and Stratification}
 
-Stratification was implemented within each subset (train/val/test) to maintain the anatomical proportion at the patient level, ensuring that the relative proportion between categories is preserved across all subsets. In this way, the anatomical balance is preserved, ensuring that the models are trained and evaluated on an appropriate representation of the anatomical diversity present in the original dataset.
+Stratification was implemented within each subset (training/validation/test) to maintain the anatomical proportion at the patient level, ensuring that the relative proportion between categories is preserved across all subsets. In this way, the anatomical balance is preserved, ensuring that the models are trained and evaluated on an appropriate representation of the anatomical diversity present in the original dataset.
 
 The patient-level partition was defined only once, with a fixed random seed, maintaining approximately 70\% of the patients for training, 15\% for validation, and 15\% for testing. This fixed partition ensured independent subsets for validation and testing and was kept unchanged across all experimental repetitions.
 
@@ -129,23 +130,22 @@ The two architectures were evaluated against each other to determine the impact 
 
 \subsection{Settings, determinism and two-stage selection}
 
-Both models were trained under the same settings, with \textit{float32} precision. To assess stability against different initializations and batch presentation orders, each architecture was trained with deterministic operations and with seeds \texttt{1337}, \texttt{42}, and \texttt{2024}, always on the same patient partition.\acrfull{amp} was disabled and batches were kept complete, including the last batch of each epoch, to avoid samples being excluded from training, validation, or evaluation.
+Both models were trained under the same settings. To assess stability against different initializations and batch presentation orders, each architecture was trained with deterministic operations and with 3 different seeds, always on the same patient partition.\acrfull{amp} was disabled and batches were kept complete, including the last batch of each epoch, to avoid samples being excluded from training, validation, or evaluation.
 
 The AdamW optimizer was used, with an initial learning rate of $2{.}26 \times 10^{-4}$, weight decay of $1{.}00 \times 10^{-4}$ and gradient clipping with norm 1.00, identical for both architectures. The learning rate was adjusted by the ReduceLROnPlateau scheduler, with a reduction factor of 0.50, patience of two epochs, cooldown of one epoch and minimum value of $1{.}00 \times 10^{-6}$, monitoring the reconstructed image\acrshort{ssim} on the validation set in both models. The training had a maximum limit of 300 epochs and early stopping could only be triggered after at least five epochs and occurred when the monitored metric did not improve by at least $1{.}00 \times 10^{-4}$ for 15 consecutive epochs. In each run, the checkpoint corresponding to the best value of the monitored validation metric was retained.
 
-Only the best checkpoint per run was preserved, saved in \texttt{.keras} format with a filename encoding the architecture, epoch, and monitored metric. The training CSV explicitly flags the corresponding row with \texttt{best\_checkpoint=1}. Checkpoint selection relied exclusively on the validation metric chosen in advance:\texttt{val\_ssim\_hu} for the Single Model and \texttt{val\_img\_out\_ssim\_hu} for the reconstruction output of the Dual Model.
+Checkpoint selection relied exclusively on the reconstruction validation\acrshort{ssim} metric for both models. Only the best checkpoint per run was preserved and saved. 
 
 Each of the six validation-selected checkpoints was evaluated on the fixed internal test partition. The candidate advanced to external evaluation was selected from this frozen set by the highest mean patient-level $\Delta\acrshort{ssim}$ in the Artifact Zone. As a preservation safeguard, the corresponding changes in the Clean Zone were required to be substantially smaller than the correction observed in the Artifact Zone. No specific numeric limit was set in advance for how small this Clean-Zone change had to be, so this comparison is only descriptive and is not, by itself, a formal safety check. Global\acrshort{psnr},\acrshort{ssim}, and\acrshort{mae}, together with the remaining region-of-interest metrics, were complementary and did not override this selection rule. Thus, the test partition was used only to compare the six already frozen candidates. It was not used to choose a new checkpoint, tune hyperparameters, alter weights, or trigger further training. Once selected, the architecture, seed, weights, and hyperparameters of the external-evaluation candidate were frozen.
 
-Run traceability was ensured through reproducibility snapshots in JSON format, preserved in \texttt{outputs/reproducibility/}. Six final internal evaluations were frozen, corresponding to the three random initializations (seeds 42, 1337, and 2024) of the Single Model and Dual Model. All snapshots were generated from commit \texttt{a950be7276a5585de45e8ae874c59c065a1985be}, on branch \texttt{projeto\_final}, with a clean working tree (\texttt{is\_dirty: false}).
-
-Each snapshot records the operating system, Python version, and relevant dependency versions. The execution environment used Python 3.11.9 on Windows 10, including TensorFlow 2.15.0, NumPy 1.26.4, Pandas 2.2.2, scikit-image 0.21.0, and Matplotlib 3.7.5. In addition, SHA-256 hashes were computed for the configuration files, the canonical pair manifest, the patient-level partition definition, the tensor generation metadata, and the environment requirements file. Thus, every value, table, or figure reported can be unambiguously traced to the code, environment, input data, checkpoint, and results that produced it.
+Run traceability was ensured through reproducibility snapshots in JSON format, preserved in the code repository. Six final internal evaluations were frozen, corresponding to the three random initializations of the models.
+Each snapshot records the operating system, Python version, and relevant dependency versions. In addition, hashes were computed for the configuration files, the canonical pair manifest, the patient-level partition definition, the tensor generation metadata, and the environment requirements file. Thus, every value, table, or figure reported can be unambiguously traced to the code, environment, input data, checkpoint, and results that produced it.
 
 During the training, the following quantities were monitored:
 \begin{itemize}
-    \item \textbf{SSIM, PSNR, and MAE in HU scale}: calculated in the body region to track the structural and radiometric fidelity of the reconstructions;
-    \item \textbf{Reconstruction loss}: to track the optimization of the corrected image;
-    \item \textbf{Segmentation loss}: only in the dual model, to track the auxiliary supervision of the artifact mask.
+    \item \textbf{SSIM, PSNR, and MAE in HU scale}: Calculated in the body region to track the structural and radiometric fidelity of the reconstructions;
+    \item \textbf{Reconstruction loss}: To track the optimization of the corrected image;
+    \item \textbf{Segmentation loss}: Only in the dual model, to track the auxiliary supervision of the artifact mask.
 \end{itemize}
 
 \subsection{Loss Functions}
@@ -175,13 +175,7 @@ During the training, the following quantities were monitored:
 \end{itemize}
 
 \section{Internal Evaluation}
-In the inference phase, the models were evaluated using quantitative metrics widely adopted in the literature, in comparison with the Ground Truth. The metrics used to evaluate reconstructed image quality were:
-
-\begin{itemize}
-    \item \textbf{\acrshort{psnr}} ;
-    \item \textbf{\acrshort{ssim}} ;
-    \item \textbf{\acrshort{mae}}.
-\end{itemize}
+In the inference phase, the models were evaluated using quantitative metrics widely adopted in the literature, in comparison with the Ground Truth. The metrics used to evaluate reconstructed image quality were\acrshort{ssim},\acrshort{psnr} and\acrshort{mae}.
 
 Recent studies have shown that\acrshort{ms-ssim} and\acrshort{ssim} capture image fidelity better than other image quality metrics \cite{linzhangFSIMFeatureSimilarity2011}. Especially for medical images, where the fidelity of predicted images is crucial, the choice of metrics that reflect human perception of quality and structural preservation is fundamental. Therefore,\acrshort{ssim} was selected as the primary metric for quantitative evaluation of the quality of reconstructed images, ensuring a robust and relevant analysis for the clinical context. And\acrshort{psnr} was used as a complementary metric to assess the radiometric fidelity of reconstructions, especially important in computed tomography where the accuracy of\acrshort{hu} values is essential for diagnosis and clinical planning.
 
@@ -192,7 +186,7 @@ The internal validation was conducted on the validation and test subsets, evalua
 
 Because the global evaluation does not distinguish the model's behavior in regions directly affected by artifacts from that in body regions distant from the implant, each slice was divided into two complementary zones. These zones are based on how much the artifact-corrupted input differs from the clean reference. Metal artifacts do not only cause strong local streaks near the implant. They are typically accompanied by a faint, almost uniform intensity shift across the whole slice, a side effect of beam hardening. To avoid mistaking this global shift for a local artifact, the pixel-wise difference between the clean reference and the input was first computed. Its typical (median) value over the body region was then estimated and subtracted out, so that only deviations beyond this baseline shift were considered.
 
-The Artifact Zone was then defined as the set of body pixels whose bias-corrected difference exceeds a fixed threshold, equivalent to about 42~HU on the normalized intensity scale used ($\tau=0{.}03$). Connected-component filtering (using SciPy's image-labeling utilities) was applied to discard components smaller than 20 pixels, which correspond to isolated CT quantum-noise pixels rather than genuine artifact streaks. No additional morphological dilation was applied, preserving the observed geometry of the \textit{streaks}. The Clean Zone was defined simply as the remaining body region outside the Artifact Zone. This zone quantifies changes outside the directly affected region.
+The Artifact Zone was then defined as the set of body pixels whose bias-corrected difference exceeds a fixed threshold, equivalent to about 42~HU on the normalized intensity scale used ($\tau=0{.}03$). Connected-component filtering was applied to discard components smaller than 20 pixels, which correspond to isolated CT quantum-noise pixels rather than genuine artifact streaks. No additional morphological dilation was applied, preserving the observed geometry of the \textit{streaks}. The Clean Zone was defined simply as the remaining body region outside the Artifact Zone. This zone quantifies changes outside the directly affected region.
 
 The \autoref{fig:final-roi-examples} illustrates the application of the two zones in representative slices of the dataset, covering different artifact patterns.
 
@@ -231,24 +225,9 @@ In every evaluation context, the metrics were expressed as variations relative t
 \]
 
 Thus, $\Delta\mathrm{PSNR}>0$ and $\Delta\mathrm{SSIM}>0$ indicate improvement over the corrupted input. Since lower\acrshort{mae} represents better fidelity, the order of subtraction was reversed for this metric: $\Delta\mathrm{MAE}>0$ indicates error reduction and, therefore, improvement. $\Delta\mathrm{MAE}<0$ indicates error increase. Regular\acrshort{ssim} was used, calculated with a local window of $11\times11$ pixels and cropping with context around the evaluated region.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lcccc}
-        \hline
-        \textbf{Metric} & \textbf{Train} & \textbf{Global} & \textbf{Artifact Zone} & \textbf{Clean Zone} \\
-        \hline
-        PSNR    & \checkmark & \checkmark & \checkmark & \checkmark \\
-        SSIM    & \checkmark & \checkmark & \checkmark & \checkmark \\
-        MAE     & \checkmark & \checkmark & \checkmark & \checkmark\\
-        \hline
-    \end{tabular}
-    \caption[Evaluation metrics by context]{Evaluation metrics by context.}
-    \label{tab:final-metrics-context}
-\end{table}
 %______________________________________________________________________________
 \subsection{Global Metrics}
- After denormalization, the global evaluation region is cropped to the smallest bounding box of the body mask before\acrshort{ssim} evaluation, eliminating scan windows composed exclusively of background â€” which would artificially score $\text{SSIM} = 1{.}0$ and inflate the global metric.  
+ After denormalization, the global evaluation region is cropped to the smallest bounding box of the body mask before\acrshort{ssim} evaluation, eliminating scan windows composed exclusively of background which would artificially score $\text{SSIM} = 1{.}0$ and inflate the global metric.  
 
 As an additional, purely descriptive check for any overall shift in average HU values, a Bland--Altman plot was made comparing the reconstruction with the clean reference. For each patient, the mean\acrshort{hu} of each image was calculated over all valid pixels of the body mask of the respective slices, weighted by the number of pixels in each slice. The graph plots the mean difference per patient ($\mathrm{Model}-\mathrm{GT}$) against the average of the two measurements, together with the average difference (bias) and the range within which most differences fall ($\bar d \pm 1{.}96\,SD_d$, the limits of agreement). This plot is descriptive only, one point per patient, and does not replace the accuracy metrics above or the region-based analysis above.
 
@@ -257,12 +236,11 @@ Every statistical comparison in this work used the patient, not the slice, as th
 
 To evaluate the improvement over the corrupted input, for each patient the output's value was compared with the corrupted input's value, for both\acrshort{psnr} and\acrshort{ssim}, so that a positive difference always represents improvement. For\acrshort{mae}, whose reduction represents better performance, the subtraction was reversed so that a positive difference also represents improvement. In every test, the question asked was whether there was typically no difference at all between the paired values. The direct comparison between the two architectures followed the same logic, subtracting the Single Model's value from the Dual Model's value for each patient, so that negative differences favor the Single Model.
 
-The $p$-values presented in the comparison tables were adjusted using the Holm sequential procedure, which controls the probability of at least one false positive across a family of related tests without assuming that the tests are independent: the smallest raw $p$-values are penalized the most, while the relative ordering between tests is preserved. This correction was computed in Python with the \texttt{multipletests} function from the \texttt{statsmodels} library, using the \texttt{'holm'} method.
+The $p$-values presented in the comparison tables were adjusted using the Holm sequential procedure, which controls the probability of at least one false positive across a family of related tests without assuming that the tests are independent: the smallest raw $p$-values are penalized the most, while the relative ordering between tests is preserved.
 
 In the reconstruction improvement table, the correction was applied jointly to the four corresponding tests for\acrshort{psnr} and\acrshort{ssim} for each of the two architectures. In the paired comparison Single Model vs Dual Model, the correction was applied jointly to the two tests, one for\acrshort{psnr} and another for\acrshort{ssim}.
 
-The confidence interval of 95\% reported for the mean differences was obtained by patient-level percentile \textit{bootstrap}. For each metric, the vector of $n=41$ paired differences per patient was resampled with replacement, maintaining $n$ observations in each resample. The mean difference was then calculated in each of the 10,000 resamples. The lower and upper limits of the interval correspond, respectively, to the 2.5 and 97.5 percentiles of the empirical distribution of these means. This procedure does not assume normality of the differences and preserves the patient, rather than the slice, as the unit of inference. Seed 1337 was used to make the resampling deterministic.
-
+The confidence interval of 95\% reported for the mean differences was obtained by patient-level percentile \textit{bootstrap}. For each metric, the vector of $n=41$ paired differences per patient was resampled with replacement, maintaining $n$ observations in each resample. The mean difference was then calculated in each of the 10,000 resamples. The lower and upper limits of the interval correspond, respectively, to the 2.5 and 97.5 percentiles of the empirical distribution of these means. This procedure does not assume normality of the differences and preserves the patient, rather than the slice, as the unit of inference.
 \section{External Evaluation}
 \label{sec:avaliacao-medicos}
 
@@ -284,7 +262,7 @@ In accordance with the data-usage policy of each collection, this work acknowled
 
 As a complementary characterization of the alteration introduced by the model in external cases,\acrshort{ssim},\acrshort{psnr}, and\acrshort{mae} were calculated directly between the input image and the respective output of the model selected for external evaluation. The metrics were evaluated only in the 15 main cases of the frozen external set. The two training cases were excluded. The calculation domain was the effective body mask, manually corrected during case preparation. For\acrshort{psnr}, the intensity window $[-1000,400]$\acrshort{hu} with amplitude $1400$\acrshort{hu} was used, identical to the intensity window applied to the internal training and evaluation data (\autoref{subsec:intensity-window}), so that no additional normalization discrepancy is introduced when comparing internal and external results.
 
-There is no clean reference for these real cases. Thus, higher\acrshort{ssim} and\acrshort{psnr}, as well as lower\acrshort{mae}, describe less global alteration between input and output, and not greater accuracy of artifact removal or improvement compared to a reference. The statistics were summarized per case, such as mean and standard deviation, and the 95\% confidence intervals for the mean were obtained by percentile \textit{bootstrap} with 10,000 resamplings and seed 1337. The interpretation of the clinical acceptability of these alterations remained reserved for blind evaluation by readers.
+There is no clean reference for these real cases. Thus, higher\acrshort{ssim} and\acrshort{psnr}, as well as lower\acrshort{mae}, describe less global alteration between input and output, and not greater accuracy of artifact removal or improvement compared to a reference. The statistics were summarized per case, such as mean and standard deviation, and the 95\% confidence intervals for the mean were obtained by percentile \textit{bootstrap} with 10,000 resamplings. The interpretation of the clinical acceptability of these alterations remained reserved for blind evaluation by readers.
 
 \subsection{Presentation and Evaluation Instrument}
 
@@ -292,7 +270,7 @@ For each case, the two images, the artifact input and the model output, are show
 
 \subsection{Outcomes and Analysis}
 
-The main question of the study, the primary outcome, is which image better shows the anatomy under the metal artifact, taken from the corresponding question described above. Each displayed A/B answer was recoded to input, output, or no difference using the saved left/right allocation. To account for the fact that every reader judged every case, response proportions and the primary output--input contrast were accompanied by 95\% percentile confidence intervals from a two-way non-parametric cluster bootstrap, resampling readers and cases independently (10,000 resamples; seed 2024). The other three per-case questions, together with the final usefulness question, are treated as secondary outcomes and are summarized using the same descriptive approach. No multiplicity correction was applied.
+The main question of the study, the primary outcome, is which image better shows the anatomy under the metal artifact, taken from the corresponding question described above. Each displayed A/B answer was recoded to input, output, or no difference using the saved left/right allocation. To account for the fact that every reader judged every case, response proportions and the primary output--input contrast were accompanied by 95\% percentile confidence intervals from a two-way non-parametric cluster bootstrap, resampling readers and cases independently (10,000 resamples). The other three per-case questions, together with the final usefulness question, are treated as secondary outcomes and are summarized using the same descriptive approach. No multiplicity correction was applied.
 
 Because two cases are shown a second time to each doctor later in the same session, without saying so, it is possible to check how consistent each doctor is with themselves. As these are nominal three-category responses and only two repeat pairs are available per reader, consistency is reported descriptively as exact agreement between the original and repeated answer for each question. Given the small number of doctors expected to take part, the confidence intervals and repeat agreement are interpreted descriptively rather than as definitive clinical evidence.
 

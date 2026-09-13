@@ -72,8 +72,8 @@
 %-------------------------------------------------------------------------
 \usepackage{titlesec}
 % Chapter formatting: Arial Plain, size 20, spacing 1.5
-\titleformat{\chapter}[display]
-  {\normalfont\fontsize{20}{30}\selectfont}{\chaptertitlename\ \thechapter}{20pt}{\fontsize{20}{30}\selectfont}
+\titleformat{\chapter}[hang]
+  {\normalfont\fontsize{20}{30}\selectfont}{\thechapter}{1em}{}
 % Keep chapter openings compact throughout the thesis.
 \titlespacing*{\chapter}{0pt}{25pt}{40pt}
 % Section formatting: Arial Plain, size 14, spacing 1.5
@@ -148,7 +148,7 @@
   labelfont={footnotesize,sf},
   textfont={footnotesize,sf},
   labelsep=space,
-  justification=justified,
+  justification=centering,
   singlelinecheck=false
 }
 \DeclareCaptionLabelFormat{figformat}{Fig.#2}
@@ -586,7 +586,7 @@
 %-------------------------------------------------------------------------
 %	LIST OF GRAPHICS PAGE DESIGN
 %-------------------------------------------------------------------------
-\newcommand\listofgraphicsname{Lista de Gráficos}
+\newcommand\listofgraphicsname{List of Graphs}
 \newcommand\listofgraphics{
 \btypeout{\listofgraphicsname}
 \addtotoc{\listofgraphicsname}

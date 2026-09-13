@@ -247,6 +247,10 @@
   \graphiccaption[#1]{#2}%
 }
 
+% Appends explanatory text inside a table caption without duplicating it in
+% the List of Tables, which receives only the optional short caption.
+\newcommand{\tablecaptionnote}[1]{\par\smallskip\textit{Note.} #1}
+
 \makeglossaries
 
 % Remover espaço extra antes de acrônimos
@@ -256,14 +260,14 @@
 \newcommand{\acr}[1]{\glsdisp{#1}{\glsentryshort{#1}}}
 
 % Definir abreviações aqui (ou num arquivo separado)
-\newacronym{fcup}{FCUP}{Faculdade de Ciências da Universidade do Porto}
-\newacronym{up}{UP}{Universidade do Porto}
+\newacronym{fcup}{FCUP}{Faculty of Sciences of the University of Porto}
+\newacronym{up}{UP}{University of Porto}
 \newacronym{cnn}{CNN}{Convolutional Neural Network}
 \newacronym{gan}{GAN}{Generative Adversarial Network}
 \newacronym{dl}{DL}{Deep Learning}
 \newacronym{unet}{U-Net}{U-shaped Network}
 \newacronym{ct}{CT}{Computed Tomography}
-\newacronym{hu}{HU}{Unidade Hounsfield}
+\newacronym{hu}{HU}{Hounsfield Unit}
 \newacronym{mar}{MAR}{Metal Artifact Reduction}
 \newacronym{nmar}{NMAR}{Normalized Metal Artifact Reduction}
 \newacronym{fbp}{FBP}{Filtered Back Projection}

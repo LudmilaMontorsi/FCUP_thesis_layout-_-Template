@@ -9,14 +9,14 @@
 \vspace {0.3cm}
 \contentsline {chapter}{Contents}{vii}{dummy.4}%
 \contentsline {chapter}{List of Figures}{x}{dummy.5}%
-\contentsline {chapter}{Lista de Gráficos}{xi}{dummy.6}%
+\contentsline {chapter}{List of Graphs}{xi}{dummy.6}%
 \contentsline {chapter}{List of Tables}{xii}{dummy.7}%
-\contentsline {chapter}{Lista de Abreviaturas}{xiv}{section*.5}%
+\contentsline {chapter}{Acronyms}{xiv}{section*.5}%
 \vspace {0.3cm}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Clinical and Technical Context}{2}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Work Motivation}{3}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Objectives and Investigation Question}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Objectives}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}General Objective}{4}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Specific Objectives}{4}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Hypothesis and Outcomes}{5}{section.2.3}%
@@ -33,28 +33,28 @@
 \contentsline {subsection}{\numberline {4.2.1}Integrity Verification}{14}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Background Removal through Body Mask}{14}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Intensity Window and Normalization}{14}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Artifact Mask for Auxiliary Supervision}{14}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.4}Artifact Mask for Auxiliary Supervision}{15}{subsection.4.2.4}%
 \contentsline {section}{\numberline {4.3}Compared Architectures}{15}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}U-Net Single Supervision}{15}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}U-Net Dual Supervision}{15}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Reproducible Training}{17}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Settings, determinism and two-stage selection}{17}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Loss Functions}{19}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.2}Loss Functions}{18}{subsection.4.4.2}%
 \contentsline {section}{\numberline {4.5}Internal Evaluation}{20}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}\acrshort {roi} Metrics}{21}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Global Metrics}{23}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.1}\acrshort {roi} Metrics}{20}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Global Metrics}{22}{subsection.4.5.2}%
 \contentsline {subsection}{\numberline {4.5.3}Statistical Analysis}{23}{subsection.4.5.3}%
 \contentsline {section}{\numberline {4.6}External Evaluation}{24}{section.4.6}%
 \contentsline {subsection}{\numberline {4.6.1}Design and Cases}{24}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Quantitative Characterization of Input--Output}{26}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}Presentation and Evaluation Instrument}{26}{subsection.4.6.3}%
-\contentsline {subsection}{\numberline {4.6.4}Outcomes and Analysis}{27}{subsection.4.6.4}%
-\contentsline {subsection}{\numberline {4.6.5}Operational Status}{27}{subsection.4.6.5}%
+\contentsline {subsection}{\numberline {4.6.2}Quantitative Characterization of Input--Output}{25}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Presentation and Evaluation Instrument}{25}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Outcomes and Analysis}{26}{subsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.6.5}Operational Status}{26}{subsection.4.6.5}%
 \contentsline {chapter}{\numberline {5}Results}{28}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Final Group and Experimental Integrity}{28}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Final Group and Exclusion of Unmatched Pairs}{28}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Reported and Recovered Patient Counts}{28}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Automatic Approval and Manual Review Outcomes}{30}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.3}Automatic Approval and Manual Review Outcomes}{29}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}Complementary Analysis with\acrshort {ms-ssim}}{30}{subsection.5.1.4}%
 \contentsline {subsection}{\numberline {5.1.5}Anatomical Distribution and Stratification}{36}{subsection.5.1.5}%
 \contentsline {section}{\numberline {5.2}Model Training}{38}{section.5.2}%
@@ -69,25 +69,25 @@
 \contentsline {subsection}{\numberline {5.4.2}Global Statistical Analysis}{59}{subsection.5.4.2}%
 \contentsline {section}{\numberline {5.5}External and Physician's Evaluation }{62}{section.5.5}%
 \contentsline {subsection}{\numberline {5.5.1}Capture Status and Participants}{62}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Quantitative Characterization of Input--Output}{64}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Primary Outcome: Anatomical Visualization}{67}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}Secondary Outcomes and Safety Perception}{68}{subsection.5.5.4}%
-\contentsline {subsection}{\numberline {5.5.5}Limited Interpretation to the Observational Design}{69}{subsection.5.5.5}%
-\contentsline {chapter}{\numberline {6}Discussion}{70}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary of the Main Findings}{70}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Comparison with Prior Work}{71}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Architectural Comparison Interpretation}{71}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Anatomical Preservation and Reconstruction Safety}{72}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Generalization and External Evaluation}{73}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Reader Evaluation and Clinical Implications}{74}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Limitations}{75}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Implications and Future Work}{77}{section.6.8}%
-\contentsline {chapter}{\numberline {7}Conclusions}{79}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Study Conclusions}{79}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Dissertation Contributions}{80}{section.7.2}%
+\contentsline {subsection}{\numberline {5.5.2}Quantitative Characterization of Input--Output}{63}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Primary Outcome: Anatomical Visualization}{66}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Secondary Outcomes and Safety Perception}{67}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Limited Interpretation to the Observational Design}{68}{subsection.5.5.5}%
+\contentsline {chapter}{\numberline {6}Discussion}{69}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary of the Main Findings}{69}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Comparison with Prior Work}{69}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Architectural Comparison Interpretation}{70}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Anatomical Preservation and Reconstruction Safety}{71}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Generalization and External Evaluation}{72}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Reader Evaluation and Clinical Implications}{72}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Limitations}{73}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Implications and Future Work}{75}{section.6.8}%
+\contentsline {chapter}{\numberline {7}Conclusions}{77}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Study Conclusions}{77}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Dissertation Contributions}{78}{section.7.2}%
 \vspace {0.5cm}
-\contentsline {chapter}{Bibliography}{80}{dummy.8}%
-\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{87}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Training Convergence Across Runs}{87}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Worst Performance Cases}{100}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Computational Performance}{103}{section.A.3}%
+\contentsline {chapter}{Bibliography}{79}{dummy.8}%
+\contentsline {chapter}{\numberline {A}Supplementary Internal Evaluation}{85}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Training Convergence Across Runs}{85}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Worst Performance Cases}{98}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Computational Performance}{100}{section.A.3}%
